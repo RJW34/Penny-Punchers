@@ -1,0 +1,9 @@
+{
+  "scope": "EVIDENCE_COMPLETENESS_AND_INTEGRITY_ONLY",
+  "tier": "software",
+  "status": "PASS",
+  "required": 76,
+  "verified_records": 76,
+  "problems": [],
+  "truth_review": "Reproduce commands and inspect actual gameplay; file/hash validation alone cannot establish truth or feel."
+}

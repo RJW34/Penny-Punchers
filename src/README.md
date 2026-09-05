@@ -1,4 +1,7 @@
-# C# seeds, not implemented combat
-Core files provide digital input representation, signed math and scalar-wallet/spend snapshot arithmetic. ContractTests loads hand-specified financial fixtures. These are deliberate limited seeds; no combat simulation, move recognizer, application coordinator, rollback transport or finished scene is implemented here.
+# Production C# and executable verification
 
-Receiving Astra must compile this harness and implement the full core/shell/test suite. The packaging report states whether compilation was actually possible here. Do not claim the C# files were built based on XML parsing.
+`StrikeLedger.Core` implements the deterministic fighting simulation, input recognition, collisions, reactions, match phases, credit spending and canonical serialization. `StrikeLedger.App` adds bots, training, competitive replays and private UDP rollback sessions. The Godot presentation and menus live in `../game`.
+
+`StrikeLedger.CoreTests` exercises production combat. `StrikeLedger.NetworkLab --self-test` exercises application, training and network behavior; its other modes run actual peer processes. `StrikeLedger.BalanceLab` runs seeded bot experiments. `StrikeLedger.ContractTests` retains the original seed arithmetic fixtures and is deliberately narrower than gameplay acceptance.
+
+Run the commands in [the audit guide](../AUDIT_GUIDE.md) from the repository root. Numeric content is in `../data`. Historical test reports describe their recorded source/build identities; new code changes require new runs.

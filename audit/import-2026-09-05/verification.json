@@ -1,0 +1,693 @@
+{
+  "utc": "2026-09-05T19:45:46.538075+00:00",
+  "passed": true,
+  "scope": "Actual clean Git clone compilation, Godot resource import, and executable tests on this Windows PC; separate from the historical native-release acceptance gate.",
+  "imported_commit": "ab951b790fdf657d7e32fe6f9c16ede31855a77c",
+  "baseline_source_candidate": "source-sha256:5414744b92e51de04d4be67df1929929a1072e7d5b986d773b1459166217784d",
+  "command": [
+    "python",
+    "tools/build.py",
+    "--test"
+  ],
+  "exit_code": 0,
+  "game_build_warnings": 0,
+  "game_build_errors": 0,
+  "seed_contract_checks": 15,
+  "production_core_scenarios": 36,
+  "application_suites": 10,
+  "new_core_assembly_id": "33a44d80-b029-418e-83d9-5ce303d474ab",
+  "new_app_test_build": "strike-ledger-native-1/f1f7ee6dc23922d9dbf773396ed66cf344f010a720bf568b618572b32bcf9c63",
+  "binary_identity_note": "Build identities can differ by checkout/toolchain. This record does not substitute new binaries for the historical release identity.",
+  "unchanged_production_inputs": [
+    {
+      "path": "Directory.Build.props",
+      "sha256": "858854d74f072f72685860a6f7c731502263ea3e8ec3c0d8413f6370f72c1734",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Effects/combat-atlas.png",
+      "sha256": "7a7ad2e12bd640c0747fc9c77aa0b358925b8f0a1a6632a9d43d3196cbe6ae28",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Effects/combat-atlas.png.import",
+      "sha256": "df01019563cb5b17d43a9b959f9d25fbd97afcc4e984c236ef64ed00c7b57c4e",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/atlas.json",
+      "sha256": "63055d2fc83f3531cf1e12a63391cc3cd7eac95fe771291f4f01a434652785c9",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/normals.png",
+      "sha256": "7f2a73b512fe5b4f768a61ea1914c151ee471119602e1fa0de8c96bd9b5286e5",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/normals.png.import",
+      "sha256": "484a053eaa39b691a6461f4230b8776333901b685ccb715f1036b9860dc943de",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/provenance.json",
+      "sha256": "2e2cf00e52c14eece9b41e88cf3aa9763b5b694cebae0c495d88f1e77e60ef39",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/supplemental.png",
+      "sha256": "f384b1c17417c3048b201359e97d30db074989c4d332a8a4c92635daaaaa97a6",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/supplemental.png.import",
+      "sha256": "3429071e7e87347b5326f5cb1b4627f8c54931fd3cf2c4ad262d3444a25b55ff",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/techniques.png",
+      "sha256": "d194a915bd598a44bba2225f721dc61f46ea25bf915872a4587f47ea5c44864c",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/techniques.png.import",
+      "sha256": "82dd490f7329f8aac16886329e173e23c722b7ce432a6b1e04aecf0279ab1cbe",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/universal.png",
+      "sha256": "b7bbcb7b681708ff73a163c1ee0bbd2a12bfce8b7c868949125729043cf8a46d",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/universal.png.import",
+      "sha256": "ea5011f1b19af5c28b6ca1bfc051b37f617df782344deb52695d537b4d22ab28",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/atlas.json",
+      "sha256": "292ea6f08187bce681aeab971a44ce09741873e9627ecb9a85fda39e9a9024c7",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/normals-matte.png",
+      "sha256": "f70f933aa6e0ec4ec4c14170a3742b52fc35cf550861310c48fcb0b4b90f3468",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/normals-matte.png.import",
+      "sha256": "e64d2e27f494e9f1ff9e8d5b587357adfa75a4c4a82480ab4aadf2c6d414aa4d",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/pixel-inspection.json",
+      "sha256": "812ec58400b9c8a5d28942e0764c9a6d507568e5c64cbeefe9663ad6fcfebed2",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/provenance.json",
+      "sha256": "4c68a9d744a05351a0a94520cede770686825a375934266bb4273b1cdc8dc914",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/pulse-ex-clean-provenance.json",
+      "sha256": "cfcf1143c47f00fa35d018cfdc377e667122c7b1f53ceb50f22a027ecb64f3a0",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/super2-clean-matte.png",
+      "sha256": "a880393e267743188a261c6eb24a1c43a1a0e5c9a93e46ff2c9c0a0cc65681ae",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/super2-clean-matte.png.import",
+      "sha256": "79b26f3c28c9143225475cd091f70bc9e77af61565a10e358c4374a8f0cd63ff",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/super2-clean-provenance.json",
+      "sha256": "d74111245f6920bb247d45834a754ac1396f1d890e3a76b4829aabece2bce3c0",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/supplemental-matte.png",
+      "sha256": "3d8fe375b9d63a177e891fde9db19860e89ed1e18f757b86d873b0b93627dca9",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/supplemental-matte.png.import",
+      "sha256": "956b597e937a94ec0b1b6ba15cf62b6f146cc8a5f56d1473404726214efd0d0e",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/techniques-matte.png",
+      "sha256": "f592ba448ba77a1e5028852b2695a9f93dfac63c535d6687dcbbbe67fb87d644",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/techniques-matte.png.import",
+      "sha256": "eb9cb4c61b9ddfbf3573eef9feef23941afe6259886ee4b147f106f0cef0af6f",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/universal-matte.png",
+      "sha256": "ff159235cc53a49662f3b2711b5950200d2c0d207368d67e29518352ac6b6ee3",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/universal-matte.png.import",
+      "sha256": "1d04f21aa908c6f1584375ab049d20a79f648fde13db63e1431e15452429d3cd",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/validation.json",
+      "sha256": "717112d06bef906a19b726fe2736d771e310d27739cd1b6a7bbc818de74a2b38",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/foundry.png",
+      "sha256": "a166535fed3a237aad4394fce94a528e5b5da92a96b46121687bf3ef3ba7fae0",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/foundry.png.import",
+      "sha256": "10f726cc979ab8b1e79907c26153fe246cdd65c4e241bc5436ed7ba0eb88b554",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/grid.png",
+      "sha256": "0c7377fbeec22bc70aa9cd683f9ca48ef6deb20c233babaef0b296055307950b",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/grid.png.import",
+      "sha256": "614ac921d992cda696e6eb8dfa45584bdb81303d17163181e4d034334fa4c0d6",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/branding-announcements.png",
+      "sha256": "0272b88afe9b1dcd83832bf354027a05d9ddd6f02bb9b62d835290210e69bace",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/branding-announcements.png.import",
+      "sha256": "784ff0320e5ef92007acda972f74f621e7b71c27dd983580ed2a2e1d8ba3e42f",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/hud-atlas.png",
+      "sha256": "46efd91aec4b7ee1c249b8945dd94a45a0fdb40e8c4efefa9805f460740dc5d1",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/hud-atlas.png.import",
+      "sha256": "a07d27e2500800c5e6d96f25358f02a322f5e6fa31cf60927422ad6af59f110c",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/interface-atlas.png",
+      "sha256": "f73efab8ad9cf5e7f39a60394d59df3bf91c8527963b447dff898fdd7b44711a",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/interface-atlas.png.import",
+      "sha256": "ff755957b900cf6e776049cf6016c294c0e0bd0362fa5203d9ebf73c7314ab82",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/lease-icons.png",
+      "sha256": "c2f0e7cb60da0578f88a6ec40cf85a0a09a92dbc614d5099591ff8587d38c164",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/lease-icons.png.import",
+      "sha256": "4dd62997b245de50268f1b3a9d4cbe1912d505e29416a6dabe285ec3141f56c0",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/manifest.json",
+      "sha256": "e065309af97bc37242f6961249865a9eb1815a2a22a0ab7da4006463bab8c9b6",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/rook-identity.png",
+      "sha256": "47dcd50976a1e15ddaacc78781ba331c3ab000cefec9177ea7894dfc876bd626",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/rook-identity.png.import",
+      "sha256": "37c56c49212015819d67d275bc6e945a61d9e638a2874c7c53b3471819cc3f20",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/title-backdrop.png",
+      "sha256": "d7336aca471a0138594b110ef6b249e1351d5d85c18f81980f4e611226ef021c",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/title-backdrop.png.import",
+      "sha256": "2ca7eb9ed64ce613200e821b88f66244f999708cd0b5db76eea2333215282e4d",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/vale-identity.png",
+      "sha256": "09ea7773966d7f6dc3f56f290402bebc8ac239b64f3687fb76ab44312690941a",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/vale-identity.png.import",
+      "sha256": "0072e12bba01bafc30f7c6c38c2b7cde3493005f05c0033ba9b077d85a39285c",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/GameSettings.cs",
+      "sha256": "4a9aeadbdff3ee645728cf46fdd849788caeb3a80888e659820bed910f305d26",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.ArtReview.cs",
+      "sha256": "e20aa531b4458bb1426b17d775bb7c296bf3393aee8b7ea085f3abb20f9c649c",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.ArtSkin.cs",
+      "sha256": "430df29ce1cdb0b7d3fb7597412a22e623a64330da95d7e8f3004ef8650edc7b",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.CombatShowcase.cs",
+      "sha256": "9c054283295fbdc40f4da7b02cfa5b34858ddab19f6b782eaeb53757ee440342",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.ControlRouting.cs",
+      "sha256": "c2a1654034310b828d972a16be5ba4ba2132914a6e9f36ba9164c3616e8090b0",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.EconomyReport.cs",
+      "sha256": "6a201003b8d28f014eb758b366c52e92fbaaba744a9effa06e10a14961532182",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.LabDiagnostics.cs",
+      "sha256": "f3cdccbacfc8df98799691075c608bc9b9d5c3cd0dfee2eedece143d4b32748d",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.LabState.cs",
+      "sha256": "b3ddf585aa209cefb0bd8aa8682924e2edde3a17040724c50e0536532248e2ee",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.Menus.cs",
+      "sha256": "c6fe08de1eb1d7fad67ef62fbe6324b3a7481ab4f700337697ae4c9934e268d2",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.Network.cs",
+      "sha256": "b5c6b1fdcd9f3befb73b213ced0bd05a698fdbd5c87b6b41a8a3c55c6e6a8b42",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.NetworkEvidence.cs",
+      "sha256": "e49af6e4cc130baf16e666aa97da64bebdf0bea3475c1789d1238eba3b50fe70",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.PadText.cs",
+      "sha256": "4695bdc8b3acbb13be2a096ada1e8dc80de469f6d8795e7edd051e3ed5516a10",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.PrepDetails.cs",
+      "sha256": "3511c671412cee787892bc8da2ec424066ed6aeab44b3f4ae75b816c14b01b28",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.Rendering.cs",
+      "sha256": "059984e903188808e89feb575c375172d174076b1bb1c2c4f843945802a7ca23",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.ReplayDetails.cs",
+      "sha256": "ae800caabd3f9cd85a1bb79eb35fcbc20d69b7556ccd6425ff44746ee1f14103",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.Replays.cs",
+      "sha256": "ac92eed749c4b30f43b597a0e91658423ae422fc963d0528ee20d13da9131a75",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.RuntimeEvidence.cs",
+      "sha256": "1a1aa7623d79f4ab1ec49f879fa2fc58075faef280899af96bfbc26e8979395f",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.Shutdown.cs",
+      "sha256": "722d96caf7539e90950908d8eee9f4662ca0b6d5ebaf7c46276167b881b99d1d",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.Training.cs",
+      "sha256": "e21b29a9efb136ec87b37baea74ebb775ceba0a0ca02311e2aaab99858563c9f",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.UiSmoke.cs",
+      "sha256": "e140e74873f3824a953669c25eab7f900a345e7b971064ed67bfc004ab254b35",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.cs",
+      "sha256": "ff9e174d5c4548a471feddbfbf1a2092bf841f511b6a1d8b9c03b9fd8d0750d3",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Main.tscn",
+      "sha256": "9728d8e064526575ff38789d97a8fbd5925b20853d919e9da4a2d66cbf7829b2",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/ArenaAudio.cs",
+      "sha256": "d34c04b20d1f7538adda61bb6b7794c5ba68035721c6852b1e9b85bb49954f57",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/ArenaOverlay.cs",
+      "sha256": "7b4fd9e3805cf41344ab3e76589827fc652616b41bf76a98d5bde7baeaf338b5",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/ArenaView.cs",
+      "sha256": "55c635bc78f2d7681e6706cedc231fb65b0cb9093e50cc8b520858d828affb2d",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/block.wav",
+      "sha256": "38540c6389aeaff223d41e3b45c96e80a0e9b2bcd241752c9fc3fafaaaff409c",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/block.wav.import",
+      "sha256": "d07d330ba4c316456f33926fb5371d0973972da11ddf522751c332aedfe0ae97",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/cancel.wav",
+      "sha256": "1852644826818eb186a2cfe1e6b78f4551348135ff3a2101389fca106f28c02f",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/cancel.wav.import",
+      "sha256": "85b7b0893be6d1849f0abe906228f90951dfdb856e879ce1b90330374b6f348a",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/confirm.wav",
+      "sha256": "1750a1a3b74862ad70d054a05dc9f574cbaa5b969525cc723d353aa6bf154ce0",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/confirm.wav.import",
+      "sha256": "95e3223004af1050bb5c95977c4f571feeb8fe96c4c8db519631380431574986",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/denied.wav",
+      "sha256": "afcd1c55f0c5921c8e455211591b00970055c04b5a86953ec7f5ab258c3daedb",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/denied.wav.import",
+      "sha256": "4a141c78bff090355879cc7bceb15a281e85c25bf68046238c3a0e07dee8ea81",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/ex.wav",
+      "sha256": "c0e627197abb1a0871937c224714010a7e82e3ea721274c985533e904dcd17ca",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/ex.wav.import",
+      "sha256": "6758196c1d837b76b7348f577b3ac277538636ec0161649402a843448729ea45",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/foundry_loop.wav",
+      "sha256": "97f6364c66a6064934f166bbb38b14cf1bb98fe4c9ecb5bd8d6f458647a52bd4",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/foundry_loop.wav.import",
+      "sha256": "6ee70151b13c2d1358351dd032983b8d3a44f357438ae24e1d174f38bc887126",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/heavy.wav",
+      "sha256": "11e9a450dc4f5c4ac331c1a0c418c7329cc78bc9e5c04fd6ff7b32d10e669ef9",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/heavy.wav.import",
+      "sha256": "24a8fe92fa7569a5d7dd9fa22c23bbb8af74e38b580b397b260e13c6f96f45e2",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/hit.wav",
+      "sha256": "f10eab9480a7bdb7430c5d1d3bc41a8cba56c080449ee711fcb37c34ebab51fd",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/hit.wav.import",
+      "sha256": "da413b4aa4fd42dc69b1fd22e43224c0989cd53c8476b3831dde3e95a3fe14c4",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/ko.wav",
+      "sha256": "47a5607998b3eb5b4036482da7823d906243332e2972893e78ea584c0097b7f6",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/ko.wav.import",
+      "sha256": "93b782e317ffe2856d318f6805d22f157cd94d3358072360f8711aaedbf793aa",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/land.wav",
+      "sha256": "843b6e641992286ed9bb8062425c16f28e02a80638913861770422feec956481",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/land.wav.import",
+      "sha256": "c88c55f0e48cb0a96174ba377e5656b404b73e639e4a353151fd2231f3ff7b78",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/parry.wav",
+      "sha256": "8c006c41ba1d60b3435c34f8ae2b52cea46ac91e78c1a9685217b8e72277fc8f",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/parry.wav.import",
+      "sha256": "7b854466cbc79d4e456a196f1194f0d72c0a85bd560e3e487f619c5f7d8f579a",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/round.wav",
+      "sha256": "79451a191b50154224deeabfd9649b3db7843133517bc3342af6f6673ae53dcb",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/round.wav.import",
+      "sha256": "2bb52fa0d7d3910c5d9fd9d05c4922e48ca483d1f137dd8db9787b46d58e6a19",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/select.wav",
+      "sha256": "d32dd32d8ddce5d84b0311b7977efe6dadc8225da1c5d7026ca240b86a9c221e",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/select.wav.import",
+      "sha256": "3249fd48851146391d9c9df41ba9737d8d10fcf633a350c951ef137f739fe913",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/super.wav",
+      "sha256": "aeb7c771834b4c5d72d752c439d3cd30fae239eae49ae0fd80659fb6699f4ea9",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/super.wav.import",
+      "sha256": "219008f7d7432ba9fe04d4fd758b1e1367acd91ec6636c93be7d79f9f64ddbc6",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/swing.wav",
+      "sha256": "cdf8058b36b9a19ff52d3c09dc7c66745044ce2612488b0f17433020ab7aee51",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/swing.wav.import",
+      "sha256": "11c3ab40c99621aba4958c53be861cad22a74f02c821b37a1d51f4fd4a3c5c65",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/throw.wav",
+      "sha256": "5e89d8b4a800845cca4cca9d95e393ba388c4bfaf9829183f2bb0a1bb27f565d",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/Audio/throw.wav.import",
+      "sha256": "6e57b3ed64e00d7ebd0f9f9ea85252e2f6a132f312c947eb9e6adb0f32f87847",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/FighterPalette.gdshader",
+      "sha256": "0351148ef87e5ee2e23c79ce67a9ba5c79138ffec27f31f5f4ae1c57547b76ce",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/FighterSprites.cs",
+      "sha256": "2f7ff65ac7936920ebfa8b440ef4bd5ceb89bbc132abaab3e6fe27c5791ceb17",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/FoundryBackdrop.cs",
+      "sha256": "688af4197fdd23f4c4879336c48979ef54a0c1cb41f3ee4101dbd8b0bf459597",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/RenderState.cs",
+      "sha256": "4c40f7b5cd8c43160000f52fcd7d6784ffd4db1108ed1f2f5c83d83d6b9d35ab",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/RuntimeProfiler.cs",
+      "sha256": "334293cb943a2865566ee9bd8258d7b52fe31c3a9413b59d0d2b6c4c121c0410",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/Presentation/UiSmokeLaunch.tscn",
+      "sha256": "42f1c9a4bdcaae445f0aacf8d8b678417149839ea810e88341b84b641d8c457f",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/StrikeLedger.csproj",
+      "sha256": "be2098dcfa1192aa39a012f0a19d797c534f2b1cf4ac3c541f2cf145b3e4ccc3",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/StrikeLedger.sln",
+      "sha256": "ebb844c034acda4aa7da909a4b9d55ca46f185b848ccc4022ee3eaa0be491aed",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/export_presets.cfg",
+      "sha256": "b0933e9c2677145b1d8adf80484db30a7d2fb7adb3ca73775a3a574de5060809",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "game/project.godot",
+      "sha256": "daf5c03e4c7f0cf15a1f400bff197c9a318c042afb207c3461d709e211197bcd",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.App/Bots.cs",
+      "sha256": "a97e8360fa7e5482d994aaa3434d876aad71233c18a7188e9feeecda7211ed96",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.App/PrivateMatchPeer.cs",
+      "sha256": "89cda94af864440cd0b6ba1ac8d66ece8b56d4634736972a6b780fe25eabe4da",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.App/Replay.cs",
+      "sha256": "8b1f48eb7146d7605393844b641470e02efd1b47adc465149c613746291472f1",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.App/RollbackSession.cs",
+      "sha256": "6ca7c5f4dff101366520e3db457b6a1b2cd7c9a94dbda7375af99df5e37303b0",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.App/StrikeLedger.App.csproj",
+      "sha256": "191059031f8aceb380b34b9b7be6761ac966c962a2ee1e42d81b61b5bb48c9fa",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.App/Training.cs",
+      "sha256": "5c2371f8e35997701f410dadd57cdaa6c2e5a837955627b8b0c86f2089b42b47",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.App/UdpTransport.cs",
+      "sha256": "2b1850d13ae3f52daf947ea6ca90f930c270e2d13ea4555e61a0ebafb1ee575f",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.Core/CoreMath.cs",
+      "sha256": "00283db2a14cdd2955a3aafb6368358d36dd7d2becd0572b3e3a2c91fb73327a",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.Core/EconomySeed.cs",
+      "sha256": "65a4e4b020bb7df2e7a991378639fc6a0e0a9341e3f09ffd66f6102be1d35d72",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.Core/GameContent.cs",
+      "sha256": "bc0781fc98340605dc3835dcac77e5ef917cdf6080f6efe376e369e59ef793b6",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.Core/InputFrame.cs",
+      "sha256": "b5e453bacc4738fb6f6cae4ecd6e5449ad976986f6792e9dd5ff0580d441f601",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.Combat.cs",
+      "sha256": "9ba5bd4444286f596a0317a401b8eed3f3a34195abe157ec85d89b8672088443",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.Input.cs",
+      "sha256": "ea6b9d5e9e67b0c13678207d28fa4775d0bd7293bc1c3a35c8e002a499f623e3",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.Serialization.cs",
+      "sha256": "b194127157300fcbb77cd5d3bf2d6942cb876b2c833b607b671d2e692da3fb8e",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.cs",
+      "sha256": "021cd86e0f136350eea5bcdf5c1e32fa7fb22676c7a1de9165009ecfcc9404bd",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.Core/SimulationState.cs",
+      "sha256": "41e22274f9b106fc55b270fb21dda494d148fd8351a3056a9dba2741c8b588e5",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.Core/StrikeLedger.Core.csproj",
+      "sha256": "e4fd5ab881177cbb6cfce7717d017801f046b26f97fc33ae794c75689fec2309",
+      "matches_imported_candidate": true
+    },
+    {
+      "path": "src/StrikeLedger.Core/SystemRules.cs",
+      "sha256": "bf523008552504fce0facb3974f88aff296cab051ad519b449689a604528825d",
+      "matches_imported_candidate": true
+    }
+  ],
+  "artifacts": {
+    "app-self-tests.json": "9f22714635979205fdf36b1edee7c5a5ac4e157b34b37b763c11a6d341ef946b",
+    "build-and-tests.log": "6469621c800a6d498eaadb6a6335d713654705072dca01c106bee97892780082",
+    "core-conformance.json": "9e5a2c4fae66e180b2142e9e6e3301eea685df12009d65cf4aa5e33fa5e378cf"
+  }
+}

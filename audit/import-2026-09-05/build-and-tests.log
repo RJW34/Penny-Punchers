@@ -1,0 +1,269 @@
+$ C:\Users\ryanj\AppData\Local\Programs\Python\Python312\python.exe tools/copy_content.py --apply
+{
+  "scope": "CONTENT_COPY_ONLY",
+  "mode": "APPLY",
+  "files": 13,
+  "content_sha256": "6fd0fe07da1f14d72754869b12cfe6cf21721d5055572c5b9f5b43dd72604c8b",
+  "destination": "game/GeneratedData"
+}
+
+EXIT 0
+$ D:\cs-fighting-game\split-circuit-scaffold\tools\.cache\dotnet\dotnet.exe build game/StrikeLedger.csproj -c Debug
+  Determining projects to restore...
+  Restored D:\cs-fighting-game\Penny-Punchers\src\StrikeLedger.Core\StrikeLedger.Core.csproj (in 402 ms).
+  Restored D:\cs-fighting-game\Penny-Punchers\src\StrikeLedger.App\StrikeLedger.App.csproj (in 462 ms).
+  Restored D:\cs-fighting-game\Penny-Punchers\game\StrikeLedger.csproj (in 781 ms).
+  StrikeLedger.Core -> D:\cs-fighting-game\Penny-Punchers\src\StrikeLedger.Core\bin\Debug\net8.0\StrikeLedger.Core.dll
+  StrikeLedger.App -> D:\cs-fighting-game\Penny-Punchers\src\StrikeLedger.App\bin\Debug\net8.0\StrikeLedger.App.dll
+  StrikeLedger -> D:\cs-fighting-game\Penny-Punchers\game\.godot\mono\temp\bin\Debug\StrikeLedger.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:28.77
+
+EXIT 0
+$ D:\cs-fighting-game\split-circuit-scaffold\tools\.cache\godot\Godot_v4.6.3-stable_mono_win64\Godot_v4.6.3-stable_mono_win64_console.exe --headless --path D:\cs-fighting-game\Penny-Punchers\game --editor --import --quit
+Godot Engine v4.6.3.stable.mono.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (29 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   3% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   6% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  10% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  13% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  16% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  23% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  26% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  30% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  36% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  43% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  46% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  53% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  56% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  63% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  66% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  70% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  73% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  76% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  80% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  83% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  86% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  90% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  93% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (35 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | combat-atlas.png[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | normals.png[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | supplemental.png[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | techniques.png[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | universal.png[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | normals-matte.png[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | super2-clean-matte.png[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | supplemental-matte.png[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | techniques-matte.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | universal-matte.png[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | foundry.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | grid.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | branding-announcements.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | hud-atlas.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | interface-atlas.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | lease-icons.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | rook-identity.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | title-backdrop.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | vale-identity.png[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | block.wav[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | cancel.wav[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | confirm.wav[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | denied.wav[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | ex.wav[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | foundry_loop.wav[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | heavy.wav[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | hit.wav[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | ko.wav[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | land.wav[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | parry.wav[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | round.wav[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | select.wav[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | super.wav[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | swing.wav[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | throw.wav[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (35 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   2% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   5% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   8% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  11% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  13% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  16% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  19% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  22% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  25% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  27% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  30% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  33% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  36% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  38% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  41% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  44% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  47% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  50% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  52% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  55% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  58% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  61% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  63% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  66% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  69% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  72% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  75% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  77% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  80% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  83% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  86% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  88% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  91% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  94% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing pre-reimport operations...[39m[0m
+[   0% ] [90m[1mreimport[22m | vale-identity.png[39m[0m
+[   0% ] [90m[1mreimport[22m | vale-identity.png[39m[0m
+[   2% ] [90m[1mreimport[22m | title-backdrop.png[39m[0m
+[   5% ] [90m[1mreimport[22m | rook-identity.png[39m[0m
+[   8% ] [90m[1mreimport[22m | lease-icons.png[39m[0m
+[  11% ] [90m[1mreimport[22m | interface-atlas.png[39m[0m
+[  13% ] [90m[1mreimport[22m | hud-atlas.png[39m[0m
+[  16% ] [90m[1mreimport[22m | branding-announcements.png[39m[0m
+[  16% ] [90m[1mreimport[22m | branding-announcements.png[39m[0m
+[  19% ] [90m[1mreimport[22m | grid.png[39m[0m
+[  22% ] [90m[1mreimport[22m | foundry.png[39m[0m
+[  25% ] [90m[1mreimport[22m | combat-atlas.png[39m[0m
+[  27% ] [90m[1mreimport[22m | normals.png[39m[0m
+[  30% ] [90m[1mreimport[22m | supplemental.png[39m[0m
+[  33% ] [90m[1mreimport[22m | techniques.png[39m[0m
+[  36% ] [90m[1mreimport[22m | universal.png[39m[0m
+[  38% ] [90m[1mreimport[22m | normals-matte.png[39m[0m
+[  41% ] [90m[1mreimport[22m | super2-clean-matte.png[39m[0m
+[  44% ] [90m[1mreimport[22m | supplemental-matte.png[39m[0m
+[  47% ] [90m[1mreimport[22m | techniques-matte.png[39m[0m
+[  50% ] [90m[1mreimport[22m | universal-matte.png[39m[0m
+[  52% ] [90m[1mreimport[22m | vale-identity.png[39m[0m
+[  55% ] [90m[1mreimport[22m | title-backdrop.png[39m[0m
+[  58% ] [90m[1mreimport[22m | rook-identity.png[39m[0m
+[  61% ] [90m[1mreimport[22m | lease-icons.png[39m[0m
+[  63% ] [90m[1mreimport[22m | interface-atlas.png[39m[0m
+[  66% ] [90m[1mreimport[22m | hud-atlas.png[39m[0m
+[  69% ] [90m[1mreimport[22m | branding-announcements.png[39m[0m
+[  72% ] [90m[1mreimport[22m | grid.png[39m[0m
+[  75% ] [90m[1mreimport[22m | foundry.png[39m[0m
+[  77% ] [90m[1mreimport[22m | combat-atlas.png[39m[0m
+[  80% ] [90m[1mreimport[22m | normals.png[39m[0m
+[  83% ] [90m[1mreimport[22m | supplemental.png[39m[0m
+[  86% ] [90m[1mreimport[22m | techniques.png[39m[0m
+[  88% ] [90m[1mreimport[22m | universal.png[39m[0m
+[  91% ] [90m[1mreimport[22m | normals-matte.png[39m[0m
+[  94% ] [90m[1mreimport[22m | super2-clean-matte.png[39m[0m
+[  97% ] [90m[1mreimport[22m | Finalizing Asset Import...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (35 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing post-reimport operations...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+
+EXIT 0
+$ D:\cs-fighting-game\split-circuit-scaffold\tools\.cache\dotnet\dotnet.exe run --project D:\cs-fighting-game\Penny-Punchers\src\StrikeLedger.ContractTests\StrikeLedger.ContractTests.csproj -c ExportRelease -- --data D:\cs-fighting-game\Penny-Punchers\data --self-test --evidence-dir D:\cs-fighting-game\Penny-Punchers\reports\evidence\build-test\StrikeLedger.ContractTests
+SCAFFOLD_SEED_CONFORMANCE_ONLY: 15 checks passed. Gameplay/network/device/feel NOT VERIFIED.
+
+EXIT 0
+$ D:\cs-fighting-game\split-circuit-scaffold\tools\.cache\dotnet\dotnet.exe run --project D:\cs-fighting-game\Penny-Punchers\src\StrikeLedger.CoreTests\StrikeLedger.CoreTests.csproj -c ExportRelease -- --data D:\cs-fighting-game\Penny-Punchers\data --self-test --evidence-dir D:\cs-fighting-game\Penny-Punchers\reports\evidence\build-test\StrikeLedger.CoreTests
+PASS content_all_98_actions
+PASS all_rook_moves
+PASS all_vale_moves
+PASS all_lease_items
+PASS all_98_commands_recognized
+PASS input_motion_both_sides
+PASS charge_crossup
+PASS exact_credit_ex
+PASS insufficient_credit_no_fallback
+PASS reserve_two_ex_then_deny
+PASS negative_edge_paid_forbidden
+PASS free_kit_round
+PASS high_low_parry
+PASS red_parry_boundary
+PASS multihit_super_parry
+PASS ex_cancel_super_costs
+PASS same_tick_supers_and_freeze
+PASS quickrise_and_jump_throw_immunity
+PASS air_parry_and_projectile_source_freeze
+PASS target_combo_reversal_and_dizzy
+PASS economy_hand_derived_match_sequences
+PASS blocking_chip_and_no_air_block
+PASS simultaneous_trade_and_rank
+PASS paid_startup_interrupted
+PASS cancel_contact_not_whiff
+PASS throw_kara_quickrise
+PASS projectile_cap_and_clash
+PASS preparation_atomic_idempotent
+PASS leased_replacement_and_selected_super
+PASS rollback_spend_receipts
+PASS confirmed_settlement_only
+PASS nine_round_match_draw
+PASS snapshot_determinism_and_bounds
+PASS movement_jump_dash_and_walls
+PASS seat_swap_mirror_symmetry
+PASS performance_and_rollback_budget
+36/36 production core scenarios passed.
+
+EXIT 0
+$ D:\cs-fighting-game\split-circuit-scaffold\tools\.cache\dotnet\dotnet.exe run --project D:\cs-fighting-game\Penny-Punchers\src\StrikeLedger.NetworkLab\StrikeLedger.NetworkLab.csproj -c ExportRelease -- --data D:\cs-fighting-game\Penny-Punchers\data --self-test --evidence-dir D:\cs-fighting-game\Penny-Punchers\reports\evidence\build-test\StrikeLedger.NetworkLab
+PASS rollback_corrects_input_wallet_receipts
+PASS prediction_stalls_after_eight_frames
+PASS late_parry_retracts_predicted_paid_super_ko
+PASS full_bot_match_replay_and_seek
+PASS replay_malformed_identity_bounds
+PASS training_controls_are_isolated_and_record_real_inputs
+PASS actual_udp_rejects_incompatible_handshake_and_forged_seat
+PASS actual_udp_oversized_packets_are_bounded
+PASS actual_udp_disconnect_preparation_paid_startup_pause_resume
+PASS drill motion_both_facings
+PASS drill charge_side_switch
+PASS drill same_tick_ex
+PASS drill link_cancel
+PASS drill target_combo
+PASS drill high_low_air_parry
+PASS drill red_parry
+PASS drill multihit_parry
+PASS drill jumpin_antiair
+PASS drill throw_tech
+PASS drill kara_throw
+PASS drill quickrise_reversal
+PASS drill hitconfirm_super
+PASS drill insufficient_funds
+PASS drill eco_defense
+PASS drill rollback_spend
+PASS all_training_drill_evaluators
+
+EXIT 0

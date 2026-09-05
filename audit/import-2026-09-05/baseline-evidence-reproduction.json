@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "started_utc": "2026-09-05T19:48:28.500887+00:00",
+  "original_commit": "ab951b790fdf657d7e32fe6f9c16ede31855a77c",
+  "original_repository": "D:\\cs-fighting-game\\trad-fighter-variant\\strike-ledger-astra-scaffold",
+  "independent_checkout": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\baseline-reproduction",
+  "archive": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\publish\\Penny-Punchers-audit-evidence.zip",
+  "commands": [
+    {
+      "name": "clone",
+      "command": [
+        "git",
+        "clone",
+        "--no-hardlinks",
+        "--no-checkout",
+        "D:\\cs-fighting-game\\trad-fighter-variant\\strike-ledger-astra-scaffold",
+        "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\baseline-reproduction"
+      ],
+      "cwd": "D:\\cs-fighting-game\\Penny-Punchers",
+      "exit_code": 0,
+      "elapsed_seconds": 1.375,
+      "stdout": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\publish\\baseline-reproduction-logs\\clone-stdout.log",
+      "stderr": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\publish\\baseline-reproduction-logs\\clone-stderr.log"
+    },
+    {
+      "name": "checkout",
+      "command": [
+        "git",
+        "-C",
+        "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\baseline-reproduction",
+        "checkout",
+        "--detach",
+        "ab951b790fdf657d7e32fe6f9c16ede31855a77c"
+      ],
+      "cwd": "D:\\cs-fighting-game\\Penny-Punchers",
+      "exit_code": 0,
+      "elapsed_seconds": 1.187,
+      "stdout": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\publish\\baseline-reproduction-logs\\checkout-stdout.log",
+      "stderr": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\publish\\baseline-reproduction-logs\\checkout-stderr.log"
+    },
+    {
+      "name": "confirm-commit",
+      "command": [
+        "git",
+        "-C",
+        "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\baseline-reproduction",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "D:\\cs-fighting-game\\Penny-Punchers",
+      "exit_code": 0,
+      "elapsed_seconds": 0.063,
+      "stdout": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\publish\\baseline-reproduction-logs\\confirm-commit-stdout.log",
+      "stderr": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\publish\\baseline-reproduction-logs\\confirm-commit-stderr.log"
+    },
+    {
+      "name": "software-gate",
+      "command": [
+        "C:\\Users\\ryanj\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "tools/release_gate.py",
+        "--tier",
+        "software"
+      ],
+      "cwd": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\baseline-reproduction",
+      "exit_code": 0,
+      "elapsed_seconds": 7.813,
+      "stdout": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\publish\\baseline-reproduction-logs\\software-gate-stdout.log",
+      "stderr": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\publish\\baseline-reproduction-logs\\software-gate-stderr.log"
+    },
+    {
+      "name": "all-tier-gate",
+      "command": [
+        "C:\\Users\\ryanj\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "tools/release_gate.py",
+        "--tier",
+        "all"
+      ],
+      "cwd": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\baseline-reproduction",
+      "exit_code": 1,
+      "elapsed_seconds": 8.64,
+      "stdout": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\publish\\baseline-reproduction-logs\\all-tier-gate-stdout.log",
+      "stderr": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\publish\\baseline-reproduction-logs\\all-tier-gate-stderr.log"
+    }
+  ],
+  "checks": {
+    "archive_digest_matches_package_result": true,
+    "independent_original_commit_checkout": true,
+    "release_gate_unchanged": true,
+    "all_archive_paths_within_checkout": true,
+    "all_extracted_artifact_hashes_match": true,
+    "software_gate_76_of_76_pass": true,
+    "all_tier_expected_three_external_not_run": true,
+    "release_gate_still_unchanged": true
+  },
+  "passed": true,
+  "archive_sha256": "dae1ff1636d978b1cc7a928b7c60b337fae5632183303fa440a57e26fb807058",
+  "release_gate_source_sha256": "c9725348211c14404506c94b9a4050f870a6b6e801c7d9f77f29f7fdca275186",
+  "extracted_artifact_count": 126,
+  "software": {
+    "scope": "EVIDENCE_COMPLETENESS_AND_INTEGRITY_ONLY",
+    "tier": "software",
+    "status": "PASS",
+    "required": 76,
+    "verified_records": 76,
+    "problems": [],
+    "truth_review": "Reproduce commands and inspect actual gameplay; file/hash validation alone cannot establish truth or feel."
+  },
+  "all_tiers": {
+    "scope": "EVIDENCE_COMPLETENESS_AND_INTEGRITY_ONLY",
+    "tier": "all",
+    "status": "FAIL",
+    "required": 82,
+    "verified_records": 79,
+    "problems": [
+      "DEVICE-003: status NOT_RUN",
+      "DEVICE-004: status NOT_RUN",
+      "HUMAN-001: status NOT_RUN",
+      "HUMAN-001: missing actual human reviewer",
+      "HUMAN-001: missing artifact kinds ['human_feedback']"
+    ],
+    "truth_review": "Reproduce commands and inspect actual gameplay; file/hash validation alone cannot establish truth or feel."
+  },
+  "completed_utc": "2026-09-05T19:48:54.492505+00:00",
+  "scope": "Actual independent local clone without hardlinks, exact original commit checkout, safe evidence extraction with member hash validation, and unchanged release-gate commands. Original repository and main Penny-Punchers Git state were not changed. All-tier failure is the expected external hardware/human evidence boundary."
+}

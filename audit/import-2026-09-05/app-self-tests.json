@@ -1,0 +1,67 @@
+{
+  "utc": "2026-09-05T19:42:30.0684011Z",
+  "platform": "Microsoft Windows NT 10.0.19045.0",
+  "build": "strike-ledger-native-1/f1f7ee6dc23922d9dbf773396ed66cf344f010a720bf568b618572b32bcf9c63",
+  "contentHash": "ec249786c06cb4e5cc4a0ea2dd84fe8c818d8360a11977d85f1b9aa66c293e63",
+  "command": [
+    "D:\\cs-fighting-game\\Penny-Punchers\\src\\StrikeLedger.NetworkLab\\bin\\ExportRelease\\net8.0\\StrikeLedger.NetworkLab.dll",
+    "--data",
+    "D:\\cs-fighting-game\\Penny-Punchers\\data",
+    "--self-test",
+    "--evidence-dir",
+    "D:\\cs-fighting-game\\Penny-Punchers\\reports\\evidence\\build-test\\StrikeLedger.NetworkLab"
+  ],
+  "exitCode": 0,
+  "results": [
+    {
+      "name": "rollback_corrects_input_wallet_receipts",
+      "passed": true,
+      "milliseconds": 277.8786
+    },
+    {
+      "name": "prediction_stalls_after_eight_frames",
+      "passed": true,
+      "milliseconds": 2.046
+    },
+    {
+      "name": "late_parry_retracts_predicted_paid_super_ko",
+      "passed": true,
+      "milliseconds": 48.3513
+    },
+    {
+      "name": "full_bot_match_replay_and_seek",
+      "passed": true,
+      "milliseconds": 6220.5944
+    },
+    {
+      "name": "replay_malformed_identity_bounds",
+      "passed": true,
+      "milliseconds": 0.6108
+    },
+    {
+      "name": "training_controls_are_isolated_and_record_real_inputs",
+      "passed": true,
+      "milliseconds": 196.1446
+    },
+    {
+      "name": "actual_udp_rejects_incompatible_handshake_and_forged_seat",
+      "passed": true,
+      "milliseconds": 143.2761
+    },
+    {
+      "name": "actual_udp_oversized_packets_are_bounded",
+      "passed": true,
+      "milliseconds": 15.7932
+    },
+    {
+      "name": "actual_udp_disconnect_preparation_paid_startup_pause_resume",
+      "passed": true,
+      "milliseconds": 16271.4925
+    },
+    {
+      "name": "all_training_drill_evaluators",
+      "passed": true,
+      "milliseconds": 15632.3601
+    }
+  ]
+}
