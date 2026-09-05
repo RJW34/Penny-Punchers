@@ -1,0 +1,128 @@
+SCAFFOLD PACKAGING CHECK ONLY
+Command: /opt/pyvenv/bin/python -m unittest discover -s reference/tests -v
+Expected exit: 0
+Actual exit: 0
+UTC: 2026-09-05T06:35:07.139574+00:00
+
+STDOUT
+
+STDERR
+test_changed_same_id (test_reference.MatchTests.test_changed_same_id) ... ok
+test_duplicate_payout (test_reference.MatchTests.test_duplicate_payout) ... ok
+test_five_wins (test_reference.MatchTests.test_five_wins) ... ok
+test_invalid_result_atomic (test_reference.MatchTests.test_invalid_result_atomic) ... ok
+test_new_id_same_round (test_reference.MatchTests.test_new_id_same_round) ... ok
+test_nine_draws (test_reference.MatchTests.test_nine_draws) ... ok
+test_no_legacy_functions (test_reference.MatchTests.test_no_legacy_functions) ... ok
+test_no_speculative_result (test_reference.MatchTests.test_no_speculative_result) ... ok
+test_out_of_order (test_reference.MatchTests.test_out_of_order) ... ok
+test_points_conservation (test_reference.MatchTests.test_points_conservation) ... ok
+test_post_terminal (test_reference.MatchTests.test_post_terminal) ... ok
+test_result_copy (test_reference.MatchTests.test_result_copy) ... ok
+test_vectors (test_reference.MatchTests.test_vectors) ... ok
+test_bad_health (test_reference.MathInputTableTests.test_bad_health) ... ok
+test_div_zero (test_reference.MathInputTableTests.test_div_zero) ... ok
+test_facing_involution (test_reference.MathInputTableTests.test_facing_involution) ... ok
+test_facing_qcf (test_reference.MathInputTableTests.test_facing_qcf) ... ok
+test_health_winner (test_reference.MathInputTableTests.test_health_winner) ... ok
+test_math_vectors (test_reference.MathInputTableTests.test_math_vectors) ... ok
+test_new_ex_chord_edge (test_reference.MathInputTableTests.test_new_ex_chord_edge) ... ok
+test_no_new_held_edge (test_reference.MathInputTableTests.test_no_new_held_edge) ... ok
+test_normalized_health (test_reference.MathInputTableTests.test_normalized_health) ... ok
+test_parry_truth_table (test_reference.MathInputTableTests.test_parry_truth_table) ... ok
+test_release_edges (test_reference.MathInputTableTests.test_release_edges) ... ok
+test_throw_unparryable (test_reference.MathInputTableTests.test_throw_unparryable) ... ok
+test_atomic_pair (test_reference.PlanTests.test_atomic_pair) ... ok
+test_bad_second_rolls_back_first (test_reference.PlanTests.test_bad_second_rolls_back_first) ... ok
+test_canonical_lease_order_idempotent (test_reference.PlanTests.test_canonical_lease_order_idempotent) ... ok
+test_conflicting_commit (test_reference.PlanTests.test_conflicting_commit) ... ok
+test_draft_not_mutation (test_reference.PlanTests.test_draft_not_mutation) ... ok
+test_duplicate_commit (test_reference.PlanTests.test_duplicate_commit) ... ok
+test_duplicate_item (test_reference.PlanTests.test_duplicate_item) ... ok
+test_duplicate_slot (test_reference.PlanTests.test_duplicate_slot) ... ok
+test_empty (test_reference.PlanTests.test_empty) ... ok
+test_exactly_two (test_reference.PlanTests.test_exactly_two) ... ok
+test_floor_projection (test_reference.PlanTests.test_floor_projection) ... ok
+test_floor_too_high (test_reference.PlanTests.test_floor_too_high) ... ok
+test_full (test_reference.PlanTests.test_full) ... ok
+test_new_id_cannot_recommit (test_reference.PlanTests.test_new_id_cannot_recommit) ... ok
+test_receipt_deep_copy (test_reference.PlanTests.test_receipt_deep_copy) ... ok
+test_technique (test_reference.PlanTests.test_technique) ... ok
+test_unaffordable (test_reference.PlanTests.test_unaffordable) ... ok
+test_unknown_item (test_reference.PlanTests.test_unknown_item) ... ok
+test_wrong_character (test_reference.PlanTests.test_wrong_character) ... ok
+test_bad_floor (test_reference.SpendTests.test_bad_floor) ... ok
+test_bool_cost (test_reference.SpendTests.test_bool_cost) ... ok
+test_double_paid_cancel (test_reference.SpendTests.test_double_paid_cancel) ... ok
+test_event_payload_conflict (test_reference.SpendTests.test_event_payload_conflict) ... ok
+test_floor_two_then_deny (test_reference.SpendTests.test_floor_two_then_deny) ... ok
+test_free_at_zero (test_reference.SpendTests.test_free_at_zero) ... ok
+test_idempotence (test_reference.SpendTests.test_idempotence) ... ok
+test_illegal_no_spend (test_reference.SpendTests.test_illegal_no_spend) ... ok
+test_negative_cost (test_reference.SpendTests.test_negative_cost) ... ok
+test_no_gameplay_refund_api (test_reference.SpendTests.test_no_gameplay_refund_api) ... ok
+test_random_spends_conserve (test_reference.SpendTests.test_random_spends_conserve) ... ok
+test_restore_removed_move (test_reference.SpendTests.test_restore_removed_move) ... ok
+test_restore_then_replay (test_reference.SpendTests.test_restore_then_replay) ... ok
+test_two_ex_then_empty (test_reference.SpendTests.test_two_ex_then_empty) ... ok
+test_vectors (test_reference.SpendTests.test_vectors) ... ok
+test_bad_tier (test_reference.WalletTests.test_bad_tier) ... ok
+test_bool (test_reference.WalletTests.test_bool) ... ok
+test_cap_receipt (test_reference.WalletTests.test_cap_receipt) ... ok
+test_default (test_reference.WalletTests.test_default) ... ok
+test_draw_preserves_tier (test_reference.WalletTests.test_draw_preserves_tier) ... ok
+test_float (test_reference.WalletTests.test_float) ... ok
+test_immutable (test_reference.WalletTests.test_immutable) ... ok
+test_negative (test_reference.WalletTests.test_negative) ... ok
+test_only_scalar_balance (test_reference.WalletTests.test_only_scalar_balance) ... ok
+test_over_cap (test_reference.WalletTests.test_over_cap) ... ok
+test_random_payout_invariants (test_reference.WalletTests.test_random_payout_invariants) ... ok
+test_three_losses (test_reference.WalletTests.test_three_losses) ... ok
+test_unknown_outcome (test_reference.WalletTests.test_unknown_outcome) ... ok
+test_vectors (test_reference.WalletTests.test_vectors) ... ok
+test_win_decreases_one (test_reference.WalletTests.test_win_decreases_one) ... ok
+test_added_meter_is_rejected (test_scope_regression.ContentMutationTests.test_added_meter_is_rejected) ... ok
+test_added_team_mode_is_rejected (test_scope_regression.ContentMutationTests.test_added_team_mode_is_rejected) ... ok
+test_combat_income_is_rejected (test_scope_regression.ContentMutationTests.test_combat_income_is_rejected) ... ok
+test_four_peers_is_rejected (test_scope_regression.ContentMutationTests.test_four_peers_is_rejected) ... ok
+test_kara_window_drift_is_rejected (test_scope_regression.ContentMutationTests.test_kara_window_drift_is_rejected) ... ok
+test_move_without_effect_rejected (test_scope_regression.ContentMutationTests.test_move_without_effect_rejected) ... ok
+test_bool_balance_rejected (test_scope_regression.ScopeSchemaTests.test_bool_balance_rejected) ... ok
+test_client_balance_in_plan_rejected (test_scope_regression.ScopeSchemaTests.test_client_balance_in_plan_rejected) ... ok
+test_dual_arena_packet_rejected (test_scope_regression.ScopeSchemaTests.test_dual_arena_packet_rejected) ... ok
+test_old_recovery_bucket_rejected (test_scope_regression.ScopeSchemaTests.test_old_recovery_bucket_rejected) ... ok
+test_scalar_wallet_valid (test_scope_regression.ScopeSchemaTests.test_scalar_wallet_valid) ... ok
+test_sponsor_rejected (test_scope_regression.ScopeSchemaTests.test_sponsor_rejected) ... ok
+test_third_seat_rejected (test_scope_regression.ScopeSchemaTests.test_third_seat_rejected) ... ok
+test_transfer_command_rejected (test_scope_regression.ScopeSchemaTests.test_transfer_command_rejected) ... ok
+test_apply_copies_original_bytes (test_tools.ContentToolTests.test_apply_copies_original_bytes) ... ok
+test_dry_run_does_not_write (test_tools.ContentToolTests.test_dry_run_does_not_write) ... ok
+test_repeat_stable_hash (test_tools.ContentToolTests.test_repeat_stable_hash) ... ok
+test_source_mutation_changes_hash (test_tools.ContentToolTests.test_source_mutation_changes_hash) ... ok
+test_unknown_extra_file_refused (test_tools.ContentToolTests.test_unknown_extra_file_refused) ... ok
+test_unowned_destination_refused (test_tools.ContentToolTests.test_unowned_destination_refused) ... ok
+test_blocked_fails (test_tools.GateTests.test_blocked_fails) ... ok
+test_changed_canonical_data_fails (test_tools.GateTests.test_changed_canonical_data_fails) ... ok
+test_complete_fixture_integrity_passes_not_game (test_tools.GateTests.test_complete_fixture_integrity_passes_not_game) ... ok
+test_duplicate_fails (test_tools.GateTests.test_duplicate_fails) ... ok
+test_empty_fails (test_tools.GateTests.test_empty_fails) ... ok
+test_empty_file_fails (test_tools.GateTests.test_empty_file_fails) ... ok
+test_false_exit_fails (test_tools.GateTests.test_false_exit_fails) ... ok
+test_initial_real_game_ledger_fails (test_tools.GateTests.test_initial_real_game_ledger_fails) ... ok
+test_missing_build_fails (test_tools.GateTests.test_missing_build_fails) ... ok
+test_missing_candidate_fails (test_tools.GateTests.test_missing_candidate_fails) ... ok
+test_missing_file_fails (test_tools.GateTests.test_missing_file_fails) ... ok
+test_nonutc_fails (test_tools.GateTests.test_nonutc_fails) ... ok
+test_nonzero_exit_fails (test_tools.GateTests.test_nonzero_exit_fails) ... ok
+test_old_build_fails (test_tools.GateTests.test_old_build_fails) ... ok
+test_old_content_fails (test_tools.GateTests.test_old_content_fails) ... ok
+test_path_escape_fails (test_tools.GateTests.test_path_escape_fails) ... ok
+test_tampered_file_fails (test_tools.GateTests.test_tampered_file_fails) ... ok
+test_unknown_fails (test_tools.GateTests.test_unknown_fails) ... ok
+test_wrong_kind_fails (test_tools.GateTests.test_wrong_kind_fails) ... ok
+test_seed_semantic_validation (test_tools.PackValidationTests.test_seed_semantic_validation) ... ok
+
+----------------------------------------------------------------------
+Ran 114 tests in 0.384s
+
+OK

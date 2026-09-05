@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "logical_buttons": [
+    "LP",
+    "MP",
+    "HP",
+    "LK",
+    "MK",
+    "HK"
+  ],
+  "raw_direction": "screen_relative_numpad_1_to_9",
+  "neutral": 5,
+  "socd_horizontal": "neutral",
+  "socd_vertical": "neutral",
+  "diagonal_components": "no_normalization_speed_bonus",
+  "history_frames": 120,
+  "motion_total_window": 20,
+  "motion_step_gap": 8,
+  "motion_button_window": 5,
+  "double_motion_total_window": 30,
+  "charge_hold_ticks": 45,
+  "charge_release_window": 10,
+  "chord_grace_ticks": 0,
+  "link_buffer_ticks": 0,
+  "reversal_buffer_ticks": 2,
+  "special_negative_edge": true,
+  "negative_edge_for_chords": false,
+  "facing_epoch_policy": "clear_motion_tokens_and_horizontal_charge_keep_vertical_charge",
+  "motion_patterns": {
+    "qcf": [
+      2,
+      3,
+      6
+    ],
+    "qcb": [
+      2,
+      1,
+      4
+    ],
+    "dp": [
+      6,
+      2,
+      3
+    ],
+    "double_qcf": [
+      2,
+      3,
+      6,
+      2,
+      3,
+      6
+    ]
+  },
+  "chords": {
+    "throw": [
+      "LP",
+      "LK"
+    ],
+    "leap_overhead": [
+      "MP",
+      "MK"
+    ],
+    "taunt_or_gambit": [
+      "HP",
+      "HK"
+    ]
+  },
+  "priority": [
+    "throw_tech",
+    "selected_super",
+    "ex_special",
+    "special",
+    "normal_throw",
+    "leap_overhead",
+    "gambit_or_taunt",
+    "command_normal",
+    "proximity_normal",
+    "normal"
+  ],
+  "paid_negative_edge": false,
+  "paid_input_rejection": "consume_matched_command_no_debit_no_fallback_no_delayed_execution",
+  "controls_are_digital": true,
+  "kara_throw_ticks": 2,
+  "predicted_input_policy": "repeat_direction_and_held_buttons_edges_derived"
+}

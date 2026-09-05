@@ -1,0 +1,14 @@
+# One arena, exactly two opponents
+Flow: title → local/bot/private-network/training → device assignment → character and super selection → match initialization → preparation → simultaneous plan lock → reveal → countdown → combat → confirmed result → atomic score/payout → next preparation or match result → rematch/return.
+
+Both fighters reset full health, stun, positions, states, projectiles, charge/motion/parry histories and active loadout at a round boundary. Carried fields are credits, recovery tier, locked character/super and match score. Equipment is repurchased or omitted every round. The reserve preference must be confirmed for the next round (default zero); do not silently strand savings behind an old floor. Input release/neutralization across menus prevents a confirm button from activating a round-start paid move.
+
+A round is ONE health bar per player, 60 eligible combat seconds. Winner gains 2 half-point units (one displayed point); double KO/equal normalized health at timeout gives each 1 unit. Target is 10 units. At nine completed rounds, higher score wins even when neither has 10; equal 9–9 units is an explicit match draw. Avoid silently changing it to unlimited sudden death or importing a relay tiebreak. Display half points clearly. Exact parity `score0+score1 == 2*completedRounds` is a runtime invariant.
+
+At KO, process simultaneous contacts first. Record terminal tick and freeze presentation as pending. In offline play inputs are already authoritative. Online, wait until all required inputs THROUGH that terminal tick are confirmed. Reconcile rollback before settlement. A speculative KO that becomes a surviving parry must not produce payout, score, shop, permanent effects or match statistics.
+
+Payout and both scores apply together exactly once using a terminal transaction key. Repeating the same key/payload returns its prior result; changing payload under that id or re-settling the round under another id is rejected. No settlement beyond the final round. If an integration exception occurs, restore the pre-transaction snapshot rather than leaving one wallet paid and the other untouched.
+
+Win/loss takes precedence over normalized-health timeout on the same tick: after all contacts, any zero health resolves KO; otherwise timeout compares normalized health. Pause does not earn money. Disconnect after an agreed grace period is an aborted private session, not a completed competitive win or free economic payout. No reconnect reset exploit inside an existing match; restart only by explicit mutual new match.
+
+A rematch resets wallets to 600 and all match state. No accumulated player progression, profile currency or transactions outside this one match. A training reset also resets its selected scenario; it cannot mutate a matchmaking/account balance because none exists.

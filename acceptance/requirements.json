@@ -1,0 +1,944 @@
+{
+  "schema_version": 1,
+  "requirements": [
+    {
+      "id": "SCOPE-001",
+      "title": "Inspect actual workspace/Git, preserve owner work and record the newest strictly1v1/no-earned-meter scope.",
+      "description": "Inspect actual workspace/Git, preserve owner work and record the newest strictly1v1/no-earned-meter scope.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-000",
+      "required_evidence_kinds": [
+        "process_log"
+      ]
+    },
+    {
+      "id": "ENV-001",
+      "title": "Resolve a supported matching Godot .NET/editor/templates/SDK toolchain and actually compile the core and import the game.",
+      "description": "Resolve a supported matching Godot .NET/editor/templates/SDK toolchain and actually compile the core and import the game.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-000",
+      "required_evidence_kinds": [
+        "build_log"
+      ]
+    },
+    {
+      "id": "ENV-002",
+      "title": "Run scaffold validation and create a reproducible root build/test command without claiming it proves gameplay.",
+      "description": "Run scaffold validation and create a reproducible root build/test command without claiming it proves gameplay.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-000",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "CORE-001",
+      "title": "Fixed60 deterministic integer core has no Godot/OS/device clock dependency; state advances exactly once per tick.",
+      "description": "Fixed60 deterministic integer core has no Godot/OS/device clock dependency; state advances exactly once per tick.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-001",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "CORE-002",
+      "title": "Full canonical snapshot/restore includes input buffers, action/parry state, wallets, floors and spend receipts.",
+      "description": "Full canonical snapshot/restore includes input buffers, action/parry state, wallets, floors and spend receipts.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-001",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "CORE-003",
+      "title": "Content loader validates schema/semantics, bounded data and all move/item cross references with deterministic errors.",
+      "description": "Content loader validates schema/semantics, bounded data and all move/item cross references with deterministic errors.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-001",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "CORE-004",
+      "title": "Seeded repeated and restore/resimulated traces produce identical hashes, with seat-swapped symmetric cases.",
+      "description": "Seeded repeated and restore/resimulated traces produce identical hashes, with seat-swapped symmetric cases.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-001",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "CORE-005",
+      "title": "Real game scene renders core snapshots at variable render rates without changing60-tick outcomes.",
+      "description": "Real game scene renders core snapshots at variable render rates without changing60-tick outcomes.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-001",
+      "required_evidence_kinds": [
+        "test_log",
+        "screenshot"
+      ]
+    },
+    {
+      "id": "INPUT-001",
+      "title": "Two independent seats normalize six buttons/directions, SOCD, edges and per-device mapping; no cross-seat leak.",
+      "description": "Two independent seats normalize six buttons/directions, SOCD, edges and per-device mapping; no cross-seat leak.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-002",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "INPUT-002",
+      "title": "QCF/QCB/DP/double-motion recognition works both facings at accepted/rejected timing boundaries.",
+      "description": "QCF/QCB/DP/double-motion recognition works both facings at accepted/rejected timing boundaries.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-002",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "INPUT-003",
+      "title": "Charge holds/releases and facing-epoch changes obey explicit rules; no unintentional charge partitioning.",
+      "description": "Charge holds/releases and facing-epoch changes obey explicit rules; no unintentional charge partitioning.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-002",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "INPUT-004",
+      "title": "Negative-edge free specials, same-tick EX chords, throw/overhead chords and paid-command priority are tested.",
+      "description": "Negative-edge free specials, same-tick EX chords, throw/overhead chords and paid-command priority are tested.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-002",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "MOVE-001",
+      "title": "Walk/backwalk, discrete dashes and immediate stops match profiles without platform-fighter movement.",
+      "description": "Walk/backwalk, discrete dashes and immediate stops match profiles without platform-fighter movement.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-002",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ]
+    },
+    {
+      "id": "MOVE-002",
+      "title": "Normal/super jump arcs, landing recovery, cross-ups and facing behave with no air steering/double-jump.",
+      "description": "Normal/super jump arcs, landing recovery, cross-ups and facing behave with no air steering/double-jump.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-002",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ]
+    },
+    {
+      "id": "MOVE-003",
+      "title": "Pushboxes, floor/walls/camera separation and equal-position ties are robust and symmetric.",
+      "description": "Pushboxes, floor/walls/camera separation and equal-position ties are robust and symmetric.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-002",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "COMBAT-001",
+      "title": "Action startup/active/recovery/pose/hitbox clocks follow the half-open convention.",
+      "description": "Action startup/active/recovery/pose/hitbox clocks follow the half-open convention.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-003",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "COMBAT-002",
+      "title": "Normal/proximity/command attacks, low/overhead guard and per-actor hitstop/blockstun work in real combat.",
+      "description": "Normal/proximity/command attacks, low/overhead guard and per-actor hitstop/blockstun work in real combat.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-003",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ]
+    },
+    {
+      "id": "COMBAT-003",
+      "title": "Links, target combos and declared hit/block cancels differ correctly; whiff/parry cancels rejected.",
+      "description": "Links, target combos and declared hit/block cancels differ correctly; whiff/parry cancels rejected.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-003",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "COMBAT-004",
+      "title": "Normal/back throws, throw-tech, command throw and immunity/whiff recovery are fully implemented.",
+      "description": "Normal/back throws, throw-tech, command throw and immunity/whiff recovery are fully implemented.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-003",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ]
+    },
+    {
+      "id": "COMBAT-005",
+      "title": "Projectiles spawn once, use swept contact/ranks, limited owner count and target-hit registries.",
+      "description": "Projectiles spawn once, use swept contact/ranks, limited owner count and target-hit registries.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-003",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "COMBAT-006",
+      "title": "Simultaneous strike ranks/trades/double-KO and normalized timeout do not favor a seat.",
+      "description": "Simultaneous strike ranks/trades/double-KO and normalized timeout do not favor a seat.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-003",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "COMBAT-007",
+      "title": "Damage scaling, chip/KO, stun/dizzy and juggle budgets enforce their data without resource income.",
+      "description": "Damage scaling, chip/KO, stun/dizzy and juggle budgets enforce their data without resource income.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-003",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "COMBAT-008",
+      "title": "Knockdown/quick-rise/reversal, corners and selected kara-throw rule work without a universal cancel exploit.",
+      "description": "Knockdown/quick-rise/reversal, corners and selected kara-throw rule work without a universal cancel exploit.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-003",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ]
+    },
+    {
+      "id": "PARRY-001",
+      "title": "High/low directional windows and fresh neutral edges reject held/repeated abuse and wrong attack levels.",
+      "description": "High/low directional windows and fresh neutral edges reject held/repeated abuse and wrong attack levels.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-004",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "PARRY-002",
+      "title": "Air/red parry, blockstun rules and failed-retry windows follow the explicit timing contract.",
+      "description": "Air/red parry, blockstun rules and failed-retry windows follow the explicit timing contract.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-004",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "PARRY-003",
+      "title": "Multihit parries require distinct arms and contacts; successful parry prevents damage/chip/stun without credit reward.",
+      "description": "Multihit parries require distinct arms and contacts; successful parry prevents damage/chip/stun without credit reward.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-004",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ]
+    },
+    {
+      "id": "PARRY-004",
+      "title": "Parry/hitstop/superfreeze timing and projectile source behavior are serialized and replayable.",
+      "description": "Parry/hitstop/superfreeze timing and projectile source behavior are serialized and replayable.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-004",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "FEEL-001",
+      "title": "A complete free-kit local fight is observed, with movement/input/freeze measurements and recorded defects.",
+      "description": "A complete free-kit local fight is observed, with movement/input/freeze measurements and recorded defects.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-004",
+      "required_evidence_kinds": [
+        "metrics",
+        "video"
+      ]
+    },
+    {
+      "id": "ECO-001",
+      "title": "Exactly one scalar wallet per player; no earned meter, paid-use inventory, team/provenance balances or combat/time income.",
+      "description": "Exactly one scalar wallet per player; no earned meter, paid-use inventory, team/provenance balances or combat/time income.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-005",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "ECO-002",
+      "title": "Legal EX/selected-super startup atomically debits once; whiff/block/parry/interruption do not refund.",
+      "description": "Legal EX/selected-super startup atomically debits once; whiff/block/parry/interruption do not refund.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-005",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ]
+    },
+    {
+      "id": "ECO-003",
+      "title": "Illegal/unaffordable/reserve-denied/unselected/negative-edge paid commands never debit or trigger fallback/delayed actions.",
+      "description": "Illegal/unaffordable/reserve-denied/unselected/negative-edge paid commands never debit or trigger fallback/delayed actions.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-005",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "ECO-004",
+      "title": "Optional reserve is only a same-wallet minimum; locked round floor cannot be altered via combat messages.",
+      "description": "Optional reserve is only a same-wallet minimum; locked round floor cannot be altered via combat messages.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-005",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "ECO-005",
+      "title": "Rollback restores wallet and receipts together; disappearing/repeated/changed paid inputs give canonical balances.",
+      "description": "Rollback restores wallet and receipts together; disappearing/repeated/changed paid inputs give canonical balances.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-005",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "ECO-006",
+      "title": "Actual C# payouts/caps/tier progression and savings examples conform to independent fixtures.",
+      "description": "Actual C# payouts/caps/tier progression and savings examples conform to independent fixtures.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-005",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "SHOP-001",
+      "title": "Optional three-slot leases validate fighter/slot/price; editing draft is not an irreversible purchase.",
+      "description": "Optional three-slot leases validate fighter/slot/price; editing draft is not an irreversible purchase.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-006",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "SHOP-002",
+      "title": "Both preparation plans commit atomically/idempotently, lock then reveal, expire after one round and preserve basic kit.",
+      "description": "Both preparation plans commit atomically/idempotently, lock then reveal, expire after one round and preserve basic kit.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-006",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ]
+    },
+    {
+      "id": "MATCH-001",
+      "title": "Entire local economic match runs setup→prep→fight→settlement→next/result→rematch with no state leakage.",
+      "description": "Entire local economic match runs setup→prep→fight→settlement→next/result→rematch with no state leakage.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-006",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ]
+    },
+    {
+      "id": "MATCH-002",
+      "title": "Score half-points, first-to-five/cap9/final draw, KO precedence and reset/carry rules are correct.",
+      "description": "Score half-points, first-to-five/cap9/final draw, KO precedence and reset/carry rules are correct.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-006",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "MATCH-003",
+      "title": "Both wallets and score settle exactly once from a confirmed terminal state; bad/duplicate/out-of-order requests reject.",
+      "description": "Both wallets and score settle exactly once from a confirmed terminal state; bad/duplicate/out-of-order requests reject.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-006",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "MATCH-004",
+      "title": "Pause, settings, quit, disconnect and rematch cannot farm credits, reset score midmatch or bypass lock.",
+      "description": "Pause, settings, quit, disconnect and rematch cannot farm credits, reset score midmatch or bypass lock.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-006",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "CONTENT-001",
+      "title": "All49 Rook action definitions are reachable with distinct declared effects and per-move traces,43 base availability.",
+      "description": "All49 Rook action definitions are reachable with distinct declared effects and per-move traces,43 base availability.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-007",
+      "required_evidence_kinds": [
+        "test_log",
+        "replay"
+      ]
+    },
+    {
+      "id": "CONTENT-002",
+      "title": "All49 Vale action definitions are reachable with distinct declared effects and per-move traces,43 base availability.",
+      "description": "All49 Vale action definitions are reachable with distinct declared effects and per-move traces,43 base availability.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-007",
+      "required_evidence_kinds": [
+        "test_log",
+        "replay"
+      ]
+    },
+    {
+      "id": "CONTENT-003",
+      "title": "All12 leases and all6 super choices have functioning move effects, command availability and direct credit prices.",
+      "description": "All12 leases and all6 super choices have functioning move effects, command availability and direct credit prices.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-007",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "ART-001",
+      "title": "Both original animated fighters, both stage presentations, mirror colors and hit/block/parry/throw/super states are visually readable.",
+      "description": "Both original animated fighters, both stage presentations, mirror colors and hit/block/parry/throw/super states are visually readable.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-007",
+      "required_evidence_kinds": [
+        "video",
+        "screenshot"
+      ]
+    },
+    {
+      "id": "AUDIO-001",
+      "title": "Original/permissioned action/UI/round/ambient audio and volume controls work; asset register is complete.",
+      "description": "Original/permissioned action/UI/round/ambient audio and volume controls work; asset register is complete.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-007",
+      "required_evidence_kinds": [
+        "video",
+        "process_log"
+      ]
+    },
+    {
+      "id": "BOT-001",
+      "title": "Playable bounded-reaction seeded bots use only legal inputs and real economy; no hidden state/credit writes.",
+      "description": "Playable bounded-reaction seeded bots use only legal inputs and real economy; no hidden state/credit writes.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-008",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ]
+    },
+    {
+      "id": "TRAIN-001",
+      "title": "Real-core training supports frame advance/reset/dummy/input/hitbox and explicit training-only resource settings.",
+      "description": "Real-core training supports frame advance/reset/dummy/input/hitbox and explicit training-only resource settings.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-008",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ]
+    },
+    {
+      "id": "TRAIN-002",
+      "title": "Required motion/charge/parry/red-parry/kara/confirm/credit drills have resets and observable success/failure.",
+      "description": "Required motion/charge/parry/red-parry/kara/confirm/credit drills have resets and observable success/failure.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-008",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ]
+    },
+    {
+      "id": "REPLAY-001",
+      "title": "Replay records inputs and preparation/settlement identity, reproducing world and wallet hashes exactly.",
+      "description": "Replay records inputs and preparation/settlement identity, reproducing world and wallet hashes exactly.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-008",
+      "required_evidence_kinds": [
+        "test_log",
+        "replay"
+      ]
+    },
+    {
+      "id": "REPLAY-002",
+      "title": "Replay seek/reset, malformed imports and version/content mismatch behave safely and never preserve future balances.",
+      "description": "Replay seek/reset, malformed imports and version/content mismatch behave safely and never preserve future balances.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-008",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "REPLAY-003",
+      "title": "Player-readable round economy summary and machine-readable confirmed spend/result logs agree with actual replay.",
+      "description": "Player-readable round economy summary and machine-readable confirmed spend/result logs agree with actual replay.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-008",
+      "required_evidence_kinds": [
+        "metrics",
+        "replay"
+      ]
+    },
+    {
+      "id": "NET-001",
+      "title": "Actual two-process sockets handshake exactly two peers, ownership and identical build/content/rules.",
+      "description": "Actual two-process sockets handshake exactly two peers, ownership and identical build/content/rules.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-009",
+      "required_evidence_kinds": [
+        "process_log"
+      ]
+    },
+    {
+      "id": "NET-002",
+      "title": "Input prediction/resimulation, history bounds, stalls and hashes work at zero and injected delay/jitter/loss/reordering.",
+      "description": "Input prediction/resimulation, history bounds, stalls and hashes work at zero and injected delay/jitter/loss/reordering.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-009",
+      "required_evidence_kinds": [
+        "test_log",
+        "metrics"
+      ]
+    },
+    {
+      "id": "NET-003",
+      "title": "In-combat wallet/floor/receipt restoration survives rollback around both EX and super startups.",
+      "description": "In-combat wallet/floor/receipt restoration survives rollback around both EX and super startups.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-009",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "NET-004",
+      "title": "Late parry changing paid-super KO prevents speculative payout and invalidates corrected audiovisual terminal effects.",
+      "description": "Late parry changing paid-super KO prevents speculative payout and invalidates corrected audiovisual terminal effects.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-009",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ]
+    },
+    {
+      "id": "NET-005",
+      "title": "Commit/reveal prep, duplicate/malformed controls and forged money/seat messages fail closed.",
+      "description": "Commit/reveal prep, duplicate/malformed controls and forged money/seat messages fail closed.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-009",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "NET-006",
+      "title": "Disconnect/grace/resync limits and mismatch diagnostics preserve economic invariants without public network changes.",
+      "description": "Disconnect/grace/resync limits and mismatch diagnostics preserve economic invariants without public network changes.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-009",
+      "required_evidence_kinds": [
+        "test_log",
+        "process_log"
+      ]
+    },
+    {
+      "id": "NET-007",
+      "title": "A complete real two-process1v1 economic match finishes with matching replay/receipt/result hashes.",
+      "description": "A complete real two-process1v1 economic match finishes with matching replay/receipt/result hashes.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-009",
+      "required_evidence_kinds": [
+        "process_log",
+        "replay",
+        "video"
+      ]
+    },
+    {
+      "id": "UI-001",
+      "title": "All required menus/select/preparation/results/rematch/help flows operate controller-only.",
+      "description": "All required menus/select/preparation/results/rematch/help flows operate controller-only.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-010",
+      "required_evidence_kinds": [
+        "video"
+      ]
+    },
+    {
+      "id": "UI-002",
+      "title": "HUD shows a single wallet, costs/floor/leases/affordability and subtle debit rejection, not earned gauge.",
+      "description": "HUD shows a single wallet, costs/floor/leases/affordability and subtle debit rejection, not earned gauge.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-010",
+      "required_evidence_kinds": [
+        "screenshot",
+        "video"
+      ]
+    },
+    {
+      "id": "UI-003",
+      "title": "Per-device controls, SOCD/chord mapping, unplug handling and menu input neutralization are implemented.",
+      "description": "Per-device controls, SOCD/chord mapping, unplug handling and menu input neutralization are implemented.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-010",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ]
+    },
+    {
+      "id": "UI-004",
+      "title": "Settings persist in OS user-data paths and reduce-flash/shake/audio options never alter combat rules.",
+      "description": "Settings persist in OS user-data paths and reduce-flash/shake/audio options never alter combat rules.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-010",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "UI-005",
+      "title": "Assist/training settings are clearly labeled, recorded and isolated from default competitive sessions.",
+      "description": "Assist/training settings are clearly labeled, recorded and isolated from default competitive sessions.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-010",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "BAL-001",
+      "title": "Counterbalanced budget/matchup/seat/art experiments record raw full-match outcomes and uncertainty, not teammate metrics.",
+      "description": "Counterbalanced budget/matchup/seat/art experiments record raw full-match outcomes and uncertainty, not teammate metrics.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-011",
+      "required_evidence_kinds": [
+        "metrics"
+      ]
+    },
+    {
+      "id": "BAL-002",
+      "title": "Zero-credit/full-wallet tests probe EX loops, chip, parry, corner and optional lease dominance.",
+      "description": "Zero-credit/full-wallet tests probe EX loops, chip, parry, corner and optional lease dominance.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-011",
+      "required_evidence_kinds": [
+        "test_log",
+        "metrics"
+      ]
+    },
+    {
+      "id": "BAL-003",
+      "title": "Recovery-farming, cap, final-round all-in and spending-policy tests distinguish intended incentives from exploits.",
+      "description": "Recovery-farming, cap, final-round all-in and spending-policy tests distinguish intended incentives from exploits.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-011",
+      "required_evidence_kinds": [
+        "metrics"
+      ]
+    },
+    {
+      "id": "BAL-004",
+      "title": "Actual tuning changes include original/new data, content hashes, regression reruns and honest limits.",
+      "description": "Actual tuning changes include original/new data, content hashes, regression reruns and honest limits.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-011",
+      "required_evidence_kinds": [
+        "metrics",
+        "process_log"
+      ]
+    },
+    {
+      "id": "QA-001",
+      "title": "Full suite covers all current requirements and seed fixtures using production core; unsupported scenarios exit nonzero.",
+      "description": "Full suite covers all current requirements and seed fixtures using production core; unsupported scenarios exit nonzero.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-012",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "QA-002",
+      "title": "Long-run/round-reset/property tests find no credit underflow/duplication, projectile leak or unlimited stun/juggle loop.",
+      "description": "Long-run/round-reset/property tests find no credit underflow/duplication, projectile leak or unlimited stun/juggle loop.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-012",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "QA-003",
+      "title": "Replay/network/content imports are bounded and reject unsafe paths/oversized/malformed input.",
+      "description": "Replay/network/content imports are bounded and reject unsafe paths/oversized/malformed input.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-012",
+      "required_evidence_kinds": [
+        "test_log"
+      ]
+    },
+    {
+      "id": "QA-004",
+      "title": "Performance/pacing and resimulation budget are actually profiled with host metadata and known limits.",
+      "description": "Performance/pacing and resimulation budget are actually profiled with host metadata and known limits.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-012",
+      "required_evidence_kinds": [
+        "metrics"
+      ]
+    },
+    {
+      "id": "QA-005",
+      "title": "Actual candidate-specific full-play recordings, logs and artifacts are tied to matching source/content ids.",
+      "description": "Actual candidate-specific full-play recordings, logs and artifacts are tied to matching source/content ids.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-012",
+      "required_evidence_kinds": [
+        "process_log",
+        "video"
+      ]
+    },
+    {
+      "id": "BUILD-001",
+      "title": "Reproducible clean restore/build/import/export produces Windows and Linux native packages with dependency hashes.",
+      "description": "Reproducible clean restore/build/import/export produces Windows and Linux native packages with dependency hashes.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-013",
+      "required_evidence_kinds": [
+        "build_log",
+        "binary"
+      ]
+    },
+    {
+      "id": "BUILD-002",
+      "title": "Distribution includes player controls/rules/help/notices/known limitations and a candidate manifest without copied franchise assets.",
+      "description": "Distribution includes player controls/rules/help/notices/known limitations and a candidate manifest without copied franchise assets.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-013",
+      "required_evidence_kinds": [
+        "process_log"
+      ]
+    },
+    {
+      "id": "DEVICE-001",
+      "title": "Windows x86_64 native package actually launches and completes a local economic match.",
+      "description": "Windows x86_64 native package actually launches and completes a local economic match.",
+      "mandatory": true,
+      "gate_class": "target_device",
+      "work_package": "WP-013",
+      "required_evidence_kinds": [
+        "process_log",
+        "video"
+      ]
+    },
+    {
+      "id": "DEVICE-002",
+      "title": "Linux x86_64 native package actually launches and completes a local economic match.",
+      "description": "Linux x86_64 native package actually launches and completes a local economic match.",
+      "mandatory": true,
+      "gate_class": "target_device",
+      "work_package": "WP-013",
+      "required_evidence_kinds": [
+        "process_log",
+        "video"
+      ]
+    },
+    {
+      "id": "DEVICE-003",
+      "title": "Two actual local controllers and keyboard-plus-controller are assigned and exercised without cross-seat input.",
+      "description": "Two actual local controllers and keyboard-plus-controller are assigned and exercised without cross-seat input.",
+      "mandatory": true,
+      "gate_class": "target_device",
+      "work_package": "WP-013",
+      "required_evidence_kinds": [
+        "video",
+        "process_log"
+      ]
+    },
+    {
+      "id": "DEVICE-004",
+      "title": "Two physical machines complete a private1v1 LAN match with matching confirmed result and debit logs.",
+      "description": "Two physical machines complete a private1v1 LAN match with matching confirmed result and debit logs.",
+      "mandatory": true,
+      "gate_class": "target_device",
+      "work_package": "WP-013",
+      "required_evidence_kinds": [
+        "video",
+        "replay",
+        "process_log"
+      ]
+    },
+    {
+      "id": "DEVICE-005",
+      "title": "Actual Windows/Linux deterministic replay comparison yields matching canonical hashes for the same content/inputs.",
+      "description": "Actual Windows/Linux deterministic replay comparison yields matching canonical hashes for the same content/inputs.",
+      "mandatory": true,
+      "gate_class": "target_device",
+      "work_package": "WP-013",
+      "required_evidence_kinds": [
+        "test_log",
+        "replay"
+      ]
+    },
+    {
+      "id": "FINAL-001",
+      "title": "Software evidence gate passes with real candidate-bound artifacts and an independent check of substantive completion.",
+      "description": "Software evidence gate passes with real candidate-bound artifacts and an independent check of substantive completion.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-014",
+      "required_evidence_kinds": [
+        "process_log"
+      ]
+    },
+    {
+      "id": "FINAL-002",
+      "title": "Final source/artifact instructions, known issues, exact remaining external gates and resume state are complete and accurate.",
+      "description": "Final source/artifact instructions, known issues, exact remaining external gates and resume state are complete and accurate.",
+      "mandatory": true,
+      "gate_class": "software",
+      "work_package": "WP-014",
+      "required_evidence_kinds": [
+        "process_log"
+      ]
+    },
+    {
+      "id": "HUMAN-001",
+      "title": "Actual owner/player feedback accepts the prototype feel and single-wallet decisions or records requested changes without invention.",
+      "description": "Actual owner/player feedback accepts the prototype feel and single-wallet decisions or records requested changes without invention.",
+      "mandatory": true,
+      "gate_class": "human",
+      "work_package": "WP-014",
+      "required_evidence_kinds": [
+        "human_feedback"
+      ]
+    }
+  ]
+}

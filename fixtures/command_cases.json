@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "status": "required_production_recognizer_tests_not_implemented_by_oracle",
+  "notation": "Each entry is [relative direction, held-button mask]; repeat counts denote ticks. Button press must be fresh. Test both facings after raw conversion.",
+  "cases": [
+    {
+      "id": "qcf_positive",
+      "directions": [
+        2,
+        3,
+        6
+      ],
+      "end_button": "LP",
+      "expected": "ordinary_qcf"
+    },
+    {
+      "id": "qcf_no_diagonal",
+      "directions": [
+        2,
+        6
+      ],
+      "end_button": "LP",
+      "expected": "no_qcf"
+    },
+    {
+      "id": "dp_positive",
+      "directions": [
+        6,
+        2,
+        3
+      ],
+      "end_button": "LP",
+      "expected": "ordinary_dp"
+    },
+    {
+      "id": "double_qcf_paid",
+      "directions": [
+        2,
+        3,
+        6,
+        2,
+        3,
+        6
+      ],
+      "end_button": "LP",
+      "credits": 900,
+      "selected_art": "art_1",
+      "expected": "selected_super_debit900"
+    },
+    {
+      "id": "double_qcf_no_funds",
+      "directions": [
+        2,
+        3,
+        6,
+        2,
+        3,
+        6
+      ],
+      "end_button": "LP",
+      "credits": 899,
+      "selected_art": "art_1",
+      "expected": "no_action_no_debit_no_fallback"
+    },
+    {
+      "id": "charge_boundary44",
+      "hold_direction": 4,
+      "hold_ticks": 44,
+      "release_direction": 6,
+      "end_button": "LP",
+      "expected": "no_charge_special"
+    },
+    {
+      "id": "charge_boundary45",
+      "hold_direction": 4,
+      "hold_ticks": 45,
+      "release_direction": 6,
+      "end_button": "LP",
+      "expected": "charge_special"
+    },
+    {
+      "id": "ex_same_tick",
+      "directions": [
+        2,
+        3,
+        6
+      ],
+      "end_buttons": [
+        "LP",
+        "MP"
+      ],
+      "credits": 300,
+      "expected": "ex_debit300"
+    },
+    {
+      "id": "paid_release_only",
+      "directions": [
+        2,
+        3,
+        6
+      ],
+      "release_buttons": [
+        "LP",
+        "MP"
+      ],
+      "credits": 300,
+      "expected": "no_paid_action"
+    },
+    {
+      "id": "super_wrong_facing_epoch",
+      "directions": [
+        2,
+        3,
+        6,
+        2,
+        3,
+        6
+      ],
+      "facing_switch_before_button": true,
+      "end_button": "LP",
+      "credits": 900,
+      "expected": "no_stale_super"
+    }
+  ]
+}

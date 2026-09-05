@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Single-wallet 1v1 economy",
+  "type": "object",
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "resource_model": {
+      "const": "one_persistent_scalar_credit_wallet"
+    },
+    "starting_credits": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "wallet_cap": {
+      "const": 3600
+    },
+    "win_payout": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "draw_payout": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "loss_payouts": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 2147483647
+      }
+    },
+    "max_recovery_tier": {
+      "const": 2
+    },
+    "slot_prices": {
+      "type": "object",
+      "properties": {
+        "signature": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "technique": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "gambit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "signature",
+        "technique",
+        "gambit"
+      ],
+      "additionalProperties": false
+    },
+    "loadout_cap": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "preparation_seconds": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "reveal_seconds": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "lease_duration": {
+      "const": "one_round"
+    },
+    "ex_activation_cost": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "super_activation_costs": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 2147483647
+      }
+    },
+    "passive_income": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "combat_income": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "activation_debit": {
+      "const": "first_committed_startup_tick"
+    },
+    "refund_on_whiff_block_parry_interrupt": {
+      "const": false
+    },
+    "default_reserve_floor": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "reserve_policy": {
+      "const": "optional_minimum_remaining_balance_locked_for_round_not_a_separate_pool"
+    },
+    "purchases_debit": {
+      "const": "atomic_preparation_commit"
+    },
+    "win_tier_change": {
+      "const": -1
+    },
+    "loss_tier_change": {
+      "const": 1
+    },
+    "draw_tier_change": {
+      "const": 0
+    }
+  },
+  "required": [
+    "version",
+    "resource_model",
+    "starting_credits",
+    "wallet_cap",
+    "win_payout",
+    "draw_payout",
+    "loss_payouts",
+    "max_recovery_tier",
+    "slot_prices",
+    "loadout_cap",
+    "preparation_seconds",
+    "reveal_seconds",
+    "lease_duration",
+    "ex_activation_cost",
+    "super_activation_costs",
+    "passive_income",
+    "combat_income",
+    "activation_debit",
+    "refund_on_whiff_block_parry_interrupt",
+    "default_reserve_floor",
+    "reserve_policy",
+    "purchases_debit",
+    "win_tier_change",
+    "loss_tier_change",
+    "draw_tier_change"
+  ],
+  "additionalProperties": false
+}

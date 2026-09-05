@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "scope": "hand_specified_expected_arithmetic_not_gameplay",
+  "payouts": [
+    {
+      "before": {
+        "credits": 0,
+        "recovery_tier": 0
+      },
+      "outcome": "loss",
+      "expected": {
+        "credits": 900,
+        "recovery_tier": 1
+      },
+      "clipped": 0
+    },
+    {
+      "before": {
+        "credits": 900,
+        "recovery_tier": 1
+      },
+      "outcome": "loss",
+      "expected": {
+        "credits": 2100,
+        "recovery_tier": 2
+      },
+      "clipped": 0
+    },
+    {
+      "before": {
+        "credits": 0,
+        "recovery_tier": 2
+      },
+      "outcome": "loss",
+      "expected": {
+        "credits": 1500,
+        "recovery_tier": 2
+      },
+      "clipped": 0
+    },
+    {
+      "before": {
+        "credits": 0,
+        "recovery_tier": 2
+      },
+      "outcome": "win",
+      "expected": {
+        "credits": 1200,
+        "recovery_tier": 1
+      },
+      "clipped": 0
+    },
+    {
+      "before": {
+        "credits": 600,
+        "recovery_tier": 0
+      },
+      "outcome": "win",
+      "expected": {
+        "credits": 1800,
+        "recovery_tier": 0
+      },
+      "clipped": 0
+    },
+    {
+      "before": {
+        "credits": 3500,
+        "recovery_tier": 1
+      },
+      "outcome": "loss",
+      "expected": {
+        "credits": 3600,
+        "recovery_tier": 2
+      },
+      "clipped": 1100
+    },
+    {
+      "before": {
+        "credits": 200,
+        "recovery_tier": 2
+      },
+      "outcome": "draw",
+      "expected": {
+        "credits": 1100,
+        "recovery_tier": 2
+      },
+      "clipped": 0
+    }
+  ],
+  "spends": [
+    {
+      "credits": 300,
+      "floor": 0,
+      "cost": 300,
+      "legal": true,
+      "expected_credits": 0,
+      "status": "PAID"
+    },
+    {
+      "credits": 299,
+      "floor": 0,
+      "cost": 300,
+      "legal": true,
+      "expected_credits": 299,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "credits": 900,
+      "floor": 900,
+      "cost": 300,
+      "legal": true,
+      "expected_credits": 900,
+      "status": "RESERVE"
+    },
+    {
+      "credits": 1500,
+      "floor": 900,
+      "cost": 300,
+      "legal": true,
+      "expected_credits": 1200,
+      "status": "PAID"
+    },
+    {
+      "credits": 1500,
+      "floor": 0,
+      "cost": 1200,
+      "legal": false,
+      "expected_credits": 1500,
+      "status": "ILLEGAL"
+    },
+    {
+      "credits": 0,
+      "floor": 0,
+      "cost": 0,
+      "legal": true,
+      "expected_credits": 0,
+      "status": "FREE"
+    }
+  ]
+}

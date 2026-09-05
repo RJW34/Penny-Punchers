@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "checked_on": "2026-09-05",
+  "sources": [
+    {
+      "id": "SRC-01",
+      "title": "Capcom interview: Street Fighter III parry identity",
+      "url": "https://blog.playstation.com/2011/08/04/evo-capcoms-seth-killian-on-psn-street-fighter-iii-street-fighter-x-tekken/",
+      "authority": "Primary Capcom interview",
+      "supports": "Qualitative directional parry, deliberate execution, practice and replay/netcode emphasis. Not an exact rules or frame-data source.",
+      "inspection": "Opened/read or official archive result checked during scaffold preparation"
+    },
+    {
+      "id": "SRC-02",
+      "title": "Capcom producer: Third Strike Online Edition",
+      "url": "https://blog.playstation.com/2011/08/15/street-fighter-iii-third-strike-shoryukens-psn-play-august-23rd/",
+      "authority": "Primary developer publication",
+      "supports": "Presentation, practice and online context, not code to reuse.",
+      "inspection": "Opened/read or official archive result checked during scaffold preparation"
+    },
+    {
+      "id": "SRC-03",
+      "title": "Godot 4.6.3 release archive",
+      "url": "https://godotengine.org/download/archive/4.6.3-stable/",
+      "authority": "Official archive",
+      "supports": "Available conservative engine pin, NOT a newest-version claim.",
+      "inspection": "Opened/read or official archive result checked during scaffold preparation"
+    },
+    {
+      "id": "SRC-04",
+      "title": "Godot 4.6 C# basics",
+      "url": "https://docs.godotengine.org/en/4.6/tutorials/scripting/c_sharp/c_sharp_basics.html",
+      "authority": "Official documentation",
+      "supports": "Desktop .NET workflow, separate SDK prerequisite and no required web export.",
+      "inspection": "Opened/read or official archive result checked during scaffold preparation"
+    },
+    {
+      "id": "SRC-05",
+      "title": ".NET support policy",
+      "url": "https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core",
+      "authority": "Official documentation",
+      "supports": "Recheck current SDK/runtime support before implementation and release.",
+      "inspection": "Opened/read or official archive result checked during scaffold preparation"
+    },
+    {
+      "id": "SRC-06",
+      "title": "GGPO rollback SDK",
+      "url": "https://www.ggpo.net/",
+      "authority": "Primary project",
+      "supports": "Determinism, state save/load, frame execution and correction after delayed inputs.",
+      "inspection": "Opened/read or official archive result checked during scaffold preparation"
+    },
+    {
+      "id": "SRC-07",
+      "title": "Godot 4.6 high-level multiplayer",
+      "url": "https://docs.godotengine.org/en/4.6/tutorials/networking/high_level_multiplayer.html",
+      "authority": "Official documentation",
+      "supports": "Transport only; not automatic rollback or production security.",
+      "inspection": "Opened/read or official archive result checked during scaffold preparation"
+    }
+  ]
+}

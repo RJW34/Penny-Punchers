@@ -1,0 +1,4 @@
+# CI plan to implement
+Required local commands are the initial source of truth. Add CI only in this repo, without publishing unless authorized. Fast tier: content schema, Python oracle/tools, production C# unit/conformance, deterministic replay. Integration tier: headless real-core scenarios, Godot import/smoke, two-process network fault harness. Candidate tier: actual exports, replay/hash comparison, performance, visual playthrough. Physical controllers/LAN and owner feedback remain explicit external tiers when the runner lacks them.
+
+Cache only dependency builds keyed to toolchain/content as appropriate. Never cache acceptance success across gameplay/content changes. Preserve actual stdout/stderr and nonzero exits. No success-on-error wrappers, skipped tests reported as passed or network mocks counted as process proof.

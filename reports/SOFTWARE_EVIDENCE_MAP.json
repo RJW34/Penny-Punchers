@@ -1,0 +1,2191 @@
+{
+  "schema_version": 1,
+  "purpose": "Independent requirement-to-evidence proposal, not ACCEPTANCE_RESULTS and not a release gate pass. Artifacts reflect point-in-time reviewed runs; integrator must rebind final candidate and inspect substantive behavior.",
+  "generated_utc": "2026-09-05T08:01:01.928431+00:00",
+  "reviewed_core_assembly_id": "624058d4-cc3b-4f89-bc3e-b2fd1b010ed3",
+  "reviewed_content_hash": "ec249786c06cb4e5cc4a0ea2dd84fe8c818d8360a11977d85f1b9aa66c293e63",
+  "reviewed_app_build": "strike-ledger-native-1/a15902fc9bd1846440a697ec60ab9f5de10d2e7192106919442900b482ee61a8",
+  "software_requirements": 76,
+  "review_notes": [
+    "Production core frozen; tests-only reconstructible all98 action replay evidence added and full36 scenario suite passed.",
+    "Updated shell reviewed: complete training state/speed controls, affordable reserve range and walking/backdash pose correction are implemented.",
+    "Actual current network artifact directory is network-lab-release; final/candidate network directories are developmental.",
+    "App owner is running all16 drill evaluator success/failure tests and may need correction; bind only final current assembly artifacts.",
+    "Physical devices, second physical machine, Linux runtime and human feel are separate gates."
+  ],
+  "records": [
+    {
+      "requirement_id": "SCOPE-001",
+      "title": "Inspect actual workspace/Git, preserve owner work and record the newest strictly1v1/no-earned-meter scope.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "process_log"
+      ],
+      "artifacts": [],
+      "reason": "Source reviewed: AGENTS, product contract, isolated extracted project; no earlier repository source imported.",
+      "remaining_needed": [
+        "Integrator owns final actual-run evidence for this implemented shell/build/process behavior; this independent core review does not assert a pass."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "AGENTS.md",
+          "exists_at_review": true
+        },
+        {
+          "path": "docs/00_product_contract.md",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "process_log"
+      ]
+    },
+    {
+      "requirement_id": "ENV-001",
+      "title": "Resolve a supported matching Godot .NET/editor/templates/SDK toolchain and actually compile the core and import the game.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "build_log"
+      ],
+      "artifacts": [],
+      "reason": "Core actually built with the located .NET SDK; integrator owns matching Godot import/export logs.",
+      "remaining_needed": [
+        "Integrator owns final actual-run evidence for this implemented shell/build/process behavior; this independent core review does not assert a pass."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "tools/build.py",
+          "exists_at_review": true
+        },
+        {
+          "path": ".local_tools.json",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "build_log"
+      ]
+    },
+    {
+      "requirement_id": "ENV-002",
+      "title": "Run scaffold validation and create a reproducible root build/test command without claiming it proves gameplay.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [],
+      "reason": "`tools/build.py` runs content sync, build/import, production tests and both exports. Final clean-run log required.",
+      "remaining_needed": [
+        "Integrator owns final actual-run evidence for this implemented shell/build/process behavior; this independent core review does not assert a pass."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "tools/build.py",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "test_log"
+      ]
+    },
+    {
+      "requirement_id": "CORE-001",
+      "title": "Fixed60 deterministic integer core has no Godot/OS/device clock dependency; state advances exactly once per tick.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "snapshot_determinism_and_bounds"
+          ]
+        }
+      ],
+      "reason": "Core tested: fixed integer Step with explicit input tick validation; no Godot/OS clock/device dependency.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "CORE-002",
+      "title": "Full canonical snapshot/restore includes input buffers, action/parry state, wallets, floors and spend receipts.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "snapshot_determinism_and_bounds",
+            "rollback_spend_receipts"
+          ]
+        }
+      ],
+      "reason": "Core tested: full canonical snapshots include buffers, charges, freeze, receipts, leases, floors and pending transaction state.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "CORE-003",
+      "title": "Content loader validates schema/semantics, bounded data and all move/item cross references with deterministic errors.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "content_all_98_actions",
+            "snapshot_determinism_and_bounds"
+          ]
+        }
+      ],
+      "reason": "Source reviewed: bounded roster, box/frame/action/item/reference/config validation; malformed import evidence can be broadened.",
+      "remaining_needed": [
+        "Production validation exists. Broaden final malformed-content execution evidence beyond valid complete roster and binary snapshot bounds if the acceptance interpretation requires authored JSON mutation cases."
+      ],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "CORE-004",
+      "title": "Seeded repeated and restore/resimulated traces produce identical hashes, with seat-swapped symmetric cases.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "snapshot_determinism_and_bounds",
+            "seat_swap_mirror_symmetry"
+          ]
+        }
+      ],
+      "reason": "Core tested: independently repeated seeded traces, snapshot round trips, 1200-tick mirrored seat/fighter comparisons.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "CORE-005",
+      "title": "Real game scene renders core snapshots at variable render rates without changing60-tick outcomes.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "screenshot"
+      ],
+      "artifacts": [],
+      "reason": "Source reviewed: shell advances core in `_PhysicsProcess`, render state reads snapshots. Final actual pacing trace required.",
+      "remaining_needed": [
+        "Run final visible native render-pacing capture on this PC. Core Step metrics do not measure rendering."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "game/Main.cs",
+          "exists_at_review": true
+        },
+        {
+          "path": "game/Main.RuntimeEvidence.cs",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "test_log",
+        "screenshot"
+      ],
+      "substantive_capture_plan": "native_export_smoke / visible runtime"
+    },
+    {
+      "requirement_id": "INPUT-001",
+      "title": "Two independent seats normalize six buttons/directions, SOCD, edges and per-device mapping; no cross-seat leak.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [],
+      "reason": "Source reviewed: per-device InputRouter, axis SOCD neutralization, six-button masks and binding quarantine. Physical device gate remains separate.",
+      "remaining_needed": [
+        "Bind final per-device/SOCD software assertions from native controller scenario; physical controllers remain a separate gate."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "game/InputRouter.cs",
+          "exists_at_review": false
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "test_log"
+      ]
+    },
+    {
+      "requirement_id": "INPUT-002",
+      "title": "QCF/QCB/DP/double-motion recognition works both facings at accepted/rejected timing boundaries.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "input_motion_both_sides"
+          ]
+        }
+      ],
+      "reason": "Core tested: QCF/QCB/DP/double QCF recognition, mirrored commands, missing diagonal and stale-step rejection.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "INPUT-003",
+      "title": "Charge holds/releases and facing-epoch changes obey explicit rules; no unintentional charge partitioning.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "charge_crossup"
+          ]
+        }
+      ],
+      "reason": "Core tested: 44/45-tick charge boundary, vertical-charge side-switch retention, horizontal-charge invalidation.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "INPUT-004",
+      "title": "Negative-edge free specials, same-tick EX chords, throw/overhead chords and paid-command priority are tested.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "all_98_commands_recognized",
+            "negative_edge_paid_forbidden",
+            "insufficient_credit_no_fallback"
+          ]
+        }
+      ],
+      "reason": "Core tested: all 98 command syntaxes, six-button/chord priority, negative edge and paid-release rejection.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "MOVE-001",
+      "title": "Walk/backwalk, discrete dashes and immediate stops match profiles without platform-fighter movement.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "movement_jump_dash_and_walls"
+          ]
+        }
+      ],
+      "reason": "Core tested: walk speed, immediate stop, discrete dash, wall clamp. Presentation velocity finding sent to renderer owner.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": [
+        "video"
+      ],
+      "substantive_capture_plan": "combat_visual_showcase movement segments"
+    },
+    {
+      "requirement_id": "MOVE-002",
+      "title": "Normal/super jump arcs, landing recovery, cross-ups and facing behave with no air steering/double-jump.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "movement_jump_dash_and_walls",
+            "charge_crossup",
+            "quickrise_and_jump_throw_immunity"
+          ]
+        }
+      ],
+      "reason": "Core tested: jump startup/landing, fixed airborne horizontal launch, no air steering, facing-epoch cross-up behavior.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": [
+        "video"
+      ],
+      "substantive_capture_plan": "combat_visual_showcase jumps"
+    },
+    {
+      "requirement_id": "MOVE-003",
+      "title": "Pushboxes, floor/walls/camera separation and equal-position ties are robust and symmetric.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "movement_jump_dash_and_walls",
+            "seat_swap_mirror_symmetry"
+          ]
+        }
+      ],
+      "reason": "Core tested: pushbox separation, stage bounds, mirrored seat simulation; camera has no core mutation path.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "COMBAT-001",
+      "title": "Action startup/active/recovery/pose/hitbox clocks follow the half-open convention.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "content_all_98_actions"
+          ]
+        }
+      ],
+      "reason": "Core tested: authored half-open startup/active/recovery and actual active contacts for every move.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "COMBAT-002",
+      "title": "Normal/proximity/command attacks, low/overhead guard and per-actor hitstop/blockstun work in real combat.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "blocking_chip_and_no_air_block",
+            "all_98_commands_recognized"
+          ]
+        }
+      ],
+      "reason": "Core tested: normal/proximity/command recognition, high/low guard, chip, hitstop and blockstun.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": [
+        "video"
+      ],
+      "substantive_capture_plan": "combat_visual_showcase hit/guard"
+    },
+    {
+      "requirement_id": "COMBAT-003",
+      "title": "Links, target combos and declared hit/block cancels differ correctly; whiff/parry cancels rejected.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "target_combo_reversal_and_dizzy",
+            "cancel_contact_not_whiff"
+          ]
+        }
+      ],
+      "reason": "Core tested: target combo uses named `s_mp`, contact cancel succeeds, whiff cancel fails, reversal remains distinct from links.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "COMBAT-004",
+      "title": "Normal/back throws, throw-tech, command throw and immunity/whiff recovery are fully implemented.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "throw_kara_quickrise",
+            "quickrise_and_jump_throw_immunity"
+          ]
+        }
+      ],
+      "reason": "Core tested: forward/back/command throw effects, normal tech, jump-start immunity, whiff duration and normal-only kara.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": [
+        "video"
+      ],
+      "substantive_capture_plan": "combat_visual_showcase throw/tech"
+    },
+    {
+      "requirement_id": "COMBAT-005",
+      "title": "Projectiles spawn once, use swept contact/ranks, limited owner count and target-hit registries.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "projectile_cap_and_clash",
+            "all_vale_moves"
+          ]
+        }
+      ],
+      "reason": "Core tested: one spawn, owner cap, swept projectile contact, rank clash, EX multi-contact cooldown and returning pulse turn.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "COMBAT-006",
+      "title": "Simultaneous strike ranks/trades/double-KO and normalized timeout do not favor a seat.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "simultaneous_trade_and_rank",
+            "nine_round_match_draw"
+          ]
+        }
+      ],
+      "reason": "Core tested: reciprocal rank winner, equal-rank trade, double KO; timeout uses integer normalized-health comparison.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "COMBAT-007",
+      "title": "Damage scaling, chip/KO, stun/dizzy and juggle budgets enforce their data without resource income.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "target_combo_reversal_and_dizzy",
+            "blocking_chip_and_no_air_block"
+          ]
+        }
+      ],
+      "reason": "Core tested: combo damage scaling, zero normal chip, special chip, actual dizzy threshold; juggle budget is bounded state.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "COMBAT-008",
+      "title": "Knockdown/quick-rise/reversal, corners and selected kara-throw rule work without a universal cancel exploit.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "throw_kara_quickrise",
+            "quickrise_and_jump_throw_immunity",
+            "target_combo_reversal_and_dizzy"
+          ]
+        }
+      ],
+      "reason": "Core tested: soft/hard knockdown, quick-rise input, final-two-tick reversal, corner pushback and tagged kara.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": [
+        "video"
+      ],
+      "substantive_capture_plan": "combat_visual_showcase quickrise/reversal"
+    },
+    {
+      "requirement_id": "PARRY-001",
+      "title": "High/low directional windows and fresh neutral edges reject held/repeated abuse and wrong attack levels.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "high_low_parry",
+            "multihit_super_parry"
+          ]
+        }
+      ],
+      "reason": "Core tested: actual high/low contact, wrong-level failure, one-hit-group consumption and held-forward multihit failure.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "PARRY-002",
+      "title": "Air/red parry, blockstun rules and failed-retry windows follow the explicit timing contract.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "red_parry_boundary",
+            "air_parry_and_projectile_source_freeze"
+          ]
+        }
+      ],
+      "reason": "Core tested: actual air parry and 2-tick red-parry boundary, with blockstun preserved on arm alone.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "PARRY-003",
+      "title": "Multihit parries require distinct arms and contacts; successful parry prevents damage/chip/stun without credit reward.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "multihit_super_parry"
+          ]
+        }
+      ],
+      "reason": "Core tested: five separately armed super parries, zero health loss, full attacker debit retained.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": [
+        "video"
+      ],
+      "substantive_capture_plan": "combat_visual_showcase five distinct super parries"
+    },
+    {
+      "requirement_id": "PARRY-004",
+      "title": "Parry/hitstop/superfreeze timing and projectile source behavior are serialized and replayable.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "air_parry_and_projectile_source_freeze",
+            "same_tick_supers_and_freeze"
+          ]
+        }
+      ],
+      "reason": "Core tested: projectile parry freezes surviving projectile rather than distant owner; superfreeze and buffers serialize.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "FEEL-001",
+      "title": "A complete free-kit local fight is observed, with movement/input/freeze measurements and recorded defects.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "metrics",
+        "video"
+      ],
+      "artifacts": [
+        {
+          "kind": "metrics",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "free_kit_round"
+          ]
+        }
+      ],
+      "reason": "Complete zero-credit round runs in core. Integrator's observed native free-kit play and human feel notes remain distinct evidence.",
+      "remaining_needed": [
+        "Capture complete free-kit native round/match with economy access protected and record pacing. Automated defense success does not establish human competitive feel."
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "video"
+      ],
+      "substantive_capture_plan": "native full free-kit match with --free-kit"
+    },
+    {
+      "requirement_id": "ECO-001",
+      "title": "Exactly one scalar wallet per player; no earned meter, paid-use inventory, team/provenance balances or combat/time income.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "free_kit_round",
+            "economy_hand_derived_match_sequences"
+          ]
+        }
+      ],
+      "reason": "Core tested/source reviewed: one scalar wallet, no combat payout path or second spendable meter.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "ECO-002",
+      "title": "Legal EX/selected-super startup atomically debits once; whiff/block/parry/interruption do not refund.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "exact_credit_ex",
+            "paid_startup_interrupted",
+            "multihit_super_parry",
+            "ex_cancel_super_costs"
+          ]
+        }
+      ],
+      "reason": "Core tested: exact 300 EX, both EX/super startup prices, whiff/interruption/parry retain debit.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": [
+        "video"
+      ],
+      "substantive_capture_plan": "combat_visual_showcase paid debit/denial"
+    },
+    {
+      "requirement_id": "ECO-003",
+      "title": "Illegal/unaffordable/reserve-denied/unselected/negative-edge paid commands never debit or trigger fallback/delayed actions.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "insufficient_credit_no_fallback",
+            "negative_edge_paid_forbidden",
+            "leased_replacement_and_selected_super"
+          ]
+        }
+      ],
+      "reason": "Core tested: illegal, 299-credit, reserve, unselected art and negative-edge paid failures; every post-denial release tick checked.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "ECO-004",
+      "title": "Optional reserve is only a same-wallet minimum; locked round floor cannot be altered via combat messages.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "reserve_two_ex_then_deny"
+          ]
+        }
+      ],
+      "reason": "Core tested: reserve is a locked floor on the same balance. Menu floor range finding sent to integrator.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "ECO-005",
+      "title": "Rollback restores wallet and receipts together; disappearing/repeated/changed paid inputs give canonical balances.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "rollback_spend_receipts"
+          ]
+        }
+      ],
+      "reason": "Core tested: restore removes disappearing debit/receipt and reproduces surviving debit exactly once.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "ECO-006",
+      "title": "Actual C# payouts/caps/tier progression and savings examples conform to independent fixtures.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "economy_hand_derived_match_sequences"
+          ]
+        }
+      ],
+      "reason": "Core tested: actual round settlements reproduce 600 spent \u2192 900 first-loss balance \u2192 2100 saved second-loss balance and tiers.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "SHOP-001",
+      "title": "Optional three-slot leases validate fighter/slot/price; editing draft is not an irreversible purchase.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "preparation_atomic_idempotent",
+            "leased_replacement_and_selected_super"
+          ]
+        }
+      ],
+      "reason": "Core tested/source reviewed: fighter/slot/affordability/duplicate validation; UI drafts remain uncharged.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "SHOP-002",
+      "title": "Both preparation plans commit atomically/idempotently, lock then reveal, expire after one round and preserve basic kit.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "preparation_atomic_idempotent"
+          ]
+        }
+      ],
+      "reason": "Core tested: invalid opponent plan leaves both untouched; exact duplicate returns prior commit; round boundary expires leases/floor.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": [
+        "video"
+      ],
+      "substantive_capture_plan": "native controller_menu_flow and full match preparation"
+    },
+    {
+      "requirement_id": "MATCH-001",
+      "title": "Entire local economic match runs setup\u2192prep\u2192fight\u2192settlement\u2192next/result\u2192rematch with no state leakage.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ],
+      "artifacts": [],
+      "reason": "Source reviewed: native setup/prep/fight/results/rematch paths; integrator owns final complete interactive capture/replay.",
+      "remaining_needed": [
+        "Bind full final exported-native menu/preparation/combat/results/replay flow; demo uses two legal bots, and separately observed keyboard play must be labeled accurately."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "game/Main.Menus.cs",
+          "exists_at_review": true
+        },
+        {
+          "path": "game/Main.cs",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "test_log",
+        "video"
+      ],
+      "substantive_capture_plan": "whole_local_match and observed computer play"
+    },
+    {
+      "requirement_id": "MATCH-002",
+      "title": "Score half-points, first-to-five/cap9/final draw, KO precedence and reset/carry rules are correct.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "nine_round_match_draw"
+          ]
+        }
+      ],
+      "reason": "Core tested: point conservation, first-to-five, nine draws produce 9\u20139 half points and honest draw; round reset preserves only carried state.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "MATCH-003",
+      "title": "Both wallets and score settle exactly once from a confirmed terminal state; bad/duplicate/out-of-order requests reject.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "confirmed_settlement_only"
+          ]
+        }
+      ],
+      "reason": "Core tested: unconfirmed terminal rejected, score/payout applied atomically once, exact repeat idempotent.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "MATCH-004",
+      "title": "Pause, settings, quit, disconnect and rematch cannot farm credits, reset score midmatch or bypass lock.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/app-self-tests-final-candidate/self-tests.json",
+          "reason": "Production App tests; build and content identity embedded. Rebind if App changes during final drill audit.",
+          "exists_at_review": true,
+          "bytes": 1492,
+          "sha256": "c70a2defaae241c04e7f4e1413663be405d1f377e176392f65c439b51df01910",
+          "assertions": [
+            "actual_udp_disconnect_preparation_paid_startup_pause_resume"
+          ]
+        }
+      ],
+      "reason": "Source reviewed: pause skips Step, quit/rematch creates new match; paused network keepalive issue sent to App owner.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "CONTENT-001",
+      "title": "All49 Rook action definitions are reachable with distinct declared effects and per-move traces,43 base availability.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "replay"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "all_rook_moves",
+            "all_98_commands_recognized"
+          ]
+        },
+        {
+          "kind": "replay",
+          "path": "reports/evidence/all98-action-replays/action-replays.training.json",
+          "reason": "Training conformance replay format, explicitly training-only: initial canonical snapshots, explicit action-start calls, all input ticks/events, periodic and final hashes. All98 restored and rerun; this is not a competitive match replay.",
+          "exists_at_review": true,
+          "bytes": 2401958,
+          "sha256": "1f9721f9701400cfec25fac91a396e82683ea66f7589c2f1f3fe5d368954e3c5"
+        },
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/all98-action-replays/action-replay-verification.json",
+          "reason": "Separate invocation deserialized and reconstructed all98 action traces exactly.",
+          "exists_at_review": true,
+          "bytes": 363,
+          "sha256": "e7944d368473460acb47d10eae6f01f520096f6cd594c543e43ea6e7f6b0b864"
+        }
+      ],
+      "reason": "Core tested: all 49 Rook commands and per-move declared effects, including 43 baseline definitions.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "CONTENT-002",
+      "title": "All49 Vale action definitions are reachable with distinct declared effects and per-move traces,43 base availability.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "replay"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "all_vale_moves",
+            "all_98_commands_recognized"
+          ]
+        },
+        {
+          "kind": "replay",
+          "path": "reports/evidence/all98-action-replays/action-replays.training.json",
+          "reason": "Training conformance replay format, explicitly training-only: initial canonical snapshots, explicit action-start calls, all input ticks/events, periodic and final hashes. All98 restored and rerun; this is not a competitive match replay.",
+          "exists_at_review": true,
+          "bytes": 2401958,
+          "sha256": "1f9721f9701400cfec25fac91a396e82683ea66f7589c2f1f3fe5d368954e3c5"
+        },
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/all98-action-replays/action-replay-verification.json",
+          "reason": "Separate invocation deserialized and reconstructed all98 action traces exactly.",
+          "exists_at_review": true,
+          "bytes": 363,
+          "sha256": "e7944d368473460acb47d10eae6f01f520096f6cd594c543e43ea6e7f6b0b864"
+        }
+      ],
+      "reason": "Core tested: all 49 Vale commands and per-move declared effects, including returning projectile behavior.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "CONTENT-003",
+      "title": "All12 leases and all6 super choices have functioning move effects, command availability and direct credit prices.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "all_lease_items",
+            "leased_replacement_and_selected_super"
+          ]
+        }
+      ],
+      "reason": "Core tested: all 12 lease effects and six selected arts, prices and unavailable replacement/base behavior.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "ART-001",
+      "title": "Both original animated fighters, both stage presentations, mirror colors and hit/block/parry/throw/super states are visually readable.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "video",
+        "screenshot"
+      ],
+      "artifacts": [],
+      "reason": "Source reviewed: native presentation emits distinct fight states/boxes/effects and mirror palettes. Walk/backdash pose finding needs final visual check.",
+      "remaining_needed": [
+        "Integrator owns final actual-run evidence for this implemented shell/build/process behavior; this independent core review does not assert a pass."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "game/Main.Rendering.cs",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "video",
+        "screenshot"
+      ],
+      "substantive_capture_plan": "combat_visual_showcase and full native match"
+    },
+    {
+      "requirement_id": "AUDIO-001",
+      "title": "Original/permissioned action/UI/round/ambient audio and volume controls work; asset register is complete.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "video",
+        "process_log"
+      ],
+      "artifacts": [],
+      "reason": "Source reviewed: action/UI/contact/round cue integration and separate persisted volumes; actual sound observation owned by integrator.",
+      "remaining_needed": [
+        "Integrator owns final actual-run evidence for this implemented shell/build/process behavior; this independent core review does not assert a pass."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "game/Main.Rendering.cs",
+          "exists_at_review": true
+        },
+        {
+          "path": "game/Main.Menus.cs",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "video",
+        "process_log"
+      ],
+      "substantive_capture_plan": "native video with actual generated audio track plus playback observation"
+    },
+    {
+      "requirement_id": "BOT-001",
+      "title": "Playable bounded-reaction seeded bots use only legal inputs and real economy; no hidden state/credit writes.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/app-self-tests-final-candidate/self-tests.json",
+          "reason": "Production App tests; build and content identity embedded. Rebind if App changes during final drill audit.",
+          "exists_at_review": true,
+          "bytes": 1492,
+          "sha256": "c70a2defaae241c04e7f4e1413663be405d1f377e176392f65c439b51df01910",
+          "assertions": [
+            "full_bot_match_replay_and_seek"
+          ]
+        }
+      ],
+      "reason": "Source reviewed: bots emit InputFrames, use 12-tick observation delay and seedable captured RNG; preparation plans respect wallet/floor.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": [
+        "video"
+      ],
+      "substantive_capture_plan": "whole_local_match legal input-driven demo"
+    },
+    {
+      "requirement_id": "TRAIN-001",
+      "title": "Real-core training supports frame advance/reset/dummy/input/hitbox and explicit training-only resource settings.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/app-self-tests-final-candidate/self-tests.json",
+          "reason": "Production App tests; build and content identity embedded. Rebind if App changes during final drill audit.",
+          "exists_at_review": true,
+          "bytes": 1492,
+          "sha256": "c70a2defaae241c04e7f4e1413663be405d1f377e176392f65c439b51df01910",
+          "assertions": [
+            "training_controls_are_isolated_and_record_real_inputs"
+          ]
+        }
+      ],
+      "reason": "Same production core and guarded training mutation API; remaining UI tools/diagnostics listed above must be integrated.",
+      "remaining_needed": [
+        "Updated state/speed, health/stun/position, command parsing, combo damage and frame advantage controls are present. Reset button/F2 still bypass diagnostics-reset helper at review; route through ResetLabDrill so stale combo/advantage does not persist."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "game/Main.LabState.cs",
+          "exists_at_review": true
+        },
+        {
+          "path": "game/Main.LabDiagnostics.cs",
+          "exists_at_review": true
+        },
+        {
+          "path": "game/Main.Training.cs",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "video"
+      ],
+      "substantive_capture_plan": "native controller_menu_flow training controls and state"
+    },
+    {
+      "requirement_id": "TRAIN-002",
+      "title": "Required motion/charge/parry/red-parry/kara/confirm/credit drills have resets and observable success/failure.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/app-self-tests-final-candidate/self-tests.json",
+          "reason": "Production App tests; build and content identity embedded. Rebind if App changes during final drill audit.",
+          "exists_at_review": true,
+          "bytes": 1492,
+          "sha256": "c70a2defaae241c04e7f4e1413663be405d1f377e176392f65c439b51df01910",
+          "assertions": [
+            "training_controls_are_isolated_and_record_real_inputs"
+          ]
+        }
+      ],
+      "reason": "Sixteen explicit drills/evaluators exist; dummy reset/checkpoint fix reported, fighter compatibility and final drill success traces need evidence.",
+      "remaining_needed": [
+        "App owner is executing actual success/failure traces for all16 evaluators. Concrete bug reported: ThrowTech event uses original attacker Seat; player0 defender tech was ignored by Seat filter. Fix/retest and refresh App evidence if assembly changes.",
+        "Refresh displayed dummy name from lab.DummyMode after drill reset; the actual dummy changes but cached trainingMode can be stale."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "src/StrikeLedger.App/Training.cs",
+          "exists_at_review": true
+        },
+        {
+          "path": "game/Main.LabState.cs",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "video"
+      ],
+      "substantive_capture_plan": "native drills plus evaluator traces from App"
+    },
+    {
+      "requirement_id": "REPLAY-001",
+      "title": "Replay records inputs and preparation/settlement identity, reproducing world and wallet hashes exactly.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "replay"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/app-self-tests-final-candidate/self-tests.json",
+          "reason": "Production App tests; build and content identity embedded. Rebind if App changes during final drill audit.",
+          "exists_at_review": true,
+          "bytes": 1492,
+          "sha256": "c70a2defaae241c04e7f4e1413663be405d1f377e176392f65c439b51df01910",
+          "assertions": [
+            "full_bot_match_replay_and_seek"
+          ]
+        },
+        {
+          "kind": "replay",
+          "path": "reports/app-self-tests-final-candidate/full-match.slreplay",
+          "reason": "Actual complete competitive bot match replay, including preparation, inputs and settlements; seek test reproduces hashes.",
+          "exists_at_review": true,
+          "bytes": 3464447,
+          "sha256": "ec82bb21867b995f6bea79cdf2d7a3434fc17f93c9da701604423c5c07cd2693"
+        }
+      ],
+      "reason": "Source reviewed: input/transaction replay, periodic canonical hashes and per-step wallets; App actual full-match replay tests required on frozen build.",
+      "remaining_needed": [
+        "ReplayMenu sets fighter[] from replay config but does not synchronize art[] at review; imported art2/3 replay HUD can display stale art1/cost. Set art from config or draw authoritative selected super."
+      ],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "REPLAY-002",
+      "title": "Replay seek/reset, malformed imports and version/content mismatch behave safely and never preserve future balances.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/app-self-tests-final-candidate/self-tests.json",
+          "reason": "Production App tests; build and content identity embedded. Rebind if App changes during final drill audit.",
+          "exists_at_review": true,
+          "bytes": 1492,
+          "sha256": "c70a2defaae241c04e7f4e1413663be405d1f377e176392f65c439b51df01910",
+          "assertions": [
+            "replay_malformed_identity_bounds",
+            "full_bot_match_replay_and_seek"
+          ]
+        }
+      ],
+      "reason": "Source reviewed: bounded import, strict identity, seek restores checkpoints; assist-identity hole sent to App owner.",
+      "remaining_needed": [
+        "Assisted recording/import identity rejection is fixed in current source and tests; final replay UI load/seek needs final visible evidence."
+      ],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "REPLAY-003",
+      "title": "Player-readable round economy summary and machine-readable confirmed spend/result logs agree with actual replay.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "metrics",
+        "replay"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/app-self-tests-final-candidate/self-tests.json",
+          "reason": "Production App tests; build and content identity embedded. Rebind if App changes during final drill audit.",
+          "exists_at_review": true,
+          "bytes": 1492,
+          "sha256": "c70a2defaae241c04e7f4e1413663be405d1f377e176392f65c439b51df01910",
+          "assertions": [
+            "full_bot_match_replay_and_seek"
+          ]
+        },
+        {
+          "kind": "replay",
+          "path": "reports/app-self-tests-final-candidate/full-match.slreplay",
+          "reason": "Actual complete competitive bot match replay, including preparation, inputs and settlements; seek test reproduces hashes.",
+          "exists_at_review": true,
+          "bytes": 3464447,
+          "sha256": "ec82bb21867b995f6bea79cdf2d7a3434fc17f93c9da701604423c5c07cd2693"
+        },
+        {
+          "kind": "metrics",
+          "path": "reports/app-self-tests-final-candidate/economy.json",
+          "reason": "Per-round actual recorded spend receipts and wallet timeline; companion economy.csv available.",
+          "exists_at_review": true,
+          "bytes": 97141,
+          "sha256": "f335754421daf6d45f85c6e462f4e89d44d854104f1f3631f980d47b130f06ea"
+        }
+      ],
+      "reason": "Source reviewed: per-round spend logs and JSON/CSV exports derived from replay events. Final network replay also must verify.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "NET-001",
+      "title": "Actual two-process sockets handshake exactly two peers, ownership and identical build/content/rules.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "process_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "process_log",
+          "path": "reports/network-lab-release/matrix-result.json",
+          "reason": "Actual two separately launched native managed processes over UDP; 0,50,100,150ms profiles with jitter/loss/duplicates/reorder and both final hashes/wallets/scores/receipts compared.",
+          "exists_at_review": true,
+          "bytes": 15534,
+          "sha256": "71f16df7a3517ea9f5b36760bf760fe6292af1d591a8bf2b4b7f3d9b2684b029"
+        },
+        {
+          "kind": "process_log",
+          "path": "reports/network-lab-release/rtt150-jitter20-loss3/peer0.stdout.log",
+          "reason": "Actual process output; companion peer1 output and JSONL contain peer activity.",
+          "exists_at_review": true,
+          "bytes": 12176,
+          "sha256": "195b529509684cf8f365b9349078816a8a72e10d81b145e5d597a21b4df94c0f"
+        }
+      ],
+      "reason": "Source reviewed plus existing real two-process UDP results; final rerun after assembly freeze required.",
+      "remaining_needed": [
+        "Actual loopback two-process test is complete. Do not present it as a second physical machine or cross-OS runtime test."
+      ],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "NET-002",
+      "title": "Input prediction/resimulation, history bounds, stalls and hashes work at zero and injected delay/jitter/loss/reordering.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "metrics"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/app-self-tests-final-candidate/self-tests.json",
+          "reason": "Production App tests; build and content identity embedded. Rebind if App changes during final drill audit.",
+          "exists_at_review": true,
+          "bytes": 1492,
+          "sha256": "c70a2defaae241c04e7f4e1413663be405d1f377e176392f65c439b51df01910",
+          "assertions": [
+            "prediction_stalls_after_eight_frames",
+            "rollback_corrects_input_wallet_receipts"
+          ]
+        },
+        {
+          "kind": "metrics",
+          "path": "reports/network-lab-release/matrix-result.json",
+          "reason": "Actual two separately launched native managed processes over UDP; 0,50,100,150ms profiles with jitter/loss/duplicates/reorder and both final hashes/wallets/scores/receipts compared.",
+          "exists_at_review": true,
+          "bytes": 15534,
+          "sha256": "71f16df7a3517ea9f5b36760bf760fe6292af1d591a8bf2b4b7f3d9b2684b029"
+        }
+      ],
+      "reason": "Source reviewed: 2-tick delay, 8-tick prediction, 240 snapshots, bounded input history, hashes, actual fault-injection matrix.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "NET-003",
+      "title": "In-combat wallet/floor/receipt restoration survives rollback around both EX and super startups.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "rollback_spend_receipts"
+          ]
+        },
+        {
+          "kind": "test_log",
+          "path": "reports/app-self-tests-final-candidate/self-tests.json",
+          "reason": "Production App tests; build and content identity embedded. Rebind if App changes during final drill audit.",
+          "exists_at_review": true,
+          "bytes": 1492,
+          "sha256": "c70a2defaae241c04e7f4e1413663be405d1f377e176392f65c439b51df01910",
+          "assertions": [
+            "rollback_corrects_input_wallet_receipts"
+          ]
+        }
+      ],
+      "reason": "Core tested and App rollback tests: spending and receipts are part of restored canonical state.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "NET-004",
+      "title": "Late parry changing paid-super KO prevents speculative payout and invalidates corrected audiovisual terminal effects.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "confirmed_settlement_only"
+          ]
+        },
+        {
+          "kind": "test_log",
+          "path": "reports/app-self-tests-final-candidate/self-tests.json",
+          "reason": "Production App tests; build and content identity embedded. Rebind if App changes during final drill audit.",
+          "exists_at_review": true,
+          "bytes": 1492,
+          "sha256": "c70a2defaae241c04e7f4e1413663be405d1f377e176392f65c439b51df01910",
+          "assertions": [
+            "late_parry_retracts_predicted_paid_super_ko"
+          ]
+        }
+      ],
+      "reason": "Core actual KO-to-parry correction; App emits only confirmed presentation events so false KO effects are withheld.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": [
+        "video"
+      ],
+      "substantive_capture_plan": "combat_visual_showcase speculative KO restored to parry; label training visualization plus actual rollback fixture"
+    },
+    {
+      "requirement_id": "NET-005",
+      "title": "Commit/reveal prep, duplicate/malformed controls and forged money/seat messages fail closed.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/app-self-tests-final-candidate/self-tests.json",
+          "reason": "Production App tests; build and content identity embedded. Rebind if App changes during final drill audit.",
+          "exists_at_review": true,
+          "bytes": 1492,
+          "sha256": "c70a2defaae241c04e7f4e1413663be405d1f377e176392f65c439b51df01910",
+          "assertions": [
+            "actual_udp_rejects_incompatible_handshake_and_forged_seat",
+            "actual_udp_oversized_packets_are_bounded"
+          ]
+        }
+      ],
+      "reason": "Source reviewed: SHA-256 commit/nonce reveal, plan validation, peer seat ownership and bounded controls; malformed socket tests exist.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "NET-006",
+      "title": "Disconnect/grace/resync limits and mismatch diagnostics preserve economic invariants without public network changes.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "process_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/app-self-tests-final-candidate/self-tests.json",
+          "reason": "Production App tests; build and content identity embedded. Rebind if App changes during final drill audit.",
+          "exists_at_review": true,
+          "bytes": 1492,
+          "sha256": "c70a2defaae241c04e7f4e1413663be405d1f377e176392f65c439b51df01910",
+          "assertions": [
+            "actual_udp_disconnect_preparation_paid_startup_pause_resume"
+          ]
+        },
+        {
+          "kind": "process_log",
+          "path": "reports/network-lab-release/rtt150-jitter20-loss3/peer0.stdout.log",
+          "reason": "Actual process output; companion peer1 output and JSONL contain peer activity.",
+          "exists_at_review": true,
+          "bytes": 12176,
+          "sha256": "195b529509684cf8f365b9349078816a8a72e10d81b145e5d597a21b4df94c0f"
+        }
+      ],
+      "reason": "Source reviewed: bounded desync dump/abort, timeout and no public configuration changes; paused heartbeat finding requires regression.",
+      "remaining_needed": [
+        "Current App suite contains actual17-second paused-peer keepalive regression and disconnect tests. Bind corresponding process fixture output if required."
+      ],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "NET-007",
+      "title": "A complete real two-process1v1 economic match finishes with matching replay/receipt/result hashes.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "process_log",
+        "replay",
+        "video"
+      ],
+      "artifacts": [
+        {
+          "kind": "process_log",
+          "path": "reports/network-lab-release/matrix-result.json",
+          "reason": "Actual two separately launched native managed processes over UDP; 0,50,100,150ms profiles with jitter/loss/duplicates/reorder and both final hashes/wallets/scores/receipts compared.",
+          "exists_at_review": true,
+          "bytes": 15534,
+          "sha256": "71f16df7a3517ea9f5b36760bf760fe6292af1d591a8bf2b4b7f3d9b2684b029"
+        },
+        {
+          "kind": "process_log",
+          "path": "reports/network-lab-release/rtt150-jitter20-loss3/peer0.stdout.log",
+          "reason": "Actual process output; companion peer1 output and JSONL contain peer activity.",
+          "exists_at_review": true,
+          "bytes": 12176,
+          "sha256": "195b529509684cf8f365b9349078816a8a72e10d81b145e5d597a21b4df94c0f"
+        },
+        {
+          "kind": "replay",
+          "path": "reports/network-lab-release/rtt150-jitter20-loss3/peer0.slreplay",
+          "reason": "Confirmed network replay; both peers independently recorded byte-identical artifacts and replayed to final hash.",
+          "exists_at_review": true,
+          "bytes": 3492860,
+          "sha256": "a579da4ef1a43ba91597d265ea061e05b74fe96be6244032e6e9a80199cb2286"
+        }
+      ],
+      "reason": "Existing matrix completes actual full two-process economic matches with matching final state/round receipts. Current-build rerun and saved replay comparison required.",
+      "remaining_needed": [
+        "Final native two-window network visual capture pending integrator. Existing actual UDP matrix and replay equality remain valid for their embedded build."
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "video"
+      ],
+      "substantive_capture_plan": "two native visible network peers; label same-PC loopback"
+    },
+    {
+      "requirement_id": "UI-001",
+      "title": "All required menus/select/preparation/results/rematch/help flows operate controller-only.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "video"
+      ],
+      "artifacts": [],
+      "reason": "Source reviewed: controller-focusable menus and independent prep routing. Integrator's native UI software assertions and physical gates are distinct.",
+      "remaining_needed": [
+        "Native software controller flow injects events through Godot focus/callback routing; final run/capture pending, and it does not constitute physical-device certification."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "game/Main.UiSmoke.cs",
+          "exists_at_review": true
+        },
+        {
+          "path": "game/Main.Menus.cs",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "video"
+      ],
+      "substantive_capture_plan": "controller_menu_flow"
+    },
+    {
+      "requirement_id": "UI-002",
+      "title": "HUD shows a single wallet, costs/floor/leases/affordability and subtle debit rejection, not earned gauge.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "screenshot",
+        "video"
+      ],
+      "artifacts": [],
+      "reason": "Source reviewed: credit numerals, selected-art cost, floor, leases and reason-tagged cues; no earned meter.",
+      "remaining_needed": [
+        "Replay selected-art HUD issue recorded under REPLAY-001; fix before final screenshot. Reserve selection now traverses actual affordable range and protected floor semantics are correct."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "game/Main.cs",
+          "exists_at_review": true
+        },
+        {
+          "path": "game/Main.PrepDetails.cs",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "screenshot",
+        "video"
+      ],
+      "substantive_capture_plan": "native preparation/fight HUD plus replay"
+    },
+    {
+      "requirement_id": "UI-003",
+      "title": "Per-device controls, SOCD/chord mapping, unplug handling and menu input neutralization are implemented.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "video"
+      ],
+      "artifacts": [],
+      "reason": "Source reviewed: bindings, SOCD, chord macros, unplug policy and held-confirm suppression; per-device software tests exist.",
+      "remaining_needed": [
+        "Bind final native InputRouter/remap/held-confirm/unplug software assertions. Do not replace two-controller hardware gate with injected events."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "game/InputRouter.cs",
+          "exists_at_review": false
+        },
+        {
+          "path": "game/Main.ControlRouting.cs",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "test_log",
+        "video"
+      ],
+      "substantive_capture_plan": "controller_menu_flow remapping/device routing"
+    },
+    {
+      "requirement_id": "UI-004",
+      "title": "Settings persist in OS user-data paths and reduce-flash/shake/audio options never alter combat rules.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [],
+      "reason": "Source reviewed: OS user-data settings, normalized bounds, atomic save, reduced flash/shake/audio only affect presentation.",
+      "remaining_needed": [
+        "Bind settings normalization/atomic persistence/native focus test output from final run."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "game/GameSettings.cs",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "test_log"
+      ]
+    },
+    {
+      "requirement_id": "UI-005",
+      "title": "Assist/training settings are clearly labeled, recorded and isolated from default competitive sessions.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/app-self-tests-final-candidate/self-tests.json",
+          "reason": "Production App tests; build and content identity embedded. Rebind if App changes during final drill audit.",
+          "exists_at_review": true,
+          "bytes": 1492,
+          "sha256": "c70a2defaae241c04e7f4e1413663be405d1f377e176392f65c439b51df01910",
+          "assertions": [
+            "replay_malformed_identity_bounds",
+            "training_controls_are_isolated_and_record_real_inputs"
+          ]
+        }
+      ],
+      "reason": "Network rejects training/assist; replay assist mismatch was identified for repair. Root UI must clearly label training controls.",
+      "remaining_needed": [],
+      "implementation_source_candidates": [
+        {
+          "path": "src/StrikeLedger.App/Replay.cs",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "BAL-001",
+      "title": "Counterbalanced budget/matchup/seat/art experiments record raw full-match outcomes and uncertainty, not teammate metrics.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "metrics"
+      ],
+      "artifacts": [
+        {
+          "kind": "metrics",
+          "path": "reports/balance-lab-candidate/summary.json",
+          "reason": "168 completed controlled matches, zero exclusions, seat swaps, art pairings and zero/funded starts; policies include recovery-farming and final-round expenditure. Wilson intervals and raw matches/rounds available.",
+          "exists_at_review": true,
+          "bytes": 3282,
+          "sha256": "9fc34f64ab0810427271a6155b3a9794904fecfdb511c7ccf486c7d5295643aa"
+        }
+      ],
+      "reason": "Actual `reports/balance-lab/summary.json` records 84 full matches and Wilson intervals; final build/art/seat grouping must be retained.",
+      "remaining_needed": [
+        "Metrics provide168 controlled matches at seed1, seven policies, both seats and six art pairings; intervals are broad and must not be framed as a human balance verdict."
+      ],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "BAL-002",
+      "title": "Zero-credit/full-wallet tests probe EX loops, chip, parry, corner and optional lease dominance.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log",
+        "metrics"
+      ],
+      "artifacts": [
+        {
+          "kind": "metrics",
+          "path": "reports/balance-lab-candidate/summary.json",
+          "reason": "168 completed controlled matches, zero exclusions, seat swaps, art pairings and zero/funded starts; policies include recovery-farming and final-round expenditure. Wilson intervals and raw matches/rounds available.",
+          "exists_at_review": true,
+          "bytes": 3282,
+          "sha256": "9fc34f64ab0810427271a6155b3a9794904fecfdb511c7ccf486c7d5295643aa"
+        }
+      ],
+      "reason": "Balance lab contains funded/zero-wallet controlled policies; human dominance cannot be inferred from bots alone.",
+      "remaining_needed": [
+        "Summarize observed funded/zero-wallet outcomes and limitations from raw lab data; no automated result can close the separate human feel gate."
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "test_log"
+      ]
+    },
+    {
+      "requirement_id": "BAL-003",
+      "title": "Recovery-farming, cap, final-round all-in and spending-policy tests distinguish intended incentives from exploits.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "metrics"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "economy_hand_derived_match_sequences"
+          ]
+        },
+        {
+          "kind": "metrics",
+          "path": "reports/balance-lab-candidate/summary.json",
+          "reason": "168 completed controlled matches, zero exclusions, seat swaps, art pairings and zero/funded starts; policies include recovery-farming and final-round expenditure. Wilson intervals and raw matches/rounds available.",
+          "exists_at_review": true,
+          "bytes": 3282,
+          "sha256": "9fc34f64ab0810427271a6155b3a9794904fecfdb511c7ccf486c7d5295643aa"
+        }
+      ],
+      "reason": "Actual hand-derived payout regression plus balance lab farming/final-round policies; keep rational last-round spending distinct from a bug.",
+      "remaining_needed": [
+        "Distinguish finite-match rational final-round spending from a dominant repeatable farming strategy; describe observed failed farming policy rather than claiming mathematical proof for all player strategies."
+      ],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "BAL-004",
+      "title": "Actual tuning changes include original/new data, content hashes, regression reruns and honest limits.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "metrics",
+        "process_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "ex_cancel_super_costs"
+          ]
+        },
+        {
+          "kind": "metrics",
+          "path": "reports/balance-lab-candidate/summary.json",
+          "reason": "168 completed controlled matches, zero exclusions, seat swaps, art pairings and zero/funded starts; policies include recovery-farming and final-round expenditure. Wilson intervals and raw matches/rounds available.",
+          "exists_at_review": true,
+          "bytes": 3282,
+          "sha256": "9fc34f64ab0810427271a6155b3a9794904fecfdb511c7ccf486c7d5295643aa"
+        },
+        {
+          "kind": "process_log",
+          "path": "decisions/0003-contacted-ex-super-cancel.md",
+          "reason": "Authorized precise Rook knee_ex / Vale palm_ex selected-super contact windows, original empty arrays and rationale; no price tuning.",
+          "exists_at_review": true,
+          "bytes": 2022,
+          "sha256": "216fdbddf3acb25edd0dea41721a84b34da9f2b1de5cb61ad07d082066359ff5"
+        }
+      ],
+      "reason": "EX cancel data change records old/new windows, rationale and regression; no undocumented tuning performed by core owner.",
+      "remaining_needed": [
+        "Document reviewed counterbalanced measurements and exact retained content change; no new tune is warranted merely to force50% outcomes."
+      ],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "QA-001",
+      "title": "Full suite covers all current requirements and seed fixtures using production core; unsupported scenarios exit nonzero.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/dispatcher-smoke/dispatch-result.json",
+          "reason": "Actual required-scenario dispatcher Core invocation with seed7 and validated output; source registry equals all29 required IDs, unknown ID exits2.",
+          "exists_at_review": true,
+          "bytes": 2037,
+          "sha256": "d77a506429399f57c52c884e94490124838de8aa3526177618e063dce42286a1"
+        },
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/dispatcher-app-smoke/dispatch-result.json",
+          "reason": "Actual dispatcher malformed-packet/replay App route with all selected scenarios passing.",
+          "exists_at_review": true,
+          "bytes": 2202,
+          "sha256": "7de466224432521c3a141be254ae57e054bc3b98a98c6946ff92edea5cfba64c"
+        }
+      ],
+      "reason": "Core runner rejects unknown scenarios nonzero; all named core acceptance scenarios executable. Final dispatch/evidence ledger must cover remaining App/UI/export scenarios.",
+      "remaining_needed": [
+        "Dispatcher maps all29 required IDs and rejects unknowns nonzero. Integrator still needs final full scenario-registry execution/binding; two smoke routes are not all29 executions."
+      ],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "QA-002",
+      "title": "Long-run/round-reset/property tests find no credit underflow/duplication, projectile leak or unlimited stun/juggle loop.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "seat_swap_mirror_symmetry",
+            "snapshot_determinism_and_bounds"
+          ]
+        },
+        {
+          "kind": "test_log",
+          "path": "reports/balance-lab-candidate/summary.json",
+          "reason": "168 completed controlled matches, zero exclusions, seat swaps, art pairings and zero/funded starts; policies include recovery-farming and final-round expenditure. Wilson intervals and raw matches/rounds available.",
+          "exists_at_review": true,
+          "bytes": 3282,
+          "sha256": "9fc34f64ab0810427271a6155b3a9794904fecfdb511c7ccf486c7d5295643aa"
+        }
+      ],
+      "reason": "Core seeded/symmetry/round tests plus 84 full balance matches and repeated socket matches provide long-run coverage; no production credit underflow or projectile leak observed.",
+      "remaining_needed": [
+        "Core symmetry/snapshot,168 full balance matches and repeated full network matches provide real long-run coverage. State exact counts/seeds; do not claim an unexecuted duration."
+      ],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "QA-003",
+      "title": "Replay/network/content imports are bounded and reject unsafe paths/oversized/malformed input.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "test_log"
+      ],
+      "artifacts": [
+        {
+          "kind": "test_log",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "snapshot_determinism_and_bounds"
+          ]
+        },
+        {
+          "kind": "test_log",
+          "path": "reports/app-self-tests-final-candidate/self-tests.json",
+          "reason": "Production App tests; build and content identity embedded. Rebind if App changes during final drill audit.",
+          "exists_at_review": true,
+          "bytes": 1492,
+          "sha256": "c70a2defaae241c04e7f4e1413663be405d1f377e176392f65c439b51df01910",
+          "assertions": [
+            "replay_malformed_identity_bounds",
+            "actual_udp_oversized_packets_are_bounded"
+          ]
+        }
+      ],
+      "reason": "Source reviewed: bounded replay/content/network inputs and no embedded-code execution; final malformed-packet suite must use current build.",
+      "remaining_needed": [],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "QA-004",
+      "title": "Performance/pacing and resimulation budget are actually profiled with host metadata and known limits.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "metrics"
+      ],
+      "artifacts": [
+        {
+          "kind": "metrics",
+          "path": "reports/evidence/core-conformance/core-conformance.json",
+          "reason": "Production core conformance: named actual scenarios completed; assembly and content identity embedded.",
+          "exists_at_review": true,
+          "bytes": 63658,
+          "sha256": "578cd3be470cc10b38bef90001c4807a0dc0350b1a7f386c08ff07919c17fbc8",
+          "assertions": [
+            "performance_and_rollback_budget"
+          ]
+        }
+      ],
+      "reason": "Core actual-host p50/p95/p99, allocations, snapshot size and 8/240-tick rollback timings recorded. Render pacing remains a separate measured artifact.",
+      "remaining_needed": [
+        "Core host metrics are current and pass tick budget; final native renderer p50/p95/p99 capture is separate and still integrator-owned."
+      ],
+      "kinds_not_bound_by_this_proposal": []
+    },
+    {
+      "requirement_id": "QA-005",
+      "title": "Actual candidate-specific full-play recordings, logs and artifacts are tied to matching source/content ids.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "process_log",
+        "video"
+      ],
+      "artifacts": [],
+      "reason": "Core evidence records assembly/content/seed. Integrator must bind final native captures, playthrough and artifact hashes to the same final build.",
+      "remaining_needed": [
+        "Bind final game/App/Core artifacts, source/content hashes and native captures to one candidate; reports with matching content but different module identity remain developmental."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "game/Main.RuntimeEvidence.cs",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "process_log",
+        "video"
+      ],
+      "substantive_capture_plan": "final exported candidate visible match/capture"
+    },
+    {
+      "requirement_id": "BUILD-001",
+      "title": "Reproducible clean restore/build/import/export produces Windows and Linux native packages with dependency hashes.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "build_log",
+        "binary"
+      ],
+      "artifacts": [],
+      "reason": "Build script performs native Windows/Linux export; integrator owns final clean-package checks and external Linux execution status.",
+      "remaining_needed": [
+        "Final Windows/Linux self-contained exports and managed tools must be refreshed after last App/shell changes, hashed, and smoke-tested. Linux export creation is not proof of running on Linux."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "tools/build.py",
+          "exists_at_review": true
+        },
+        {
+          "path": "game/export_presets.cfg",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "build_log",
+        "binary"
+      ]
+    },
+    {
+      "requirement_id": "BUILD-002",
+      "title": "Distribution includes player controls/rules/help/notices/known limitations and a candidate manifest without copied franchise assets.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "process_log"
+      ],
+      "artifacts": [],
+      "reason": "Final distribution must include controls, rules, asset/license notices, known limits and candidate manifest.",
+      "remaining_needed": [
+        "Verify controls/rules/asset license notices/known limitations and runnable launchers are included in final distribution."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "README.md",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "process_log"
+      ]
+    },
+    {
+      "requirement_id": "FINAL-001",
+      "title": "Software evidence gate passes with real candidate-bound artifacts and an independent check of substantive completion.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "process_log"
+      ],
+      "artifacts": [],
+      "reason": "At review time acceptance records were initially empty. Run the real evidence gate after filling truthful candidate-bound records; this audit alone is not a gate pass.",
+      "remaining_needed": [
+        "This proposal assigns no acceptance status. Populate actual candidate-bound ledger and run the real gate; never manufacture artifacts just to satisfy required kinds."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "tools/verify_release_gate.py",
+          "exists_at_review": false
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "process_log"
+      ]
+    },
+    {
+      "requirement_id": "FINAL-002",
+      "title": "Final source/artifact instructions, known issues, exact remaining external gates and resume state are complete and accurate.",
+      "review_status": "PROPOSAL_ONLY_NO_ACCEPTANCE_DECISION",
+      "required_evidence_kinds": [
+        "process_log"
+      ],
+      "artifacts": [],
+      "reason": "Update STATE, RESUME_PACKET, balance/feel/build notes and final artifact paths after all fixes and final runs.",
+      "remaining_needed": [
+        "Update STATE, RESUME_PACKET, build/balance/feel/known-limits reports after final runs and artifact hashes."
+      ],
+      "implementation_source_candidates": [
+        {
+          "path": "reports/STATE.json",
+          "exists_at_review": true
+        },
+        {
+          "path": "reports/RESUME_PACKET.md",
+          "exists_at_review": true
+        }
+      ],
+      "kinds_not_bound_by_this_proposal": [
+        "process_log"
+      ]
+    }
+  ]
+}

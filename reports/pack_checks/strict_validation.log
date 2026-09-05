@@ -1,0 +1,24 @@
+SCAFFOLD PACKAGING CHECK ONLY
+Command: /opt/pyvenv/bin/python tools/validate_pack.py --strict-schema
+Expected exit: 0
+Actual exit: 0
+UTC: 2026-09-05T06:35:05.266645+00:00
+
+STDOUT
+{
+  "scope": "SCAFFOLD_ONLY",
+  "status": "PASS",
+  "json_files": 35,
+  "python_files": 12,
+  "csproj_xml_files": 3,
+  "requirements": 82,
+  "work_packages": 15,
+  "fighters": 2,
+  "base_moves": 86,
+  "all_moves": 98,
+  "items": 12,
+  "schema_mode": "draft2020-12_and_semantics",
+  "game_implementation": "NOT_VERIFIED"
+}
+
+STDERR

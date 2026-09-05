@@ -1,0 +1,5 @@
+Resume the complete Strike Ledger implementation in this directory. Read AGENTS.md, START_HERE.md, docs/00_PRODUCT_CONTRACT.md, reports/STATE.json and reports/RESUME_PACKET.md; inspect real Git/files and rerun the last relevant tests rather than trusting status text.
+
+Preserve the latest binding scope: original traditional Third Strike–inspired1v1; one persistent credit wallet replacing all earned super/EX meter; no team systems. Implement all remaining mandatory packages and repair integration failures. Do not restart planning, overwrite owner work, silently weaken gates or stop after the next package.
+
+Use work_packages/INDEX.md and acceptance/requirements.json. Continue actual implement/build/run/observe/test/repair. Only claim evidence actually produced on the candidate. Separate software, target-device and human-feel gates; finish unrelated software despite a real external blocker. At a true execution boundary update the precise resume packet; otherwise continue to the bounded finish.

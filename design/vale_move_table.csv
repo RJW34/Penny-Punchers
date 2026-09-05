@@ -1,0 +1,50 @@
+id,name,command,kind,preactive_ticks,first_active_display_frame,active_ticks,recovery_ticks,credit_cost,availability
+s_lp,S LP,S+LP,normal,3,4,2,7,0,base
+s_mp,S MP,S+MP,normal,5,6,3,12,0,base
+s_hp,S HP,S+HP,normal,8,9,4,19,0,base
+s_lk,S LK,S+LK,normal,3,4,2,7,0,base
+s_mk,S MK,S+MK,normal,5,6,3,12,0,base
+s_hk,S HK,S+HK,normal,8,9,4,19,0,base
+c_lp,C LP,C+LP,normal,3,4,2,7,0,base
+c_mp,C MP,C+MP,normal,5,6,3,12,0,base
+c_hp,C HP,C+HP,normal,8,9,4,19,0,base
+c_lk,C LK,C+LK,normal,3,4,2,7,0,base
+c_mk,C MK,C+MK,normal,5,6,3,12,0,base
+c_hk,C HK,C+HK,normal,8,9,4,19,0,base
+j_lp,J LP,J+LP,normal,3,4,2,7,0,base
+j_mp,J MP,J+MP,normal,5,6,3,12,0,base
+j_hp,J HP,J+HP,normal,8,9,4,19,0,base
+j_lk,J LK,J+LK,normal,3,4,2,7,0,base
+j_mk,J MK,J+MK,normal,5,6,3,12,0,base
+j_hk,J HK,J+HK,normal,8,9,4,19,0,base
+close_mp,Close MP,CLOSE+MP,normal,4,5,3,10,0,base
+close_hp,Close HP,CLOSE+HP,normal,6,7,3,10,0,base
+command_fhp,Long heel,6+HP,unique,10,11,3,17,0,base
+leap_overhead,Leap strike,MP+MK,unique,17,18,3,19,0,base
+throw_forward,Forward throw,LP+LK,throw,3,4,2,24,0,base
+throw_back,Back throw,4+LP+LK,throw,3,4,2,24,0,base
+pulse_l,Charge pulse L,charge_back+LP,special,10,11,1,19,0,base
+pulse_m,Charge pulse M,charge_back+MP,special,13,14,1,23,0,base
+pulse_h,Charge pulse H,charge_back+HP,special,16,17,1,28,0,base
+pulse_ex,Charge pulse EX,charge_back+PP,ex_special,8,9,1,24,300,base
+rise_l,Rising heel L,charge_down+LK,special,4,5,5,19,0,base
+rise_m,Rising heel M,charge_down+MK,special,6,7,5,23,0,base
+rise_h,Rising heel H,charge_down+HK,special,8,9,5,28,0,base
+rise_ex,Rising heel EX,charge_down+KK,ex_special,3,4,5,24,300,base
+palm_l,Turn palm L,qcb+LP,special,10,11,5,19,0,base
+palm_m,Turn palm M,qcb+MP,special,13,14,5,23,0,base
+palm_h,Turn palm H,qcb+HP,special,16,17,5,28,0,base
+palm_ex,Turn palm EX,qcb+PP,ex_special,8,9,5,24,300,base
+heel_l,Retreat heel L,qcf+LK,special,10,11,5,19,0,base
+heel_m,Retreat heel M,qcf+MK,special,13,14,5,23,0,base
+heel_h,Retreat heel H,qcf+HK,special,16,17,5,28,0,base
+heel_ex,Retreat heel EX,qcf+KK,ex_special,8,9,5,24,300,base
+super_1,Rising Current,double_qcf+P,super,5,6,20,35,900,base
+super_2,Crosswind,double_qcf+P,super,6,7,8,35,1200,base
+super_3,Tidal Step,double_qcf+P,super,7,8,12,35,1500,base
+shop_return_pulse,Returning pulse,qcf+P,special,22,23,3,23,0,vale_return_pulse
+shop_low_palm,Low palm,qcf+P,special,14,15,3,24,0,vale_low_palm
+shop_heel_arc,Heel arc,6+HP,unique,18,19,3,19,0,vale_heel_arc
+shop_long_check,Long check,6+HP,unique,14,15,3,19,0,vale_long_check
+shop_step_feint,Step feint,4+HP+HK,gambit,0,1,1,15,0,vale_step_feint
+shop_sway_feint,Sway feint,4+HP+HK,gambit,0,1,1,15,0,vale_sway_feint

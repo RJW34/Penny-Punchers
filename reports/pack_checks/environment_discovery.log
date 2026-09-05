@@ -1,0 +1,23 @@
+SCAFFOLD PACKAGING CHECK ONLY
+Command: /opt/pyvenv/bin/python tools/doctor.py
+Expected exit: 1
+Actual exit: 1
+UTC: 2026-09-05T06:35:08.840499+00:00
+
+STDOUT
+{
+  "scope": "PREREQUISITE_DISCOVERY_ONLY",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "dotnet": {
+    "found": false,
+    "version": "NOT_FOUND"
+  },
+  "godot": {
+    "found": false,
+    "version": "NOT_FOUND"
+  },
+  "note": "A found executable/version does not prove C# support or export success. Use matching .NET editor/templates and run actual builds."
+}
+
+STDERR

@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "status": "REQUIRED_NOT_IMPLEMENTED",
+  "scenarios": [
+    {
+      "id": "input_motion_both_sides",
+      "owner": "WP-002",
+      "runner_contract": "Real game/test executable --scenario input_motion_both_sides --seed 1 --evidence-dir reports/evidence/input_motion_both_sides",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "charge_crossup",
+      "owner": "WP-002",
+      "runner_contract": "Real game/test executable --scenario charge_crossup --seed 1 --evidence-dir reports/evidence/charge_crossup",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "free_kit_round",
+      "owner": "WP-004",
+      "runner_contract": "Real game/test executable --scenario free_kit_round --seed 1 --evidence-dir reports/evidence/free_kit_round",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "high_low_parry",
+      "owner": "WP-004",
+      "runner_contract": "Real game/test executable --scenario high_low_parry --seed 1 --evidence-dir reports/evidence/high_low_parry",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "red_parry_boundary",
+      "owner": "WP-004",
+      "runner_contract": "Real game/test executable --scenario red_parry_boundary --seed 1 --evidence-dir reports/evidence/red_parry_boundary",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "multihit_super_parry",
+      "owner": "WP-004",
+      "runner_contract": "Real game/test executable --scenario multihit_super_parry --seed 1 --evidence-dir reports/evidence/multihit_super_parry",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "throw_kara_quickrise",
+      "owner": "WP-003",
+      "runner_contract": "Real game/test executable --scenario throw_kara_quickrise --seed 1 --evidence-dir reports/evidence/throw_kara_quickrise",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "exact_credit_ex",
+      "owner": "WP-005",
+      "runner_contract": "Real game/test executable --scenario exact_credit_ex --seed 1 --evidence-dir reports/evidence/exact_credit_ex",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "insufficient_credit_no_fallback",
+      "owner": "WP-005",
+      "runner_contract": "Real game/test executable --scenario insufficient_credit_no_fallback --seed 1 --evidence-dir reports/evidence/insufficient_credit_no_fallback",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "paid_startup_interrupted",
+      "owner": "WP-005",
+      "runner_contract": "Real game/test executable --scenario paid_startup_interrupted --seed 1 --evidence-dir reports/evidence/paid_startup_interrupted",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "reserve_two_ex_then_deny",
+      "owner": "WP-005",
+      "runner_contract": "Real game/test executable --scenario reserve_two_ex_then_deny --seed 1 --evidence-dir reports/evidence/reserve_two_ex_then_deny",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "ex_cancel_super_costs",
+      "owner": "WP-005",
+      "runner_contract": "Real game/test executable --scenario ex_cancel_super_costs --seed 1 --evidence-dir reports/evidence/ex_cancel_super_costs",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "atomic_plan_commit",
+      "owner": "WP-006",
+      "runner_contract": "Real game/test executable --scenario atomic_plan_commit --seed 1 --evidence-dir reports/evidence/atomic_plan_commit",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "whole_local_match",
+      "owner": "WP-006",
+      "runner_contract": "Real game/test executable --scenario whole_local_match --seed 1 --evidence-dir reports/evidence/whole_local_match",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "nine_round_draw",
+      "owner": "WP-006",
+      "runner_contract": "Real game/test executable --scenario nine_round_draw --seed 1 --evidence-dir reports/evidence/nine_round_draw",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "all_rook_moves",
+      "owner": "WP-007",
+      "runner_contract": "Real game/test executable --scenario all_rook_moves --seed 1 --evidence-dir reports/evidence/all_rook_moves",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "all_vale_moves",
+      "owner": "WP-007",
+      "runner_contract": "Real game/test executable --scenario all_vale_moves --seed 1 --evidence-dir reports/evidence/all_vale_moves",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "all_lease_items",
+      "owner": "WP-007",
+      "runner_contract": "Real game/test executable --scenario all_lease_items --seed 1 --evidence-dir reports/evidence/all_lease_items",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "training_drills",
+      "owner": "WP-008",
+      "runner_contract": "Real game/test executable --scenario training_drills --seed 1 --evidence-dir reports/evidence/training_drills",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "replay_wallet_seek",
+      "owner": "WP-008",
+      "runner_contract": "Real game/test executable --scenario replay_wallet_seek --seed 1 --evidence-dir reports/evidence/replay_wallet_seek",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "bot_economic_match",
+      "owner": "WP-008",
+      "runner_contract": "Real game/test executable --scenario bot_economic_match --seed 1 --evidence-dir reports/evidence/bot_economic_match",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "loopback_match",
+      "owner": "WP-009",
+      "runner_contract": "Real game/test executable --scenario loopback_match --seed 1 --evidence-dir reports/evidence/loopback_match",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "rollback_startup_debits",
+      "owner": "WP-009",
+      "runner_contract": "Real game/test executable --scenario rollback_startup_debits --seed 1 --evidence-dir reports/evidence/rollback_startup_debits",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "rollback_ko_to_parry",
+      "owner": "WP-009",
+      "runner_contract": "Real game/test executable --scenario rollback_ko_to_parry --seed 1 --evidence-dir reports/evidence/rollback_ko_to_parry",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "malformed_packet_replay",
+      "owner": "WP-012",
+      "runner_contract": "Real game/test executable --scenario malformed_packet_replay --seed 1 --evidence-dir reports/evidence/malformed_packet_replay",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "controller_menu_flow",
+      "owner": "WP-010",
+      "runner_contract": "Real game/test executable --scenario controller_menu_flow --seed 1 --evidence-dir reports/evidence/controller_menu_flow",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "zero_vs_full_wallet",
+      "owner": "WP-011",
+      "runner_contract": "Real game/test executable --scenario zero_vs_full_wallet --seed 1 --evidence-dir reports/evidence/zero_vs_full_wallet",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "recovery_farming",
+      "owner": "WP-011",
+      "runner_contract": "Real game/test executable --scenario recovery_farming --seed 1 --evidence-dir reports/evidence/recovery_farming",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "native_export_smoke",
+      "owner": "WP-013",
+      "runner_contract": "Real game/test executable --scenario native_export_smoke --seed 1 --evidence-dir reports/evidence/native_export_smoke",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    }
+  ]
+}

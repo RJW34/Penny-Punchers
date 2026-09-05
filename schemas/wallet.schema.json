@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "One scalar wallet per player",
+  "type": "object",
+  "properties": {
+    "credits": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3600
+    },
+    "recovery_tier": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2
+    }
+  },
+  "required": [
+    "credits",
+    "recovery_tier"
+  ],
+  "additionalProperties": false
+}

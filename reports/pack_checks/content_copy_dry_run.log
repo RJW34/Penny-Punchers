@@ -1,0 +1,16 @@
+SCAFFOLD PACKAGING CHECK ONLY
+Command: /opt/pyvenv/bin/python tools/copy_content.py
+Expected exit: 0
+Actual exit: 0
+UTC: 2026-09-05T06:35:08.296841+00:00
+
+STDOUT
+{
+  "scope": "CONTENT_COPY_ONLY",
+  "mode": "DRY_RUN",
+  "files": 13,
+  "content_sha256": "408231897e4f008aa1df430fd9ab8f322efc14f2b75b2f0f62f2a79286d3bac4",
+  "destination": "game/GeneratedData"
+}
+
+STDERR

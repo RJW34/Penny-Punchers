@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "requirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Z]+-[0-9]{3}$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "mandatory": {
+            "const": true
+          },
+          "gate_class": {
+            "enum": [
+              "software",
+              "target_device",
+              "human"
+            ]
+          },
+          "work_package": {
+            "type": "string",
+            "pattern": "^WP-[0-9]{3}$"
+          },
+          "required_evidence_kinds": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "test_log",
+                "build_log",
+                "process_log",
+                "video",
+                "screenshot",
+                "replay",
+                "metrics",
+                "binary",
+                "human_feedback"
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "description",
+          "mandatory",
+          "gate_class",
+          "work_package",
+          "required_evidence_kinds"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "requirements"
+  ],
+  "additionalProperties": false
+}

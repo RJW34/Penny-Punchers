@@ -1,0 +1,27 @@
+SCAFFOLD PACKAGING CHECK ONLY
+Command: /opt/pyvenv/bin/python tools/release_gate.py --tier target_device
+Expected exit: 1
+Actual exit: 1
+UTC: 2026-09-05T06:35:09.970663+00:00
+
+STDOUT
+{
+  "scope": "EVIDENCE_COMPLETENESS_AND_INTEGRITY_ONLY",
+  "tier": "target_device",
+  "status": "FAIL",
+  "required": 5,
+  "verified_records": 0,
+  "problems": [
+    "Release candidate has not been built and marked READY_FOR_VERIFICATION",
+    "Release candidate build_ref missing",
+    "Release candidate content hash missing",
+    "DEVICE-001: missing evidence",
+    "DEVICE-002: missing evidence",
+    "DEVICE-003: missing evidence",
+    "DEVICE-004: missing evidence",
+    "DEVICE-005: missing evidence"
+  ],
+  "truth_review": "Reproduce commands and inspect actual gameplay; file/hash validation alone cannot establish truth or feel."
+}
+
+STDERR

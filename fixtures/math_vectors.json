@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "trunc_div": [
+    {
+      "n": -7,
+      "d": 3,
+      "expected": -2
+    },
+    {
+      "n": 7,
+      "d": -3,
+      "expected": -2
+    },
+    {
+      "n": -7,
+      "d": -3,
+      "expected": 2
+    }
+  ],
+  "damage": [
+    {
+      "base": 65,
+      "combo_index": 0,
+      "counterhit": false,
+      "expected": 65
+    },
+    {
+      "base": 65,
+      "combo_index": 1,
+      "counterhit": false,
+      "expected": 58
+    },
+    {
+      "base": 65,
+      "combo_index": 0,
+      "counterhit": true,
+      "expected": 71
+    },
+    {
+      "base": 65,
+      "combo_index": 8,
+      "counterhit": true,
+      "expected": 21
+    }
+  ],
+  "advantage": [
+    {
+      "stun": 13,
+      "active": 3,
+      "recovery": 12,
+      "active_offset": 0,
+      "expected": -1
+    },
+    {
+      "stun": 13,
+      "active": 3,
+      "recovery": 12,
+      "active_offset": 2,
+      "expected": 1
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Locally derived spend receipt, not an accepted network command",
+  "type": "object",
+  "properties": {
+    "round_id": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9
+    },
+    "seat_id": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "frame": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "action_ordinal": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "move_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "credit_cost": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3600
+    },
+    "balance_after": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3600
+    }
+  },
+  "required": [
+    "round_id",
+    "seat_id",
+    "frame",
+    "action_ordinal",
+    "move_id",
+    "credit_cost",
+    "balance_after"
+  ],
+  "additionalProperties": false
+}

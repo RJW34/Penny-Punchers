@@ -1,0 +1,5 @@
+using Godot;
+public partial class Main
+{
+    void DrawLabDiagnostics(){if(mode!="training"||sim==null||lab==null)return;var p=sim.Players[0];DrawRect(new Rect2(958,177,304,302),new Color(.025f,.045f,.06f,.9f));var m=MoveJson(p.FighterId,p.ActionId);string[] lines={"FRAME DATA / TRAINING",$"{(p.ActionId==""?"NEUTRAL":p.ActionId.ToUpperInvariant())} / f{p.ActionFrame}",m is {} move?$"START {move.GetProperty("startup")}  ACTIVE {move.GetProperty("active")}  REC {move.GetProperty("recovery")}":"START —  ACTIVE —  REC —",$"HITSTUN {p.Hitstun} / BLOCKSTUN {p.Blockstun}",$"CHARGE BACK {p.BackCharge}/45  DOWN {p.DownCharge}/45",$"COMBO {p.ComboCount} / DAMAGE {Math.Max(comboDamage,lastComboDamage)}",$"ADVANTAGE {(advantage.HasValue?advantage.Value.ToString("+0;-0;0"):"—")}f / PARRY {p.ParryTicks}f",parsedCommand.Length>30?parsedCommand[..30]:parsedCommand,lab.Success?"DRILL COMPLETE ✓":lab.Failed?"DRILL TIMED OUT / RESET":"DRILL IN PROGRESS"};for(int i=0;i<lines.Length;i++)DrawString(font,new(972,202+i*26),lines[i],HorizontalAlignment.Left,276,i==0?13:14,i==0||i==6?Gold:Cream);}
+}

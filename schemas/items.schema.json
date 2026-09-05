@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Round-purchased techniques without use counters",
+  "type": "object",
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "items": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "slot": {
+            "enum": [
+              "signature",
+              "technique",
+              "gambit"
+            ]
+          },
+          "price": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1800
+          },
+          "eligible_fighters": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "rook",
+                "vale"
+              ]
+            }
+          },
+          "move_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "replaces": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "duration": {
+            "const": "one_round"
+          },
+          "commit_frame": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2147483647
+          },
+          "refund_after_lock": {
+            "const": false
+          },
+          "alters_system_defense": {
+            "const": false
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tradeoff": {
+            "type": "string",
+            "minLength": 1
+          },
+          "activation_credit_cost": {
+            "const": 0
+          },
+          "use_limit": {
+            "type": "null"
+          },
+          "debit": {
+            "const": "preparation_commit"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "slot",
+          "price",
+          "eligible_fighters",
+          "move_id",
+          "replaces",
+          "duration",
+          "commit_frame",
+          "refund_after_lock",
+          "alters_system_defense",
+          "description",
+          "tradeoff",
+          "activation_credit_cost",
+          "use_limit",
+          "debit"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "version",
+    "items"
+  ],
+  "additionalProperties": false
+}

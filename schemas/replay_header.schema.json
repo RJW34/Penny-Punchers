@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bounded replay identity",
+  "type": "object",
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "ruleset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "build_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "mode": {
+      "const": "singles"
+    },
+    "players": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "properties": {
+          "fighter_id": {
+            "enum": [
+              "rook",
+              "vale"
+            ]
+          },
+          "super_art_id": {
+            "enum": [
+              "art_1",
+              "art_2",
+              "art_3"
+            ]
+          }
+        },
+        "required": [
+          "fighter_id",
+          "super_art_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "tick_hz": {
+      "const": 60
+    },
+    "assist": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "version",
+    "ruleset_id",
+    "build_ref",
+    "content_sha256",
+    "mode",
+    "players",
+    "seed",
+    "tick_hz",
+    "assist"
+  ],
+  "additionalProperties": false
+}

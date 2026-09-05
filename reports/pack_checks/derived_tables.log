@@ -1,0 +1,10 @@
+SCAFFOLD PACKAGING CHECK ONLY
+Command: /opt/pyvenv/bin/python tools/build_move_tables.py --check
+Expected exit: 0
+Actual exit: 0
+UTC: 2026-09-05T06:35:07.729599+00:00
+
+STDOUT
+Derived table check PASS: 98 actions
+
+STDERR

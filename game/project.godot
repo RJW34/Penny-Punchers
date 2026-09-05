@@ -1,0 +1,19 @@
+; Strike Ledger: native two-player single-wallet fighter.
+config_version=5
+[application]
+config/name="Strike Ledger"
+run/main_scene="res://Main.tscn"
+config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/size/window_width_override=1280
+window/size/window_height_override=720
+[dotnet]
+project/assembly_name="StrikeLedger"
+[physics]
+common/physics_ticks_per_second=60
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

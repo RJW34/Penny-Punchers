@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Two-seat digital six-button input",
+  "type": "object",
+  "properties": {
+    "seat_id": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "frame": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "direction": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9
+    },
+    "held": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 63
+    }
+  },
+  "required": [
+    "seat_id",
+    "frame",
+    "direction",
+    "held"
+  ],
+  "additionalProperties": false
+}

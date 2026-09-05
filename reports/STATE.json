@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "project": "Strike Ledger",
+  "scope": "1v1_traditional_fighter_single_credit_wallet",
+  "status": "PLAYABLE_CANDIDATE_WITH_PENDING_VERIFICATION",
+  "current_package": null,
+  "completed_packages": [
+    "WP-000",
+    "WP-001",
+    "WP-002",
+    "WP-003",
+    "WP-004",
+    "WP-005",
+    "WP-006",
+    "WP-007",
+    "WP-008",
+    "WP-009",
+    "WP-010",
+    "WP-011",
+    "WP-012"
+  ],
+  "blocked_requirements": [
+    "DEVICE-003",
+    "DEVICE-004",
+    "HUMAN-001"
+  ],
+  "game_build_ref": "source-sha256:312471d950685ecc88b89d64a88af35b2b57cabfc1ab9c2b44273191559995fa",
+  "game_content_sha256": "6fd0fe07da1f14d72754869b12cfe6cf21721d5055572c5b9f5b43dd72604c8b",
+  "next_action": "Complete the explicitly pending checks in ACCEPTANCE_RESULTS.json using actual hardware and human feedback; preserve the candidate and rerun both release-gate tiers.",
+  "updated_utc": "2026-09-05T09:48:41.232718+00:00",
+  "verification": {
+    "software": {
+      "passed": 76,
+      "total": 76
+    },
+    "target_device": {
+      "passed": 3,
+      "total": 5
+    },
+    "human": {
+      "passed": 0,
+      "total": 1
+    }
+  }
+}

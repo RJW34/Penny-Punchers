@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "packages": [
+    {
+      "id": "WP-000",
+      "title": "Workspace, toolchain and scope verification",
+      "depends_on": [],
+      "path": "work_packages/WP-000.md",
+      "requirement_ids": [
+        "SCOPE-001",
+        "ENV-001",
+        "ENV-002"
+      ]
+    },
+    {
+      "id": "WP-001",
+      "title": "Deterministic core and content contracts",
+      "depends_on": [
+        "WP-000"
+      ],
+      "path": "work_packages/WP-001.md",
+      "requirement_ids": [
+        "CORE-001",
+        "CORE-002",
+        "CORE-003",
+        "CORE-004",
+        "CORE-005"
+      ]
+    },
+    {
+      "id": "WP-002",
+      "title": "Six-button execution and grounded movement",
+      "depends_on": [
+        "WP-001"
+      ],
+      "path": "work_packages/WP-002.md",
+      "requirement_ids": [
+        "INPUT-001",
+        "INPUT-002",
+        "INPUT-003",
+        "INPUT-004",
+        "MOVE-001",
+        "MOVE-002",
+        "MOVE-003"
+      ]
+    },
+    {
+      "id": "WP-003",
+      "title": "Ordinary attacks, defense and contact rules",
+      "depends_on": [
+        "WP-002"
+      ],
+      "path": "work_packages/WP-003.md",
+      "requirement_ids": [
+        "COMBAT-001",
+        "COMBAT-002",
+        "COMBAT-003",
+        "COMBAT-004",
+        "COMBAT-005",
+        "COMBAT-006",
+        "COMBAT-007",
+        "COMBAT-008"
+      ]
+    },
+    {
+      "id": "WP-004",
+      "title": "Directional parry and combat-feel slice",
+      "depends_on": [
+        "WP-003"
+      ],
+      "path": "work_packages/WP-004.md",
+      "requirement_ids": [
+        "PARRY-001",
+        "PARRY-002",
+        "PARRY-003",
+        "PARRY-004",
+        "FEEL-001"
+      ]
+    },
+    {
+      "id": "WP-005",
+      "title": "One-wallet direct combat spending",
+      "depends_on": [
+        "WP-003"
+      ],
+      "path": "work_packages/WP-005.md",
+      "requirement_ids": [
+        "ECO-001",
+        "ECO-002",
+        "ECO-003",
+        "ECO-004",
+        "ECO-005",
+        "ECO-006"
+      ]
+    },
+    {
+      "id": "WP-006",
+      "title": "Preparation and full economic match",
+      "depends_on": [
+        "WP-004",
+        "WP-005"
+      ],
+      "path": "work_packages/WP-006.md",
+      "requirement_ids": [
+        "SHOP-001",
+        "SHOP-002",
+        "MATCH-001",
+        "MATCH-002",
+        "MATCH-003",
+        "MATCH-004"
+      ]
+    },
+    {
+      "id": "WP-007",
+      "title": "Both complete fighters and original presentation",
+      "depends_on": [
+        "WP-006"
+      ],
+      "path": "work_packages/WP-007.md",
+      "requirement_ids": [
+        "CONTENT-001",
+        "CONTENT-002",
+        "CONTENT-003",
+        "ART-001",
+        "AUDIO-001"
+      ]
+    },
+    {
+      "id": "WP-008",
+      "title": "Bots, training and deterministic replay",
+      "depends_on": [
+        "WP-007"
+      ],
+      "path": "work_packages/WP-008.md",
+      "requirement_ids": [
+        "BOT-001",
+        "TRAIN-001",
+        "TRAIN-002",
+        "REPLAY-001",
+        "REPLAY-002",
+        "REPLAY-003"
+      ]
+    },
+    {
+      "id": "WP-009",
+      "title": "Private two-peer rollback",
+      "depends_on": [
+        "WP-006"
+      ],
+      "path": "work_packages/WP-009.md",
+      "requirement_ids": [
+        "NET-001",
+        "NET-002",
+        "NET-003",
+        "NET-004",
+        "NET-005",
+        "NET-006",
+        "NET-007"
+      ]
+    },
+    {
+      "id": "WP-010",
+      "title": "Complete UI, control routing and settings",
+      "depends_on": [
+        "WP-007",
+        "WP-008"
+      ],
+      "path": "work_packages/WP-010.md",
+      "requirement_ids": [
+        "UI-001",
+        "UI-002",
+        "UI-003",
+        "UI-004",
+        "UI-005"
+      ]
+    },
+    {
+      "id": "WP-011",
+      "title": "1v1 economic and combat balance experiments",
+      "depends_on": [
+        "WP-008",
+        "WP-010"
+      ],
+      "path": "work_packages/WP-011.md",
+      "requirement_ids": [
+        "BAL-001",
+        "BAL-002",
+        "BAL-003",
+        "BAL-004"
+      ]
+    },
+    {
+      "id": "WP-012",
+      "title": "Integration hardening and evidence automation",
+      "depends_on": [
+        "WP-009",
+        "WP-010",
+        "WP-011"
+      ],
+      "path": "work_packages/WP-012.md",
+      "requirement_ids": [
+        "QA-001",
+        "QA-002",
+        "QA-003",
+        "QA-004",
+        "QA-005"
+      ]
+    },
+    {
+      "id": "WP-013",
+      "title": "Native builds and real-device verification",
+      "depends_on": [
+        "WP-012"
+      ],
+      "path": "work_packages/WP-013.md",
+      "requirement_ids": [
+        "BUILD-001",
+        "BUILD-002",
+        "DEVICE-001",
+        "DEVICE-002",
+        "DEVICE-003",
+        "DEVICE-004",
+        "DEVICE-005"
+      ]
+    },
+    {
+      "id": "WP-014",
+      "title": "Acceptance, handoff and actual player feel",
+      "depends_on": [
+        "WP-013"
+      ],
+      "path": "work_packages/WP-014.md",
+      "requirement_ids": [
+        "FINAL-001",
+        "FINAL-002",
+        "HUMAN-001"
+      ]
+    }
+  ]
+}
