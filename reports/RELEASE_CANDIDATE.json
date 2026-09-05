@@ -1,13 +1,213 @@
 {
   "schema_version": 1,
   "status": "READY_FOR_VERIFICATION",
-  "build_ref": "source-sha256:312471d950685ecc88b89d64a88af35b2b57cabfc1ab9c2b44273191559995fa",
+  "build_ref": "source-sha256:5414744b92e51de04d4be67df1929929a1072e7d5b986d773b1459166217784d",
   "content_sha256": "6fd0fe07da1f14d72754869b12cfe6cf21721d5055572c5b9f5b43dd72604c8b",
-  "created_utc": "2026-09-05T09:30:42.172433+00:00",
+  "created_utc": "2026-09-05T11:10:24.207758+00:00",
   "source_inputs": [
+    {
+      "path": "Directory.Build.props",
+      "sha256": "858854d74f072f72685860a6f7c731502263ea3e8ec3c0d8413f6370f72c1734"
+    },
+    {
+      "path": "game/Assets/AfterHours/Effects/combat-atlas.png",
+      "sha256": "7a7ad2e12bd640c0747fc9c77aa0b358925b8f0a1a6632a9d43d3196cbe6ae28"
+    },
+    {
+      "path": "game/Assets/AfterHours/Effects/combat-atlas.png.import",
+      "sha256": "df01019563cb5b17d43a9b959f9d25fbd97afcc4e984c236ef64ed00c7b57c4e"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/atlas.json",
+      "sha256": "63055d2fc83f3531cf1e12a63391cc3cd7eac95fe771291f4f01a434652785c9"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/normals.png",
+      "sha256": "7f2a73b512fe5b4f768a61ea1914c151ee471119602e1fa0de8c96bd9b5286e5"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/normals.png.import",
+      "sha256": "484a053eaa39b691a6461f4230b8776333901b685ccb715f1036b9860dc943de"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/provenance.json",
+      "sha256": "2e2cf00e52c14eece9b41e88cf3aa9763b5b694cebae0c495d88f1e77e60ef39"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/supplemental.png",
+      "sha256": "f384b1c17417c3048b201359e97d30db074989c4d332a8a4c92635daaaaa97a6"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/supplemental.png.import",
+      "sha256": "3429071e7e87347b5326f5cb1b4627f8c54931fd3cf2c4ad262d3444a25b55ff"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/techniques.png",
+      "sha256": "d194a915bd598a44bba2225f721dc61f46ea25bf915872a4587f47ea5c44864c"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/techniques.png.import",
+      "sha256": "82dd490f7329f8aac16886329e173e23c722b7ce432a6b1e04aecf0279ab1cbe"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/universal.png",
+      "sha256": "b7bbcb7b681708ff73a163c1ee0bbd2a12bfce8b7c868949125729043cf8a46d"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/universal.png.import",
+      "sha256": "ea5011f1b19af5c28b6ca1bfc051b37f617df782344deb52695d537b4d22ab28"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/atlas.json",
+      "sha256": "292ea6f08187bce681aeab971a44ce09741873e9627ecb9a85fda39e9a9024c7"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/normals-matte.png",
+      "sha256": "f70f933aa6e0ec4ec4c14170a3742b52fc35cf550861310c48fcb0b4b90f3468"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/normals-matte.png.import",
+      "sha256": "e64d2e27f494e9f1ff9e8d5b587357adfa75a4c4a82480ab4aadf2c6d414aa4d"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/pixel-inspection.json",
+      "sha256": "812ec58400b9c8a5d28942e0764c9a6d507568e5c64cbeefe9663ad6fcfebed2"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/provenance.json",
+      "sha256": "4c68a9d744a05351a0a94520cede770686825a375934266bb4273b1cdc8dc914"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/pulse-ex-clean-provenance.json",
+      "sha256": "cfcf1143c47f00fa35d018cfdc377e667122c7b1f53ceb50f22a027ecb64f3a0"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/super2-clean-matte.png",
+      "sha256": "a880393e267743188a261c6eb24a1c43a1a0e5c9a93e46ff2c9c0a0cc65681ae"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/super2-clean-matte.png.import",
+      "sha256": "79b26f3c28c9143225475cd091f70bc9e77af61565a10e358c4374a8f0cd63ff"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/super2-clean-provenance.json",
+      "sha256": "d74111245f6920bb247d45834a754ac1396f1d890e3a76b4829aabece2bce3c0"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/supplemental-matte.png",
+      "sha256": "3d8fe375b9d63a177e891fde9db19860e89ed1e18f757b86d873b0b93627dca9"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/supplemental-matte.png.import",
+      "sha256": "956b597e937a94ec0b1b6ba15cf62b6f146cc8a5f56d1473404726214efd0d0e"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/techniques-matte.png",
+      "sha256": "f592ba448ba77a1e5028852b2695a9f93dfac63c535d6687dcbbbe67fb87d644"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/techniques-matte.png.import",
+      "sha256": "eb9cb4c61b9ddfbf3573eef9feef23941afe6259886ee4b147f106f0cef0af6f"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/universal-matte.png",
+      "sha256": "ff159235cc53a49662f3b2711b5950200d2c0d207368d67e29518352ac6b6ee3"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/universal-matte.png.import",
+      "sha256": "1d04f21aa908c6f1584375ab049d20a79f648fde13db63e1431e15452429d3cd"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/validation.json",
+      "sha256": "717112d06bef906a19b726fe2736d771e310d27739cd1b6a7bbc818de74a2b38"
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/foundry.png",
+      "sha256": "a166535fed3a237aad4394fce94a528e5b5da92a96b46121687bf3ef3ba7fae0"
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/foundry.png.import",
+      "sha256": "10f726cc979ab8b1e79907c26153fe246cdd65c4e241bc5436ed7ba0eb88b554"
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/grid.png",
+      "sha256": "0c7377fbeec22bc70aa9cd683f9ca48ef6deb20c233babaef0b296055307950b"
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/grid.png.import",
+      "sha256": "614ac921d992cda696e6eb8dfa45584bdb81303d17163181e4d034334fa4c0d6"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/branding-announcements.png",
+      "sha256": "0272b88afe9b1dcd83832bf354027a05d9ddd6f02bb9b62d835290210e69bace"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/branding-announcements.png.import",
+      "sha256": "784ff0320e5ef92007acda972f74f621e7b71c27dd983580ed2a2e1d8ba3e42f"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/hud-atlas.png",
+      "sha256": "46efd91aec4b7ee1c249b8945dd94a45a0fdb40e8c4efefa9805f460740dc5d1"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/hud-atlas.png.import",
+      "sha256": "a07d27e2500800c5e6d96f25358f02a322f5e6fa31cf60927422ad6af59f110c"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/interface-atlas.png",
+      "sha256": "f73efab8ad9cf5e7f39a60394d59df3bf91c8527963b447dff898fdd7b44711a"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/interface-atlas.png.import",
+      "sha256": "ff755957b900cf6e776049cf6016c294c0e0bd0362fa5203d9ebf73c7314ab82"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/lease-icons.png",
+      "sha256": "c2f0e7cb60da0578f88a6ec40cf85a0a09a92dbc614d5099591ff8587d38c164"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/lease-icons.png.import",
+      "sha256": "4dd62997b245de50268f1b3a9d4cbe1912d505e29416a6dabe285ec3141f56c0"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/manifest.json",
+      "sha256": "e065309af97bc37242f6961249865a9eb1815a2a22a0ab7da4006463bab8c9b6"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/rook-identity.png",
+      "sha256": "47dcd50976a1e15ddaacc78781ba331c3ab000cefec9177ea7894dfc876bd626"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/rook-identity.png.import",
+      "sha256": "37c56c49212015819d67d275bc6e945a61d9e638a2874c7c53b3471819cc3f20"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/title-backdrop.png",
+      "sha256": "d7336aca471a0138594b110ef6b249e1351d5d85c18f81980f4e611226ef021c"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/title-backdrop.png.import",
+      "sha256": "2ca7eb9ed64ce613200e821b88f66244f999708cd0b5db76eea2333215282e4d"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/vale-identity.png",
+      "sha256": "09ea7773966d7f6dc3f56f290402bebc8ac239b64f3687fb76ab44312690941a"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/vale-identity.png.import",
+      "sha256": "0072e12bba01bafc30f7c6c38c2b7cde3493005f05c0033ba9b077d85a39285c"
+    },
     {
       "path": "game/GameSettings.cs",
       "sha256": "4a9aeadbdff3ee645728cf46fdd849788caeb3a80888e659820bed910f305d26"
+    },
+    {
+      "path": "game/Main.ArtReview.cs",
+      "sha256": "e20aa531b4458bb1426b17d775bb7c296bf3393aee8b7ea085f3abb20f9c649c"
+    },
+    {
+      "path": "game/Main.ArtSkin.cs",
+      "sha256": "430df29ce1cdb0b7d3fb7597412a22e623a64330da95d7e8f3004ef8650edc7b"
     },
     {
       "path": "game/Main.CombatShowcase.cs",
@@ -15,7 +215,7 @@
     },
     {
       "path": "game/Main.ControlRouting.cs",
-      "sha256": "9f8d4c42c0258f77162474d5f5dc9eee64db3233a9b78265e30be9f35b796f88"
+      "sha256": "c2a1654034310b828d972a16be5ba4ba2132914a6e9f36ba9164c3616e8090b0"
     },
     {
       "path": "game/Main.EconomyReport.cs",
@@ -31,7 +231,7 @@
     },
     {
       "path": "game/Main.Menus.cs",
-      "sha256": "5c9efd7b207aaca1cfbd3e590673c1cdda398057798b8b44169c81f33f17e1ea"
+      "sha256": "c6fe08de1eb1d7fad67ef62fbe6324b3a7481ab4f700337697ae4c9934e268d2"
     },
     {
       "path": "game/Main.Network.cs",
@@ -51,7 +251,7 @@
     },
     {
       "path": "game/Main.Rendering.cs",
-      "sha256": "47c0e9eb5a87dbd8ff66116e1355875adce6da2a7d75d101e871025703bc7a98"
+      "sha256": "059984e903188808e89feb575c375172d174076b1bb1c2c4f843945802a7ca23"
     },
     {
       "path": "game/Main.ReplayDetails.cs",
@@ -79,7 +279,7 @@
     },
     {
       "path": "game/Main.cs",
-      "sha256": "6725ed7e2b2f8814a7d4e807b3ca3d0abb93325e56b9f251f6ebb6ae7697aa9c"
+      "sha256": "ff9e174d5c4548a471feddbfbf1a2092bf841f511b6a1d8b9c03b9fd8d0750d3"
     },
     {
       "path": "game/Main.tscn",
@@ -90,8 +290,12 @@
       "sha256": "d34c04b20d1f7538adda61bb6b7794c5ba68035721c6852b1e9b85bb49954f57"
     },
     {
+      "path": "game/Presentation/ArenaOverlay.cs",
+      "sha256": "7b4fd9e3805cf41344ab3e76589827fc652616b41bf76a98d5bde7baeaf338b5"
+    },
+    {
       "path": "game/Presentation/ArenaView.cs",
-      "sha256": "06ae6c6eeb313f315f30ea35ba14acfd9655855aca7c0cd213301e77f2e1f6be"
+      "sha256": "55c635bc78f2d7681e6706cedc231fb65b0cb9093e50cc8b520858d828affb2d"
     },
     {
       "path": "game/Presentation/Audio/block.wav",
@@ -222,12 +426,20 @@
       "sha256": "6e57b3ed64e00d7ebd0f9f9ea85252e2f6a132f312c947eb9e6adb0f32f87847"
     },
     {
+      "path": "game/Presentation/FighterPalette.gdshader",
+      "sha256": "0351148ef87e5ee2e23c79ce67a9ba5c79138ffec27f31f5f4ae1c57547b76ce"
+    },
+    {
+      "path": "game/Presentation/FighterSprites.cs",
+      "sha256": "2f7ff65ac7936920ebfa8b440ef4bd5ceb89bbc132abaab3e6fe27c5791ceb17"
+    },
+    {
       "path": "game/Presentation/FoundryBackdrop.cs",
       "sha256": "688af4197fdd23f4c4879336c48979ef54a0c1cb41f3ee4101dbd8b0bf459597"
     },
     {
       "path": "game/Presentation/RenderState.cs",
-      "sha256": "c0d1a0b61a74c03973c9190b10a501c2f34fc819975386f9bf95167b36f29f60"
+      "sha256": "4c40f7b5cd8c43160000f52fcd7d6784ffd4db1108ed1f2f5c83d83d6b9d35ab"
     },
     {
       "path": "game/Presentation/RuntimeProfiler.cs",
@@ -247,7 +459,7 @@
     },
     {
       "path": "game/export_presets.cfg",
-      "sha256": "220f4f71497161a4c372145f5d999efd7173ed8c97e939e843946a492f3dad3a"
+      "sha256": "b0933e9c2677145b1d8adf80484db30a7d2fb7adb3ca73775a3a574de5060809"
     },
     {
       "path": "game/project.godot",
@@ -444,8 +656,8 @@
     },
     {
       "path": "dist/StrikeLedger/linux/data_StrikeLedger_linuxbsd_x86_64/StrikeLedger.dll",
-      "sha256": "373e4ac78e54d3ffb1c24a05ab6da256b9b2583654d0e59d9b4c675e3f68184b",
-      "bytes": 271360
+      "sha256": "3446618cd7a8ff8d850ba0b46b5e48823f041b6eb38085922f84f8042215c96f",
+      "bytes": 289280
     },
     {
       "path": "dist/StrikeLedger/linux/data_StrikeLedger_linuxbsd_x86_64/System.AppContext.dll",
@@ -1254,8 +1466,8 @@
     },
     {
       "path": "dist/StrikeLedger/linux/StrikeLedger.pck",
-      "sha256": "5e641c7357eb01fd2bb5625f0e24547beea353bd6ce1192b062646bd714ab046",
-      "bytes": 385328
+      "sha256": "471731809ef120516c33cef6171cf1c8e289e8695277f47b4fa64f7befbc5b6b",
+      "bytes": 28084076
     },
     {
       "path": "dist/StrikeLedger/linux/StrikeLedger.x86_64",
@@ -1379,8 +1591,8 @@
     },
     {
       "path": "dist/StrikeLedger/windows/data_StrikeLedger_windows_x86_64/StrikeLedger.dll",
-      "sha256": "afe55f7bb59450fac471a5de35d539b7f63e923626ca26949168a17adefda5c3",
-      "bytes": 271360
+      "sha256": "e19abeacdf69aa0dce26161e2f0589e6f7c4c49f550eb559b8e4c66b511107db",
+      "bytes": 289280
     },
     {
       "path": "dist/StrikeLedger/windows/data_StrikeLedger_windows_x86_64/System.AppContext.dll",
@@ -2199,8 +2411,8 @@
     },
     {
       "path": "dist/StrikeLedger/windows/StrikeLedger.pck",
-      "sha256": "5e641c7357eb01fd2bb5625f0e24547beea353bd6ce1192b062646bd714ab046",
-      "bytes": 385328
+      "sha256": "471731809ef120516c33cef6171cf1c8e289e8695277f47b4fa64f7befbc5b6b",
+      "bytes": 28084076
     }
   ],
   "note": "Source fingerprint covers production C# and engine project inputs. Assembly/build identities are also recorded in each executable run; different build configurations may have different deterministic MVID identities."

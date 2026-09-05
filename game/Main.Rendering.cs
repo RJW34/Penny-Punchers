@@ -6,6 +6,8 @@ public partial class Main
 {
     private Simulation? _presentationSimulation;
     readonly int[] renderedX={288000,480000},renderedDx={0,0};long renderedMotionTick=-1;
+    private readonly string[] _parryVisualKind=["parry","parry"];
+    private readonly long[] _throwVisualUntil=[-1,-1],_techVisualUntil=[-1,-1],_tauntVisualUntil=[-1,-1];
     private long _lastPresentationTick=-1, _lastObservedStepTick=-1;
     private readonly long[] _parryVisualUntil=[-1,-1], _lastRejectedCue=[-100,-100];
 
@@ -16,6 +18,7 @@ public partial class Main
         {
             _presentationSimulation=sim;_lastObservedStepTick=-1;
             Array.Fill(_parryVisualUntil,-1);Array.Fill(_lastRejectedCue,-100);
+            Array.Fill(_throwVisualUntil,-1);Array.Fill(_techVisualUntil,-1);Array.Fill(_tauntVisualUntil,-1);
             arena.ResetEffects();renderedMotionTick=-1;for(int i=0;i<2;i++)renderedX[i]=sim.Players[i].X;
             for(int i=0;i<2;i++){lastAction[i]=sim.Players[i].ActionId;lastHealth[i]=sim.Players[i].Health;lastWallet[i]=sim.Players[i].Credits;}
         }
@@ -45,6 +48,7 @@ public partial class Main
             switch(e.Kind)
             {
                 case CombatEventKind.ActionStarted:
+                    if(e.MoveId=="taunt")_tauntVisualUntil[seat]=sim.Tick+24;
                     arena.PlayCue(e.MoveId.StartsWith("super")?"super":e.MoveId.EndsWith("_ex")?"ex":"swing");
                     evidenceLog?.WriteLine($"ACTION {e.Tick} P{seat+1} {e.MoveId} credit={actor.Credits}");
                     break;
@@ -68,12 +72,16 @@ public partial class Main
                     break;
                 case CombatEventKind.Parry:
                     _parryVisualUntil[seat]=sim.Tick+9;
+                    _parryVisualKind[seat]=e.Detail.Split(':')[0] switch{"Low"=>"crouchparry","Air"=>"airparry","RedHigh"=>"redparry","RedLow"=>"redlowparry",_=>"parry"};
                     arena.TriggerEffect("parry",actor.X+actor.Facing*18000,actor.Y+contactHeight,strength);
                     break;
                 case CombatEventKind.Throw:
+                    _throwVisualUntil[target]=e.Detail=="capture"?sim.Tick+content.Combat.Throw.TechWindow:-1;
                     if(e.Detail=="damage")arena.TriggerEffect("throw",victim.X,victim.Y+26000,3);
                     break;
                 case CombatEventKind.ThrowTech:
+                    _throwVisualUntil[seat]=_throwVisualUntil[target]=-1;
+                    _techVisualUntil[seat]=_techVisualUntil[target]=sim.Tick+10;
                     arena.TriggerEffect("parry",(actor.X+victim.X)/2,(actor.Y+victim.Y)/2+45000,2);
                     break;
                 case CombatEventKind.ProjectileClash:
@@ -100,19 +108,32 @@ public partial class Main
         PreparePresentationTimeline();
         var fighters=sim.Players.Select(p=>
         {
-            int dx=sim.Tick!=renderedMotionTick?p.X-renderedX[p.Seat]:renderedDx[p.Seat];if(sim.Tick!=renderedMotionTick){renderedDx[p.Seat]=dx;renderedX[p.Seat]=p.X;}
+            bool motionFrozen=p.Hitstop>0||sim.FullFreeze>0;
+            int dx=sim.Tick==renderedMotionTick||motionFrozen?renderedDx[p.Seat]:p.X-renderedX[p.Seat];
+            if(sim.Tick!=renderedMotionTick){renderedDx[p.Seat]=dx;renderedX[p.Seat]=p.X;}
+            // Tick advances during a global freeze; these observed poses follow the
+            // already-authoritative defender freeze / taunt recovery instead.
+            if(sim.Tick>=_parryVisualUntil[p.Seat]&&p.Hitstop==0)_parryVisualUntil[p.Seat]=-1;
+            if(p.DashTicks==0)_tauntVisualUntil[p.Seat]=-1;
             var move=p.ActionId.Length==0?null:content.Fighters[p.FighterId].Move(p.ActionId);
-            string state=p.Health==0||p.KnockdownTicks>0?"knockdown"
+            bool settled=sim.Phase is MatchPhase.RoundResult or MatchPhase.MatchOver;
+            string state=settled?(sim.PendingResult?.WinnerSeat<0?"draw":sim.PendingResult?.WinnerSeat==p.Seat?"win":"defeat")
+                :sim.Phase is MatchPhase.Reveal or MatchPhase.Countdown?"intro"
+                :p.Health==0?"knockdown"
+                :p.KnockdownTicks>0?(!p.Grounded?"falling":p.KnockdownTicks<=10?"wakeup":"knockdown")
                 :p.DizzyTicks>0?"dizzy"
-                :p.Hitstun>0?"hit"
-                :sim.Tick<_parryVisualUntil[p.Seat]?p.Crouching?"crouchparry":"parry"
+                :p.Hitstun>0?!p.Grounded?"airhit":p.Crouching?"lowhit":"hit"
                 :p.Blockstun>0?p.Crouching?"crouchguard":"guard"
-                :sim.PendingResult?.WinnerSeat==p.Seat&&sim.Phase is MatchPhase.RoundResult or MatchPhase.MatchOver?"win"
+                :sim.Tick<_throwVisualUntil[p.Seat]?"thrown"
+                :sim.Tick<_techVisualUntil[p.Seat]?"tech"
+                :_parryVisualUntil[p.Seat]>=0&&(sim.Tick<_parryVisualUntil[p.Seat]||p.Hitstop>0)?_parryVisualKind[p.Seat]
+                :_tauntVisualUntil[p.Seat]>=0&&p.DashTicks>0?"taunt"
                 :p.DashTicks>0?dx*p.Facing<0?"dashback":"dash"
-                :!p.Grounded?"jump"
-                :p.JumpStart>0?"crouch"
+                :!p.Grounded?p.Vy>800?"rise":p.Vy< -800?"fall":"apex"
+                :p.JumpStart>0?"takeoff"
+                :p.LandingTicks>0?"landing"
                 :p.Crouching?"crouch"
-                :dx!=0&&p.ActionId.Length==0?"walk":"idle";
+                :dx!=0&&p.ActionId.Length==0?dx*p.Facing<0?"walkback":"walk":"idle";
             var boxes=new List<RenderBox>();
             if(debugBoxes)
             {
@@ -126,11 +147,12 @@ public partial class Main
             {
                 Id=p.FighterId,X=p.X,Y=p.Y,Facing=p.ActionId.Length>0?p.ActionFacing:p.Facing,MoveId=p.ActionId,State=state,ActionFrame=p.ActionFrame,
                 Startup=move?.Startup??3,Active=move?.Active??2,Recovery=move?.Recovery??12,Strength=RenderStrength(p.ActionId),
-                Palette=mirror?p.Seat:0,Grounded=p.Grounded,Boxes=boxes.ToArray()
+                Palette=mirror?p.Seat:0,Grounded=p.Grounded,Frozen=p.Hitstop>0||sim.FullFreeze>0,Boxes=boxes.ToArray()
             };
         }).ToArray();
         renderedMotionTick=sim.Tick;var projectiles=sim.Projectiles.Select(p=>new ProjectileRenderState
         {
+            Id=p.Id,FighterId=sim.Players[p.Owner].FighterId,MoveId=p.MoveId,Age=p.Definition.LifeTicks-p.LifeTicks,
             X=p.X,Y=p.Y,Facing=p.Vx==0?p.Facing:Math.Sign(p.Vx),Owner=p.Owner,IsSuper=p.MoveId.StartsWith("super")||p.MoveId.EndsWith("_ex"),Width=p.Definition.Width,Height=p.Definition.Height
         }).ToArray();
         arena.SetState(new ArenaRenderState

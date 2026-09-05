@@ -40,4 +40,4 @@ The Windows renderer has been exercised on this PC. Two physical controllers and
 
 Controller mappings use a driver identity plus controller slot. Drivers without a persistent slot use equal-model connection order. After swapping identical controllers between connection slots, check the live input page and reassign the corners if necessary.
 
-The game uses original vector characters, stage artwork, effects and procedurally synthesized audio. `ASSET_NOTICES.md` identifies the engine and embedded-font notices.
+The game uses the original After Hours bitmap characters, stages, effects and interface artwork, with procedurally synthesized audio. `ASSET_NOTICES.md` identifies the engine and embedded-font notices.

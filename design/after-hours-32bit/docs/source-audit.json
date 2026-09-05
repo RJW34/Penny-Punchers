@@ -1,0 +1,37 @@
+{
+  "scope": "Traditional-fighter art design source audit only",
+  "date": "2026-09-05",
+  "read_only_initial_check": {
+    "command": "python -B tools/validate_pack.py",
+    "exit_code": 0,
+    "scope": "SCAFFOLD_ONLY",
+    "status": "PASS",
+    "fighters": 2,
+    "base_moves": 86,
+    "all_moves": 98,
+    "items": 12,
+    "requirements": 82,
+    "work_packages": 15,
+    "game_implementation": "NOT_VERIFIED",
+    "existing_reports_written": false
+  },
+  "inventory_validation": {
+    "visual_rows": 352,
+    "moves": 98,
+    "unique_moves_per_fighter": 49,
+    "universal_clip_design_rows": 72,
+    "universal_intents_with_manifest_cell_bindings_per_fighter": 36,
+    "selected_reference_images": 22,
+    "supplemental_reference_images": 2,
+    "lease_icon_rows": 12,
+    "all_move_source_objects_retained": true,
+    "every_move_has_phase_intervals": true,
+    "runtime_integration_performed": false
+  },
+  "limits": [
+    "Reference-board assignment is not proof that every production cel or UI variant is drawn.",
+    "No complete transparent animation atlas or verified import adapter is asserted by these documents.",
+    "Prototype source may evolve during the concurrent build; compare source hashes before integration.",
+    "Fighter manifests record actual cell content and generation defects."
+  ]
+}

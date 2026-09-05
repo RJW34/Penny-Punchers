@@ -1,0 +1,1346 @@
+{
+  "utc": "2026-09-05T10:34:32.030113+00:00",
+  "generator": "built-in image_gen__imagegen; no API/CLI fallback",
+  "source_pack": "design/after-hours-32bit/fighters/rook",
+  "originals_preserved": true,
+  "alpha_attempt": {
+    "prompt": "prompts/universal-alpha.txt",
+    "output": "tools/art/rook-provenance/universal-alpha-failed.png",
+    "mode": "RGB",
+    "alpha_present": false,
+    "decision": "Built-in extraction again produced a baked checkerboard. Root authorized magenta-matte runtime shader fallback. No false transparent-PNG claim."
+  },
+  "raster_postprocessing": "None. Generated PNGs copied byte-for-byte; Python only authored JSON and read pixels for validation.",
+  "images": [
+    {
+      "texture": "universal.png",
+      "source_sha256": "526e3635404efd769c4cf41c1d57d2d63397a5beb1974688e09213fa18df9e4b",
+      "generated_sha256": "b7bbcb7b681708ff73a163c1ee0bbd2a12bfce8b7c868949125729043cf8a46d",
+      "mode": "RGB",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "true_alpha": false,
+      "prompt": "prompts/universal-chroma.txt",
+      "generated_file": "exec-634d3d09-b0a4-4e6c-a77c-c54327135fa3.png"
+    },
+    {
+      "texture": "normals.png",
+      "source_sha256": "c71f5c3abff5f1c0c4a41c0852acbe70833e44daec28f1ca8d8d07e47876bcc2",
+      "generated_sha256": "7f2a73b512fe5b4f768a61ea1914c151ee471119602e1fa0de8c96bd9b5286e5",
+      "mode": "RGB",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "true_alpha": false,
+      "prompt": "prompts/normals-chroma.txt",
+      "generated_file": "exec-54cea0a4-5a4f-48a0-90b8-b5c869ac154f.png"
+    },
+    {
+      "texture": "techniques.png",
+      "source_sha256": "f34eff09b6cb68d5474a48c53b8cb423f21caa0e26a381a898ab72b9f2f5a890",
+      "generated_sha256": "d194a915bd598a44bba2225f721dc61f46ea25bf915872a4587f47ea5c44864c",
+      "mode": "RGB",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "true_alpha": false,
+      "prompt": "prompts/techniques-chroma.txt",
+      "generated_file": "exec-cff8c6d6-b7d6-4265-a17a-da3f983f4294.png"
+    },
+    {
+      "texture": "supplemental.png",
+      "source_sha256": "dbb8a5b1cf9247afad62e7fae1dc0f5109ebc3d6fc0dc602fa4e21900ea839e3",
+      "generated_sha256": "f384b1c17417c3048b201359e97d30db074989c4d332a8a4c92635daaaaa97a6",
+      "mode": "RGB",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "true_alpha": false,
+      "prompt": "prompts/supplemental-chroma.txt",
+      "generated_file": "exec-fd92032c-2f3f-4017-939b-db71610f601a.png"
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "runtime_cells": 79,
+    "mapped_moves": 49,
+    "state_keys": 60,
+    "all_bounds_pivots_and_references_valid": true,
+    "read_only_cell_checks": [
+      {
+        "name": "u_idle",
+        "rect": [
+          52,
+          10,
+          242,
+          306
+        ],
+        "pivot": [
+          120,
+          301
+        ],
+        "sampledForegroundPixels": 3202,
+        "sampledPixels": 8262,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "u_walk_forward",
+        "rect": [
+          375,
+          10,
+          208,
+          308
+        ],
+        "pivot": [
+          103,
+          302
+        ],
+        "sampledForegroundPixels": 3014,
+        "sampledPixels": 7210,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "u_walk_back",
+        "rect": [
+          675,
+          10,
+          229,
+          307
+        ],
+        "pivot": [
+          84,
+          301
+        ],
+        "sampledForegroundPixels": 2701,
+        "sampledPixels": 7931,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "u_dash_forward",
+        "rect": [
+          905,
+          99,
+          317,
+          213
+        ],
+        "pivot": [
+          133,
+          208
+        ],
+        "sampledForegroundPixels": 3071,
+        "sampledPixels": 7526,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "u_dash_back",
+        "rect": [
+          45,
+          338,
+          257,
+          277
+        ],
+        "pivot": [
+          132,
+          270
+        ],
+        "sampledForegroundPixels": 2799,
+        "sampledPixels": 7998,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "u_crouch",
+        "rect": [
+          381,
+          430,
+          186,
+          192
+        ],
+        "pivot": [
+          94,
+          186
+        ],
+        "sampledForegroundPixels": 2063,
+        "sampledPixels": 3968,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "u_jump_ascent",
+        "rect": [
+          655,
+          315,
+          211,
+          307
+        ],
+        "pivot": [
+          86,
+          300
+        ],
+        "sampledForegroundPixels": 2691,
+        "sampledPixels": 7313,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "u_jump_apex",
+        "rect": [
+          967,
+          320,
+          180,
+          246
+        ],
+        "pivot": [
+          81,
+          232
+        ],
+        "sampledForegroundPixels": 2135,
+        "sampledPixels": 4920,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "u_landing",
+        "rect": [
+          39,
+          680,
+          249,
+          232
+        ],
+        "pivot": [
+          115,
+          224
+        ],
+        "sampledForegroundPixels": 2728,
+        "sampledPixels": 6474,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "u_block_stand",
+        "rect": [
+          344,
+          622,
+          226,
+          293
+        ],
+        "pivot": [
+          111,
+          286
+        ],
+        "sampledForegroundPixels": 2790,
+        "sampledPixels": 7448,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "u_block_crouch",
+        "rect": [
+          650,
+          718,
+          203,
+          198
+        ],
+        "pivot": [
+          107,
+          191
+        ],
+        "sampledForegroundPixels": 2234,
+        "sampledPixels": 4488,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "u_parry_stand",
+        "rect": [
+          916,
+          624,
+          308,
+          298
+        ],
+        "pivot": [
+          114,
+          288
+        ],
+        "sampledForegroundPixels": 3112,
+        "sampledPixels": 10300,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "u_parry_crouch",
+        "rect": [
+          30,
+          1010,
+          300,
+          195
+        ],
+        "pivot": [
+          104,
+          189
+        ],
+        "sampledForegroundPixels": 2498,
+        "sampledPixels": 6500,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "u_hit_heavy",
+        "rect": [
+          332,
+          919,
+          261,
+          287
+        ],
+        "pivot": [
+          132,
+          281
+        ],
+        "sampledForegroundPixels": 2879,
+        "sampledPixels": 8352,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "u_knockdown",
+        "rect": [
+          602,
+          1087,
+          320,
+          113
+        ],
+        "pivot": [
+          153,
+          109
+        ],
+        "sampledForegroundPixels": 2231,
+        "sampledPixels": 4066,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "u_getup",
+        "rect": [
+          933,
+          1011,
+          247,
+          195
+        ],
+        "pivot": [
+          140,
+          187
+        ],
+        "sampledForegroundPixels": 2672,
+        "sampledPixels": 5395,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_s_lp",
+        "rect": [
+          0,
+          0,
+          260,
+          270
+        ],
+        "pivot": [
+          123,
+          255
+        ],
+        "sampledForegroundPixels": 1998,
+        "sampledPixels": 7830,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_s_mp",
+        "rect": [
+          260,
+          0,
+          256,
+          270
+        ],
+        "pivot": [
+          109,
+          255
+        ],
+        "sampledForegroundPixels": 1831,
+        "sampledPixels": 7740,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_s_hp",
+        "rect": [
+          516,
+          0,
+          254,
+          270
+        ],
+        "pivot": [
+          101,
+          253
+        ],
+        "sampledForegroundPixels": 1815,
+        "sampledPixels": 7650,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_s_lk",
+        "rect": [
+          770,
+          0,
+          254,
+          270
+        ],
+        "pivot": [
+          72,
+          254
+        ],
+        "sampledForegroundPixels": 1570,
+        "sampledPixels": 7650,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_s_mk",
+        "rect": [
+          0,
+          270,
+          260,
+          255
+        ],
+        "pivot": [
+          77,
+          240
+        ],
+        "sampledForegroundPixels": 1813,
+        "sampledPixels": 7395,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_s_hk",
+        "rect": [
+          260,
+          270,
+          256,
+          255
+        ],
+        "pivot": [
+          87,
+          240
+        ],
+        "sampledForegroundPixels": 1460,
+        "sampledPixels": 7310,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_c_lp",
+        "rect": [
+          516,
+          270,
+          254,
+          255
+        ],
+        "pivot": [
+          90,
+          240
+        ],
+        "sampledForegroundPixels": 1543,
+        "sampledPixels": 7225,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_c_mp",
+        "rect": [
+          770,
+          270,
+          254,
+          255
+        ],
+        "pivot": [
+          100,
+          239
+        ],
+        "sampledForegroundPixels": 1568,
+        "sampledPixels": 7225,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_c_hp",
+        "rect": [
+          0,
+          525,
+          260,
+          253
+        ],
+        "pivot": [
+          131,
+          236
+        ],
+        "sampledForegroundPixels": 1662,
+        "sampledPixels": 7395,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_c_lk",
+        "rect": [
+          260,
+          525,
+          246,
+          253
+        ],
+        "pivot": [
+          90,
+          224
+        ],
+        "sampledForegroundPixels": 1460,
+        "sampledPixels": 6970,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_c_mk",
+        "rect": [
+          503,
+          525,
+          267,
+          253
+        ],
+        "pivot": [
+          101,
+          223
+        ],
+        "sampledForegroundPixels": 1721,
+        "sampledPixels": 7565,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_c_hk",
+        "rect": [
+          770,
+          525,
+          254,
+          253
+        ],
+        "pivot": [
+          82,
+          220
+        ],
+        "sampledForegroundPixels": 1847,
+        "sampledPixels": 7225,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_j_lp",
+        "rect": [
+          0,
+          778,
+          260,
+          232
+        ],
+        "pivot": [
+          107,
+          200
+        ],
+        "sampledForegroundPixels": 1520,
+        "sampledPixels": 6786,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_j_mp",
+        "rect": [
+          260,
+          778,
+          256,
+          232
+        ],
+        "pivot": [
+          121,
+          205
+        ],
+        "sampledForegroundPixels": 1594,
+        "sampledPixels": 6708,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_j_hp",
+        "rect": [
+          516,
+          778,
+          254,
+          232
+        ],
+        "pivot": [
+          101,
+          194
+        ],
+        "sampledForegroundPixels": 1545,
+        "sampledPixels": 6630,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_j_lk",
+        "rect": [
+          770,
+          778,
+          254,
+          232
+        ],
+        "pivot": [
+          104,
+          208
+        ],
+        "sampledForegroundPixels": 1336,
+        "sampledPixels": 6630,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_j_mk",
+        "rect": [
+          0,
+          1010,
+          260,
+          236
+        ],
+        "pivot": [
+          115,
+          185
+        ],
+        "sampledForegroundPixels": 1653,
+        "sampledPixels": 6873,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_j_hk",
+        "rect": [
+          260,
+          1010,
+          256,
+          236
+        ],
+        "pivot": [
+          132,
+          213
+        ],
+        "sampledForegroundPixels": 1721,
+        "sampledPixels": 6794,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_close_mp",
+        "rect": [
+          516,
+          1010,
+          254,
+          236
+        ],
+        "pivot": [
+          114,
+          231
+        ],
+        "sampledForegroundPixels": 1882,
+        "sampledPixels": 6715,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_command_fhp",
+        "rect": [
+          0,
+          1246,
+          260,
+          290
+        ],
+        "pivot": [
+          126,
+          252
+        ],
+        "sampledForegroundPixels": 1865,
+        "sampledPixels": 8439,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_leap_overhead",
+        "rect": [
+          260,
+          1246,
+          256,
+          290
+        ],
+        "pivot": [
+          88,
+          245
+        ],
+        "sampledForegroundPixels": 2073,
+        "sampledPixels": 8342,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_throw_forward",
+        "rect": [
+          516,
+          1246,
+          254,
+          290
+        ],
+        "pivot": [
+          94,
+          249
+        ],
+        "sampledForegroundPixels": 2015,
+        "sampledPixels": 8245,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "n_throw_back",
+        "rect": [
+          770,
+          1246,
+          254,
+          290
+        ],
+        "pivot": [
+          130,
+          249
+        ],
+        "sampledForegroundPixels": 1960,
+        "sampledPixels": 8245,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "t_pulse_basic",
+        "rect": [
+          34,
+          82,
+          220,
+          227
+        ],
+        "pivot": [
+          102,
+          218
+        ],
+        "sampledForegroundPixels": 1904,
+        "sampledPixels": 5624,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "t_pulse_ex",
+        "rect": [
+          322,
+          104,
+          233,
+          207
+        ],
+        "pivot": [
+          103,
+          196
+        ],
+        "sampledForegroundPixels": 1880,
+        "sampledPixels": 5382,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "t_rise_basic",
+        "rect": [
+          670,
+          15,
+          196,
+          294
+        ],
+        "pivot": [
+          86,
+          265
+        ],
+        "sampledForegroundPixels": 2064,
+        "sampledPixels": 6468,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "t_rise_ex",
+        "rect": [
+          963,
+          0,
+          203,
+          314
+        ],
+        "pivot": [
+          131,
+          225
+        ],
+        "sampledForegroundPixels": 2743,
+        "sampledPixels": 7140,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "t_knee_basic",
+        "rect": [
+          77,
+          330,
+          142,
+          240
+        ],
+        "pivot": [
+          54,
+          234
+        ],
+        "sampledForegroundPixels": 1532,
+        "sampledPixels": 3840,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "t_knee_ex",
+        "rect": [
+          336,
+          306,
+          223,
+          263
+        ],
+        "pivot": [
+          131,
+          226
+        ],
+        "sampledForegroundPixels": 1598,
+        "sampledPixels": 6600,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "t_sway_shared",
+        "rect": [
+          637,
+          348,
+          231,
+          226
+        ],
+        "pivot": [
+          113,
+          220
+        ],
+        "sampledForegroundPixels": 1893,
+        "sampledPixels": 5852,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "t_super_1",
+        "rect": [
+          892,
+          360,
+          247,
+          215
+        ],
+        "pivot": [
+          108,
+          204
+        ],
+        "sampledForegroundPixels": 1761,
+        "sampledPixels": 5976,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "t_super_2",
+        "rect": [
+          26,
+          575,
+          219,
+          275
+        ],
+        "pivot": [
+          115,
+          259
+        ],
+        "sampledForegroundPixels": 3291,
+        "sampledPixels": 6716,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "t_super_3",
+        "rect": [
+          269,
+          650,
+          346,
+          190
+        ],
+        "pivot": [
+          129,
+          180
+        ],
+        "sampledForegroundPixels": 1897,
+        "sampledPixels": 7424,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "t_shop_clinch",
+        "rect": [
+          616,
+          647,
+          239,
+          194
+        ],
+        "pivot": [
+          110,
+          189
+        ],
+        "sampledForegroundPixels": 1802,
+        "sampledPixels": 5200,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "t_shop_low_drive",
+        "rect": [
+          883,
+          691,
+          337,
+          151
+        ],
+        "pivot": [
+          111,
+          145
+        ],
+        "sampledForegroundPixels": 1766,
+        "sampledPixels": 5763,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "t_shop_high_hook",
+        "rect": [
+          32,
+          884,
+          201,
+          278
+        ],
+        "pivot": [
+          96,
+          274
+        ],
+        "sampledForegroundPixels": 2411,
+        "sampledPixels": 6231,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "t_shop_low_turn",
+        "rect": [
+          277,
+          978,
+          352,
+          184
+        ],
+        "pivot": [
+          144,
+          176
+        ],
+        "sampledForegroundPixels": 2283,
+        "sampledPixels": 7316,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "t_shop_step_feint",
+        "rect": [
+          675,
+          889,
+          166,
+          273
+        ],
+        "pivot": [
+          70,
+          265
+        ],
+        "sampledForegroundPixels": 1984,
+        "sampledPixels": 5096,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "t_shop_sway_feint",
+        "rect": [
+          919,
+          918,
+          271,
+          244
+        ],
+        "pivot": [
+          134,
+          238
+        ],
+        "sampledForegroundPixels": 2451,
+        "sampledPixels": 7462,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_turn",
+        "rect": [
+          0,
+          0,
+          256,
+          276
+        ],
+        "pivot": [
+          135,
+          263
+        ],
+        "sampledForegroundPixels": 1661,
+        "sampledPixels": 7912,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_crouch_down",
+        "rect": [
+          256,
+          0,
+          256,
+          276
+        ],
+        "pivot": [
+          124,
+          266
+        ],
+        "sampledForegroundPixels": 1612,
+        "sampledPixels": 7912,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_crouch_up",
+        "rect": [
+          512,
+          0,
+          256,
+          276
+        ],
+        "pivot": [
+          122,
+          266
+        ],
+        "sampledForegroundPixels": 1753,
+        "sampledPixels": 7912,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_jump_takeoff",
+        "rect": [
+          768,
+          0,
+          256,
+          276
+        ],
+        "pivot": [
+          106,
+          254
+        ],
+        "sampledForegroundPixels": 1690,
+        "sampledPixels": 7912,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_jump_fall",
+        "rect": [
+          0,
+          276,
+          256,
+          262
+        ],
+        "pivot": [
+          133,
+          232
+        ],
+        "sampledForegroundPixels": 1634,
+        "sampledPixels": 7568,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_super_jump",
+        "rect": [
+          256,
+          276,
+          256,
+          262
+        ],
+        "pivot": [
+          126,
+          182
+        ],
+        "sampledForegroundPixels": 1469,
+        "sampledPixels": 7568,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_parry_air",
+        "rect": [
+          512,
+          276,
+          256,
+          262
+        ],
+        "pivot": [
+          117,
+          212
+        ],
+        "sampledForegroundPixels": 1379,
+        "sampledPixels": 7568,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_parry_red_high",
+        "rect": [
+          768,
+          276,
+          256,
+          262
+        ],
+        "pivot": [
+          109,
+          242
+        ],
+        "sampledForegroundPixels": 1701,
+        "sampledPixels": 7568,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_parry_red_low",
+        "rect": [
+          0,
+          538,
+          256,
+          212
+        ],
+        "pivot": [
+          113,
+          196
+        ],
+        "sampledForegroundPixels": 1519,
+        "sampledPixels": 6106,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_hit_low",
+        "rect": [
+          256,
+          538,
+          256,
+          212
+        ],
+        "pivot": [
+          119,
+          197
+        ],
+        "sampledForegroundPixels": 1346,
+        "sampledPixels": 6106,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_hit_air",
+        "rect": [
+          512,
+          538,
+          256,
+          212
+        ],
+        "pivot": [
+          139,
+          187
+        ],
+        "sampledForegroundPixels": 1624,
+        "sampledPixels": 6106,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_throw_victim",
+        "rect": [
+          768,
+          538,
+          256,
+          212
+        ],
+        "pivot": [
+          102,
+          184
+        ],
+        "sampledForegroundPixels": 1482,
+        "sampledPixels": 6106,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_throw_tech",
+        "rect": [
+          0,
+          750,
+          256,
+          229
+        ],
+        "pivot": [
+          124,
+          221
+        ],
+        "sampledForegroundPixels": 1770,
+        "sampledPixels": 6622,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_knockdown_fall",
+        "rect": [
+          256,
+          750,
+          256,
+          229
+        ],
+        "pivot": [
+          140,
+          217
+        ],
+        "sampledForegroundPixels": 1524,
+        "sampledPixels": 6622,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_dizzy",
+        "rect": [
+          512,
+          750,
+          256,
+          229
+        ],
+        "pivot": [
+          125,
+          221
+        ],
+        "sampledForegroundPixels": 1604,
+        "sampledPixels": 6622,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_taunt",
+        "rect": [
+          768,
+          750,
+          256,
+          229
+        ],
+        "pivot": [
+          112,
+          221
+        ],
+        "sampledForegroundPixels": 1676,
+        "sampledPixels": 6622,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_intro",
+        "rect": [
+          0,
+          979,
+          256,
+          231
+        ],
+        "pivot": [
+          128,
+          220
+        ],
+        "sampledForegroundPixels": 1525,
+        "sampledPixels": 6622,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_win",
+        "rect": [
+          256,
+          979,
+          256,
+          231
+        ],
+        "pivot": [
+          119,
+          220
+        ],
+        "sampledForegroundPixels": 1712,
+        "sampledPixels": 6622,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_defeat",
+        "rect": [
+          512,
+          979,
+          256,
+          231
+        ],
+        "pivot": [
+          117,
+          221
+        ],
+        "sampledForegroundPixels": 1555,
+        "sampledPixels": 6622,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_draw",
+        "rect": [
+          768,
+          979,
+          256,
+          231
+        ],
+        "pivot": [
+          92,
+          222
+        ],
+        "sampledForegroundPixels": 1472,
+        "sampledPixels": 6622,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_close_mp_alternative",
+        "rect": [
+          0,
+          1210,
+          256,
+          326
+        ],
+        "pivot": [
+          132,
+          246
+        ],
+        "sampledForegroundPixels": 1726,
+        "sampledPixels": 9374,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_close_hp_alternative",
+        "rect": [
+          256,
+          1210,
+          256,
+          326
+        ],
+        "pivot": [
+          126,
+          248
+        ],
+        "sampledForegroundPixels": 1795,
+        "sampledPixels": 9374,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_walk_back_second_key",
+        "rect": [
+          512,
+          1210,
+          256,
+          326
+        ],
+        "pivot": [
+          121,
+          245
+        ],
+        "sampledForegroundPixels": 1715,
+        "sampledPixels": 9374,
+        "foregroundCropBorderPixels": 0
+      },
+      {
+        "name": "s_hit_high_recovery",
+        "rect": [
+          768,
+          1210,
+          256,
+          326
+        ],
+        "pivot": [
+          108,
+          247
+        ],
+        "sampledForegroundPixels": 1711,
+        "sampledPixels": 9374,
+        "foregroundCropBorderPixels": 0
+      }
+    ]
+  },
+  "known_limits": [
+    "Magenta backdrop values vary slightly around requested FF00FF; use hue/dominance key or tolerant chroma distance, never exact equality.",
+    "79 selected cels retain the original design pose coverage; phase changes share suitable anticipation/recovery cels and do not fabricate distinct per-frame artwork.",
+    "Runtime renderer must use nearest filtering and the declared chroma shader; PNG files intentionally remain opaque RGB."
+  ]
+}

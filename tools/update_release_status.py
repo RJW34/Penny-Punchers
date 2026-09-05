@@ -1,10 +1,12 @@
 """Refresh human-readable delivery status from the actual acceptance ledger."""
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import json,datetime,collections
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
     candidate=json.loads((ROOT/'reports/RELEASE_CANDIDATE.json').read_text())
+    if any(PurePosixPath(item['path'].replace('\\','/')).as_posix().startswith('game/Assets/AfterHours/') for item in candidate.get('source_inputs',[])):
+        raise SystemExit('Refusing to update release status: this legacy status writer targets the prior vector renderer. Use the current After Hours documentation/rebind workflow for candidates containing game/Assets/AfterHours/ inputs.')
     records=json.loads((ROOT/'reports/ACCEPTANCE_RESULTS.json').read_text())['records']
     requirements=json.loads((ROOT/'acceptance/requirements.json').read_text())['requirements']
     byid={r['requirement_id']:r for r in records}

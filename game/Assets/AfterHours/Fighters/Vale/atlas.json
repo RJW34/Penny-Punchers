@@ -1,0 +1,2132 @@
+{
+  "schema_version": 1,
+  "fighter": "vale",
+  "height": 264,
+  "chroma_key": [
+    1,
+    0,
+    1
+  ],
+  "alpha_mode": "runtime_magenta_key",
+  "cells": {
+    "u_idle": {
+      "texture": "universal-matte.png",
+      "rect": [
+        53,
+        21,
+        237,
+        293
+      ],
+      "pivot": [
+        101,
+        290
+      ],
+      "scale": 0.9134948,
+      "facing": 1,
+      "source_cell": 1
+    },
+    "u_walk_forward": {
+      "texture": "universal-matte.png",
+      "rect": [
+        368,
+        19,
+        189,
+        295
+      ],
+      "pivot": [
+        95,
+        292
+      ],
+      "scale": 0.9134948,
+      "facing": 1,
+      "source_cell": 2
+    },
+    "u_walk_back": {
+      "texture": "universal-matte.png",
+      "rect": [
+        653,
+        21,
+        205,
+        290
+      ],
+      "pivot": [
+        104,
+        287
+      ],
+      "scale": 0.9134948,
+      "facing": 1,
+      "source_cell": 3
+    },
+    "u_dash_forward": {
+      "texture": "universal-matte.png",
+      "rect": [
+        936,
+        69,
+        275,
+        231
+      ],
+      "pivot": [
+        109,
+        229
+      ],
+      "scale": 0.9134948,
+      "facing": 1,
+      "source_cell": 4
+    },
+    "u_dash_back": {
+      "texture": "universal-matte.png",
+      "rect": [
+        35,
+        333,
+        243,
+        218
+      ],
+      "pivot": [
+        150,
+        215
+      ],
+      "scale": 0.9134948,
+      "facing": 1,
+      "source_cell": 5
+    },
+    "u_crouch": {
+      "texture": "universal-matte.png",
+      "rect": [
+        381,
+        403,
+        179,
+        195
+      ],
+      "pivot": [
+        63,
+        192
+      ],
+      "scale": 0.9134948,
+      "facing": 1,
+      "source_cell": 6
+    },
+    "u_jump_takeoff": {
+      "texture": "universal-matte.png",
+      "rect": [
+        653,
+        323,
+        175,
+        243
+      ],
+      "pivot": [
+        90,
+        241
+      ],
+      "scale": 0.9134948,
+      "facing": 1,
+      "source_cell": 7
+    },
+    "u_jump_apex": {
+      "texture": "universal-matte.png",
+      "rect": [
+        976,
+        337,
+        167,
+        205
+      ],
+      "pivot": [
+        87,
+        203
+      ],
+      "scale": 0.9134948,
+      "facing": 1,
+      "source_cell": 8
+    },
+    "u_jump_fall": {
+      "texture": "universal-matte.png",
+      "rect": [
+        43,
+        613,
+        203,
+        257
+      ],
+      "pivot": [
+        116,
+        255
+      ],
+      "scale": 0.9134948,
+      "facing": 1,
+      "source_cell": 9
+    },
+    "u_land": {
+      "texture": "universal-matte.png",
+      "rect": [
+        371,
+        703,
+        186,
+        182
+      ],
+      "pivot": [
+        76,
+        179
+      ],
+      "scale": 0.9134948,
+      "facing": 1,
+      "source_cell": 10
+    },
+    "u_block_high": {
+      "texture": "universal-matte.png",
+      "rect": [
+        671,
+        610,
+        185,
+        275
+      ],
+      "pivot": [
+        96,
+        272
+      ],
+      "scale": 0.9134948,
+      "facing": 1,
+      "source_cell": 11
+    },
+    "u_block_low": {
+      "texture": "universal-matte.png",
+      "rect": [
+        973,
+        698,
+        189,
+        188
+      ],
+      "pivot": [
+        67,
+        186
+      ],
+      "scale": 0.9134948,
+      "facing": 1,
+      "source_cell": 12
+    },
+    "u_parry_high": {
+      "texture": "universal-matte.png",
+      "rect": [
+        44,
+        903,
+        240,
+        302
+      ],
+      "pivot": [
+        84,
+        299
+      ],
+      "scale": 0.9134948,
+      "facing": 1,
+      "source_cell": 13
+    },
+    "u_parry_low": {
+      "texture": "universal-matte.png",
+      "rect": [
+        353,
+        1011,
+        268,
+        193
+      ],
+      "pivot": [
+        88,
+        190
+      ],
+      "scale": 0.9134948,
+      "facing": 1,
+      "source_cell": 14
+    },
+    "u_hitstun": {
+      "texture": "universal-matte.png",
+      "rect": [
+        671,
+        907,
+        178,
+        288
+      ],
+      "pivot": [
+        108,
+        286
+      ],
+      "scale": 0.9134948,
+      "facing": 1,
+      "source_cell": 15
+    },
+    "u_knockdown": {
+      "texture": "universal-matte.png",
+      "rect": [
+        959,
+        1063,
+        263,
+        144
+      ],
+      "pivot": [
+        126,
+        142
+      ],
+      "scale": 0.9134948,
+      "facing": 1,
+      "source_cell": 16
+    },
+    "n_s_lp": {
+      "texture": "normals-matte.png",
+      "rect": [
+        59,
+        29,
+        159,
+        215
+      ],
+      "pivot": [
+        79,
+        213
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 1
+    },
+    "n_s_mp": {
+      "texture": "normals-matte.png",
+      "rect": [
+        294,
+        34,
+        192,
+        210
+      ],
+      "pivot": [
+        87,
+        208
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 2
+    },
+    "n_s_hp": {
+      "texture": "normals-matte.png",
+      "rect": [
+        541,
+        40,
+        219,
+        204
+      ],
+      "pivot": [
+        89,
+        202
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 3
+    },
+    "n_s_lk": {
+      "texture": "normals-matte.png",
+      "rect": [
+        822,
+        65,
+        200,
+        175
+      ],
+      "pivot": [
+        37,
+        173
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 4
+    },
+    "n_s_mk": {
+      "texture": "normals-matte.png",
+      "rect": [
+        53,
+        287,
+        206,
+        206
+      ],
+      "pivot": [
+        30,
+        204
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 5
+    },
+    "n_s_hk": {
+      "texture": "normals-matte.png",
+      "rect": [
+        306,
+        279,
+        183,
+        214
+      ],
+      "pivot": [
+        26,
+        212
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 6
+    },
+    "n_c_lp": {
+      "texture": "normals-matte.png",
+      "rect": [
+        563,
+        332,
+        150,
+        149
+      ],
+      "pivot": [
+        74,
+        147
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 7
+    },
+    "n_c_mp": {
+      "texture": "normals-matte.png",
+      "rect": [
+        801,
+        347,
+        200,
+        137
+      ],
+      "pivot": [
+        65,
+        135
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 8
+    },
+    "n_c_hp": {
+      "texture": "normals-matte.png",
+      "rect": [
+        36,
+        547,
+        127,
+        145
+      ],
+      "pivot": [
+        69,
+        143
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 9
+    },
+    "n_c_lk": {
+      "texture": "normals-matte.png",
+      "rect": [
+        300,
+        544,
+        167,
+        147
+      ],
+      "pivot": [
+        51,
+        145
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 10
+    },
+    "n_c_mk": {
+      "texture": "normals-matte.png",
+      "rect": [
+        504,
+        573,
+        207,
+        124
+      ],
+      "pivot": [
+        156,
+        122
+      ],
+      "scale": 1.2511848,
+      "facing": -1,
+      "source_cell": 11
+    },
+    "n_c_hk": {
+      "texture": "normals-matte.png",
+      "rect": [
+        824,
+        564,
+        204,
+        133
+      ],
+      "pivot": [
+        67,
+        131
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 12
+    },
+    "n_j_lp": {
+      "texture": "normals-matte.png",
+      "rect": [
+        59,
+        741,
+        132,
+        159
+      ],
+      "pivot": [
+        60,
+        157
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 13
+    },
+    "n_j_mp": {
+      "texture": "normals-matte.png",
+      "rect": [
+        266,
+        741,
+        229,
+        163
+      ],
+      "pivot": [
+        88,
+        161
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 14
+    },
+    "n_j_hp": {
+      "texture": "normals-matte.png",
+      "rect": [
+        589,
+        738,
+        94,
+        185
+      ],
+      "pivot": [
+        55,
+        183
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 15
+    },
+    "n_j_lk": {
+      "texture": "normals-matte.png",
+      "rect": [
+        837,
+        729,
+        144,
+        185
+      ],
+      "pivot": [
+        51,
+        183
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 16
+    },
+    "n_j_mk": {
+      "texture": "normals-matte.png",
+      "rect": [
+        35,
+        955,
+        205,
+        153
+      ],
+      "pivot": [
+        86,
+        151
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 17
+    },
+    "n_j_hk": {
+      "texture": "normals-matte.png",
+      "rect": [
+        274,
+        947,
+        237,
+        130
+      ],
+      "pivot": [
+        97,
+        128
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 18
+    },
+    "n_close_mp": {
+      "texture": "normals-matte.png",
+      "rect": [
+        613,
+        955,
+        111,
+        165
+      ],
+      "pivot": [
+        60,
+        163
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 19,
+      "usable": false,
+      "note": "Source lower legs are cropped; all runtime mappings use full-body supplemental replacement."
+    },
+    "n_close_hp": {
+      "texture": "normals-matte.png",
+      "rect": [
+        818,
+        924,
+        110,
+        197
+      ],
+      "pivot": [
+        52,
+        195
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 20,
+      "usable": false,
+      "note": "Source lower legs are cropped; all runtime mappings use full-body supplemental replacement."
+    },
+    "n_command_fhp": {
+      "texture": "normals-matte.png",
+      "rect": [
+        36,
+        1150,
+        209,
+        228
+      ],
+      "pivot": [
+        31,
+        226
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 21
+    },
+    "n_leap_overhead": {
+      "texture": "normals-matte.png",
+      "rect": [
+        317,
+        1127,
+        137,
+        251
+      ],
+      "pivot": [
+        53,
+        249
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 22
+    },
+    "n_throw_forward": {
+      "texture": "normals-matte.png",
+      "rect": [
+        498,
+        1156,
+        152,
+        213
+      ],
+      "pivot": [
+        73,
+        211
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 23
+    },
+    "n_throw_back": {
+      "texture": "normals-matte.png",
+      "rect": [
+        796,
+        1167,
+        157,
+        208
+      ],
+      "pivot": [
+        73,
+        206
+      ],
+      "scale": 1.2511848,
+      "facing": 1,
+      "source_cell": 24
+    },
+    "t_pulse": {
+      "texture": "techniques-matte.png",
+      "rect": [
+        22,
+        66,
+        204,
+        201
+      ],
+      "pivot": [
+        100,
+        199
+      ],
+      "scale": 1.1945701,
+      "facing": 1,
+      "source_cell": 1
+    },
+    "t_pulse_ex": {
+      "texture": "techniques-matte.png",
+      "rect": [
+        22,
+        66,
+        204,
+        201
+      ],
+      "pivot": [
+        100,
+        199
+      ],
+      "scale": 1.1945701,
+      "facing": 1,
+      "source_cell": 1,
+      "baked_effects": false,
+      "shared_pose_from": "t_pulse",
+      "note": "Normal and EX pulse share the clean caster release pose. The authoritative canonical projectile and EX effects are rendered separately."
+    },
+    "t_rise": {
+      "texture": "techniques-matte.png",
+      "rect": [
+        689,
+        11,
+        123,
+        263
+      ],
+      "pivot": [
+        63,
+        207
+      ],
+      "scale": 1.1945701,
+      "facing": 1,
+      "source_cell": 3,
+      "baked_effects": true
+    },
+    "t_rise_ex": {
+      "texture": "techniques-matte.png",
+      "rect": [
+        952,
+        32,
+        243,
+        244
+      ],
+      "pivot": [
+        114,
+        192
+      ],
+      "scale": 1.1945701,
+      "facing": 1,
+      "source_cell": 4,
+      "baked_effects": true
+    },
+    "t_palm": {
+      "texture": "techniques-matte.png",
+      "rect": [
+        71,
+        347,
+        229,
+        220
+      ],
+      "pivot": [
+        70,
+        218
+      ],
+      "scale": 1.1945701,
+      "facing": 1,
+      "source_cell": 5,
+      "baked_effects": true
+    },
+    "t_heel": {
+      "texture": "techniques-matte.png",
+      "rect": [
+        335,
+        356,
+        263,
+        210
+      ],
+      "pivot": [
+        44,
+        208
+      ],
+      "scale": 1.1945701,
+      "facing": 1,
+      "source_cell": 6,
+      "baked_effects": true
+    },
+    "t_super_1": {
+      "texture": "techniques-matte.png",
+      "rect": [
+        669,
+        290,
+        163,
+        285
+      ],
+      "pivot": [
+        91,
+        239
+      ],
+      "scale": 1.1945701,
+      "facing": 1,
+      "source_cell": 7,
+      "baked_effects": true
+    },
+    "t_super_2": {
+      "texture": "super2-clean-matte.png",
+      "rect": [
+        890,
+        374,
+        203,
+        190
+      ],
+      "pivot": [
+        101,
+        189
+      ],
+      "scale": 1.1945701,
+      "facing": 1,
+      "source_cell": 8,
+      "baked_effects": false,
+      "note": "Targeted built-in imagegen removal of detached projectile; full fingers/body retained. Other poses continue using the original techniques sheet."
+    },
+    "t_super_3": {
+      "texture": "techniques-matte.png",
+      "rect": [
+        24,
+        642,
+        298,
+        198
+      ],
+      "pivot": [
+        127,
+        196
+      ],
+      "scale": 1.1945701,
+      "facing": 1,
+      "source_cell": 9,
+      "baked_effects": true
+    },
+    "t_shop_return_pulse": {
+      "texture": "techniques-matte.png",
+      "rect": [
+        364,
+        619,
+        156,
+        221
+      ],
+      "pivot": [
+        79,
+        219
+      ],
+      "scale": 1.1945701,
+      "facing": 1,
+      "source_cell": 10
+    },
+    "t_shop_low_palm": {
+      "texture": "techniques-matte.png",
+      "rect": [
+        691,
+        686,
+        236,
+        149
+      ],
+      "pivot": [
+        52,
+        147
+      ],
+      "scale": 1.1945701,
+      "facing": 1,
+      "source_cell": 11,
+      "baked_effects": true
+    },
+    "t_shop_heel_arc": {
+      "texture": "techniques-matte.png",
+      "rect": [
+        988,
+        582,
+        172,
+        255
+      ],
+      "pivot": [
+        58,
+        253
+      ],
+      "scale": 1.1945701,
+      "facing": 1,
+      "source_cell": 12,
+      "baked_effects": true
+    },
+    "t_shop_long_check": {
+      "texture": "techniques-matte.png",
+      "rect": [
+        26,
+        919,
+        264,
+        225
+      ],
+      "pivot": [
+        102,
+        223
+      ],
+      "scale": 1.1945701,
+      "facing": 1,
+      "source_cell": 13
+    },
+    "t_shop_step_feint": {
+      "texture": "techniques-matte.png",
+      "rect": [
+        325,
+        934,
+        228,
+        204
+      ],
+      "pivot": [
+        118,
+        202
+      ],
+      "scale": 1.1945701,
+      "facing": 1,
+      "source_cell": 14,
+      "baked_effects": true
+    },
+    "t_shop_sway_feint": {
+      "texture": "techniques-matte.png",
+      "rect": [
+        690,
+        926,
+        229,
+        217
+      ],
+      "pivot": [
+        90,
+        215
+      ],
+      "scale": 1.1945701,
+      "facing": 1,
+      "source_cell": 15,
+      "baked_effects": true
+    },
+    "t_super_freeze": {
+      "texture": "techniques-matte.png",
+      "rect": [
+        935,
+        861,
+        229,
+        283
+      ],
+      "pivot": [
+        125,
+        281
+      ],
+      "scale": 1.1945701,
+      "facing": 1,
+      "source_cell": 16,
+      "baked_effects": true
+    },
+    "s_turn": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        67,
+        33,
+        150,
+        219
+      ],
+      "pivot": [
+        73,
+        217
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 1
+    },
+    "s_crouch_down": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        335,
+        89,
+        119,
+        159
+      ],
+      "pivot": [
+        54,
+        157
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 2
+    },
+    "s_crouch_up": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        579,
+        76,
+        131,
+        168
+      ],
+      "pivot": [
+        68,
+        166
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 3
+    },
+    "s_jump_rise": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        845,
+        17,
+        152,
+        200
+      ],
+      "pivot": [
+        76,
+        198
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 4
+    },
+    "s_super_jump": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        75,
+        264,
+        95,
+        222
+      ],
+      "pivot": [
+        51,
+        211
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 5
+    },
+    "s_parry_air": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        324,
+        279,
+        133,
+        160
+      ],
+      "pivot": [
+        62,
+        158
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 6
+    },
+    "s_parry_red_high": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        574,
+        282,
+        158,
+        202
+      ],
+      "pivot": [
+        61,
+        200
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 7
+    },
+    "s_parry_red_low": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        841,
+        354,
+        154,
+        134
+      ],
+      "pivot": [
+        64,
+        132
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 8
+    },
+    "s_hit_low": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        70,
+        541,
+        112,
+        144
+      ],
+      "pivot": [
+        55,
+        142
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 9
+    },
+    "s_hit_air": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        313,
+        495,
+        164,
+        171
+      ],
+      "pivot": [
+        98,
+        169
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 10
+    },
+    "s_throw_victim": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        570,
+        525,
+        159,
+        153
+      ],
+      "pivot": [
+        81,
+        151
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 11
+    },
+    "s_throw_tech": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        804,
+        523,
+        201,
+        166
+      ],
+      "pivot": [
+        97,
+        164
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 12
+    },
+    "s_knockdown_fall": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        58,
+        768,
+        171,
+        136
+      ],
+      "pivot": [
+        82,
+        134
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 13
+    },
+    "s_wakeup": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        316,
+        779,
+        153,
+        125
+      ],
+      "pivot": [
+        78,
+        123
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 14
+    },
+    "s_dizzy": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        586,
+        710,
+        104,
+        202
+      ],
+      "pivot": [
+        52,
+        200
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 15
+    },
+    "s_taunt": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        841,
+        714,
+        115,
+        198
+      ],
+      "pivot": [
+        59,
+        196
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 16
+    },
+    "s_intro": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        67,
+        925,
+        84,
+        207
+      ],
+      "pivot": [
+        47,
+        205
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 17
+    },
+    "s_win": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        334,
+        923,
+        96,
+        207
+      ],
+      "pivot": [
+        49,
+        205
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 18
+    },
+    "s_defeat": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        550,
+        1045,
+        200,
+        84
+      ],
+      "pivot": [
+        105,
+        82
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 19
+    },
+    "s_draw": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        848,
+        925,
+        108,
+        205
+      ],
+      "pivot": [
+        54,
+        203
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 20
+    },
+    "s_close_mp": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        26,
+        1158,
+        194,
+        225
+      ],
+      "pivot": [
+        85,
+        223
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 21
+    },
+    "s_close_hp": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        306,
+        1155,
+        168,
+        225
+      ],
+      "pivot": [
+        88,
+        223
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 22
+    },
+    "s_hit_high": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        584,
+        1159,
+        139,
+        212
+      ],
+      "pivot": [
+        85,
+        210
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 23
+    },
+    "s_wakeup_quickrise": {
+      "texture": "supplemental-matte.png",
+      "rect": [
+        821,
+        1232,
+        207,
+        148
+      ],
+      "pivot": [
+        102,
+        146
+      ],
+      "scale": 1.227907,
+      "facing": 1,
+      "source_cell": 24
+    }
+  },
+  "states": {
+    "idle": [
+      "u_idle"
+    ],
+    "walk_forward": [
+      "u_idle",
+      "u_walk_forward"
+    ],
+    "walk_back": [
+      "u_idle",
+      "u_walk_back"
+    ],
+    "dash_forward": [
+      "u_dash_forward"
+    ],
+    "dash_back": [
+      "u_dash_back"
+    ],
+    "crouch": [
+      "u_crouch"
+    ],
+    "jump_takeoff": [
+      "u_jump_takeoff"
+    ],
+    "jump_apex": [
+      "u_jump_apex"
+    ],
+    "jump_fall": [
+      "u_jump_fall"
+    ],
+    "land": [
+      "u_land"
+    ],
+    "block_high": [
+      "u_block_high"
+    ],
+    "block_low": [
+      "u_block_low"
+    ],
+    "parry_high": [
+      "u_parry_high"
+    ],
+    "parry_low": [
+      "u_parry_low"
+    ],
+    "hit_high": [
+      "s_hit_high"
+    ],
+    "knockdown_ground": [
+      "u_knockdown"
+    ],
+    "turn": [
+      "s_turn"
+    ],
+    "crouch_down": [
+      "s_crouch_down"
+    ],
+    "crouch_up": [
+      "s_crouch_up"
+    ],
+    "jump_rise": [
+      "s_jump_rise"
+    ],
+    "super_jump": [
+      "s_super_jump"
+    ],
+    "parry_air": [
+      "s_parry_air"
+    ],
+    "parry_red_high": [
+      "s_parry_red_high"
+    ],
+    "parry_red_low": [
+      "s_parry_red_low"
+    ],
+    "hit_low": [
+      "s_hit_low"
+    ],
+    "hit_air": [
+      "s_hit_air"
+    ],
+    "throw_victim": [
+      "s_throw_victim"
+    ],
+    "throw_tech": [
+      "s_throw_tech"
+    ],
+    "knockdown_fall": [
+      "s_knockdown_fall"
+    ],
+    "wakeup": [
+      "s_wakeup"
+    ],
+    "dizzy": [
+      "s_dizzy"
+    ],
+    "taunt": [
+      "s_taunt"
+    ],
+    "intro": [
+      "s_intro"
+    ],
+    "win": [
+      "s_win"
+    ],
+    "defeat": [
+      "s_defeat"
+    ],
+    "draw": [
+      "s_draw"
+    ],
+    "wakeup_quickrise": [
+      "s_wakeup_quickrise"
+    ],
+    "walk": [
+      "u_idle",
+      "u_walk_forward",
+      "u_idle",
+      "u_walk_back"
+    ],
+    "dash": [
+      "u_dash_forward"
+    ],
+    "dashback": [
+      "u_dash_back"
+    ],
+    "jump": [
+      "s_jump_rise",
+      "u_jump_apex",
+      "u_jump_fall"
+    ],
+    "guard": [
+      "u_block_high"
+    ],
+    "crouchguard": [
+      "u_block_low"
+    ],
+    "parry": [
+      "u_parry_high"
+    ],
+    "crouchparry": [
+      "u_parry_low"
+    ],
+    "hit": [
+      "s_hit_high"
+    ],
+    "knockdown": [
+      "u_knockdown"
+    ],
+    "walkback": [
+      "u_idle",
+      "u_walk_back",
+      "u_idle",
+      "u_walk_forward"
+    ],
+    "takeoff": [
+      "u_jump_takeoff"
+    ],
+    "rise": [
+      "s_jump_rise"
+    ],
+    "apex": [
+      "u_jump_apex"
+    ],
+    "fall": [
+      "u_jump_fall"
+    ],
+    "superjump": [
+      "s_super_jump"
+    ],
+    "landing": [
+      "u_land"
+    ],
+    "airparry": [
+      "s_parry_air"
+    ],
+    "redparry": [
+      "s_parry_red_high"
+    ],
+    "redlowparry": [
+      "s_parry_red_low"
+    ],
+    "lowhit": [
+      "s_hit_low"
+    ],
+    "airhit": [
+      "s_hit_air"
+    ],
+    "thrown": [
+      "s_throw_victim"
+    ],
+    "tech": [
+      "s_throw_tech"
+    ],
+    "falling": [
+      "s_knockdown_fall"
+    ],
+    "quickrise": [
+      "s_wakeup_quickrise"
+    ],
+    "crouchdown": [
+      "s_crouch_down"
+    ],
+    "crouchup": [
+      "s_crouch_up"
+    ]
+  },
+  "moves": {
+    "s_lp": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "n_s_lp"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "s_mp": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "n_s_mp"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "s_hp": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "n_s_hp"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "s_lk": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "n_s_lk"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "s_mk": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "n_s_mk"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "s_hk": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "n_s_hk"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "c_lp": {
+      "startup": [
+        "u_crouch"
+      ],
+      "active": [
+        "n_c_lp"
+      ],
+      "recovery": [
+        "s_crouch_up",
+        "u_crouch"
+      ]
+    },
+    "c_mp": {
+      "startup": [
+        "u_crouch"
+      ],
+      "active": [
+        "n_c_mp"
+      ],
+      "recovery": [
+        "s_crouch_up",
+        "u_crouch"
+      ]
+    },
+    "c_hp": {
+      "startup": [
+        "u_crouch"
+      ],
+      "active": [
+        "n_c_hp"
+      ],
+      "recovery": [
+        "s_crouch_up",
+        "u_crouch"
+      ]
+    },
+    "c_lk": {
+      "startup": [
+        "u_crouch"
+      ],
+      "active": [
+        "n_c_lk"
+      ],
+      "recovery": [
+        "s_crouch_up",
+        "u_crouch"
+      ]
+    },
+    "c_mk": {
+      "startup": [
+        "u_crouch"
+      ],
+      "active": [
+        "n_c_mk"
+      ],
+      "recovery": [
+        "s_crouch_up",
+        "u_crouch"
+      ]
+    },
+    "c_hk": {
+      "startup": [
+        "u_crouch"
+      ],
+      "active": [
+        "n_c_hk"
+      ],
+      "recovery": [
+        "s_crouch_up",
+        "u_crouch"
+      ]
+    },
+    "j_lp": {
+      "startup": [
+        "s_jump_rise"
+      ],
+      "active": [
+        "n_j_lp"
+      ],
+      "recovery": [
+        "u_jump_fall"
+      ]
+    },
+    "j_mp": {
+      "startup": [
+        "s_jump_rise"
+      ],
+      "active": [
+        "n_j_mp"
+      ],
+      "recovery": [
+        "u_jump_fall"
+      ]
+    },
+    "j_hp": {
+      "startup": [
+        "s_jump_rise"
+      ],
+      "active": [
+        "n_j_hp"
+      ],
+      "recovery": [
+        "u_jump_fall"
+      ]
+    },
+    "j_lk": {
+      "startup": [
+        "s_jump_rise"
+      ],
+      "active": [
+        "n_j_lk"
+      ],
+      "recovery": [
+        "u_jump_fall"
+      ]
+    },
+    "j_mk": {
+      "startup": [
+        "s_jump_rise"
+      ],
+      "active": [
+        "n_j_mk"
+      ],
+      "recovery": [
+        "u_jump_fall"
+      ]
+    },
+    "j_hk": {
+      "startup": [
+        "s_jump_rise"
+      ],
+      "active": [
+        "n_j_hk"
+      ],
+      "recovery": [
+        "u_jump_fall"
+      ]
+    },
+    "close_mp": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "s_close_mp"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "close_hp": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "s_close_hp"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "command_fhp": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "n_command_fhp"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "leap_overhead": {
+      "startup": [
+        "u_jump_takeoff"
+      ],
+      "active": [
+        "n_leap_overhead"
+      ],
+      "recovery": [
+        "u_land"
+      ]
+    },
+    "throw_forward": {
+      "startup": [
+        "s_throw_tech"
+      ],
+      "active": [
+        "n_throw_forward"
+      ],
+      "recovery": [
+        "s_turn",
+        "u_idle"
+      ]
+    },
+    "throw_back": {
+      "startup": [
+        "s_throw_tech"
+      ],
+      "active": [
+        "n_throw_back"
+      ],
+      "recovery": [
+        "s_turn",
+        "u_idle"
+      ]
+    },
+    "pulse_l": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "t_pulse"
+      ],
+      "recovery": [
+        "u_block_high",
+        "u_idle"
+      ]
+    },
+    "pulse_m": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "t_pulse"
+      ],
+      "recovery": [
+        "u_block_high",
+        "u_idle"
+      ]
+    },
+    "pulse_h": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "t_pulse"
+      ],
+      "recovery": [
+        "u_block_high",
+        "u_idle"
+      ]
+    },
+    "pulse_ex": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "t_pulse_ex"
+      ],
+      "recovery": [
+        "u_block_high",
+        "u_idle"
+      ]
+    },
+    "rise_l": {
+      "startup": [
+        "u_crouch"
+      ],
+      "active": [
+        "t_rise"
+      ],
+      "recovery": [
+        "u_jump_fall",
+        "u_land"
+      ]
+    },
+    "rise_m": {
+      "startup": [
+        "u_crouch"
+      ],
+      "active": [
+        "t_rise"
+      ],
+      "recovery": [
+        "u_jump_fall",
+        "u_land"
+      ]
+    },
+    "rise_h": {
+      "startup": [
+        "u_crouch"
+      ],
+      "active": [
+        "t_rise"
+      ],
+      "recovery": [
+        "u_jump_fall",
+        "u_land"
+      ]
+    },
+    "rise_ex": {
+      "startup": [
+        "u_crouch"
+      ],
+      "active": [
+        "t_rise_ex"
+      ],
+      "recovery": [
+        "u_jump_fall",
+        "u_land"
+      ]
+    },
+    "palm_l": {
+      "startup": [
+        "u_walk_forward"
+      ],
+      "active": [
+        "t_palm"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "palm_m": {
+      "startup": [
+        "u_walk_forward"
+      ],
+      "active": [
+        "t_palm"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "palm_h": {
+      "startup": [
+        "u_walk_forward"
+      ],
+      "active": [
+        "t_palm"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "palm_ex": {
+      "startup": [
+        "u_walk_forward"
+      ],
+      "active": [
+        "t_palm"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "heel_l": {
+      "startup": [
+        "u_walk_back"
+      ],
+      "active": [
+        "t_heel"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "heel_m": {
+      "startup": [
+        "u_walk_back"
+      ],
+      "active": [
+        "t_heel"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "heel_h": {
+      "startup": [
+        "u_walk_back"
+      ],
+      "active": [
+        "t_heel"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "heel_ex": {
+      "startup": [
+        "u_walk_back"
+      ],
+      "active": [
+        "t_heel"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "super_1": {
+      "startup": [
+        "t_super_freeze"
+      ],
+      "active": [
+        "t_super_1"
+      ],
+      "recovery": [
+        "u_land",
+        "u_idle"
+      ]
+    },
+    "super_2": {
+      "startup": [
+        "t_super_freeze"
+      ],
+      "active": [
+        "t_super_2"
+      ],
+      "recovery": [
+        "u_land",
+        "u_idle"
+      ]
+    },
+    "super_3": {
+      "startup": [
+        "t_super_freeze"
+      ],
+      "active": [
+        "t_super_3"
+      ],
+      "recovery": [
+        "u_land",
+        "u_idle"
+      ]
+    },
+    "shop_return_pulse": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "t_shop_return_pulse"
+      ],
+      "recovery": [
+        "u_block_high",
+        "u_idle"
+      ]
+    },
+    "shop_low_palm": {
+      "startup": [
+        "u_crouch"
+      ],
+      "active": [
+        "t_shop_low_palm"
+      ],
+      "recovery": [
+        "s_crouch_up",
+        "u_crouch"
+      ]
+    },
+    "shop_heel_arc": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "t_shop_heel_arc"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "shop_long_check": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "t_shop_long_check"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "shop_step_feint": {
+      "startup": [
+        "u_walk_forward"
+      ],
+      "active": [
+        "t_shop_step_feint"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    },
+    "shop_sway_feint": {
+      "startup": [
+        "u_idle"
+      ],
+      "active": [
+        "t_shop_sway_feint"
+      ],
+      "recovery": [
+        "u_idle"
+      ]
+    }
+  },
+  "textures": [
+    {
+      "file": "universal-matte.png",
+      "sha256": "ff159235cc53a49662f3b2711b5950200d2c0d207368d67e29518352ac6b6ee3",
+      "width": 1254,
+      "height": 1254,
+      "sourceFile": "design/after-hours-32bit/fighters/vale/universal.png",
+      "sourceSha256": "1dbda5756d08ec0b6a215919a4aeacf0333ced939bc833297e9decae21b0199e",
+      "scale": 0.9134948096885813
+    },
+    {
+      "file": "normals-matte.png",
+      "sha256": "f70f933aa6e0ec4ec4c14170a3742b52fc35cf550861310c48fcb0b4b90f3468",
+      "width": 1085,
+      "height": 1450,
+      "sourceFile": "design/after-hours-32bit/fighters/vale/normals.png",
+      "sourceSha256": "eeb78892bca260d76f4676730e339c6a0b23f3b12453f7f609bc4f222e4a6589",
+      "scale": 1.2511848341232228
+    },
+    {
+      "file": "techniques-matte.png",
+      "sha256": "f592ba448ba77a1e5028852b2695a9f93dfac63c535d6687dcbbbe67fb87d644",
+      "width": 1254,
+      "height": 1254,
+      "sourceFile": "design/after-hours-32bit/fighters/vale/techniques.png",
+      "sourceSha256": "953778575323b809084725447f0770be3ea19d240d2960a7f926f7f964ef5bc0",
+      "scale": 1.1945701357466063
+    },
+    {
+      "file": "supplemental-matte.png",
+      "sha256": "3d8fe375b9d63a177e891fde9db19860e89ed1e18f757b86d873b0b93627dca9",
+      "width": 1086,
+      "height": 1448,
+      "sourceFile": "design/after-hours-32bit/fighters/vale/supplemental.png",
+      "sourceSha256": "00fecc70c75c3e65322f7d05225298d627d29de493608193336f7865dcfbe7de",
+      "scale": 1.2279069767441861
+    },
+    {
+      "file": "super2-clean-matte.png",
+      "sha256": "a880393e267743188a261c6eb24a1c43a1a0e5c9a93e46ff2c9c0a0cc65681ae",
+      "width": 1254,
+      "height": 1254,
+      "sourceFile": "game/Assets/AfterHours/Fighters/Vale/techniques-matte.png",
+      "sourceSha256": "f592ba448ba77a1e5028852b2695a9f93dfac63c535d6687dcbbbe67fb87d644",
+      "scale": 1.1945701357466063
+    }
+  ],
+  "timing": "Phase selection comes from canonical move startup/active/recovery and simulation state. Shared anticipation/recovery keys are intentional; source timings are unchanged.",
+  "animation_scope": "All49 canonical moves and universal states have explicit mappings from80 generated source key poses. This is phase-composed sprite animation, not a claim that80 new in-between animation sequences were drawn.",
+  "sampling": "nearest; draw rects and local foot pivots at common per-board scale; mirror around pivot. RGB textures require saturated-magenta shader removal."
+}

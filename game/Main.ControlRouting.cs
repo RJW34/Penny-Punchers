@@ -107,5 +107,6 @@ public partial class Main
                 BorderColor=seat==0?Gold:Cyan,BorderWidthLeft=active?3:0,BorderWidthBottom=1,ContentMarginLeft=16,ContentMarginRight=12
             });
         }
+        UiRefreshPreparationSkin();
     }
 }

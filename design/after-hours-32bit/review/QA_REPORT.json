@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "scope": "Offline local-file gallery UI smoke; not gameplay or animation acceptance",
+  "date": "2026-09-05",
+  "browser": "Locally installed Chrome, headless, no gallery server",
+  "selected_pngs": 22,
+  "external_resources": 0,
+  "checks": [
+    "22 cards",
+    "category filter",
+    "native dialog opens",
+    "actual pixels",
+    "zoom",
+    "matte control",
+    "pixel toggle",
+    "keyboard navigation",
+    "close dialog",
+    "focus return",
+    "dialog fits viewport"
+  ],
+  "evidence": [
+    ".qa-wide.png",
+    "qa-dialog.png",
+    ".qa-dom.txt"
+  ],
+  "notes": [
+    "Wide gallery screenshot visually inspected.",
+    "Dialog position verified against browser viewport bounds. Chrome CLI capture includes page offset around the native dialog; use index.html for interactive inspection.",
+    "Art extraction, full animation, typography and runtime integration remain pending.",
+    "Automatic approval review rejected optional cleanup of the temporary local Chrome preview profiles and QA harness. The tool reported blocked by policy without a more specific reason; those local review files were left in place."
+  ]
+}

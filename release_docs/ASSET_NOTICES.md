@@ -2,7 +2,9 @@
 
 ## Original project material
 
-Rook, Vale, their articulated vector rigs and costumes, the Foundry Ring, the measurement floor, combat particles and UI ornament were authored in source for this project with Codex. No commercial game sprites, characters, stages, recordings, samples or ROM material are included.
+Rook, Vale, their costumes, the foundry and calibration room, combat effects, portraits and interface art are original project material. The After Hours source boards were created with the built-in OpenAI ImageGen tool, with art direction by Codex for this project. Eight working fighter sheets were edited with the same built-in tool to replace baked backgrounds with a magenta matte; a runtime shader removes that matte. Stage, effect, portrait and interface crops preserve the supplied source image bytes. No commercial game sprites, characters, stages, recordings, samples or ROM material were supplied as sources or included.
+
+The original boards are preserved in the source package under `design/after-hours-32bit`. Shipped bitmap resources and explicit animation mappings are under `game/Assets/AfterHours`. Each fighter folder records prompts, selected output fingerprints, measured rectangles and root pivots. The artwork is a 32-bit arcade visual style; this does not imply all source PNGs have an alpha channel. Startup/contact/recovery timelines reuse compatible authored key poses where the boards do not contain separate in-between cels. The simulation alone owns move timing, hitboxes and spending.
 
 The 15 effect cues and the 20-second Foundry music loop are original deterministic oscillator/noise synthesis. Their reproducible source is `assets/synthesize_audio.py`; shipped WAV files are under `game/Presentation/Audio/`. There are no sampled voices or external music recordings.
 

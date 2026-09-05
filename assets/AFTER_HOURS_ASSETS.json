@@ -1,0 +1,234 @@
+{
+  "scope": "Actually shipped After Hours image resources only",
+  "assets": [
+    {
+      "path": "game/Assets/AfterHours/Effects/combat-atlas.png",
+      "sha256": "7a7ad2e12bd640c0747fc9c77aa0b358925b8f0a1a6632a9d43d3196cbe6ae28",
+      "bytes": 1505094,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "has_alpha": true,
+      "method": "byte-identical supplied original artwork; runtime rectangular crops"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/normals.png",
+      "sha256": "7f2a73b512fe5b4f768a61ea1914c151ee471119602e1fa0de8c96bd9b5286e5",
+      "bytes": 1943646,
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "built-in image_gen matte edit of supplied original fighter board"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/supplemental.png",
+      "sha256": "f384b1c17417c3048b201359e97d30db074989c4d332a8a4c92635daaaaa97a6",
+      "bytes": 1916875,
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "built-in image_gen matte edit of supplied original fighter board"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/techniques.png",
+      "sha256": "d194a915bd598a44bba2225f721dc61f46ea25bf915872a4587f47ea5c44864c",
+      "bytes": 1657977,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "built-in image_gen matte edit of supplied original fighter board"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/universal.png",
+      "sha256": "b7bbcb7b681708ff73a163c1ee0bbd2a12bfce8b7c868949125729043cf8a46d",
+      "bytes": 1736165,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "built-in image_gen matte edit of supplied original fighter board"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/normals-matte.png",
+      "sha256": "f70f933aa6e0ec4ec4c14170a3742b52fc35cf550861310c48fcb0b4b90f3468",
+      "bytes": 1630708,
+      "size": [
+        1085,
+        1450
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "built-in image_gen matte edit of supplied original fighter board"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/super2-clean-matte.png",
+      "sha256": "a880393e267743188a261c6eb24a1c43a1a0e5c9a93e46ff2c9c0a0cc65681ae",
+      "bytes": 1683316,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "built-in image_gen matte edit of supplied original fighter board"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/supplemental-matte.png",
+      "sha256": "3d8fe375b9d63a177e891fde9db19860e89ed1e18f757b86d873b0b93627dca9",
+      "bytes": 1650504,
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "built-in image_gen matte edit of supplied original fighter board"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/techniques-matte.png",
+      "sha256": "f592ba448ba77a1e5028852b2695a9f93dfac63c535d6687dcbbbe67fb87d644",
+      "bytes": 1701128,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "built-in image_gen matte edit of supplied original fighter board"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Vale/universal-matte.png",
+      "sha256": "ff159235cc53a49662f3b2711b5950200d2c0d207368d67e29518352ac6b6ee3",
+      "bytes": 1761434,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "built-in image_gen matte edit of supplied original fighter board"
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/foundry.png",
+      "sha256": "a166535fed3a237aad4394fce94a528e5b5da92a96b46121687bf3ef3ba7fae0",
+      "bytes": 2297063,
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "byte-identical supplied original artwork; runtime rectangular crops"
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/grid.png",
+      "sha256": "0c7377fbeec22bc70aa9cd683f9ca48ef6deb20c233babaef0b296055307950b",
+      "bytes": 1383905,
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "byte-identical supplied original artwork; runtime rectangular crops"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/branding-announcements.png",
+      "sha256": "0272b88afe9b1dcd83832bf354027a05d9ddd6f02bb9b62d835290210e69bace",
+      "bytes": 2080753,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "byte-identical supplied original artwork; runtime rectangular crops"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/hud-atlas.png",
+      "sha256": "46efd91aec4b7ee1c249b8945dd94a45a0fdb40e8c4efefa9805f460740dc5d1",
+      "bytes": 1692251,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "byte-identical supplied original artwork; runtime rectangular crops"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/interface-atlas.png",
+      "sha256": "f73efab8ad9cf5e7f39a60394d59df3bf91c8527963b447dff898fdd7b44711a",
+      "bytes": 1435790,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "byte-identical supplied original artwork; runtime rectangular crops"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/lease-icons.png",
+      "sha256": "c2f0e7cb60da0578f88a6ec40cf85a0a09a92dbc614d5099591ff8587d38c164",
+      "bytes": 1984755,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "byte-identical supplied original artwork; runtime rectangular crops"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/rook-identity.png",
+      "sha256": "47dcd50976a1e15ddaacc78781ba331c3ab000cefec9177ea7894dfc876bd626",
+      "bytes": 1824328,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "byte-identical supplied original artwork; runtime rectangular crops"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/title-backdrop.png",
+      "sha256": "d7336aca471a0138594b110ef6b249e1351d5d85c18f81980f4e611226ef021c",
+      "bytes": 2075696,
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "byte-identical supplied original artwork; runtime rectangular crops"
+    },
+    {
+      "path": "game/Assets/AfterHours/UI/vale-identity.png",
+      "sha256": "09ea7773966d7f6dc3f56f290402bebc8ac239b64f3687fb76ab44312690941a",
+      "bytes": 1970792,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "has_alpha": false,
+      "method": "byte-identical supplied original artwork; runtime rectangular crops"
+    }
+  ],
+  "count": 19
+}

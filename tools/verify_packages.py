@@ -6,7 +6,9 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def linux(p):return '/mnt/'+str(p)[0].lower()+str(p)[2:].replace('\\','/')
 
 def main():
-    out=ROOT/'reports/evidence/package-verification';out.mkdir(parents=True,exist_ok=True)
+    parser=argparse.ArgumentParser();parser.add_argument('--label',default='package-verification');args=parser.parse_args()
+    if not args.label or any(c not in 'abcdefghijklmnopqrstuvwxyz0123456789-_' for c in args.label):raise SystemExit('Invalid evidence label')
+    out=ROOT/'reports/evidence'/args.label;out.mkdir(parents=True,exist_ok=True)
     stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     results=[]
     for platform,exe in [('windows','StrikeLedger.exe'),('linux','StrikeLedger.x86_64')]:

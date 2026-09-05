@@ -1,0 +1,21 @@
+{
+  "utc": "2026-09-05T10:49:00.843693+00:00",
+  "passed": true,
+  "checks": {
+    "canonical49Exact": true,
+    "allThreeMovePhasesNonempty": true,
+    "allReferencesResolve": true,
+    "croppedCellsNeverUsed": true,
+    "rootStateContractCovered": true,
+    "allRectsInsideActualDimensions": true,
+    "allPivotsInsideRect": true,
+    "allSourceBoardsUnchanged": true,
+    "pulseExUsesCleanCasterRelease": true,
+    "super2UsesCleanProjectileFreeCell": true
+  },
+  "moves": 49,
+  "cells": 80,
+  "states": 65,
+  "scope": "Actual pixel and JSON metadata checks, not gameplay rendering or physical-device verification.",
+  "atlas_sha256": "292ea6f08187bce681aeab971a44ce09741873e9627ecb9a85fda39e9a9024c7"
+}

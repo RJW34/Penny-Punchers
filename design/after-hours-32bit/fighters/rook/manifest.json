@@ -1,0 +1,1295 @@
+{
+  "schema_version": 1,
+  "pack": "AFTER HOURS 32-bit art design",
+  "fighter_id": "rook",
+  "scope": "Only the traditional-fighter variant; no platform-fighter or existing prototype files modified.",
+  "canonical_data": "data/fighters/rook.json",
+  "generator": "built-in image_gen__imagegen; no CLI/API fallback; no code-drawn raster art",
+  "theme": {
+    "ink": "#111923",
+    "amber": "#EDAA54",
+    "cream": "#F4E5C5",
+    "teal": "#69B8AC"
+  },
+  "identity": "Original compact powerful dark-skinned adult man with cropped square curls, ochre sleeveless work jacket, slate forearm wraps, loose indigo work trousers and pale high-top boots.",
+  "palette_variants": {
+    "p1": "ochre jacket / indigo trousers / ivory boots",
+    "p2": "ivory jacket with brick-red trim / charcoal trousers / slate boots; same skin and anatomy"
+  },
+  "counts": {
+    "selected_sheets": 5,
+    "selected_design_panels": 86,
+    "universal_keys": 38,
+    "normal_unique_throw_keys": 24,
+    "technique_keys": 16,
+    "canonical_move_ids_mapped": 49,
+    "additional_alpha_attempts": 1,
+    "universal_clip_ids_mapped": 36,
+    "supplemental_keys": 24,
+    "proximity_alternative_keys": 2
+  },
+  "images": [
+    {
+      "format": "png",
+      "pixel_format": "Format24bppRgb",
+      "has_alpha": false,
+      "alpha_verification": "Read-only System.Drawing inspection; RGB has no alpha channel.",
+      "status": "design_reference_only",
+      "runtime_ready": false,
+      "animation_complete": false,
+      "file": "identity.png",
+      "width": 1536,
+      "height": 1024,
+      "grid": {
+        "columns": 3,
+        "rows": 2,
+        "order": "row-major"
+      },
+      "background": "dark navy presentation matte",
+      "prompt": "prompts/identity.txt",
+      "sha256": "47DCD50976A1E15DDAACC78781BA331C3AB000CEFEC9177EA7894DFC876BD626",
+      "frames": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "frame_name": "portrait_neutral",
+          "description": "neutral portrait",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "frame_name": "portrait_versus",
+          "description": "versus portrait",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "frame_name": "portrait_win",
+          "description": "victory portrait",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 4,
+          "row": 2,
+          "column": 1,
+          "frame_name": "portrait_lose",
+          "description": "defeat portrait",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 2,
+          "frame_name": "palette_p1",
+          "description": "P1 full-body design and swatches",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 3,
+          "frame_name": "palette_p2",
+          "description": "P2 full-body design and swatches",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        }
+      ],
+      "qa_notes": [
+        "Six panels visible; portraits and P1/P2 preserve character identity.",
+        "Swatches are illustrative; named theme hex values are design targets, not a lossless palette lock."
+      ]
+    },
+    {
+      "format": "png",
+      "pixel_format": "Format24bppRgb",
+      "has_alpha": false,
+      "alpha_verification": "Read-only System.Drawing inspection; RGB has no alpha channel.",
+      "status": "design_reference_only",
+      "runtime_ready": false,
+      "animation_complete": false,
+      "file": "universal.png",
+      "width": 1254,
+      "height": 1254,
+      "grid": {
+        "columns": 4,
+        "rows": 4,
+        "order": "row-major",
+        "exact_grid_cutting": false
+      },
+      "background": "baked light checkerboard despite transparent-background request",
+      "prompt": "prompts/universal.txt",
+      "sha256": "526E3635404EFD769C4CF41C1D57D2D63397A5BEB1974688E09213FA18DF9E4B",
+      "frames": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "frame_name": "idle",
+          "description": "neutral fighting guard",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "mapped_clip_ids": [
+            "idle"
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "frame_name": "walk_forward",
+          "description": "forward walking key",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "mapped_clip_ids": [
+            "walk_forward"
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "frame_name": "walk_back",
+          "description": "backward walking key",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "mapped_clip_ids": [
+            "walk_back"
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 4,
+          "frame_name": "dash_forward",
+          "description": "forward dash key",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "mapped_clip_ids": [
+            "dash_forward"
+          ]
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 1,
+          "frame_name": "dash_back",
+          "description": "backdash airborne key",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "mapped_clip_ids": [
+            "dash_back"
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 2,
+          "frame_name": "crouch",
+          "description": "deep crouch key",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "mapped_clip_ids": [
+            "crouch"
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 3,
+          "frame_name": "jump_ascent",
+          "description": "jump ascent key",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "mapped_clip_ids": [
+            "jump_rise"
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 4,
+          "frame_name": "jump_apex",
+          "description": "jump apex key",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "mapped_clip_ids": [
+            "jump_apex"
+          ]
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 1,
+          "frame_name": "landing",
+          "description": "landing compression key (prompt requested descent; generated pose reads as landing)",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "mapped_clip_ids": [
+            "land"
+          ]
+        },
+        {
+          "index": 10,
+          "row": 3,
+          "column": 2,
+          "frame_name": "block_stand",
+          "description": "standing high guard",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "mapped_clip_ids": [
+            "block_high"
+          ]
+        },
+        {
+          "index": 11,
+          "row": 3,
+          "column": 3,
+          "frame_name": "block_crouch",
+          "description": "crouching guard",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "mapped_clip_ids": [
+            "block_low"
+          ]
+        },
+        {
+          "index": 12,
+          "row": 3,
+          "column": 4,
+          "frame_name": "parry_stand",
+          "description": "standing open-palm parry",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "mapped_clip_ids": [
+            "parry_high"
+          ]
+        },
+        {
+          "index": 13,
+          "row": 4,
+          "column": 1,
+          "frame_name": "parry_crouch",
+          "description": "low open-palm parry",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "mapped_clip_ids": [
+            "parry_low"
+          ]
+        },
+        {
+          "index": 14,
+          "row": 4,
+          "column": 2,
+          "frame_name": "hit_heavy",
+          "description": "heavy hit reaction",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "mapped_clip_ids": [
+            "hit_high"
+          ]
+        },
+        {
+          "index": 15,
+          "row": 4,
+          "column": 3,
+          "frame_name": "knockdown",
+          "description": "supine hard knockdown",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "mapped_clip_ids": [
+            "knockdown_ground"
+          ]
+        },
+        {
+          "index": 16,
+          "row": 4,
+          "column": 4,
+          "frame_name": "getup",
+          "description": "one-knee recovery",
+          "mapped_move_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "mapped_clip_ids": [
+            "wakeup"
+          ]
+        }
+      ],
+      "qa_notes": [
+        "16 separated useful movement/defense/reaction poses visible.",
+        "Canvas size differs from requested 1536x1536; 1254 is not divisible by 4, so no equal integer-sized crop contract.",
+        "Cell 9 reads as landing compression, not free-fall descent.",
+        "Generic state names are design labels; confirm exact renderer/state bindings before integration.",
+        "Needs real alpha cutout, baseline/pivot normalization, additional airborne hit, stun, throw-received, tech and animation transition keys."
+      ]
+    },
+    {
+      "format": "png",
+      "pixel_format": "Format24bppRgb",
+      "has_alpha": false,
+      "alpha_verification": "Read-only System.Drawing inspection; RGB has no alpha channel.",
+      "status": "design_reference_only",
+      "runtime_ready": false,
+      "animation_complete": false,
+      "file": "normals.png",
+      "width": 1024,
+      "height": 1536,
+      "grid": {
+        "columns": 4,
+        "rows": 6,
+        "order": "row-major",
+        "exact_grid_cutting": false
+      },
+      "background": "baked light checkerboard and white panel gutters",
+      "prompt": "prompts/normals.txt",
+      "sha256": "C71F5C3ABFF5F1C0C4A41C0852ACBE70833E44DAEC28F1CA8D8D07E47876BCC2",
+      "frames": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "frame_name": "s_lp",
+          "description": "standing short lead jab",
+          "mapped_move_ids": [
+            "s_lp"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "frame_name": "s_mp",
+          "description": "standing rear straight",
+          "mapped_move_ids": [
+            "s_mp"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "frame_name": "s_hp",
+          "description": "standing lunging overhand",
+          "mapped_move_ids": [
+            "s_hp"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 4,
+          "frame_name": "s_lk",
+          "description": "standing short low kick",
+          "mapped_move_ids": [
+            "s_lk"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 1,
+          "frame_name": "s_mk",
+          "description": "standing waist side kick",
+          "mapped_move_ids": [
+            "s_mk"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 2,
+          "frame_name": "s_hk",
+          "description": "standing high roundhouse",
+          "mapped_move_ids": [
+            "s_hk"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 3,
+          "frame_name": "c_lp",
+          "description": "crouching short jab",
+          "mapped_move_ids": [
+            "c_lp"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 4,
+          "frame_name": "c_mp",
+          "description": "crouching long straight",
+          "mapped_move_ids": [
+            "c_mp"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 1,
+          "frame_name": "c_hp",
+          "description": "crouching uppercut",
+          "mapped_move_ids": [
+            "c_hp"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 10,
+          "row": 3,
+          "column": 2,
+          "frame_name": "c_lk",
+          "description": "crouching short low kick",
+          "mapped_move_ids": [
+            "c_lk"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 11,
+          "row": 3,
+          "column": 3,
+          "frame_name": "c_mk",
+          "description": "crouching extended low kick",
+          "mapped_move_ids": [
+            "c_mk"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 12,
+          "row": 3,
+          "column": 4,
+          "frame_name": "c_hk",
+          "description": "crouching rotational sweep",
+          "mapped_move_ids": [
+            "c_hk"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 13,
+          "row": 4,
+          "column": 1,
+          "frame_name": "j_lp",
+          "description": "airborne compact jab",
+          "mapped_move_ids": [
+            "j_lp"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 14,
+          "row": 4,
+          "column": 2,
+          "frame_name": "j_mp",
+          "description": "airborne downward punch",
+          "mapped_move_ids": [
+            "j_mp"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 15,
+          "row": 4,
+          "column": 3,
+          "frame_name": "j_hp",
+          "description": "airborne double-fist hammer",
+          "mapped_move_ids": [
+            "j_hp"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 16,
+          "row": 4,
+          "column": 4,
+          "frame_name": "j_lk",
+          "description": "airborne short boot poke",
+          "mapped_move_ids": [
+            "j_lk"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 17,
+          "row": 5,
+          "column": 1,
+          "frame_name": "j_mk",
+          "description": "airborne side kick",
+          "mapped_move_ids": [
+            "j_mk"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 18,
+          "row": 5,
+          "column": 2,
+          "frame_name": "j_hk",
+          "description": "airborne high heel kick",
+          "mapped_move_ids": [
+            "j_hk"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 19,
+          "row": 5,
+          "column": 3,
+          "frame_name": "close_mp",
+          "description": "proximity short elbow",
+          "mapped_move_ids": [
+            "close_mp"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 20,
+          "row": 5,
+          "column": 4,
+          "frame_name": "close_hp",
+          "description": "proximity body hook",
+          "mapped_move_ids": [
+            "close_hp"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "qa_status": "needs_redraw",
+          "qa_note": "The lower legs/boots are cropped at the bottom edge of row 5 column 4. Redraw/extend this key before extracting.",
+          "alternative_reference": {
+            "file": "supplemental.png",
+            "row": 6,
+            "column": 2,
+            "note": "Full-body feet-visible replacement concept; normalize and animate before use."
+          }
+        },
+        {
+          "index": 21,
+          "row": 6,
+          "column": 1,
+          "frame_name": "command_fhp",
+          "description": "Forward hammer",
+          "mapped_move_ids": [
+            "command_fhp"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 22,
+          "row": 6,
+          "column": 2,
+          "frame_name": "leap_overhead",
+          "description": "Leap strike",
+          "mapped_move_ids": [
+            "leap_overhead"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 23,
+          "row": 6,
+          "column": 3,
+          "frame_name": "throw_forward",
+          "description": "Forward throw release",
+          "mapped_move_ids": [
+            "throw_forward"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 24,
+          "row": 6,
+          "column": 4,
+          "frame_name": "throw_back",
+          "description": "Back throw release",
+          "mapped_move_ids": [
+            "throw_back"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        }
+      ],
+      "qa_notes": [
+        "24 requested cells are visible, covering 18 standard normals, 2 proximity normals, 2 overhead/command moves and 2 throws.",
+        "Row 5 column 4 close_hp is not a complete full-body sprite; cropped boots require redraw.",
+        "Throw poses show only Rook; paired victim poses and timing still required.",
+        "Grid rectangles are layout guides; white gutters, effects and sprite bounds need manual tracing.",
+        "Design intent mapping is not a claim that attack/recovery frames exist."
+      ]
+    },
+    {
+      "format": "png",
+      "pixel_format": "Format24bppRgb",
+      "has_alpha": false,
+      "alpha_verification": "Read-only System.Drawing inspection; RGB has no alpha channel.",
+      "status": "design_reference_only",
+      "runtime_ready": false,
+      "animation_complete": false,
+      "file": "techniques.png",
+      "width": 1254,
+      "height": 1254,
+      "grid": {
+        "columns": 4,
+        "rows": 4,
+        "order": "row-major",
+        "exact_grid_cutting": false
+      },
+      "background": "opaque cool grey matte with slight generated tonal variation",
+      "prompt": "prompts/techniques.txt",
+      "sha256": "F34EFF09B6CB68D5474A48C53B8CB423F21CAA0E26A381A898AB72B9F2F5A890",
+      "frames": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "frame_name": "pulse_basic",
+          "description": "Pulse shot L/M/H",
+          "mapped_move_ids": [
+            "pulse_l",
+            "pulse_m",
+            "pulse_h"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "frame_name": "pulse_ex",
+          "description": "Pulse shot EX",
+          "mapped_move_ids": [
+            "pulse_ex"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "frame_name": "rise_basic",
+          "description": "Rising elbow L/M/H",
+          "mapped_move_ids": [
+            "rise_l",
+            "rise_m",
+            "rise_h"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 4,
+          "frame_name": "rise_ex",
+          "description": "Rising elbow EX",
+          "mapped_move_ids": [
+            "rise_ex"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 1,
+          "frame_name": "knee_basic",
+          "description": "Traveling knee L/M/H",
+          "mapped_move_ids": [
+            "knee_l",
+            "knee_m",
+            "knee_h"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 2,
+          "frame_name": "knee_ex",
+          "description": "Traveling knee EX",
+          "mapped_move_ids": [
+            "knee_ex"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 3,
+          "frame_name": "sway_shared",
+          "description": "Retreat palm L/M/H/EX",
+          "mapped_move_ids": [
+            "sway_l",
+            "sway_m",
+            "sway_h",
+            "sway_ex"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 4,
+          "frame_name": "super_1",
+          "description": "Circuit Break",
+          "mapped_move_ids": [
+            "super_1"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 1,
+          "frame_name": "super_2",
+          "description": "Forge Impact",
+          "mapped_move_ids": [
+            "super_2"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 10,
+          "row": 3,
+          "column": 2,
+          "frame_name": "super_3",
+          "description": "Rush Cascade",
+          "mapped_move_ids": [
+            "super_3"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 11,
+          "row": 3,
+          "column": 3,
+          "frame_name": "shop_clinch",
+          "description": "Clinch entry",
+          "mapped_move_ids": [
+            "shop_clinch"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 12,
+          "row": 3,
+          "column": 4,
+          "frame_name": "shop_low_drive",
+          "description": "Low drive",
+          "mapped_move_ids": [
+            "shop_low_drive"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 13,
+          "row": 4,
+          "column": 1,
+          "frame_name": "shop_high_hook",
+          "description": "High hook",
+          "mapped_move_ids": [
+            "shop_high_hook"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 14,
+          "row": 4,
+          "column": 2,
+          "frame_name": "shop_low_turn",
+          "description": "Low turn",
+          "mapped_move_ids": [
+            "shop_low_turn"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 15,
+          "row": 4,
+          "column": 3,
+          "frame_name": "shop_step_feint",
+          "description": "Step feint",
+          "mapped_move_ids": [
+            "shop_step_feint"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 16,
+          "row": 4,
+          "column": 4,
+          "frame_name": "shop_sway_feint",
+          "description": "Sway feint",
+          "mapped_move_ids": [
+            "shop_sway_feint"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        }
+      ],
+      "qa_notes": [
+        "16 visible isolated technique keys cover all four special families, 3 supers and 6 lease techniques.",
+        "L/M/H share a family key; separate windup, strength accents, velocity and recovery frames are pending.",
+        "Retreat palm EX shares the retreat palm reference key; a dedicated EX variant is pending.",
+        "Pulse and super FX are embedded design references, not separately compositable VFX assets.",
+        "Grey matte is opaque; alpha extraction and removal of slight background variation still needed."
+      ]
+    },
+    {
+      "format": "png",
+      "pixel_format": "Format24bppRgb",
+      "has_alpha": false,
+      "alpha_verification": "Read-only System.Drawing inspection; RGB has no alpha channel.",
+      "status": "design_reference_only",
+      "runtime_ready": false,
+      "animation_complete": false,
+      "file": "supplemental.png",
+      "width": 1024,
+      "height": 1536,
+      "grid": {
+        "columns": 4,
+        "rows": 6,
+        "order": "row-major",
+        "exact_grid_cutting": false
+      },
+      "background": "opaque cool grey matte with slight generated tonal variation; no checkerboard",
+      "prompt": "prompts/supplemental.txt",
+      "sha256": "DBB8A5B1CF9247AFAD62E7FAE1DC0F5109EBC3D6FC0DC602FA4E21900EA839E3",
+      "frames": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "frame_name": "turn",
+          "description": "back-view pivot key",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "turn"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "frame_name": "crouch_down",
+          "description": "lowering into crouch key",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "crouch_down"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "frame_name": "crouch_up",
+          "description": "rising from crouch key",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "crouch_up"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 4,
+          "frame_name": "jump_takeoff",
+          "description": "late takeoff key; generated pose already airborne",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "jump_takeoff"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "qa_status": "phase_or_pose_refinement_needed",
+          "qa_note": "Already airborne; add grounded jump anticipation and actual toe-off before integration."
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 1,
+          "frame_name": "jump_fall",
+          "description": "vertical descent key with boots below torso",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "jump_fall"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 2,
+          "frame_name": "super_jump",
+          "description": "compressed high leap key",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "super_jump"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 3,
+          "frame_name": "parry_air",
+          "description": "airborne open-palm parry",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "parry_air"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 4,
+          "frame_name": "parry_red_high",
+          "description": "standing red parry",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "parry_red_high"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 1,
+          "frame_name": "parry_red_low",
+          "description": "low red parry",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "parry_red_low"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 10,
+          "row": 3,
+          "column": 2,
+          "frame_name": "hit_low",
+          "description": "low-hit crouched reaction",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "hit_low"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 11,
+          "row": 3,
+          "column": 3,
+          "frame_name": "hit_air",
+          "description": "airborne backward hit reaction",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "hit_air"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 12,
+          "row": 3,
+          "column": 4,
+          "frame_name": "throw_victim",
+          "description": "inverted throw-victim tumble",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "throw_victim"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 13,
+          "row": 4,
+          "column": 1,
+          "frame_name": "throw_tech",
+          "description": "open-armed grab break",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "throw_tech"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 14,
+          "row": 4,
+          "column": 2,
+          "frame_name": "knockdown_fall",
+          "description": "near-ground side-landing key; falling phase needs refinement",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "knockdown_fall"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "qa_status": "phase_or_pose_refinement_needed",
+          "qa_note": "Body reads as near-ground side landing, not an unmistakable falling pose; author a suspended fall transition."
+        },
+        {
+          "index": 15,
+          "row": 4,
+          "column": 3,
+          "frame_name": "dizzy",
+          "description": "staggered hand-to-head stun key",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "dizzy"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 16,
+          "row": 4,
+          "column": 4,
+          "frame_name": "taunt",
+          "description": "confident come-here taunt",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "taunt"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 17,
+          "row": 5,
+          "column": 1,
+          "frame_name": "intro",
+          "description": "wrist-wrap preparation",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "intro"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 18,
+          "row": 5,
+          "column": 2,
+          "frame_name": "win",
+          "description": "full-body victory gesture",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "win"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 19,
+          "row": 5,
+          "column": 3,
+          "frame_name": "defeat",
+          "description": "seated defeated key",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "defeat"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 20,
+          "row": 5,
+          "column": 4,
+          "frame_name": "draw",
+          "description": "exhausted hands-on-knees draw key",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "draw"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 21,
+          "row": 6,
+          "column": 1,
+          "frame_name": "close_mp_alternative",
+          "description": "complete-foot close MP alternative; generated straight-punch silhouette differs from requested elbow",
+          "mapped_move_ids": [
+            "close_mp"
+          ],
+          "mapped_clip_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "qa_status": "phase_or_pose_refinement_needed",
+          "qa_note": "Body is complete but move reads as straight punch; retain original normals close_mp elbow reference for attack identity."
+        },
+        {
+          "index": 22,
+          "row": 6,
+          "column": 2,
+          "frame_name": "close_hp_alternative",
+          "description": "complete-foot upward proximity heavy key",
+          "mapped_move_ids": [
+            "close_hp"
+          ],
+          "mapped_clip_ids": [],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 23,
+          "row": 6,
+          "column": 3,
+          "frame_name": "walk_back_second_key",
+          "description": "complementary backward guarded step",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "walk_back"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop"
+        },
+        {
+          "index": 24,
+          "row": 6,
+          "column": 4,
+          "frame_name": "hit_high_recovery",
+          "description": "complementary guarded high-hit recovery key",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "hit_high"
+          ],
+          "coverage": "single design key pose",
+          "extraction": "manual region selection; grid is a reading aid, not a validated sprite crop",
+          "qa_status": "phase_or_pose_refinement_needed",
+          "qa_note": "Pose reads as guarded recovery rather than chest recoil; original universal heavy-hit key remains the clearer contact reaction."
+        }
+      ],
+      "qa_notes": [
+        "24 visible separate full-body poses, including 20 additional universal clip references, 2 complementary universal keys and 2 proximity alternatives.",
+        "All limbs and both proximity figures' boots are contained and visible.",
+        "Row 6 column 2 provides a complete-foot alternative for the cropped original close_hp; original source PNG is preserved.",
+        "Row 6 column 1 is a straight punch rather than the requested elbow. Original normals close_mp remains the clearer elbow reference.",
+        "Jump takeoff is already airborne and knockdown fall reads as a near-ground side landing; author clearer transition keys.",
+        "Air parry uses an open palm; no air-block state is introduced.",
+        "Matte remains opaque RGB; requires real alpha extraction and sprite normalization."
+      ]
+    }
+  ],
+  "nonselected_variants": [
+    {
+      "format": "png",
+      "pixel_format": "Format24bppRgb",
+      "has_alpha": false,
+      "alpha_verification": "Read-only System.Drawing inspection; RGB has no alpha channel.",
+      "status": "design_reference_only",
+      "runtime_ready": false,
+      "animation_complete": false,
+      "file": "universal-alpha-attempt.png",
+      "width": 1254,
+      "height": 1254,
+      "prompt": "prompts/universal_alpha.txt",
+      "sha256": "697442161F61BC02CC172A74265B31DA446CD88045BA7ADA2E1EC754E6DF60C9",
+      "reason": "Targeted alpha-removal edit returned another RGB checkerboard image. It is retained as provenance, not promoted as a corrected atlas."
+    }
+  ],
+  "integration_notes": [
+    "Treat all PNGs as raster design sources. Do not install them directly as runtime sprite atlases.",
+    "Keep game data, timing, hitboxes, economy and current renderer unchanged until a separate implementation task.",
+    "Extract each selected pose manually into true-alpha sprites; reject checkerboard contamination and inspect dark/light backgrounds.",
+    "Use supplemental row 6 column 2 as the complete-foot close_hp replacement concept, then normalize body proportions, colors, 2px outlines and facing and align a consistent foot pivot. Preserve original clipped source for provenance.",
+    "Create startup, active, recovery and transitions from these key poses; derive timing from the canonical move data instead of inventing new gameplay.",
+    "Expand paired throw timing and all animation in-betweens. Supplementary stun, airborne hit, throw-tech, victory, defeat and other universal keys now exist, but their loops and transitions remain pending.",
+    "Use nearest-neighbor integer scaling and disable linear filtering/mipmaps for the eventual pixel-art import.",
+    "Separate effects and P1/P2 palette swaps from the fighter texture; validate silhouette and legibility against dark and bright stages."
+  ],
+  "universal_contract_reference": "../../docs/animation-contract.json",
+  "universal_coverage_note": "All 36 proposed universal clip IDs now have mapped design references across universal and supplemental. Mapped references do not constitute finished or phase-complete animations; jump_takeoff and knockdown_fall transition poses need refinement."
+}

@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "utc": "2026-09-05T10:45:51.635415+00:00",
+  "generator": "built-in image_gen__imagegen",
+  "source": "techniques-matte.png",
+  "sourceSha256": "f592ba448ba77a1e5028852b2695a9f93dfac63c535d6687dcbbbe67fb87d644",
+  "output": "super2-clean-matte.png",
+  "outputSha256": "a880393e267743188a261c6eb24a1c43a1a0e5c9a93e46ff2c9c0a0cc65681ae",
+  "generatedFile": "C:/Users/ryanj/.codex/generated_images/01a07055-412f-73b3-953f-67261cfdedae/exec-df28aa82-216d-4f56-b733-7e1154b564a5.png",
+  "prompt": "super2-clean-prompt.md",
+  "scope": "Targeted removal of row2column4 projectile. Only t_super_2 selects the edited board; every other runtime pose uses the existing textures unchanged. No raster postprocessing; generated PNG copied byte-for-byte.",
+  "reasonStraightCropRejected": {
+    "originalCyanMinimumX": 1079,
+    "originalHandSkinMaximumX": 1086,
+    "detail": "A straight crop removing all cyan would truncate extended fingers."
+  },
+  "readOnlyPixelChecks": {
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "characterBounds": [
+      892,
+      376,
+      1091,
+      562
+    ],
+    "selectedRect": [
+      890,
+      374,
+      203,
+      190
+    ],
+    "localFootPivot": [
+      101,
+      189
+    ],
+    "foregroundBeyondRightHandRegion": 0,
+    "cyanProjectilePixelsInOriginalEffectRegion": 0,
+    "allBodyExtremaHaveAtLeast2PixelMargin": true
+  },
+  "alphaMode": "runtime_magenta_key",
+  "canonicalGameplayChanges": false
+}

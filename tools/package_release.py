@@ -18,7 +18,7 @@ def main():
             if file.is_file():
                 target=folder/'docs'/file.relative_to(ROOT/'release_docs');target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(file,target)
         shutil.copyfile(ROOT/'reports/RELEASE_CANDIDATE.json',folder/'RELEASE_CANDIDATE.json')
-        for name in ['ACCEPTANCE_RESULTS.json','FINAL_INDEPENDENT_REVIEW.md']:
+        for name in ['ACCEPTANCE_RESULTS.json','FINAL_INDEPENDENT_REVIEW.md','AFTER_HOURS_INTEGRATION.md','AFTER_HOURS_UI_AND_RENDER_REVIEW.md','AFTER_HOURS_GAMEPLAY_BOUNDARY_REVIEW.md']:
             source=ROOT/'reports'/name
             if source.is_file():shutil.copyfile(source,folder/'docs'/name)
         (folder/'README.txt').write_text('STRIKE LEDGER\n\nLaunch '+exe+'. Keep all files in this directory together.\nRead docs/README.md and docs/CONTROLS.md for controls and play modes.\nRead docs/KNOWN_LIMITATIONS.md for the exact verification boundaries.\n',encoding='utf-8')

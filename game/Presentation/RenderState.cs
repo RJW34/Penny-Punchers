@@ -28,11 +28,16 @@ public sealed class FighterRenderState
     public int Strength { get; set; } = 1;
     public int Palette { get; set; }
     public bool Grounded { get; set; } = true;
+    public bool Frozen { get; set; }
     public RenderBox[] Boxes { get; set; } = [];
 }
 
 public sealed class ProjectileRenderState
 {
+    public int Id { get; set; }
+    public string FighterId { get; set; } = "rook";
+    public string MoveId { get; set; } = "";
+    public int Age { get; set; }
     public int X { get; set; }
     public int Y { get; set; }
     public int Facing { get; set; } = 1;

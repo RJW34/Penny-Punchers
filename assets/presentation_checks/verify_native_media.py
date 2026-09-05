@@ -29,7 +29,7 @@ def png(path):
     return dict(path=str(path.relative_to(ROOT)), width=dims[0], height=dims[1], sha256=digest(path), crc_valid=True)
 
 def main():
-    parser = argparse.ArgumentParser(); parser.add_argument('mode', choices=['ui','showcase','match','free-kit','network','linux']); parser.add_argument('--peer',type=int,choices=[0,1]); parser.add_argument('--convert',action='store_true'); parser.add_argument('--label'); parser.add_argument('--runtime-root',type=Path); args = parser.parse_args()
+    parser = argparse.ArgumentParser(); parser.add_argument('mode', choices=['ui','showcase','art','match','free-kit','network','linux']); parser.add_argument('--peer',type=int,choices=[0,1]); parser.add_argument('--convert',action='store_true'); parser.add_argument('--label'); parser.add_argument('--runtime-root',type=Path); args = parser.parse_args()
     label = args.label or args.mode
     assert label and all(c in 'abcdefghijklmnopqrstuvwxyz0123456789-_' for c in label), 'Invalid evidence label'
     folder = ROOT/'reports/evidence'/('native-'+label)
@@ -37,10 +37,14 @@ def main():
         assert args.peer is not None, 'Network evidence requires --peer 0 or 1'
         folder /= 'peer'+str(args.peer)
     process = json.loads((folder/'process-result.json').read_text())
-    result_name = {'ui':'controller-menu-flow.json','showcase':'combat-visual-showcase.json','network':'native-network-result.json'}.get(args.mode,'runtime-result.json')
+    result_name = {'art':'art-review.json','ui':'controller-menu-flow.json','showcase':'combat-visual-showcase.json','network':'native-network-result.json'}.get(args.mode,'runtime-result.json')
     result = json.loads((folder/result_name).read_text())
     assert process['passed'] and process['exit_code'] == 0 and not process.get('errors',[]), process
-    if args.mode in ('ui','showcase'):
+    if args.mode == 'art':
+        assert result['passed'] and all(c['passed'] for c in result['checks'])
+        assert len({(c['fighter'],c['move']) for c in result['checks'] if 'move' in c}) == 98
+        assertion_count=len(result['checks'])
+    elif args.mode in ('ui','showcase'):
         assert result['success'] and len(result['checks']) in ((63,75) if args.mode == 'ui' else (13,))
         assert all(c['passed'] for c in result['checks'])
         assertion_count = len(result['checks'])
@@ -74,7 +78,8 @@ def main():
     log = (folder/'process.log').read_text(encoding='utf-8', errors='replace')
     assert not any(s in log for s in ['ERROR:', 'Unhandled exception', 'Leaked instance:', 'instances leaked', 'resources still in use'])
     screenshots = [png(p) for p in sorted(folder.glob('*.png'))]
-    if args.mode in ('ui','showcase'): assert len(screenshots) == ((11 if assertion_count == 75 else 8) if args.mode == 'ui' else 14), len(screenshots)
+    if args.mode=='art': assert len(screenshots)==len(result['captures']) and len(screenshots)>=32
+    elif args.mode in ('ui','showcase'): assert len(screenshots) == ((11 if assertion_count == 75 else 8) if args.mode == 'ui' else 14), len(screenshots)
     else:
         assert len(screenshots) >= 4
         assert (folder/('native-network-result.png' if args.mode == 'network' else 'match-result.png')).exists()
@@ -88,10 +93,11 @@ def main():
     original_video = next(s for s in source['streams'] if s.get('codec_type') == 'video')
     assert all(video[k] == original_video[k] for k in ['width','height','r_frame_rate','nb_frames']), (source, metadata)
     assert all((p['width'],p['height']) == (video['width'],video['height']) for p in screenshots)
-    if args.mode in ('ui','showcase'): assert (video['width'],video['height'],video['r_frame_rate']) == (1280,720,'60/1')
+    if args.mode in ('ui','showcase','art'): assert (video['width'],video['height'],video['r_frame_rate']) == (1280,720,'60/1')
     assert any(s.get('codec_name') == 'aac' and s.get('channels') == 2 for s in metadata['streams'])
     duration = float(metadata['format']['duration'])
-    if args.mode in ('ui','showcase'): assert (10 < duration < 40) if args.mode == 'ui' else (56 < duration < 60)
+    if args.mode=='art': assert duration>10 and abs(duration-float(source['format']['duration']))<.1
+    elif args.mode in ('ui','showcase'): assert (10 < duration < 40) if args.mode == 'ui' else (56 < duration < 60)
     else: assert duration > 30 and abs(duration-float(source['format']['duration'])) < .1
     subprocess.run(['ffmpeg','-v','error','-threads','2','-i',str(movie),'-map','0:v:0','-f','null','-'], check=True)
     windows = args.runtime_root.resolve() if args.runtime_root else ROOT/'dist/StrikeLedger'/('linux' if args.mode == 'linux' else 'windows')

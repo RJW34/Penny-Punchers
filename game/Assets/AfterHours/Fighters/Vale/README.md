@@ -1,0 +1,13 @@
+# Vale runtime sprites
+
+`atlas.json` is the runtime contract: 80 explicit source rectangles and local foot pivots, common scales per board, 49 canonical move IDs with startup/active/recovery phases, and 65 state/clip aliases. `validation.json` records the actual metadata checks. The original design boards are unchanged.
+
+The four primary sheets and separate super2 cleanup PNG were edited by built-in `image_gen`. The requested genuine-alpha edit failed: its PNG was RGB and still contained a checkerboard. The selected images therefore use a deliberate magenta matte and require the runtime shader (`chroma_key: [1,0,1]`). They are not falsely labeled transparent PNGs. `pixel-inspection.json` records actual dimensions, RGB mode and measured foreground rectangles. The metadata tools only read raster pixels; they do not edit, crop, resize or recolor images.
+
+Use nearest filtering. Mirror around the declared pivot. `n_c_mk` has `facing: -1` because the source crouching kick extends left; its runtime strike direction must be corrected. Do not rescale a crouch to standing height: the declared common per-board scales preserve silhouette proportions. Airborne anchors follow the body, while surrounding effects may extend below the anchor.
+
+The cropped `n_close_mp` and `n_close_hp` source cells are retained only as unused reference rectangles. Every actual move mapping selects the supplemental full-body replacements. Amber dummy opponents were removed from both throw sprites, so the real opponent is rendered once. The `t_super_2` cell uses the separate built-in edited `super2-clean-matte.png` to remove its baked orb and prevent a second projectile beside the actual simulated projectile. `t_pulse_ex` shares the clean `t_pulse` caster-release rectangle, pivot and scale. Its authoritative EX projectile and gold effects supply the distinct orb, so no baked EX orb is selected. Other attached technique effects remain identified by `baked_effects`. The super2 edit and bounds have their own `super2-clean-provenance.json`; the EX family-pose selection is recorded in `pulse-ex-clean-provenance.json`.
+
+These are phase-composed sprite animations using the supplied key poses, with shared anticipation and recovery poses. The runtime selects phases from canonical combat timing. This does not claim newly hand-drawn in-between sequences or change hitboxes, input, movement, wallet rules, or simulation state. Native rendering, pose selection and shader compositing are verified by the integrating task.
+
+Prompts are retained in `prompts.md`, `normals-prompt.md`, `techniques-prompt.md`, and `supplemental-prompt.md`; provenance and file hashes are in `provenance.json`.

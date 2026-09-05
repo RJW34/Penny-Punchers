@@ -1,0 +1,30 @@
+{
+  "utc": "2026-09-05T10:49:00.695982+00:00",
+  "change": "t_pulse_ex shares clean t_pulse caster-release texture/rect/pivot/scale; explicit EX phase key retained.",
+  "sourceCell": "t_pulse",
+  "selectedCell": {
+    "texture": "techniques-matte.png",
+    "rect": [
+      22,
+      66,
+      204,
+      201
+    ],
+    "pivot": [
+      100,
+      199
+    ],
+    "scale": 1.1945701,
+    "facing": 1,
+    "source_cell": 1,
+    "baked_effects": false,
+    "shared_pose_from": "t_pulse",
+    "note": "Normal and EX pulse share the clean caster release pose. The authoritative canonical projectile and EX effects are rendered separately."
+  },
+  "gameplayChanged": false,
+  "rasterChanged": false,
+  "newImageGenerationUsed": false,
+  "authoritativeProjectile": "Canonical simulated EX projectile and its distinct gold renderer effects are the only orb.",
+  "reproducer": "python tools/art/vale_build_metadata.py",
+  "atlasSha256": "292ea6f08187bce681aeab971a44ce09741873e9627ecb9a85fda39e9a9024c7"
+}

@@ -1,0 +1,1130 @@
+{
+  "schema_version": 1,
+  "fighter_id": "vale",
+  "collection": "AFTER HOURS",
+  "scope": "Traditional fighter only",
+  "asset_kind": "source_design_boards",
+  "production_ready": false,
+  "animation_complete": false,
+  "generation_method": "built-in image_gen",
+  "canonical_moves_source": "../../../../data/fighters/vale.json",
+  "canonical_source_note": "Relative to this Vale design directory; no runtime data is modified.",
+  "review_date": "2026-09-05",
+  "palette_intent": {
+    "ink_navy": "#111923",
+    "amber": "#EDAA54",
+    "cream": "#F4E5C5",
+    "teal": "#69B8AC",
+    "alternate": "Muted violet jacket, cream trim, slate-blue trousers, amber ankle wraps; use identity board for reference. Generated raster colors are not a normalized indexed palette."
+  },
+  "identity": {
+    "description": "Tall athletic medium-brown-skinned adult woman, short swept silver-black hair, one-sleeved teal asymmetric cropped utility jacket, charcoal bodysuit, ivory wide-leg segmented fabric trousers, teal ankle wraps and flat dark footwear. Long-leg and open-palm spacing fighter.",
+    "originality": "Original character and costume developed for AFTER HOURS; late-1990s 32-bit arcade pixel-art homage."
+  },
+  "boards": [
+    {
+      "file": "identity.png",
+      "width": 1536,
+      "height": 1024,
+      "columns": 4,
+      "rows": 2,
+      "grid_order": "row_major",
+      "alpha": {
+        "requested": false,
+        "has_alpha_channel": false,
+        "background": "Opaque ink-navy board",
+        "inspection_completed": true
+      },
+      "cells": [
+        {
+          "cell": 1,
+          "row": 1,
+          "column": 1,
+          "frame_name": "p1_fullbody",
+          "mapped_move_ids": [],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 2,
+          "row": 1,
+          "column": 2,
+          "frame_name": "p2_fullbody",
+          "mapped_move_ids": [],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 3,
+          "row": 1,
+          "column": 3,
+          "frame_name": "portrait_neutral",
+          "mapped_move_ids": [],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 4,
+          "row": 1,
+          "column": 4,
+          "frame_name": "portrait_versus",
+          "mapped_move_ids": [],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 5,
+          "row": 2,
+          "column": 1,
+          "frame_name": "portrait_win",
+          "mapped_move_ids": [],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 6,
+          "row": 2,
+          "column": 2,
+          "frame_name": "portrait_lose",
+          "mapped_move_ids": [],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 7,
+          "row": 2,
+          "column": 3,
+          "frame_name": "rear_turnaround",
+          "mapped_move_ids": [],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 8,
+          "row": 2,
+          "column": 4,
+          "frame_name": "palette_swatches",
+          "mapped_move_ids": [],
+          "status": "design_key_pose"
+        }
+      ],
+      "sha256": "09EA7773966D7F6DC3F56F290402BEBC8AC239B64F3687FB76AB44312690941A",
+      "notes": [
+        "Four distinct portrait expressions and P1/P2 full-body colorways; board palette chips are visual guidance."
+      ]
+    },
+    {
+      "file": "universal.png",
+      "width": 1254,
+      "height": 1254,
+      "columns": 4,
+      "rows": 4,
+      "grid_order": "row_major",
+      "alpha": {
+        "requested": true,
+        "has_alpha_channel": false,
+        "inspection_method": "System.Drawing.Bitmap PixelFormat reports Format24bppRgb; opaque corner pixel A=255; PNG is RGB.",
+        "background": "Baked white/light-gray checkerboard",
+        "cutout_required": true,
+        "inspection_completed": true
+      },
+      "cells": [
+        {
+          "cell": 1,
+          "row": 1,
+          "column": 1,
+          "frame_name": "idle",
+          "mapped_move_ids": [],
+          "status": "design_key_pose",
+          "mapped_clip_ids": [
+            "idle"
+          ]
+        },
+        {
+          "cell": 2,
+          "row": 1,
+          "column": 2,
+          "frame_name": "walk_forward",
+          "mapped_move_ids": [],
+          "status": "design_key_pose",
+          "mapped_clip_ids": [
+            "walk_forward"
+          ]
+        },
+        {
+          "cell": 3,
+          "row": 1,
+          "column": 3,
+          "frame_name": "walk_back",
+          "mapped_move_ids": [],
+          "status": "design_key_pose",
+          "mapped_clip_ids": [
+            "walk_back"
+          ]
+        },
+        {
+          "cell": 4,
+          "row": 1,
+          "column": 4,
+          "frame_name": "dash_forward",
+          "mapped_move_ids": [],
+          "status": "design_key_pose",
+          "mapped_clip_ids": [
+            "dash_forward"
+          ]
+        },
+        {
+          "cell": 5,
+          "row": 2,
+          "column": 1,
+          "frame_name": "dash_back",
+          "mapped_move_ids": [],
+          "status": "design_key_pose",
+          "mapped_clip_ids": [
+            "dash_back"
+          ]
+        },
+        {
+          "cell": 6,
+          "row": 2,
+          "column": 2,
+          "frame_name": "crouch",
+          "mapped_move_ids": [],
+          "status": "design_key_pose",
+          "mapped_clip_ids": [
+            "crouch"
+          ]
+        },
+        {
+          "cell": 7,
+          "row": 2,
+          "column": 3,
+          "frame_name": "jump_takeoff",
+          "mapped_move_ids": [],
+          "status": "design_key_pose",
+          "mapped_clip_ids": [
+            "jump_takeoff"
+          ]
+        },
+        {
+          "cell": 8,
+          "row": 2,
+          "column": 4,
+          "frame_name": "jump_apex",
+          "mapped_move_ids": [],
+          "status": "design_key_pose",
+          "mapped_clip_ids": [
+            "jump_apex"
+          ]
+        },
+        {
+          "cell": 9,
+          "row": 3,
+          "column": 1,
+          "frame_name": "jump_fall",
+          "mapped_move_ids": [],
+          "status": "design_key_pose",
+          "mapped_clip_ids": [
+            "jump_fall"
+          ]
+        },
+        {
+          "cell": 10,
+          "row": 3,
+          "column": 2,
+          "frame_name": "land",
+          "mapped_move_ids": [],
+          "status": "design_key_pose",
+          "mapped_clip_ids": [
+            "land"
+          ]
+        },
+        {
+          "cell": 11,
+          "row": 3,
+          "column": 3,
+          "frame_name": "block_high",
+          "mapped_move_ids": [],
+          "status": "design_key_pose",
+          "mapped_clip_ids": [
+            "block_high"
+          ]
+        },
+        {
+          "cell": 12,
+          "row": 3,
+          "column": 4,
+          "frame_name": "block_low",
+          "mapped_move_ids": [],
+          "status": "design_key_pose",
+          "mapped_clip_ids": [
+            "block_low"
+          ]
+        },
+        {
+          "cell": 13,
+          "row": 4,
+          "column": 1,
+          "frame_name": "parry_high",
+          "mapped_move_ids": [],
+          "status": "design_key_pose",
+          "mapped_clip_ids": [
+            "parry_high"
+          ]
+        },
+        {
+          "cell": 14,
+          "row": 4,
+          "column": 2,
+          "frame_name": "parry_low",
+          "mapped_move_ids": [],
+          "status": "design_key_pose",
+          "mapped_clip_ids": [
+            "parry_low"
+          ]
+        },
+        {
+          "cell": 15,
+          "row": 4,
+          "column": 3,
+          "frame_name": "hitstun",
+          "mapped_move_ids": [],
+          "status": "design_key_pose",
+          "mapped_clip_ids": [
+            "hit_high"
+          ]
+        },
+        {
+          "cell": 16,
+          "row": 4,
+          "column": 4,
+          "frame_name": "knockdown",
+          "mapped_move_ids": [],
+          "status": "design_key_pose",
+          "mapped_clip_ids": [
+            "knockdown_ground"
+          ]
+        }
+      ],
+      "sha256": "1DBDA5756D08EC0B6A215919A4AEACF0333CED939BC833297E9DECAE21B0199E",
+      "notes": [
+        "All sixteen requested movement/defense poses are visible. Heights and grounded baseline vary; no exact sprite rectangles or pivots are asserted.",
+        "One key pose does not cover animation. Supplemental board now adds the remaining twenty universal clip intents and further high-hit/quickrise references."
+      ]
+    },
+    {
+      "file": "normals.png",
+      "width": 1086,
+      "height": 1448,
+      "columns": 4,
+      "rows": 6,
+      "grid_order": "row_major",
+      "alpha": {
+        "requested": true,
+        "has_alpha_channel": false,
+        "inspection_method": "System.Drawing.Bitmap PixelFormat reports Format24bppRgb; opaque corner pixel A=255; PNG is RGB.",
+        "background": "Baked white/light-gray checkerboard",
+        "cutout_required": true,
+        "inspection_completed": true
+      },
+      "cells": [
+        {
+          "cell": 1,
+          "row": 1,
+          "column": 1,
+          "frame_name": "s_lp",
+          "mapped_move_ids": [
+            "s_lp"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 2,
+          "row": 1,
+          "column": 2,
+          "frame_name": "s_mp",
+          "mapped_move_ids": [
+            "s_mp"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 3,
+          "row": 1,
+          "column": 3,
+          "frame_name": "s_hp",
+          "mapped_move_ids": [
+            "s_hp"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 4,
+          "row": 1,
+          "column": 4,
+          "frame_name": "s_lk",
+          "mapped_move_ids": [
+            "s_lk"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 5,
+          "row": 2,
+          "column": 1,
+          "frame_name": "s_mk",
+          "mapped_move_ids": [
+            "s_mk"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 6,
+          "row": 2,
+          "column": 2,
+          "frame_name": "s_hk",
+          "mapped_move_ids": [
+            "s_hk"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 7,
+          "row": 2,
+          "column": 3,
+          "frame_name": "c_lp",
+          "mapped_move_ids": [
+            "c_lp"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 8,
+          "row": 2,
+          "column": 4,
+          "frame_name": "c_mp",
+          "mapped_move_ids": [
+            "c_mp"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 9,
+          "row": 3,
+          "column": 1,
+          "frame_name": "c_hp",
+          "mapped_move_ids": [
+            "c_hp"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 10,
+          "row": 3,
+          "column": 2,
+          "frame_name": "c_lk",
+          "mapped_move_ids": [
+            "c_lk"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 11,
+          "row": 3,
+          "column": 3,
+          "frame_name": "c_mk",
+          "mapped_move_ids": [
+            "c_mk"
+          ],
+          "status": "design_key_pose",
+          "notes": "Generated heel extends left; canonical facing and attack reach must be reconciled during animation."
+        },
+        {
+          "cell": 12,
+          "row": 3,
+          "column": 4,
+          "frame_name": "c_hk",
+          "mapped_move_ids": [
+            "c_hk"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 13,
+          "row": 4,
+          "column": 1,
+          "frame_name": "j_lp",
+          "mapped_move_ids": [
+            "j_lp"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 14,
+          "row": 4,
+          "column": 2,
+          "frame_name": "j_mp",
+          "mapped_move_ids": [
+            "j_mp"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 15,
+          "row": 4,
+          "column": 3,
+          "frame_name": "j_hp",
+          "mapped_move_ids": [
+            "j_hp"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 16,
+          "row": 4,
+          "column": 4,
+          "frame_name": "j_lk",
+          "mapped_move_ids": [
+            "j_lk"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 17,
+          "row": 5,
+          "column": 1,
+          "frame_name": "j_mk",
+          "mapped_move_ids": [
+            "j_mk"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 18,
+          "row": 5,
+          "column": 2,
+          "frame_name": "j_hk",
+          "mapped_move_ids": [
+            "j_hk"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 19,
+          "row": 5,
+          "column": 3,
+          "frame_name": "close_mp",
+          "mapped_move_ids": [
+            "close_mp"
+          ],
+          "status": "partial_design_requires_lower_leg_redraw",
+          "notes": "Generated lower legs are cropped at row boundary; not suitable for a full-body cutout without redraw. Whole-body alternatives are now supplied in supplemental.png cells 21/22.",
+          "preferred_design_reference": {
+            "file": "supplemental.png",
+            "cell": 21
+          }
+        },
+        {
+          "cell": 20,
+          "row": 5,
+          "column": 4,
+          "frame_name": "close_hp",
+          "mapped_move_ids": [
+            "close_hp"
+          ],
+          "status": "partial_design_requires_lower_leg_redraw",
+          "notes": "Generated lower legs are cropped at row boundary; not suitable for a full-body cutout without redraw. Whole-body alternatives are now supplied in supplemental.png cells 21/22.",
+          "preferred_design_reference": {
+            "file": "supplemental.png",
+            "cell": 22
+          }
+        },
+        {
+          "cell": 21,
+          "row": 6,
+          "column": 1,
+          "frame_name": "command_fhp",
+          "mapped_move_ids": [
+            "command_fhp"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 22,
+          "row": 6,
+          "column": 2,
+          "frame_name": "leap_overhead",
+          "mapped_move_ids": [
+            "leap_overhead"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 23,
+          "row": 6,
+          "column": 3,
+          "frame_name": "throw_forward",
+          "mapped_move_ids": [
+            "throw_forward"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 24,
+          "row": 6,
+          "column": 4,
+          "frame_name": "throw_back",
+          "mapped_move_ids": [
+            "throw_back"
+          ],
+          "status": "design_key_pose",
+          "notes": "Intended back-throw release was not clearly produced; directional/two-body choreography must be redrawn during animation."
+        }
+      ],
+      "sha256": "EEB78892BCA260D76F4676730E339C6A0B23F3B12453F7F609BC4F222E4A6589",
+      "notes": [
+        "Eighteen s/c/j button normals, two proximity normals, command heel, universal overhead and two throw design cells.",
+        "Cells 19 and 20 crop the lower legs. Several move silhouettes need refinement to match intended hit direction. Throw participants are illustrative amber training silhouettes."
+      ]
+    },
+    {
+      "file": "techniques.png",
+      "width": 1254,
+      "height": 1254,
+      "columns": 4,
+      "rows": 4,
+      "grid_order": "row_major",
+      "alpha": {
+        "requested": true,
+        "has_alpha_channel": false,
+        "inspection_method": "System.Drawing.Bitmap PixelFormat reports Format24bppRgb; opaque corner pixel A=255; PNG is RGB.",
+        "background": "Baked white/light-gray checkerboard",
+        "cutout_required": true,
+        "inspection_completed": true
+      },
+      "cells": [
+        {
+          "cell": 1,
+          "row": 1,
+          "column": 1,
+          "frame_name": "pulse",
+          "display_name": "Charge pulse",
+          "mapped_move_ids": [
+            "pulse_l",
+            "pulse_m",
+            "pulse_h"
+          ],
+          "status": "design_key_pose",
+          "notes": "Family/shared pose reference; each strength still requires startup, contact and recovery animation from canonical move timings."
+        },
+        {
+          "cell": 2,
+          "row": 1,
+          "column": 2,
+          "frame_name": "pulse_ex",
+          "display_name": "Charge pulse EX",
+          "mapped_move_ids": [
+            "pulse_ex"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 3,
+          "row": 1,
+          "column": 3,
+          "frame_name": "rise",
+          "display_name": "Rising heel",
+          "mapped_move_ids": [
+            "rise_l",
+            "rise_m",
+            "rise_h"
+          ],
+          "status": "design_key_pose",
+          "notes": "Family/shared pose reference; each strength still requires startup, contact and recovery animation from canonical move timings."
+        },
+        {
+          "cell": 4,
+          "row": 1,
+          "column": 4,
+          "frame_name": "rise_ex",
+          "display_name": "Rising heel EX",
+          "mapped_move_ids": [
+            "rise_ex"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 5,
+          "row": 2,
+          "column": 1,
+          "frame_name": "palm",
+          "display_name": "Turn palm",
+          "mapped_move_ids": [
+            "palm_l",
+            "palm_m",
+            "palm_h",
+            "palm_ex"
+          ],
+          "status": "design_key_pose",
+          "notes": "Family/shared pose reference; each strength still requires startup, contact and recovery animation from canonical move timings."
+        },
+        {
+          "cell": 6,
+          "row": 2,
+          "column": 2,
+          "frame_name": "heel",
+          "display_name": "Retreat heel",
+          "mapped_move_ids": [
+            "heel_l",
+            "heel_m",
+            "heel_h",
+            "heel_ex"
+          ],
+          "status": "design_key_pose",
+          "notes": "Family/shared pose reference; each strength still requires startup, contact and recovery animation from canonical move timings."
+        },
+        {
+          "cell": 7,
+          "row": 2,
+          "column": 3,
+          "frame_name": "super_1",
+          "display_name": "Rising Current",
+          "mapped_move_ids": [
+            "super_1"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 8,
+          "row": 2,
+          "column": 4,
+          "frame_name": "super_2",
+          "display_name": "Crosswind",
+          "mapped_move_ids": [
+            "super_2"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 9,
+          "row": 3,
+          "column": 1,
+          "frame_name": "super_3",
+          "display_name": "Tidal Step",
+          "mapped_move_ids": [
+            "super_3"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 10,
+          "row": 3,
+          "column": 2,
+          "frame_name": "shop_return_pulse",
+          "display_name": "Returning pulse",
+          "mapped_move_ids": [
+            "shop_return_pulse"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 11,
+          "row": 3,
+          "column": 3,
+          "frame_name": "shop_low_palm",
+          "display_name": "Low palm",
+          "mapped_move_ids": [
+            "shop_low_palm"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 12,
+          "row": 3,
+          "column": 4,
+          "frame_name": "shop_heel_arc",
+          "display_name": "Heel arc",
+          "mapped_move_ids": [
+            "shop_heel_arc"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 13,
+          "row": 4,
+          "column": 1,
+          "frame_name": "shop_long_check",
+          "display_name": "Long check",
+          "mapped_move_ids": [
+            "shop_long_check"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 14,
+          "row": 4,
+          "column": 2,
+          "frame_name": "shop_step_feint",
+          "display_name": "Step feint",
+          "mapped_move_ids": [
+            "shop_step_feint"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 15,
+          "row": 4,
+          "column": 3,
+          "frame_name": "shop_sway_feint",
+          "display_name": "Sway feint",
+          "mapped_move_ids": [
+            "shop_sway_feint"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 16,
+          "row": 4,
+          "column": 4,
+          "frame_name": "super_freeze",
+          "display_name": "Shared super activation pose",
+          "mapped_move_ids": [
+            "super_1",
+            "super_2",
+            "super_3"
+          ],
+          "status": "design_key_pose",
+          "notes": "Family/shared pose reference; each strength still requires startup, contact and recovery animation from canonical move timings."
+        }
+      ],
+      "sha256": "953778575323B809084725447F0770BE3EA19D240D2960A7F926F7F964EF5BC0",
+      "notes": [
+        "All four special families, three super arts and six lease techniques receive source-art references.",
+        "Pulse/rise EX receive separate silhouettes. Palm/heel EX currently share family pose art and require distinct EX accents during animation."
+      ]
+    },
+    {
+      "file": "supplemental.png",
+      "width": 1086,
+      "height": 1448,
+      "columns": 4,
+      "rows": 6,
+      "grid_order": "row_major",
+      "alpha": {
+        "requested": false,
+        "has_alpha_channel": false,
+        "inspection_completed": true,
+        "inspection_method": "System.Drawing.Bitmap reports Format24bppRgb; opaque corner pixels A=255.",
+        "background": "Opaque gray matte with minor pixel variation; no checkerboard. Requested #747A80; observed corners #72787D and #74777E.",
+        "cutout_required": true
+      },
+      "cells": [
+        {
+          "cell": 1,
+          "row": 1,
+          "column": 1,
+          "frame_name": "turn",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "turn"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 2,
+          "row": 1,
+          "column": 2,
+          "frame_name": "crouch_down",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "crouch_down"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 3,
+          "row": 1,
+          "column": 3,
+          "frame_name": "crouch_up",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "crouch_up"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 4,
+          "row": 1,
+          "column": 4,
+          "frame_name": "jump_rise",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "jump_rise"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 5,
+          "row": 2,
+          "column": 1,
+          "frame_name": "super_jump",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "super_jump"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 6,
+          "row": 2,
+          "column": 2,
+          "frame_name": "parry_air",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "parry_air"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 7,
+          "row": 2,
+          "column": 3,
+          "frame_name": "parry_red_high",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "parry_red_high"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 8,
+          "row": 2,
+          "column": 4,
+          "frame_name": "parry_red_low",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "parry_red_low"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 9,
+          "row": 3,
+          "column": 1,
+          "frame_name": "hit_low",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "hit_low"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 10,
+          "row": 3,
+          "column": 2,
+          "frame_name": "hit_air",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "hit_air"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 11,
+          "row": 3,
+          "column": 3,
+          "frame_name": "throw_victim",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "throw_victim"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 12,
+          "row": 3,
+          "column": 4,
+          "frame_name": "throw_tech",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "throw_tech"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 13,
+          "row": 4,
+          "column": 1,
+          "frame_name": "knockdown_fall",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "knockdown_fall"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 14,
+          "row": 4,
+          "column": 2,
+          "frame_name": "wakeup",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "wakeup"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 15,
+          "row": 4,
+          "column": 3,
+          "frame_name": "dizzy",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "dizzy"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 16,
+          "row": 4,
+          "column": 4,
+          "frame_name": "taunt",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "taunt"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 17,
+          "row": 5,
+          "column": 1,
+          "frame_name": "intro",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "intro"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 18,
+          "row": 5,
+          "column": 2,
+          "frame_name": "win",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "win"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 19,
+          "row": 5,
+          "column": 3,
+          "frame_name": "defeat",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "defeat"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 20,
+          "row": 5,
+          "column": 4,
+          "frame_name": "draw",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "draw"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 21,
+          "row": 6,
+          "column": 1,
+          "frame_name": "close_mp",
+          "mapped_move_ids": [
+            "close_mp"
+          ],
+          "mapped_clip_ids": [],
+          "status": "design_key_pose",
+          "notes": "Whole body and both feet visible, repairing original cropped design; generator produced a straight punch rather than the prompted compact elbow. Final silhouette choice remains."
+        },
+        {
+          "cell": 22,
+          "row": 6,
+          "column": 2,
+          "frame_name": "close_hp",
+          "mapped_move_ids": [
+            "close_hp"
+          ],
+          "mapped_clip_ids": [],
+          "status": "design_key_pose",
+          "notes": "Whole body and both feet visible, repairing original cropped design; turning upward palm pose."
+        },
+        {
+          "cell": 23,
+          "row": 6,
+          "column": 3,
+          "frame_name": "hit_high",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "hit_high"
+          ],
+          "status": "design_key_pose"
+        },
+        {
+          "cell": 24,
+          "row": 6,
+          "column": 4,
+          "frame_name": "wakeup_quickrise",
+          "mapped_move_ids": [],
+          "mapped_clip_ids": [
+            "wakeup"
+          ],
+          "status": "design_key_pose",
+          "notes": "Supplementary dynamic wakeup reference; timing and quickrise behavior still driven by canonical gameplay."
+        }
+      ],
+      "sha256": "00FECC70C75C3E65322F7D05225298D627D29DE493608193336F7865DCFBE7DE",
+      "notes": [
+        "24 distinct complete-body cells reviewed in requested row-major order. Original identity remains short-haired, teal-jacketed, ivory-trousered Vale.",
+        "Twenty newly represented universal clip intents plus two proximity-attack repairs, an explicit high hit reaction and quickrise alternative.",
+        "Five primary boards now provide 88 design cells; all 49 canonical moves and all 36 proposed universal clip intents have a named source reference. This does not mean finished animation coverage."
+      ]
+    }
+  ],
+  "rejected_variants": [
+    {
+      "file": "universal-alpha-attempt.png",
+      "width": 1254,
+      "height": 1254,
+      "role": "Preserved failed background-extraction attempt; do not prefer over universal.png",
+      "alpha": {
+        "requested": true,
+        "has_alpha_channel": false,
+        "inspection_method": "System.Drawing.Bitmap PixelFormat reports Format24bppRgb; opaque corner pixel A=255; PNG is RGB.",
+        "background": "Baked white/light-gray checkerboard",
+        "cutout_required": true,
+        "inspection_completed": true
+      },
+      "sha256": "96C33B219573EE866F68B44A057EDDC8D1F9AE1A22FA3DF2DB05A2C98BC4C4CE",
+      "notes": [
+        "Built-in image edit still emitted opaque checkerboard and slightly changed pose details."
+      ]
+    }
+  ],
+  "integration_notes": [
+    "No game source, scenes, canonical data, input logic, hitboxes, audio or current assets have been changed.",
+    "These files are design references. They cannot be directly imported as final frame-complete sprite atlases.",
+    "Cell numbers are visual reading order only; nominal equal-cell division is not a verified extraction rectangle.",
+    "Extract foreground and rebuild genuine alpha masks, then normalize scale and floor pivots; do not globally color-key ivory because clothing overlaps background tones.",
+    "Use supplemental cells 21/22 as whole-body alternatives to cropped proximity designs; refine close attack and other attack/throw directions; build startup, active, recovery and transition frames with timing driven by canonical fighter JSON.",
+    "All 36 universal clip intents now have pose references, but full common-state motion and every P2 variant still require animation.",
+    "Separate attached VFX from body sprites when building production assets; use nearest filtering after palette and pixel-grid cleanup.",
+    "Choose later integration in an isolated change. Preserve all existing prototype assets until the user requests a swap."
+  ],
+  "coverage": {
+    "primary_board_count": 5,
+    "design_cell_count": 88,
+    "canonical_move_ids_referenced": 49,
+    "universal_clip_intents_referenced": 36,
+    "universal_clip_intents_total": 36,
+    "frame_complete_clips": 0,
+    "note": "Named key-pose references only. Full start/active/recovery/transition motion, paired throws, consistent P2 variants and normalization remain production work."
+  }
+}

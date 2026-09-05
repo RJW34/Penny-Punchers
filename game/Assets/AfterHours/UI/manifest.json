@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "pack": "AFTER HOURS",
+  "purpose": "Runtime UI skin; code-selected rectangular AtlasTexture regions and nine-slice frames",
+  "assets": [
+    {
+      "runtime_path": "game/Assets/AfterHours/UI/title-backdrop.png",
+      "source_path": "design/after-hours-32bit/ui/title-backdrop.png",
+      "sha256": "d7336aca471a0138594b110ef6b249e1351d5d85c18f81980f4e611226ef021c",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "source_unchanged": true
+    },
+    {
+      "runtime_path": "game/Assets/AfterHours/UI/interface-atlas.png",
+      "source_path": "design/after-hours-32bit/ui/interface-atlas.png",
+      "sha256": "f73efab8ad9cf5e7f39a60394d59df3bf91c8527963b447dff898fdd7b44711a",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "source_unchanged": true
+    },
+    {
+      "runtime_path": "game/Assets/AfterHours/UI/hud-atlas.png",
+      "source_path": "design/after-hours-32bit/ui/hud-atlas.png",
+      "sha256": "46efd91aec4b7ee1c249b8945dd94a45a0fdb40e8c4efefa9805f460740dc5d1",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "source_unchanged": true
+    },
+    {
+      "runtime_path": "game/Assets/AfterHours/UI/branding-announcements.png",
+      "source_path": "design/after-hours-32bit/ui/branding-announcements.png",
+      "sha256": "0272b88afe9b1dcd83832bf354027a05d9ddd6f02bb9b62d835290210e69bace",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "source_unchanged": true
+    },
+    {
+      "runtime_path": "game/Assets/AfterHours/UI/lease-icons.png",
+      "source_path": "design/after-hours-32bit/ui/lease-icons.png",
+      "sha256": "c2f0e7cb60da0578f88a6ec40cf85a0a09a92dbc614d5099591ff8587d38c164",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "source_unchanged": true
+    },
+    {
+      "runtime_path": "game/Assets/AfterHours/UI/rook-identity.png",
+      "source_path": "design/after-hours-32bit/fighters/rook/identity.png",
+      "sha256": "47dcd50976a1e15ddaacc78781ba331c3ab000cefec9177ea7894dfc876bd626",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "source_unchanged": true
+    },
+    {
+      "runtime_path": "game/Assets/AfterHours/UI/vale-identity.png",
+      "source_path": "design/after-hours-32bit/fighters/vale/identity.png",
+      "sha256": "09ea7773966d7f6dc3f56f290402bebc8ac239b64f3687fb76ab44312690941a",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "source_unchanged": true
+    }
+  ],
+  "bindings": {
+    "title": "title-backdrop plus supplied wordmark crop; live menu controls",
+    "menus": "interface-atlas blank panel only; live labels/callbacks",
+    "portraits": "source identity face crops, permanent P1/P2 labels",
+    "hud": "empty health frames and source color strips clipped to live health; numeric wallet, timer, reserve, stun and points",
+    "leases": "source action/category icons selected from current fighter/slot; item labels and cost from live data",
+    "announcements": "K.O. crop only for actual local PendingResult; other labels remain live"
+  },
+  "filter": "nearest; source artboards not rewritten",
+  "font": "Existing Godot bundled fallback for all dynamic text; supplied typography sheet is not treated as a font",
+  "provenance": "Original project ImageGen artwork supplied in design/after-hours-32bit; source pack manifest retains generation details",
+  "verification": "File copies hash-identical; crop layout visually reviewed; native integrated review performed separately"
+}

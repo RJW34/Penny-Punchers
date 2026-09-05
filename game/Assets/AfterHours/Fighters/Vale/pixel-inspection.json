@@ -1,0 +1,969 @@
+{
+  "method": "Read-only connected component pixel inspection; no raster data is modified. Saturated magenta shader key; RGBA was requested but tool returned RGB.",
+  "boards": [
+    {
+      "file": "universal-matte.png",
+      "sha256": "ff159235cc53a49662f3b2711b5950200d2c0d207368d67e29518352ac6b6ee3",
+      "mode": "RGB",
+      "width": 1254,
+      "height": 1254,
+      "alphaExtrema": null,
+      "matteFraction": 0.7956319681325977,
+      "keyPixelMin": [
+        156,
+        0,
+        151
+      ],
+      "keyPixelMax": [
+        255,
+        109,
+        255
+      ],
+      "cells": [
+        {
+          "index": 1,
+          "rect": [
+            55,
+            23,
+            233,
+            289
+          ],
+          "parts": 1,
+          "foregroundPixels": 24460
+        },
+        {
+          "index": 2,
+          "rect": [
+            370,
+            21,
+            185,
+            291
+          ],
+          "parts": 1,
+          "foregroundPixels": 22368
+        },
+        {
+          "index": 3,
+          "rect": [
+            655,
+            23,
+            201,
+            286
+          ],
+          "parts": 1,
+          "foregroundPixels": 22337
+        },
+        {
+          "index": 4,
+          "rect": [
+            938,
+            71,
+            271,
+            227
+          ],
+          "parts": 1,
+          "foregroundPixels": 20698
+        },
+        {
+          "index": 5,
+          "rect": [
+            37,
+            335,
+            239,
+            214
+          ],
+          "parts": 1,
+          "foregroundPixels": 18718
+        },
+        {
+          "index": 6,
+          "rect": [
+            383,
+            405,
+            175,
+            191
+          ],
+          "parts": 1,
+          "foregroundPixels": 17213
+        },
+        {
+          "index": 7,
+          "rect": [
+            655,
+            325,
+            171,
+            239
+          ],
+          "parts": 1,
+          "foregroundPixels": 17087
+        },
+        {
+          "index": 8,
+          "rect": [
+            978,
+            339,
+            163,
+            201
+          ],
+          "parts": 1,
+          "foregroundPixels": 15885
+        },
+        {
+          "index": 9,
+          "rect": [
+            45,
+            615,
+            199,
+            253
+          ],
+          "parts": 1,
+          "foregroundPixels": 19362
+        },
+        {
+          "index": 10,
+          "rect": [
+            373,
+            705,
+            182,
+            178
+          ],
+          "parts": 1,
+          "foregroundPixels": 16601
+        },
+        {
+          "index": 11,
+          "rect": [
+            673,
+            612,
+            181,
+            271
+          ],
+          "parts": 1,
+          "foregroundPixels": 20013
+        },
+        {
+          "index": 12,
+          "rect": [
+            975,
+            700,
+            185,
+            184
+          ],
+          "parts": 1,
+          "foregroundPixels": 17630
+        },
+        {
+          "index": 13,
+          "rect": [
+            46,
+            905,
+            236,
+            298
+          ],
+          "parts": 9,
+          "foregroundPixels": 25394
+        },
+        {
+          "index": 14,
+          "rect": [
+            355,
+            1013,
+            264,
+            189
+          ],
+          "parts": 9,
+          "foregroundPixels": 21340
+        },
+        {
+          "index": 15,
+          "rect": [
+            673,
+            909,
+            174,
+            284
+          ],
+          "parts": 1,
+          "foregroundPixels": 22473
+        },
+        {
+          "index": 16,
+          "rect": [
+            961,
+            1065,
+            259,
+            140
+          ],
+          "parts": 1,
+          "foregroundPixels": 19760
+        }
+      ]
+    },
+    {
+      "file": "normals-matte.png",
+      "sha256": "f70f933aa6e0ec4ec4c14170a3742b52fc35cf550861310c48fcb0b4b90f3468",
+      "mode": "RGB",
+      "width": 1085,
+      "height": 1450,
+      "alphaExtrema": null,
+      "matteFraction": 0.8398824090259018,
+      "keyPixelMin": [
+        156,
+        0,
+        151
+      ],
+      "keyPixelMax": [
+        255,
+        109,
+        255
+      ],
+      "cells": [
+        {
+          "index": 1,
+          "rect": [
+            61,
+            31,
+            155,
+            211
+          ],
+          "parts": 1,
+          "foregroundPixels": 11999
+        },
+        {
+          "index": 2,
+          "rect": [
+            296,
+            36,
+            188,
+            206
+          ],
+          "parts": 1,
+          "foregroundPixels": 12499
+        },
+        {
+          "index": 3,
+          "rect": [
+            543,
+            42,
+            215,
+            200
+          ],
+          "parts": 1,
+          "foregroundPixels": 12436
+        },
+        {
+          "index": 4,
+          "rect": [
+            824,
+            67,
+            196,
+            171
+          ],
+          "parts": 1,
+          "foregroundPixels": 10638
+        },
+        {
+          "index": 5,
+          "rect": [
+            55,
+            289,
+            202,
+            202
+          ],
+          "parts": 1,
+          "foregroundPixels": 11985
+        },
+        {
+          "index": 6,
+          "rect": [
+            308,
+            281,
+            179,
+            210
+          ],
+          "parts": 1,
+          "foregroundPixels": 11587
+        },
+        {
+          "index": 7,
+          "rect": [
+            565,
+            334,
+            146,
+            145
+          ],
+          "parts": 1,
+          "foregroundPixels": 9998
+        },
+        {
+          "index": 8,
+          "rect": [
+            803,
+            349,
+            196,
+            133
+          ],
+          "parts": 1,
+          "foregroundPixels": 10397
+        },
+        {
+          "index": 9,
+          "rect": [
+            38,
+            549,
+            123,
+            141
+          ],
+          "parts": 1,
+          "foregroundPixels": 8538
+        },
+        {
+          "index": 10,
+          "rect": [
+            302,
+            546,
+            163,
+            143
+          ],
+          "parts": 1,
+          "foregroundPixels": 9933
+        },
+        {
+          "index": 11,
+          "rect": [
+            506,
+            575,
+            203,
+            120
+          ],
+          "parts": 1,
+          "foregroundPixels": 9124
+        },
+        {
+          "index": 12,
+          "rect": [
+            826,
+            566,
+            200,
+            129
+          ],
+          "parts": 1,
+          "foregroundPixels": 10232
+        },
+        {
+          "index": 13,
+          "rect": [
+            61,
+            743,
+            128,
+            155
+          ],
+          "parts": 1,
+          "foregroundPixels": 8959
+        },
+        {
+          "index": 14,
+          "rect": [
+            268,
+            743,
+            225,
+            159
+          ],
+          "parts": 1,
+          "foregroundPixels": 10036
+        },
+        {
+          "index": 15,
+          "rect": [
+            591,
+            740,
+            90,
+            181
+          ],
+          "parts": 1,
+          "foregroundPixels": 8812
+        },
+        {
+          "index": 16,
+          "rect": [
+            839,
+            731,
+            140,
+            181
+          ],
+          "parts": 1,
+          "foregroundPixels": 9605
+        },
+        {
+          "index": 17,
+          "rect": [
+            37,
+            957,
+            201,
+            149
+          ],
+          "parts": 1,
+          "foregroundPixels": 10502
+        },
+        {
+          "index": 18,
+          "rect": [
+            276,
+            949,
+            233,
+            126
+          ],
+          "parts": 1,
+          "foregroundPixels": 10743
+        },
+        {
+          "index": 19,
+          "rect": [
+            615,
+            957,
+            107,
+            161
+          ],
+          "parts": 1,
+          "foregroundPixels": 9129
+        },
+        {
+          "index": 20,
+          "rect": [
+            820,
+            926,
+            106,
+            193
+          ],
+          "parts": 1,
+          "foregroundPixels": 8644
+        },
+        {
+          "index": 21,
+          "rect": [
+            38,
+            1152,
+            205,
+            224
+          ],
+          "parts": 1,
+          "foregroundPixels": 12776
+        },
+        {
+          "index": 22,
+          "rect": [
+            319,
+            1129,
+            133,
+            247
+          ],
+          "parts": 1,
+          "foregroundPixels": 10648
+        },
+        {
+          "index": 23,
+          "rect": [
+            500,
+            1158,
+            148,
+            209
+          ],
+          "parts": 1,
+          "foregroundPixels": 11036
+        },
+        {
+          "index": 24,
+          "rect": [
+            798,
+            1169,
+            153,
+            204
+          ],
+          "parts": 1,
+          "foregroundPixels": 11649
+        }
+      ]
+    },
+    {
+      "file": "techniques-matte.png",
+      "sha256": "f592ba448ba77a1e5028852b2695a9f93dfac63c535d6687dcbbbe67fb87d644",
+      "mode": "RGB",
+      "width": 1254,
+      "height": 1254,
+      "alphaExtrema": null,
+      "matteFraction": 0.8263725138567748,
+      "keyPixelMin": [
+        156,
+        0,
+        151
+      ],
+      "keyPixelMax": [
+        255,
+        109,
+        255
+      ],
+      "cells": [
+        {
+          "index": 1,
+          "rect": [
+            24,
+            68,
+            200,
+            197
+          ],
+          "parts": 1,
+          "foregroundPixels": 13954
+        },
+        {
+          "index": 2,
+          "rect": [
+            349,
+            66,
+            285,
+            201
+          ],
+          "parts": 2,
+          "foregroundPixels": 18080
+        },
+        {
+          "index": 3,
+          "rect": [
+            691,
+            13,
+            119,
+            259
+          ],
+          "parts": 2,
+          "foregroundPixels": 12202
+        },
+        {
+          "index": 4,
+          "rect": [
+            954,
+            34,
+            239,
+            240
+          ],
+          "parts": 6,
+          "foregroundPixels": 23162
+        },
+        {
+          "index": 5,
+          "rect": [
+            73,
+            349,
+            225,
+            216
+          ],
+          "parts": 2,
+          "foregroundPixels": 15218
+        },
+        {
+          "index": 6,
+          "rect": [
+            337,
+            358,
+            259,
+            206
+          ],
+          "parts": 2,
+          "foregroundPixels": 14044
+        },
+        {
+          "index": 7,
+          "rect": [
+            671,
+            292,
+            159,
+            281
+          ],
+          "parts": 9,
+          "foregroundPixels": 14816
+        },
+        {
+          "index": 8,
+          "rect": [
+            892,
+            355,
+            320,
+            208
+          ],
+          "parts": 5,
+          "foregroundPixels": 22673
+        },
+        {
+          "index": 9,
+          "rect": [
+            26,
+            644,
+            294,
+            194
+          ],
+          "parts": 2,
+          "foregroundPixels": 31055
+        },
+        {
+          "index": 10,
+          "rect": [
+            366,
+            621,
+            152,
+            217
+          ],
+          "parts": 1,
+          "foregroundPixels": 13783
+        },
+        {
+          "index": 11,
+          "rect": [
+            693,
+            688,
+            232,
+            145
+          ],
+          "parts": 2,
+          "foregroundPixels": 13518
+        },
+        {
+          "index": 12,
+          "rect": [
+            990,
+            584,
+            168,
+            251
+          ],
+          "parts": 2,
+          "foregroundPixels": 13800
+        },
+        {
+          "index": 13,
+          "rect": [
+            28,
+            921,
+            260,
+            221
+          ],
+          "parts": 1,
+          "foregroundPixels": 16780
+        },
+        {
+          "index": 14,
+          "rect": [
+            327,
+            936,
+            224,
+            200
+          ],
+          "parts": 3,
+          "foregroundPixels": 14304
+        },
+        {
+          "index": 15,
+          "rect": [
+            692,
+            928,
+            225,
+            213
+          ],
+          "parts": 3,
+          "foregroundPixels": 14233
+        },
+        {
+          "index": 16,
+          "rect": [
+            937,
+            863,
+            225,
+            279
+          ],
+          "parts": 12,
+          "foregroundPixels": 21353
+        }
+      ]
+    },
+    {
+      "file": "supplemental-matte.png",
+      "sha256": "3d8fe375b9d63a177e891fde9db19860e89ed1e18f757b86d873b0b93627dca9",
+      "mode": "RGB",
+      "width": 1086,
+      "height": 1448,
+      "alphaExtrema": null,
+      "matteFraction": 0.840406657305943,
+      "keyPixelMin": [
+        156,
+        0,
+        151
+      ],
+      "keyPixelMax": [
+        255,
+        109,
+        255
+      ],
+      "cells": [
+        {
+          "index": 1,
+          "rect": [
+            69,
+            35,
+            146,
+            215
+          ],
+          "parts": 1,
+          "foregroundPixels": 13628
+        },
+        {
+          "index": 2,
+          "rect": [
+            337,
+            91,
+            115,
+            155
+          ],
+          "parts": 1,
+          "foregroundPixels": 9890
+        },
+        {
+          "index": 3,
+          "rect": [
+            581,
+            78,
+            127,
+            164
+          ],
+          "parts": 1,
+          "foregroundPixels": 9917
+        },
+        {
+          "index": 4,
+          "rect": [
+            847,
+            19,
+            148,
+            196
+          ],
+          "parts": 1,
+          "foregroundPixels": 9768
+        },
+        {
+          "index": 5,
+          "rect": [
+            77,
+            266,
+            91,
+            218
+          ],
+          "parts": 9,
+          "foregroundPixels": 7410
+        },
+        {
+          "index": 6,
+          "rect": [
+            326,
+            281,
+            129,
+            156
+          ],
+          "parts": 4,
+          "foregroundPixels": 8578
+        },
+        {
+          "index": 7,
+          "rect": [
+            576,
+            284,
+            154,
+            198
+          ],
+          "parts": 3,
+          "foregroundPixels": 11326
+        },
+        {
+          "index": 8,
+          "rect": [
+            843,
+            356,
+            150,
+            130
+          ],
+          "parts": 3,
+          "foregroundPixels": 9359
+        },
+        {
+          "index": 9,
+          "rect": [
+            72,
+            543,
+            108,
+            140
+          ],
+          "parts": 1,
+          "foregroundPixels": 9719
+        },
+        {
+          "index": 10,
+          "rect": [
+            315,
+            497,
+            160,
+            167
+          ],
+          "parts": 1,
+          "foregroundPixels": 10379
+        },
+        {
+          "index": 11,
+          "rect": [
+            572,
+            527,
+            155,
+            149
+          ],
+          "parts": 1,
+          "foregroundPixels": 10193
+        },
+        {
+          "index": 12,
+          "rect": [
+            806,
+            525,
+            197,
+            162
+          ],
+          "parts": 3,
+          "foregroundPixels": 10824
+        },
+        {
+          "index": 13,
+          "rect": [
+            60,
+            770,
+            167,
+            132
+          ],
+          "parts": 1,
+          "foregroundPixels": 10345
+        },
+        {
+          "index": 14,
+          "rect": [
+            318,
+            781,
+            149,
+            121
+          ],
+          "parts": 1,
+          "foregroundPixels": 8920
+        },
+        {
+          "index": 15,
+          "rect": [
+            588,
+            712,
+            100,
+            198
+          ],
+          "parts": 4,
+          "foregroundPixels": 9331
+        },
+        {
+          "index": 16,
+          "rect": [
+            843,
+            716,
+            111,
+            194
+          ],
+          "parts": 1,
+          "foregroundPixels": 10337
+        },
+        {
+          "index": 17,
+          "rect": [
+            69,
+            927,
+            80,
+            203
+          ],
+          "parts": 1,
+          "foregroundPixels": 9810
+        },
+        {
+          "index": 18,
+          "rect": [
+            336,
+            925,
+            92,
+            203
+          ],
+          "parts": 1,
+          "foregroundPixels": 9949
+        },
+        {
+          "index": 19,
+          "rect": [
+            552,
+            1047,
+            196,
+            80
+          ],
+          "parts": 1,
+          "foregroundPixels": 8175
+        },
+        {
+          "index": 20,
+          "rect": [
+            850,
+            927,
+            104,
+            201
+          ],
+          "parts": 1,
+          "foregroundPixels": 10655
+        },
+        {
+          "index": 21,
+          "rect": [
+            28,
+            1160,
+            190,
+            221
+          ],
+          "parts": 1,
+          "foregroundPixels": 15004
+        },
+        {
+          "index": 22,
+          "rect": [
+            308,
+            1157,
+            164,
+            221
+          ],
+          "parts": 1,
+          "foregroundPixels": 12629
+        },
+        {
+          "index": 23,
+          "rect": [
+            586,
+            1161,
+            135,
+            208
+          ],
+          "parts": 1,
+          "foregroundPixels": 12165
+        },
+        {
+          "index": 24,
+          "rect": [
+            823,
+            1234,
+            203,
+            144
+          ],
+          "parts": 1,
+          "foregroundPixels": 12549
+        }
+      ]
+    }
+  ]
+}

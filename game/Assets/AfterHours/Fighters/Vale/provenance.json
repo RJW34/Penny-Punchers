@@ -1,0 +1,49 @@
+{
+  "utc": "2026-09-05T10:29:48.212966+00:00",
+  "method": "built-in image_gen only; reference-path edits after view_image inspection",
+  "source_preserved": true,
+  "raster_postprocessing": "None. Exact generated PNG bytes copied. Read-only pixel inspection emitted JSON metadata. Runtime shader removes magenta.",
+  "failed_alpha_retry": {
+    "generated_file": "C:\\Users\\ryanj\\.codex\\generated_images\\01a07055-669b-7ce1-9f0d-cdcf9c197ab0\\exec-5c7b27ef-b815-428e-8235-a7650a6f73b9.png",
+    "sha256": "682f7d891a649f057deb99620a921eb9363e2a57f3533fd2103978974af6450a",
+    "actual_mode": "RGB",
+    "width": 1254,
+    "height": 1254,
+    "alpha_channel": false,
+    "reason_not_selected": "Baked checkerboard remained despite genuine-alpha request."
+  },
+  "selected": [
+    {
+      "source": "design/after-hours-32bit/fighters/vale/universal.png",
+      "source_sha256": "1dbda5756d08ec0b6a215919a4aeacf0333ced939bc833297e9decae21b0199e",
+      "generated_file": "C:\\Users\\ryanj\\.codex\\generated_images\\01a07055-669b-7ce1-9f0d-cdcf9c197ab0\\exec-ddbcaad9-cd61-4144-aa4f-a55a496eeb0d.png",
+      "runtime_file": "universal-matte.png",
+      "sha256": "ff159235cc53a49662f3b2711b5950200d2c0d207368d67e29518352ac6b6ee3",
+      "copy_byte_identical": true
+    },
+    {
+      "source": "design/after-hours-32bit/fighters/vale/normals.png",
+      "source_sha256": "eeb78892bca260d76f4676730e339c6a0b23f3b12453f7f609bc4f222e4a6589",
+      "generated_file": "C:\\Users\\ryanj\\.codex\\generated_images\\01a07055-669b-7ce1-9f0d-cdcf9c197ab0\\exec-f085c2e3-4ed5-4236-9413-dd61326c6189.png",
+      "runtime_file": "normals-matte.png",
+      "sha256": "f70f933aa6e0ec4ec4c14170a3742b52fc35cf550861310c48fcb0b4b90f3468",
+      "copy_byte_identical": true
+    },
+    {
+      "source": "design/after-hours-32bit/fighters/vale/techniques.png",
+      "source_sha256": "953778575323b809084725447f0770be3ea19d240d2960a7f926f7f964ef5bc0",
+      "generated_file": "C:\\Users\\ryanj\\.codex\\generated_images\\01a07055-669b-7ce1-9f0d-cdcf9c197ab0\\exec-725da4af-d3b3-4cbe-a653-0e4eab102c78.png",
+      "runtime_file": "techniques-matte.png",
+      "sha256": "f592ba448ba77a1e5028852b2695a9f93dfac63c535d6687dcbbbe67fb87d644",
+      "copy_byte_identical": true
+    },
+    {
+      "source": "design/after-hours-32bit/fighters/vale/supplemental.png",
+      "source_sha256": "00fecc70c75c3e65322f7d05225298d627d29de493608193336f7865dcfbe7de",
+      "generated_file": "C:\\Users\\ryanj\\.codex\\generated_images\\01a07055-669b-7ce1-9f0d-cdcf9c197ab0\\exec-4f0bbd3a-7005-4570-b01f-3e1a218e1a4b.png",
+      "runtime_file": "supplemental-matte.png",
+      "sha256": "3d8fe375b9d63a177e891fde9db19860e89ed1e18f757b86d873b0b93627dca9",
+      "copy_byte_identical": true
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "status": "design_inventory_complete_animation_production_pending",
+  "total_visual_rows": 352,
+  "categories": {
+    "effect": 27,
+    "fighter_identity": 16,
+    "fighter_move": 98,
+    "fighter_universal": 72,
+    "hud": 28,
+    "lease_icon": 12,
+    "projectile": 10,
+    "round_feedback": 15,
+    "screen": 20,
+    "stage_layer": 21,
+    "typography_glyph": 11,
+    "ui_component": 22
+  },
+  "move_count": 98,
+  "unique_moves_per_fighter": {
+    "rook": 49,
+    "vale": 49
+  },
+  "leases": 12,
+  "assigned_reference_paths": [
+    "effects/combat-atlas.png",
+    "fighters/rook/identity.png",
+    "fighters/rook/normals.png",
+    "fighters/rook/supplemental.png",
+    "fighters/rook/techniques.png",
+    "fighters/rook/universal.png",
+    "fighters/vale/identity.png",
+    "fighters/vale/normals.png",
+    "fighters/vale/supplemental.png",
+    "fighters/vale/techniques.png",
+    "fighters/vale/universal.png",
+    "stages/environment-atlas.png",
+    "stages/foundry.png",
+    "stages/grid.png",
+    "ui/branding-announcements.png",
+    "ui/hud-atlas.png",
+    "ui/interface-atlas.png",
+    "ui/lease-icons.png",
+    "ui/menu-designs.png",
+    "ui/system-designs.png",
+    "ui/title-backdrop.png",
+    "ui/typography.png"
+  ],
+  "note": "Assigned reference is a design destination, not a claim that each required cel/icon was already drawn. Fighter manifests describe actual board cells; production_outstanding is authoritative."
+}

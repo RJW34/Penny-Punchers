@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <!-- Replay identities must not change solely because artwork was committed. -->
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+  </PropertyGroup>
+</Project>
