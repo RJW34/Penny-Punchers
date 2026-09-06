@@ -33,10 +33,10 @@ root={
 "PP-045":("HUMAN_PENDING","Execution windows have actual measured/negative tests, but player acceptance of their strictness remains open.","release_docs/KNOWN_LIMITATIONS.md"),
 "PP-046":("IMPLEMENTED_HARDWARE_PENDING","Analog triggers support threshold action bindings and software regressions; actual pad compatibility remains unverified.","game/GameSettings.cs"),
 "PP-047":("IMPLEMENTED","Physical/logical keyboard behavior is explicit and tested without unconditional double sampling.","game/GameSettings.cs"),
-"PP-062":("CURRENT_EVIDENCE_REQUIRED","Linux is tested as a native export under this PC's WSL Ubuntu; final candidate launch/comparison evidence is identified separately from historical runs.","tools/compare_native_replays.py"),
+ "PP-062":("VERIFIED_WITH_PLATFORM_LIMITS","Renamed Windows/Linux native and freshly extracted package matches completed with identical replay bytes. Linux WSLg graphical recording also completed and fully decoded; llvmpipe at 5fps is platform smoke on this PC, not a second-PC or real-time GPU benchmark.","tools/compare_native_replays.py"),
 "PP-063":("EXTERNAL_PENDING","Two physical controllers, two physical PCs and owner/friend feel are still separate unperformed gates.","release_docs/KNOWN_LIMITATIONS.md"),
 "PP-064":("IMPLEMENTED_WITH_LIMITS","Mechanical effect assertions, real contact provenance, rollback corrections, native flows and actual screenshot review complement counts. No count alone establishes polish.","src/StrikeLedger.CoreTests/ActualSkillContactTests.cs"),
-"PP-065":("IMPLEMENTED","Checked-in GitHub Actions builds/validates Core and App with pinned tool versions and action references.",".github/workflows/verify.yml"),
+"PP-065":("TEMPLATE_READY_AUTH_SCOPE_PENDING","Pinned GitHub Actions verification is retained as a complete template. This login's OAuth scope rejected workflow installation; ci/README.md records activation steps. Local native/Core/App verification ran independently.","ci/verify.yml"),
 "PP-067":("PARTIAL_REFACTOR","Shop, catalog, training, replay, network, camera and typography have focused partials/classes. Some Main functions remain dense; further layout/component refactoring is open.","game/Main.Purchase.cs"),
 "PP-068":("DOCUMENTED_DELIVERY","Source Git contains code/data/design/asset provenance. Large native builds and evidence are separate release archives with manifests, not falsely claimed inside a source-only clone.","AUDIT_GUIDE.md"),
 "PP-069":("DOCUMENTED_DELIVERY","Rights/provenance and bundled font OFL are explicit. No new legal ownership claim is inferred from the supplied artwork.","RIGHTS.md"),
@@ -53,7 +53,10 @@ for finding in original:
   row.update(disposition="IMPLEMENTATION_REVIEW_RECORDED",detail="Read the exact owned disposition and limitations below. This is not an automatic release PASS.")
  else:raise RuntimeError("Unreconciled finding "+rid)
  rows.append(row)
-out={"schema_version":1,"utc":datetime.now(timezone.utc).isoformat(),"scope":"Every original PP finding preserved with implementation/partial/external disposition; individual review evidence identities and limits remain authoritative.","original_findings":91,"reconciled":len(rows),"review_sha256":{p:sha(p) for p,_ in sources},"rows":rows,"note":"Current candidate execution is recorded in SHOP_V2_ACCEPTANCE.json and ACCEPTANCE_RESULTS.json. Historical owner reviews are retained as history; final native reports establish current graphical behavior."}
+current_presentation="audit/upgrade-2026-09-05/SHOP_V2_FINAL_PRESENTATION_FINDINGS.json"
+current_reviews={p:sha(p) for p,_ in sources}
+if (ROOT/current_presentation).is_file():current_reviews[current_presentation]=sha(current_presentation)
+out={"schema_version":1,"utc":datetime.now(timezone.utc).isoformat(),"scope":"Every original PP finding preserved with implementation/partial/external disposition; individual review evidence identities and limits remain authoritative.","original_findings":91,"reconciled":len(rows),"review_sha256":current_reviews,"rows":rows,"current_presentation_review":current_presentation,"note":"Current candidate execution is recorded in SHOP_ONLY_V2_ACCEPTANCE.json and ACCEPTANCE_RESULTS.json. Historical owner reviews are retained as history; final native reports establish current graphical behavior."}
 assert len(rows)==91 and len({r["id"] for r in rows})==91
 (ROOT/"reports/AUDIT_CROSSWALK.json").write_text(json.dumps(out,indent=2)+"\n",encoding="utf-8")
 print("Reconciled all91 findings; no blanket resolved status.")

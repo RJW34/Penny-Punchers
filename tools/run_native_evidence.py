@@ -54,4 +54,9 @@ def main():
         runtime_root=ROOT/'dist/StrikeLedger'/('linux' if a.mode.startswith('linux') else 'windows')
         runtime_files=[p for p in runtime_root.rglob('*') if p.is_file() and p.name in ['StrikeLedger.exe','StrikeLedger.x86_64','StrikeLedger.pck','StrikeLedger.dll','StrikeLedger.Core.dll','StrikeLedger.App.dll']]
         result['runtime_sha256']={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in runtime_files}
-        (folder/'process-result.json').write_text(json.dumps(result,indent=2));results.append(result);print(json.dump
+        (folder/'process-result.json').write_text(json.dumps(result,indent=2));results.append(result);print(json.dumps(result),flush=True)
+    if a.mode=='network' and all(x['passed'] for x in results):
+        states=[json.loads((folder/'native-network-result.json').read_text()) for _,_,folder,_,_ in jobs]
+        if states[0]['finalHash']!=states[1]['finalHash']:raise SystemExit('Native peers diverged')
+    raise SystemExit(0 if all(x['passed'] for x in results) else 1)
+if __name__=='__main__':main()

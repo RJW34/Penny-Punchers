@@ -257,7 +257,7 @@
     "game/Main.EconomyReport.cs": "da6fccfe6d8d6cc19dcecbd2b1561ac9ade1447eb27a38e256ea7c88242e0ab3",
     "game/Main.LabDiagnostics.cs": "ad294c806a8bf0f0f4d0deb6cce489cb8928137c361673fe2d55af12a5a1d4cc",
     "game/Main.LabState.cs": "f4851d6d425f891d3651977606aca6a7ffc1ef5353c1beebf3a1d1b5d579df7b",
-    "game/Main.Network.cs": "d70edfbc21041eb2569f50e8348a27113ff58a62c18ff0c528977b6aba84c161",
+    "game/Main.Network.cs": "b767b23f8afa47f03f6625283fc67aefd821137114e651d82f060559991cd30c",
     "game/Main.NetworkEvidence.cs": "e49af6e4cc130baf16e666aa97da64bebdf0bea3475c1789d1238eba3b50fe70",
     "game/Main.ReplayDetails.cs": "362acec9dab3428ebacbcc357af2170d97addf5bcb17fd9279198e07dc538b6a",
     "game/Main.Replays.cs": "eb0855c36b3b8f121196a2d55cc43c92eb48aba80448f733f56e8fab9c1410bd",
@@ -287,7 +287,8 @@
     "src/StrikeLedger.NetworkLab/UpgradeTests.cs": "7c9896de808c8205ffe890eadb9c7f3a53a214fbff27f3919e71115dfbaca9a6",
     "tools/run_network_lab.py": "337ad3beb7ea1ce167d765052aa05a7ba2ea1afa8ece953d23bb0bb9bbdbfd4e",
     "tools/FeelMeasurementHarness.cs": "5b5f45088b189318b1e555657f72758b543443d5fd8b2f62a619124eb966486b",
-    "tools/measure_core_feel.py": "60a82ba536c26bc0d77ec031ce982501e8170044af9cec68498c6d65318109e8"
+    "tools/measure_core_feel.py": "60a82ba536c26bc0d77ec031ce982501e8170044af9cec68498c6d65318109e8",
+    "game/Main.TerminalHistoryEvidence.cs": "82da4a27c0ee4c1dc2c193aace91359d1c1f57de05cbeda585589d3b92194e5a"
   },
   "artifact_sha256": {
     "reports/evidence/shop-v2-app-candidate-core/cpu-capability-traces.json": "8639c9b113f3bd1d52f7d7929741e04647a3916545abf7fed0a7f8dbca4090c1",
@@ -325,7 +326,13 @@
     "reports/evidence/shop-v2-network-candidate/rtt50-jitter0-loss0/peer1.result.json": "b8f43cb82c194e9ebaddd6845696cca96324ae27cc1ac4432e37da399cde0111",
     "reports/evidence/shop-v2-objects-candidate2/buyable-object-tests.json": "42e769ca37bce7a23fc8400ec45f4d8ba97add6a6dbdc367e092675cc1f61844",
     "reports/evidence/shop-v2-objects-candidate2/buyable-object-traces.jsonl": "9875e6e7b6802e10a927270c3037c6c2c201cd3de20330f64579547e4e3b587a",
-    "reports/evidence/shop-v2-objects-candidate2/reflected-origin-precision.json": "5af0b69122784434fa64d67c3147402ee4c2ef78ade075c5006f48ca7d05662d"
+    "reports/evidence/shop-v2-objects-candidate2/reflected-origin-precision.json": "5af0b69122784434fa64d67c3147402ee4c2ef78ade075c5006f48ca7d05662d",
+    "reports/evidence/shop-v2-independent-review.json": "641778e756e03c5868b5a1b71e0c8a41f227f7b14a7b38e10f2a0a32860d1b1a",
+    "reports/evidence/shop-v2-independent-review.log": "b37c6b39efcfde14aa2cb148b36d4dfd5accc07108b25855146a15e3a55d9f1d",
+    "reports/evidence/shop-v2-feel-candidate/feel-measurements.json": "3919cfbdf00f00457ef4e1ef912810fd7a6c987375a293cc8bcc1b45c5185428",
+    "reports/evidence/shop-v2-feel-candidate/process.log": "9cc1bda51412f0b768cdd0ffe07988421887c8dcca593f643fb024f376d43f9c",
+    "reports/evidence/native-shop-v2-candidate-ui/late-terminal-history.json": "a188200140654f39cfbb363e978d46cd2c6611611b75978c3aa8a13782786b30",
+    "reports/evidence/native-shop-v2-candidate-ui/process-result.json": "9a16923fa2f8e8b38c2ae3b7cfd8ff720cff3bc4dc60a99c5ea1d4ab026df487"
   },
   "pp_finding_updates": [
     {
@@ -465,7 +472,17 @@
     }
   ],
   "exported_feel_measurements": {
-    "status": "AWAITING_REFRESHED_CANDIDATE",
-    "note": "The migrated frozen-export measurement tool previously passed 24 checks on the preceding content metadata. A fresh run will bind the final exports; previous measurements are historical."
+    "status": "PASS",
+    "checks": 24,
+    "candidate": "source-sha256:fc679e4ba18529de3e829e0f5b47aee05db45ffe746024f64fa7fb919324ed7f",
+    "contentHash": "0245f6813c2320a9081fd96fefb4fd600632c92ae8f2be8a56c049129f365734",
+    "CoreSha256": "e0c1812e39177786ca355e079009908f79fea330aed1e80f86dae57188253f5b",
+    "report": "reports/evidence/shop-v2-feel-candidate/feel-measurements.json",
+    "scope": "Actual fixed60 simulation clocks against frozen exported Core; no rendered or hardware latency claim."
+  },
+  "terminal_history_review": {
+    "status": "REPAIRED_CURRENT_EXPORT_NATIVE_VERIFIED",
+    "finding": "IND-NET-001",
+    "evidence": "reports/evidence/native-shop-v2-candidate-ui/late-terminal-history.json"
   }
 }

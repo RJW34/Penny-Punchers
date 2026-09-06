@@ -44,7 +44,7 @@ Hold away to guard high/mid attacks. Hold down-away to guard lows. Air blocking 
 
 Directions are relative to the opponent. **QCF** is down → down-toward → toward. **QCB** is down → down-away → away. **DP** is toward → down → down-toward. **Double QCF** repeats QCF twice. For a charge input, hold the required direction for 45 simulation ticks before completing the opposite direction and attack.
 
-Thomas's free families are pulse shot, rising elbow, traveling knee and retreat palm. Vincent has charge pulse, rising heel, turn palm and retreat heel. Strength changes frame timing and behavior. Consult the live catalog for exact commands, startup/active/recovery, replacement and shop price. Complete an owned EX family's motion with the appropriate fresh PP/KK chord. The EX license repeats after ordinary recovery, including at zero saved bank. Only the super purchased in this round's shop is available, and it has one legal startup. Locked EX/super inputs show a rejection instead of spending money or silently downgrading.
+Vincent's free families are pulse shot, rising elbow, traveling knee and retreat palm. Thomas has charge pulse, rising heel, turn palm and retreat heel. Strength changes frame timing and behavior. Consult the live catalog for exact commands, startup/active/recovery, replacement and shop price. Complete an owned EX family's motion with the appropriate fresh PP/KK chord. The EX license repeats after ordinary recovery, including at zero saved bank. Only the super purchased in this round's shop is available, and it has one legal startup. Locked EX/super inputs show a rejection instead of spending money or silently downgrading.
 
 ## Training
 

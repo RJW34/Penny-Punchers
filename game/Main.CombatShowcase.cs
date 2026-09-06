@@ -22,15 +22,15 @@ public partial class Main
     ];
     private static readonly string[] ShowcaseDetails=[
         "Walk · double-tap dash · forward jump · landing. No leases or credits.",
-        "Thomas: down, down-forward, forward + LP. A free special at zero credits.",
+        "Vincent: down, down-forward, forward + LP. A free special at zero credits.",
         "Explicit lab EX license: quarter-circle + LP+MP. Zero saved bank; no combat debit.",
-        "Vincent taps toward on the incoming jab. Fresh directional edge; zero damage.",
-        "Vincent taps down on the incoming crouching kick. Low parry; zero damage.",
-        "Vincent taps toward as the EX pulse arrives. Projectile freezes; owner stays free.",
+        "Thomas taps toward on the incoming jab. Fresh directional edge; zero damage.",
+        "Thomas taps down on the incoming crouching kick. Low parry; zero damage.",
+        "Thomas taps toward as the EX pulse arrives. Projectile freezes; owner stays free.",
         "LP+LK captures at close range. Damage follows the throw-tech window.",
         "Defender presses LP+LK inside the tech window. Both fighters separate unharmed.",
         "Explicit one-use lab super permit. Double quarter-circle + LP. Five separately timed parry edges.",
-        "Vincent holds back for 45 frames, then forward + LP. Free charge projectile.",
+        "Thomas holds back for 45 frames, then forward + LP. Free charge projectile.",
         "UNCONFIRMED preview: one-use super K.O. No presentation events or settlement released."
     ];
 
@@ -166,7 +166,7 @@ public partial class Main
             case 6:ShowcaseCheck(_showcaseEvents.Any(e=>e.Kind==CombatEventKind.Throw&&e.Detail=="damage")&&sim.Players[1].Health<1000,"Untouched throw reaches delayed damage");break;
             case 7:ShowcaseCheck(Has(CombatEventKind.ThrowTech)&&sim.Players.All(p=>p.Health==1000),"Legal defender LP+LK tech prevents throw damage");break;
             case 8:ShowcaseCheck(_showcaseEvents.Count(e=>e.Kind==CombatEventKind.Parry)==5&&sim.Players[1].Health==1000&&sim.Players[0].Credits==0&&sim.Players[0].SuperUseReceipts.Count==1&&sim.Players[0].SuperUsesRemaining==0,"Five fresh parry inputs defend all super hits; one permit consumed, bank unchanged");break;
-            case 9:ShowcaseCheck(Has(CombatEventKind.ProjectileSpawn,"pulse_l")&&!Has(CombatEventKind.Spend),"45-frame charge produces Vincent's free projectile");break;
+            case 9:ShowcaseCheck(Has(CombatEventKind.ProjectileSpawn,"pulse_l")&&!Has(CombatEventKind.Spend),"45-frame charge produces Thomas's free projectile");break;
             case 10:
                 ShowcaseCheck(_showcaseCorrection&&_showcaseEvents.Count(e=>e.Kind==CombatEventKind.Parry)==5&&sim.Players[1].Health==1&&sim.Phase==MatchPhase.Fight,"Restored branch with late parries removes the speculative K.O.");
                 ShowcaseCheck(sim.Players[0].Credits==0&&sim.Players[0].SuperUseReceipts.Count==1&&sim.Players[0].SuperUsesRemaining==0&&sim.Players.All(p=>p.ScoreHalfPoints==0)&&sim.LastSettlement==null,"Correction preserves one consumed permit, unchanged bank, zero points and no settlement");break;

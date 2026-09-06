@@ -22,27 +22,27 @@ def main():
  for item in candidate['source_inputs']+candidate['native_binaries']:
   assert sha(ROOT/item['path'])==item['sha256'], 'Candidate input changed: '+item['path']
  groups={
-  'core':[('test_log',E+'shop-v2-core-full-current/core-conformance.json')],
-  'app':[('test_log',E+'shop-v2-app-candidate-core/self-tests.json'),('test_log',E+'shop-v2-app-candidate2-full/self-tests.json')],
+  'core':[('test_log',E+'build-test/StrikeLedger.CoreTests/core-conformance.json'),('test_log',E+'shop-v2-core-full-current/core-conformance.json')],
+  'app':[('test_log',E+'build-test/StrikeLedger.NetworkLab/self-tests.json'),('test_log',E+'shop-v2-app-candidate2-full/self-tests.json')],
   'objects':[('test_log',E+'shop-v2-objects-candidate2/buyable-object-tests.json')],
   'content':[('test_log',E+'shop-v2-action-effects.json'),('replay',E+'shop-v2-core-full-current/action-replays.training.json')],
-  'contract':[('test_log',E+'shop-v2-contract-candidate/contract-conformance.json')],
-  'schema':[('test_log',E+'shop-v2-strict-candidate.log')],
+  'contract':[('test_log',E+'build-test/StrikeLedger.ContractTests/contract-conformance.json')],
+  'schema':[('test_log',E+'shop-v2-renamed-strict.log')],
   'build':[('build_log',E+'build.log'),('binary','dist/StrikeLedger/windows/StrikeLedger.exe'),('binary','dist/StrikeLedger/linux/StrikeLedger.x86_64')],
-  'ui':[('test_log',E+'native-shop-v2-candidate-ui/controller-menu-flow.json'),('process_log',E+'native-shop-v2-candidate-ui/process.log'),('video',E+'native-shop-v2-candidate-ui/recording.mp4'),('screenshot',E+'native-shop-v2-candidate-ui/health-frame-02-partial.png')],
+  'ui':[('test_log',E+'native-shop-v2-renamed-ui/controller-menu-flow.json'),('process_log',E+'native-shop-v2-renamed-ui/process.log'),('video',E+'native-shop-v2-renamed-ui/recording.mp4'),('screenshot',E+'native-shop-v2-renamed-ui/health-frame-02-partial.png')],
   'showcase':[('test_log',E+'native-shop-v2-candidate-showcase/combat-visual-showcase.json'),('video',E+'native-shop-v2-candidate-showcase/recording.mp4')],
-  'match':[('process_log',E+'native-shop-v2-candidate-match/process.log'),('metrics',E+'native-shop-v2-candidate-match/runtime-result.json'),('video',E+'native-shop-v2-candidate-match/recording.mp4'),('replay',E+'native-shop-v2-candidate-match/full-match.replay.json')],
+  'match':[('process_log',E+'native-shop-v2-candidate-match/process.log'),('metrics',E+'native-shop-v2-renamed-windows-headless/runtime-result.json'),('video',E+'native-shop-v2-candidate-match/recording.mp4'),('replay',E+'native-shop-v2-renamed-windows-headless/full-match.replay.json')],
   'free':[('metrics',E+'native-shop-v2-candidate-free/runtime-result.json'),('video',E+'native-shop-v2-candidate-free/recording.mp4')],
   'network':[('test_log',E+'shop-v2-network-candidate/matrix-result.json'),('metrics',E+'shop-v2-network-candidate/rtt150-jitter20-loss3/peer0.result.json')],
-  'native-network':[('test_log',E+'native-shop-v2-candidate-network/peer0/native-network-result.json'),('process_log',E+'native-shop-v2-candidate-network/peer0/process.log'),('video',E+'native-shop-v2-candidate-network/peer0/recording.mp4'),('replay',E+'native-shop-v2-candidate-network/peer0/network-match.replay.json')],
-  'linux':[('process_log',E+'native-shop-v2-linux-current/process.log'),('video',E+'native-shop-v2-linux-current/recording.mp4')],
-  'cross-platform':[('test_log',E+'shop-v2-cross-platform-candidate/process.log'),('replay',E+'native-shop-v2-candidate-windows-headless/full-match.replay.json')],
+  'native-network':[('test_log',E+'native-shop-v2-candidate-network/peer0/native-network-result.json'),('process_log',E+'native-shop-v2-candidate-network/peer0/process.log'),('video',E+'native-shop-v2-candidate-network/peer0/recording.mp4'),('replay',E+'native-shop-v2-candidate-network/peer0/native-network.replay.json')],
+  'linux':[('process_log',E+'native-shop-v2-linux-candidate-5fps/process.log'),('video',E+'native-shop-v2-linux-candidate-5fps/recording.mp4')],
+  'cross-platform':[('test_log',E+'shop-v2-renamed-cross-platform/process.log'),('replay',E+'native-shop-v2-renamed-windows-headless/full-match.replay.json')],
   'feel':[('metrics',E+'shop-v2-feel-candidate/feel-measurements.json')],
   'profile':[('metrics',E+'native-shop-v2-candidate-profile/runtime-result.json')],
   'pilot':[('metrics',E+'shop-v2-pilot-analysis.json'),('process_log',E+'shop-v2-pilot-process-results.json')],
   'pressure':[('test_log',E+'shop-v2-core-core-final/core-conformance.json'),('metrics',E+'shop-v2-core-full-current/core-conformance.json')],
   'tuning':[('metrics',E+'shop-v2-canonical-audit/result.json'),('process_log',E+'shop-v2-canonical-audit/process.log')],
-  'package':[('process_log',E+'shop-v2-package-candidate/result.json')],
+  'package':[('process_log',E+'shop-v2-renamed-package/result.json')],
   'review':[('process_log',E+'shop-v2-independent-review.json')],
   'scope':[('process_log','audit/upgrade-2026-09-05/acceptance-v2-supersession.json')],
   'dispatch':[('test_log',E+'shop-v2-dispatch-candidate/dispatch-result.json')],
@@ -100,12 +100,21 @@ def main():
     if path in seen:continue
     seen.add(path);file=ROOT/path
     if not file.is_file() or not file.stat().st_size:missing.append(path);continue
+    if kind=='video':
+     validation=file.parent/'media-validation.json'
+     if not validation.is_file():missing.append(path+' (decode pending)');continue
+     media=json.loads(validation.read_text())
+     if not media.get('passed') or not media.get('complete_video_decode'):missing.append(path+' (decode incomplete)');continue
     artifacts.append(dict(kind=kind,path=path,sha256=sha(file)))
   kinds={a['kind'] for a in artifacts}
   absent=set(req['required_evidence_kinds'])-kinds
   external=rid in ['DEVICE-003','DEVICE-004','HUMAN-001']
   status='NOT_RUN' if external or missing or absent else 'PASS'
-  limitation='Evidence applies to the bounded described scenario; no physical-controller, second physical PC or human balance claim.'
+  bridge='reports/evidence/name-swap-audit/result.json'
+  if (ROOT/bridge).is_file():
+   proof=json.loads((ROOT/bridge).read_text());assert proof['passed'] and proof['candidate']==candidate['build_ref']
+   if bridge not in seen:artifacts.append(dict(kind='process_log',path=bridge,sha256=sha(ROOT/bridge)))
+  limitation='Evidence applies to the bounded described scenario; no physical-controller, second physical PC or human balance claim. Earlier-name runs preserve original build/content/replay hashes; the explicit name-swap audit proves unchanged mechanical data/Core IL and exact source-only label changes. Renamed Core/App/native UI checks are separate current executions.'
   if rid in ['CONTENT-001','CONTENT-002']:limitation+=' Action traces are real-core training conformance and mechanism-specific route witnesses, not competitive films of every node.'
   if rid in ['BAL-001','BAL-002','BAL-003']:limitation+=' Deterministic bots and a bounded pressure/policy matrix do not establish exhaustive balance or human adaptation.'
   if rid=='ART-001':limitation+=' Supplied artwork is integrated; some rare moves reuse authored poses, as documented in known limitations.'

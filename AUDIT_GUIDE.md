@@ -20,7 +20,7 @@ dotnet run --project src/StrikeLedger.CoreTests -c ExportRelease -- --data data/
 dotnet run --project src/StrikeLedger.NetworkLab -c ExportRelease -- --data data --self-test --evidence-dir reports/evidence/audit-app
 ```
 
-`tools/compile_shop_only.py --publish` reproduces active catalogs from the preserved buyables recipe. `compile_buyables.py` by itself reproduces the historical direct-spend design and must not publish over the active game. Runtime IDs remain `rook` and `vale`; displayed names are Thomas and Vincent. Core has100 action nodes and26 products; expanded has115 and38. Both include four stages.
+`tools/compile_shop_only.py --publish` reproduces active catalogs from the preserved buyables recipe. `compile_buyables.py` by itself reproduces the historical direct-spend design and must not publish over the active game. Runtime IDs remain `rook` and `vale`; displayed names are Vincent and Thomas. Core has100 action nodes and26 products; expanded has115 and38. Both include four stages.
 
 ## Evidence and release integrity
 

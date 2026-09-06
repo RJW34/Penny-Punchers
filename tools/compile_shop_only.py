@@ -14,7 +14,7 @@ def migrate(name,out):
  items=read(out/'items.json')['items']
  for i in items:i.update(access_policy='round_license',implementation_status='implemented',conflicts_with=[])
  for path in sorted((out/'fighters').glob('*.json')):
-  f=read(path);fid=f['id']
+  f=read(path);fid=f['id'];f['display_name']={'rook':'Vincent','vale':'Thomas'}[fid]
   for m in f['moves']:
    oldcost=m['credit_cost'];m.update(credit_cost=0,debit_on_start=False,access_policy='base' if m['availability']=='base' else 'round_license')
    if m.get('install'):

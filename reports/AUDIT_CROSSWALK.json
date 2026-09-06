@@ -1,13 +1,14 @@
 {
   "schema_version": 1,
-  "utc": "2026-09-05T23:41:39.675683+00:00",
+  "utc": "2026-09-06T01:16:49.717634+00:00",
   "scope": "Every original PP finding preserved with implementation/partial/external disposition; individual review evidence identities and limits remain authoritative.",
   "original_findings": 91,
   "reconciled": 91,
   "review_sha256": {
-    "reports/SHOP_V2_CORE_FINDINGS.json": "2be76539f9685589a282a729d995693df616505ae97982cb7db6b4afc5ba2750",
-    "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json": "9b839f56c834f21718491571981f68b485e39dbde29d9e810218b69551f0d388",
-    "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json": "991af54749b450635bc9a8b4bbddcd635d26bbaba7f03871e836030c5e3b39a4"
+    "reports/SHOP_V2_CORE_FINDINGS.json": "5bea8e912f7e617e71111d41c1bfc773bcb5d68d7567d8b837ed17355529a2a6",
+    "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json": "8781ddbc1d51ad86378d8584bfc6e0bb63cccdfe7826d28ac2a3579feb5d22e7",
+    "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json": "991af54749b450635bc9a8b4bbddcd635d26bbaba7f03871e836030c5e3b39a4",
+    "audit/upgrade-2026-09-05/SHOP_V2_FINAL_PRESENTATION_FINDINGS.json": "bbc5262f7eb242b71cf88a54f83ddde7388f7761334c2ac350877d417d41c8e5"
   },
   "rows": [
     {
@@ -177,7 +178,7 @@
       "disposition": "PARTIAL_BALANCE",
       "detail": "Canonical slot prices are implemented. Matched purchase/save and EX-pair pilots measure bounded value; prices are not asserted competitively optimal.",
       "source": "src/StrikeLedger.BalanceLab/ShopOnlyPilot.cs",
-      "source_sha256": "a87b48631b4c7a21973848eda2f09b1772e53870a6e357f268397520418d649c"
+      "source_sha256": "e7a84305d47c651fd70105886339714552bc91da7215b0879b3d781303f5ed2d"
     },
     {
       "id": "PP-015",
@@ -195,7 +196,7 @@
       "disposition": "PARTIAL_BALANCE",
       "detail": "Canonical action effects and mirrored purchase/save pilots provide concrete comparisons. Optimal Low Drive/Low Turn matchup value remains a tuning question.",
       "source": "src/StrikeLedger.BalanceLab/ShopOnlyPilot.cs",
-      "source_sha256": "a87b48631b4c7a21973848eda2f09b1772e53870a6e357f268397520418d649c"
+      "source_sha256": "e7a84305d47c651fd70105886339714552bc91da7215b0879b3d781303f5ed2d"
     },
     {
       "id": "PP-017",
@@ -213,7 +214,7 @@
       "disposition": "PARTIAL_BALANCE",
       "detail": "New pilots use two seeds, paired controls, seat mirrors and multiple policies. Results disclose uncertainty and do not establish expert balance.",
       "source": "src/StrikeLedger.BalanceLab/ShopOnlyPilot.cs",
-      "source_sha256": "a87b48631b4c7a21973848eda2f09b1772e53870a6e357f268397520418d649c"
+      "source_sha256": "e7a84305d47c651fd70105886339714552bc91da7215b0879b3d781303f5ed2d"
     },
     {
       "id": "PP-019",
@@ -249,7 +250,7 @@
               "shop_atomic_cart_and_thresholds"
             ],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-core-full-current/core-conformance.json"
             ],
             "remaining": ""
           }
@@ -611,7 +612,7 @@
               "audit_mutual_throws_snapshot"
             ],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-core-full-current/core-conformance.json"
             ],
             "remaining": ""
           }
@@ -635,7 +636,7 @@
               "audit_air_parry_landing"
             ],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-core-full-current/core-conformance.json"
             ],
             "remaining": ""
           }
@@ -659,7 +660,7 @@
               "audit_taunt_commitment"
             ],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-core-full-current/core-conformance.json"
             ],
             "remaining": ""
           }
@@ -683,7 +684,7 @@
               "audit_authored_recovery_hurtboxes"
             ],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-core-full-current/core-conformance.json"
             ],
             "remaining": "Paused native overlays and human whiff-punish/silhouette calibration are separate; these numeric shapes are authored gameplay seeds, not automatically traced art."
           }
@@ -729,7 +730,7 @@
               "charge_crossup"
             ],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-core-full-current/core-conformance.json"
             ],
             "remaining": "Subjective original-feel comparison requires adapted human play; no exact Third Strike emulation claim."
           }
@@ -1159,8 +1160,8 @@
       "id": "PP-062",
       "title": "Linux verification status contradicts the final integration report",
       "owner_reviews": [],
-      "disposition": "CURRENT_EVIDENCE_REQUIRED",
-      "detail": "Linux is tested as a native export under this PC's WSL Ubuntu; final candidate launch/comparison evidence is identified separately from historical runs.",
+      "disposition": "VERIFIED_WITH_PLATFORM_LIMITS",
+      "detail": "Renamed Windows/Linux native and freshly extracted package matches completed with identical replay bytes. Linux WSLg graphical recording also completed and fully decoded; llvmpipe at 5fps is platform smoke on this PC, not a second-PC or real-time GPU benchmark.",
       "source": "tools/compare_native_replays.py",
       "source_sha256": "189e0214d9a46a92001046839ba3f71c606c529165a8a0a4d5286a8abe9f687e"
     },
@@ -1186,9 +1187,9 @@
       "id": "PP-065",
       "title": "No checked-in GitHub Actions workflow at the audited root",
       "owner_reviews": [],
-      "disposition": "IMPLEMENTED",
-      "detail": "Checked-in GitHub Actions builds/validates Core and App with pinned tool versions and action references.",
-      "source": ".github/workflows/verify.yml",
+      "disposition": "TEMPLATE_READY_AUTH_SCOPE_PENDING",
+      "detail": "Pinned GitHub Actions verification is retained as a complete template. This login's OAuth scope rejected workflow installation; ci/README.md records activation steps. Local native/Core/App verification ran independently.",
+      "source": "ci/verify.yml",
       "source_sha256": "8aac7ee80bcf183912b685d388aec4153fc5aab51622b3ebda2d5465f8b2880c"
     },
     {
@@ -1206,7 +1207,7 @@
               "audit_canonical_purchase_and_registry"
             ],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-core-full-current/core-conformance.json"
             ],
             "remaining": "Only Thomas and Vincent are production characters; third fixture is not a new shipped character."
           }
@@ -1231,7 +1232,7 @@
       "disposition": "DOCUMENTED_DELIVERY",
       "detail": "Source Git contains code/data/design/asset provenance. Large native builds and evidence are separate release archives with manifests, not falsely claimed inside a source-only clone.",
       "source": "AUDIT_GUIDE.md",
-      "source_sha256": "b749eb09d1bb510ef8951bd8fbae40b6053ce878f53929391c122dc5b887ba81"
+      "source_sha256": "d7693cfeedaac2ce52d63e237876ff19e71c186c57c76dacd08b4cedcfcde430"
     },
     {
       "id": "PP-069",
@@ -1365,7 +1366,7 @@
               "shop_registry_resource_contract"
             ],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-core-full-current/core-conformance.json"
             ],
             "remaining": ""
           }
@@ -1389,7 +1390,9 @@
               "buy_catalog_plain_rental_effects"
             ],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-core-full-current/core-conformance.json",
+              "reports/evidence/shop-v2-pilot-analysis.json",
+              "reports/evidence/shop-v2-product-pilot-current/summary.json"
             ],
             "remaining": "Actual buy/save pilot measures use/contact/outcome; a price-justified human anti-poke niche is not established by activation or static geometry alone."
           }
@@ -1413,7 +1416,7 @@
               "audit_returning_pulse_ownership"
             ],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-core-full-current/core-conformance.json"
             ],
             "remaining": "Human setup value and final price remain provisional."
           }
@@ -1439,7 +1442,7 @@
               "buy_route_overtime_wallet_timer"
             ],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-core-full-current/core-conformance.json"
             ],
             "remaining": "Different arts need adapted human confirm/reversal/positioning value review; equal damage and balanced prices are not asserted."
           }
@@ -1457,13 +1460,15 @@
           "record": {
             "id": "PP-082",
             "title": "A 300-credit opening award gap can cross a decisive affordability threshold",
-            "implementationState": "V2_PILOT_IN_PROGRESS",
-            "detail": "Superseded direct-spend model is archived. New pilot uses only shop-only controls, real normalized commands, full receipts, score-preserving round2 fixtures, mirrored seed blocks, buy-vs-save products and explicit uncertain intervals.",
+            "implementationState": "V2_PILOT_COMPLETED_LIMITED",
+            "detail": "The approved v2 schedule removes the old300 award gap; pending skill and retained spend can still differ.64score1-0 continuations pair earned-gap versus equal-bank states with0/600 prior-spend fixtures across four isolated controls. Round2 and eventual-match deltas retain seed-block uncertainty.",
             "scenarios": [],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-pilot-analysis.json",
+              "reports/evidence/shop-v2-product-pilot-current/summary.json",
+              "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
             ],
-            "remaining": "Await current shop-v2 product/crossover summaries; human policy quality, all matchups/stages, and general balance remain unproven."
+            "remaining": "The assumed round1 skill receipts300/100 are explicit fixture inputs. All-art/loadout factorial and trailer-top-up versus leader-reduction equivalence are not established."
           }
         }
       ],
@@ -1479,13 +1484,15 @@
           "record": {
             "id": "PP-083",
             "title": "Recovery may restore liquidity only after severe score disadvantage",
-            "implementationState": "V2_PILOT_IN_PROGRESS",
-            "detail": "Superseded direct-spend model is archived. New pilot uses only shop-only controls, real normalized commands, full receipts, score-preserving round2 fixtures, mirrored seed blocks, buy-vs-save products and explicit uncertain intervals.",
+            "implementationState": "V2_PILOT_COMPLETED_LIMITED",
+            "detail": "48full matches plus64continuations record every settlement and flag whether the next shop is usable. Analysis separately inventories observed0-1,0-2,0-3,0-4 continuing states and excludes terminal wallets from comeback liquidity.",
             "scenarios": [],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-pilot-analysis.json",
+              "reports/evidence/shop-v2-product-pilot-current/summary.json",
+              "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
             ],
-            "remaining": "Await current shop-v2 product/crossover summaries; human policy quality, all matchups/stages, and general balance remain unproven."
+            "remaining": "Only1-0 has paired economic interventions; deeper-deficit states are observations, not causal comeback experiments. Human value of liquidity remains open."
           }
         }
       ],
@@ -1501,13 +1508,15 @@
           "record": {
             "id": "PP-084",
             "title": "Residual spending differences can snowball independently of the win bonus",
-            "implementationState": "V2_PILOT_IN_PROGRESS",
-            "detail": "Superseded direct-spend model is archived. New pilot uses only shop-only controls, real normalized commands, full receipts, score-preserving round2 fixtures, mirrored seed blocks, buy-vs-save products and explicit uncertain intervals.",
+            "implementationState": "V2_PILOT_COMPLETED_LIMITED",
+            "detail": "Every trace starts from an explicit bank/score snapshot and contains atomic preparation plans, actual frozen-bank fight inputs, and confirmed outcome/skill grants. Buy/save pairs retain the exact fee; score1-0 treatments hold prior spending fixed.",
             "scenarios": [],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-pilot-analysis.json",
+              "reports/evidence/shop-v2-product-pilot-current/summary.json",
+              "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
             ],
-            "remaining": "Await current shop-v2 product/crossover summaries; human policy quality, all matchups/stages, and general balance remain unproven."
+            "remaining": "The bounded pilot does not model a complete taxonomy of efficient winners, failed human reversals, or asymmetric spending histories."
           }
         }
       ],
@@ -1523,13 +1532,15 @@
           "record": {
             "id": "PP-085",
             "title": "Full-rental plans and combat budgets need explicit opportunity-cost comparisons",
-            "implementationState": "V2_PILOT_IN_PROGRESS",
-            "detail": "Superseded direct-spend model is archived. New pilot uses only shop-only controls, real normalized commands, full receipts, score-preserving round2 fixtures, mirrored seed blocks, buy-vs-save products and explicit uncertain intervals.",
+            "implementationState": "V2_PILOT_COMPLETED_LIMITED",
+            "detail": "800actual rounds compare all38single products and12two-EX pairs to buying nothing at equal opening bank2400. Every product has an actual startup witness and paired seed-block outcome estimate; retained cash stays in the same bank.",
             "scenarios": [],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-pilot-analysis.json",
+              "reports/evidence/shop-v2-product-pilot-current/summary.json",
+              "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
             ],
-            "remaining": "Await current shop-v2 product/crossover summaries; human policy quality, all matchups/stages, and general balance remain unproven."
+            "remaining": "Full mixed rental/license/art cart factorial and human opportunity-cost decisions are not exhausted. Single rounds cannot establish match-level purchase value."
           }
         }
       ],
@@ -1545,13 +1556,15 @@
           "record": {
             "id": "PP-086",
             "title": "Unlimited per-round rental use makes duration and repeat pressure central to value",
-            "implementationState": "V2_PILOT_IN_PROGRESS",
-            "detail": "Superseded direct-spend model is archived. New pilot uses only shop-only controls, real normalized commands, full receipts, score-preserving round2 fixtures, mirrored seed blocks, buy-vs-save products and explicit uncertain intervals.",
+            "implementationState": "V2_PILOT_COMPLETED_LIMITED",
+            "detail": "Observed uses, contact outcomes, round lengths and full command traces are retained. Repeatable EX is additionally exercised at zero bank with ordinary recovery/charge rules and80corner response cells.",
             "scenarios": [],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-pilot-analysis.json",
+              "reports/evidence/shop-v2-product-pilot-current/summary.json",
+              "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
             ],
-            "remaining": "Await current shop-v2 product/crossover summaries; human policy quality, all matchups/stages, and general balance remain unproven."
+            "remaining": "Short/long contextual value, deterrence and adapted repeated pressure remain human balance questions; frequent activation alone is not treated as value."
           }
         }
       ],
@@ -1568,14 +1581,14 @@
             "id": "PP-087",
             "title": "Zero-credit legal actions do not prove adequate answers to funded chip and pressure",
             "implementationState": "SCRIPTED_COUNTERPLAY_MEASURED",
-            "detail": "All8 EX \u00d72facings \u00d75 real responses at a100HP zero-bank cornered defender; guard/parry/jump/throw/retreat outcomes and failed responses are retained with full reconstructible traces.",
+            "detail": "All 8 EX across 2 facings and 5 real responses at a 100 HP zero-bank cornered defender. 80 reconstructed cells retain damage, survival and failed responses: 64 survivals, 14/16 scripted parry successes. Rook Pulse EX predictor missed its close spawn at both facings; this is not labeled impossible to parry.",
             "scenarios": [
               "shop_ex_zero_bank_corner_counterplay"
             ],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-core-full-current/core-conformance.json"
             ],
-            "remaining": "Predictive scripted parry is not a human reaction measurement; a losing prior position need not always escape."
+            "remaining": "Predictive scripts are not human reaction measurements. All-art low-health corner sequences and adaptive mixed rental/EX pressure are not exhausted by these EX cells; conventional art defense tests are separate."
           }
         }
       ],
@@ -1591,13 +1604,15 @@
           "record": {
             "id": "PP-088",
             "title": "Raw first-round-winner conversion is confounded by score and player strength",
-            "implementationState": "V2_PILOT_IN_PROGRESS",
-            "detail": "Superseded direct-spend model is archived. New pilot uses only shop-only controls, real normalized commands, full receipts, score-preserving round2 fixtures, mirrored seed blocks, buy-vs-save products and explicit uncertain intervals.",
+            "implementationState": "V2_PILOT_COMPLETED_LIMITED",
+            "detail": "Reports separate the analytical score-only163/256 benchmark from measured results and paired score-preserving interventions. Counterbalanced seats are averaged within seed blocks; with two chosen seeds the conditional intervals remain broad.",
             "scenarios": [],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-pilot-analysis.json",
+              "reports/evidence/shop-v2-product-pilot-current/summary.json",
+              "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
             ],
-            "remaining": "Await current shop-v2 product/crossover summaries; human policy quality, all matchups/stages, and general balance remain unproven."
+            "remaining": "No50percent first-winner conversion target or population human balance conclusion. Stage, art and player-pair blocking is incomplete."
           }
         }
       ],
@@ -1613,13 +1628,15 @@
           "record": {
             "id": "PP-089",
             "title": "Earlier parity payout variants need isolated versioned experiments",
-            "implementationState": "V2_PILOT_IN_PROGRESS",
-            "detail": "Superseded direct-spend model is archived. New pilot uses only shop-only controls, real normalized commands, full receipts, score-preserving round2 fixtures, mirrored seed blocks, buy-vs-save products and explicit uncertain intervals.",
+            "implementationState": "V2_PILOT_COMPLETED_LIMITED",
+            "detail": "Approved v2 uses four isolated controls: A historical payouts/no skills, B historical/capped skills, C shipping parity/capped skills, D parity/no skills. C is byte-identical to shipping; all variant files and hashes are retained.48fresh matches plus64continuations are reconstructed.",
             "scenarios": [],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-pilot-analysis.json",
+              "reports/evidence/shop-v2-product-pilot-current/summary.json",
+              "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
             ],
-            "remaining": "Await current shop-v2 product/crossover summaries; human policy quality, all matchups/stages, and general balance remain unproven."
+            "remaining": "This is a representative pilot, not final balance approval. Crossover policies consumed zero super uses, so those matches do not measure art-frequency effects; separate product rounds and conformance cover actual arts."
           }
         }
       ],
@@ -1642,7 +1659,7 @@
               "shop_atomic_cart_and_thresholds"
             ],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-core-full-current/core-conformance.json"
             ],
             "remaining": ""
           }
@@ -1660,13 +1677,15 @@
           "record": {
             "id": "PP-091",
             "title": "Economic telemetry should expose affordability and payout history rather than wallet totals alone",
-            "implementationState": "V2_PILOT_IN_PROGRESS",
-            "detail": "Superseded direct-spend model is archived. New pilot uses only shop-only controls, real normalized commands, full receipts, score-preserving round2 fixtures, mirrored seed blocks, buy-vs-save products and explicit uncertain intervals.",
+            "implementationState": "V2_PILOT_COMPLETED_LIMITED",
+            "detail": "Every observed round exports pre-settlement bank, nominal/granted/clipped result payout, old/new recovery tier, separate earned/granted/clipped skills, score and continuing-state usability. Analysis verifies both seats' settlement equations; full command traces reconstruct preparation debits and every bank-frozen fight tick.",
             "scenarios": [],
             "evidence": [
-              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+              "reports/evidence/shop-v2-pilot-analysis.json",
+              "reports/evidence/shop-v2-product-pilot-current/summary.json",
+              "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
             ],
-            "remaining": "Await current shop-v2 product/crossover summaries; human policy quality, all matchups/stages, and general balance remain unproven."
+            "remaining": "Owned-threat utility is distinct from bank totals. UI ledger rendering is independently verified; mathematical state counts are never presented as played matches."
           }
         },
         {
@@ -1682,5 +1701,6 @@
       "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
     }
   ],
-  "note": "Current candidate execution is recorded in SHOP_V2_ACCEPTANCE.json and ACCEPTANCE_RESULTS.json. Historical owner reviews are retained as history; final native reports establish current graphical behavior."
+  "current_presentation_review": "audit/upgrade-2026-09-05/SHOP_V2_FINAL_PRESENTATION_FINDINGS.json",
+  "note": "Current candidate execution is recorded in SHOP_ONLY_V2_ACCEPTANCE.json and ACCEPTANCE_RESULTS.json. Historical owner reviews are retained as history; final native reports establish current graphical behavior."
 }

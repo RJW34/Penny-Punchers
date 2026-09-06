@@ -57,7 +57,14 @@ def main():
     projection={'candidate_id':candidate['build_ref'],'source_sha256':source,'content_sha256':candidate['content_sha256'],'build_id':BUILD,'loaded_content_hashes':CONTENT,'candidate_manifest':artifact('reports/RELEASE_CANDIDATE.json')}
     write('reports/SHOP_ONLY_V2_CANDIDATE.json',projection)
     binding={'utc':now,'passed':True,'scope':'Executed source SHA checks and tested-to-shipped Core/App byte identity; does not inherit old graphical claims. Each runtime result must separately match current shell/PCK hashes.',**projection,'verified_source_inputs':len(candidate['source_inputs']),'assemblies':assembly_proof,'command':'python tools/build_shop_v2_acceptance.py'}
-    write(IDENTITY,binding)
+    # Preserve the first successful immutable binding for this exact candidate;
+    # refreshes still execute all checks above without changing cited bytes.
+    if (ROOT/IDENTITY).exists():
+        prior=read(IDENTITY)
+        if prior.get('candidate_manifest')==binding['candidate_manifest'] and prior.get('assemblies')==assembly_proof:
+            binding=prior
+        else: write(IDENTITY,binding)
+    else: write(IDENTITY,binding)
 
     core_map={r['id']:r for r in read('reports/SHOP_V2_CORE_FINDINGS.json')['ownedV2Requirements']}
     passed_scenarios={r['id'] for r in read(FULL)['results'] if r['pass']}

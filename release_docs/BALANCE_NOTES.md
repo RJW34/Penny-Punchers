@@ -6,7 +6,7 @@ Wins pay 1200, draws 900 and losses 1200/1200/1500 at the previous recovery tier
 
 The completed current evidence consists of:
 
-- **800 product rounds:** all 38 expanded products and 12 two-EX pairs, each compared with retaining its actual fee. Two policies and seeds 1/2 run both seats at equal opening bank 2400. Every product has actual starts; both licenses start in 94/96 purchased pair rounds. This uses a fixed Thomas opponent and does not exhaust mixed-cart, stage or matchup combinations.
+- **800 product rounds:** all 38 expanded products and 12 two-EX pairs, each compared with retaining its actual fee. Two policies and seeds 1/2 run both seats at equal opening bank 2400. Every product has actual starts; both licenses start in 94/96 purchased pair rounds. This uses a fixed Vincent opponent and does not exhaust mixed-cart, stage or matchup combinations.
 - **48 fresh full matches:** four isolated payout/reward controls, three policies, two seeds and both seats. The reward-seeking policy reacts to public observations delayed by 12 ticks.
 - **64 full continuations:** explicit round-two score 1-0 fixtures compare earned-gap and equal-bank states, holding assumed prior spending at 0 or 600. Skill-enabled fixtures explicitly assume prior receipts of 300/100; they are not represented as a played first round.
 - **Reconstruction:** all 912 traces reproduce their recorded events and state. No run was excluded. Across 1,578 observed rounds, 3,036,953 fight steps preserve both banks, and all 3,156 settlement balance equations agree. The analysis excludes 112 terminal results from continuing-match liquidity.
@@ -48,3 +48,5 @@ dotnet run --project src/StrikeLedger.BalanceLab/StrikeLedger.BalanceLab.csproj 
 Use a new output folder. `--scope smoke --seeds 1` is a short harness check, not a balance matrix. The preserved exact executed harness and commands are identified in the process report. `python tools/summarize_shop_v2_pilot.py` reproduces the current paired analysis. Evidence bundles and trace files are not implied to be included in a compact player download. Native recordings, physical devices and owner/friend feedback remain separate evidence.
 
 [Historical pre-v2 appendix](history/BALANCE_NOTES_PRE_SHOP_V2.md) preserves the prior direct-spend experiment, original numbers and exact old identities. Its activation prices, protected reserves, loss schedule and commands apply only to that historical build. Neither its 252 matches nor the later pre-v2 492-sample checkpoint certify shop-only v2. Older v2 metadata runs also retain their original hashes and are clearly marked historical.
+
+The final display names are Vincent (rook) and Thomas (vale). Original pilot files retain their pre-swap labels and exact identities; stable fighter IDs and all mechanical values are unchanged, as verified in the name-swap audit.

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "status": "READY_FOR_VERIFICATION",
-  "build_ref": "source-sha256:fc679e4ba18529de3e829e0f5b47aee05db45ffe746024f64fa7fb919324ed7f",
-  "content_sha256": "0d9eec292cdfb3f23454487bef78e18b442cbf7f41b7d4b81a4832e295b63696",
-  "created_utc": "2026-09-06T00:04:47.006607+00:00",
+  "build_ref": "source-sha256:327be61cf6003b56cbc01e0f9abfd8c9a811fa13a80b33175829c93dfc5f6989",
+  "content_sha256": "91ec2da0d0a9473018def6630da5733289ec769b7dcae621de2b6fc701fc4de3",
+  "created_utc": "2026-09-06T00:42:40.027593+00:00",
   "source_inputs": [
     {
       "path": "Directory.Build.props",
@@ -271,11 +271,11 @@
     },
     {
       "path": "game/Main.BuyablesEvidence.cs",
-      "sha256": "2e97f61b9584f9da627d3122b7feefb4072d1a4a7da23b3e89e6a4cf2b020405"
+      "sha256": "ad7c8e9c442affa6928a277284b4b5917553325f434d65eaa03bd2c0a3403efa"
     },
     {
       "path": "game/Main.CombatShowcase.cs",
-      "sha256": "b4244419d4a8aaa93eb583c7def19712039144e7483c1f02b5628e25e776a455"
+      "sha256": "4b24793a7f1c9a2a03a197a8d0b2e68b30174f8682ae3811cc461f3aeb70b958"
     },
     {
       "path": "game/Main.ControlRouting.cs",
@@ -723,7 +723,7 @@
     },
     {
       "path": "src/StrikeLedger.App/Training.cs",
-      "sha256": "b1391bcf512c0ad14d33698402c7f88de39616e1fa24757a695571bccfbb8e9d"
+      "sha256": "ba85450237d1fb17cd1853d60e2357d9d07e5ae6df229bdf016682f7ad2d7efd"
     },
     {
       "path": "src/StrikeLedger.App/UdpTransport.cs",
@@ -910,17 +910,17 @@
     },
     {
       "path": "dist/StrikeLedger/linux/data_StrikeLedger_linuxbsd_x86_64/StrikeLedger.App.dll",
-      "sha256": "aaa19df03d1d0551b50f119ccba9ae0d78984fe0d0c7120e6a66f94b3c185683",
+      "sha256": "a418b0e515eeda05b2abae58c36f3d94e4ed2441c45a96c0899819b30f8b1ed8",
       "bytes": 208896
     },
     {
       "path": "dist/StrikeLedger/linux/data_StrikeLedger_linuxbsd_x86_64/StrikeLedger.Core.dll",
-      "sha256": "e0c1812e39177786ca355e079009908f79fea330aed1e80f86dae57188253f5b",
+      "sha256": "474d3abaab60175fa3be5ae1f07374a6994222756773d6b24447b4da75749b6a",
       "bytes": 272896
     },
     {
       "path": "dist/StrikeLedger/linux/data_StrikeLedger_linuxbsd_x86_64/StrikeLedger.dll",
-      "sha256": "c9abe2b6dd15a158e1f08ce61434e1cfc29328f3a52f87e7c711519fc3fa4884",
+      "sha256": "08f12ca1c6275a84d9cc74720fc2073ce3fa76fc8bdd6a00e881aeeed88e0abd",
       "bytes": 478720
     },
     {
@@ -1730,7 +1730,7 @@
     },
     {
       "path": "dist/StrikeLedger/linux/StrikeLedger.pck",
-      "sha256": "c755c26b60a1f92062ac8768f4c3fcb924dd088a445b5a2853009ca450c1c67a",
+      "sha256": "5e5e6108d6a46377c96589faba1c4619ce477068ca5012de9244ce8f12fc3548",
       "bytes": 38371700
     },
     {
@@ -1845,17 +1845,17 @@
     },
     {
       "path": "dist/StrikeLedger/windows/data_StrikeLedger_windows_x86_64/StrikeLedger.App.dll",
-      "sha256": "aaa19df03d1d0551b50f119ccba9ae0d78984fe0d0c7120e6a66f94b3c185683",
+      "sha256": "a418b0e515eeda05b2abae58c36f3d94e4ed2441c45a96c0899819b30f8b1ed8",
       "bytes": 208896
     },
     {
       "path": "dist/StrikeLedger/windows/data_StrikeLedger_windows_x86_64/StrikeLedger.Core.dll",
-      "sha256": "e0c1812e39177786ca355e079009908f79fea330aed1e80f86dae57188253f5b",
+      "sha256": "474d3abaab60175fa3be5ae1f07374a6994222756773d6b24447b4da75749b6a",
       "bytes": 272896
     },
     {
       "path": "dist/StrikeLedger/windows/data_StrikeLedger_windows_x86_64/StrikeLedger.dll",
-      "sha256": "11ebdde8027579800be5886e6282497cc337753b0496d2beca079cbced37a63f",
+      "sha256": "85b157e76c49f93b01efa647b5e8831188bd6bfc250517b75e6fefc7331dff5d",
       "bytes": 478720
     },
     {
@@ -2675,7 +2675,7 @@
     },
     {
       "path": "dist/StrikeLedger/windows/StrikeLedger.pck",
-      "sha256": "c755c26b60a1f92062ac8768f4c3fcb924dd088a445b5a2853009ca450c1c67a",
+      "sha256": "5e5e6108d6a46377c96589faba1c4619ce477068ca5012de9244ce8f12fc3548",
       "bytes": 38371700
     }
   ],

@@ -14,7 +14,7 @@ Current Core SHA-256 is `e0c1812e39177786ca355e079009908f79fea330aed1e80f86dae57
 
 Same-lineup rematch is supported; in-session fighter/seat reselection, live RTT estimation, a complete authored combo-route library and multi-slot dummy playback remain disclosed limits. CPU option witnesses establish execution, not strong strategy or human balance. GUI/export/package/balance evidence and physical/human gates are separate.
 
-The active architecture, combat, edge-case, training/replay, private-network, feel, test and migration documents now describe shop-only v2. The migrated feel harness measures actual inputs and eligible clocks against a frozen exported Core; its final candidate-bound run is awaiting the refreshed export identity, so preceding metadata measurements are not presented as current proof.
+The active architecture, combat, edge-case, training/replay, private-network, feel, test and migration documents now describe shop-only v2. The migrated feel harness passed 24 actual input and eligible-clock measurements against the final frozen exported Core. Earlier metadata measurements remain historical.
 
 Evidence:
 
@@ -27,3 +27,8 @@ Evidence:
 - `reports/evidence/shop-v2-objects-candidate2/reflected-origin-precision.json`
 - `reports/evidence/shop-v2-candidate-assembly-identities.json`
 - `audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json`
+
+
+The final exported candidate `source-sha256:fc679e4ba18529de3e829e0f5b47aee05db45ffe746024f64fa7fb919324ed7f` passed24 frozen-Core timing measurements at `reports/evidence/shop-v2-feel-candidate`. Super fixtures buy permits from actual confirmed funding rounds; startup consumes a use and does not debit the bank. These timings do not measure rendered pacing or device latency.
+
+Independent review found and repaired IND-NET-001: a late terminal reward could remain undrained when UDP polling entered settlement/result. The shell now drains confirmed presentation/history immediately after polling. `native-shop-v2-candidate-ui/late-terminal-history.json` proves two actual UDP peers, a withheld lethal-startup input, two rollbacks, exactly one50-credit terminal counter award/history entry and replay reconstruction. The current exported GUI run passed299 assertions with exit0. Earlier dev5/dev6 fixture failures and successful dev7 are preserved as history.

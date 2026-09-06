@@ -9,7 +9,7 @@ public partial class Main
         await UiActivate("01   Versus CPU");await UiActivate(RulesetName);
         UiRequire(screen=="rulesets","Trial chooser opens through the production lineup");await UiCapture("buyables-01-trial-chooser");
         await UiActivate("Choose expanded trial");UiRequire(rulesetId=="buyables_full"&&content.Items.Count==38&&content.Items.Values.Count(i=>PurchaseSlots.Contains(i.Slot))==24,"Expanded shop-only trial preserves24 rentals plus14 EX/super products");
-        UiRequire(content.Fighters["rook"].DisplayName=="Thomas"&&content.Fighters["vale"].DisplayName=="Vincent","Both requested character names are visible registry names");
+        UiRequire(content.Fighters["rook"].DisplayName=="Vincent"&&content.Fighters["vale"].DisplayName=="Thomas","Both requested character names are visible registry names");
         for(int i=0;i<4&&stageId!="marist_green";i++)await UiActivate("Stage:");
         UiRequire(stageId=="marist_green","Marist Green is reachable through stage selection");await UiCapture("buyables-02-expanded-lineup");
         await UiActivate("Move catalog");UiRequire(screen=="catalog","Catalog opens before timed preparation");

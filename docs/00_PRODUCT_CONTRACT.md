@@ -2,7 +2,7 @@
 
 The current user-approved resource contract is docs/21_SHOP_ONLY_V2.md. It supersedes earlier economy restrictions in this repository and the supplied v1 archives.
 
-Build an original native traditional 2D fighting game for exactly two opponents in one arena. Third Strike is a qualitative reference for grounded six-button feel; no franchise engine, ROM, art, audio or exact frame tables are reused. Thomas is the motion-input pressure fighter (stable internal ID rook); Vincent is the charge-oriented spacing fighter (vale).
+Build an original native traditional 2D fighting game for exactly two opponents in one arena. Third Strike is a qualitative reference for grounded six-button feel; no franchise engine, ROM, art, audio or exact frame tables are reused. Vincent is the motion-input pressure fighter (stable internal ID rook); Thomas is the charge-oriented spacing fighter (vale).
 
 Both fighters retain complete ordinary normals, specials, movement, free high/low/air/red parries, blocking, throws and techs, confirms, cancels, knockdowns and stun. The installed100-move core and115-move expanded registries retain their implemented rentals, branches, actors, projectiles, fields and installs. The shop licenses selected EX families and optionally one super each round. The bank is static during combat; skill receipts are pending until confirmed result.
 

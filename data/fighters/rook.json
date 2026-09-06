@@ -1,7 +1,7 @@
 {
   "version": 1,
   "id": "rook",
-  "display_name": "Thomas",
+  "display_name": "Vincent",
   "archetype": "motion-input close-range pressure",
   "health": 1000,
   "stun_limit": 1000,

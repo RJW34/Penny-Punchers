@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "project": "Penny-Punchers",
+  "status": "RELEASE_VERIFICATION_IN_PROGRESS",
+  "utc": "2026-09-06T00:56:06.896434+00:00",
+  "candidate": "source-sha256:327be61cf6003b56cbc01e0f9abfd8c9a811fa13a80b33175829c93dfc5f6989",
+  "canonicalContent": "91ec2da0d0a9473018def6630da5733289ec769b7dcae621de2b6fc701fc4de3",
+  "gitCommit": "9193c77ee03068cdd1ee5c8999cc1f03aa0fb2f8",
+  "originalAcceptance": {
+    "software": {
+      "passed": 70,
+      "total": 76
+    },
+    "target_device": {
+      "passed": 2,
+      "total": 5
+    },
+    "human": {
+      "passed": 0,
+      "total": 1
+    }
+  },
+  "shopOnlyAcceptance": {
+    "software": {
+      "passed": 57,
+      "total": 58
+    },
+    "human": {
+      "passed": 0,
+      "total": 1
+    },
+    "device": {
+      "passed": 0,
+      "total": 2
+    }
+  },
+  "integrityGates": {
+    "software": {
+      "scope": "EVIDENCE_COMPLETENESS_AND_INTEGRITY_ONLY",
+      "tier": "software",
+      "status": "FAIL",
+      "required": 76,
+      "verified_records": 69,
+      "problems": [
+        "FEEL-001: artifact hash mismatch reports/evidence/native-shop-v2-candidate-free/recording.mp4",
+        "FEEL-001: missing artifact kinds ['video']",
+        "NET-001: status NOT_RUN",
+        "NET-001: no successful actual command exit",
+        "NET-001: artifact hash mismatch reports/evidence/native-shop-v2-candidate-network/peer0/process.log",
+        "NET-004: status NOT_RUN",
+        "NET-004: no successful actual command exit",
+        "NET-004: artifact hash mismatch reports/evidence/native-shop-v2-candidate-network/peer0/process.log",
+        "NET-004: missing artifact kinds ['video']",
+        "NET-006: status NOT_RUN",
+        "NET-006: no successful actual command exit",
+        "NET-006: artifact hash mismatch reports/evidence/native-shop-v2-candidate-network/peer0/process.log",
+        "NET-007: status NOT_RUN",
+        "NET-007: no successful actual command exit",
+        "NET-007: artifact hash mismatch reports/evidence/native-shop-v2-candidate-network/peer0/process.log",
+        "NET-007: missing artifact kinds ['replay', 'video']",
+        "QA-004: status NOT_RUN",
+        "QA-004: no successful actual command exit",
+        "FINAL-002: status NOT_RUN",
+        "FINAL-002: no successful actual command exit"
+      ],
+      "truth_review": "Reproduce commands and inspect actual gameplay; file/hash validation alone cannot establish truth or feel."
+    },
+    "all": {
+      "scope": "EVIDENCE_COMPLETENESS_AND_INTEGRITY_ONLY",
+      "tier": "all",
+      "status": "FAIL",
+      "required": 82,
+      "verified_records": 71,
+      "problems": [
+        "FEEL-001: artifact hash mismatch reports/evidence/native-shop-v2-candidate-free/recording.mp4",
+        "FEEL-001: missing artifact kinds ['video']",
+        "NET-001: status NOT_RUN",
+        "NET-001: no successful actual command exit",
+        "NET-001: artifact hash mismatch reports/evidence/native-shop-v2-candidate-network/peer0/process.log",
+        "NET-004: status NOT_RUN",
+        "NET-004: no successful actual command exit",
+        "NET-004: artifact hash mismatch reports/evidence/native-shop-v2-candidate-network/peer0/process.log",
+        "NET-004: missing artifact kinds ['video']",
+        "NET-006: status NOT_RUN",
+        "NET-006: no successful actual command exit",
+        "NET-006: artifact hash mismatch reports/evidence/native-shop-v2-candidate-network/peer0/process.log",
+        "NET-007: status NOT_RUN",
+        "NET-007: no successful actual command exit",
+        "NET-007: artifact hash mismatch reports/evidence/native-shop-v2-candidate-network/peer0/process.log",
+        "NET-007: missing artifact kinds ['replay', 'video']",
+        "QA-004: status NOT_RUN",
+        "QA-004: no successful actual command exit",
+        "DEVICE-002: status NOT_RUN",
+        "DEVICE-002: no successful actual command exit",
+        "DEVICE-002: missing artifact kinds ['video']",
+        "DEVICE-003: status NOT_RUN",
+        "DEVICE-003: no successful actual command exit",
+        "DEVICE-003: missing artifact kinds ['video']",
+        "DEVICE-004: status NOT_RUN",
+        "DEVICE-004: no successful actual command exit",
+        "DEVICE-004: missing artifact kinds ['replay', 'video']",
+        "FINAL-002: status NOT_RUN",
+        "FINAL-002: no successful actual command exit",
+        "HUMAN-001: status NOT_RUN",
+        "HUMAN-001: no successful actual command exit",
+        "HUMAN-001: missing actual human reviewer",
+        "HUMAN-001: missing artifact kinds ['human_feedback']"
+      ],
+      "truth_review": "Reproduce commands and inspect actual gameplay; file/hash validation alone cannot establish truth or feel."
+    }
+  },
+  "originalAuditFindings": 91,
+  "auditDispositions": {
+    "IMPLEMENTED": 9,
+    "IMPLEMENTATION_REVIEW_RECORDED": 61,
+    "PARTIAL": 2,
+    "SUPERSEDED_IMPLEMENTED": 1,
+    "DOCUMENTED_DESIGN_BOUNDARY": 1,
+    "PARTIAL_BALANCE": 4,
+    "IMPLEMENTED_WITH_BALANCE_LIMIT": 1,
+    "SUPERSEDED_WITH_BALANCE_LIMIT": 1,
+    "HUMAN_PENDING": 2,
+    "IMPLEMENTED_HARDWARE_PENDING": 1,
+    "CURRENT_EVIDENCE_REQUIRED": 1,
+    "EXTERNAL_PENDING": 1,
+    "IMPLEMENTED_WITH_LIMITS": 1,
+    "TEMPLATE_READY_AUTH_SCOPE_PENDING": 1,
+    "PARTIAL_REFACTOR": 1,
+    "DOCUMENTED_DELIVERY": 2,
+    "OPEN_OPTIONAL": 1
+  },
+  "evidence": {
+    "coreExpanded": {
+      "path": "reports/evidence/shop-v2-core-full-current/core-conformance.json",
+      "sha256": "418459a386237627418f0e2a1e73275ec78144e4c14a110a512596f63697a7e4"
+    },
+    "contract": {
+      "path": "reports/evidence/build-test/StrikeLedger.ContractTests/contract-conformance.json",
+      "sha256": "9bdbfcc9313ac0dede0bbbed9f9a453f5655e8dd5f06b3432fbd8a861f03ea9c"
+    },
+    "nativeUi": {
+      "path": "reports/evidence/native-shop-v2-renamed-ui/controller-menu-flow.json",
+      "sha256": "2dc9dd3c55776157f7aadafd57e42d65fb3e14799acbec5c9050e3dce644a216"
+    },
+    "windowsMatch": {
+      "path": "reports/evidence/native-shop-v2-candidate-match/process-result.json",
+      "sha256": "a4b306f20e56f0f374930a39ca5761c816740a560fcf1e8772221e5b84984f16"
+    },
+    "windowsFreeKit": {
+      "path": "reports/evidence/native-shop-v2-candidate-free/process-result.json",
+      "sha256": "da49ebe0ad39e7f5485d8867a6367257f6507491ad0718c9eecd07bef37b11e3"
+    },
+    "crossPlatform": {
+      "path": "reports/evidence/shop-v2-renamed-cross-platform/result.json",
+      "sha256": "e1bab0fae986024c393e227c50683d8985ac61d4ec64e589d2f92471c72ddb63"
+    },
+    "packages": {
+      "path": "reports/evidence/shop-v2-renamed-package/result.json",
+      "sha256": "53428949f5eb5dda3180e6d46495d1eb251af0fd2930c59da2d01362b80f9ea4"
+    },
+    "timing": {
+      "path": "reports/evidence/shop-v2-feel-candidate/feel-measurements.json",
+      "sha256": "3919cfbdf00f00457ef4e1ef912810fd7a6c987375a293cc8bcc1b45c5185428"
+    },
+    "pilot": {
+      "path": "reports/evidence/shop-v2-pilot-analysis.json",
+      "sha256": "42f9b0849f6c9db54a05d8f33ea54bafdd5a69d7002be1e5d3060571f410ac2c"
+    },
+    "manual": {
+      "path": "reports/evidence/shop-v2-manual-native/result.json",
+      "sha256": "5451cf4015228e17281b4764d38e2d910a0ac541149ce9b1211ffea1bf2ada69"
+    },
+    "restartIntegrity": {
+      "path": "reports/evidence/shop-v2-restart-recovery/integrity.json",
+      "sha256": "39baf5d4089af7961f15e898e2d7cc8cb4ec33b19b9223f5e13abaa7122faa97"
+    },
+    "nameSwap": {
+      "path": "reports/evidence/name-swap-audit/result.json",
+      "sha256": "de995e8270b68217e2477837e444d27faca892361ac7678a97bcf5d2aad50df1"
+    }
+  },
+  "pending": [
+    {
+      "id": "NET-001",
+      "description": "Actual two-process sockets handshake exactly two peers, ownership and identical build/content/rules.",
+      "status": "NOT_RUN",
+      "limitations": "Evidence applies to the bounded described scenario; no physical-controller, second physical PC or human balance claim. Earlier-name runs preserve original build/content/replay hashes; the explicit name-swap audit proves unchanged mechanical data/Core IL and exact source-only label changes. Renamed Core/App/native UI checks are separate current executions. Pending evidence: reports/evidence/native-shop-v2-candidate-network/peer0/native-network-result.json, reports/evidence/native-shop-v2-candidate-network/peer0/recording.mp4, reports/evidence/native-shop-v2-candidate-network/peer0/native-network.replay.json"
+    },
+    {
+      "id": "NET-004",
+      "description": "A predicted prepaid-super use, reward and terminal result can disappear on correction; only the confirmed canonical result and receipts are published.",
+      "status": "NOT_RUN",
+      "limitations": "Evidence applies to the bounded described scenario; no physical-controller, second physical PC or human balance claim. Earlier-name runs preserve original build/content/replay hashes; the explicit name-swap audit proves unchanged mechanical data/Core IL and exact source-only label changes. Renamed Core/App/native UI checks are separate current executions. Pending evidence: reports/evidence/native-shop-v2-candidate-network/peer0/native-network-result.json, reports/evidence/native-shop-v2-candidate-network/peer0/recording.mp4, reports/evidence/native-shop-v2-candidate-network/peer0/native-network.replay.json, video"
+    },
+    {
+      "id": "NET-006",
+      "description": "Disconnect/grace/resync limits and mismatch diagnostics preserve economic invariants without public network changes.",
+      "status": "NOT_RUN",
+      "limitations": "Evidence applies to the bounded described scenario; no physical-controller, second physical PC or human balance claim. Earlier-name runs preserve original build/content/replay hashes; the explicit name-swap audit proves unchanged mechanical data/Core IL and exact source-only label changes. Renamed Core/App/native UI checks are separate current executions. Pending evidence: reports/evidence/native-shop-v2-candidate-network/peer0/native-network-result.json, reports/evidence/native-shop-v2-candidate-network/peer0/recording.mp4, reports/evidence/native-shop-v2-candidate-network/peer0/native-network.replay.json"
+    },
+    {
+      "id": "NET-007",
+      "description": "A complete real two-process1v1 economic match finishes with matching replay/receipt/result hashes.",
+      "status": "NOT_RUN",
+      "limitations": "Evidence applies to the bounded described scenario; no physical-controller, second physical PC or human balance claim. Earlier-name runs preserve original build/content/replay hashes; the explicit name-swap audit proves unchanged mechanical data/Core IL and exact source-only label changes. Renamed Core/App/native UI checks are separate current executions. Pending evidence: reports/evidence/native-shop-v2-candidate-network/peer0/native-network-result.json, reports/evidence/native-shop-v2-candidate-network/peer0/recording.mp4, reports/evidence/native-shop-v2-candidate-network/peer0/native-network.replay.json, replay, video"
+    },
+    {
+      "id": "QA-004",
+      "description": "Performance/pacing and resimulation budget are actually profiled with host metadata and known limits.",
+      "status": "NOT_RUN",
+      "limitations": "Evidence applies to the bounded described scenario; no physical-controller, second physical PC or human balance claim. Earlier-name runs preserve original build/content/replay hashes; the explicit name-swap audit proves unchanged mechanical data/Core IL and exact source-only label changes. Renamed Core/App/native UI checks are separate current executions. Pending evidence: reports/evidence/native-shop-v2-candidate-profile/runtime-result.json"
+    },
+    {
+      "id": "DEVICE-002",
+      "description": "Linux x86_64 native package actually launches and completes a local economic match.",
+      "status": "NOT_RUN",
+      "limitations": "Evidence applies to the bounded described scenario; no physical-controller, second physical PC or human balance claim. Earlier-name runs preserve original build/content/replay hashes; the explicit name-swap audit proves unchanged mechanical data/Core IL and exact source-only label changes. Renamed Core/App/native UI checks are separate current executions. Pending evidence: reports/evidence/native-shop-v2-linux-candidate-5fps/process.log, reports/evidence/native-shop-v2-linux-candidate-5fps/recording.mp4, process_log, video"
+    },
+    {
+      "id": "DEVICE-003",
+      "description": "Two actual local controllers and keyboard-plus-controller are assigned and exercised without cross-seat input.",
+      "status": "NOT_RUN",
+      "limitations": "No physical controllers were available; software-injected controller inputs are separate evidence. Pending evidence: process_log, video"
+    },
+    {
+      "id": "DEVICE-004",
+      "description": "Two physical machines complete a private 1v1 LAN match with matching confirmed result, cart, super-use and skill-reward logs.",
+      "status": "NOT_RUN",
+      "limitations": "Two processes and WSLg ran on this one PC; no second physical machine was tested. Pending evidence: process_log, replay, video"
+    },
+    {
+      "id": "FINAL-002",
+      "description": "Final source/artifact instructions, known issues, exact remaining external gates and resume state are complete and accurate.",
+      "status": "NOT_RUN",
+      "limitations": "Evidence applies to the bounded described scenario; no physical-controller, second physical PC or human balance claim. Earlier-name runs preserve original build/content/replay hashes; the explicit name-swap audit proves unchanged mechanical data/Core IL and exact source-only label changes. Renamed Core/App/native UI checks are separate current executions. Pending evidence: reports/evidence/shop-v2-document-review.json, process_log"
+    },
+    {
+      "id": "HUMAN-001",
+      "description": "Actual owner/player feedback accepts the prototype feel and single-wallet decisions or records requested changes without invention.",
+      "status": "NOT_RUN",
+      "limitations": "Owner/player playtest and acceptance have not been recorded. Pending evidence: human_feedback"
+    }
+  ],
+  "scope": "Two playable fighters, four stages, core/expanded shop-only v2 catalogs; bounded software verification, no physical-controller/second-machine/human verdict.",
+  "externalChecks": [
+    "Physical local controller sessions",
+    "Two physical LAN PCs",
+    "Owner/friend feel and balance acceptance"
+  ],
+  "presentationLimits": [
+    "Rare actions reuse compatible supplied poses",
+    "RGB sheets use runtime chroma key and palette masks",
+    "Marist panoramas are aspect-preserving backgrounds, not fully layered scenery"
+  ],
+  "ci": "Pinned workflow is retained at ci/verify.yml; current OAuth login lacks workflow-install scope."
+}

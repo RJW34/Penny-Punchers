@@ -2,38 +2,49 @@
   "schema_version": 1,
   "project": "Penny-Punchers",
   "scope": "shop_only_v2_1v1_traditional_fighter",
-  "status": "UPGRADE_IN_PROGRESS",
-  "current_package": "RW-002 through RW-007 integration",
-  "completed_packages": [],
-  "blocked_requirements": [],
-  "game_build_ref": "integration-source-sha256:35c049ade4267e8b029460cd6de8f683e71767e814bf2d66e472f8551c39f136",
-  "game_content_sha256": "86d2810081d2b4a1157f47a08536714835c7c2b2fb5ae53d833016fd5aa2ede6",
-  "updated_utc": "2026-09-05T22:54:24.780031+00:00",
-  "next_action": "Complete current v2 Core/App/UI migrations, actual collision/reward tests, native GUI, network faults, balance controls, fresh exports and source audit before candidate promotion.",
+  "status": "RELEASE_VERIFICATION_IN_PROGRESS",
+  "updated_utc": "2026-09-06T00:56:06.896434+00:00",
+  "game_build_ref": "source-sha256:327be61cf6003b56cbc01e0f9abfd8c9a811fa13a80b33175829c93dfc5f6989",
+  "game_content_sha256": "91ec2da0d0a9473018def6630da5733289ec769b7dcae621de2b6fc701fc4de3",
   "verification": {
     "software": {
-      "status": "IN_PROGRESS",
-      "passed": 0,
-      "total": 58
+      "passed": 70,
+      "total": 76
     },
     "target_device": {
-      "status": "NOT_RUN",
-      "passed": 0,
-      "total": 2
+      "passed": 2,
+      "total": 5
     },
     "human": {
-      "status": "NOT_RUN",
       "passed": 0,
       "total": 1
     }
   },
-  "historical_checkpoints": [
-    "audit/upgrade-2026-09-05/baseline-status",
-    "reports/evidence/pre-shop-v2-checkpoint/pre-shop-v2-checkpoint.zip"
-  ],
-  "external_checks": [
-    "Physical local controllers",
-    "Two physical PCs",
-    "Owner/friend feel verdict"
+  "shop_only_verification": {
+    "software": {
+      "passed": 57,
+      "total": 58
+    },
+    "human": {
+      "passed": 0,
+      "total": 1
+    },
+    "device": {
+      "passed": 0,
+      "total": 2
+    }
+  },
+  "next_action": "Complete remaining current evidence and publish artifacts.",
+  "blocked_requirements": [
+    "NET-001",
+    "NET-004",
+    "NET-006",
+    "NET-007",
+    "QA-004",
+    "DEVICE-002",
+    "DEVICE-003",
+    "DEVICE-004",
+    "FINAL-002",
+    "HUMAN-001"
   ]
 }

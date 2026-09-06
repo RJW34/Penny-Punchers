@@ -1,6 +1,6 @@
 # Penny-Punchers
 
-An original native six-button 1v1 fighting game. **Thomas** uses motion inputs; **Vincent** uses charge and spacing. The round shop sells optional rentals, repeatable EX licenses and one-use super permits. Your saved bank stays fixed during combat; capped skill awards deposit at the next settlement. The application is Penny Punchers; legacy executable and C# namespace names remain StrikeLedger for build compatibility.
+An original native six-button 1v1 fighting game. **Vincent** uses motion inputs; **Thomas** uses charge and spacing. The round shop sells optional rentals, repeatable EX licenses and one-use super permits. Your saved bank stays fixed during combat; capped skill awards deposit at the next settlement. The application is Penny Punchers; legacy executable and C# namespace names remain StrikeLedger for build compatibility.
 
 Start with [AUDIT_GUIDE.md](AUDIT_GUIDE.md) for architecture, review priorities, character expansion, UI/settings entry points and verification boundaries. [Fresh-clone verification](audit/import-2026-09-05/verification.json) records the earlier imported baseline build and its tests. Those logs are historical; the v2 release requires its own current-source checks.
 
@@ -13,7 +13,7 @@ The active rules are [Shop-Only Economy Rework v2](docs/21_SHOP_ONLY_V2.md), inc
 | Core trial | 12 | 8 | 6 | 100 |
 | Expanded trial | 24 | 8 | 6 | 115 |
 
-Counts span both fighters. Each fighter has four EX choices and three supers; Expanded replaces the third super with Thomas's Overtime or Vincent's Prism Lattice. Choose fighters, stage and trial in the lineup, then purchase the round's kit in the shop. The catalog and free-kit practice comparisons are untimed.
+Counts span both fighters. Each fighter has four EX choices and three supers; Expanded replaces the third super with Vincent's Overtime or Thomas's Prism Lattice. Choose fighters, stage and trial in the lineup, then purchase the round's kit in the shop. The catalog and free-kit practice comparisons are untimed.
 
 A match starts at **600 CR**. A cart can contain three optional rental slots, up to two EX licenses and at most one super permit, spending at most **2400 CR**. EX licenses cost **600 CR**, or **900 CR** for the vertical reversal, and repeat after ordinary recovery. Supers cost **900/1200/1500 CR** by registry and grant one legal startup. All purchases expire after the round; buying nothing keeps the complete free base kit. There is no reserve floor or combat debit.
 
@@ -29,7 +29,7 @@ See **release_docs/CONTROLS.md** for the full controls, **release_docs/README.md
 
 ## After Hours graphics
 
-The supplied 32-bit-style artwork supplies Thomas and Vincent sprites, portraits, effects, menus and the live HUD. Four stages are available: Foundry Ring, Calibration Grid, Marist Green — Golden Hour and Marist Gates — Blue Hour. Production assets are in `game/Assets/AfterHours`; the original design boards remain in `design/after-hours-32bit`. See `assets/PRESENTATION_UPGRADE.md` for current mappings and art limitations; `reports/AFTER_HOURS_INTEGRATION.md` describes the historical import.
+The supplied 32-bit-style artwork supplies Vincent and Thomas sprites, portraits, effects, menus and the live HUD. Four stages are available: Foundry Ring, Calibration Grid, Marist Green — Golden Hour and Marist Gates — Blue Hour. Production assets are in `game/Assets/AfterHours`; the original design boards remain in `design/after-hours-32bit`. See `assets/PRESENTATION_UPGRADE.md` for current mappings and art limitations; `reports/AFTER_HOURS_INTEGRATION.md` describes the historical import.
 
 ## Build and verify
 

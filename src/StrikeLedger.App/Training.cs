@@ -75,7 +75,7 @@ public sealed partial class TrainingSession
         dummy.Restore(initialDummy);dummy.Mode=Drill.Dummy;dummyInputs.Clear();dummyPlaybackIndex=0;RecordingDummy=false;PlayingDummy=false;
         milestones.Clear();recording.Clear();saved=null;savedDummy=null;savedHash="";startTick=Simulation.Tick;lastHit=lastParry=lastKnockdown=-100;parries=0;initialFacing=Simulation.Players[0].Facing;
         linkPendingMove="";lastParryMove="";lastParryActionFrame=-1;Success=false;Failed=false;Feedback=Drill.Instructions;
-        if(Drill.Id=="charge_side_switch" && Simulation.Players[0].FighterId!="vale")Feedback="This charge drill requires Vincent. Select Vincent to practice charge and facing reset.";
+        if(Drill.Id=="charge_side_switch" && Simulation.Players[0].FighterId!="vale")Feedback="This charge drill requires Thomas. Select Thomas to practice charge and facing reset.";
     }
     public StepResult FrameAdvance(byte direction,Buttons buttons)
     {

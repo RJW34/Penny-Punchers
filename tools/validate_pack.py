@@ -9,7 +9,10 @@ def ensure(ok: bool,message: str)->None:
     if not ok:raise ValueError(message)
 
 def validate(root:Path=ROOT,strict:bool=False)->dict:
-    root=root.resolve();files=[p for p in root.rglob('*') if p.is_file() and not any(x in p.parts for x in ('.git','.venv','__pycache__','bin','obj','GeneratedData','.godot','.tools'))]
+    # This validates delivered source/contracts. Generated native evidence and
+    # distributions have separate execution/integrity gates, and can contain
+    # intentionally preserved damaged files from an interrupted process.
+    root=root.resolve();files=[p for p in root.rglob('*') if p.is_file() and not any(x in p.parts for x in ('.git','.venv','__pycache__','bin','obj','GeneratedData','.godot','.tools')) and not p.relative_to(root).as_posix().startswith(('reports/evidence/','dist/'))]
     parsed={}
     for p in files:
         ensure(not p.is_symlink() and p.resolve().is_relative_to(root),'Unsafe source path')

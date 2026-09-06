@@ -1,6 +1,6 @@
 # Penny Punchers
 
-An original six-button 1v1 fighting game. **Thomas** uses motion inputs and close pressure; **Vincent** uses charge inputs, long kicks and spacing. Buy the round's kit in the shop, then fight with a fixed saved bank.
+An original six-button 1v1 fighting game. **Vincent** uses motion inputs and close pressure; **Thomas** uses charge inputs, long kicks and spacing. Buy the round's kit in the shop, then fight with a fixed saved bank.
 
 ## Start playing
 
