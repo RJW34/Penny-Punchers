@@ -2,11 +2,13 @@
 
 An original native six-button 1v1 fighting game. **Vincent** uses motion inputs; **Thomas** uses charge and spacing. The round shop sells optional rentals, repeatable EX licenses and one-use super permits. Your saved bank stays fixed during combat; capped skill awards deposit at the next settlement. The application is Penny Punchers; legacy executable and C# namespace names remain StrikeLedger for build compatibility.
 
+**Windows testers:** open the [v1.0 release](https://github.com/RJW34/Penny-Punchers/releases/tag/v1.0) and download **Penny-Punchers-1.0-Windows-Setup.exe**. It includes the game, Godot and .NET runtime; no separate development tools are needed. See [RIGHTS.md](RIGHTS.md) for the licensing status.
+
 Start with [AUDIT_GUIDE.md](AUDIT_GUIDE.md) for architecture, review priorities, character expansion, UI/settings entry points and verification boundaries. [Fresh-clone verification](audit/import-2026-09-05/verification.json) records the earlier imported baseline build and its tests. Those logs are historical; the v2 release requires its own current-source checks.
 
 The repository contains the C# simulation and application layers, Godot project, all runtime artwork/audio, original art boards and generation prompts, canonical data, tests, build tools and design documents. A fresh clone contains source; build outputs and machine-specific tool installations are generated locally.
 
-The active rules are [Shop-Only Economy Rework v2](docs/21_SHOP_ONLY_V2.md), incorporating the earlier audit and Buyables mechanics. See [UPGRADE_STATUS.md](reports/UPGRADE_STATUS.md) for current evidence and remaining gates. Both playable trials use the same shop-only economy; neither restores combat spending.
+The active rules are [Shop-Only Economy Rework v2](docs/21_SHOP_ONLY_V2.md), incorporating the earlier audit and Buyables mechanics. See the [upgrade review](reports/UPGRADE_REVIEW.md) and [status data](reports/UPGRADE_STATUS.json) for recorded evidence and remaining gates. Both playable trials use the same shop-only economy; neither restores combat spending.
 
 | Library | Rentals | EX products | Super permits | Runtime action nodes, including branches |
 |---|---:|---:|---:|---:|
@@ -19,13 +21,21 @@ A match starts at **600 CR**. A cart can contain three optional rental slots, up
 
 Confirmed counter-hits, grounded anti-airs and precision parries can earn **50/75/100 CR for the next shop**, subject to eligibility, twice-per-category and 300-total round caps. Settlement adds result income and skill income with explicit clipping at the **3600 CR** bank cap. See the player rules for timing and payout details.
 
-## Play
+## Play version 1.0
 
-After exporting a build, open **Play Strike Ledger.cmd** or **dist/StrikeLedger/windows/StrikeLedger.exe**. The Linux executable is **dist/StrikeLedger/linux/StrikeLedger.x86_64**. Keep each exported directory together; the executable needs its PCK and application data directory. `python tools/package_release.py` packages existing exports into ZIPs in `dist/`.
+1. Download **Penny-Punchers-1.0-Windows-Setup.exe** from the [v1.0 release](https://github.com/RJW34/Penny-Punchers/releases/tag/v1.0) on 64-bit Windows 10 or 11.
+2. Run setup. It installs for your account under `%LOCALAPPDATA%\Programs\Penny Punchers`, without administrator access. A desktop shortcut is optional.
+3. Open **Penny Punchers** from the Start menu. Choose **Versus CPU** for a match or **Training lab** to practice.
+
+The installer is **unsigned**; no code-signing certificate has been selected. Uninstall through **Windows Settings → Apps → Penny Punchers 1.0** or the Start-menu uninstaller. Uninstall preserves settings and replays under `%APPDATA%\Godot\app_userdata\Penny Punchers`.
+
+Version 1.0 packages the byte-identical game binaries from verified candidate `327be61cf6003b56cbc01e0f9abfd8c9a811fa13a80b33175829c93dfc5f6989`. The installer and onboarding documents are new distribution work; the version tag is not a new gameplay certification. The included `RELEASE_CANDIDATE.json` identifies the payload. Report reproducible problems through [GitHub Issues](https://github.com/RJW34/Penny-Punchers/issues), including your Windows version, graphics/input hardware, mode and steps to reproduce.
+
+Portable Windows/Linux packages remain available in the [earlier verified release](https://github.com/RJW34/Penny-Punchers/releases/tag/shop-only-v2-2026-09-05). Keep each extracted directory together and run `StrikeLedger.exe` or `StrikeLedger.x86_64`. Source developers can export locally, then use `Play Penny Punchers.cmd`; `python tools/package_release.py` packages existing exports into ZIPs in `dist/`.
 
 Choose **Versus CPU** to play a complete match, **Local versus** for two players, or **Training lab** to practice. Keyboard: **WASD** movement, **U I O / J K L** punches/kicks, **P / semicolon** PP/KK chords. Menus use arrows, Enter and Esc. Controllers can be assigned and remapped in Settings.
 
-See **release_docs/CONTROLS.md** for the full controls, **release_docs/README.md** for rules, and **release_docs/KNOWN_LIMITATIONS.md** for the precise verification boundaries.
+See the [full controls](release_docs/CONTROLS.md), [player rules](release_docs/README.md) and [known limitations](release_docs/KNOWN_LIMITATIONS.md).
 
 ## After Hours graphics
 

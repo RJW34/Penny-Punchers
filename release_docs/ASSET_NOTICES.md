@@ -28,4 +28,4 @@ Godot's embedded Noto Sans fallback material is copyright 2012 Google Inc. and d
 
 The application uses .NET. Upstream Microsoft/.NET Foundation license and third-party notices remain in `licenses/DOTNET_LICENSE.txt` and `licenses/DOTNET_THIRD_PARTY_NOTICES.txt`. Preserve runtime notices when redistributing an authorized package.
 
-No public license for the original game code or artwork is selected by these third-party notices. The source repository's `RIGHTS.md` records its private development/audit status. These notices imply no endorsement of Penny Punchers by the engine, font, runtime or depicted-location authors.
+The owner expressly authorizes the public source repository and tester builds, including the v1.0 Windows installer. No project-wide license for the original game code or artwork is selected by these third-party notices or by publication. The source repository's `RIGHTS.md` records that status. Existing third-party license terms and notices remain in effect. These notices imply no endorsement of Penny Punchers by the engine, font, runtime or depicted-location authors.

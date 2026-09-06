@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "tag": "v1.0",
+  "status": "VERIFIED_INSTALLER",
+  "utc": "2026-09-06T01:55:58.518363+00:00",
+  "repository": "https://github.com/RJW34/Penny-Punchers",
+  "requested_visibility": "public",
+  "release_url": "https://github.com/RJW34/Penny-Punchers/releases/tag/v1.0",
+  "candidate": "source-sha256:327be61cf6003b56cbc01e0f9abfd8c9a811fa13a80b33175829c93dfc5f6989",
+  "game_source_commit": "ddc30716f339a50e68b15c8aca72cf8e85667670",
+  "installer": {
+    "path": "dist/Penny-Punchers-1.0-Windows-Setup.exe",
+    "sha256": "6995c7cdacfbc8b621e2464e339c280c133f889ae8565500bcf7cf6fc347f22e",
+    "bytes": 90474626
+  },
+  "installer_signature": "NotSigned",
+  "installer_evidence": {
+    "path": "dist/Penny-Punchers-1.0-Installer-Verification.zip",
+    "sha256": "577d60496940c4a3037d868ab3ae871673b5412bcec599ddcf1e120326460b71",
+    "bytes": 84819394
+  },
+  "verification": {
+    "path": "reports/INSTALLER_1.0_VERIFICATION.json",
+    "sha256": "445b4fbb87fc9bcbedf57535f1b461ad7bfb51ab3bc70b698725756a6fe94485"
+  },
+  "scope": "Public 1.0 distribution and installer around unchanged verified game binaries. Prior game evidence retains its original identity and external checks."
+}

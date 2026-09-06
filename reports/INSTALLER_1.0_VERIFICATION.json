@@ -1,0 +1,131 @@
+{
+  "passed": true,
+  "version": "1.0",
+  "candidate": "source-sha256:327be61cf6003b56cbc01e0f9abfd8c9a811fa13a80b33175829c93dfc5f6989",
+  "installer": {
+    "path": "dist/Penny-Punchers-1.0-Windows-Setup.exe",
+    "sha256": "6995c7cdacfbc8b621e2464e339c280c133f889ae8565500bcf7cf6fc347f22e",
+    "bytes": 90474626
+  },
+  "attempt": "20260906T015240864649Z",
+  "source_sha256": "8dd7706e43495eaedbbc986509a147ff8eafe3471f755f01558f303d78944baa",
+  "install_directory": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\installer-tests\\20260906T015240864649Z\\Penny Punchers",
+  "processes": [
+    {
+      "name": "install-process",
+      "command": [
+        "D:\\cs-fighting-game\\Penny-Punchers\\dist\\Penny-Punchers-1.0-Windows-Setup.exe",
+        "/VERYSILENT",
+        "/SUPPRESSMSGBOXES",
+        "/NORESTART",
+        "/SP-",
+        "/NOCLOSEAPPLICATIONS",
+        "/DIR=D:\\cs-fighting-game\\Penny-Punchers\\.tools\\installer-tests\\20260906T015240864649Z\\Penny Punchers",
+        "/TASKS=desktopicon",
+        "/LOG=D:\\cs-fighting-game\\Penny-Punchers\\reports\\evidence\\installer-1.0\\attempts\\20260906T015240864649Z\\install.log"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "pid": 17540,
+      "elapsed_seconds": 12.75
+    },
+    {
+      "name": "reinstall-process",
+      "command": [
+        "D:\\cs-fighting-game\\Penny-Punchers\\dist\\Penny-Punchers-1.0-Windows-Setup.exe",
+        "/VERYSILENT",
+        "/SUPPRESSMSGBOXES",
+        "/NORESTART",
+        "/SP-",
+        "/NOCLOSEAPPLICATIONS",
+        "/DIR=D:\\cs-fighting-game\\Penny-Punchers\\.tools\\installer-tests\\20260906T015240864649Z\\Penny Punchers",
+        "/TASKS=desktopicon",
+        "/LOG=D:\\cs-fighting-game\\Penny-Punchers\\reports\\evidence\\installer-1.0\\attempts\\20260906T015240864649Z\\reinstall.log"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "pid": 1640,
+      "elapsed_seconds": 14.797
+    },
+    {
+      "name": "installed-match",
+      "command": [
+        "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\installer-tests\\20260906T015240864649Z\\Penny Punchers\\StrikeLedger.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--smoke",
+        "--evidence-dir",
+        "D:\\cs-fighting-game\\Penny-Punchers\\reports\\evidence\\installer-1.0\\attempts\\20260906T015240864649Z\\installed-match",
+        "--no-screenshots"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "pid": 2316,
+      "elapsed_seconds": 10.422
+    },
+    {
+      "name": "installed-ui",
+      "command": [
+        "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\installer-tests\\20260906T015240864649Z\\Penny Punchers\\StrikeLedger.exe",
+        "--rendering-method",
+        "gl_compatibility",
+        "--max-fps",
+        "60",
+        "--",
+        "--ui-smoke",
+        "--evidence-dir",
+        "D:\\cs-fighting-game\\Penny-Punchers\\reports\\evidence\\installer-1.0\\attempts\\20260906T015240864649Z\\installed-ui"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "pid": 2840,
+      "elapsed_seconds": 82.359
+    },
+    {
+      "name": "uninstall-process",
+      "command": [
+        "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\installer-tests\\20260906T015240864649Z\\Penny Punchers\\unins000.exe",
+        "/VERYSILENT",
+        "/SUPPRESSMSGBOXES",
+        "/NORESTART",
+        "/LOG=D:\\cs-fighting-game\\Penny-Punchers\\reports\\evidence\\installer-1.0\\attempts\\20260906T015240864649Z\\uninstall.log"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "pid": 14316,
+      "elapsed_seconds": 1.547
+    }
+  ],
+  "evidence_directory": "reports/evidence/installer-1.0/attempts/20260906T015240864649Z",
+  "limits": "Windows 10 x64 on this PC; no clean second-PC, physical-controller or human-acceptance claim.",
+  "registered_per_user": true,
+  "payload_files_verified": 218,
+  "shortcuts": [
+    {
+      "path": "C:\\Users\\ryanj\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Penny Punchers\\Penny Punchers.lnk",
+      "target": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\installer-tests\\20260906T015240864649Z\\Penny Punchers\\StrikeLedger.exe",
+      "workingDirectory": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\installer-tests\\20260906T015240864649Z\\Penny Punchers"
+    },
+    {
+      "path": "C:\\Users\\ryanj\\OneDrive\\Desktop\\Penny Punchers.lnk",
+      "target": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\installer-tests\\20260906T015240864649Z\\Penny Punchers\\StrikeLedger.exe",
+      "workingDirectory": "D:\\cs-fighting-game\\Penny-Punchers\\.tools\\installer-tests\\20260906T015240864649Z\\Penny Punchers"
+    }
+  ],
+  "reinstall_preserved_user_file": true,
+  "installed_match_rounds": 7,
+  "installed_match_hash": "8ac7ae2504ef3a9bab9e4b2fbee2e1664abdb1b0e995278c8db87beff5bc337e",
+  "installed_ui_checks": 299,
+  "uninstall_removed_payload_shortcuts_and_registration": true,
+  "uninstall_preserved_user_file": true,
+  "user_settings_unchanged": true,
+  "utc": "2026-09-06T01:54:44.942964+00:00",
+  "cleanup": {
+    "attempted": false,
+    "reason": "Normal verification includes uninstall."
+  },
+  "result_path": "reports/evidence/installer-1.0/attempts/20260906T015240864649Z/verification-result.json",
+  "result_sha256": "0d1f925577692a25bd48f62668c09671e9c3d0ccf548ce465e6230efee6d66c1"
+}

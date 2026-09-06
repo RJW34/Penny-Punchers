@@ -34,10 +34,11 @@
       "total": 2
     }
   },
-  "next_action": "Run actual physical-controller/two-PC/owner playtests; use the private release and audit companion.",
+  "next_action": "Collect tester feedback through the public v1.0 release; complete physical-controller, two-PC and owner playtests.",
   "blocked_requirements": [
     "DEVICE-003",
     "DEVICE-004",
     "HUMAN-001"
-  ]
+  ],
+  "distribution_report": "reports/DISTRIBUTION_1.0.json"
 }

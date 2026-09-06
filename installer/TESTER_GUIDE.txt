@@ -1,0 +1,42 @@
+PENNY PUNCHERS 1.0 - TESTER GUIDE
+
+INSTALL AND PLAY
+Run Penny-Punchers-1.0-Windows-Setup.exe on 64-bit Windows 10 or 11.
+It installs for your account without administrator access. Godot and the .NET
+runtime are included; you do not need to install development tools.
+
+Open Penny Punchers from the Start menu. The optional desktop shortcut is offered
+during setup. Choose Versus CPU for a match or Training lab to practice.
+
+Keyboard: WASD to move, U/I/O for punches, J/K/L for kicks.
+Menus: arrows, Enter and Esc. Full controls and controller assignment are in
+docs/CONTROLS.md and the game's Settings menu.
+
+Vincent is the orange motion fighter. Thomas is the teal charge fighter.
+Choose a fighter, stage and trial, then buy the round's equipment in the shop.
+Buying nothing keeps your free base moves. Purchased equipment expires each round.
+
+REPORT A PROBLEM
+https://github.com/RJW34/Penny-Punchers/issues
+Include version 1.0, Windows version, graphics hardware, mode/stage/fighters,
+input device, exact reproduction steps, expected behavior and what happened.
+Attach a screenshot or replay when useful. Review logs before sharing them.
+Godot logs, saved settings and replays are stored beneath:
+%APPDATA%\Godot\app_userdata\Penny Punchers
+The included RELEASE_CANDIDATE.json identifies the exact game binaries/content.
+
+UNINSTALL OR REINSTALL
+Use Windows Settings > Apps > Penny Punchers, or the Start-menu uninstaller.
+Uninstall preserves your Godot user-data folder. Reinstalling 1.0 replaces the
+installed game files without resetting those settings and replays.
+
+TEST SCOPE
+This installer packages the already verified shop-only v2 game without changing
+its mechanics or replay identity. Physical-controller sessions, two physical LAN
+PCs and human balance/feel acceptance remain outstanding. See
+docs/KNOWN_LIMITATIONS.md and docs/UPGRADE_REVIEW.md for the recorded limits.
+
+This installer is unsigned; Windows may display an unknown-publisher warning.
+Only obtain it from the project's GitHub release and compare its SHA-256 with the
+published checksum file if needed. No project-wide open-source license has been
+selected; third-party notices remain included.

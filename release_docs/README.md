@@ -4,7 +4,15 @@ An original six-button 1v1 fighting game. **Vincent** uses motion inputs and clo
 
 ## Start playing
 
-On Windows, open `StrikeLedger.exe`. On Linux, launch `StrikeLedger.x86_64`. These executable names remain for build compatibility; the game is Penny Punchers. Keep the executable, PCK and accompanying application directory together.
+For Windows 10/11 testers, download **Penny-Punchers-1.0-Windows-Setup.exe** from the [v1.0 release](https://github.com/RJW34/Penny-Punchers/releases/tag/v1.0). Setup installs for your account without administrator access and includes Godot and the .NET runtime. No separate engine, SDK or runtime installation is needed.
+
+Launch **Penny Punchers** from the Start menu. Setup also offers an optional desktop shortcut. The installer is unsigned; no code-signing certificate has been selected.
+
+To uninstall, use **Windows Settings → Apps → Penny Punchers 1.0**, or the Start-menu uninstaller. Your Godot settings and replays remain in `%APPDATA%\Godot\app_userdata\Penny Punchers`; reinstalling does not reset them.
+
+For a portable package, open `StrikeLedger.exe` on Windows or `StrikeLedger.x86_64` on Linux. These executable names remain for build compatibility. Keep the executable, PCK and accompanying application directory together.
+
+Version 1.0 is a tester installer around the byte-identical game binaries of verified candidate `327be61cf6003b56cbc01e0f9abfd8c9a811fa13a80b33175829c93dfc5f6989`. Installer and documentation work does not add a new gameplay certification. The included `RELEASE_CANDIDATE.json` records the exact game identity.
 
 Choose **Versus CPU**, **Local versus**, **Training lab** or **Private match**. Select fighters, a stage and a trial. Foundry Ring, Calibration Grid, **Marist Green — Golden Hour** and **Marist Gates — Blue Hour** share the same combat geometry. Super selection happens in each round's shop, not in the lineup.
 
@@ -38,7 +46,7 @@ Pending skill money is not spendable during the fight. Confirmed settlement depo
 
 Keyboard defaults: A/D walk, W jump, S crouch; U/I/O punches and J/K/L kicks. LP+LK throws; MP+MK overheads. P and semicolon provide PP and KK chords, without performing motions. **Escape or controller Start pauses. B remains MK during combat and Cancel in menus.**
 
-Settings includes two-device remapping, analog triggers, deadzone, physical/logical keyboard layout, audio, display, reduced flashes and shake. Physical mode follows key positions; logical mode follows the selected language layout. See `CONTROLS.md` and the live input test.
+Settings includes two-device remapping, analog triggers, deadzone, physical/logical keyboard layout, audio, display, reduced flashes and shake. Physical mode follows key positions; logical mode follows the selected language layout. See the [controls](CONTROLS.md) and the live input test.
 
 Local versus uses a keyboard and controller, or two controllers. Shared-screen and private commit/reveal drafts are different information formats; do not treat them as the same shop experiment.
 
@@ -54,4 +62,6 @@ Replay saves report success or the actual failure. Playback checks compatible co
 
 Core has 12 rentals, eight EX products and six super permits across both fighters, with 100 runtime action nodes including branches. Expanded has 24 rentals, eight EX products and six permits, with 115 nodes. Expanded replaces Rush Cascade/Tidal Step with Overtime/Prism Lattice. Both trials use this v2 shop-only economy.
 
-Balance remains provisional. `BALANCE_NOTES.md`, `KNOWN_LIMITATIONS.md` and `VERIFICATION_STATUS.md` distinguish software evidence from physical-device and human acceptance. The packaged candidate identity and status files identify the actual binaries; old results do not certify this build. Original artwork and software notices are in `ASSET_NOTICES.md`.
+Balance remains provisional. [Balance notes](BALANCE_NOTES.md), [known limitations](KNOWN_LIMITATIONS.md) and [verification status](VERIFICATION_STATUS.md) distinguish software evidence from physical-device and human acceptance. The packaged candidate identity and status files identify the actual binaries; old results do not certify this build. Original artwork and software notices are in [asset notices](ASSET_NOTICES.md).
+
+Report issues at [GitHub Issues](https://github.com/RJW34/Penny-Punchers/issues) with version 1.0, Windows version, graphics/input hardware, mode, expected behavior and reproduction steps. The owner authorizes public source and tester builds; no project-wide license for original code/art has been selected, and included third-party licenses remain in effect.
