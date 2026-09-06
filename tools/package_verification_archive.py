@@ -10,6 +10,11 @@ def main():
     proof = json.loads((ROOT / 'reports/evidence/shop-v2-packaged-verifiers/result.json').read_text())
     candidate = json.loads((ROOT / 'reports/RELEASE_CANDIDATE.json').read_text())
     assert proof['passed'] and proof['candidate'] == candidate['build_ref']
+    assert hashlib.sha256((folder / 'PACKAGE_MANIFEST.json').read_bytes()).hexdigest() == proof['manifestSha256']
+    for line in (folder / 'SHA256SUMS.txt').read_text().splitlines():
+        digest, name = line.split('  ', 1)
+        target = (folder / name).resolve()
+        assert target.is_relative_to(folder) and hashlib.sha256(target.read_bytes()).hexdigest() == digest
     output = ROOT / 'dist/Penny-Punchers-verification-tools.zip'
     files = sorted(p for p in folder.rglob('*') if p.is_file())
     assert files

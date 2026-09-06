@@ -102,6 +102,8 @@ class Inventory:
         candidates = [(ROOT / origin).parent / value, ROOT / 'data' / value,
                       before / 'source-before' / value, before / 'source-before/data' / value,
                       before / Path(value).name]
+        if origin.startswith(EVIDENCE) and '/' in origin[len(EVIDENCE):]:
+            candidates.extend((ROOT / origin).parent.rglob(Path(value).name))
         if Path(value).suffix.lower() == '.dll':
             for directory in ('pre-name-swap-candidate', 'shop-v2-pilot-harness', 'shop-v2-strategy-harness'):
                 candidates.extend((ROOT / EVIDENCE / directory).rglob(Path(value).name))
@@ -200,7 +202,7 @@ class Inventory:
                     self.exclude(rel, 'Earlier source hash retained in this historical review; current source is in Git. This mismatching historical source is not promoted to current execution evidence.', origin, digest)
                     return
             if not path.is_file():
-                raise ValueError("Missing referenced file: " + rel)
+                raise ValueError("Missing referenced file: " + rel + ' from ' + origin)
             if path.is_symlink():
                 raise ValueError("Symlinks are not archived: " + rel)
             if rel not in self.files:
@@ -290,6 +292,13 @@ def main() -> int:
         blockers.append("Ledger/source candidate mismatch")
     records = ledger["records"]
     software = [r for r in records if r["evidence_scope"] == "software"]
+    original = read(ROOT / 'reports/ACCEPTANCE_RESULTS.json')['records']
+    original_requirements = read(ROOT / 'acceptance/requirements.json')['requirements']
+    original_software = {r['id'] for r in original_requirements if r['gate_class'] == 'software'}
+    if len(original) != 82 or len({r['requirement_id'] for r in original}) != 82 or len(original_software) != 76:
+        blockers.append('Expected the 82 original requirements including 76 software records')
+    if any(r['status'] != 'PASS' for r in original if r['requirement_id'] in original_software):
+        blockers.append('Original software acceptance is incomplete')
     if len(records) != 61 or len({r["id"] for r in records}) != 61 or len(software) != 58:
         blockers.append("Expected 61 original requirements including 58 software records")
     if any(r["status"] != "PASS" for r in software):
@@ -306,7 +315,7 @@ def main() -> int:
     for row in records:
         for artifact in row.get("artifacts", []):
             inventory.add(artifact["path"], row["id"], artifact["sha256"], artifact.get("bytes"), direct=True)
-    for row in read(ROOT / 'reports/ACCEPTANCE_RESULTS.json')['records']:
+    for row in original:
         for artifact in row.get('artifacts', []):
             inventory.add(artifact['path'], row['requirement_id'], artifact['sha256'], artifact.get('bytes'), direct=True)
     for name in SIDECARS:
@@ -370,6 +379,13 @@ repository-relative paths. Do not overwrite a working checkout with newer eviden
 Begin with reports/SHOP_ONLY_V2_ACCEPTANCE.json (61 original SO requirements), then
 reports/AUDIT_CROSSWALK.json (91 PP dispositions) and reports/SHOP_V2_CORE_FINDINGS.md.
 PASS records are scoped software results; read their remaining/observation fields.
+
+The final display-name swap has fresh executable/UI/package checks and an explicit
+source, mechanical-data and Core-method comparison in reports/evidence/name-swap-audit.
+Earlier v2 pilots and recordings keep their original names and build/content/replay
+identities. They are not silently rewritten as new runs. The archive manifest records
+exact snapshot aliases and unavailable historical source references separately;
+current ledger artifact hashes are always checked strictly.
 
 Validate every archived file against the manifest before relying on it. The source
 candidate manifest records source/player hashes; full Git source and Windows/Linux
