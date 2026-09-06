@@ -1,0 +1,4883 @@
+{
+  "format": "penny-shop-only-v2-core-findings",
+  "utc": "2026-09-06T00:09:38.710390+00:00",
+  "scope": "Implementation/evidence crosswalk only; not an acceptance PASS ledger or human balance approval.",
+  "rulesets": {
+    "core": {
+      "moves": 100,
+      "products": 26,
+      "contentHash": "0245f6813c2320a9081fd96fefb4fd600632c92ae8f2be8a56c049129f365734"
+    },
+    "full": {
+      "moves": 115,
+      "products": 38,
+      "contentHash": "e9c73b68e2cc1a128ea6215eb35fcce75036a66deca708dd59d7699efc8ae1f8"
+    }
+  },
+  "productionState": "Core/App and both numeric catalogs frozen. Current tests and pilots below ran against their recorded exact content and assembly identities; native presentation and release integration are independently owned.",
+  "sourceFiles": [
+    {
+      "path": "src/StrikeLedger.BalanceLab/Program.cs",
+      "sha256": "3635ce340b31fa169ab567ce690ec716583f7f3c3b435c727cd8247c53bc7f01",
+      "bytes": 17722
+    },
+    {
+      "path": "src/StrikeLedger.BalanceLab/ShopOnlyPilot.cs",
+      "sha256": "a87b48631b4c7a21973848eda2f09b1772e53870a6e357f268397520418d649c",
+      "bytes": 21607
+    },
+    {
+      "path": "src/StrikeLedger.BalanceLab/ShopStrategyCells.cs",
+      "sha256": "41d5a947e4e2bc52f335b71852b28f1a4105171410ff078e0ce7f98709d4fbc9",
+      "bytes": 11199
+    },
+    {
+      "path": "src/StrikeLedger.Core/CoreMath.cs",
+      "sha256": "00283db2a14cdd2955a3aafb6368358d36dd7d2becd0572b3e3a2c91fb73327a",
+      "bytes": 1226
+    },
+    {
+      "path": "src/StrikeLedger.Core/EconomySeed.cs",
+      "sha256": "4cdae5bbab725201e456826cd9ecbdc87bf81ff7cc5327405375036b230e991a",
+      "bytes": 4945
+    },
+    {
+      "path": "src/StrikeLedger.Core/GameContent.cs",
+      "sha256": "f4ef0b7283d1c2decf3e93966616ab759941120c6f15289f116a8113a66b4a93",
+      "bytes": 19733
+    },
+    {
+      "path": "src/StrikeLedger.Core/InputFrame.cs",
+      "sha256": "b5e453bacc4738fb6f6cae4ecd6e5449ad976986f6792e9dd5ff0580d441f601",
+      "bytes": 878
+    },
+    {
+      "path": "src/StrikeLedger.Core/PreparationRules.cs",
+      "sha256": "6c1636bda67eb6ff8eca1f492c10cba618955a14491729d75ab3cca36bc59f95",
+      "bytes": 3928
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.BuyableActors.cs",
+      "sha256": "722be64988ac3a5cc86200535dcacffc0c5ba23165621af20b2a06a898093d8a",
+      "bytes": 13839
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.BuyableObjects.cs",
+      "sha256": "b30461dd62c96821977f6fc4a2c99ad1d0121140ee1e52c294d2abce3c30e8fa",
+      "bytes": 17405
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.BuyableRoutes.cs",
+      "sha256": "6964e0a5ccac196ed1c9004b33f8f3fab93a007ad7fde60a4930c518e7430e18",
+      "bytes": 7528
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.Combat.cs",
+      "sha256": "22d44d2016490b3c537a9cf42053a4dd13cf02b69f0d71decfa5344a7c682912",
+      "bytes": 22229
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.Input.cs",
+      "sha256": "958a52061beaef63427f6bf3e58b4ec56f7c183920642c66c443193bfab38920",
+      "bytes": 11416
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.Provenance.cs",
+      "sha256": "33493a77eeee306017a7e37b6fe71429a6bb6f6674cffdf95352bd0538b149e7",
+      "bytes": 8467
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.Serialization.cs",
+      "sha256": "24082f3eb13a1f793521ac0989afb77710b3f5f582cc3f1c02a63e5a9bc5ca79",
+      "bytes": 10893
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.SkillRewards.cs",
+      "sha256": "be386bf8e5be3f893b29bdad4edf847a0ad36127f25af1e0dabd9dd08283b327",
+      "bytes": 2263
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.cs",
+      "sha256": "83a31ccc24c5aacf2be7f092c67b61ba66c0c5e5d9881db1f8f9042b198cc51a",
+      "bytes": 15270
+    },
+    {
+      "path": "src/StrikeLedger.Core/SimulationState.cs",
+      "sha256": "260b4b0bb7b3856cab24b6e38f4568e466513ef79473166b72c8197f2cc3b594",
+      "bytes": 6763
+    },
+    {
+      "path": "src/StrikeLedger.Core/SkillRewardState.cs",
+      "sha256": "b28869c1c8f118a5ec9815e0caaf6fc44db6aea18f465d0f10be63eaf6d317da",
+      "bytes": 13377
+    },
+    {
+      "path": "src/StrikeLedger.Core/SystemRules.cs",
+      "sha256": "bf523008552504fce0facb3974f88aff296cab051ad519b449689a604528825d",
+      "bytes": 2484
+    },
+    {
+      "path": "src/StrikeLedger.CoreTests/ActualSkillContactTests.cs",
+      "sha256": "2ac1e8b00ee6574da715759f73867af2a5da7b298b25f8f9d41ebd59ed4080aa",
+      "bytes": 10582
+    },
+    {
+      "path": "src/StrikeLedger.CoreTests/AuditRegressionTests.cs",
+      "sha256": "517cb77e0258466f204faf16ee8b2feaad43a7d71d67242016e0386c9c89796a",
+      "bytes": 17991
+    },
+    {
+      "path": "src/StrikeLedger.CoreTests/BuyableActorTests.cs",
+      "sha256": "a6e0490a2007d5045cbde7197d63b54059253b7eb5cbaf854d74e86d00148fd3",
+      "bytes": 10294
+    },
+    {
+      "path": "src/StrikeLedger.CoreTests/BuyableRouteTests.cs",
+      "sha256": "9ac5ba8537108911270feaf6d553ada31ee7d4a0bd8de6eddbe0a74b90f25986",
+      "bytes": 14517
+    },
+    {
+      "path": "src/StrikeLedger.CoreTests/PaidOptionTests.cs",
+      "sha256": "09a6e803227fa3c4c5f3e57561111200102e6706fcf4e48216ad31a9c44c2f4e",
+      "bytes": 9026
+    },
+    {
+      "path": "src/StrikeLedger.CoreTests/Program.cs",
+      "sha256": "3dbcecb3e44f1c89d2e70ea48a8b0f0db0f843a832b639390fe6d20073531ca3",
+      "bytes": 38522
+    },
+    {
+      "path": "src/StrikeLedger.CoreTests/ShopCapabilityTests.cs",
+      "sha256": "79667e3787acae8247f070ad86d57fd9bcc33e77d0462202e18aaaa46e2a5fc5",
+      "bytes": 12804
+    },
+    {
+      "path": "src/StrikeLedger.CoreTests/ShopPressureTests.cs",
+      "sha256": "a7ed0e497bcf72bc2fc038e69531c2568c968157e5e3ab0b4a9b51a32143034f",
+      "bytes": 5266
+    },
+    {
+      "path": "src/StrikeLedger.CoreTests/ShopSkillRewardTests.cs",
+      "sha256": "99b463c816f486817249447fd5fb3ffd9d0c2ec0bc19c1bfbe41b91011bbb082",
+      "bytes": 7691
+    },
+    {
+      "path": "tools/audit_shop_v2_content.py",
+      "sha256": "c8d4dac111f4873578f2c0194ef19f2f0c739040711570cf6edbe263db0aee4a",
+      "bytes": 7596
+    },
+    {
+      "path": "tools/audit_shop_v2_effects.py",
+      "sha256": "cd42815d4049a2ec9c8a2762a4bd1f8a4fbf02743ffd2b973cbaf4afe388ade3",
+      "bytes": 8019
+    },
+    {
+      "path": "tools/compile_shop_only.py",
+      "sha256": "ee252ce63c5ca94d608c44ee9bc472b7f93049b6c3ed8655095ebd44bb86d906",
+      "bytes": 7222
+    },
+    {
+      "path": "tools/finalize_shop_v2_findings.py",
+      "sha256": "7cd38939506eeab3c48f6bc637a243ff14d57e2a384696d1bdf918a4d7930a16",
+      "bytes": 12610
+    },
+    {
+      "path": "tools/summarize_shop_v2_pilot.py",
+      "sha256": "3b1047b50d38ecf7790788967cca90e3c79b46ee3975795a09bc62ba570c1c6a",
+      "bytes": 8999
+    }
+  ],
+  "evidenceFiles": [
+    {
+      "path": "reports/evidence/shop-v2-canonical-audit/result.json",
+      "sha256": "d5edb445e6205420fb60f32a862a7fd426ec9f56e601f659a2993f82ee7ee6bd",
+      "bytes": 217490
+    },
+    {
+      "path": "reports/evidence/shop-v2-core-full-current/core-conformance.json",
+      "sha256": "418459a386237627418f0e2a1e73275ec78144e4c14a110a512596f63697a7e4",
+      "bytes": 331102
+    },
+    {
+      "path": "reports/evidence/shop-v2-core-core-final/core-conformance.json",
+      "sha256": "6d9cc7437180edc8a597f1db2f04c9108d0a0c260dbbe54f3bc2c8c121880d0d",
+      "bytes": 258658
+    },
+    {
+      "path": "reports/evidence/shop-v2-core-bait-current/core-conformance.json",
+      "sha256": "19889dbb94601d4f9d19c809b88fd12a504e5b7d893a86a753bf681d6733bd73",
+      "bytes": 78149
+    },
+    {
+      "path": "reports/evidence/shop-v2-pilot-analysis.json",
+      "sha256": "42f9b0849f6c9db54a05d8f33ea54bafdd5a69d7002be1e5d3060571f410ac2c",
+      "bytes": 151380
+    },
+    {
+      "path": "reports/evidence/shop-v2-product-pilot-current/summary.json",
+      "sha256": "2eb11ec17e8d8ae9c71208d4eb43c07b574cb7e52c993b4316dd8d7b2a85c4ef",
+      "bytes": 65097
+    },
+    {
+      "path": "reports/evidence/shop-v2-crossover-pilot-current/summary.json",
+      "sha256": "0f857faa7e249f0addbe73f3b14fd68264e8acc89878baee7ce1da7f5b9d6041",
+      "bytes": 31651
+    },
+    {
+      "path": "reports/evidence/shop-v2-app-candidate2-full/self-tests.json",
+      "sha256": "d99237bcabd801f7921b4eba34698c86377851b6a132b0f960849178b48ebb84",
+      "bytes": 2450
+    },
+    {
+      "path": "reports/evidence/shop-v2-objects-candidate2/buyable-object-tests.json",
+      "sha256": "42e769ca37bce7a23fc8400ec45f4d8ba97add6a6dbdc367e092675cc1f61844",
+      "bytes": 1314
+    },
+    {
+      "path": "reports/evidence/shop-v2-objects-candidate2/reflected-origin-precision.json",
+      "sha256": "5af0b69122784434fa64d67c3147402ee4c2ef78ade075c5006f48ca7d05662d",
+      "bytes": 14157
+    },
+    {
+      "path": "reports/evidence/shop-v2-product-pilot-current/samples.jsonl",
+      "sha256": "40682a8cbb7867b043d292a3856e369fcb5e6c8d9bb7838674399f33f8fdf88c",
+      "bytes": 734084
+    },
+    {
+      "path": "reports/evidence/shop-v2-crossover-pilot-current/samples.jsonl",
+      "sha256": "ced32ac8362a2a2ad497622137d22393d34696fa3886ac144bf8f1ac915b9558",
+      "bytes": 106114
+    },
+    {
+      "path": "reports/evidence/shop-v2-product-pilot-current/round-economy.jsonl",
+      "sha256": "73de70c5857d9f4bf42cca7c450e060015a7119ec07e7bf868d509de155c431b",
+      "bytes": 465572
+    },
+    {
+      "path": "reports/evidence/shop-v2-crossover-pilot-current/round-economy.jsonl",
+      "sha256": "6eaccfc0782ef5f837ba2ee4cdb61cad558b34bf306bdd0a694321f4ba58b4a4",
+      "bytes": 410244
+    },
+    {
+      "path": "reports/evidence/shop-v2-core-full-current/audit-legal-traces.json",
+      "sha256": "8aa46bd18515b8e75c749e586d8a2fba5fc56bce6ca9d6bcdd89b47bf11ddfd4",
+      "bytes": 6318582
+    },
+    {
+      "path": "reports/evidence/shop-v2-core-full-current/action-replays.training.json",
+      "sha256": "e18f7e862150b0703d137125a26c8054bb52c4733fe76a437f94e4ac76726c1c",
+      "bytes": 2375409
+    },
+    {
+      "path": "reports/evidence/shop-v2-core-full-current-console.log",
+      "sha256": "fdb616d6167da074804e2dbfd0c6c99a5f2e218749baa6cf7d553dd53aea4bb5",
+      "bytes": 2828
+    },
+    {
+      "path": "reports/evidence/shop-v2-product-pilot-current-console.log",
+      "sha256": "37fb9b6e9ffa012d9a924f231545051539225575313efb3916a04c22700ba9e6",
+      "bytes": 91996
+    },
+    {
+      "path": "reports/evidence/shop-v2-crossover-pilot-current-console.log",
+      "sha256": "e45897085c019ffcfd0fd57ad471cfcc7a10d0b671e42daafcea982821600bce",
+      "bytes": 10236
+    },
+    {
+      "path": "reports/evidence/shop-v2-action-effects.json",
+      "sha256": "648bb35bb1c3f80c9568f47fa9003cd3cc91afb668f5f8075c5983df8d36f394",
+      "bytes": 128617
+    },
+    {
+      "path": "reports/evidence/shop-v2-pilot-process-results.json",
+      "sha256": "62576c0a966cda8d08e14181085f86f6aa8dbc4f8af469dbd375f35965982223",
+      "bytes": 3091
+    },
+    {
+      "path": "reports/evidence/shop-v2-strategy-current/strategy-summary.json",
+      "sha256": "c84261cc631702fe3dd90db63380ae078badfc79efcf0008e4cc48cd8f712522",
+      "bytes": 4379
+    },
+    {
+      "path": "reports/evidence/shop-v2-strategy-core-current/strategy-summary.json",
+      "sha256": "675785c114fa744ef419493097cf9800176366fcdb3aeb84b5d30026f4f1166c",
+      "bytes": 4361
+    },
+    {
+      "path": "reports/evidence/shop-v2-strategy-process-results.json",
+      "sha256": "768a0cdd539f4297def694df2d14b8a8526b2eb8bfad5ef298354df11d1f0596",
+      "bytes": 2237
+    },
+    {
+      "path": "reports/evidence/shop-v2-strategy-current/strategy-samples.jsonl",
+      "sha256": "e8c021633558333d63251a56b7e1ee5a073f9748bd8f5f082c6b53c999edefb2",
+      "bytes": 37530
+    },
+    {
+      "path": "reports/evidence/shop-v2-strategy-core-current/strategy-samples.jsonl",
+      "sha256": "69a28c085cec4650f19ef0f5bb17abb990c98440baa2f9a274f3fbdcf2d077f8",
+      "bytes": 37530
+    },
+    {
+      "path": "reports/evidence/shop-v2-strategy-harness/source-binding.json",
+      "sha256": "7f4bf3eab6d761755f5e94d4ce98aeb54cf539f5237be174fa141125ae1dd8d3",
+      "bytes": 794
+    }
+  ],
+  "pilotHarness": [
+    {
+      "path": "reports/evidence/shop-v2-pilot-harness/StrikeLedger.App.dll",
+      "sha256": "aaa19df03d1d0551b50f119ccba9ae0d78984fe0d0c7120e6a66f94b3c185683",
+      "bytes": 208896
+    },
+    {
+      "path": "reports/evidence/shop-v2-pilot-harness/StrikeLedger.BalanceLab.dll",
+      "sha256": "75a9c8fe08421b14b9e3bfa5522795208703437c4d4e4e77d62bfe596cd55f12",
+      "bytes": 149504
+    },
+    {
+      "path": "reports/evidence/shop-v2-pilot-harness/StrikeLedger.Core.dll",
+      "sha256": "e0c1812e39177786ca355e079009908f79fea330aed1e80f86dae57188253f5b",
+      "bytes": 272896
+    }
+  ],
+  "originalAudit": [
+    {
+      "id": "PP-021",
+      "title": "Shop money displays and some limits bypass canonical content",
+      "implementationState": "IMPLEMENTED_CORE_AND_SHARED_QUOTE",
+      "detail": "Typed canonical prices, mixed slot limits and pure QuotePreparation drive atomic cost; no runtime bank authorizer. Isolated item1900/cap2400 fixture quotes and debits2200 consistently. UI/App integration is independently owned.",
+      "scenarios": [
+        "audit_canonical_purchase_and_registry",
+        "shop_atomic_cart_and_thresholds"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "PP-040",
+      "title": "Simultaneous command throws lack an explicit second-pass arbitration",
+      "implementationState": "IMPLEMENTED_VERIFIED",
+      "detail": "Immutable mutual command grabs clash symmetrically; mixed command/normal resolves command priority; normal-normal tech; mirrored actual input and every-tick reconstruction.",
+      "scenarios": [
+        "audit_mutual_throws_snapshot"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "PP-041",
+      "title": "Air parry arm can survive a landing transition",
+      "implementationState": "IMPLEMENTED_VERIFIED",
+      "detail": "Air parry requires airborne state, clears on landing, and cannot leak through landing recovery into grounded low/overhead defense.",
+      "scenarios": [
+        "audit_air_parry_landing"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "PP-042",
+      "title": "Taunt bypasses the normal action-start parry cleanup",
+      "implementationState": "IMPLEMENTED_VERIFIED",
+      "detail": "Taunt requires grounded actionable unfrozen actor, clears parry and buffers, and commits24ticks without retained defense.",
+      "scenarios": [
+        "audit_taunt_commitment"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "PP-043",
+      "title": "Hurt silhouettes are generic outside active hitbox extension",
+      "implementationState": "IMPLEMENTED_WITH_HUMAN_VALIDATION_OPEN",
+      "detail": "Move-authored half-open hurtbox_windows supply independent body/limb vulnerability during startup/active/recovery and freeze with action clock. New recipes preserve explicit disjoint and recovery roles.",
+      "scenarios": [
+        "audit_authored_recovery_hurtboxes"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": "Paused native overlays and human whiff-punish/silhouette calibration are separate; these numeric shapes are authored gameplay seeds, not automatically traced art."
+    },
+    {
+      "id": "PP-044",
+      "title": "Midair facing and blocked posture transitions need feel validation",
+      "implementationState": "IMPLEMENTED_WITH_FEEL_VALIDATION_OPEN",
+      "detail": "Horizontal facing/charge epoch stays committed airborne; grounded landing updates facing. Current high/low guard input controls posture during blockstop/stun.",
+      "scenarios": [
+        "audit_facing_and_guard_posture",
+        "charge_crossup"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": "Subjective original-feel comparison requires adapted human play; no exact Third Strike emulation claim."
+    },
+    {
+      "id": "PP-066",
+      "title": "Roster and content shape are hardcoded across layers",
+      "implementationState": "IMPLEMENTED_CORE_REGISTRY",
+      "detail": "Semantic registry bounds replace fixed two-fighter/49move/12item restrictions; test-only thirdfighter1250HP and extra stage validate and enter two-seat simulation.",
+      "scenarios": [
+        "audit_canonical_purchase_and_registry"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": "Only Thomas and Vincent are production characters; third fixture is not a new shipped character."
+    },
+    {
+      "id": "PP-078",
+      "title": "Global character-stat purchases are absent and should not be silently introduced",
+      "implementationState": "IMPLEMENTED_VERIFIED",
+      "detail": "Products grant explicit actions or one finite art use; validator rejects passive system-defense products. No global purchased health/damage/speed/income modifiers.",
+      "scenarios": [
+        "audit_canonical_purchase_and_registry",
+        "shop_registry_resource_contract"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "PP-079",
+      "title": "Vale Long Check needs a demonstrated advantage over free Long Heel",
+      "implementationState": "SUPERSEDED_NICHE_SEED_REQUIRES_PLAYTEST",
+      "detail": "Later approved buyables catalog replaces original Long Check with Needle Check: a300-price thin mid, explicit reach and recovering limb, no low profile/knockdown/kara/outgoing cancel.",
+      "scenarios": [
+        "buy_catalog_plain_rental_effects"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json",
+        "reports/evidence/shop-v2-pilot-analysis.json",
+        "reports/evidence/shop-v2-product-pilot-current/summary.json"
+      ],
+      "remaining": "Actual buy/save pilot measures use/contact/outcome; a price-justified human anti-poke niche is not established by activation or static geometry alone."
+    },
+    {
+      "id": "PP-080",
+      "title": "Returning Pulse is a one-contact returning threat with owner-wide projectile constraints",
+      "implementationState": "IMPLEMENTED_VERIFIED_MECHANICS",
+      "detail": "Returning Pulse reverses only after a miss, one contact consumes it on hit/block/parry, and shared ordinary-shot occupancy rejects licensed EX/selected-super projectile attempts before consuming use.",
+      "scenarios": [
+        "audit_returning_pulse_ownership"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": "Human setup value and final price remain provisional."
+    },
+    {
+      "id": "PP-081",
+      "title": "Selected-super prices create major access differences not justified by slot order",
+      "implementationState": "SUPERSEDED_RESOURCE_MODEL_MECHANICS_VERIFIED",
+      "detail": "Shop-only v2 replaces old4/3/2 purchased-startup arithmetic with one prepaid use total. All six core arts have exact shop thresholds, actual hit/block/parry/whiff traces and repeated exhausted intent; advanced Overtime/Prism replace fullcatalog third arts.",
+      "scenarios": [
+        "buy_catalog_conventional_art_cost_defense_repeat",
+        "shop_all_super_once_rollback",
+        "buy_route_overtime_wallet_timer"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": "Different arts need adapted human confirm/reversal/positioning value review; equal damage and balanced prices are not asserted."
+    },
+    {
+      "id": "PP-082",
+      "title": "A 300-credit opening award gap can cross a decisive affordability threshold",
+      "implementationState": "V2_PILOT_COMPLETED_LIMITED",
+      "detail": "The approved v2 schedule removes the old300 award gap; pending skill and retained spend can still differ.64score1-0 continuations pair earned-gap versus equal-bank states with0/600 prior-spend fixtures across four isolated controls. Round2 and eventual-match deltas retain seed-block uncertainty.",
+      "scenarios": [],
+      "evidence": [
+        "reports/evidence/shop-v2-pilot-analysis.json",
+        "reports/evidence/shop-v2-product-pilot-current/summary.json",
+        "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
+      ],
+      "remaining": "The assumed round1 skill receipts300/100 are explicit fixture inputs. All-art/loadout factorial and trailer-top-up versus leader-reduction equivalence are not established."
+    },
+    {
+      "id": "PP-083",
+      "title": "Recovery may restore liquidity only after severe score disadvantage",
+      "implementationState": "V2_PILOT_COMPLETED_LIMITED",
+      "detail": "48full matches plus64continuations record every settlement and flag whether the next shop is usable. Analysis separately inventories observed0-1,0-2,0-3,0-4 continuing states and excludes terminal wallets from comeback liquidity.",
+      "scenarios": [],
+      "evidence": [
+        "reports/evidence/shop-v2-pilot-analysis.json",
+        "reports/evidence/shop-v2-product-pilot-current/summary.json",
+        "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
+      ],
+      "remaining": "Only1-0 has paired economic interventions; deeper-deficit states are observations, not causal comeback experiments. Human value of liquidity remains open."
+    },
+    {
+      "id": "PP-084",
+      "title": "Residual spending differences can snowball independently of the win bonus",
+      "implementationState": "V2_PILOT_COMPLETED_LIMITED",
+      "detail": "Every trace starts from an explicit bank/score snapshot and contains atomic preparation plans, actual frozen-bank fight inputs, and confirmed outcome/skill grants. Buy/save pairs retain the exact fee; score1-0 treatments hold prior spending fixed.",
+      "scenarios": [],
+      "evidence": [
+        "reports/evidence/shop-v2-pilot-analysis.json",
+        "reports/evidence/shop-v2-product-pilot-current/summary.json",
+        "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
+      ],
+      "remaining": "The bounded pilot does not model a complete taxonomy of efficient winners, failed human reversals, or asymmetric spending histories."
+    },
+    {
+      "id": "PP-085",
+      "title": "Full-rental plans and combat budgets need explicit opportunity-cost comparisons",
+      "implementationState": "V2_PILOT_COMPLETED_LIMITED",
+      "detail": "800actual rounds compare all38single products and12two-EX pairs to buying nothing at equal opening bank2400. Every product has an actual startup witness and paired seed-block outcome estimate; retained cash stays in the same bank.",
+      "scenarios": [],
+      "evidence": [
+        "reports/evidence/shop-v2-pilot-analysis.json",
+        "reports/evidence/shop-v2-product-pilot-current/summary.json",
+        "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
+      ],
+      "remaining": "Full mixed rental/license/art cart factorial and human opportunity-cost decisions are not exhausted. Single rounds cannot establish match-level purchase value."
+    },
+    {
+      "id": "PP-086",
+      "title": "Unlimited per-round rental use makes duration and repeat pressure central to value",
+      "implementationState": "V2_PILOT_COMPLETED_LIMITED",
+      "detail": "Observed uses, contact outcomes, round lengths and full command traces are retained. Repeatable EX is additionally exercised at zero bank with ordinary recovery/charge rules and80corner response cells.",
+      "scenarios": [],
+      "evidence": [
+        "reports/evidence/shop-v2-pilot-analysis.json",
+        "reports/evidence/shop-v2-product-pilot-current/summary.json",
+        "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
+      ],
+      "remaining": "Short/long contextual value, deterrence and adapted repeated pressure remain human balance questions; frequent activation alone is not treated as value."
+    },
+    {
+      "id": "PP-088",
+      "title": "Raw first-round-winner conversion is confounded by score and player strength",
+      "implementationState": "V2_PILOT_COMPLETED_LIMITED",
+      "detail": "Reports separate the analytical score-only163/256 benchmark from measured results and paired score-preserving interventions. Counterbalanced seats are averaged within seed blocks; with two chosen seeds the conditional intervals remain broad.",
+      "scenarios": [],
+      "evidence": [
+        "reports/evidence/shop-v2-pilot-analysis.json",
+        "reports/evidence/shop-v2-product-pilot-current/summary.json",
+        "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
+      ],
+      "remaining": "No50percent first-winner conversion target or population human balance conclusion. Stage, art and player-pair blocking is incomplete."
+    },
+    {
+      "id": "PP-089",
+      "title": "Earlier parity payout variants need isolated versioned experiments",
+      "implementationState": "V2_PILOT_COMPLETED_LIMITED",
+      "detail": "Approved v2 uses four isolated controls: A historical payouts/no skills, B historical/capped skills, C shipping parity/capped skills, D parity/no skills. C is byte-identical to shipping; all variant files and hashes are retained.48fresh matches plus64continuations are reconstructed.",
+      "scenarios": [],
+      "evidence": [
+        "reports/evidence/shop-v2-pilot-analysis.json",
+        "reports/evidence/shop-v2-product-pilot-current/summary.json",
+        "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
+      ],
+      "remaining": "This is a representative pilot, not final balance approval. Crossover policies consumed zero super uses, so those matches do not measure art-frequency effects; separate product rounds and conformance cover actual arts."
+    },
+    {
+      "id": "PP-091",
+      "title": "Economic telemetry should expose affordability and payout history rather than wallet totals alone",
+      "implementationState": "V2_PILOT_COMPLETED_LIMITED",
+      "detail": "Every observed round exports pre-settlement bank, nominal/granted/clipped result payout, old/new recovery tier, separate earned/granted/clipped skills, score and continuing-state usability. Analysis verifies both seats' settlement equations; full command traces reconstruct preparation debits and every bank-frozen fight tick.",
+      "scenarios": [],
+      "evidence": [
+        "reports/evidence/shop-v2-pilot-analysis.json",
+        "reports/evidence/shop-v2-product-pilot-current/summary.json",
+        "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
+      ],
+      "remaining": "Owned-threat utility is distinct from bank totals. UI ledger rendering is independently verified; mathematical state counts are never presented as played matches."
+    },
+    {
+      "id": "PP-087",
+      "title": "Zero-credit legal actions do not prove adequate answers to funded chip and pressure",
+      "implementationState": "SCRIPTED_COUNTERPLAY_MEASURED",
+      "detail": "All 8 EX across 2 facings and 5 real responses at a 100 HP zero-bank cornered defender. 80 reconstructed cells retain damage, survival and failed responses: 64 survivals, 14/16 scripted parry successes. Rook Pulse EX predictor missed its close spawn at both facings; this is not labeled impossible to parry.",
+      "scenarios": [
+        "shop_ex_zero_bank_corner_counterplay"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": "Predictive scripts are not human reaction measurements. All-art low-health corner sequences and adaptive mixed rental/EX pressure are not exhausted by these EX cells; conventional art defense tests are separate."
+    },
+    {
+      "id": "PP-090",
+      "title": "A locked reserve can suppress a comeback or final-round cash-out unintentionally",
+      "implementationState": "SUPERSEDED_DISABLED",
+      "detail": "V2 has no active reserve floor. Nonzero compatibility parameter rejects atomically; ownership and finite use alone authorize enhanced actions.",
+      "scenarios": [
+        "reserve_two_ex_then_deny",
+        "shop_atomic_cart_and_thresholds"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    }
+  ],
+  "ownedV2Requirements": [
+    {
+      "id": "SO-004",
+      "title": "Every live product and move mapped",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "buy_catalog_base_action_effects",
+        "buy_catalog_plain_rental_effects"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json",
+        "reports/evidence/shop-v2-action-effects.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-005",
+      "title": "EX has explicit buy-period price and license",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_atomic_cart_and_thresholds",
+        "shop_all_ex_repeat_without_bank"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-006",
+      "title": "Super permit bought and chosen every round",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_all_super_once_rollback",
+        "shop_competitive_bank_and_expiry"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-007",
+      "title": "Mixed cart constraints data-driven",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_registry_resource_contract",
+        "shop_atomic_cart_and_thresholds"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-008",
+      "title": "Catalog distinguishes implemented from proposed",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_registry_resource_contract"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-009",
+      "title": "New content/schema identity",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_registry_resource_contract",
+        "snapshot_determinism_and_bounds"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-010",
+      "title": "Atomic both-player shop commit",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_atomic_cart_and_thresholds"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-011",
+      "title": "Duplicate commits idempotent and conflicts rejected",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_atomic_cart_and_thresholds"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-012",
+      "title": "No combat bank writes or affordability checks",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_competitive_bank_and_expiry",
+        "shop_all_ex_repeat_without_bank"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-013",
+      "title": "Repeatable EX ownership correct",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_all_ex_repeat_without_bank"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-014",
+      "title": "Locked intent does not downgrade",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_locked_vocabulary_and_release"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-015",
+      "title": "Super use commits exactly once",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_all_super_once_rollback",
+        "ex_cancel_super_costs"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-016",
+      "title": "Ordinary free kit preserved",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "free_kit_round",
+        "buy_catalog_base_action_effects"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-017",
+      "title": "Round expiry and rematch reset",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_competitive_bank_and_expiry",
+        "economy_hand_derived_match_sequences"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-018",
+      "title": "Charge and cancel legality preserved",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "charge_crossup",
+        "ex_cancel_super_costs",
+        "cancel_contact_not_whiff"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-019",
+      "title": "Pre-contact immutable provenance",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_actual_antiair_both_seats",
+        "shop_actual_ground_launch_not_antiair"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-020",
+      "title": "Counter-hit definition tested",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_actual_counter_and_parry_rewards",
+        "shop_actual_passive_feint_not_counter_income"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-021",
+      "title": "Anti-air definition tested",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_actual_antiair_both_seats",
+        "shop_actual_ground_launch_not_antiair"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-022",
+      "title": "Perfect parry timing deterministic",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_actual_counter_and_parry_rewards"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-023",
+      "title": "Frozen-edge parry rule explicit",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_precision_freeze_entry_clock"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-024",
+      "title": "Multihit and reflection provenance",
+      "scopeState": "CORE_VERIFIED_SHARED_APP_BOUNDARY",
+      "scenarios": [
+        "shop_skill_manual_precision_and_origin",
+        "multihit_super_parry",
+        "buy_route_rivet_contact_chain"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json",
+        "reports/evidence/shop-v2-objects-candidate2/buyable-object-tests.json",
+        "reports/evidence/shop-v2-objects-candidate2/reflected-origin-precision.json"
+      ],
+      "remaining": "Actual reflected own-origin precision parry retains the root and awards no opportunity; enemy-origin control awards100practice opportunity. Competitive root classifier and settlement are covered separately."
+    },
+    {
+      "id": "SO-025",
+      "title": "Simultaneous and lethal contacts fair",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "simultaneous_trade_and_rank",
+        "shop_actual_lethal_tick_reward_and_settlement"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-026",
+      "title": "Pending awards cannot be spent",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_actual_counter_and_parry_rewards"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-027",
+      "title": "Overlapping awards resolved once",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_skill_antiair_opener_priority"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-028",
+      "title": "Per-category and aggregate caps",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_skill_caps_and_partial_receipts",
+        "shop_actual_repeated_baits_and_partial_cap",
+        "shop_actual_repeated_baits_and_partial_cap",
+        "shop_actual_repeated_baits_and_partial_cap"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-029",
+      "title": "Duplicates and canonical order",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_skill_duplicates_order_and_fail_closed"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-030",
+      "title": "Confirmed payout and clipping",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_actual_lethal_tick_reward_and_settlement",
+        "shop_competitive_bank_and_expiry"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-031",
+      "title": "Draw/abort/final results defined",
+      "scopeState": "CORE_VERIFIED_SHARED_APP_BOUNDARY",
+      "scenarios": [
+        "nine_round_match_draw",
+        "confirmed_settlement_only"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json",
+        "reports/evidence/shop-v2-app-candidate2-full/self-tests.json"
+      ],
+      "remaining": "App confirmation/abort and native results rendering have independently owned current evidence."
+    },
+    {
+      "id": "SO-032",
+      "title": "No passive/farming shortcuts",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_skill_training_policy_and_bounded_feeding"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-033",
+      "title": "Complete authoritative snapshot",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "snapshot_determinism_and_bounds",
+        "shop_all_super_once_rollback"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-034",
+      "title": "Corrected use and reward roll back",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_all_super_once_rollback",
+        "shop_actual_lethal_tick_reward_and_settlement"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-038",
+      "title": "Bounded memory and malformed payloads",
+      "scopeState": "CORE_VERIFIED_SHARED_APP_BOUNDARY",
+      "scenarios": [
+        "snapshot_determinism_and_bounds",
+        "shop_skill_duplicates_order_and_fail_closed"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json",
+        "reports/evidence/shop-v2-app-candidate2-full/self-tests.json"
+      ],
+      "remaining": "Hostile wire validation is independently owned by App; no unbounded network-payload claim from Core tests alone."
+    },
+    {
+      "id": "SO-049",
+      "title": "Lab trace exports new semantics",
+      "scopeState": "PILOT_COMPLETED_LIMITED",
+      "scenarios": [],
+      "evidence": [
+        "reports/evidence/shop-v2-pilot-analysis.json",
+        "reports/evidence/shop-v2-product-pilot-current/summary.json",
+        "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
+      ],
+      "remaining": "Two selected seeds and scripted policies; complete matchup/stage/cart factorial and adapted human competitive balance remain open."
+    },
+    {
+      "id": "SO-050",
+      "title": "Library entries not false completions",
+      "scopeState": "MECHANICS_VERIFIED_BALANCE_OPEN",
+      "scenarios": [
+        "buy_catalog_plain_rental_effects"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": "Implemented100/115 actionnodes and26/38 products; no design-only live entries. Human counterplay/price approval remains open."
+    },
+    {
+      "id": "SO-051",
+      "title": "Repeatable EX pressure matrix",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_all_ex_repeat_without_bank",
+        "shop_ex_zero_bank_corner_counterplay"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json",
+        "reports/evidence/shop-v2-pilot-analysis.json",
+        "reports/evidence/shop-v2-product-pilot-current/summary.json"
+      ],
+      "remaining": "All 12 two-EX pairs run against retained-cash controls; 94/96 purchased pair rounds actually start both licenses. 80 corner responses retain failures. No human reaction or universal escape claim."
+    },
+    {
+      "id": "SO-052",
+      "title": "A/B/C/D economic controls",
+      "scopeState": "PILOT_COMPLETED_LIMITED",
+      "scenarios": [],
+      "evidence": [
+        "reports/evidence/shop-v2-pilot-analysis.json",
+        "reports/evidence/shop-v2-product-pilot-current/summary.json",
+        "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
+      ],
+      "remaining": "Two selected seeds and scripted policies; complete matchup/stage/cart factorial and adapted human competitive balance remain open."
+    },
+    {
+      "id": "SO-053",
+      "title": "Comeback evidence score-controlled",
+      "scopeState": "PILOT_COMPLETED_LIMITED",
+      "scenarios": [],
+      "evidence": [
+        "reports/evidence/shop-v2-pilot-analysis.json",
+        "reports/evidence/shop-v2-product-pilot-current/summary.json",
+        "reports/evidence/shop-v2-crossover-pilot-current/summary.json"
+      ],
+      "remaining": "Two selected seeds and scripted policies; complete matchup/stage/cart factorial and adapted human competitive balance remain open."
+    },
+    {
+      "id": "SO-054",
+      "title": "Reward-farming and opportunism trials",
+      "scopeState": "PILOT_COMPLETED_LIMITED",
+      "scenarios": [
+        "shop_actual_repeated_baits_and_partial_cap",
+        "shop_strategy_cells"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-pilot-analysis.json",
+        "reports/evidence/shop-v2-product-pilot-current/summary.json",
+        "reports/evidence/shop-v2-crossover-pilot-current/summary.json",
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json",
+        "reports/evidence/shop-v2-core-bait-current/core-conformance.json",
+        "reports/evidence/shop-v2-strategy-current/strategy-summary.json",
+        "reports/evidence/shop-v2-strategy-core-current/strategy-summary.json"
+      ],
+      "remaining": "Both seats complete repeated actual CH/AA/precision baits and partial caps. A separate32-cell supplement per catalog records unused-permit threat, draw-seeking, chip-out and decisive cash-out against matched control policies; all64 decisive-round match continuations reconstruct. Draw-seeking loses by timeout in these cells, both free/EX chip controls KO, and the purchased permit is actually used or deliberately retained as declared. Scripted policy outcomes do not establish optimal or human farming, deterrence or price fairness."
+    },
+    {
+      "id": "SO-056",
+      "title": "New-match default is v2",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [
+        "shop_registry_resource_contract"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    },
+    {
+      "id": "SO-057",
+      "title": "Production regression suite clean",
+      "scopeState": "CORE_SCENARIOS_VERIFIED",
+      "scenarios": [],
+      "evidence": [
+        "reports/evidence/shop-v2-core-full-current/core-conformance.json"
+      ],
+      "remaining": ""
+    }
+  ],
+  "remainingBoundaries": [
+    "Physical controllers, two physical PCs and owner/friend verdict are not performed by this subtask.",
+    "Human adaptation, complete stage/matchup factorial and final product pricing remain provisional.",
+    "Old direct-spend492pilot results and15seed arithmetic tests are historical, not current v2 proof.",
+    "Legacy ReserveFloor/SpendReceipts types remain compatibility fields fixed0/empty; old SpendSnapshot is an isolated historical arithmetic seed, not a Simulation activation path."
+  ],
+  "currentVerification": {
+    "fullCoreScenarios": 75,
+    "coreScenarios": 65,
+    "coreSupplementalBaitScenario": 1,
+    "canonicalChecks": 25,
+    "productRounds": 800,
+    "crossoverFullMatches": 48,
+    "scoreControlledContinuations": 64,
+    "allReconstructed": true,
+    "excluded": 0,
+    "coreAssemblyId": "3ac20fff-bc62-40e0-ab5d-88a864f980f8",
+    "appBuild": "pp-shop-only-v2/3aaa9b7c6de09ecb685e805b0edd641b35d36972f2a74f4a45700dcf9d0360f0",
+    "fightBankEqualityAssertions": 3036953,
+    "pressureCells": 80,
+    "pressureParrySuccesses": 14,
+    "pressureParryAttempts": 16,
+    "pressureDefenderSurvivals": 64,
+    "pressureScope": "Scripted legal responses at a100HP already-cornered defender. Rook Pulse EX predictive parry timing missed at both facings; recorded failures are retained. No all-EX human escape claim.",
+    "performanceMetadataNote": "The legacy test report calls all non-DEBUG builds Release. These executions used ExportRelease CoreTests DLL and the recorded exact Core assembly ID. Core step profiling is not native render pacing evidence.",
+    "pilotReportingCorrection": {
+      "reason": "The executed preserved harness mislabeled single-product Payout as A although it loaded the shipping C content hash. This projection changes only that reporting field; actual inputs, commands, scores, events, receipts, hashes and trace bytes remain untouched. Source is fixed for future runs. This is not a claimed simulation rerun.",
+      "correctedRows": 608,
+      "changes": [
+        {
+          "sample": "rental-buy_r_g1_false_start-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g1_false_start-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g1_false_start-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g1_false_start-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g1_false_start-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g1_false_start-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g1_false_start-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g1_false_start-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g1_false_start-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g1_false_start-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g1_false_start-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g1_false_start-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g1_false_start-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g1_false_start-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g1_false_start-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g1_false_start-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g2_check_step-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g2_check_step-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g2_check_step-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g2_check_step-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g2_check_step-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g2_check_step-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g2_check_step-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g2_check_step-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g2_check_step-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g2_check_step-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g2_check_step-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g2_check_step-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g2_check_step-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g2_check_step-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g2_check_step-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g2_check_step-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g3_vault_hop-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g3_vault_hop-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g3_vault_hop-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g3_vault_hop-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g3_vault_hop-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g3_vault_hop-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g3_vault_hop-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g3_vault_hop-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g3_vault_hop-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g3_vault_hop-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g3_vault_hop-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g3_vault_hop-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g3_vault_hop-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g3_vault_hop-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g3_vault_hop-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g3_vault_hop-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g4_wire_cut-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g4_wire_cut-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g4_wire_cut-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g4_wire_cut-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g4_wire_cut-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g4_wire_cut-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g4_wire_cut-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g4_wire_cut-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g4_wire_cut-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g4_wire_cut-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g4_wire_cut-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g4_wire_cut-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g4_wire_cut-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g4_wire_cut-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g4_wire_cut-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_g4_wire_cut-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s1_clinch-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s1_clinch-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s1_clinch-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s1_clinch-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s1_clinch-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s1_clinch-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s1_clinch-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s1_clinch-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s1_clinch-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s1_clinch-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s1_clinch-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s1_clinch-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s1_clinch-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s1_clinch-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s1_clinch-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s1_clinch-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s2_slipstream-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s2_slipstream-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s2_slipstream-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s2_slipstream-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s2_slipstream-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s2_slipstream-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s2_slipstream-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s2_slipstream-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s2_slipstream-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s2_slipstream-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s2_slipstream-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s2_slipstream-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s2_slipstream-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s2_slipstream-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s2_slipstream-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s2_slipstream-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s3_chain1-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s3_chain1-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s3_chain1-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s3_chain1-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s3_chain1-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s3_chain1-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s3_chain1-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s3_chain1-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s3_chain1-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s3_chain1-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s3_chain1-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s3_chain1-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s3_chain1-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s3_chain1-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s3_chain1-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s3_chain1-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s4_counter-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s4_counter-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s4_counter-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s4_counter-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s4_counter-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s4_counter-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s4_counter-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s4_counter-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s4_counter-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s4_counter-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s4_counter-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s4_counter-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s4_counter-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s4_counter-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s4_counter-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_s4_counter-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t1_high_hook-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t1_high_hook-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t1_high_hook-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t1_high_hook-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t1_high_hook-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t1_high_hook-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t1_high_hook-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t1_high_hook-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t1_high_hook-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t1_high_hook-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t1_high_hook-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t1_high_hook-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t1_high_hook-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t1_high_hook-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t1_high_hook-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t1_high_hook-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t2_low_turn-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t2_low_turn-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t2_low_turn-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t2_low_turn-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t2_low_turn-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t2_low_turn-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t2_low_turn-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t2_low_turn-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t2_low_turn-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t2_low_turn-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t2_low_turn-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t2_low_turn-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t2_low_turn-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t2_low_turn-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t2_low_turn-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t2_low_turn-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t3_rivet_lift-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t3_rivet_lift-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t3_rivet_lift-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t3_rivet_lift-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t3_rivet_lift-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t3_rivet_lift-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t3_rivet_lift-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t3_rivet_lift-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t3_rivet_lift-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t3_rivet_lift-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t3_rivet_lift-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t3_rivet_lift-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t3_rivet_lift-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t3_rivet_lift-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t3_rivet_lift-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t3_rivet_lift-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t4_tempered-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t4_tempered-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t4_tempered-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t4_tempered-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t4_tempered-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t4_tempered-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t4_tempered-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t4_tempered-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t4_tempered-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t4_tempered-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t4_tempered-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t4_tempered-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t4_tempered-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t4_tempered-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t4_tempered-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_r_t4_tempered-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g1_false_pulse-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g1_false_pulse-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g1_false_pulse-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g1_false_pulse-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g1_false_pulse-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g1_false_pulse-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g1_false_pulse-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g1_false_pulse-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g1_false_pulse-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g1_false_pulse-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g1_false_pulse-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g1_false_pulse-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g1_false_pulse-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g1_false_pulse-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g1_false_pulse-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g1_false_pulse-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g2_recoil_step-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g2_recoil_step-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g2_recoil_step-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g2_recoil_step-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g2_recoil_step-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g2_recoil_step-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g2_recoil_step-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g2_recoil_step-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g2_recoil_step-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g2_recoil_step-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g2_recoil_step-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g2_recoil_step-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g2_recoil_step-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g2_recoil_step-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g2_recoil_step-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g2_recoil_step-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g3_shear_palm-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g3_shear_palm-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g3_shear_palm-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g3_shear_palm-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g3_shear_palm-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g3_shear_palm-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g3_shear_palm-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g3_shear_palm-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g3_shear_palm-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g3_shear_palm-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g3_shear_palm-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g3_shear_palm-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g3_shear_palm-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g3_shear_palm-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g3_shear_palm-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g3_shear_palm-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g4_slipgate-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g4_slipgate-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g4_slipgate-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g4_slipgate-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g4_slipgate-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g4_slipgate-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g4_slipgate-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g4_slipgate-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g4_slipgate-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g4_slipgate-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g4_slipgate-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g4_slipgate-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g4_slipgate-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g4_slipgate-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g4_slipgate-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_g4_slipgate-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s1_return_pulse-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s1_return_pulse-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s1_return_pulse-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s1_return_pulse-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s1_return_pulse-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s1_return_pulse-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s1_return_pulse-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s1_return_pulse-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s1_return_pulse-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s1_return_pulse-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s1_return_pulse-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s1_return_pulse-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s1_return_pulse-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s1_return_pulse-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s1_return_pulse-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s1_return_pulse-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s2_low_palm-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s2_low_palm-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s2_low_palm-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s2_low_palm-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s2_low_palm-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s2_low_palm-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s2_low_palm-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s2_low_palm-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s2_low_palm-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s2_low_palm-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s2_low_palm-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s2_low_palm-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s2_low_palm-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s2_low_palm-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s2_low_palm-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s2_low_palm-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s3_arc_pulse-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s3_arc_pulse-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s3_arc_pulse-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s3_arc_pulse-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s3_arc_pulse-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s3_arc_pulse-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s3_arc_pulse-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s3_arc_pulse-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s3_arc_pulse-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s3_arc_pulse-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s3_arc_pulse-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s3_arc_pulse-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s3_arc_pulse-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s3_arc_pulse-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s3_arc_pulse-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s3_arc_pulse-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s4_anchor-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s4_anchor-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s4_anchor-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s4_anchor-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s4_anchor-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s4_anchor-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s4_anchor-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s4_anchor-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s4_anchor-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s4_anchor-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s4_anchor-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s4_anchor-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s4_anchor-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s4_anchor-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s4_anchor-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_s4_anchor-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t1_heel_arc-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t1_heel_arc-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t1_heel_arc-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t1_heel_arc-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t1_heel_arc-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t1_heel_arc-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t1_heel_arc-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t1_heel_arc-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t1_heel_arc-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t1_heel_arc-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t1_heel_arc-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t1_heel_arc-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t1_heel_arc-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t1_heel_arc-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t1_heel_arc-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t1_heel_arc-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t2_needle_check-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t2_needle_check-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t2_needle_check-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t2_needle_check-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t2_needle_check-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t2_needle_check-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t2_needle_check-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t2_needle_check-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t2_needle_check-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t2_needle_check-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t2_needle_check-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t2_needle_check-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t2_needle_check-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t2_needle_check-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t2_needle_check-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t2_needle_check-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t3_descending_heel-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t3_descending_heel-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t3_descending_heel-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t3_descending_heel-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t3_descending_heel-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t3_descending_heel-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t3_descending_heel-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t3_descending_heel-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t3_descending_heel-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t3_descending_heel-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t3_descending_heel-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t3_descending_heel-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t3_descending_heel-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t3_descending_heel-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t3_descending_heel-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t3_descending_heel-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t4_skycatch-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t4_skycatch-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t4_skycatch-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t4_skycatch-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t4_skycatch-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t4_skycatch-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t4_skycatch-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t4_skycatch-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t4_skycatch-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t4_skycatch-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t4_skycatch-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t4_skycatch-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t4_skycatch-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t4_skycatch-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t4_skycatch-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-buy_v_t4_skycatch-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_knee_ex-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_knee_ex-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_knee_ex-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_knee_ex-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_knee_ex-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_knee_ex-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_knee_ex-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_knee_ex-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_knee_ex-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_knee_ex-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_knee_ex-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_knee_ex-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_knee_ex-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_knee_ex-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_knee_ex-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_knee_ex-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_pulse_ex-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_pulse_ex-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_pulse_ex-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_pulse_ex-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_pulse_ex-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_pulse_ex-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_pulse_ex-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_pulse_ex-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_pulse_ex-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_pulse_ex-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_pulse_ex-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_pulse_ex-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_pulse_ex-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_pulse_ex-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_pulse_ex-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_pulse_ex-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_rise_ex-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_rise_ex-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_rise_ex-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_rise_ex-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_rise_ex-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_rise_ex-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_rise_ex-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_rise_ex-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_rise_ex-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_rise_ex-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_rise_ex-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_rise_ex-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_rise_ex-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_rise_ex-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_rise_ex-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_rise_ex-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_sway_ex-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_sway_ex-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_sway_ex-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_sway_ex-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_sway_ex-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_sway_ex-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_sway_ex-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_sway_ex-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_sway_ex-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_sway_ex-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_sway_ex-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_sway_ex-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_sway_ex-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_sway_ex-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_sway_ex-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_license_sway_ex-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_buy_r_a3_overtime-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_buy_r_a3_overtime-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_buy_r_a3_overtime-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_buy_r_a3_overtime-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_buy_r_a3_overtime-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_buy_r_a3_overtime-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_buy_r_a3_overtime-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_buy_r_a3_overtime-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_buy_r_a3_overtime-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_buy_r_a3_overtime-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_buy_r_a3_overtime-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_buy_r_a3_overtime-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_buy_r_a3_overtime-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_buy_r_a3_overtime-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_buy_r_a3_overtime-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_buy_r_a3_overtime-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_1-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_1-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_1-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_1-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_1-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_1-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_1-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_1-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_1-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_1-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_1-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_1-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_1-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_1-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_1-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_1-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_2-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_2-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_2-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_2-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_2-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_2-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_2-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_2-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_2-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_2-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_2-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_2-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_2-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_2-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_2-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-rook_permit_super_2-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_heel_ex-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_heel_ex-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_heel_ex-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_heel_ex-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_heel_ex-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_heel_ex-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_heel_ex-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_heel_ex-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_heel_ex-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_heel_ex-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_heel_ex-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_heel_ex-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_heel_ex-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_heel_ex-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_heel_ex-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_heel_ex-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_palm_ex-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_palm_ex-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_palm_ex-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_palm_ex-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_palm_ex-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_palm_ex-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_palm_ex-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_palm_ex-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_palm_ex-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_palm_ex-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_palm_ex-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_palm_ex-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_palm_ex-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_palm_ex-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_palm_ex-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_palm_ex-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_pulse_ex-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_pulse_ex-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_pulse_ex-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_pulse_ex-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_pulse_ex-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_pulse_ex-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_pulse_ex-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_pulse_ex-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_pulse_ex-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_pulse_ex-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_pulse_ex-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_pulse_ex-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_pulse_ex-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_pulse_ex-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_pulse_ex-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_pulse_ex-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_rise_ex-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_rise_ex-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_rise_ex-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_rise_ex-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_rise_ex-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_rise_ex-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_rise_ex-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_rise_ex-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_rise_ex-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_rise_ex-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_rise_ex-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_rise_ex-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_rise_ex-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_rise_ex-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_rise_ex-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_license_rise_ex-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_buy_v_a3_prism-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_buy_v_a3_prism-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_buy_v_a3_prism-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_buy_v_a3_prism-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_buy_v_a3_prism-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_buy_v_a3_prism-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_buy_v_a3_prism-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_buy_v_a3_prism-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_buy_v_a3_prism-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_buy_v_a3_prism-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_buy_v_a3_prism-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_buy_v_a3_prism-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_buy_v_a3_prism-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_buy_v_a3_prism-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_buy_v_a3_prism-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_buy_v_a3_prism-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_1-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_1-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_1-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_1-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_1-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_1-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_1-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_1-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_1-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_1-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_1-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_1-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_1-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_1-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_1-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_1-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_2-pressure-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_2-pressure-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_2-pressure-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_2-pressure-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_2-pressure-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_2-pressure-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_2-pressure-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_2-pressure-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_2-spacing-s1-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_2-spacing-s1-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_2-spacing-s1-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_2-spacing-s1-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_2-spacing-s2-seat0-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_2-spacing-s2-seat0-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_2-spacing-s2-seat1-save",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        },
+        {
+          "sample": "rental-vale_permit_super_2-spacing-s2-seat1-lease",
+          "field": "Payout",
+          "raw": "A",
+          "corrected": "C"
+        }
+      ],
+      "projection": {
+        "path": "reports\\evidence\\shop-v2-pilot-analysis-product-samples.corrected.jsonl",
+        "sha256": "0f901993081f479cc3f4b642149095039cee831c02c4d2f6e6d217e25119216b",
+        "bytes": 734084
+      },
+      "tracePathBase": "reports\\evidence\\shop-v2-product-pilot-current",
+      "rawSamplesSha256": "40682a8cbb7867b043d292a3856e369fcb5e6c8d9bb7838674399f33f8fdf88c",
+      "actualShippingContentHash": "e9c73b68e2cc1a128ea6215eb35fcce75036a66deca708dd59d7699efc8ae1f8"
+    },
+    "roundEconomyReconstruction": {
+      "verifiedRoundReceipts": 1578,
+      "seatBalanceEquations": 3156,
+      "terminalStatesExcludedFromContinuingLiquidity": 112,
+      "scoreDeficitWitnesses": [
+        {
+          "trailerScore": 0,
+          "leaderScore": 1,
+          "observedContinuingEntries": 848,
+          "trailerBankRange": [
+            900,
+            3600
+          ],
+          "scope": "Observed continuing states only, not a randomized causal intervention at this deficit."
+        },
+        {
+          "trailerScore": 0,
+          "leaderScore": 2,
+          "observedContinuingEntries": 32,
+          "trailerBankRange": [
+            1200,
+            2075
+          ],
+          "scope": "Observed continuing states only, not a randomized causal intervention at this deficit."
+        },
+        {
+          "trailerScore": 0,
+          "leaderScore": 3,
+          "observedContinuingEntries": 7,
+          "trailerBankRange": [
+            1500,
+            1750
+          ],
+          "scope": "Observed continuing states only, not a randomized causal intervention at this deficit."
+        },
+        {
+          "trailerScore": 0,
+          "leaderScore": 4,
+          "observedContinuingEntries": 3,
+          "trailerBankRange": [
+            1500,
+            1650
+          ],
+          "scope": "Observed continuing states only, not a randomized causal intervention at this deficit."
+        }
+      ]
+    }
+  },
+  "historicalEvidence": "The first v2 catalogs707a/f29b and later full5169 metadata runs are preserved in their original folders with STATUS.md. Current evidence uses0245/e9c73; no old artifact was silently rebound. Pre-v2 direct-spend checkpoint remains historical."
+}

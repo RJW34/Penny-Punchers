@@ -1,0 +1,21 @@
+{
+  "path": "C:\\Users\\ryanj\\.codex\\generated_images\\01a07055-9215-7c00-ad11-8a4c762ce025\\exec-512d0023-c4c5-4a2e-ba26-b48496df47a7.png",
+  "size": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "bands": [
+    "R",
+    "G",
+    "B"
+  ],
+  "corner": [
+    254,
+    255,
+    254
+  ],
+  "sha256": "10261f210002f3e6f54f5d1b2e2ca20bcc4c3fbc11e4cc197c0883ba4cf14b0a",
+  "actual_alpha": false,
+  "decision": "Do not ship: candidate has painted checkerboard instead of true alpha."
+}

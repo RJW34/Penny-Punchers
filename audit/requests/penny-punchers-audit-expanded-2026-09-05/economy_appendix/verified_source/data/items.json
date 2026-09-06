@@ -1,0 +1,245 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "rook_clinch",
+      "name": "Clinch entry",
+      "slot": "signature",
+      "price": 900,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_clinch",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Clinch entry: a committed command grab option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "Adds a punishable situational option and consumes the signature slot. No system-wide buffs.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "rook_low_drive",
+      "name": "Low drive",
+      "slot": "signature",
+      "price": 900,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_low_drive",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Low drive: a committed low option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "Adds a punishable situational option and consumes the signature slot. No system-wide buffs.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "rook_high_hook",
+      "name": "High hook",
+      "slot": "technique",
+      "price": 600,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_high_hook",
+      "replaces": "command_fhp",
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "High hook: a committed overhead option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "Replaces forward heavy punch; does not add a second forward-heavy move.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "rook_low_turn",
+      "name": "Low turn",
+      "slot": "technique",
+      "price": 600,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_low_turn",
+      "replaces": "command_fhp",
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Low turn: a committed low option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "Replaces forward heavy punch; does not add a second forward-heavy move.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "rook_step_feint",
+      "name": "Step feint",
+      "slot": "gambit",
+      "price": 300,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_step_feint",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Step feint: a committed forward feint option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "A committed feint, not an invincible dodge; occupies the gambit slot.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "rook_sway_feint",
+      "name": "Sway feint",
+      "slot": "gambit",
+      "price": 300,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_sway_feint",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Sway feint: a committed back feint option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "A committed feint, not an invincible dodge; occupies the gambit slot.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "vale_return_pulse",
+      "name": "Returning pulse",
+      "slot": "signature",
+      "price": 900,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_return_pulse",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Returning pulse: a committed projectile option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "Adds a punishable situational option and consumes the signature slot. No system-wide buffs.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "vale_low_palm",
+      "name": "Low palm",
+      "slot": "signature",
+      "price": 900,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_low_palm",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Low palm: a committed low option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "Adds a punishable situational option and consumes the signature slot. No system-wide buffs.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "vale_heel_arc",
+      "name": "Heel arc",
+      "slot": "technique",
+      "price": 600,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_heel_arc",
+      "replaces": "command_fhp",
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Heel arc: a committed overhead option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "Replaces forward heavy punch; does not add a second forward-heavy move.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "vale_long_check",
+      "name": "Long check",
+      "slot": "technique",
+      "price": 600,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_long_check",
+      "replaces": "command_fhp",
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Long check: a committed mid option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "Replaces forward heavy punch; does not add a second forward-heavy move.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "vale_step_feint",
+      "name": "Step feint",
+      "slot": "gambit",
+      "price": 300,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_step_feint",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Step feint: a committed forward feint option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "A committed feint, not an invincible dodge; occupies the gambit slot.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "vale_sway_feint",
+      "name": "Sway feint",
+      "slot": "gambit",
+      "price": 300,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_sway_feint",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Sway feint: a committed back feint option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "A committed feint, not an invincible dodge; occupies the gambit slot.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    }
+  ]
+}

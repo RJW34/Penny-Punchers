@@ -1,0 +1,626 @@
+{
+  "schema_version": 1,
+  "utc": "2026-09-05T22:19:35.900998+00:00",
+  "scope": "Presentation subtask source and executed software evidence, not a final exported-candidate acceptance ledger.",
+  "candidate_binding": {
+    "status": "DEVELOPMENT_SOURCE_ONLY",
+    "final_export_sha256": null,
+    "rebind_required": true
+  },
+  "findings": [
+    {
+      "id": "PP-002",
+      "title": "Legal fighter separation exceeds visible arena width",
+      "implementation_status": "IMPLEMENTED_AWAITING_FINAL_NATIVE",
+      "implementation_paths": [
+        "game/Presentation/ArenaCamera.cs",
+        "game/Presentation/FighterSprites.cs",
+        "game/Presentation/ArenaView.cs",
+        "game/Main.StageEvidence.cs"
+      ],
+      "implemented": "A deterministic stateless presentation camera fits both complete source-cel envelopes, both facings and vertical positions; every rendered world object shares the same projection. Core movement and arena bounds are unchanged.",
+      "software_evidence": [
+        "assets/presentation_checks/results/camera-full.json",
+        "assets/presentation_checks/results/camera-core.json"
+      ],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "Pure checks cover all source rectangles, separated corners and heights. Development native foundry corners and jumps passed and were visually inspected; its later contact setup failed because the old fixed approach stopped too early. The fixture now approaches actual pushbox distance, capped at 240 legal ticks; rerun is required for all four stages."
+      ]
+    },
+    {
+      "id": "PP-032",
+      "title": "All presentation events wait for confirmed remote input",
+      "implementation_status": "IMPLEMENTED_AWAITING_FINAL_NATIVE",
+      "implementation_paths": [
+        "game/Main.Rendering.cs",
+        "game/Presentation/ArenaView.cs",
+        "game/Presentation/ArenaAudio.cs",
+        "src/StrikeLedger.App/RollbackSession.cs"
+      ],
+      "implemented": "The adapter consumes only keyed Add/Confirm/Cancel changes. Local reversible action/jump/dash cues appear speculatively once; correction removes their keyed visuals/audio. Confirm does not replay them. Economic and terminal outcomes stay confirmed.",
+      "software_evidence": [
+        "assets/presentation_checks/results/presentation-compile.txt"
+      ],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "Application rollback contract and tests are owned by the session agent; this report does not relabel their evidence as independently executed here. Final two-peer correction/audio capture remains required."
+      ]
+    },
+    {
+      "id": "PP-033",
+      "title": "Delayed impacts use current positions rather than contact-time positions",
+      "implementation_status": "IMPLEMENTED_AWAITING_FINAL_NATIVE",
+      "implementation_paths": [
+        "game/Main.Rendering.cs",
+        "game/Presentation/ArenaView.cs",
+        "src/StrikeLedger.Core/SimulationState.cs"
+      ],
+      "implemented": "Impact placement prefers Core event-time WorldX/WorldY, SourceFighterId and source move identity; delayed cues retain their original contact location and age, with fallbacks only when event metadata is absent.",
+      "software_evidence": [
+        "assets/presentation_checks/results/presentation-compile.txt"
+      ],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "Final latency/correction capture must demonstrate contact points after both actors move; Core contact metadata tests are reported separately."
+      ]
+    },
+    {
+      "id": "PP-038",
+      "title": "Canonical serialization allocates repeatedly in the hot path",
+      "implementation_status": "OUTSIDE_PRESENTATION_SCOPE",
+      "implementation_paths": [
+        "game/Presentation/RuntimeProfiler.cs"
+      ],
+      "implemented": "Presentation diagnostics separate adapter/draw/overlay costs from gameplay and record GC deltas. Serialization and replay allocation optimization belongs to Core/App owners, not this renderer change.",
+      "software_evidence": [],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "Do not close PP-038 from rendering checks. Use the Core/App allocation benchmark and actual match profiler evidence."
+      ]
+    },
+    {
+      "id": "PP-039",
+      "title": "The recorded half-second frame outlier is unattributed",
+      "implementation_status": "INSTRUMENTED_NOT_YET_ATTRIBUTED",
+      "implementation_paths": [
+        "game/Presentation/RuntimeProfiler.cs",
+        "game/Presentation/ArenaView.cs",
+        "game/Main.Rendering.cs"
+      ],
+      "implemented": "Opt-in profiling records callback distributions, frame phases, >=40ms stalls, GC deltas, managed bytes and movie-capture context. Object overlays have a separate measured scope.",
+      "software_evidence": [
+        "assets/presentation_checks/results/presentation-compile.txt"
+      ],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "No current native pacing run is claimed. C# timing excludes GPU work after submission and includes OS scheduling. A low C# time or absent GC alone cannot establish the cause of a stall."
+      ]
+    },
+    {
+      "id": "PP-043",
+      "title": "Hurt silhouettes are generic outside active hitbox extension",
+      "implementation_status": "VISUAL_ADAPTER_ONLY",
+      "implementation_paths": [
+        "game/Main.Rendering.cs",
+        "game/Presentation/ArenaObjects.cs",
+        "game/Presentation/ArenaView.cs"
+      ],
+      "implemented": "Debug rectangles are derived from actual simulation hurt/hit/push/object geometry and use the same camera projection as artwork; field markers distinguish inactive versus contact-active geometry.",
+      "software_evidence": [
+        "assets/presentation_checks/results/presentation-compile.txt"
+      ],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "Authoring action-specific Core hurt silhouettes is outside this presentation task. Debug agreement is not evidence that every pose has ideal hurt geometry."
+      ]
+    },
+    {
+      "id": "PP-048",
+      "title": "Mapped move phases are not complete bespoke animations",
+      "implementation_status": "PARTIAL_EXISTING_POSE_REUSE",
+      "implementation_paths": [
+        "game/Presentation/FighterSprites.cs",
+        "game/Presentation/animation-timing.json",
+        "assets/bind_buyable_presentation.py",
+        "assets/BUYABLE_PRESENTATION_BINDINGS.json"
+      ],
+      "implemented": "Explicit phase/state bindings distinguish walk directions, neutral transitions, Slipstream follow-ups, Rivet branches, kicks and feint aborts using inspected existing cels. Feints render the exact source anticipation for six ticks. Vault follows actual airborne state; held startup stays on Core action frame.",
+      "software_evidence": [
+        "assets/presentation_checks/results/camera-full.json",
+        "assets/presentation_checks/results/camera-core.json"
+      ],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "No new authored in-between animation set or dedicated air-throw/branch/dive sheet is claimed. The register names reused cels for all 31 new runtime action nodes. Complete bespoke animation remains unfinished."
+      ]
+    },
+    {
+      "id": "PP-049",
+      "title": "Cel timing is uniformly distributed within broad action phases",
+      "implementation_status": "IMPLEMENTED_AWAITING_FINAL_NATIVE",
+      "implementation_paths": [
+        "game/Presentation/CelTimeline.cs",
+        "game/Presentation/animation-timing.json",
+        "game/Presentation/FighterSprites.cs",
+        "game/Main.ArtReview.cs"
+      ],
+      "implemented": "Animation timing is explicit per-cel integer tick holds, including contact follow-through, settle and state loops. Selection uses canonical action frame rather than uniform phase subdivision.",
+      "software_evidence": [
+        "assets/presentation_checks/results/camera-full.json",
+        "assets/presentation_checks/results/camera-core.json"
+      ],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "The pure checks verify duration coverage, positive holds, known cels and exact feint anticipation/abort. Final native per-action playback and human cadence review remain required."
+      ]
+    },
+    {
+      "id": "PP-050",
+      "title": "Runtime magenta keying is a provisional asset pipeline",
+      "implementation_status": "UNRESOLVED_ALPHA_AUTHORING",
+      "implementation_paths": [
+        "game/Presentation/FighterSprites.cs",
+        "design/after-hours-32bit/alpha-review-2026-09-05/verification.json"
+      ],
+      "implemented": "One original-board image-generation alpha experiment was inspected and rejected: it was RGB with painted checkerboard, not real alpha. Shipped source boards were not replaced.",
+      "software_evidence": [
+        "design/after-hours-32bit/alpha-review-2026-09-05/verification.json"
+      ],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "The runtime still uses chroma-key RGB boards. Genuine registered RGBA assets and alpha-boundary validation remain outstanding; shader cleanup is not claimed as authored alpha."
+      ]
+    },
+    {
+      "id": "PP-051",
+      "title": "Heuristic palette recoloring is fragile",
+      "implementation_status": "UNRESOLVED_AUTHORED_PALETTE_MASKS",
+      "implementation_paths": [
+        "game/Presentation/FighterSprites.cs"
+      ],
+      "implemented": "Existing alternate-palette heuristics remain unchanged; ownership labels and non-color-only field shapes improve object readability without claiming a material mask.",
+      "software_evidence": [
+        "assets/presentation_checks/results/presentation-compile.txt"
+      ],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "No authored skin/hair/cloth palette masks were produced. Both mirror palettes require final visual review, and long-term mask authoring remains outstanding."
+      ]
+    },
+    {
+      "id": "PP-052",
+      "title": "Portraits are stretched into incompatible aspect ratios",
+      "implementation_status": "IMPLEMENTED_AWAITING_FINAL_NATIVE",
+      "implementation_paths": [
+        "game/Main.ArtSkin.cs"
+      ],
+      "implemented": "Selection and HUD portraits preserve source aspect through contain/KeepAspectCentered behavior; missing fighter art has a visible development placeholder.",
+      "software_evidence": [],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "Development lineup portraits were visually inspected and proportionate. Final candidate and UI scale variants have not yet been reviewed."
+      ]
+    },
+    {
+      "id": "PP-053",
+      "title": "Menu layout and focus ownership depend on pixel coordinates",
+      "implementation_status": "PARTIAL_SHARED_WITH_SHELL",
+      "implementation_paths": [
+        "game/Main.ArtSkin.cs"
+      ],
+      "implemented": "Preparation skin refresh resolves root-owned semantic purchaseButtons[(Seat,Row)] rather than deriving ownership from pixel positions.",
+      "software_evidence": [],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "Root owns semantic focus routing and controller menu tests. Much layout still uses a 1280x720 canvas; large text and alternate display/UI-scale evidence are not supplied here."
+      ]
+    },
+    {
+      "id": "PP-054",
+      "title": "Typography and shop labels do not yet match the authored art direction",
+      "implementation_status": "IMPLEMENTED_WITH_READABILITY_LIMITS",
+      "implementation_paths": [
+        "game/Main.ArtSkin.cs",
+        "game/Presentation/UiTypography.cs",
+        "assets/UI_FONT_SOURCES.json",
+        "game/Presentation/Fonts/OFL.txt"
+      ],
+      "implemented": "Licensed Barlow body/condensed headings replace generic typography; the title is live PENNY PUNCHERS text. Shop labels, portraits and live names remain functional text.",
+      "software_evidence": [],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "Development lineup and preparation PNGs read cleanly at 1280x720. Final small-window/couch readability and accessibility review remain pending."
+      ]
+    },
+    {
+      "id": "PP-055",
+      "title": "HUD assumes fixed health and art-price formulas",
+      "implementation_status": "IMPLEMENTED_AWAITING_VARIATION_TEST",
+      "implementation_paths": [
+        "game/Main.ArtSkin.cs"
+      ],
+      "implemented": "Health fill and damage trail use each player MaxHealth. Selected-art cost and EX minimum/range use canonical current content; affordability uses actual credits less protected savings.",
+      "software_evidence": [],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "Native temporary MaxHealth/cost variation test remains required. Root catalog/lineup costs are outside this file and must use the same content."
+      ]
+    },
+    {
+      "id": "PP-056",
+      "title": "Resource readability can improve without restoring a combat meter",
+      "implementation_status": "IMPLEMENTED_WITH_COMPREHENSION_LIMITS",
+      "implementation_paths": [
+        "game/Main.ArtSkin.cs"
+      ],
+      "implemented": "The HUD shows one credit wallet, protected savings, spendable amount, selected-art shortage/affordability and EX availability. Damage trail and stun are separate; Overtime is an expiring install icon/countdown, not a second earned resource.",
+      "software_evidence": [],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "The old dev screenshot contains a lease/SAVED overlap, fixed in current source by removing legacy DrawLeaseSummary and placing loadout at baseline158. Verify rebuilt screenshots. Human one-wallet comprehension has not been tested."
+      ]
+    },
+    {
+      "id": "PP-057",
+      "title": "Stage presentation is largely one scrolling image",
+      "implementation_status": "PARTIAL_STAGE_UPGRADE",
+      "implementation_paths": [
+        "game/Presentation/ArenaView.cs",
+        "game/Presentation/ArenaAudio.cs",
+        "assets/MARIST_STAGES.json",
+        "data/stages/marist_green.json",
+        "data/stages/marist_gates.json"
+      ],
+      "implemented": "Original Marist Green and Marist Gates panoramas/select cards are imported unchanged with source/runtime hashes and source attribution; third-party reference photos are excluded. Stage-specific procedural ambience, ground presentation and original synthesized loops are added.",
+      "software_evidence": [],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "Each new background remains one authored panorama; no independently authored parallax layers are claimed. Final stage native playthrough, palette/readability and pacing/audio checks remain pending."
+      ]
+    },
+    {
+      "id": "PP-058",
+      "title": "Generic impact selection understates move identity",
+      "implementation_status": "IMPLEMENTED_WITH_SHARED_FX_ART",
+      "implementation_paths": [
+        "game/Presentation/impact-profiles.json",
+        "game/Presentation/ArenaView.cs",
+        "game/Presentation/ArenaObjects.cs",
+        "game/Main.Rendering.cs"
+      ],
+      "implemented": "Explicit per-move profiles control weight, shake, lifetime, FX atlas range and sound. Event metadata positions contact cues; counters, armor, reflection, interception, anchor phases and prism collision pips use distinct contextual cues.",
+      "software_evidence": [
+        "assets/presentation_checks/results/presentation-compile.txt"
+      ],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "Raster FX still reuse the original authored library. Final high-density/reduced-flash readability, freeze timing and human move-recognition checks remain pending."
+      ]
+    },
+    {
+      "id": "PP-059",
+      "title": "Cosmetic wall-clock aging needs pause and frame-advance review",
+      "implementation_status": "IMPLEMENTED_AWAITING_FINAL_NATIVE",
+      "implementation_paths": [
+        "game/Presentation/ArenaView.cs",
+        "game/Presentation/FighterSprites.cs",
+        "game/Main.Rendering.cs",
+        "game/Main.StageEvidence.cs"
+      ],
+      "implemented": "Combat effects, state age, wallet cues and shake advance using simulation ticks with freeze gates. ResetPresentationTimeline clears transient keys/timers on replay/new-simulation/reset. Environmental ambience alone uses wall time.",
+      "software_evidence": [
+        "assets/presentation_checks/results/presentation-compile.txt"
+      ],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "The native legal-contact pause check did not execute after the old approach fixture failed; the corrected bounded approach is saved but not yet rerun. Final pause/frame-step/seek/rollback visual tests remain required."
+      ]
+    },
+    {
+      "id": "PP-060",
+      "title": "Audio has a foundation but limited variation and character identity",
+      "implementation_status": "PARTIAL_AUDIO_UPGRADE",
+      "implementation_paths": [
+        "game/Presentation/ArenaAudio.cs",
+        "assets/synthesize_audio.py",
+        "assets/check_audio.py",
+        "assets/ASSET_REGISTER.csv"
+      ],
+      "implemented": "Twenty-four original PCM files include deterministic hit/heavy variants, synthesized fighter breaths and two stage loops. A bounded sixteen-voice priority pool protects defensive/terminal cues; cancellation removes speculative audio and explicit shutdown releases streams.",
+      "software_evidence": [
+        "assets/presentation_checks/results/audio-validation.txt"
+      ],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "PCM non-silence/peak/hash validation passed, not speaker validation. Breaths are synthetic noise, not recorded human performances. Dense native mix, cancellation and blind character/defense recognition tests remain pending."
+      ]
+    },
+    {
+      "id": "PP-061",
+      "title": "Terminal feedback does not consistently distinguish result reasons",
+      "implementation_status": "IMPLEMENTED_AWAITING_RESULT_MATRIX",
+      "implementation_paths": [
+        "game/Main.ArtSkin.cs",
+        "game/Main.Rendering.cs"
+      ],
+      "implemented": "Terminal banner derives actual reason and winner: TIME UP, TIME / DRAW, DOUBLE K.O. or K.O. Timeout has a terminal audio cue and economic outcomes remain confirmed.",
+      "software_evidence": [],
+      "final_candidate_native_status": "NOT_RUN",
+      "remaining_limitations": [
+        "Final native KO/timeout/double-KO/draw/early-clinch result matrix is not run here. Root owns terminal match/point rules and result menus."
+      ]
+    }
+  ],
+  "verification": {
+    "pure_camera_full": {
+      "passed": true,
+      "checks": 35129
+    },
+    "pure_camera_core": {
+      "passed": true,
+      "checks": 35044
+    },
+    "isolated_presentation_compile": {
+      "passed": true,
+      "warnings": 0,
+      "errors": 0,
+      "scope": "game/Presentation C# against GodotSharp; does not compile Main/Core/App"
+    },
+    "audio": {
+      "passed": true,
+      "unique_pcm_files": 24
+    },
+    "final_native": "NOT_RUN",
+    "physical_devices": "NOT_RUN",
+    "human_feel_and_readability": "NOT_RUN",
+    "commands": [
+      "dotnet run --project assets/presentation_checks/camera/CameraChecks.csproj -- . data/rulesets/buyables_full/fighters",
+      "dotnet run --no-build --project assets/presentation_checks/camera/CameraChecks.csproj -- . data/fighters",
+      "dotnet build assets/presentation_checks/compile/PresentationCompile.csproj --nologo",
+      "python assets/check_audio.py"
+    ]
+  },
+  "development_native_review": {
+    "scope": "Partial root-run Debug software-injected UI, not a complete pass and not physical controller certification. Paths may be replaced by the next development run; the hashes identify the bytes actually reviewed.",
+    "overall_run_passed": false,
+    "failure": "Old fixed 115-tick approach did not reach heavy-contact range; Main.StageEvidence now uses actual pushbox distance with a 240-tick bound. Rerun pending.",
+    "screenshots": [
+      {
+        "path": "reports/evidence/editor-upgrade-ui-dev/ui-01a-cpu-lineup-footer.png",
+        "sha256": "7ec3c1b340398e57b101b36fc8ca698b50f27184119050edd3238a5fd19c337b",
+        "visually_inspected": true
+      },
+      {
+        "path": "reports/evidence/editor-upgrade-ui-dev/ui-02-independent-preparation.png",
+        "sha256": "6d577faf32f6c6e8c376b5e2281421c16f28f5c5d7115bf14f85d2c0802fa7f7",
+        "visually_inspected": true
+      },
+      {
+        "path": "reports/evidence/editor-upgrade-ui-dev/stage-foundry-opposite-corners.png",
+        "sha256": "02e16344999c66b33f9dcacf4361994f9cb2978bdcf0f777d9c25714c2755dd1",
+        "visually_inspected": true
+      },
+      {
+        "path": "reports/evidence/editor-upgrade-ui-dev/stage-foundry-corner-jumps.png",
+        "sha256": "518ad4b07e95d6b337b53e07b09387095335d6855213904719721bb04cb19c4d",
+        "visually_inspected": true
+      }
+    ],
+    "observations": [
+      "Lineup: Thomas/Vincent portraits preserve aspect; super selection, stage/ruleset buttons and footer do not overlap.",
+      "Preparation: independent ownership, rent/keep/spendable values, source-threat feint description and tradeoff text are readable.",
+      "Opposite-corner and simultaneous-jump screenshots retain both full silhouettes inside safe frame.",
+      "Old combat HUD screenshot has BASE KIT/SAVED overlap; current source fix predates this report but requires a rebuilt capture.",
+      "The explicitly labelled test-only banner overlays part of P2 heading; no production banner is present."
+    ]
+  },
+  "proposal_review": {
+    "status": "FULL_READ_COMPLETE",
+    "package": "audit/requests/penny-punchers-buyables-design-v1",
+    "reviewed": [
+      "Design, combat/resource, shop/presentation, integration, balance/release and future-research documents",
+      "All catalog/economy/migration/research/acceptance JSON and complete proposal tools/tests",
+      "Full standalone HTML: all 38 article semantic fields compared with catalog JSON, zero mismatches; page shell/style/scripts read"
+    ],
+    "not_implemented_as_part_of_presentation": [
+      "B3 matched equal-opening-credit buyer versus base-kit trials for all 38 items, with actual rent debited from buyer",
+      "B4 specified synergy matrix and adversarial economic evaluation",
+      "Human or appearance-reactive-policy feint effectiveness, with no direct action-ID knowledge",
+      "Human game feel, physical controllers, and two physical network PCs"
+    ],
+    "clarifications": [
+      "Core trial preserves the previous third arts; full trial activates Overtime/Prism.",
+      "Practice input teaching is not a matched economic value trial or proof of optimal defense.",
+      "The eight future concepts are explicitly optional research, not current mandatory mechanics.",
+      "New catalog animation bindings are existing pose reuse, not newly authored art."
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "assets/ASSET_REGISTER.csv",
+      "bytes": 21619,
+      "sha256": "0f4966fd800ef561cd5af650302e34ecc205160cb43aed68b1733d814a5ca0ed"
+    },
+    {
+      "path": "assets/BUYABLE_PRESENTATION_BINDINGS.json",
+      "bytes": 11020,
+      "sha256": "075c2a4280bcb97855386c301f600eecee78c88f5572690a67e6def50ca7c81e"
+    },
+    {
+      "path": "assets/MARIST_STAGES.json",
+      "bytes": 2028,
+      "sha256": "790f7cb46f054c61a45c13d83e705e8c0a55324a8d47f5473e9b39457bd5189b"
+    },
+    {
+      "path": "assets/PRESENTATION_UPGRADE.md",
+      "bytes": 5257,
+      "sha256": "83d081090cb1e3ba8e656b8726a5b0d4f79331d86847b8ed9f4f72c7c569386e"
+    },
+    {
+      "path": "assets/UI_FONT_SOURCES.json",
+      "bytes": 966,
+      "sha256": "0a64c188375ed830f76adf472d98b7a30fb5c389b429942d5069e6c0aa13d1cb"
+    },
+    {
+      "path": "assets/bind_buyable_presentation.py",
+      "bytes": 7993,
+      "sha256": "90cce3c3adae4c08badff9d6f13c70d6b4083176a3d4621fb57b0868d67f98b1"
+    },
+    {
+      "path": "assets/check_audio.py",
+      "bytes": 1339,
+      "sha256": "cd5793f5238b46e93fc4d70a89fe90233a88f2049b07e2a323934993f0b78e3d"
+    },
+    {
+      "path": "assets/presentation_checks/camera/CameraChecks.csproj",
+      "bytes": 410,
+      "sha256": "a14eeb80da2fc1df557af627bbf2c87b44f63fc9633a67dcdd9b07ace66bb819"
+    },
+    {
+      "path": "assets/presentation_checks/camera/Program.cs",
+      "bytes": 5638,
+      "sha256": "85444c122eb68c651f44fe89e7b5a92175e766b4394239c737efd0c8840153c5"
+    },
+    {
+      "path": "assets/presentation_checks/compile/PresentationCompile.csproj",
+      "bytes": 421,
+      "sha256": "5253d02f34b3d436e01f95e40853a59631c6d7c3bfdeb7fe9c63b07661fed6f4"
+    },
+    {
+      "path": "assets/presentation_checks/results/audio-validation.txt",
+      "bytes": 3122,
+      "sha256": "195e773405f58f1839e7a91845d024ac537f345fae7b209810be0e4d459169de"
+    },
+    {
+      "path": "assets/presentation_checks/results/camera-core.json",
+      "bytes": 260,
+      "sha256": "111ead29828841bf5b7e51e417c2d210c4077903c63d4152b071790979c7e33e"
+    },
+    {
+      "path": "assets/presentation_checks/results/camera-full.json",
+      "bytes": 260,
+      "sha256": "ed35646e6a219b0e5a0c86b7a4dba2a5fa97fed634889a95803721f1e757d4b7"
+    },
+    {
+      "path": "assets/presentation_checks/results/presentation-compile.txt",
+      "bytes": 301,
+      "sha256": "e77b5b9d6f2f0057ef0fb3476d700612c35544b84f706a1cc0a4e9794213c7e9"
+    },
+    {
+      "path": "assets/synthesize_audio.py",
+      "bytes": 5279,
+      "sha256": "b45cb55af95c05301e4304bc3776799adb49f95085f1638828eff0e393530439"
+    },
+    {
+      "path": "data/rulesets/buyables_full/fighters/rook.json",
+      "bytes": 148976,
+      "sha256": "07d7bfd4d75856cdc24724693f460ea84777fb9db9b4e7a740623da6ea8d137b"
+    },
+    {
+      "path": "data/rulesets/buyables_full/fighters/vale.json",
+      "bytes": 135694,
+      "sha256": "7780bd14db9a881ad541f42071b3d22315ebb7a4889f8e4c4601ca75cb12e056"
+    },
+    {
+      "path": "data/stages/marist_gates.json",
+      "bytes": 542,
+      "sha256": "61e30eed3993e21cfe98887f7268842ecb346f35f1b80300088bc4a83a347151"
+    },
+    {
+      "path": "data/stages/marist_green.json",
+      "bytes": 581,
+      "sha256": "3fc103e997e84decf44b7242f81032c052e4a5229d094c02b8f4bd3da8f1e8f7"
+    },
+    {
+      "path": "design/after-hours-32bit/alpha-review-2026-09-05/verification.json",
+      "bytes": 500,
+      "sha256": "9f3b339eedc993a469d89a3ff266f139ccebfeaf79143f0824880b339f77b497"
+    },
+    {
+      "path": "game/Main.ArtReview.cs",
+      "bytes": 6728,
+      "sha256": "38f951e599415c7a842d72e6958e807c40b623d55a2b4232151c044da1fd8bf7"
+    },
+    {
+      "path": "game/Main.ArtSkin.cs",
+      "bytes": 12976,
+      "sha256": "c10955e2e8aa482dc6eb5d0d0a9c6e57a337f0f4548f6e08e3790542d31d7ad8"
+    },
+    {
+      "path": "game/Main.Rendering.cs",
+      "bytes": 14353,
+      "sha256": "1b090b0e2bf2648b7adc165585d7d0787b1835b4c1f4381c25e475a7b0b92a8c"
+    },
+    {
+      "path": "game/Main.StageEvidence.cs",
+      "bytes": 4671,
+      "sha256": "faa207dc3c0c844fc137b37d4eab099d17b0622071fe727888a5fa52b1b4ab88"
+    },
+    {
+      "path": "game/Presentation/ArenaAudio.cs",
+      "bytes": 5367,
+      "sha256": "ce511342787575031668a63ed0f490fc89d9024269ce9383d9c56d95d53cfbe0"
+    },
+    {
+      "path": "game/Presentation/ArenaCamera.cs",
+      "bytes": 1801,
+      "sha256": "b8877dc767382241e8128c7316d8a5f2503b97b165f8bc89be757fbf6abe4a1d"
+    },
+    {
+      "path": "game/Presentation/ArenaObjects.cs",
+      "bytes": 5414,
+      "sha256": "98127ab25f3e620b5c48a9b0ed865ba746edf4c7e7ae7803707cbf55d56e5391"
+    },
+    {
+      "path": "game/Presentation/ArenaView.cs",
+      "bytes": 19185,
+      "sha256": "f97518c0ba52b5d95eced8efbf195a14df9a5131c97373ce03251e52b2ce284c"
+    },
+    {
+      "path": "game/Presentation/CelTimeline.cs",
+      "bytes": 578,
+      "sha256": "b85220fb5e5aa81b9ac0ad1d99fc70aa2b62951d56efe9d9c7731e6428919dee"
+    },
+    {
+      "path": "game/Presentation/FighterSprites.cs",
+      "bytes": 7934,
+      "sha256": "00061fca40db7a911c5b9aa0df6a5645981d4885b8ef18715808656e3b07c342"
+    },
+    {
+      "path": "game/Presentation/Fonts/OFL.txt",
+      "bytes": 4377,
+      "sha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f"
+    },
+    {
+      "path": "game/Presentation/RuntimeProfiler.cs",
+      "bytes": 3002,
+      "sha256": "3cef3dea735e44041041fe93a1753cbcf27724e650da85691499a01d8178f915"
+    },
+    {
+      "path": "game/Presentation/UiTypography.cs",
+      "bytes": 381,
+      "sha256": "8f5202df030e32462e89a8567308623d0a4bf46ff6fe7c0977cdf3db42d1f94e"
+    },
+    {
+      "path": "game/Presentation/animation-timing.json",
+      "bytes": 87403,
+      "sha256": "1198e7dd11ff17f40d163b49fd470943ecf78cb7e8e5b6c869f38dbfd14c42f4"
+    },
+    {
+      "path": "game/Presentation/impact-profiles.json",
+      "bytes": 25887,
+      "sha256": "b55c0fcf04410c812ceb1eb2a47f8bf8a6113c08ccf5bf47502d4b75443dc3fc"
+    },
+    {
+      "path": "src/StrikeLedger.App/RollbackSession.cs",
+      "bytes": 11397,
+      "sha256": "acec54b1622458d3e3bf90728de22561dd6b6a02d0af34124fb3c2c4a14f7099"
+    },
+    {
+      "path": "src/StrikeLedger.Core/SimulationState.cs",
+      "bytes": 5714,
+      "sha256": "e08b53bc7d7d9a001d4d9453001cd00bc9de228808be05c07c4b299615ccb047"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "health_default": 1000,
+  "stun_default": 1000,
+  "hitstop_normal": 8,
+  "hitstop_heavy": 11,
+  "blockstop": 7,
+  "super_freeze_ticks": 20,
+  "parry": {
+    "high_window": 10,
+    "low_window": 10,
+    "air_window": 7,
+    "red_window": 2,
+    "miss_retry_ticks": 20,
+    "defender_freeze": 8,
+    "attacker_freeze": 14,
+    "requires_fresh_neutral_edge": true,
+    "cost_credits": 0,
+    "can_parry_throws": false,
+    "reflects_projectiles": false,
+    "success_clears_retry": true,
+    "one_contact_per_arm": true,
+    "success_income": 0,
+    "neutral_rearm_ticks": 1,
+    "superfreeze_arms": false
+  },
+  "block": {
+    "air_block": false,
+    "normal_chip": 0,
+    "special_chip_percent": 10,
+    "super_chip_percent": 10,
+    "chip_can_ko": true,
+    "chip_counts_for_stun": false,
+    "parry_chip_rule": "zero_on_success"
+  },
+  "throw": {
+    "tech_window": 5,
+    "post_wakeup_immunity": 2,
+    "post_hitstun_immunity": 2,
+    "post_blockstun_immunity": 2,
+    "command_throws_techable": false,
+    "jump_start_throw_invulnerable": true
+  },
+  "stun": {
+    "decay_delay": 120,
+    "decay_per_tick": 5,
+    "dizzy_ticks": 90,
+    "dizzy_mash_reduction": 0,
+    "second_stun_same_combo": false,
+    "spendable": false
+  },
+  "damage": {
+    "combo_step_percent": 10,
+    "combo_floor_percent": 30,
+    "counterhit_percent": 110,
+    "rounding": "toward_zero",
+    "counterhit_adds_hitstun": false
+  },
+  "juggle": {
+    "initial_budget": 10,
+    "reset_on_neutral_landing": true,
+    "ground_bounce_default": false,
+    "wall_bounce_default": false
+  },
+  "knockdown": {
+    "quick_rise_input_window": 5,
+    "quick_rise_ticks": 24,
+    "normal_rise_ticks": 42,
+    "hard_rise_ticks": 55
+  },
+  "contact_resolution": "simultaneous_snapshot_priority_then_commit",
+  "trade_policy": "higher_strike_rank_wins_equal_rank_trades",
+  "strike_beats_throw_on_same_tick": true,
+  "frame_numbering": "startup counts pre-active ticks; first active display frame = startup + 1",
+  "super_freeze_scope": "the_single_arena"
+}

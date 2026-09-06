@@ -1,0 +1,1070 @@
+{
+  "mode": "AUDITOR_PYTHON_ARITHMETIC_AND_STATIC_CONTENT_ONLY",
+  "source_files_verified": 14,
+  "first_round_spend_pairs": 9,
+  "reachable_ledger_states": {
+    "scope": "Exhaustive for equal aggregate spend in 300-credit steps, decisive A opening win, later W/L/D. Not exhaustive of unequal spend or gameplay.",
+    "rows": [
+      {
+        "round": 1,
+        "continuing_unique_states": 3,
+        "terminal_unique_states": 0,
+        "A_minus_B_min": 300,
+        "A_minus_B_max": 300
+      },
+      {
+        "round": 2,
+        "continuing_unique_states": 18,
+        "terminal_unique_states": 0,
+        "A_minus_B_min": 0,
+        "A_minus_B_max": 300
+      },
+      {
+        "round": 3,
+        "continuing_unique_states": 56,
+        "terminal_unique_states": 0,
+        "A_minus_B_min": 0,
+        "A_minus_B_max": 300
+      },
+      {
+        "round": 4,
+        "continuing_unique_states": 151,
+        "terminal_unique_states": 0,
+        "A_minus_B_min": -300,
+        "A_minus_B_max": 300
+      },
+      {
+        "round": 5,
+        "continuing_unique_states": 333,
+        "terminal_unique_states": 16,
+        "A_minus_B_min": -600,
+        "A_minus_B_max": 600
+      },
+      {
+        "round": 6,
+        "continuing_unique_states": 487,
+        "terminal_unique_states": 71,
+        "A_minus_B_min": -900,
+        "A_minus_B_max": 900
+      },
+      {
+        "round": 7,
+        "continuing_unique_states": 529,
+        "terminal_unique_states": 163,
+        "A_minus_B_min": -900,
+        "A_minus_B_max": 900
+      },
+      {
+        "round": 8,
+        "continuing_unique_states": 415,
+        "terminal_unique_states": 313,
+        "A_minus_B_min": -900,
+        "A_minus_B_max": 900
+      },
+      {
+        "round": 9,
+        "continuing_unique_states": 0,
+        "terminal_unique_states": 623,
+        "A_minus_B_min": -900,
+        "A_minus_B_max": 900
+      }
+    ],
+    "maximum_absolute_wallet_gap": 900,
+    "terminal_state_count_across_rounds": 1186,
+    "continuing_state_extreme_witnesses": [
+      {
+        "round": 1,
+        "max_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          }
+        ],
+        "min_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "round": 2,
+        "max_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "D",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              3,
+              1
+            ]
+          }
+        ],
+        "min_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "round": 3,
+        "max_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "W",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              4,
+              2
+            ]
+          }
+        ],
+        "min_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "round": 4,
+        "max_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              4
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1500,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              6
+            ]
+          }
+        ],
+        "min_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              1800,
+              1500
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 0,
+            "closing_credits": [
+              2700,
+              2700
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              3600,
+              3600
+            ],
+            "score_half_points": [
+              4,
+              2
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "L",
+            "equal_spend": 3600,
+            "closing_credits": [
+              900,
+              1200
+            ],
+            "score_half_points": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "round": 5,
+        "max_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              4
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1500,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              6
+            ]
+          },
+          {
+            "round": 5,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1800,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              8
+            ]
+          }
+        ],
+        "min_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              1800,
+              1500
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "D",
+            "equal_spend": 0,
+            "closing_credits": [
+              2700,
+              2400
+            ],
+            "score_half_points": [
+              3,
+              1
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              3600,
+              3600
+            ],
+            "score_half_points": [
+              5,
+              1
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "W",
+            "equal_spend": 3600,
+            "closing_credits": [
+              1200,
+              1500
+            ],
+            "score_half_points": [
+              7,
+              1
+            ]
+          },
+          {
+            "round": 5,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              900,
+              1500
+            ],
+            "score_half_points": [
+              7,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "round": 6,
+        "max_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              4
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1500,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              6
+            ]
+          },
+          {
+            "round": 5,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1800,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              8
+            ]
+          },
+          {
+            "round": 6,
+            "A_result": "W",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1800,
+              900
+            ],
+            "score_half_points": [
+              4,
+              8
+            ]
+          }
+        ],
+        "min_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              1800,
+              1500
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "D",
+            "equal_spend": 0,
+            "closing_credits": [
+              2700,
+              2400
+            ],
+            "score_half_points": [
+              3,
+              1
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              3600,
+              3600
+            ],
+            "score_half_points": [
+              5,
+              1
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "W",
+            "equal_spend": 3600,
+            "closing_credits": [
+              1200,
+              1500
+            ],
+            "score_half_points": [
+              7,
+              1
+            ]
+          },
+          {
+            "round": 5,
+            "A_result": "W",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              1800
+            ],
+            "score_half_points": [
+              9,
+              1
+            ]
+          },
+          {
+            "round": 6,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              900,
+              1800
+            ],
+            "score_half_points": [
+              9,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "round": 7,
+        "max_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              4
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1500,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              6
+            ]
+          },
+          {
+            "round": 5,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1800,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              8
+            ]
+          },
+          {
+            "round": 6,
+            "A_result": "D",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1500,
+              900
+            ],
+            "score_half_points": [
+              3,
+              9
+            ]
+          },
+          {
+            "round": 7,
+            "A_result": "W",
+            "equal_spend": 900,
+            "closing_credits": [
+              1800,
+              900
+            ],
+            "score_half_points": [
+              5,
+              9
+            ]
+          }
+        ],
+        "min_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              1800,
+              1500
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "D",
+            "equal_spend": 0,
+            "closing_credits": [
+              2700,
+              2400
+            ],
+            "score_half_points": [
+              3,
+              1
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              3600,
+              3600
+            ],
+            "score_half_points": [
+              5,
+              1
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "L",
+            "equal_spend": 3600,
+            "closing_credits": [
+              900,
+              1200
+            ],
+            "score_half_points": [
+              5,
+              3
+            ]
+          },
+          {
+            "round": 5,
+            "A_result": "W",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1500
+            ],
+            "score_half_points": [
+              7,
+              3
+            ]
+          },
+          {
+            "round": 6,
+            "A_result": "W",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              1800
+            ],
+            "score_half_points": [
+              9,
+              3
+            ]
+          },
+          {
+            "round": 7,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              900,
+              1800
+            ],
+            "score_half_points": [
+              9,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "round": 8,
+        "max_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              4
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1500,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              6
+            ]
+          },
+          {
+            "round": 5,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1800,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              8
+            ]
+          },
+          {
+            "round": 6,
+            "A_result": "W",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1800,
+              900
+            ],
+            "score_half_points": [
+              4,
+              8
+            ]
+          },
+          {
+            "round": 7,
+            "A_result": "W",
+            "equal_spend": 900,
+            "closing_credits": [
+              2100,
+              1200
+            ],
+            "score_half_points": [
+              6,
+              8
+            ]
+          },
+          {
+            "round": 8,
+            "A_result": "D",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1800,
+              900
+            ],
+            "score_half_points": [
+              7,
+              9
+            ]
+          }
+        ],
+        "min_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              1800,
+              1500
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "D",
+            "equal_spend": 0,
+            "closing_credits": [
+              2700,
+              2400
+            ],
+            "score_half_points": [
+              3,
+              1
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              3600,
+              3600
+            ],
+            "score_half_points": [
+              5,
+              1
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "L",
+            "equal_spend": 3600,
+            "closing_credits": [
+              900,
+              1200
+            ],
+            "score_half_points": [
+              5,
+              3
+            ]
+          },
+          {
+            "round": 5,
+            "A_result": "W",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1500
+            ],
+            "score_half_points": [
+              7,
+              3
+            ]
+          },
+          {
+            "round": 6,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              900,
+              1500
+            ],
+            "score_half_points": [
+              7,
+              5
+            ]
+          },
+          {
+            "round": 7,
+            "A_result": "W",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1800
+            ],
+            "score_half_points": [
+              9,
+              5
+            ]
+          },
+          {
+            "round": 8,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              900,
+              1800
+            ],
+            "score_half_points": [
+              9,
+              7
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "native_game_executed": false
+}

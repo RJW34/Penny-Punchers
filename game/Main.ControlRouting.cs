@@ -16,8 +16,9 @@ public partial class Main
                 captureBinding=false;ControlsMenu();Toast("Binding unchanged.");GetViewport().SetInputAsHandled();return true;
             }
             bool captured=false,valid=false;
-            if(e is InputEventKey key&&key.Pressed&&!key.Echo&&remapDevice==-1){captured=true;valid=settings.BindKey(remapIndex,(long)InputRouter.BindingKey(key));if(valid)settings.Save();}
+            if(e is InputEventKey key&&key.Pressed&&!key.Echo&&remapDevice==-1){captured=true;valid=settings.BindKey(remapIndex,(long)input.CaptureKey(key));if(valid)settings.Save();}
             else if(e is InputEventJoypadButton button&&button.Pressed&&button.Device==remapDevice){captured=true;valid=input.BindPad(button.Device,remapIndex,(int)button.ButtonIndex);}
+            else if(e is InputEventJoypadMotion axis&&axis.Device==remapDevice&&axis.AxisValue>=.6f&&axis.Axis is JoyAxis.TriggerLeft or JoyAxis.TriggerRight){captured=true;valid=input.BindPad(axis.Device,remapIndex,axis.Axis==JoyAxis.TriggerLeft?GameSettings.LeftTriggerBinding:GameSettings.RightTriggerBinding);}
             if(captured)
             {
                 if(valid){captureBinding=false;input.SuppressHeldButtons();ControlsMenu();Toast(settings.LastSaveError.Length>0?"Binding active; save failed: "+settings.LastSaveError:"Binding saved. Conflicting binding was swapped.");}
@@ -42,7 +43,7 @@ public partial class Main
         for(int i=0;i<8;i++)
         {
             int index=i;int button=input.Mapping(target)[i];
-            var control=Button($"PAD {names[i+4]} / {(JoyButton)button}",55+(i%4)*294,451+(i/4)*51,279,()=>
+            var control=Button($"PAD {names[i+4]} / {GameSettings.PadBindingName(button)}",55+(i%4)*294,451+(i/4)*51,279,()=>
             {
                 remapIndex=index;remapDevice=target;captureBinding=true;Toast($"Pad {target+1}: press {names[index+4]} binding. Start cancels.");
             },false,16);control.Size=new Vector2(279,42);
@@ -62,50 +63,34 @@ public partial class Main
             seat=Array.IndexOf(input.Devices,pad.Device);
             command=pad.ButtonIndex switch{JoyButton.DpadUp=>-1,JoyButton.DpadDown=>1,JoyButton.DpadLeft=>-2,JoyButton.DpadRight=>2,JoyButton.A=>3,_=>0};
         }
-        if(command==0)return false;
-        // Shared-screen drafts are visible, but each assigned input controls its own panel.
-        GetViewport().SetInputAsHandled();
-        if(seat<0||ready[seat])return true;
-        if(Math.Abs(command)==1)_preparationFocus[seat]=(_preparationFocus[seat]+command+5)%5;
+        if(prepPopupSeat>=0&&ui.GetChildren().OfType<PopupMenu>().Any(p=>GodotObject.IsInstanceValid(p)&&!p.IsQueuedForDeletion()&&p.Visible))
+        {
+            int popupDevice=e is InputEventJoypadButton jb?Array.IndexOf(input.Devices,jb.Device):e is InputEventKey?Array.IndexOf(input.Devices,-1):prepPopupSeat;
+            if(popupDevice==prepPopupSeat)return false;
+            GetViewport().SetInputAsHandled();return true;
+        }
+        if(command==0)return false;GetViewport().SetInputAsHandled();
+        if(seat<0||ready[seat])return true;var rows=PrepRows(seat);if(rows.Length==0)return true;
+        int current=Array.IndexOf(rows,_preparationFocus[seat]);if(current<0)current=0;
+        if(Math.Abs(command)==1)_preparationFocus[seat]=rows[(current+command+rows.Length)%rows.Length];
         else
         {
             int selected=_preparationFocus[seat];
-            if(selected<3)
-            {
-                int delta=command==-2?-1:1;
-                draft[seat][selected]=((draft[seat][selected]+1+delta+3)%3)-1;
-                Preparation(false);
-            }
-            else if(selected==3){CycleAffordableReserve(seat,command==-2?-1:1);Preparation(false);}
-            else if(command==3){input.SuppressHeldButtons();ReadyPlan(seat);}
+            if(command==3&&purchaseButtons.TryGetValue((seat,selected),out var button))button.EmitSignal(Godot.Button.SignalName.Pressed);
+            else if(selected<3)CycleDraft(seat,selected,command==-2?-1:1);
+            else if(purchaseProductIds.TryGetValue((seat,selected),out string? id)&&id.Length>0)ToggleShopProduct(seat,id,false);
         }
-        if(screen=="prep")RefreshPreparationFocus();
-        arena.PlayCue("select");return true;
-    }
-
-    void CycleAffordableReserve(int seat,int direction=1)
-    {
-        if(sim==null)return;int available=Math.Max(0,sim.Players[seat].Credits-DraftCost(seat));
-        var choices=Enumerable.Range(0,available/300+1).Select(i=>i*300).ToList();
-        if(choices[^1]!=available)choices.Add(available);
-        int current=choices.IndexOf(floor[seat]);
-        floor[seat]=choices[(current+(direction<0?-1:1)+choices.Count)%choices.Count];
+        if(screen=="prep")UpdatePurchaseDetail(seat,false);arena.PlayCue("select");return true;
     }
 
     void RefreshPreparationFocus()
     {
-        foreach(var b in ui.GetChildren().OfType<Button>().Where(b=>!b.IsQueuedForDeletion()))
+        foreach(var entry in purchaseButtons)
         {
-            if(b.Position.Y<240)continue;
-            int seat=b.Position.X>640?1:0;
-            int row=b.Position.Y>=640?4:b.Position.Y>=500?3:(int)Math.Round((b.Position.Y-247)/87);
-            if(row is <0 or >4)continue;
+            var b=entry.Value;if(!GodotObject.IsInstanceValid(b)||b.IsQueuedForDeletion())continue;
+            int seat=entry.Key.Seat,row=entry.Key.Row;
             bool active=row==_preparationFocus[seat]&&!ready[seat];
-            b.AddThemeStyleboxOverride("normal",new StyleBoxFlat
-            {
-                BgColor=active?new Color(.11f,.17f,.19f,.99f):new Color(.065f,.1f,.13f,.96f),
-                BorderColor=seat==0?Gold:Cyan,BorderWidthLeft=active?3:0,BorderWidthBottom=1,ContentMarginLeft=16,ContentMarginRight=12
-            });
+            b.AddThemeStyleboxOverride("normal",UiArtFrame(active?(seat==0?"active-p1":"active-p2"):"normal"));
         }
         UiRefreshPreparationSkin();
     }

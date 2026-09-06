@@ -1,0 +1,551 @@
+{
+  "prior_finding_count": 91,
+  "rows": [
+    {
+      "id": "PP-001",
+      "title": "Default medium kick also routes to pause",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-002",
+      "title": "Legal fighter separation exceeds visible arena width",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-003",
+      "title": "Regular CPU purchases techniques its policy does not deliberately execute",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-004",
+      "title": "CPU super logic ignores actual selected-art affordability and Vale supers",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-005",
+      "title": "Lease policy does not encode current gambit commands",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-006",
+      "title": "Fixed lexical rental selection does not evaluate all alternatives",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-007",
+      "title": "Players cannot equip rentals through the reviewed training menus",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-008",
+      "title": "Purchase cards omit their practical consequences",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-009",
+      "title": "Online shop has less decision information than local shop",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-010",
+      "title": "Unaffordable timeout plans are silently discarded",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-011",
+      "title": "Unaffordable choices remain selectable with negative draft balances",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-012",
+      "title": "Reserve floor can be mistaken for money available for a super",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-013",
+      "title": "Local visible drafts and online hidden commitments create different games",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-014",
+      "title": "Fixed slot prices are not evidence of tactical value",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-015",
+      "title": "Rook feints have weak documented mechanical value",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-016",
+      "title": "Low Drive and Low Turn need a meaningful comparison",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-017",
+      "title": "Opening-round options depend heavily on the weakest purchases",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-018",
+      "title": "One-seed bot results do not establish competitive balance",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-019",
+      "title": "Recovery, draws and wallet cap need adversarial incentives testing",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-020",
+      "title": "Match and preparation pacing lack human acceptance",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-021",
+      "title": "Shop money displays and some limits bypass canonical content",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-022",
+      "title": "Item-array order silently defines shop slots",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-023",
+      "title": "Regular CPU cannot meaningfully adapt to revealed equipment",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-024",
+      "title": "Link and hit-confirm drills can use weak success predicates",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-025",
+      "title": "Advanced drills rely on generic sparring rather than precise practice feeds",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-026",
+      "title": "Training lineup is constrained to the opposite character",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-027",
+      "title": "Loading a replay from paused playback does not reset shell playback state",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-028",
+      "title": "Results claim a replay was saved even after a save error",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-029",
+      "title": "Archive sorts filenames and only exposes eight entries",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-030",
+      "title": "Replay corruption during playback needs a safe error boundary",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-031",
+      "title": "Replay persistence lacks collision-proof names and atomic replacement",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-032",
+      "title": "All presentation events wait for confirmed remote input",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-033",
+      "title": "Delayed impacts use current positions rather than contact-time positions",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-034",
+      "title": "Both peers must manually duplicate the entire lineup",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-035",
+      "title": "Some exit paths dispose the peer without sending disconnect",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-036",
+      "title": "Pause/resume needs asymmetric-latency tests",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-037",
+      "title": "Private rematch returns to connection setup",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-038",
+      "title": "Canonical serialization allocates repeatedly in the hot path",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-039",
+      "title": "The recorded half-second frame outlier is unattributed",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-040",
+      "title": "Simultaneous command throws lack an explicit second-pass arbitration",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-041",
+      "title": "Air parry arm can survive a landing transition",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-042",
+      "title": "Taunt bypasses the normal action-start parry cleanup",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-043",
+      "title": "Hurt silhouettes are generic outside active hitbox extension",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-044",
+      "title": "Midair facing and blocked posture transitions need feel validation",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-045",
+      "title": "Strict command timing has not been accepted by actual players",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-046",
+      "title": "Analog triggers are not supported as action bindings",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-047",
+      "title": "Keyboard sampling combines physical and logical bindings unconditionally",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-048",
+      "title": "Mapped move phases are not complete bespoke animations",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-049",
+      "title": "Cel timing is uniformly distributed within broad action phases",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-050",
+      "title": "Runtime magenta keying is a provisional asset pipeline",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-051",
+      "title": "Heuristic palette recoloring is fragile",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-052",
+      "title": "Portraits are stretched into incompatible aspect ratios",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-053",
+      "title": "Menu layout and focus ownership depend on pixel coordinates",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-054",
+      "title": "Typography and shop labels do not yet match the authored art direction",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-055",
+      "title": "HUD assumes fixed health and art-price formulas",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-056",
+      "title": "Resource readability can improve without restoring a combat meter",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-057",
+      "title": "Stage presentation is largely one scrolling image",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-058",
+      "title": "Generic impact selection understates move identity",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-059",
+      "title": "Cosmetic wall-clock aging needs pause and frame-advance review",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-060",
+      "title": "Audio has a foundation but limited variation and character identity",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-061",
+      "title": "Terminal feedback does not consistently distinguish result reasons",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-062",
+      "title": "Linux verification status contradicts the final integration report",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-063",
+      "title": "Actual controllers, two-PC play and human feel remain open",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-064",
+      "title": "Feature-count gates miss emergent player-facing failures",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-065",
+      "title": "No checked-in GitHub Actions workflow at the audited root",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-066",
+      "title": "Roster and content shape are hardcoded across layers",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-067",
+      "title": "Dense shell functions make behavior changes risky",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-068",
+      "title": "Source-only checkout is not the complete historical evidence bundle",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-069",
+      "title": "Distribution rights and attribution need an explicit shipping checklist",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-070",
+      "title": "Saved economic plans with transparent affordability",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-071",
+      "title": "A compact in-game round economy ledger",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-072",
+      "title": "Replay takeover for missed punish and spending decisions",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-073",
+      "title": "Budget-aware combo and counterplay trials",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-074",
+      "title": "Multi-slot dummy recordings and randomized defense",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-075",
+      "title": "Private-session connection diagnostics and lobby quality",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-076",
+      "title": "Evidence-linked post-match coaching",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-077",
+      "title": "Compact arcade/rematch motivation after the duel works",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-078",
+      "title": "Global character-stat purchases are absent and should not be silently introduced",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-079",
+      "title": "Vale Long Check needs a demonstrated advantage over free Long Heel",
+      "disposition": "PRESERVE_AUDIT_WORK",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-080",
+      "title": "Returning Pulse is a one-contact returning threat with owner-wide projectile constraints",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-081",
+      "title": "Selected-super prices create major access differences not justified by slot order",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-082",
+      "title": "A 300-credit opening award gap can cross a decisive affordability threshold",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-083",
+      "title": "Recovery may restore liquidity only after severe score disadvantage",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-084",
+      "title": "Residual spending differences can snowball independently of the win bonus",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-085",
+      "title": "Full-rental plans and combat budgets need explicit opportunity-cost comparisons",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-086",
+      "title": "Unlimited per-round rental use makes duration and repeat pressure central to value",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-087",
+      "title": "Zero-credit legal actions do not prove adequate answers to funded chip and pressure",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-088",
+      "title": "Raw first-round-winner conversion is confounded by score and player strength",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-089",
+      "title": "Earlier parity payout variants need isolated versioned experiments",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-090",
+      "title": "A locked reserve can suppress a comeback or final-round cash-out unintentionally",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    },
+    {
+      "id": "PP-091",
+      "title": "Economic telemetry should expose affordability and payout history rather than wallet totals alone",
+      "disposition": "RECONCILE_WITH_V2_SEMANTICS",
+      "instruction": "Do not mark resolved from this document. Carry mechanical/UI defects forward; replace only obsolete resource-specific expectations with v2 tests."
+    }
+  ]
+}

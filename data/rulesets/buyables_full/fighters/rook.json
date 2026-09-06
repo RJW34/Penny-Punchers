@@ -1,0 +1,5773 @@
+{
+  "version": 1,
+  "id": "rook",
+  "display_name": "Thomas",
+  "archetype": "motion-input close-range pressure",
+  "health": 1000,
+  "stun_limit": 1000,
+  "physics": {
+    "walk_forward": 3000,
+    "walk_back": 2100,
+    "dash_forward_ticks": 16,
+    "dash_forward_distance": 96000,
+    "dash_back_ticks": 20,
+    "dash_back_distance": 85000,
+    "jump_start_ticks": 4,
+    "jump_velocity": 13500,
+    "super_jump_velocity": 15500,
+    "jump_horizontal": 4000,
+    "gravity": 900,
+    "proximity_threshold": 54000,
+    "kara_throw_move_id": "command_fhp"
+  },
+  "pushbox": {
+    "x": -16000,
+    "y": 0,
+    "width": 32000,
+    "height": 90000
+  },
+  "hurtboxes": {
+    "standing": [
+      {
+        "x": -15000,
+        "y": 0,
+        "width": 30000,
+        "height": 95000
+      }
+    ],
+    "crouching": [
+      {
+        "x": -17000,
+        "y": 0,
+        "width": 34000,
+        "height": 55000
+      }
+    ],
+    "air": [
+      {
+        "x": -14000,
+        "y": 0,
+        "width": 28000,
+        "height": 85000
+      }
+    ]
+  },
+  "super_arts": [
+    {
+      "id": "art_1",
+      "name": "Circuit Break",
+      "move_id": "super_1",
+      "credit_cost": 0,
+      "selected_at": "preparation_commit",
+      "role": "advancing_confirm"
+    },
+    {
+      "id": "art_2",
+      "name": "Forge Impact",
+      "move_id": "super_2",
+      "credit_cost": 0,
+      "selected_at": "preparation_commit",
+      "role": "vertical_reversal"
+    },
+    {
+      "id": "art_3",
+      "name": "Overtime",
+      "move_id": "buy_r_a3_overtime",
+      "credit_cost": 0,
+      "selected_at": "preparation_commit",
+      "role": "Temporary hit-confirm routing"
+    }
+  ],
+  "default_super": "art_1",
+  "target_combos": [
+    {
+      "from": "s_lp",
+      "to": "s_mp",
+      "requires_contact": true,
+      "start": 3,
+      "end": 8
+    }
+  ],
+  "moves": [
+    {
+      "id": "s_lp",
+      "name": "S LP",
+      "kind": "normal",
+      "command": "S+LP",
+      "startup": 3,
+      "active": 2,
+      "recovery": 7,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 3,
+          "end": 5,
+          "x": 8000,
+          "y": 54000,
+          "width": 29000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 35,
+          "stun": 45,
+          "rank": 1,
+          "hitstun": 14,
+          "blockstun": 9,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 3,
+          "end": 8,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "s_lp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 3,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 54000,
+              "width": 14500,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 3,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 14500,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 5,
+          "end": 11,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 14500,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "s_mp",
+      "name": "S MP",
+      "kind": "normal",
+      "command": "S+MP",
+      "startup": 5,
+      "active": 3,
+      "recovery": 12,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 8,
+          "x": 8000,
+          "y": 54000,
+          "width": 43000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 65,
+          "stun": 85,
+          "rank": 2,
+          "hitstun": 21,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 5,
+          "end": 11,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "s_mp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 1,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 54000,
+              "width": 21500,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 5,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 21500,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 8,
+          "end": 14,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 21500,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "s_hp",
+      "name": "S HP",
+      "kind": "normal",
+      "command": "S+HP",
+      "startup": 8,
+      "active": 4,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 12,
+          "x": 8000,
+          "y": 54000,
+          "width": 60000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 95,
+          "stun": 125,
+          "rank": 3,
+          "hitstun": 26,
+          "blockstun": 16,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "s_hp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 4,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 54000,
+              "width": 30000,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 8,
+          "end": 12,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 30000,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 12,
+          "end": 18,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 30000,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "s_lk",
+      "name": "S LK",
+      "kind": "normal",
+      "command": "S+LK",
+      "startup": 3,
+      "active": 2,
+      "recovery": 7,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 3,
+          "end": 5,
+          "x": 8000,
+          "y": 54000,
+          "width": 36000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 35,
+          "stun": 45,
+          "rank": 1,
+          "hitstun": 14,
+          "blockstun": 9,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 3,
+          "end": 8,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "s_lk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 3,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 54000,
+              "width": 18000,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 3,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 18000,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 5,
+          "end": 11,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 18000,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "s_mk",
+      "name": "S MK",
+      "kind": "normal",
+      "command": "S+MK",
+      "startup": 5,
+      "active": 3,
+      "recovery": 12,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 8,
+          "x": 8000,
+          "y": 54000,
+          "width": 50000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 65,
+          "stun": 85,
+          "rank": 2,
+          "hitstun": 21,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 5,
+          "end": 11,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "s_mk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 1,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 54000,
+              "width": 25000,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 5,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 25000,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 8,
+          "end": 14,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 25000,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "s_hk",
+      "name": "S HK",
+      "kind": "normal",
+      "command": "S+HK",
+      "startup": 8,
+      "active": 4,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 12,
+          "x": 8000,
+          "y": 54000,
+          "width": 67000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 95,
+          "stun": 125,
+          "rank": 3,
+          "hitstun": 26,
+          "blockstun": 16,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "s_hk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 4,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 54000,
+              "width": 33500,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 8,
+          "end": 12,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 33500,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 12,
+          "end": 18,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 33500,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "c_lp",
+      "name": "C LP",
+      "kind": "normal",
+      "command": "C+LP",
+      "startup": 3,
+      "active": 2,
+      "recovery": 7,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 3,
+          "end": 5,
+          "x": 8000,
+          "y": 20000,
+          "width": 29000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 35,
+          "stun": 45,
+          "rank": 1,
+          "hitstun": 14,
+          "blockstun": 9,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 3,
+          "end": 8,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "c_lp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 3,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 20000,
+              "width": 14500,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 3,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 20000,
+              "width": 14500,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 5,
+          "end": 11,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 20000,
+              "width": 14500,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "c_mp",
+      "name": "C MP",
+      "kind": "normal",
+      "command": "C+MP",
+      "startup": 5,
+      "active": 3,
+      "recovery": 12,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 8,
+          "x": 8000,
+          "y": 20000,
+          "width": 43000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 65,
+          "stun": 85,
+          "rank": 2,
+          "hitstun": 21,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 5,
+          "end": 11,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "c_mp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 1,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 20000,
+              "width": 21500,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 5,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 20000,
+              "width": 21500,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 8,
+          "end": 14,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 20000,
+              "width": 21500,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "c_hp",
+      "name": "C HP",
+      "kind": "normal",
+      "command": "C+HP",
+      "startup": 8,
+      "active": 4,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 12,
+          "x": 8000,
+          "y": 20000,
+          "width": 60000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 95,
+          "stun": 125,
+          "rank": 3,
+          "hitstun": 26,
+          "blockstun": 16,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "c_hp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 4,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 20000,
+              "width": 30000,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 8,
+          "end": 12,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 20000,
+              "width": 30000,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 12,
+          "end": 18,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 20000,
+              "width": 30000,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "c_lk",
+      "name": "C LK",
+      "kind": "normal",
+      "command": "C+LK",
+      "startup": 3,
+      "active": 2,
+      "recovery": 7,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 3,
+          "end": 5,
+          "x": 8000,
+          "y": 20000,
+          "width": 36000,
+          "height": 17000,
+          "level": "low",
+          "damage": 35,
+          "stun": 45,
+          "rank": 1,
+          "hitstun": 14,
+          "blockstun": 9,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 3,
+          "end": 8,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "c_lk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 3,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 20000,
+              "width": 18000,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 3,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 20000,
+              "width": 18000,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 5,
+          "end": 11,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 20000,
+              "width": 18000,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "c_mk",
+      "name": "C MK",
+      "kind": "normal",
+      "command": "C+MK",
+      "startup": 5,
+      "active": 3,
+      "recovery": 12,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 8,
+          "x": 8000,
+          "y": 20000,
+          "width": 50000,
+          "height": 17000,
+          "level": "low",
+          "damage": 65,
+          "stun": 85,
+          "rank": 2,
+          "hitstun": 21,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 5,
+          "end": 11,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "c_mk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 1,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 20000,
+              "width": 25000,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 5,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 20000,
+              "width": 25000,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 8,
+          "end": 14,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 20000,
+              "width": 25000,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "c_hk",
+      "name": "C HK",
+      "kind": "normal",
+      "command": "C+HK",
+      "startup": 8,
+      "active": 4,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 12,
+          "x": 8000,
+          "y": 20000,
+          "width": 67000,
+          "height": 17000,
+          "level": "low",
+          "damage": 95,
+          "stun": 125,
+          "rank": 3,
+          "hitstun": 26,
+          "blockstun": 16,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "c_hk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 4,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 20000,
+              "width": 33500,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 8,
+          "end": 12,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 20000,
+              "width": 33500,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 12,
+          "end": 18,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 20000,
+              "width": 33500,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "j_lp",
+      "name": "J LP",
+      "kind": "normal",
+      "command": "J+LP",
+      "startup": 3,
+      "active": 2,
+      "recovery": 7,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 3,
+          "end": 5,
+          "x": 8000,
+          "y": 54000,
+          "width": 29000,
+          "height": 17000,
+          "level": "air",
+          "damage": 35,
+          "stun": 45,
+          "rank": 1,
+          "hitstun": 14,
+          "blockstun": 9,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "j_lp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "landing_recovery": 4,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 3,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 54000,
+              "width": 14500,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 3,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 14500,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 5,
+          "end": 11,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 14500,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "j_mp",
+      "name": "J MP",
+      "kind": "normal",
+      "command": "J+MP",
+      "startup": 5,
+      "active": 3,
+      "recovery": 12,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 8,
+          "x": 8000,
+          "y": 54000,
+          "width": 43000,
+          "height": 17000,
+          "level": "air",
+          "damage": 65,
+          "stun": 85,
+          "rank": 2,
+          "hitstun": 21,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "j_mp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "landing_recovery": 4,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 1,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 54000,
+              "width": 21500,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 5,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 21500,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 8,
+          "end": 14,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 21500,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "j_hp",
+      "name": "J HP",
+      "kind": "normal",
+      "command": "J+HP",
+      "startup": 8,
+      "active": 4,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 12,
+          "x": 8000,
+          "y": 54000,
+          "width": 60000,
+          "height": 17000,
+          "level": "air",
+          "damage": 95,
+          "stun": 125,
+          "rank": 3,
+          "hitstun": 26,
+          "blockstun": 16,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "j_hp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "landing_recovery": 4,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 4,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 54000,
+              "width": 30000,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 8,
+          "end": 12,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 30000,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 12,
+          "end": 18,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 30000,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "j_lk",
+      "name": "J LK",
+      "kind": "normal",
+      "command": "J+LK",
+      "startup": 3,
+      "active": 2,
+      "recovery": 7,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 3,
+          "end": 5,
+          "x": 8000,
+          "y": 54000,
+          "width": 36000,
+          "height": 17000,
+          "level": "air",
+          "damage": 35,
+          "stun": 45,
+          "rank": 1,
+          "hitstun": 14,
+          "blockstun": 9,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "j_lk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "landing_recovery": 4,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 3,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 54000,
+              "width": 18000,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 3,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 18000,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 5,
+          "end": 11,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 18000,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "j_mk",
+      "name": "J MK",
+      "kind": "normal",
+      "command": "J+MK",
+      "startup": 5,
+      "active": 3,
+      "recovery": 12,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 8,
+          "x": 8000,
+          "y": 54000,
+          "width": 50000,
+          "height": 17000,
+          "level": "air",
+          "damage": 65,
+          "stun": 85,
+          "rank": 2,
+          "hitstun": 21,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "j_mk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "landing_recovery": 4,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 1,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 54000,
+              "width": 25000,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 5,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 25000,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 8,
+          "end": 14,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 25000,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "j_hk",
+      "name": "J HK",
+      "kind": "normal",
+      "command": "J+HK",
+      "startup": 8,
+      "active": 4,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 12,
+          "x": 8000,
+          "y": 54000,
+          "width": 67000,
+          "height": 17000,
+          "level": "air",
+          "damage": 95,
+          "stun": 125,
+          "rank": 3,
+          "hitstun": 26,
+          "blockstun": 16,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "j_hk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "landing_recovery": 4,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 4,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 54000,
+              "width": 33500,
+              "height": 8500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 8,
+          "end": 12,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 33500,
+              "height": 8500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 12,
+          "end": 18,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 54000,
+              "width": 33500,
+              "height": 8500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "close_mp",
+      "name": "Close MP",
+      "kind": "normal",
+      "command": "CLOSE+MP",
+      "startup": 4,
+      "active": 3,
+      "recovery": 10,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 4,
+          "end": 7,
+          "x": 5000,
+          "y": 45000,
+          "width": 30000,
+          "height": 32000,
+          "level": "mid",
+          "damage": 65,
+          "stun": 80,
+          "rank": 2,
+          "hitstun": 23,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 4,
+          "end": 10,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "close_mp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 4,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 3333,
+              "y": 45000,
+              "width": 15000,
+              "height": 16000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 4,
+          "end": 7,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5000,
+              "y": 45000,
+              "width": 15000,
+              "height": 16000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 7,
+          "end": 13,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5000,
+              "y": 45000,
+              "width": 15000,
+              "height": 16000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "close_hp",
+      "name": "Close HP",
+      "kind": "normal",
+      "command": "CLOSE+HP",
+      "startup": 6,
+      "active": 3,
+      "recovery": 10,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 6,
+          "end": 9,
+          "x": 5000,
+          "y": 45000,
+          "width": 30000,
+          "height": 32000,
+          "level": "mid",
+          "damage": 90,
+          "stun": 80,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 6,
+          "end": 12,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "close_hp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 2,
+          "end": 6,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 3333,
+              "y": 45000,
+              "width": 15000,
+              "height": 16000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 6,
+          "end": 9,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5000,
+              "y": 45000,
+              "width": 15000,
+              "height": 16000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 9,
+          "end": 15,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5000,
+              "y": 45000,
+              "width": 15000,
+              "height": 16000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "command_fhp",
+      "name": "Forward hammer",
+      "kind": "unique",
+      "command": "6+HP",
+      "startup": 10,
+      "active": 3,
+      "recovery": 17,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 10,
+          "end": 13,
+          "x": 12000,
+          "y": 50000,
+          "width": 61000,
+          "height": 25000,
+          "level": "mid",
+          "damage": 100,
+          "stun": 80,
+          "rank": 3,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "command_fhp",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 0,
+          "end": 3,
+          "vx": 1000,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "kara_throw_ticks": 2,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": true,
+      "hurtbox_windows": [
+        {
+          "start": 6,
+          "end": 10,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 50000,
+              "width": 30500,
+              "height": 12500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 10,
+          "end": 13,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 12000,
+              "y": 50000,
+              "width": 30500,
+              "height": 12500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 13,
+          "end": 19,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 12000,
+              "y": 50000,
+              "width": 30500,
+              "height": 12500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "leap_overhead",
+      "name": "Leap strike",
+      "kind": "unique",
+      "command": "MP+MK",
+      "startup": 17,
+      "active": 3,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 17,
+          "end": 20,
+          "x": 8000,
+          "y": 48000,
+          "width": 44000,
+          "height": 30000,
+          "level": "overhead",
+          "damage": 70,
+          "stun": 90,
+          "rank": 2,
+          "hitstun": 20,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "leap_overhead",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 4,
+          "end": 10,
+          "vx": 500,
+          "vy": 1100
+        },
+        {
+          "start": 10,
+          "end": 16,
+          "vx": 500,
+          "vy": -1100
+        }
+      ],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 13,
+          "end": 17,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 5333,
+              "y": 48000,
+              "width": 22000,
+              "height": 15000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 17,
+          "end": 20,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 48000,
+              "width": 22000,
+              "height": 15000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 20,
+          "end": 26,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 48000,
+              "width": 22000,
+              "height": 15000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "throw_forward",
+      "name": "Forward throw",
+      "kind": "throw",
+      "command": "LP+LK",
+      "startup": 3,
+      "active": 2,
+      "recovery": 24,
+      "hitboxes": [],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "throw_forward",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "throw": {
+        "range": 24000,
+        "damage": 120,
+        "stun": 80,
+        "techable": true,
+        "swap_sides": false,
+        "knockdown": "hard"
+      },
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 3,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 12000,
+              "y": 45000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 3,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 18000,
+              "y": 45000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 5,
+          "end": 11,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 18000,
+              "y": 45000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "throw_back",
+      "name": "Back throw",
+      "kind": "throw",
+      "command": "4+LP+LK",
+      "startup": 3,
+      "active": 2,
+      "recovery": 24,
+      "hitboxes": [],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "throw_back",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "throw": {
+        "range": 24000,
+        "damage": 120,
+        "stun": 80,
+        "techable": true,
+        "swap_sides": true,
+        "knockdown": "hard"
+      },
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 3,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 12000,
+              "y": 45000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 3,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 18000,
+              "y": 45000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 5,
+          "end": 11,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 18000,
+              "y": 45000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "pulse_l",
+      "name": "Pulse shot L",
+      "kind": "special",
+      "command": "qcf+LP",
+      "startup": 10,
+      "active": 1,
+      "recovery": 19,
+      "hitboxes": [],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "pulse_l",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": {
+        "spawn_tick": 10,
+        "spawn_x": 28000,
+        "spawn_y": 40000,
+        "vx": 3000,
+        "life_ticks": 150,
+        "hits": 1,
+        "rehit_ticks": 8,
+        "damage": 65,
+        "stun": 65,
+        "hitstun": 20,
+        "blockstun": 14,
+        "width": 22000,
+        "height": 22000,
+        "level": "mid",
+        "max_active_per_owner": 1,
+        "rank": 4,
+        "juggle_cost": 1,
+        "parryable": true,
+        "tier": "normal"
+      },
+      "special_family": "pulse",
+      "strength": "l",
+      "role": "projectile",
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 6,
+          "end": 10,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 12000,
+              "y": 60000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 10,
+          "end": 11,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 18000,
+              "y": 60000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 11,
+          "end": 17,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 18000,
+              "y": 60000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "pulse_m",
+      "name": "Pulse shot M",
+      "kind": "special",
+      "command": "qcf+MP",
+      "startup": 13,
+      "active": 1,
+      "recovery": 23,
+      "hitboxes": [],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "pulse_m",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": {
+        "spawn_tick": 13,
+        "spawn_x": 28000,
+        "spawn_y": 40000,
+        "vx": 4000,
+        "life_ticks": 150,
+        "hits": 1,
+        "rehit_ticks": 8,
+        "damage": 65,
+        "stun": 65,
+        "hitstun": 20,
+        "blockstun": 14,
+        "width": 22000,
+        "height": 22000,
+        "level": "mid",
+        "max_active_per_owner": 1,
+        "rank": 4,
+        "juggle_cost": 1,
+        "parryable": true,
+        "tier": "normal"
+      },
+      "special_family": "pulse",
+      "strength": "m",
+      "role": "projectile",
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 9,
+          "end": 13,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 12000,
+              "y": 60000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 13,
+          "end": 14,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 18000,
+              "y": 60000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 14,
+          "end": 20,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 18000,
+              "y": 60000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "pulse_h",
+      "name": "Pulse shot H",
+      "kind": "special",
+      "command": "qcf+HP",
+      "startup": 16,
+      "active": 1,
+      "recovery": 28,
+      "hitboxes": [],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "pulse_h",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": {
+        "spawn_tick": 16,
+        "spawn_x": 28000,
+        "spawn_y": 40000,
+        "vx": 5000,
+        "life_ticks": 150,
+        "hits": 1,
+        "rehit_ticks": 8,
+        "damage": 65,
+        "stun": 65,
+        "hitstun": 20,
+        "blockstun": 14,
+        "width": 22000,
+        "height": 22000,
+        "level": "mid",
+        "max_active_per_owner": 1,
+        "rank": 4,
+        "juggle_cost": 1,
+        "parryable": true,
+        "tier": "normal"
+      },
+      "special_family": "pulse",
+      "strength": "h",
+      "role": "projectile",
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 12,
+          "end": 16,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 12000,
+              "y": 60000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 16,
+          "end": 17,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 18000,
+              "y": 60000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 17,
+          "end": 23,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 18000,
+              "y": 60000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "pulse_ex",
+      "name": "Burst Pulse",
+      "kind": "ex_special",
+      "command": "qcf+PP",
+      "startup": 8,
+      "active": 1,
+      "recovery": 24,
+      "hitboxes": [],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "rook_license_pulse_ex",
+      "pose": "pulse_ex",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": {
+        "spawn_tick": 8,
+        "spawn_x": 28000,
+        "spawn_y": 40000,
+        "vx": 5000,
+        "life_ticks": 150,
+        "hits": 2,
+        "rehit_ticks": 8,
+        "damage": 55,
+        "stun": 65,
+        "hitstun": 20,
+        "blockstun": 14,
+        "width": 22000,
+        "height": 22000,
+        "level": "mid",
+        "max_active_per_owner": 1,
+        "rank": 4,
+        "juggle_cost": 1,
+        "parryable": true,
+        "tier": "ex"
+      },
+      "special_family": "pulse",
+      "strength": "ex",
+      "role": "projectile",
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 4,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 12000,
+              "y": 60000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 8,
+          "end": 9,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 18000,
+              "y": 60000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 9,
+          "end": 15,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 18000,
+              "y": 60000,
+              "width": 18000,
+              "height": 22000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "catalog_id": "R-E1",
+      "access_policy": "round_license"
+    },
+    {
+      "id": "rise_l",
+      "name": "Rising elbow L",
+      "kind": "special",
+      "command": "dp+LP",
+      "startup": 4,
+      "active": 5,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 4,
+          "end": 9,
+          "x": 10000,
+          "y": 60000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 70,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "soft",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 4,
+          "end": 9,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "rise_l",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 4,
+          "end": 12,
+          "vx": 600,
+          "vy": 2000
+        }
+      ],
+      "projectile": null,
+      "special_family": "rise",
+      "strength": "l",
+      "role": "anti_air",
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 4,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 6666,
+              "y": 60000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 4,
+          "end": 9,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 60000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 9,
+          "end": 15,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 60000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "rise_m",
+      "name": "Rising elbow M",
+      "kind": "special",
+      "command": "dp+MP",
+      "startup": 6,
+      "active": 5,
+      "recovery": 23,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 6,
+          "end": 11,
+          "x": 10000,
+          "y": 60000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 90,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "soft",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 6,
+          "end": 11,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "rise_m",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 6,
+          "end": 14,
+          "vx": 600,
+          "vy": 2000
+        }
+      ],
+      "projectile": null,
+      "special_family": "rise",
+      "strength": "m",
+      "role": "anti_air",
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 2,
+          "end": 6,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 6666,
+              "y": 60000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 6,
+          "end": 11,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 60000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 11,
+          "end": 17,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 60000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "rise_h",
+      "name": "Rising elbow H",
+      "kind": "special",
+      "command": "dp+HP",
+      "startup": 8,
+      "active": 5,
+      "recovery": 28,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 13,
+          "x": 10000,
+          "y": 60000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 110,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "soft",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 8,
+          "end": 13,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "rise_h",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 8,
+          "end": 16,
+          "vx": 600,
+          "vy": 2000
+        }
+      ],
+      "projectile": null,
+      "special_family": "rise",
+      "strength": "h",
+      "role": "anti_air",
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 4,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 6666,
+              "y": 60000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 8,
+          "end": 13,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 60000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 13,
+          "end": 19,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 60000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "rise_ex",
+      "name": "Emergency Riser",
+      "kind": "ex_special",
+      "command": "dp+PP",
+      "startup": 3,
+      "active": 5,
+      "recovery": 24,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 3,
+          "end": 8,
+          "x": 10000,
+          "y": 60000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 125,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "soft",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "rook_license_rise_ex",
+      "pose": "rise_ex",
+      "invulnerability": [
+        {
+          "start": 0,
+          "end": 5,
+          "to": [
+            "strike",
+            "projectile"
+          ]
+        }
+      ],
+      "movement": [
+        {
+          "start": 3,
+          "end": 11,
+          "vx": 600,
+          "vy": 2000
+        }
+      ],
+      "projectile": null,
+      "special_family": "rise",
+      "strength": "ex",
+      "role": "anti_air",
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 3,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 6666,
+              "y": 60000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 3,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 60000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 8,
+          "end": 14,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 60000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "catalog_id": "R-E2",
+      "access_policy": "round_license"
+    },
+    {
+      "id": "knee_l",
+      "name": "Traveling knee L",
+      "kind": "special",
+      "command": "qcf+LK",
+      "startup": 10,
+      "active": 5,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 10,
+          "end": 15,
+          "x": 10000,
+          "y": 35000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 70,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 10,
+          "end": 15,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "knee_l",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 3,
+          "end": 15,
+          "vx": 1300,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "special_family": "knee",
+      "strength": "l",
+      "role": "advance",
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 6,
+          "end": 10,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 6666,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 10,
+          "end": 15,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 15,
+          "end": 21,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "knee_m",
+      "name": "Traveling knee M",
+      "kind": "special",
+      "command": "qcf+MK",
+      "startup": 13,
+      "active": 5,
+      "recovery": 23,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 13,
+          "end": 18,
+          "x": 10000,
+          "y": 35000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 90,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 13,
+          "end": 18,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "knee_m",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 3,
+          "end": 18,
+          "vx": 1300,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "special_family": "knee",
+      "strength": "m",
+      "role": "advance",
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 9,
+          "end": 13,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 6666,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 13,
+          "end": 18,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 18,
+          "end": 24,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "knee_h",
+      "name": "Traveling knee H",
+      "kind": "special",
+      "command": "qcf+HK",
+      "startup": 16,
+      "active": 5,
+      "recovery": 28,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 16,
+          "end": 21,
+          "x": 10000,
+          "y": 35000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 110,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 16,
+          "end": 21,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "knee_h",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 3,
+          "end": 21,
+          "vx": 1300,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "special_family": "knee",
+      "strength": "h",
+      "role": "advance",
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 12,
+          "end": 16,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 6666,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 16,
+          "end": 21,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 21,
+          "end": 27,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "knee_ex",
+      "name": "Driving Knee",
+      "kind": "ex_special",
+      "command": "qcf+KK",
+      "startup": 8,
+      "active": 5,
+      "recovery": 24,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 13,
+          "x": 10000,
+          "y": 35000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 125,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "soft",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 8,
+          "end": 13,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "rook_license_knee_ex",
+      "pose": "knee_ex",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 3,
+          "end": 13,
+          "vx": 1300,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "special_family": "knee",
+      "strength": "ex",
+      "role": "advance",
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 4,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 6666,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 8,
+          "end": 13,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 13,
+          "end": 19,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "catalog_id": "R-E3",
+      "access_policy": "round_license"
+    },
+    {
+      "id": "sway_l",
+      "name": "Retreat palm L",
+      "kind": "special",
+      "command": "qcb+LK",
+      "startup": 10,
+      "active": 5,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 10,
+          "end": 15,
+          "x": 10000,
+          "y": 35000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 70,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 10,
+          "end": 15,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "sway_l",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 0,
+          "end": 7,
+          "vx": -1400,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "special_family": "sway",
+      "strength": "l",
+      "role": "retreat",
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 6,
+          "end": 10,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 6666,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 10,
+          "end": 15,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 15,
+          "end": 21,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "sway_m",
+      "name": "Retreat palm M",
+      "kind": "special",
+      "command": "qcb+MK",
+      "startup": 13,
+      "active": 5,
+      "recovery": 23,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 13,
+          "end": 18,
+          "x": 10000,
+          "y": 35000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 90,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 13,
+          "end": 18,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "sway_m",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 0,
+          "end": 7,
+          "vx": -1400,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "special_family": "sway",
+      "strength": "m",
+      "role": "retreat",
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 9,
+          "end": 13,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 6666,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 13,
+          "end": 18,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 18,
+          "end": 24,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "sway_h",
+      "name": "Retreat palm H",
+      "kind": "special",
+      "command": "qcb+HK",
+      "startup": 16,
+      "active": 5,
+      "recovery": 28,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 16,
+          "end": 21,
+          "x": 10000,
+          "y": 35000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 110,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 16,
+          "end": 21,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "sway_h",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 0,
+          "end": 7,
+          "vx": -1400,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "special_family": "sway",
+      "strength": "h",
+      "role": "retreat",
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 12,
+          "end": 16,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 6666,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 16,
+          "end": 21,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 21,
+          "end": 27,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "access_policy": "base"
+    },
+    {
+      "id": "sway_ex",
+      "name": "Recoil Palm",
+      "kind": "ex_special",
+      "command": "qcb+KK",
+      "startup": 8,
+      "active": 5,
+      "recovery": 24,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 13,
+          "x": 10000,
+          "y": 35000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 125,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "soft",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "rook_license_sway_ex",
+      "pose": "sway_ex",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 0,
+          "end": 7,
+          "vx": -1400,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "special_family": "sway",
+      "strength": "ex",
+      "role": "retreat",
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "hurtbox_windows": [
+        {
+          "start": 4,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 6666,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 8,
+          "end": 13,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 13,
+          "end": 19,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 35000,
+              "width": 20000,
+              "height": 20000
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "catalog_id": "R-E4",
+      "access_policy": "round_license"
+    },
+    {
+      "id": "super_1",
+      "name": "Circuit Break",
+      "kind": "super",
+      "command": "double_qcf+P",
+      "startup": 5,
+      "active": 20,
+      "recovery": 35,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 7,
+          "x": 10000,
+          "y": 48000,
+          "width": 58000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h1",
+          "start": 9,
+          "end": 11,
+          "x": 10000,
+          "y": 48000,
+          "width": 58000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 1,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h2",
+          "start": 13,
+          "end": 15,
+          "x": 10000,
+          "y": 48000,
+          "width": 58000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 2,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h3",
+          "start": 17,
+          "end": 19,
+          "x": 10000,
+          "y": 48000,
+          "width": 58000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 3,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h4",
+          "start": 21,
+          "end": 23,
+          "x": 10000,
+          "y": 48000,
+          "width": 58000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 4,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "rook_permit_super_1",
+      "pose": "super_1",
+      "invulnerability": [
+        {
+          "start": 0,
+          "end": 6,
+          "to": [
+            "strike",
+            "projectile"
+          ]
+        }
+      ],
+      "movement": [
+        {
+          "start": 5,
+          "end": 25,
+          "vx": 500,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "super_freeze": 20,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "design_role": "advancing_confirm",
+      "hurtbox_windows": [
+        {
+          "start": 1,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 6666,
+              "y": 48000,
+              "width": 29000,
+              "height": 32500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 5,
+          "end": 25,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 48000,
+              "width": 29000,
+              "height": 32500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 25,
+          "end": 31,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 48000,
+              "width": 29000,
+              "height": 32500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "catalog_id": "R-A1",
+      "access_policy": "prepaid_super"
+    },
+    {
+      "id": "super_2",
+      "name": "Forge Impact",
+      "kind": "super",
+      "command": "double_qcf+P",
+      "startup": 6,
+      "active": 8,
+      "recovery": 35,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 6,
+          "end": 8,
+          "x": 10000,
+          "y": 25000,
+          "width": 40000,
+          "height": 125000,
+          "level": "mid",
+          "damage": 140,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h1",
+          "start": 10,
+          "end": 12,
+          "x": 10000,
+          "y": 25000,
+          "width": 40000,
+          "height": 125000,
+          "level": "mid",
+          "damage": 140,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 1,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "rook_permit_super_2",
+      "pose": "super_2",
+      "invulnerability": [
+        {
+          "start": 0,
+          "end": 7,
+          "to": [
+            "strike",
+            "projectile"
+          ]
+        }
+      ],
+      "movement": [
+        {
+          "start": 6,
+          "end": 12,
+          "vx": 300,
+          "vy": 3500
+        }
+      ],
+      "projectile": null,
+      "super_freeze": 20,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "design_role": "vertical_reversal",
+      "hurtbox_windows": [
+        {
+          "start": 2,
+          "end": 6,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 6666,
+              "y": 25000,
+              "width": 20000,
+              "height": 62500
+            }
+          ],
+          "intent": "Anticipation limb extension; ordinary body remains vulnerable."
+        },
+        {
+          "start": 6,
+          "end": 14,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 25000,
+              "width": 20000,
+              "height": 62500
+            }
+          ],
+          "intent": "Committed limb vulnerability; attacks may intentionally extend beyond the limb."
+        },
+        {
+          "start": 14,
+          "end": 20,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 25000,
+              "width": 20000,
+              "height": 62500
+            }
+          ],
+          "intent": "Early recovery retains the extended limb for a spacing-based whiff punish."
+        }
+      ],
+      "catalog_id": "R-A2",
+      "access_policy": "prepaid_super"
+    },
+    {
+      "id": "buy_r_s1_clinch",
+      "name": "Clinch Entry",
+      "kind": "special",
+      "command": "qcb+P",
+      "startup": 12,
+      "active": 3,
+      "recovery": 23,
+      "hitboxes": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_s1_clinch",
+      "pose": "buy_r_s1_clinch",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-S1",
+      "events": [],
+      "design_role": "Add one grounded, untechable command throw. It cannot capture airborne/prejump, hitstunned, blockstunned, wakeup-immune or already captured targets. It ends in hard knockdown, not a free restand combo. No armor, travel, outgoing cancel or frame-zero grab. Fresh P is one punch.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 12,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 48000,
+              "width": 24000,
+              "height": 28000
+            }
+          ],
+          "intent": "Authored anticipation silhouette; no sprite-alignment claim."
+        },
+        {
+          "start": 12,
+          "end": 15,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 26000,
+              "y": 50000,
+              "width": 24000,
+              "height": 40000
+            }
+          ],
+          "intent": "Authored committed body/limb; geometry is independent of effect art."
+        },
+        {
+          "start": 15,
+          "end": 38,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 22000,
+              "y": 46000,
+              "width": 26000,
+              "height": 34000
+            }
+          ],
+          "intent": "Authored recovering limb/body remains punishable."
+        }
+      ],
+      "throw": {
+        "range": 27000,
+        "damage": 135,
+        "stun": 90,
+        "techable": false,
+        "swap_sides": false,
+        "knockdown": "hard"
+      },
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_s2_slipstream",
+      "name": "Slipstream Entry",
+      "kind": "special",
+      "command": "qcb+P",
+      "startup": 4,
+      "active": 8,
+      "recovery": 8,
+      "hitboxes": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_s2_slipstream",
+      "pose": "buy_r_s2_slipstream",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 4,
+          "end": 12,
+          "vx": 5250,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-S2",
+      "events": [],
+      "design_role": "A 20-tick grounded ducking entry travels 42 world units during ticks [4,12). Use an authored low hurt silhouette in that interval, not blanket invulnerability. Fresh P or K during [8,13) starts respectively a mid straight (5/3/19, 65 damage) or a narrow anti-air upper (7/4/24, 80 damage, soft knockdown). No branch is automatic. Declining the branch completes entry recovery. Neither branch cancels on block or whiff.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 4,
+          "replace_body": true,
+          "boxes": [
+            {
+              "x": 0,
+              "y": 47500,
+              "width": 30000,
+              "height": 95000
+            }
+          ],
+          "intent": "Standing commitment before the duck."
+        },
+        {
+          "start": 4,
+          "end": 12,
+          "replace_body": true,
+          "boxes": [
+            {
+              "x": 0,
+              "y": 18000,
+              "width": 34000,
+              "height": 36000
+            }
+          ],
+          "intent": "Low entry avoids high geometry only; lows and throws remain live."
+        },
+        {
+          "start": 12,
+          "end": 20,
+          "replace_body": true,
+          "boxes": [
+            {
+              "x": 0,
+              "y": 47500,
+              "width": 30000,
+              "height": 95000
+            }
+          ],
+          "intent": "Standing recovery is fully exposed."
+        }
+      ],
+      "branches": [
+        {
+          "button": "P",
+          "target": "buy_r_s2_straight",
+          "start": 8,
+          "end": 13,
+          "contact": "none",
+          "relative_to_contact": false
+        },
+        {
+          "button": "K",
+          "target": "buy_r_s2_upper",
+          "start": 8,
+          "end": 13,
+          "contact": "none",
+          "relative_to_contact": false
+        }
+      ],
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_s2_straight",
+      "name": "Slipstream Straight",
+      "kind": "special",
+      "command": "derived:P",
+      "startup": 5,
+      "active": 3,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 8,
+          "x": 26000,
+          "y": 48000,
+          "width": 42000,
+          "height": 24000,
+          "level": "mid",
+          "damage": 65,
+          "stun": 65,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 14,
+          "push_x": 10000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 2,
+          "parryable": true
+        }
+      ],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_s2_slipstream",
+      "pose": "buy_r_s2_slipstream",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-S2",
+      "events": [],
+      "design_role": "A 20-tick grounded ducking entry travels 42 world units during ticks [4,12). Use an authored low hurt silhouette in that interval, not blanket invulnerability. Fresh P or K during [8,13) starts respectively a mid straight (5/3/19, 65 damage) or a narrow anti-air upper (7/4/24, 80 damage, soft knockdown). No branch is automatic. Declining the branch completes entry recovery. Neither branch cancels on block or whiff.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 16000,
+              "y": 47000,
+              "width": 22000,
+              "height": 22000
+            }
+          ],
+          "intent": "Authored anticipation silhouette; no sprite-alignment claim."
+        },
+        {
+          "start": 5,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 28000,
+              "y": 47000,
+              "width": 28000,
+              "height": 18000
+            }
+          ],
+          "intent": "Authored committed body/limb; geometry is independent of effect art."
+        },
+        {
+          "start": 8,
+          "end": 27,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 26000,
+              "y": 45000,
+              "width": 28000,
+              "height": 20000
+            }
+          ],
+          "intent": "Authored recovering limb/body remains punishable."
+        }
+      ],
+      "branches": [],
+      "derived_from": "buy_r_s2_slipstream",
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_s2_upper",
+      "name": "Slipstream Upper",
+      "kind": "special",
+      "command": "derived:K",
+      "startup": 7,
+      "active": 4,
+      "recovery": 24,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 7,
+          "end": 11,
+          "x": 26000,
+          "y": 87000,
+          "width": 30000,
+          "height": 55000,
+          "level": "mid",
+          "damage": 80,
+          "stun": 85,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 14,
+          "push_x": 10000,
+          "launch_y": 8000,
+          "knockdown": "soft",
+          "hit_group": 0,
+          "juggle_cost": 2,
+          "parryable": true
+        }
+      ],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_s2_slipstream",
+      "pose": "buy_r_s2_slipstream",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-S2",
+      "events": [],
+      "design_role": "A 20-tick grounded ducking entry travels 42 world units during ticks [4,12). Use an authored low hurt silhouette in that interval, not blanket invulnerability. Fresh P or K during [8,13) starts respectively a mid straight (5/3/19, 65 damage) or a narrow anti-air upper (7/4/24, 80 damage, soft knockdown). No branch is automatic. Declining the branch completes entry recovery. Neither branch cancels on block or whiff.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 7,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 12000,
+              "y": 60000,
+              "width": 24000,
+              "height": 28000
+            }
+          ],
+          "intent": "Authored anticipation silhouette; no sprite-alignment claim."
+        },
+        {
+          "start": 7,
+          "end": 11,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 24000,
+              "y": 87000,
+              "width": 26000,
+              "height": 50000
+            }
+          ],
+          "intent": "Authored committed body/limb; geometry is independent of effect art."
+        },
+        {
+          "start": 11,
+          "end": 35,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 20000,
+              "y": 69000,
+              "width": 28000,
+              "height": 44000
+            }
+          ],
+          "intent": "Authored recovering limb/body remains punishable."
+        }
+      ],
+      "branches": [],
+      "derived_from": "buy_r_s2_slipstream",
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_s3_chain1",
+      "name": "Rivet Chain",
+      "kind": "special",
+      "command": "qcb+P",
+      "startup": 10,
+      "active": 3,
+      "recovery": 18,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 10,
+          "end": 13,
+          "x": 26000,
+          "y": 48000,
+          "width": 42000,
+          "height": 24000,
+          "level": "mid",
+          "damage": 45,
+          "stun": 55,
+          "rank": 3,
+          "hitstun": 21,
+          "blockstun": 12,
+          "push_x": 10000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 2,
+          "parryable": true
+        }
+      ],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_s3_chain1",
+      "pose": "buy_r_s3_chain1",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-S3",
+      "events": [],
+      "design_role": "Three mid strikes have targets 10/3/18, 8/3/20 and 12/3/26 with damage 45/55/75. Each fresh follow-up P is accepted only during the preceding contact window [hit_start, hit_start+8). No follow-up on a parry or whiff. Stage two can be delayed within the window; stage three knocks down. Each continuation abandons previous recovery and commits to its own startup. No loop back, no alternate throw/overhead branch and no outgoing super cancel in this candidate.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 10,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 16000,
+              "y": 47000,
+              "width": 22000,
+              "height": 22000
+            }
+          ],
+          "intent": "Authored anticipation silhouette; no sprite-alignment claim."
+        },
+        {
+          "start": 10,
+          "end": 13,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 28000,
+              "y": 47000,
+              "width": 28000,
+              "height": 18000
+            }
+          ],
+          "intent": "Authored committed body/limb; geometry is independent of effect art."
+        },
+        {
+          "start": 13,
+          "end": 31,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 26000,
+              "y": 45000,
+              "width": 28000,
+              "height": 20000
+            }
+          ],
+          "intent": "Authored recovering limb/body remains punishable."
+        }
+      ],
+      "branches": [
+        {
+          "button": "P",
+          "target": "buy_r_s3_chain2",
+          "start": 0,
+          "end": 8,
+          "contact": "contact",
+          "relative_to_contact": true
+        }
+      ],
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_s3_chain2",
+      "name": "Rivet Chain II",
+      "kind": "special",
+      "command": "derived:P",
+      "startup": 8,
+      "active": 3,
+      "recovery": 20,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 11,
+          "x": 26000,
+          "y": 48000,
+          "width": 42000,
+          "height": 24000,
+          "level": "mid",
+          "damage": 55,
+          "stun": 60,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 14,
+          "push_x": 10000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 2,
+          "parryable": true
+        }
+      ],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_s3_chain1",
+      "pose": "buy_r_s3_chain1",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-S3",
+      "events": [],
+      "design_role": "Three mid strikes have targets 10/3/18, 8/3/20 and 12/3/26 with damage 45/55/75. Each fresh follow-up P is accepted only during the preceding contact window [hit_start, hit_start+8). No follow-up on a parry or whiff. Stage two can be delayed within the window; stage three knocks down. Each continuation abandons previous recovery and commits to its own startup. No loop back, no alternate throw/overhead branch and no outgoing super cancel in this candidate.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 8,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 16000,
+              "y": 47000,
+              "width": 22000,
+              "height": 22000
+            }
+          ],
+          "intent": "Authored anticipation silhouette; no sprite-alignment claim."
+        },
+        {
+          "start": 8,
+          "end": 11,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 28000,
+              "y": 47000,
+              "width": 28000,
+              "height": 18000
+            }
+          ],
+          "intent": "Authored committed body/limb; geometry is independent of effect art."
+        },
+        {
+          "start": 11,
+          "end": 31,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 26000,
+              "y": 45000,
+              "width": 28000,
+              "height": 20000
+            }
+          ],
+          "intent": "Authored recovering limb/body remains punishable."
+        }
+      ],
+      "branches": [
+        {
+          "button": "P",
+          "target": "buy_r_s3_chain3",
+          "start": 0,
+          "end": 8,
+          "contact": "contact",
+          "relative_to_contact": true
+        }
+      ],
+      "derived_from": "buy_r_s3_chain1",
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_s3_chain3",
+      "name": "Rivet Chain III",
+      "kind": "special",
+      "command": "derived:P",
+      "startup": 12,
+      "active": 3,
+      "recovery": 26,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 12,
+          "end": 15,
+          "x": 26000,
+          "y": 48000,
+          "width": 42000,
+          "height": 24000,
+          "level": "mid",
+          "damage": 75,
+          "stun": 85,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 14,
+          "push_x": 10000,
+          "launch_y": 6500,
+          "knockdown": "soft",
+          "hit_group": 0,
+          "juggle_cost": 2,
+          "parryable": true
+        }
+      ],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_s3_chain1",
+      "pose": "buy_r_s3_chain1",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-S3",
+      "events": [],
+      "design_role": "Three mid strikes have targets 10/3/18, 8/3/20 and 12/3/26 with damage 45/55/75. Each fresh follow-up P is accepted only during the preceding contact window [hit_start, hit_start+8). No follow-up on a parry or whiff. Stage two can be delayed within the window; stage three knocks down. Each continuation abandons previous recovery and commits to its own startup. No loop back, no alternate throw/overhead branch and no outgoing super cancel in this candidate.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 12,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 16000,
+              "y": 47000,
+              "width": 22000,
+              "height": 22000
+            }
+          ],
+          "intent": "Authored anticipation silhouette; no sprite-alignment claim."
+        },
+        {
+          "start": 12,
+          "end": 15,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 28000,
+              "y": 47000,
+              "width": 28000,
+              "height": 18000
+            }
+          ],
+          "intent": "Authored committed body/limb; geometry is independent of effect art."
+        },
+        {
+          "start": 15,
+          "end": 41,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 26000,
+              "y": 45000,
+              "width": 28000,
+              "height": 20000
+            }
+          ],
+          "intent": "Authored recovering limb/body remains punishable."
+        }
+      ],
+      "branches": [],
+      "derived_from": "buy_r_s3_chain1",
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_s4_counter",
+      "name": "Cross Counter",
+      "kind": "special",
+      "command": "qcb+P",
+      "startup": 5,
+      "active": 6,
+      "recovery": 25,
+      "hitboxes": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_s4_counter",
+      "pose": "buy_r_s4_counter",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-S4",
+      "events": [],
+      "design_role": "Enter a counter stance: startup 5, counter window [5,11), whiff recovery 25. Only a frontal, direct, grounded mid/high strike can trigger it. Low, airborne, throw, projectile and super attacks bypass it. On trigger negate that single strike and start an independently colliding 6/3/22 mid riposte for 95 damage. The riposte is not a teleporting guaranteed hit; it can miss at range. Only this counter stance changes that interaction.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 5,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 48000,
+              "width": 24000,
+              "height": 28000
+            }
+          ],
+          "intent": "Authored anticipation silhouette; no sprite-alignment claim."
+        },
+        {
+          "start": 5,
+          "end": 11,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 26000,
+              "y": 50000,
+              "width": 24000,
+              "height": 40000
+            }
+          ],
+          "intent": "Authored committed body/limb; geometry is independent of effect art."
+        },
+        {
+          "start": 11,
+          "end": 36,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 22000,
+              "y": 46000,
+              "width": 26000,
+              "height": 34000
+            }
+          ],
+          "intent": "Authored recovering limb/body remains punishable."
+        }
+      ],
+      "actor_rules": {
+        "type": "counter",
+        "counter_start": 5,
+        "counter_end": 11,
+        "riposte": "buy_r_s4_riposte"
+      },
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_s4_riposte",
+      "name": "Cross Counter Riposte",
+      "kind": "special",
+      "command": "derived:P",
+      "startup": 6,
+      "active": 3,
+      "recovery": 22,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 6,
+          "end": 9,
+          "x": 26000,
+          "y": 48000,
+          "width": 42000,
+          "height": 24000,
+          "level": "mid",
+          "damage": 95,
+          "stun": 100,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 14,
+          "push_x": 10000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 2,
+          "parryable": true
+        }
+      ],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_s4_counter",
+      "pose": "buy_r_s4_counter",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-S4",
+      "events": [],
+      "design_role": "Enter a counter stance: startup 5, counter window [5,11), whiff recovery 25. Only a frontal, direct, grounded mid/high strike can trigger it. Low, airborne, throw, projectile and super attacks bypass it. On trigger negate that single strike and start an independently colliding 6/3/22 mid riposte for 95 damage. The riposte is not a teleporting guaranteed hit; it can miss at range. Only this counter stance changes that interaction.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 6,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 16000,
+              "y": 47000,
+              "width": 22000,
+              "height": 22000
+            }
+          ],
+          "intent": "Authored anticipation silhouette; no sprite-alignment claim."
+        },
+        {
+          "start": 6,
+          "end": 9,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 28000,
+              "y": 47000,
+              "width": 28000,
+              "height": 18000
+            }
+          ],
+          "intent": "Authored committed body/limb; geometry is independent of effect art."
+        },
+        {
+          "start": 9,
+          "end": 31,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 26000,
+              "y": 45000,
+              "width": 28000,
+              "height": 20000
+            }
+          ],
+          "intent": "Authored recovering limb/body remains punishable."
+        }
+      ],
+      "branches": [],
+      "derived_from": "buy_r_s4_counter",
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_t1_high_hook",
+      "name": "High Hook",
+      "kind": "unique",
+      "command": "6+HP",
+      "startup": 18,
+      "active": 3,
+      "recovery": 20,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 18,
+          "end": 21,
+          "x": 32000,
+          "y": 63000,
+          "width": 56000,
+          "height": 26000,
+          "level": "overhead",
+          "damage": 80,
+          "stun": 100,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 14,
+          "push_x": 10000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 2,
+          "parryable": true
+        }
+      ],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_t1_high_hook",
+      "pose": "buy_r_t1_high_hook",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-T1",
+      "events": [],
+      "design_role": "Replace command_fhp with a deliberately telegraphed overhead, 18/3/20 and 80 damage. No movement, armor or kara throw. Give it purposeful forward/head-level geometry; block/parry punishability is measured rather than inferred. On hit, only normal recovery/link rules apply.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 18,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 71000,
+              "width": 26000,
+              "height": 22000
+            }
+          ],
+          "intent": "Authored anticipation silhouette; no sprite-alignment claim."
+        },
+        {
+          "start": 18,
+          "end": 21,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 34000,
+              "y": 64000,
+              "width": 32000,
+              "height": 22000
+            }
+          ],
+          "intent": "Authored committed body/limb; geometry is independent of effect art."
+        },
+        {
+          "start": 21,
+          "end": 41,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 29000,
+              "y": 56000,
+              "width": 30000,
+              "height": 24000
+            }
+          ],
+          "intent": "Authored recovering limb/body remains punishable."
+        }
+      ],
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_t2_low_turn",
+      "name": "Low Turn",
+      "kind": "unique",
+      "command": "6+HP",
+      "startup": 14,
+      "active": 3,
+      "recovery": 23,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 14,
+          "end": 17,
+          "x": 30000,
+          "y": 17000,
+          "width": 50000,
+          "height": 20000,
+          "level": "low",
+          "damage": 75,
+          "stun": 95,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 14,
+          "push_x": 10000,
+          "launch_y": 5000,
+          "knockdown": "soft",
+          "hit_group": 0,
+          "juggle_cost": 2,
+          "parryable": true
+        }
+      ],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_t2_low_turn",
+      "pose": "buy_r_t2_low_turn",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-T2",
+      "events": [],
+      "design_role": "Replace command_fhp with a 14/3/23 low, 75 damage and soft knockdown. No travel, armor, kara or outgoing cancel. Do not reintroduce the old Low Drive payload unchanged at a second price.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 14,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 8000,
+              "y": 22000,
+              "width": 26000,
+              "height": 22000
+            }
+          ],
+          "intent": "Authored anticipation silhouette; no sprite-alignment claim."
+        },
+        {
+          "start": 14,
+          "end": 17,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 32000,
+              "y": 18000,
+              "width": 32000,
+              "height": 20000
+            }
+          ],
+          "intent": "Authored committed body/limb; geometry is independent of effect art."
+        },
+        {
+          "start": 17,
+          "end": 40,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 30000,
+              "y": 20000,
+              "width": 32000,
+              "height": 22000
+            }
+          ],
+          "intent": "Authored recovering limb/body remains punishable."
+        }
+      ],
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_t3_rivet_lift",
+      "name": "Rivet Lift",
+      "kind": "unique",
+      "command": "6+HP",
+      "startup": 12,
+      "active": 3,
+      "recovery": 24,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 12,
+          "end": 15,
+          "x": 22000,
+          "y": 58000,
+          "width": 42000,
+          "height": 50000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 70,
+          "rank": 3,
+          "hitstun": 30,
+          "blockstun": 14,
+          "push_x": 10000,
+          "launch_y": 10000,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 2,
+          "parryable": true
+        }
+      ],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_t3_rivet_lift",
+      "pose": "buy_r_t3_rivet_lift",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-T3",
+      "events": [],
+      "design_role": "Replace command_fhp with a 12/3/24 mid launcher for 60 damage. A successful hit permits jump cancel only during [contact_frame, contact_frame+4); not on block, parry or whiff. Launch height/juggle cost are authored to permit a limited follow-up and then exhaust normal juggle rules. No reset of damage scaling or juggle budget.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 12,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 12000,
+              "y": 60000,
+              "width": 24000,
+              "height": 28000
+            }
+          ],
+          "intent": "Authored anticipation silhouette; no sprite-alignment claim."
+        },
+        {
+          "start": 12,
+          "end": 15,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 24000,
+              "y": 87000,
+              "width": 26000,
+              "height": 50000
+            }
+          ],
+          "intent": "Authored committed body/limb; geometry is independent of effect art."
+        },
+        {
+          "start": 15,
+          "end": 39,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 20000,
+              "y": 69000,
+              "width": 28000,
+              "height": 44000
+            }
+          ],
+          "intent": "Authored recovering limb/body remains punishable."
+        }
+      ],
+      "jump_cancel": {
+        "start": 0,
+        "end": 4
+      },
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_t4_tempered",
+      "name": "Tempered Blow",
+      "kind": "unique",
+      "command": "6+HP",
+      "startup": 18,
+      "active": 3,
+      "recovery": 27,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 18,
+          "end": 21,
+          "x": 30000,
+          "y": 50000,
+          "width": 50000,
+          "height": 30000,
+          "level": "mid",
+          "damage": 100,
+          "stun": 110,
+          "rank": 3,
+          "hitstun": 25,
+          "blockstun": 15,
+          "push_x": 10000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 2,
+          "parryable": true
+        }
+      ],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_t4_tempered",
+      "pose": "buy_r_t4_tempered",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-T4",
+      "events": [],
+      "design_role": "Replace command_fhp. Minimum startup 18, active 3, recovery 27. Holding delays release up to startup 36 but does not increase damage beyond 100. One direct non-super strike can be absorbed during fixed action ticks [6,14); it still deals full health damage and can KO, but does not cause hitstun unless it causes dizzy. Throws, lows, projectiles, supers and a second strike interrupt. The armor interval never lengthens with hold. Always mid/blockable; no dash cancel.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 18,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 16000,
+              "y": 47000,
+              "width": 22000,
+              "height": 22000
+            }
+          ],
+          "intent": "Authored anticipation silhouette; no sprite-alignment claim."
+        },
+        {
+          "start": 18,
+          "end": 21,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 28000,
+              "y": 47000,
+              "width": 28000,
+              "height": 18000
+            }
+          ],
+          "intent": "Authored committed body/limb; geometry is independent of effect art."
+        },
+        {
+          "start": 21,
+          "end": 48,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 26000,
+              "y": 45000,
+              "width": 28000,
+              "height": 20000
+            }
+          ],
+          "intent": "Authored recovering limb/body remains punishable."
+        }
+      ],
+      "actor_rules": {
+        "type": "armor_hold",
+        "armor_start": 6,
+        "armor_end": 14,
+        "max_hold_startup": 36,
+        "trigger_button": "HP"
+      },
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_g1_false_start",
+      "name": "False Start",
+      "kind": "gambit",
+      "command": "4+HP+HK",
+      "startup": 6,
+      "active": 0,
+      "recovery": 6,
+      "hitboxes": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_g1_false_start",
+      "pose": "buy_r_g1_false_start",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 3,
+          "end": 6,
+          "vx": 1300,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-G1",
+      "events": [],
+      "design_role": "A standalone 12-tick feint copies the first six visible anticipation ticks and first 3.9 units of the free knee_h windup, then visibly aborts. No hitbox, armor, invulnerability or attack cancel; normal actions resume after tick 12. Cannot be entered out of another move. The round reveal tells the opponent this feint is available, not when it is being used.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 6,
+          "replace_body": true,
+          "boxes": [
+            {
+              "x": 0,
+              "y": 47500,
+              "width": 30000,
+              "height": 95000
+            }
+          ],
+          "intent": "Authored anticipation silhouette; no sprite-alignment claim."
+        },
+        {
+          "start": 6,
+          "end": 12,
+          "replace_body": true,
+          "boxes": [
+            {
+              "x": 0,
+              "y": 47500,
+              "width": 30000,
+              "height": 95000
+            }
+          ],
+          "intent": "Authored recovering limb/body remains punishable."
+        }
+      ],
+      "mimic": {
+        "source_move_id": "knee_h",
+        "shared_ticks": 6,
+        "abort_ticks": 6
+      },
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_g2_check_step",
+      "name": "Check Step",
+      "kind": "gambit",
+      "command": "4+HP+HK",
+      "startup": 0,
+      "active": 6,
+      "recovery": 4,
+      "hitboxes": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_g2_check_step",
+      "pose": "buy_r_g2_check_step",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 0,
+          "end": 6,
+          "vx": -5000,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-G2",
+      "events": [],
+      "design_role": "A 10-tick grounded retreat travels 30 units in [0,6), then has 4 recovery ticks. It is fully strike/throw vulnerable and cannot block/parry/cancel during the action. It remains constrained by walls and maximum separation. No low-profile privilege.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 6,
+          "replace_body": true,
+          "boxes": [
+            {
+              "x": 0,
+              "y": 47500,
+              "width": 30000,
+              "height": 95000
+            }
+          ],
+          "intent": "Authored committed body/limb; geometry is independent of effect art."
+        },
+        {
+          "start": 6,
+          "end": 10,
+          "replace_body": true,
+          "boxes": [
+            {
+              "x": 0,
+              "y": 47500,
+              "width": 30000,
+              "height": 95000
+            }
+          ],
+          "intent": "Authored recovering limb/body remains punishable."
+        }
+      ],
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_g3_vault_hop",
+      "name": "Vault Hop",
+      "kind": "gambit",
+      "command": "4+HP+HK",
+      "startup": 3,
+      "active": 0,
+      "recovery": 8,
+      "hitboxes": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_g3_vault_hop",
+      "pose": "buy_r_g3_vault_hop",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-G3",
+      "events": [],
+      "design_role": "A 3-tick prejump followed by a fixed short hop; no attack may start before landing. Set a 40-unit apex, 20-unit forward displacement and 8 landing recovery ticks. It is not invincible: normal air hurtboxes apply. Prejump throw eligibility follows the unchanged system rule. Landing does not erase recovery or enable an instant cross-up.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 3,
+          "replace_body": true,
+          "boxes": [
+            {
+              "x": 0,
+              "y": 47500,
+              "width": 30000,
+              "height": 95000
+            }
+          ],
+          "intent": "Authored anticipation silhouette; no sprite-alignment claim."
+        },
+        {
+          "start": 3,
+          "end": 11,
+          "replace_body": true,
+          "boxes": [
+            {
+              "x": 0,
+              "y": 47500,
+              "width": 30000,
+              "height": 95000
+            }
+          ],
+          "intent": "Authored recovering limb/body remains punishable."
+        }
+      ],
+      "actor_rules": {
+        "type": "vault",
+        "flight_ticks": 20,
+        "vertical_velocity": 7600,
+        "gravity": 800,
+        "horizontal_velocity": 1000,
+        "landing_recovery": 8,
+        "apex_height": 40000
+      },
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_g4_wire_cut",
+      "name": "Wire Cut",
+      "kind": "gambit",
+      "command": "4+HP+HK",
+      "startup": 7,
+      "active": 3,
+      "recovery": 22,
+      "hitboxes": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "buy_r_g4_wire_cut",
+      "pose": "buy_r_g4_wire_cut",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": false,
+      "catalog_id": "R-G4",
+      "events": [],
+      "design_role": "A 7/3/22 grounded swat has a frontal anti-projectile box but no fighter hitbox. It destroys one ordinary non-super projectile instance during [7,10). It cannot reflect, cancel its recovery, erase a persistent super field, or produce a refund. All ordinary fighter hurtboxes remain vulnerable.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 7,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 10000,
+              "y": 48000,
+              "width": 24000,
+              "height": 28000
+            }
+          ],
+          "intent": "Authored anticipation silhouette; no sprite-alignment claim."
+        },
+        {
+          "start": 7,
+          "end": 10,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 26000,
+              "y": 50000,
+              "width": 24000,
+              "height": 40000
+            }
+          ],
+          "intent": "Authored committed body/limb; geometry is independent of effect art."
+        },
+        {
+          "start": 10,
+          "end": 32,
+          "replace_body": false,
+          "boxes": [
+            {
+              "x": 22000,
+              "y": 46000,
+              "width": 26000,
+              "height": 34000
+            }
+          ],
+          "intent": "Authored recovering limb/body remains punishable."
+        }
+      ],
+      "object_rules": {
+        "kind": "intercept",
+        "active_start": 7,
+        "active_end": 10,
+        "interaction_box": {
+          "x": 30000,
+          "y": 42000,
+          "width": 40000,
+          "height": 60000
+        }
+      },
+      "access_policy": "round_license"
+    },
+    {
+      "id": "buy_r_a3_overtime",
+      "name": "Overtime",
+      "kind": "super",
+      "command": "double_qcf+P",
+      "startup": 12,
+      "active": 0,
+      "recovery": 0,
+      "hitboxes": [],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "rook_permit_buy_r_a3_overtime",
+      "pose": "buy_r_a3_overtime",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "super_freeze": 0,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "design_role": "Full-trial replacement for Rush Cascade. A purchased permit supplies one committed startup this round; after 12 vulnerable activation ticks, enable a 240-unfrozen-tick state. Only listed HIT-only normal-to-normal edges become legal; no speed, damage or defense buff. Block, parry and whiff never grant extra edges. Throws, EX and supers are excluded from the extra chain graph; licensed EX retains ordinary legal cancels with no activation fee. State ends on knockdown, capture, dizzy, round end or expiry. No refresh, restored use or duration earned from hits.",
+      "hurtbox_windows": [
+        {
+          "start": 0,
+          "end": 12,
+          "replace_body": true,
+          "boxes": [
+            {
+              "x": 0,
+              "y": 47500,
+              "width": 30000,
+              "height": 95000
+            }
+          ],
+          "intent": "Authored anticipation silhouette; no sprite-alignment claim."
+        }
+      ],
+      "catalog_id": "R-A3",
+      "install": {
+        "duration_ticks": 240,
+        "edges": [
+          {
+            "from": "s_lp",
+            "to": "s_mp",
+            "start": 3,
+            "end": 9
+          },
+          {
+            "from": "s_lk",
+            "to": "s_mk",
+            "start": 3,
+            "end": 9
+          },
+          {
+            "from": "c_lp",
+            "to": "c_mp",
+            "start": 3,
+            "end": 9
+          },
+          {
+            "from": "c_lk",
+            "to": "c_mk",
+            "start": 3,
+            "end": 9
+          },
+          {
+            "from": "s_mp",
+            "to": "s_hp",
+            "start": 5,
+            "end": 12
+          },
+          {
+            "from": "s_mk",
+            "to": "s_hk",
+            "start": 5,
+            "end": 12
+          },
+          {
+            "from": "c_mp",
+            "to": "c_hp",
+            "start": 5,
+            "end": 12
+          },
+          {
+            "from": "c_mk",
+            "to": "c_hk",
+            "start": 5,
+            "end": 12
+          }
+        ]
+      },
+      "access_policy": "prepaid_super"
+    }
+  ],
+  "resource_notes": "Bank changes only at atomic preparation and confirmed settlement. EX licenses repeat after legal recovery; a purchased art has one prepaid use. Skill credits are nonspendable until the next shop."
+}

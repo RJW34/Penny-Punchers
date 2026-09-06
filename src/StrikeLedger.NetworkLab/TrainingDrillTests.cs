@@ -21,8 +21,8 @@ internal static class TrainingDrillTests
             void Wait(int ticks){for(int n=0;n<ticks;n++)Step();}
             void Until(Func<bool> condition,int maximum=300){for(int n=0;n<maximum&&!condition();n++)Step();Require(condition(),drill.Id+" fixture condition timed out");}
             void Motion(Buttons buttons,bool twice=false){foreach(byte d in twice?new byte[]{2,3,6,2,3}:new byte[]{2,3})Step(d);Step(6,buttons);}
-            void Enemy(string move){var status=t.Simulation.TryStartAction(1,move);Require(status is ActivationStatus.Free or ActivationStatus.Paid,"Illegal dummy fixture "+move);Capture("explicit deterministic dummy action fixture: "+move);}
-            void Fresh(){t.Simulation.TrainingReset(drill.Id is "insufficient_funds" or "eco_defense"?0:3600);Place(true);Capture("training quick-reset fixture; drill progress preserved");}
+            void Enemy(string move){var status=t.Simulation.TryStartAction(1,move);Require(status is ActivationStatus.Free or ActivationStatus.Licensed or ActivationStatus.SuperUse,"Illegal dummy fixture "+move);Capture("explicit deterministic dummy action fixture: "+move);}
+            void Fresh(){t.Simulation.TrainingReset(drill.Id is "eco_defense" or "owned_ex_zero"?0:3600);if(drill.Id is "red_parry" or "multihit_parry" or "eco_defense")t.Simulation.SetTrainingLoadout(1,new([content.Items.Values.Single(i=>i.EligibleFighters.Contains(t.Simulation.Players[1].FighterId)&&i.MoveId=="super_1").Id]));Place(true);Capture("training quick-reset fixture; drill progress preserved");}
             Place();Capture("initial drill fixture");
             switch(drill.Id)
             {
@@ -30,9 +30,9 @@ internal static class TrainingDrillTests
                     Motion(Buttons.LP);Wait(120);t.SwapSides();Capture("training swap-sides control");Step();Motion(Buttons.LP);Wait(40);break;
                 case "charge_side_switch":
                     for(int n=0;n<45;n++)Step(4);t.SwapSides();Capture("cross-up after full back charge");Step();for(int n=0;n<45;n++)Step(4);Step(6,Buttons.LP);Wait(10);break;
-                case "same_tick_ex":Motion(Buttons.LP|Buttons.MP);Wait(10);break;
+                case "same_tick_ex":case "owned_ex_zero":Motion(Buttons.LP|Buttons.MP);Wait(10);break;
                 case "link_cancel":
-                    Step(5,Buttons.LP);Until(()=>t.Simulation.Players[0].Contact);Until(()=>t.Simulation.Players[0].Actionable);Step(5,Buttons.LP);Wait(35);
+                    Step(5,Buttons.MP);Until(()=>t.Simulation.Players[0].Contact);Until(()=>t.Simulation.Players[0].Actionable);Step(5,Buttons.MK);Wait(35);
                     Place();Step(5,Buttons.LP);Until(()=>t.Simulation.Players[0].Contact);Motion(Buttons.LP);Wait(40);break;
                 case "target_combo":
                     Step(5,Buttons.LP);Until(()=>t.Simulation.Players[0].Contact);Until(()=>t.Simulation.Players[0].Hitstop==0);Step(5,Buttons.MP);Wait(20);break;
@@ -48,7 +48,7 @@ internal static class TrainingDrillTests
                     bool redArmed=false;for(int n=0;n<100&&!t.Success;n++){bool tap=!redArmed&&t.Simulation.Players[1].Hitstop==0&&t.Simulation.Players[1].ActionFrame==8;Step(tap?(byte)6:(byte)5);redArmed|=tap;}break;
                 case "multihit_parry":
                     Fresh();Enemy("super_1");var armedFrames=new HashSet<int>();for(int n=0;n<240;n++){var enemy=t.Simulation.Players[1];bool tap=enemy.ActionId=="super_1"&&enemy.Hitstop==0&&t.Simulation.FullFreeze==0&&new[]{5,9,13,17,21}.Contains(enemy.ActionFrame)&&armedFrames.Add(enemy.ActionFrame);Step(tap?(byte)6:(byte)5);}break;
-                case "jumpin_antiair":
+                case "jumpin_antiair":case "anti_air_reward":
                     for(int offset=0;offset<29&&!t.Success;offset++)
                     {Fresh();t.DummyMode=BotMode.Jump;Until(()=>t.Simulation.Players[1].Y>0);Wait(offset);Step(5,Buttons.HP);Wait(45);}break;
                 case "throw_tech":Enemy("throw_forward");Wait(5);Step(5,Buttons.LP|Buttons.LK);Wait(30);break;
@@ -57,6 +57,11 @@ internal static class TrainingDrillTests
                     Fresh();Enemy("rise_l");Until(()=>t.Simulation.Players[0].KnockdownTicks>0&&t.Simulation.Players[0].Grounded&&t.Simulation.Players[0].Hitstop==0);Step(2);
                     Until(()=>t.Simulation.Players[0].KnockdownTicks<=2&&t.Simulation.Players[0].Hitstop==0);Step(5,Buttons.LP);Wait(10);break;
                 case "hitconfirm_super":Step(5,Buttons.LP);Until(()=>t.Simulation.Players[0].Contact);Motion(Buttons.HP,true);Wait(50);break;
+                case "super_one_use":Motion(Buttons.HP,true);Until(()=>t.Simulation.Players[0].Actionable);Motion(Buttons.HP,true);Wait(5);break;
+                case "counter_hit_reward":
+                    Step(5,Buttons.LP);Wait(1);Enemy("s_hp");Wait(30);break;
+                case "perfect_parry_reward":
+                    Enemy("s_hp");Until(()=>t.Simulation.Players[1].ActionFrame==content.Fighters[t.Simulation.Players[1].FighterId].Move("s_hp").Hitboxes.Min(h=>h.Start));Step(6);Wait(20);break;
                 case "insufficient_funds":Motion(Buttons.LP|Buttons.MP);Wait(10);break;
                 case "eco_defense":
                     Fresh();Enemy("super_1");for(int n=0;n<150;n++)Step(4);Place(true);Step(5,Buttons.HP);Wait(40);break;

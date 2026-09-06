@@ -4,7 +4,8 @@ import argparse,subprocess,json,time,datetime,hashlib,os
 ROOT=Path(__file__).resolve().parents[1]
 def wsl(path):return '/mnt/'+str(path)[0].lower()+str(path)[2:].replace('\\','/')
 def main():
-    p=argparse.ArgumentParser();p.add_argument('mode',choices=['match','free-kit','ui','showcase','art','network','linux','windows-headless','linux-headless','free-kit-headless']);p.add_argument('--movie',action='store_true');p.add_argument('--fps',type=int,default=30);p.add_argument('--label');p.add_argument('--profile',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('mode',choices=['match','free-kit','ui','showcase','art','network','linux','windows-headless','linux-headless','free-kit-headless']);p.add_argument('--movie',action='store_true');p.add_argument('--fps',type=int,default=30);p.add_argument('--label');p.add_argument('--ruleset',choices=['buyables_core','buyables_full'],default='buyables_core');p.add_argument('--profile',action='store_true');p.add_argument('--llvmpipe-threads',type=int,choices=range(1,9));a=p.parse_args()
+    if a.llvmpipe_threads is not None and not a.mode.startswith('linux'):raise SystemExit('llvmpipe thread control applies only to a Linux process.')
     label=a.label or a.mode
     if not label or any(c not in 'abcdefghijklmnopqrstuvwxyz0123456789-_' for c in label):raise SystemExit('Invalid evidence label')
     out=ROOT/'reports/evidence'/('native-'+label);out.mkdir(parents=True,exist_ok=True)
@@ -12,7 +13,7 @@ def main():
     for seat in range(2 if a.mode=='network' else 1):
         folder=out/('peer'+str(seat)) if a.mode=='network' else out;folder.mkdir(exist_ok=True)
         linux=a.mode.startswith('linux');exe=ROOT/'dist/StrikeLedger'/('linux/StrikeLedger.x86_64' if linux else 'windows/StrikeLedger.exe')
-        user=['--evidence-dir',wsl(folder) if linux else str(folder)]
+        user=['--evidence-dir',wsl(folder) if linux else str(folder),'--ruleset',a.ruleset]
         if a.profile:user+=['--profile','--no-screenshots']
         if a.mode=='art':user+=['--art-review']
         elif a.mode=='ui':user+=['--ui-smoke']
@@ -30,7 +31,10 @@ def main():
         if linux:
             lib=ROOT/'.tools/linux-audio/unpacked/usr/lib/x86_64-linux-gnu'
             prefix=['wsl','-d','Ubuntu','--']
-            if lib.exists():prefix+=['env','LD_LIBRARY_PATH='+wsl(lib)+':'+wsl(lib/'pulseaudio')]
+            environment=[]
+            if a.llvmpipe_threads is not None:environment+=['LP_NUM_THREADS='+str(a.llvmpipe_threads)]
+            if lib.exists():environment+=['LD_LIBRARY_PATH='+wsl(lib)+':'+wsl(lib/'pulseaudio')]
+            if environment:prefix+=['env']+environment
             prefix+=[wsl(exe)]
         cmd=prefix+engine+['--']+user
         log=(folder/'process.log').open('w',encoding='utf-8');log.write('$ '+subprocess.list2cmdline(cmd)+'\n');log.flush()
@@ -50,9 +54,4 @@ def main():
         runtime_root=ROOT/'dist/StrikeLedger'/('linux' if a.mode.startswith('linux') else 'windows')
         runtime_files=[p for p in runtime_root.rglob('*') if p.is_file() and p.name in ['StrikeLedger.exe','StrikeLedger.x86_64','StrikeLedger.pck','StrikeLedger.dll','StrikeLedger.Core.dll','StrikeLedger.App.dll']]
         result['runtime_sha256']={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in runtime_files}
-        (folder/'process-result.json').write_text(json.dumps(result,indent=2));results.append(result);print(json.dumps(result),flush=True)
-    if a.mode=='network' and all(x['passed'] for x in results):
-        states=[json.loads((folder/'native-network-result.json').read_text()) for _,_,folder,_,_ in jobs]
-        if states[0]['finalHash']!=states[1]['finalHash']:raise SystemExit('Native peers diverged')
-    raise SystemExit(0 if all(x['passed'] for x in results) else 1)
-if __name__=='__main__':main()
+        (folder/'process-result.json').write_text(json.dumps(result,indent=2));results.append(result);print(json.dump

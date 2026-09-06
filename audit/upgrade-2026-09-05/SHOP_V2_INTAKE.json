@@ -1,0 +1,40 @@
+{
+  "user_instruction": "Please also integrate Penny-Punchers_Shop-Only_Economy_Rework_v2",
+  "received_package": "Penny-Punchers_Shop-Only_Economy_Rework_v2.zip",
+  "archive_sha256": "90c632d38d291a14c749a17b2fac27c6e365a52c3bc6ae203ee58f115fa1855f",
+  "manifested_files_verified": 76,
+  "reference_tool_tests": {
+    "passed": 95,
+    "failed": 0,
+    "native_game_executed": false
+  },
+  "package_requirements": {
+    "software": 58,
+    "device": 2,
+    "human": 1
+  },
+  "live_git_head": "1623ee62c4f4b6d5574bbb9909eb6fe4e32f5441",
+  "dirty_work_preserved": true,
+  "pre_migration_checkpoint": {
+    "path": "reports/evidence/pre-shop-v2-checkpoint/pre-shop-v2-checkpoint.zip",
+    "sha256": "2ab5ac246facea4480bad36ff56050979342a0ac2e60ec62359c7dcd8322b36a",
+    "files": 689
+  },
+  "catalog_preserved": {
+    "core_actions": 100,
+    "expanded_actions": 115,
+    "core_rentals": 12,
+    "expanded_rentals": 24,
+    "ex_products": 8,
+    "super_products": 6
+  },
+  "ownership": {
+    "shared_core": "combat_core",
+    "reward_ledger_and_tests": "root",
+    "app_replay_network_training": "session_network",
+    "shop_hud_presentation": "presentation"
+  },
+  "active_contract": "docs/21_SHOP_ONLY_V2.md",
+  "current_candidate_frozen": false,
+  "observed_utc": "2026-09-05T22:54:24.780031+00:00"
+}

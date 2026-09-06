@@ -1,0 +1,52 @@
+{
+  "scope": "Design HTML reference browser only; not the game or game UI",
+  "checks": [
+    {
+      "name": "38 total visible design cards",
+      "passed": true
+    },
+    {
+      "name": "19 Rook cards",
+      "passed": true
+    },
+    {
+      "name": "12 Rook rentals",
+      "passed": true
+    },
+    {
+      "name": "6 Rook core rentals",
+      "passed": true
+    },
+    {
+      "name": "Search narrows to matching card",
+      "passed": true
+    },
+    {
+      "name": "Focused card details open",
+      "passed": true
+    },
+    {
+      "name": "No-match search returns no cards",
+      "passed": true
+    },
+    {
+      "name": "Reset returns 38 cards",
+      "passed": true
+    },
+    {
+      "name": "No desktop horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "No mobile horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "No JavaScript page errors",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "method": "Chromium rendered exact CATALOG.html bytes using Playwright set_content; desktop 1440x1000 and mobile 390x844. Local file-URL navigation was blocked by the host browser policy and is not represented as verified.",
+  "screenshots_visually_reviewed": true
+}

@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "entries"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "status": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "fighter",
+          "kind",
+          "slot",
+          "shop_price",
+          "activation_price",
+          "uses_per_round",
+          "move_ids",
+          "conflicts_with",
+          "replaces_move_id",
+          "scope",
+          "description",
+          "counterplay_status",
+          "notes",
+          "name"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "counterplay_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "notes": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fighter": {
+            "enum": [
+              "rook",
+              "vale"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "technique_license",
+              "ex_license",
+              "super_permit"
+            ]
+          },
+          "slot": {
+            "enum": [
+              "signature",
+              "technique",
+              "gambit",
+              "ex",
+              "super"
+            ]
+          },
+          "shop_price": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3600
+          },
+          "activation_price": {
+            "const": 0
+          },
+          "uses_per_round": {
+            "enum": [
+              null,
+              1
+            ]
+          },
+          "move_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "conflicts_with": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "replaces_move_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "super_permit"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "uses_per_round": {
+                  "const": 1
+                },
+                "slot": {
+                  "const": "super"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "uses_per_round": {
+                  "type": "null"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "ex_license"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "slot": {
+                  "const": "ex"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

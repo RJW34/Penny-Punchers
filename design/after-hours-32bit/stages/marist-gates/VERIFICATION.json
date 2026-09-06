@@ -1,0 +1,23 @@
+{
+  "verified_at_utc": "2026-09-05T20:11:46.178561+00:00",
+  "png_integrity_pass": true,
+  "selected_pngs": 3,
+  "proposed_geometry_matches_foundry": true,
+  "actual_dimensions": {
+    "background.png": [
+      1672,
+      941
+    ],
+    "panorama.png": [
+      2114,
+      744
+    ],
+    "select-card.png": [
+      1672,
+      941
+    ]
+  },
+  "observed_camera_crops": "Panorama reviewed as full-width composition; normalized crop contract in integration.json. No runtime camera test claimed.",
+  "existing_game_files_written": false,
+  "runtime_integrated": false
+}

@@ -1,17 +1,18 @@
 using System.Text.Json;
 using StrikeLedger.Core;
-// This harness verifies only seed arithmetic. It is NOT game acceptance.
+// Production arithmetic and catalog contracts only; separate suites verify actual gameplay.
 static string FindRoot()
 {
     var d=new DirectoryInfo(Environment.CurrentDirectory);
-    while(d is not null){if(File.Exists(Path.Combine(d.FullName,"data","economy.json")))return d.FullName;d=d.Parent;}
-    throw new DirectoryNotFoundException("Run from the extracted project root.");
+    while(d is not null){if(File.Exists(Path.Combine(d.FullName,"fixtures","shop_v2_economy_vectors.json")))return d.FullName;d=d.Parent;}
+    throw new DirectoryNotFoundException("Run from the Penny-Punchers project root.");
 }
-static void Check(bool condition,string message){if(!condition)throw new Exception("SEED CHECK FAILED: "+message);}
+static void Check(bool condition,string message){if(!condition)throw new Exception("CONTRACT CHECK FAILED: "+message);}
+static string? Option(string[] args,string key){int i=Array.IndexOf(args,key);return i>=0&&i+1<args.Length?args[i+1]:null;}
 try
 {
-    var root=FindRoot();var rules=EconomyRules.Load(Path.Combine(root,"data","economy.json"));int checks=0;
-    using var file=JsonDocument.Parse(File.ReadAllText(Path.Combine(root,"fixtures","economy_vectors.json")));
+    var root=FindRoot();var content=GameContent.Load(Option(args,"--data")??Path.Combine(root,"data"));var rules=content.Economy;int checks=0;
+    using var file=JsonDocument.Parse(File.ReadAllText(Path.Combine(root,"fixtures","shop_v2_economy_vectors.json")));
     foreach(var v in file.RootElement.GetProperty("payouts").EnumerateArray())
     {
         var b=v.GetProperty("before");var exp=v.GetProperty("expected");
@@ -20,16 +21,17 @@ try
         Check(a.Credits==exp.GetProperty("credits").GetInt32()&&a.RecoveryTier==exp.GetProperty("recovery_tier").GetInt32(),"payout vector");
         Check(r.Clipped==v.GetProperty("clipped").GetInt32(),"clipped payout");checks++;
     }
-    foreach(var v in file.RootElement.GetProperty("spends").EnumerateArray())
+    foreach(var v in file.RootElement.GetProperty("carts").EnumerateArray())
     {
-        var s=new SpendSnapshot(new Wallet(v.GetProperty("credits").GetInt32(),0,rules),v.GetProperty("floor").GetInt32());
-        var (a,status)=s.Activate("test",v.GetProperty("cost").GetInt32(),"e",v.GetProperty("legal").GetBoolean(),rules);
-        Check(a.Wallet.Credits==v.GetProperty("expected_credits").GetInt32(),"spend vector");
-        Check(status.ToString().ToUpperInvariant()==v.GetProperty("status").GetString(),"spend status");checks++;
+        var products=v.GetProperty("products").EnumerateArray().Select(x=>x.GetString()!).ToArray();
+        var quote=content.QuotePreparation(v.GetProperty("fighter").GetString()!,v.GetProperty("bank").GetInt32(),new PreparationPlan(products));
+        Check(quote.Valid==v.GetProperty("valid").GetBoolean(),"mixed-cart eligibility");
+        if(quote.Valid){Check(quote.TotalCost==v.GetProperty("cost").GetInt32(),"mixed-cart price");Check(quote.Remaining==v.GetProperty("remaining").GetInt32(),"saved bank");}
+        checks++;
     }
-    var before=new SpendSnapshot(new Wallet(1200,0,rules),0);var first=before.Activate("super",900,"f10",true,rules).State;
-    var repeated=first.Activate("super",900,"f10",true,rules);Check(repeated.State.Wallet.Credits==300&&repeated.Status==ActivationStatus.Duplicate,"single debit");
-    Check(before.Wallet.Credits==1200&&before.Receipts.Count==0,"immutable snapshot restore");checks+=2;
-    Console.WriteLine($"SCAFFOLD_SEED_CONFORMANCE_ONLY: {checks} checks passed. Gameplay/network/device/feel NOT VERIFIED.");return 0;
+    var report=new {scope="PRODUCTION_ARITHMETIC_AND_CATALOG_ONLY",status="PASS",passed=checks,content_hash=content.ContentHash,core_mvid=typeof(Simulation).Assembly.ManifestModule.ModuleVersionId,native_gameplay_verified=false};
+    var json=JsonSerializer.Serialize(report,new JsonSerializerOptions{WriteIndented=true});
+    if(Option(args,"--evidence-dir") is {} dir){Directory.CreateDirectory(dir);File.WriteAllText(Path.Combine(dir,"contract-conformance.json"),json+"\n");}
+    Console.WriteLine(json);return 0;
 }
 catch(Exception e){Console.Error.WriteLine(e);return 1;}

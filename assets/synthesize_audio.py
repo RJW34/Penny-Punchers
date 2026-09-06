@@ -88,4 +88,21 @@ def music(t, rng):
 
 
 save("foundry_loop", LENGTH, music)
-print(f"Wrote 16 original mono PCM sound assets to {OUT}")
+# Added original, deliberately synthetic exertion/impact variations. These are
+# noise/formant designs, not recordings, impersonations or claimed human vocals.
+for identity,base in (("rook",130),("vale",205)):
+    save(identity+"_breath",.19,lambda t,r,b=base: (.12*noise(r)+.055*math.sin(TAU*b*t)+.035*math.sin(TAU*b*2.4*t))*math.sin(math.pi*min(1,t/.19))**1.5*math.exp(-t*8))
+for variant in (1,2):
+    save("hit_"+str(variant),.20,lambda t,r,v=variant: .47*math.sin(TAU*((125+v*21)*t-(190+v*35)*t*t))*math.exp(-t*(26+v*3))+.34*noise(r)*math.exp(-t*(45+v*8)))
+    save("heavy_"+str(variant),.34,lambda t,r,v=variant: .61*math.sin(TAU*((83+v*13)*t-75*t*t))*math.exp(-t*(13+v))+.31*noise(r)*math.exp(-t*(31+v*6)))
+
+def campus(t,r,blue=False):
+    beat=t/BEAT;local=beat%2*BEAT;note=[155.5635,184.9972,138.5913,123.4708][int(beat)//8%4]
+    s=.035*math.sin(TAU*note*t)*(.7+.3*math.sin(TAU*t/LENGTH))
+    s+=.045*tone(local,note*(3 if blue else 2),blue and 3.7 or 5.2)
+    s+=.012*tone(local,note*4.002,6)
+    s+=.0015*noise(r)
+    return s
+save("marist_green_loop",LENGTH,lambda t,r:campus(t,r,False))
+save("marist_gates_loop",LENGTH,lambda t,r:campus(t,r,True))
+print(f"Wrote 24 original mono PCM sound assets to {OUT}")

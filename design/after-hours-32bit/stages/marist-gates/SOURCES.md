@@ -1,0 +1,9 @@
+# Marist Gates references and provenance
+
+The new stage depicts an artistic adaptation of Marist's **South Gate**. Architectural reference: [The Marist Gates, official Marist page](https://www.marist.edu/about/gates). The recognizable elements are the asymmetric tall pier, rounded pedestrian arch, grey stone, limestone surround/caps, red-brick edging and carved frieze. The setting, evening lighting, widened plaza, landscaping and adjacent sign placement are creative adaptations for the fighting-game view, not a surveyed reconstruction.
+
+An [official South Gate photograph](https://www.marist.edu/documents/86200/89009/gates%2B04%2Bsouth.jpg/70199fbd-841f-8010-4600-530b1626cd9e?t=1673023963373) was downloaded to `references/marist-south-gate.jpg` solely for architectural guidance in the image-generation tool. It remains reference material owned by its original rightsholder and is excluded from this stage's generated asset register. The official page identifies Kevin M. Smith / Robert A.M. Stern Architects as gate designers and Chris Pellettieri as the South Gate's stone carver. No ownership of that architecture, sculpture or photograph is claimed.
+
+The existing `../../stages/foundry.png` (equivalently `../foundry.png` from this directory) supplied the AFTER HOURS style reference. All three new deliverable PNGs were created with the **built-in image_gen tool**. `background.png` used the foundry style and South Gate architectural references; the panorama and selection card used the resulting background as their reference. Exact prompts and reference roles are preserved in [prompts.json](prompts.json).
+
+Generated small inscriptions and simplified carvings are visual interpretations, not reliable historical records. Marist naming identifies the depicted location; the artwork makes no claim of university sponsorship or endorsement.

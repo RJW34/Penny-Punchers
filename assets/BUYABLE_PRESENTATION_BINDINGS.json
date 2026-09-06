@@ -1,0 +1,362 @@
+{
+  "schema_version": 1,
+  "scope": "Catalog-v1 bindings reuse original After Hours poses. No new authored in-betweens, dedicated air-throw sheet, or material masks are claimed.",
+  "source_inputs": [
+    {
+      "path": "data/rulesets/buyables_full/fighters/rook.json",
+      "sha256": "07d7bfd4d75856cdc24724693f460ea84777fb9db9b4e7a740623da6ea8d137b"
+    },
+    {
+      "path": "data/rulesets/buyables_full/fighters/vale.json",
+      "sha256": "7780bd14db9a881ad541f42071b3d22315ebb7a4889f8e4c4601ca75cb12e056"
+    }
+  ],
+  "fighters": {
+    "rook": {
+      "buy_r_s1_clinch": {
+        "catalog_id": "R-S1",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "t_shop_clinch",
+          "u_idle",
+          "u_walk_back",
+          "u_walk_forward"
+        ],
+        "mimic": null
+      },
+      "buy_r_s2_slipstream": {
+        "catalog_id": "R-S2",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "s_crouch_up",
+          "t_shop_low_drive",
+          "u_crouch",
+          "u_landing"
+        ],
+        "mimic": null
+      },
+      "buy_r_s2_straight": {
+        "catalog_id": "R-S2",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "n_close_mp",
+          "n_s_mp",
+          "u_crouch",
+          "u_walk_back"
+        ],
+        "mimic": null
+      },
+      "buy_r_s2_upper": {
+        "catalog_id": "R-S2",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "n_c_hp",
+          "n_c_mp",
+          "s_crouch_up",
+          "u_crouch"
+        ],
+        "mimic": null
+      },
+      "buy_r_s3_chain1": {
+        "catalog_id": "R-S3",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "n_s_lp",
+          "u_block_stand",
+          "u_walk_forward"
+        ],
+        "mimic": null
+      },
+      "buy_r_s3_chain2": {
+        "catalog_id": "R-S3",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "n_close_mp",
+          "n_s_mp",
+          "u_block_stand"
+        ],
+        "mimic": null
+      },
+      "buy_r_s3_chain3": {
+        "catalog_id": "R-S3",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "n_close_mp",
+          "n_s_hp",
+          "u_idle",
+          "u_walk_back"
+        ],
+        "mimic": null
+      },
+      "buy_r_s4_counter": {
+        "catalog_id": "R-S4",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "t_shop_sway_feint",
+          "u_idle",
+          "u_walk_back"
+        ],
+        "mimic": null
+      },
+      "buy_r_s4_riposte": {
+        "catalog_id": "R-S4",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "n_s_hp",
+          "u_idle",
+          "u_walk_back"
+        ],
+        "mimic": null
+      },
+      "buy_r_t1_high_hook": {
+        "catalog_id": "R-T1",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "n_close_mp",
+          "t_shop_high_hook",
+          "u_block_stand",
+          "u_idle"
+        ],
+        "mimic": null
+      },
+      "buy_r_t2_low_turn": {
+        "catalog_id": "R-T2",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "s_crouch_up",
+          "t_shop_low_turn",
+          "u_crouch",
+          "u_landing"
+        ],
+        "mimic": null
+      },
+      "buy_r_t3_rivet_lift": {
+        "catalog_id": "R-T3",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "n_c_hp",
+          "n_c_mp",
+          "s_crouch_up",
+          "u_crouch"
+        ],
+        "mimic": null
+      },
+      "buy_r_t4_tempered": {
+        "catalog_id": "R-T4",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "n_close_mp",
+          "n_s_hp",
+          "u_block_stand",
+          "u_idle",
+          "u_walk_back"
+        ],
+        "mimic": null
+      },
+      "buy_r_g1_false_start": {
+        "catalog_id": "R-G1",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "t_knee_basic",
+          "t_shop_step_feint",
+          "u_crouch",
+          "u_idle"
+        ],
+        "mimic": {
+          "source_move_id": "knee_h",
+          "shared_ticks": 6,
+          "abort_ticks": 6
+        }
+      },
+      "buy_r_g2_check_step": {
+        "catalog_id": "R-G2",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "s_walk_back_second_key",
+          "u_idle",
+          "u_walk_back"
+        ],
+        "mimic": null
+      },
+      "buy_r_g3_vault_hop": {
+        "catalog_id": "R-G3",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "s_jump_fall",
+          "s_jump_takeoff",
+          "u_idle",
+          "u_landing"
+        ],
+        "mimic": null
+      },
+      "buy_r_g4_wire_cut": {
+        "catalog_id": "R-G4",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "n_s_mp",
+          "u_idle",
+          "u_walk_back"
+        ],
+        "mimic": null
+      },
+      "buy_r_a3_overtime": {
+        "catalog_id": "R-A3",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "s_taunt",
+          "u_block_stand",
+          "u_idle"
+        ],
+        "mimic": null
+      }
+    },
+    "vale": {
+      "buy_v_s1_return_pulse": {
+        "catalog_id": "V-S1",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "t_pulse",
+          "t_shop_return_pulse",
+          "u_idle",
+          "u_walk_back"
+        ],
+        "mimic": null
+      },
+      "buy_v_s2_low_palm": {
+        "catalog_id": "V-S2",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "s_crouch_up",
+          "t_shop_low_palm",
+          "u_crouch",
+          "u_land"
+        ],
+        "mimic": null
+      },
+      "buy_v_s3_arc_pulse": {
+        "catalog_id": "V-S3",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "t_pulse",
+          "t_shop_return_pulse",
+          "u_crouch",
+          "u_idle",
+          "u_walk_forward"
+        ],
+        "mimic": null
+      },
+      "buy_v_s4_anchor": {
+        "catalog_id": "V-S4",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "n_c_mp",
+          "t_shop_return_pulse",
+          "u_crouch",
+          "u_idle",
+          "u_walk_back"
+        ],
+        "mimic": null
+      },
+      "buy_v_t1_heel_arc": {
+        "catalog_id": "V-T1",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "n_s_mk",
+          "t_shop_heel_arc",
+          "u_idle",
+          "u_land"
+        ],
+        "mimic": null
+      },
+      "buy_v_t2_needle_check": {
+        "catalog_id": "V-T2",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "n_s_lk",
+          "n_s_mk",
+          "u_idle",
+          "u_walk_back",
+          "u_walk_forward"
+        ],
+        "mimic": null
+      },
+      "buy_v_t3_descending_heel": {
+        "catalog_id": "V-T3",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "n_j_hp",
+          "s_crouch_up",
+          "u_idle",
+          "u_jump_apex",
+          "u_land"
+        ],
+        "mimic": null
+      },
+      "buy_v_t4_skycatch": {
+        "catalog_id": "V-T4",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "n_j_lp",
+          "n_throw_forward",
+          "u_idle",
+          "u_land"
+        ],
+        "mimic": null
+      },
+      "buy_v_g1_false_pulse": {
+        "catalog_id": "V-G1",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "t_shop_sway_feint",
+          "u_idle"
+        ],
+        "mimic": {
+          "source_move_id": "pulse_h",
+          "shared_ticks": 6,
+          "abort_ticks": 6
+        }
+      },
+      "buy_v_g2_recoil_step": {
+        "catalog_id": "V-G2",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "t_shop_sway_feint",
+          "u_idle",
+          "u_walk_back"
+        ],
+        "mimic": null
+      },
+      "buy_v_g3_shear_palm": {
+        "catalog_id": "V-G3",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "t_shop_long_check",
+          "u_idle",
+          "u_walk_back"
+        ],
+        "mimic": null
+      },
+      "buy_v_g4_slipgate": {
+        "catalog_id": "V-G4",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "t_shop_step_feint",
+          "u_idle",
+          "u_walk_back"
+        ],
+        "mimic": null
+      },
+      "buy_v_a3_prism": {
+        "catalog_id": "V-A3",
+        "method": "Existing key-pose reuse with explicit tick holds; Core owns movement and contact timing.",
+        "cels": [
+          "t_pulse",
+          "t_shop_return_pulse",
+          "u_idle",
+          "u_walk_back"
+        ],
+        "mimic": null
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "checked_date": "2026-09-05",
+  "policy": "Primary publisher/developer sources; exact game scope retained. Sources support precedents, not new prices or balance.",
+  "sources": [
+    {
+      "id": "SF-RYU",
+      "publisher": "Capcom",
+      "game_scope": "Street Fighter 6; move identity only, not Third Strike frame data",
+      "title": "Ryu official command list",
+      "url": "https://www.streetfighter.com/6/en-us/character/ryu/movelist",
+      "verified_support": "Hadoken, Shoryuken and Tatsumaki move families. Their original Penny-Punchers roles and prices are design proposals."
+    },
+    {
+      "id": "SF-GUILE",
+      "publisher": "Capcom",
+      "game_scope": "Street Fighter 6; move identity only",
+      "title": "Guile official command list",
+      "url": "https://www.streetfighter.com/6/en-us/character/guile/movelist",
+      "verified_support": "Sonic Boom and Somersault Kick families; no charge or frame parity is inferred."
+    },
+    {
+      "id": "SF-GRAB",
+      "publisher": "Capcom",
+      "game_scope": "Street Fighter 6 announcement",
+      "title": "Zangief, Lily, and Cammy complete the Street Fighter 6 launch roster",
+      "url": "https://news.capcomusa.com/2023/02/23/zangief-lily-and-cammy-complete-the-street-fighter-6-launch-roster/",
+      "verified_support": "Zangief command throws and Tundra Storm grounded-kick counter; Cammy held specials. Does not establish Third Strike mechanics."
+    },
+    {
+      "id": "SF-CAMMY",
+      "publisher": "Capcom",
+      "game_scope": "Street Fighter 6; move identity only",
+      "title": "Cammy official command list",
+      "url": "https://www.streetfighter.com/6/en-us/character/cammy/movelist",
+      "verified_support": "Cannon Strike, Cannon Spike, Spiral Arrow and Hooligan move identities."
+    },
+    {
+      "id": "SF-OMEGA",
+      "publisher": "Capcom; developer Tomoaki Ayano via ComboFiend",
+      "game_scope": "Ultra Street Fighter IV Omega; explicitly NOT ordinary SFIV or Third Strike",
+      "title": "An Introduction to the USFIV Omega Edition Characters: Part V",
+      "url": "https://news.capcomusa.com/lets/browse/an-introduction-to-the-usfiv-omega-edition-characters-part-v",
+      "verified_support": "Dudley sway/follow-up/feint design, Yun Genei Jin combo interaction, Yang counter/rekka examples. Used qualitatively, never as a claim those Omega properties belong to Third Strike."
+    },
+    {
+      "id": "SF-AEGIS",
+      "publisher": "Capcom",
+      "game_scope": "Street Fighter V implementation",
+      "title": "See What Urien Brings to the Table in the September Update",
+      "url": "https://news.capcomusa.com/lets/browse/see-what-urien-brings-to-the-table-in-the-september-update",
+      "verified_support": "Aegis is a placeable reflecting and damaging barrier; metallic aura is a move-bound armor example. No exact Third Strike unblockable setup is reproduced."
+    },
+    {
+      "id": "SF-ORO",
+      "publisher": "Capcom",
+      "game_scope": "Street Fighter V implementation of returning moves",
+      "title": "Street Fighter V Summer Update 2021: Oro, Akira, and the reveal of the final character",
+      "url": "https://news.capcomusa.com/lets/browse/street-fighter-v-summer-update-2021-oro-akira-and-the-reveal-of-the-final-character",
+      "verified_support": "Tengu Stone floating follow-up objects and expanded combo paths. The new design rejects its random object effects."
+    },
+    {
+      "id": "SF-ROSE",
+      "publisher": "Capcom",
+      "game_scope": "Street Fighter V; includes a returning Alpha move",
+      "title": "Street Fighter V: Winter Update announcements",
+      "url": "https://news.capcomusa.com/lets/browse/street-fighter-v-winter-update-announcements-dan-rose-v-shift-eleven-and-more",
+      "verified_support": "Soul Satellite, Soul Dimension teleport and Soul Illusion shadow follow-ups offer different tactical roles."
+    },
+    {
+      "id": "SF-TELEPORT",
+      "publisher": "Capcom",
+      "game_scope": "Street Fighter 6; move identity only",
+      "title": "Dhalsim official command list",
+      "url": "https://www.streetfighter.com/6/en-us/character/dhalsim/movelist",
+      "verified_support": "Grounded and aerial Yoga Teleport; actual proposed displacement/vulnerability are original."
+    },
+    {
+      "id": "AUDIT",
+      "publisher": "User conversation artifact / prior source audit",
+      "game_scope": "Penny-Punchers pinned baseline",
+      "title": "Expanded economy audit",
+      "url": null,
+      "verified_support": "Twelve original rentals, one wallet, three slots, first-win threshold risks, unsupported rental policies and no purchasable global stats."
+    }
+  ]
+}

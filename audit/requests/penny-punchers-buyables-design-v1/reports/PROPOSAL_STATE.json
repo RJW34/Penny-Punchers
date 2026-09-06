@@ -1,0 +1,21 @@
+{
+  "status": "DESIGN_COMPLETE_NATIVE_NOT_RUN",
+  "baseline_commit": "1623ee62c4f4b6d5574bbb9909eb6fe4e32f5441",
+  "remote_repository_modified": false,
+  "audit_package_rewritten": false,
+  "payout_changes": false,
+  "native_build": "NOT_RUN",
+  "native_combat": "NOT_RUN",
+  "human_balance": "NOT_RUN",
+  "note": "The companion checks are not production acceptance evidence.",
+  "structural_checks": "PASS_CUSTOM_VALIDATOR_NOT_JSON_SCHEMA",
+  "design_arithmetic_unit_tests": {
+    "passed": 32,
+    "failed": 0
+  },
+  "html_reference_browser": {
+    "passed": 11,
+    "failed": 0,
+    "scope": "Design catalog only; not the native game UI"
+  }
+}

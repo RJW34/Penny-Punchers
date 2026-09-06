@@ -1,0 +1,25 @@
+PASS block.wav            0.19s RMS 0.069 peak 0.545 sha256 7aa54007d66482cec013b2cd5f4b26bd28a2a49c824d81dce6fc4509e17e97a7
+PASS cancel.wav           0.15s RMS 0.043 peak 0.158 sha256 0369ec0d802aac0beb624db8d9998a3333a2a4263ebcb3910bfae67d322e8eb3
+PASS confirm.wav          0.22s RMS 0.069 peak 0.259 sha256 c70412c1b3c9d1b72100dbffe82ff44798f2ab3411c2d199248ae34f06bfa199
+PASS denied.wav           0.18s RMS 0.052 peak 0.242 sha256 26b45f2efa19687deff67aceb07767c60311815348d637c5fd045506df107262
+PASS ex.wav               0.42s RMS 0.065 peak 0.343 sha256 5551a4288652c84831bfac2cdffecfbad5483351667a0cc89b8d52edc7a5797b
+PASS foundry_loop.wav    20.00s RMS 0.037 peak 0.344 sha256 f1abeef288a885f561a23006283795d123a15f5e9b2ee775009706b3ba0c6e55
+PASS heavy.wav            0.36s RMS 0.156 peak 0.881 sha256 217347af31bbfbae35f4e0e3d38b27769200b707d412413c0f8431dd8f3b74dd
+PASS heavy_1.wav          0.34s RMS 0.139 peak 0.774 sha256 596361e7684a4fb7d7905545ad3ef510569dfad09e1fd503c31b2aa51d0d64ed
+PASS heavy_2.wav          0.34s RMS 0.135 peak 0.730 sha256 22aa669127f91c5b9ddb92e502dc459b4801cc8365dbd50fee51fae73d1c4e91
+PASS hit.wav              0.20s RMS 0.115 peak 0.737 sha256 283e026274d7a200aef2b9b0d9ef7e24a446fbad73044744d2af07fadf569d11
+PASS hit_1.wav            0.20s RMS 0.099 peak 0.642 sha256 34a953b8ca6b721097c70a9aaca8e8c662dbdb63697c309a86e538c0f8b31a55
+PASS hit_2.wav            0.20s RMS 0.093 peak 0.654 sha256 2c45efb4fc026b10673da82e4a4d224eb61a8e148943b74b5fde01aeb3fc699e
+PASS ko.wav               1.00s RMS 0.096 peak 0.552 sha256 e4a2159db4d32d0e0dda3de91cdb369894eedd63f49e85fbd7f75bfdcc166f20
+PASS land.wav             0.20s RMS 0.062 peak 0.397 sha256 2f141440ec8c44ffdc758285413f1395c1f30a923362044d435cca85e56f0351
+PASS marist_gates_loop.wav 20.00s RMS 0.021 peak 0.087 sha256 de3fd3aa80e24e5e20c36abbf6c4460fd48f5d3d3e76dcc823e9f2b1a2931c75
+PASS marist_green_loop.wav 20.00s RMS 0.020 peak 0.084 sha256 6788d75e22ff7bc69f056374172fd32da9723f0107d7e7bbd23c4c16c165a616
+PASS parry.wav            0.48s RMS 0.078 peak 0.623 sha256 0a325530e9238475c7e9cdef9ae7b8e41c531ba6553439493e7f9d66a458c361
+PASS rook_breath.wav      0.19s RMS 0.027 peak 0.097 sha256 fd0f7861aaf1df17f56852503bad0382d1adf35fe20a9e4182573f004bb58bc6
+PASS round.wav            0.64s RMS 0.084 peak 0.541 sha256 c718ec5fb99106ce0a1ac7db5a84d10bf8a1aa146c57bba7c0c12f069791008e
+PASS select.wav           0.08s RMS 0.056 peak 0.252 sha256 8fafd0297c167103f94d3379e637ae94aa7ced027f01b16af6aa83195dae916a
+PASS super.wav            0.92s RMS 0.086 peak 0.542 sha256 23850c68f3e0186cf72b0a388b536ce639c53a05d4e82cc78e9c25e4d850fe1f
+PASS swing.wav            0.16s RMS 0.068 peak 0.179 sha256 32480450ac32e9ce49d3253d1470fb0a9b370a3fe49438e9bb1778390174e00e
+PASS throw.wav            0.34s RMS 0.138 peak 0.763 sha256 263bb639774b909f3763a2ada51bce5a31849330f78632a4ec3f983294216511
+PASS vale_breath.wav      0.19s RMS 0.027 peak 0.099 sha256 b2c28e54ae640a68620c573e6b15f02841aec9c2c1b3d82aa3659c47cc1b10b6
+PASS 24 distinct, bounded, non-silent PCM assets. Device audio playback is a separate check.

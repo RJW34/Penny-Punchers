@@ -1,0 +1,118 @@
+{
+  "count": 8,
+  "included_in_38_entry_catalog": false,
+  "status": "OPTIONAL_RESEARCH_NOT_IMPLEMENTATION_REQUIREMENTS",
+  "candidates": [
+    {
+      "id": "F-01",
+      "name": "Debt Collector",
+      "family": "Capture-to-combo throw",
+      "reference": "Command-throw conversion idea; requires separate grappler identity",
+      "model": "round_lease",
+      "price_seed": 900,
+      "rule": "A capture creates a short, heavily prorated standing conversion, not raw damage. No recapture within the same combo and no capture from hit/blockstun. Unlike Clinch Entry, it needs a dedicated reset/combo contract.",
+      "why_not_current": "It would expand Rook into a different throw-conversion archetype before the basic throw and command-throw arbitration are verified.",
+      "free_response": "Preemptive jump/backspace or strike; clear capture range and whiff recovery.",
+      "source_ids": [
+        "SF-GRAB"
+      ]
+    },
+    {
+      "id": "F-02",
+      "name": "High Roller",
+      "family": "Branching aerial approach",
+      "reference": "Cammy Hooligan-type approach family",
+      "model": "round_lease",
+      "price_seed": 600,
+      "rule": "A committed visible leap can end in a strike, landing feint or close airborne capture, each with separate collision/recovery. No tracking to the target after the initial leap.",
+      "why_not_current": "The current roster needs normal aerial readability and minimum-height rules first; this is better on an aerial specialist.",
+      "free_response": "Anti-air the committed arc; stay outside grab eligibility; punish a feint landing.",
+      "source_ids": [
+        "SF-CAMMY"
+      ]
+    },
+    {
+      "id": "F-03",
+      "name": "Downward Draft",
+      "family": "Air projectile",
+      "reference": "Aerial projectile family; new original route, no claimed exact reference-game implementation",
+      "model": "round_lease",
+      "price_seed": 600,
+      "rule": "One angled projectile from a forward jump above a minimum height; locks remaining air action and creates explicit landing recovery. No projectile plus dive-kick cancel by default.",
+      "why_not_current": "Adding this to every zoner/rushdown hybrid would erase distinct approach weaknesses.",
+      "free_response": "Parry, move under at the correct range, air-to-air or punish landing.",
+      "source_ids": [
+        "SF-TELEPORT"
+      ]
+    },
+    {
+      "id": "F-04",
+      "name": "Collateral",
+      "family": "Orbiting follow-up objects",
+      "reference": "Oro Tengu Stone / Rose Soul Satellite functions",
+      "model": "super_activation",
+      "price_seed": 1500,
+      "rule": "One paid finite state spawns deterministic nonrandom objects that follow only specifically listed attacks. No earned stock, no random bonus object and no extension from hits. Counts/lifetimes are object state, never an ammunition shop.",
+      "why_not_current": "Use a future object specialist; first finish the single-field interaction model.",
+      "free_response": "Deny initial activation, outlast the state, parry contacts or force the defined knockdown termination.",
+      "source_ids": [
+        "SF-ORO",
+        "SF-ROSE"
+      ]
+    },
+    {
+      "id": "F-05",
+      "name": "Double Entry",
+      "family": "Delayed echo follow-ups",
+      "reference": "Rose Soul Illusion-type shadows",
+      "model": "super_activation",
+      "price_seed": 1500,
+      "rule": "A short state produces one predictable delayed echo of whitelisted normals; echoes cannot create new echoes or money. All contacts use a single guard-facing rule, existing scaling and visible delay.",
+      "why_not_current": "Owner/echo contact interaction and defense fairness require their own prototype; do not layer this on Overtime.",
+      "free_response": "Block/parry known rhythms, disengage, interrupt activation, or knock down the owner.",
+      "source_ids": [
+        "SF-ROSE"
+      ]
+    },
+    {
+      "id": "F-06",
+      "name": "Demand Notice",
+      "family": "Held charged projectile",
+      "reference": "Charged-super design space, not copied Denjin unblockable rules",
+      "model": "super_activation",
+      "price_seed": 1200,
+      "rule": "Debit at the beginning of vulnerable charge startup. Holding selects within a fixed min/max release interval; release creates a blockable projectile with explicit contact count and no separate stored charge. Interrupting charge does not refund. No neutral cancel that banks the charge.",
+      "why_not_current": "Potentially replaces, not supplements, a future selected super; test stall, charge-time value and parry behavior first.",
+      "free_response": "Interrupt, change spacing, jump at the measured release or parry/block.",
+      "source_ids": [
+        "SF-RYU"
+      ]
+    },
+    {
+      "id": "F-07",
+      "name": "Break Clause",
+      "family": "Guard cancel",
+      "reference": "Broader fighting-game guard-cancel design experiment",
+      "model": "direct_system_activation",
+      "price_seed": 600,
+      "rule": "Only during actual blockstun, commit credits to an interruptible delayed push-away with zero damage. Never usable in hitstun, throw capture or as a round-start burst. Both actors return to measured spacing, not guaranteed advantage.",
+      "why_not_current": "This alters the defensive system rather than merely adding a character move. Requires a separate owner decision and cannot become mandatory to survive funded pressure.",
+      "free_response": "Bait and punish the cancel or take the returned space.",
+      "source_ids": []
+    },
+    {
+      "id": "F-08",
+      "name": "Cut Losses",
+      "family": "Contact-only movement cancel",
+      "reference": "FADC-style cancel design space, not a copied Focus system",
+      "model": "direct_system_activation",
+      "price_seed": 600,
+      "rule": "Pay on a legal forward-dash cancel of a whitelisted noninvulnerable move after HIT only. No blocked invincible reversal bailout, no whiff cancel, no backwards escape or defensive invulnerability. Normal scaling/juggle persist.",
+      "why_not_current": "A universal cancel layer can overwhelm Third Strike-like commitment; it is an optional separate ruleset, not part of the 38-entry plan.",
+      "free_response": "Deny the initial hit; defend the later route according to real advantage.",
+      "source_ids": [
+        "SF-OMEGA"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4096 @@
+{
+  "schema_version": 1,
+  "method": "Explicit tick holds on existing authored key poses; no bespoke in-betweens claimed. Canonical action frames remain unchanged. Recovery follow-through retains contact pose briefly after active ends.",
+  "fighters": {
+    "rook": {
+      "states": {
+        "idle": [
+          {
+            "cel": "u_idle",
+            "ticks": 28
+          }
+        ],
+        "walk": [
+          {
+            "cel": "u_walk_forward",
+            "ticks": 6
+          },
+          {
+            "cel": "u_idle",
+            "ticks": 4
+          }
+        ],
+        "walk_forward": [
+          {
+            "cel": "u_walk_forward",
+            "ticks": 6
+          },
+          {
+            "cel": "u_idle",
+            "ticks": 4
+          }
+        ],
+        "walk_back": [
+          {
+            "cel": "u_walk_back",
+            "ticks": 6
+          },
+          {
+            "cel": "s_walk_back_second_key",
+            "ticks": 4
+          }
+        ],
+        "dash": [
+          {
+            "cel": "u_dash_forward",
+            "ticks": 4
+          }
+        ],
+        "dashback": [
+          {
+            "cel": "u_dash_back",
+            "ticks": 4
+          }
+        ],
+        "dash_forward": [
+          {
+            "cel": "u_dash_forward",
+            "ticks": 4
+          }
+        ],
+        "dash_back": [
+          {
+            "cel": "u_dash_back",
+            "ticks": 4
+          }
+        ],
+        "crouch": [
+          {
+            "cel": "u_crouch",
+            "ticks": 4
+          },
+          {
+            "cel": "s_crouch_down",
+            "ticks": 9
+          }
+        ],
+        "jump": [
+          {
+            "cel": "u_jump_ascent",
+            "ticks": 4
+          },
+          {
+            "cel": "u_jump_apex",
+            "ticks": 9
+          },
+          {
+            "cel": "s_jump_fall",
+            "ticks": 9
+          }
+        ],
+        "guard": [
+          {
+            "cel": "u_block_stand",
+            "ticks": 4
+          }
+        ],
+        "crouchguard": [
+          {
+            "cel": "u_block_crouch",
+            "ticks": 4
+          }
+        ],
+        "parry": [
+          {
+            "cel": "u_parry_stand",
+            "ticks": 4
+          }
+        ],
+        "crouchparry": [
+          {
+            "cel": "u_parry_crouch",
+            "ticks": 4
+          }
+        ],
+        "hit": [
+          {
+            "cel": "u_hit_heavy",
+            "ticks": 4
+          },
+          {
+            "cel": "s_hit_high_recovery",
+            "ticks": 9
+          }
+        ],
+        "knockdown": [
+          {
+            "cel": "u_knockdown",
+            "ticks": 4
+          }
+        ],
+        "dizzy": [
+          {
+            "cel": "s_dizzy",
+            "ticks": 4
+          }
+        ],
+        "win": [
+          {
+            "cel": "s_win",
+            "ticks": 4
+          }
+        ],
+        "defeat": [
+          {
+            "cel": "s_defeat",
+            "ticks": 4
+          }
+        ],
+        "draw": [
+          {
+            "cel": "s_draw",
+            "ticks": 4
+          }
+        ],
+        "turn": [
+          {
+            "cel": "s_turn",
+            "ticks": 4
+          }
+        ],
+        "crouch_down": [
+          {
+            "cel": "s_crouch_down",
+            "ticks": 4
+          },
+          {
+            "cel": "u_crouch",
+            "ticks": 9
+          }
+        ],
+        "crouch_up": [
+          {
+            "cel": "s_crouch_up",
+            "ticks": 4
+          },
+          {
+            "cel": "u_idle",
+            "ticks": 9
+          }
+        ],
+        "jump_takeoff": [
+          {
+            "cel": "u_crouch",
+            "ticks": 4
+          },
+          {
+            "cel": "s_jump_takeoff",
+            "ticks": 9
+          }
+        ],
+        "jump_rise": [
+          {
+            "cel": "u_jump_ascent",
+            "ticks": 4
+          }
+        ],
+        "jump_apex": [
+          {
+            "cel": "u_jump_apex",
+            "ticks": 4
+          }
+        ],
+        "jump_fall": [
+          {
+            "cel": "s_jump_fall",
+            "ticks": 4
+          }
+        ],
+        "super_jump": [
+          {
+            "cel": "s_super_jump",
+            "ticks": 4
+          }
+        ],
+        "land": [
+          {
+            "cel": "u_landing",
+            "ticks": 4
+          },
+          {
+            "cel": "s_crouch_up",
+            "ticks": 9
+          }
+        ],
+        "block_high": [
+          {
+            "cel": "u_block_stand",
+            "ticks": 4
+          }
+        ],
+        "block_low": [
+          {
+            "cel": "u_block_crouch",
+            "ticks": 4
+          }
+        ],
+        "parry_high": [
+          {
+            "cel": "u_parry_stand",
+            "ticks": 4
+          }
+        ],
+        "parry_low": [
+          {
+            "cel": "u_parry_crouch",
+            "ticks": 4
+          }
+        ],
+        "parry_air": [
+          {
+            "cel": "s_parry_air",
+            "ticks": 4
+          }
+        ],
+        "parry_red_high": [
+          {
+            "cel": "s_parry_red_high",
+            "ticks": 4
+          }
+        ],
+        "parry_red_low": [
+          {
+            "cel": "s_parry_red_low",
+            "ticks": 4
+          }
+        ],
+        "hit_high": [
+          {
+            "cel": "u_hit_heavy",
+            "ticks": 4
+          },
+          {
+            "cel": "s_hit_high_recovery",
+            "ticks": 9
+          }
+        ],
+        "hit_low": [
+          {
+            "cel": "s_hit_low",
+            "ticks": 4
+          }
+        ],
+        "hit_air": [
+          {
+            "cel": "s_hit_air",
+            "ticks": 4
+          }
+        ],
+        "throw_victim": [
+          {
+            "cel": "s_throw_victim",
+            "ticks": 4
+          }
+        ],
+        "throw_tech": [
+          {
+            "cel": "s_throw_tech",
+            "ticks": 4
+          }
+        ],
+        "knockdown_fall": [
+          {
+            "cel": "s_knockdown_fall",
+            "ticks": 4
+          }
+        ],
+        "knockdown_ground": [
+          {
+            "cel": "u_knockdown",
+            "ticks": 4
+          }
+        ],
+        "wakeup": [
+          {
+            "cel": "u_getup",
+            "ticks": 4
+          },
+          {
+            "cel": "s_crouch_up",
+            "ticks": 9
+          }
+        ],
+        "taunt": [
+          {
+            "cel": "s_taunt",
+            "ticks": 4
+          }
+        ],
+        "intro": [
+          {
+            "cel": "s_intro",
+            "ticks": 4
+          }
+        ],
+        "walkback": [
+          {
+            "cel": "u_walk_back",
+            "ticks": 6
+          },
+          {
+            "cel": "s_walk_back_second_key",
+            "ticks": 4
+          }
+        ],
+        "rise": [
+          {
+            "cel": "u_jump_ascent",
+            "ticks": 4
+          }
+        ],
+        "fall": [
+          {
+            "cel": "s_jump_fall",
+            "ticks": 4
+          }
+        ],
+        "apex": [
+          {
+            "cel": "u_jump_apex",
+            "ticks": 4
+          }
+        ],
+        "airparry": [
+          {
+            "cel": "s_parry_air",
+            "ticks": 4
+          }
+        ],
+        "redparry": [
+          {
+            "cel": "s_parry_red_high",
+            "ticks": 4
+          }
+        ],
+        "redlowparry": [
+          {
+            "cel": "s_parry_red_low",
+            "ticks": 4
+          }
+        ],
+        "lowhit": [
+          {
+            "cel": "s_hit_low",
+            "ticks": 4
+          }
+        ],
+        "airhit": [
+          {
+            "cel": "s_hit_air",
+            "ticks": 4
+          }
+        ],
+        "thrown": [
+          {
+            "cel": "s_throw_victim",
+            "ticks": 4
+          }
+        ],
+        "tech": [
+          {
+            "cel": "s_throw_tech",
+            "ticks": 4
+          }
+        ],
+        "falling": [
+          {
+            "cel": "s_knockdown_fall",
+            "ticks": 4
+          }
+        ],
+        "takeoff": [
+          {
+            "cel": "u_crouch",
+            "ticks": 4
+          },
+          {
+            "cel": "s_jump_takeoff",
+            "ticks": 9
+          }
+        ],
+        "landing": [
+          {
+            "cel": "u_landing",
+            "ticks": 4
+          },
+          {
+            "cel": "s_crouch_up",
+            "ticks": 9
+          }
+        ]
+      },
+      "moves": {
+        "s_lp": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_lp",
+              "ticks": 2
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_lp",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 1
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 4
+            }
+          ]
+        },
+        "s_mp": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_mp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_mp",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 1
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 9
+            }
+          ]
+        },
+        "s_hp": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_hp",
+              "ticks": 4
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_hp",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 1
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 16
+            }
+          ]
+        },
+        "s_lk": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_lk",
+              "ticks": 2
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_lk",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 1
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 4
+            }
+          ]
+        },
+        "s_mk": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_mk",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_mk",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 1
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 9
+            }
+          ]
+        },
+        "s_hk": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_hk",
+              "ticks": 4
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_hk",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 1
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 16
+            }
+          ]
+        },
+        "c_lp": {
+          "startup": [
+            {
+              "cel": "s_crouch_down",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_c_lp",
+              "ticks": 2
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_c_lp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_crouch",
+              "ticks": 5
+            }
+          ]
+        },
+        "c_mp": {
+          "startup": [
+            {
+              "cel": "s_crouch_down",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_c_mp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_c_mp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_crouch",
+              "ticks": 10
+            }
+          ]
+        },
+        "c_hp": {
+          "startup": [
+            {
+              "cel": "s_crouch_down",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_c_hp",
+              "ticks": 4
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_c_hp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_crouch",
+              "ticks": 17
+            }
+          ]
+        },
+        "c_lk": {
+          "startup": [
+            {
+              "cel": "s_crouch_down",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_c_lk",
+              "ticks": 2
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_c_lk",
+              "ticks": 2
+            },
+            {
+              "cel": "u_crouch",
+              "ticks": 5
+            }
+          ]
+        },
+        "c_mk": {
+          "startup": [
+            {
+              "cel": "s_crouch_down",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_c_mk",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_c_mk",
+              "ticks": 2
+            },
+            {
+              "cel": "u_crouch",
+              "ticks": 10
+            }
+          ]
+        },
+        "c_hk": {
+          "startup": [
+            {
+              "cel": "s_crouch_down",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_c_hk",
+              "ticks": 4
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_c_hk",
+              "ticks": 2
+            },
+            {
+              "cel": "u_crouch",
+              "ticks": 17
+            }
+          ]
+        },
+        "j_lp": {
+          "startup": [
+            {
+              "cel": "u_jump_apex",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_j_lp",
+              "ticks": 2
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_j_lp",
+              "ticks": 2
+            },
+            {
+              "cel": "s_jump_fall",
+              "ticks": 5
+            }
+          ]
+        },
+        "j_mp": {
+          "startup": [
+            {
+              "cel": "u_jump_apex",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_j_mp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_j_mp",
+              "ticks": 2
+            },
+            {
+              "cel": "s_jump_fall",
+              "ticks": 10
+            }
+          ]
+        },
+        "j_hp": {
+          "startup": [
+            {
+              "cel": "u_jump_apex",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_j_hp",
+              "ticks": 4
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_j_hp",
+              "ticks": 2
+            },
+            {
+              "cel": "s_jump_fall",
+              "ticks": 17
+            }
+          ]
+        },
+        "j_lk": {
+          "startup": [
+            {
+              "cel": "u_jump_apex",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_j_lk",
+              "ticks": 2
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_j_lk",
+              "ticks": 2
+            },
+            {
+              "cel": "s_jump_fall",
+              "ticks": 5
+            }
+          ]
+        },
+        "j_mk": {
+          "startup": [
+            {
+              "cel": "u_jump_apex",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_j_mk",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_j_mk",
+              "ticks": 2
+            },
+            {
+              "cel": "s_jump_fall",
+              "ticks": 10
+            }
+          ]
+        },
+        "j_hk": {
+          "startup": [
+            {
+              "cel": "u_jump_apex",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_j_hk",
+              "ticks": 4
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_j_hk",
+              "ticks": 2
+            },
+            {
+              "cel": "s_jump_fall",
+              "ticks": 17
+            }
+          ]
+        },
+        "close_mp": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 4
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_close_mp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_close_mp",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 1
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 7
+            }
+          ]
+        },
+        "close_hp": {
+          "startup": [
+            {
+              "cel": "n_close_mp",
+              "ticks": 6
+            }
+          ],
+          "active": [
+            {
+              "cel": "s_close_hp_alternative",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "s_close_hp_alternative",
+              "ticks": 2
+            },
+            {
+              "cel": "u_block_stand",
+              "ticks": 1
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 7
+            }
+          ]
+        },
+        "command_fhp": {
+          "startup": [
+            {
+              "cel": "n_close_mp",
+              "ticks": 10
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_command_fhp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_block_stand",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 15
+            }
+          ]
+        },
+        "leap_overhead": {
+          "startup": [
+            {
+              "cel": "s_crouch_down",
+              "ticks": 3
+            },
+            {
+              "cel": "u_jump_ascent",
+              "ticks": 14
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_leap_overhead",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_landing",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 17
+            }
+          ]
+        },
+        "throw_forward": {
+          "startup": [
+            {
+              "cel": "u_walk_forward",
+              "ticks": 2
+            },
+            {
+              "cel": "t_shop_clinch",
+              "ticks": 1
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_throw_forward",
+              "ticks": 2
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 22
+            }
+          ]
+        },
+        "throw_back": {
+          "startup": [
+            {
+              "cel": "u_walk_forward",
+              "ticks": 2
+            },
+            {
+              "cel": "t_shop_clinch",
+              "ticks": 1
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_throw_back",
+              "ticks": 2
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 22
+            }
+          ]
+        },
+        "pulse_l": {
+          "startup": [
+            {
+              "cel": "s_walk_back_second_key",
+              "ticks": 3
+            },
+            {
+              "cel": "u_block_stand",
+              "ticks": 7
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_pulse_basic",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 17
+            }
+          ]
+        },
+        "pulse_m": {
+          "startup": [
+            {
+              "cel": "s_walk_back_second_key",
+              "ticks": 3
+            },
+            {
+              "cel": "u_block_stand",
+              "ticks": 10
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_pulse_basic",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 21
+            }
+          ]
+        },
+        "pulse_h": {
+          "startup": [
+            {
+              "cel": "s_walk_back_second_key",
+              "ticks": 3
+            },
+            {
+              "cel": "u_block_stand",
+              "ticks": 13
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_pulse_basic",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 26
+            }
+          ]
+        },
+        "pulse_ex": {
+          "startup": [
+            {
+              "cel": "s_walk_back_second_key",
+              "ticks": 3
+            },
+            {
+              "cel": "u_block_stand",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_pulse_ex",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 22
+            }
+          ]
+        },
+        "rise_l": {
+          "startup": [
+            {
+              "cel": "s_crouch_down",
+              "ticks": 3
+            },
+            {
+              "cel": "n_close_mp",
+              "ticks": 1
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_rise_basic",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_jump_ascent",
+              "ticks": 2
+            },
+            {
+              "cel": "u_landing",
+              "ticks": 17
+            }
+          ]
+        },
+        "rise_m": {
+          "startup": [
+            {
+              "cel": "s_crouch_down",
+              "ticks": 3
+            },
+            {
+              "cel": "n_close_mp",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_rise_basic",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_jump_ascent",
+              "ticks": 2
+            },
+            {
+              "cel": "u_landing",
+              "ticks": 21
+            }
+          ]
+        },
+        "rise_h": {
+          "startup": [
+            {
+              "cel": "s_crouch_down",
+              "ticks": 3
+            },
+            {
+              "cel": "n_close_mp",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_rise_basic",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_jump_ascent",
+              "ticks": 2
+            },
+            {
+              "cel": "u_landing",
+              "ticks": 26
+            }
+          ]
+        },
+        "rise_ex": {
+          "startup": [
+            {
+              "cel": "s_crouch_down",
+              "ticks": 2
+            },
+            {
+              "cel": "n_close_mp",
+              "ticks": 1
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_rise_ex",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_jump_ascent",
+              "ticks": 2
+            },
+            {
+              "cel": "u_landing",
+              "ticks": 22
+            }
+          ]
+        },
+        "knee_l": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 3
+            },
+            {
+              "cel": "t_knee_basic",
+              "ticks": 7
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_knee_basic",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_jump_apex",
+              "ticks": 2
+            },
+            {
+              "cel": "u_landing",
+              "ticks": 17
+            }
+          ]
+        },
+        "knee_m": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 3
+            },
+            {
+              "cel": "t_knee_basic",
+              "ticks": 10
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_knee_basic",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_jump_apex",
+              "ticks": 2
+            },
+            {
+              "cel": "u_landing",
+              "ticks": 21
+            }
+          ]
+        },
+        "knee_h": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 3
+            },
+            {
+              "cel": "t_knee_basic",
+              "ticks": 13
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_knee_basic",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_jump_apex",
+              "ticks": 2
+            },
+            {
+              "cel": "u_landing",
+              "ticks": 26
+            }
+          ]
+        },
+        "knee_ex": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 3
+            },
+            {
+              "cel": "t_knee_basic",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_knee_ex",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_jump_apex",
+              "ticks": 2
+            },
+            {
+              "cel": "u_landing",
+              "ticks": 22
+            }
+          ]
+        },
+        "sway_l": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 10
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_sway_shared",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "s_walk_back_second_key",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 17
+            }
+          ]
+        },
+        "sway_m": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 13
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_sway_shared",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "s_walk_back_second_key",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 21
+            }
+          ]
+        },
+        "sway_h": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 16
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_sway_shared",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "s_walk_back_second_key",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 26
+            }
+          ]
+        },
+        "sway_ex": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_sway_shared",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "s_walk_back_second_key",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 22
+            }
+          ]
+        },
+        "super_1": {
+          "startup": [
+            {
+              "cel": "s_walk_back_second_key",
+              "ticks": 3
+            },
+            {
+              "cel": "u_block_stand",
+              "ticks": 2
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_super_1",
+              "ticks": 20
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 33
+            }
+          ]
+        },
+        "super_2": {
+          "startup": [
+            {
+              "cel": "s_crouch_down",
+              "ticks": 3
+            },
+            {
+              "cel": "n_close_mp",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_super_2",
+              "ticks": 8
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_jump_ascent",
+              "ticks": 2
+            },
+            {
+              "cel": "u_landing",
+              "ticks": 33
+            }
+          ]
+        },
+        "super_3": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 3
+            },
+            {
+              "cel": "u_dash_forward",
+              "ticks": 4
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_super_3",
+              "ticks": 12
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_landing",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 33
+            }
+          ]
+        },
+        "shop_clinch": {
+          "startup": [
+            {
+              "cel": "u_walk_forward",
+              "ticks": 3
+            },
+            {
+              "cel": "t_shop_clinch",
+              "ticks": 9
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_clinch",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 21
+            }
+          ]
+        },
+        "shop_low_drive": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 14
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_low_drive",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_landing",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 22
+            }
+          ]
+        },
+        "shop_high_hook": {
+          "startup": [
+            {
+              "cel": "n_close_mp",
+              "ticks": 18
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_high_hook",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_block_stand",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 17
+            }
+          ]
+        },
+        "shop_low_turn": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 14
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_low_turn",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_landing",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 22
+            }
+          ]
+        },
+        "shop_step_feint": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 1
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_step_feint",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "s_crouch_up",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 13
+            }
+          ]
+        },
+        "shop_sway_feint": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 1
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_sway_feint",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "s_walk_back_second_key",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 13
+            }
+          ]
+        },
+        "buy_r_s1_clinch": {
+          "startup": [
+            {
+              "cel": "u_walk_forward",
+              "ticks": 6
+            },
+            {
+              "cel": "t_shop_clinch",
+              "ticks": 6
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_clinch",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 21
+            }
+          ]
+        },
+        "buy_r_s2_slipstream": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 4
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_low_drive",
+              "ticks": 8
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_landing",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 6
+            }
+          ]
+        },
+        "buy_r_s2_straight": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 3
+            },
+            {
+              "cel": "n_close_mp",
+              "ticks": 2
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_mp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_mp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_walk_back",
+              "ticks": 17
+            }
+          ]
+        },
+        "buy_r_s2_upper": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 4
+            },
+            {
+              "cel": "n_c_mp",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_c_hp",
+              "ticks": 4
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_c_hp",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 22
+            }
+          ]
+        },
+        "buy_r_s3_chain1": {
+          "startup": [
+            {
+              "cel": "u_walk_forward",
+              "ticks": 10
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_lp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_lp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_block_stand",
+              "ticks": 16
+            }
+          ]
+        },
+        "buy_r_s3_chain2": {
+          "startup": [
+            {
+              "cel": "n_close_mp",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_mp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_mp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_block_stand",
+              "ticks": 18
+            }
+          ]
+        },
+        "buy_r_s3_chain3": {
+          "startup": [
+            {
+              "cel": "n_close_mp",
+              "ticks": 12
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_hp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_hp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_walk_back",
+              "ticks": 12
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 12
+            }
+          ]
+        },
+        "buy_r_s4_counter": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_sway_feint",
+              "ticks": 6
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 23
+            }
+          ]
+        },
+        "buy_r_s4_riposte": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 6
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_hp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_hp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_walk_back",
+              "ticks": 10
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 10
+            }
+          ]
+        },
+        "buy_r_t1_high_hook": {
+          "startup": [
+            {
+              "cel": "n_close_mp",
+              "ticks": 18
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_high_hook",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_block_stand",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 18
+            }
+          ]
+        },
+        "buy_r_t2_low_turn": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 14
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_low_turn",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_landing",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 21
+            }
+          ]
+        },
+        "buy_r_t3_rivet_lift": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 6
+            },
+            {
+              "cel": "n_c_mp",
+              "ticks": 6
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_c_hp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_c_hp",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 22
+            }
+          ]
+        },
+        "buy_r_t4_tempered": {
+          "startup": [
+            {
+              "cel": "u_block_stand",
+              "ticks": 9
+            },
+            {
+              "cel": "n_close_mp",
+              "ticks": 9
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_hp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_hp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_walk_back",
+              "ticks": 13
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 12
+            }
+          ]
+        },
+        "buy_r_g1_false_start": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 3
+            },
+            {
+              "cel": "t_knee_basic",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "u_idle",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "t_shop_step_feint",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 4
+            }
+          ]
+        },
+        "buy_r_g2_check_step": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 1
+            }
+          ],
+          "active": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 3
+            },
+            {
+              "cel": "s_walk_back_second_key",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "s_walk_back_second_key",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 2
+            }
+          ]
+        },
+        "buy_r_g3_vault_hop": {
+          "startup": [
+            {
+              "cel": "s_jump_takeoff",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "s_jump_fall",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_landing",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 6
+            }
+          ]
+        },
+        "buy_r_g4_wire_cut": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 7
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_mp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 20
+            }
+          ]
+        },
+        "buy_r_a3_overtime": {
+          "startup": [
+            {
+              "cel": "u_block_stand",
+              "ticks": 6
+            },
+            {
+              "cel": "s_taunt",
+              "ticks": 6
+            }
+          ],
+          "active": [
+            {
+              "cel": "s_taunt",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_idle",
+              "ticks": 1
+            }
+          ]
+        }
+      }
+    },
+    "vale": {
+      "states": {
+        "idle": [
+          {
+            "cel": "u_idle",
+            "ticks": 28
+          }
+        ],
+        "walk_forward": [
+          {
+            "cel": "u_walk_forward",
+            "ticks": 6
+          },
+          {
+            "cel": "u_idle",
+            "ticks": 4
+          }
+        ],
+        "walk_back": [
+          {
+            "cel": "u_walk_back",
+            "ticks": 6
+          },
+          {
+            "cel": "u_idle",
+            "ticks": 4
+          }
+        ],
+        "dash_forward": [
+          {
+            "cel": "u_dash_forward",
+            "ticks": 4
+          }
+        ],
+        "dash_back": [
+          {
+            "cel": "u_dash_back",
+            "ticks": 4
+          }
+        ],
+        "crouch": [
+          {
+            "cel": "u_crouch",
+            "ticks": 4
+          }
+        ],
+        "jump_takeoff": [
+          {
+            "cel": "u_jump_takeoff",
+            "ticks": 4
+          }
+        ],
+        "jump_apex": [
+          {
+            "cel": "u_jump_apex",
+            "ticks": 4
+          }
+        ],
+        "jump_fall": [
+          {
+            "cel": "u_jump_fall",
+            "ticks": 4
+          }
+        ],
+        "land": [
+          {
+            "cel": "u_land",
+            "ticks": 4
+          }
+        ],
+        "block_high": [
+          {
+            "cel": "u_block_high",
+            "ticks": 4
+          }
+        ],
+        "block_low": [
+          {
+            "cel": "u_block_low",
+            "ticks": 4
+          }
+        ],
+        "parry_high": [
+          {
+            "cel": "u_parry_high",
+            "ticks": 4
+          }
+        ],
+        "parry_low": [
+          {
+            "cel": "u_parry_low",
+            "ticks": 4
+          }
+        ],
+        "hit_high": [
+          {
+            "cel": "s_hit_high",
+            "ticks": 4
+          }
+        ],
+        "knockdown_ground": [
+          {
+            "cel": "u_knockdown",
+            "ticks": 4
+          }
+        ],
+        "turn": [
+          {
+            "cel": "s_turn",
+            "ticks": 4
+          }
+        ],
+        "crouch_down": [
+          {
+            "cel": "s_crouch_down",
+            "ticks": 4
+          }
+        ],
+        "crouch_up": [
+          {
+            "cel": "s_crouch_up",
+            "ticks": 4
+          }
+        ],
+        "jump_rise": [
+          {
+            "cel": "s_jump_rise",
+            "ticks": 4
+          }
+        ],
+        "super_jump": [
+          {
+            "cel": "s_super_jump",
+            "ticks": 4
+          }
+        ],
+        "parry_air": [
+          {
+            "cel": "s_parry_air",
+            "ticks": 4
+          }
+        ],
+        "parry_red_high": [
+          {
+            "cel": "s_parry_red_high",
+            "ticks": 4
+          }
+        ],
+        "parry_red_low": [
+          {
+            "cel": "s_parry_red_low",
+            "ticks": 4
+          }
+        ],
+        "hit_low": [
+          {
+            "cel": "s_hit_low",
+            "ticks": 4
+          }
+        ],
+        "hit_air": [
+          {
+            "cel": "s_hit_air",
+            "ticks": 4
+          }
+        ],
+        "throw_victim": [
+          {
+            "cel": "s_throw_victim",
+            "ticks": 4
+          }
+        ],
+        "throw_tech": [
+          {
+            "cel": "s_throw_tech",
+            "ticks": 4
+          }
+        ],
+        "knockdown_fall": [
+          {
+            "cel": "s_knockdown_fall",
+            "ticks": 4
+          }
+        ],
+        "wakeup": [
+          {
+            "cel": "s_wakeup",
+            "ticks": 4
+          }
+        ],
+        "dizzy": [
+          {
+            "cel": "s_dizzy",
+            "ticks": 4
+          }
+        ],
+        "taunt": [
+          {
+            "cel": "s_taunt",
+            "ticks": 4
+          }
+        ],
+        "intro": [
+          {
+            "cel": "s_intro",
+            "ticks": 4
+          }
+        ],
+        "win": [
+          {
+            "cel": "s_win",
+            "ticks": 4
+          }
+        ],
+        "defeat": [
+          {
+            "cel": "s_defeat",
+            "ticks": 4
+          }
+        ],
+        "draw": [
+          {
+            "cel": "s_draw",
+            "ticks": 4
+          }
+        ],
+        "wakeup_quickrise": [
+          {
+            "cel": "s_wakeup_quickrise",
+            "ticks": 4
+          }
+        ],
+        "walk": [
+          {
+            "cel": "u_walk_forward",
+            "ticks": 6
+          },
+          {
+            "cel": "u_idle",
+            "ticks": 4
+          }
+        ],
+        "dash": [
+          {
+            "cel": "u_dash_forward",
+            "ticks": 4
+          }
+        ],
+        "dashback": [
+          {
+            "cel": "u_dash_back",
+            "ticks": 4
+          }
+        ],
+        "jump": [
+          {
+            "cel": "s_jump_rise",
+            "ticks": 4
+          },
+          {
+            "cel": "u_jump_apex",
+            "ticks": 9
+          },
+          {
+            "cel": "u_jump_fall",
+            "ticks": 9
+          }
+        ],
+        "guard": [
+          {
+            "cel": "u_block_high",
+            "ticks": 4
+          }
+        ],
+        "crouchguard": [
+          {
+            "cel": "u_block_low",
+            "ticks": 4
+          }
+        ],
+        "parry": [
+          {
+            "cel": "u_parry_high",
+            "ticks": 4
+          }
+        ],
+        "crouchparry": [
+          {
+            "cel": "u_parry_low",
+            "ticks": 4
+          }
+        ],
+        "hit": [
+          {
+            "cel": "s_hit_high",
+            "ticks": 4
+          }
+        ],
+        "knockdown": [
+          {
+            "cel": "u_knockdown",
+            "ticks": 4
+          }
+        ],
+        "walkback": [
+          {
+            "cel": "u_walk_back",
+            "ticks": 6
+          },
+          {
+            "cel": "u_idle",
+            "ticks": 4
+          }
+        ],
+        "takeoff": [
+          {
+            "cel": "u_jump_takeoff",
+            "ticks": 4
+          }
+        ],
+        "rise": [
+          {
+            "cel": "s_jump_rise",
+            "ticks": 4
+          }
+        ],
+        "apex": [
+          {
+            "cel": "u_jump_apex",
+            "ticks": 4
+          }
+        ],
+        "fall": [
+          {
+            "cel": "u_jump_fall",
+            "ticks": 4
+          }
+        ],
+        "superjump": [
+          {
+            "cel": "s_super_jump",
+            "ticks": 4
+          }
+        ],
+        "landing": [
+          {
+            "cel": "u_land",
+            "ticks": 4
+          }
+        ],
+        "airparry": [
+          {
+            "cel": "s_parry_air",
+            "ticks": 4
+          }
+        ],
+        "redparry": [
+          {
+            "cel": "s_parry_red_high",
+            "ticks": 4
+          }
+        ],
+        "redlowparry": [
+          {
+            "cel": "s_parry_red_low",
+            "ticks": 4
+          }
+        ],
+        "lowhit": [
+          {
+            "cel": "s_hit_low",
+            "ticks": 4
+          }
+        ],
+        "airhit": [
+          {
+            "cel": "s_hit_air",
+            "ticks": 4
+          }
+        ],
+        "thrown": [
+          {
+            "cel": "s_throw_victim",
+            "ticks": 4
+          }
+        ],
+        "tech": [
+          {
+            "cel": "s_throw_tech",
+            "ticks": 4
+          }
+        ],
+        "falling": [
+          {
+            "cel": "s_knockdown_fall",
+            "ticks": 4
+          }
+        ],
+        "quickrise": [
+          {
+            "cel": "s_wakeup_quickrise",
+            "ticks": 4
+          }
+        ],
+        "crouchdown": [
+          {
+            "cel": "s_crouch_down",
+            "ticks": 4
+          }
+        ],
+        "crouchup": [
+          {
+            "cel": "s_crouch_up",
+            "ticks": 4
+          }
+        ]
+      },
+      "moves": {
+        "s_lp": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_lp",
+              "ticks": 2
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_lp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 5
+            }
+          ]
+        },
+        "s_mp": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_mp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_mp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 10
+            }
+          ]
+        },
+        "s_hp": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_hp",
+              "ticks": 4
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_hp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 17
+            }
+          ]
+        },
+        "s_lk": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_lk",
+              "ticks": 2
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_lk",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 5
+            }
+          ]
+        },
+        "s_mk": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_mk",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_mk",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 10
+            }
+          ]
+        },
+        "s_hk": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_hk",
+              "ticks": 4
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_hk",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 17
+            }
+          ]
+        },
+        "c_lp": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_c_lp",
+              "ticks": 2
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_c_lp",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 1
+            },
+            {
+              "cel": "u_crouch",
+              "ticks": 4
+            }
+          ]
+        },
+        "c_mp": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_c_mp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_c_mp",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 1
+            },
+            {
+              "cel": "u_crouch",
+              "ticks": 9
+            }
+          ]
+        },
+        "c_hp": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_c_hp",
+              "ticks": 4
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_c_hp",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 1
+            },
+            {
+              "cel": "u_crouch",
+              "ticks": 16
+            }
+          ]
+        },
+        "c_lk": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_c_lk",
+              "ticks": 2
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_c_lk",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 1
+            },
+            {
+              "cel": "u_crouch",
+              "ticks": 4
+            }
+          ]
+        },
+        "c_mk": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_c_mk",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_c_mk",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 1
+            },
+            {
+              "cel": "u_crouch",
+              "ticks": 9
+            }
+          ]
+        },
+        "c_hk": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_c_hk",
+              "ticks": 4
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_c_hk",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 1
+            },
+            {
+              "cel": "u_crouch",
+              "ticks": 16
+            }
+          ]
+        },
+        "j_lp": {
+          "startup": [
+            {
+              "cel": "s_jump_rise",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_j_lp",
+              "ticks": 2
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_j_lp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_jump_fall",
+              "ticks": 5
+            }
+          ]
+        },
+        "j_mp": {
+          "startup": [
+            {
+              "cel": "s_jump_rise",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_j_mp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_j_mp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_jump_fall",
+              "ticks": 10
+            }
+          ]
+        },
+        "j_hp": {
+          "startup": [
+            {
+              "cel": "s_jump_rise",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_j_hp",
+              "ticks": 4
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_j_hp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_jump_fall",
+              "ticks": 17
+            }
+          ]
+        },
+        "j_lk": {
+          "startup": [
+            {
+              "cel": "s_jump_rise",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_j_lk",
+              "ticks": 2
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_j_lk",
+              "ticks": 2
+            },
+            {
+              "cel": "u_jump_fall",
+              "ticks": 5
+            }
+          ]
+        },
+        "j_mk": {
+          "startup": [
+            {
+              "cel": "s_jump_rise",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_j_mk",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_j_mk",
+              "ticks": 2
+            },
+            {
+              "cel": "u_jump_fall",
+              "ticks": 10
+            }
+          ]
+        },
+        "j_hk": {
+          "startup": [
+            {
+              "cel": "s_jump_rise",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_j_hk",
+              "ticks": 4
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_j_hk",
+              "ticks": 2
+            },
+            {
+              "cel": "u_jump_fall",
+              "ticks": 17
+            }
+          ]
+        },
+        "close_mp": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 4
+            }
+          ],
+          "active": [
+            {
+              "cel": "s_close_mp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "s_close_mp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 8
+            }
+          ]
+        },
+        "close_hp": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 6
+            }
+          ],
+          "active": [
+            {
+              "cel": "s_close_hp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "s_close_hp",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 8
+            }
+          ]
+        },
+        "command_fhp": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 10
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_command_fhp",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_idle",
+              "ticks": 17
+            }
+          ]
+        },
+        "leap_overhead": {
+          "startup": [
+            {
+              "cel": "u_jump_takeoff",
+              "ticks": 17
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_leap_overhead",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_land",
+              "ticks": 19
+            }
+          ]
+        },
+        "throw_forward": {
+          "startup": [
+            {
+              "cel": "s_throw_tech",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_throw_forward",
+              "ticks": 2
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "s_turn",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 22
+            }
+          ]
+        },
+        "throw_back": {
+          "startup": [
+            {
+              "cel": "s_throw_tech",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_throw_back",
+              "ticks": 2
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "s_turn",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 22
+            }
+          ]
+        },
+        "pulse_l": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 10
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_pulse",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_block_high",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 17
+            }
+          ]
+        },
+        "pulse_m": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 13
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_pulse",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_block_high",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 21
+            }
+          ]
+        },
+        "pulse_h": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 16
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_pulse",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_block_high",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 26
+            }
+          ]
+        },
+        "pulse_ex": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_pulse_ex",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_block_high",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 22
+            }
+          ]
+        },
+        "rise_l": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 4
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_rise",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_jump_fall",
+              "ticks": 2
+            },
+            {
+              "cel": "u_land",
+              "ticks": 17
+            }
+          ]
+        },
+        "rise_m": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 6
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_rise",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_jump_fall",
+              "ticks": 2
+            },
+            {
+              "cel": "u_land",
+              "ticks": 21
+            }
+          ]
+        },
+        "rise_h": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_rise",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_jump_fall",
+              "ticks": 2
+            },
+            {
+              "cel": "u_land",
+              "ticks": 26
+            }
+          ]
+        },
+        "rise_ex": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 3
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_rise_ex",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_jump_fall",
+              "ticks": 2
+            },
+            {
+              "cel": "u_land",
+              "ticks": 22
+            }
+          ]
+        },
+        "palm_l": {
+          "startup": [
+            {
+              "cel": "u_walk_forward",
+              "ticks": 10
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_palm",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_idle",
+              "ticks": 19
+            }
+          ]
+        },
+        "palm_m": {
+          "startup": [
+            {
+              "cel": "u_walk_forward",
+              "ticks": 13
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_palm",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_idle",
+              "ticks": 23
+            }
+          ]
+        },
+        "palm_h": {
+          "startup": [
+            {
+              "cel": "u_walk_forward",
+              "ticks": 16
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_palm",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_idle",
+              "ticks": 28
+            }
+          ]
+        },
+        "palm_ex": {
+          "startup": [
+            {
+              "cel": "u_walk_forward",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_palm",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_idle",
+              "ticks": 24
+            }
+          ]
+        },
+        "heel_l": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 10
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_heel",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_idle",
+              "ticks": 19
+            }
+          ]
+        },
+        "heel_m": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 13
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_heel",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_idle",
+              "ticks": 23
+            }
+          ]
+        },
+        "heel_h": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 16
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_heel",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_idle",
+              "ticks": 28
+            }
+          ]
+        },
+        "heel_ex": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_heel",
+              "ticks": 5
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_idle",
+              "ticks": 24
+            }
+          ]
+        },
+        "super_1": {
+          "startup": [
+            {
+              "cel": "t_super_freeze",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_super_1",
+              "ticks": 20
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_land",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 33
+            }
+          ]
+        },
+        "super_2": {
+          "startup": [
+            {
+              "cel": "t_super_freeze",
+              "ticks": 6
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_super_2",
+              "ticks": 8
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_land",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 33
+            }
+          ]
+        },
+        "super_3": {
+          "startup": [
+            {
+              "cel": "t_super_freeze",
+              "ticks": 7
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_super_3",
+              "ticks": 12
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_land",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 33
+            }
+          ]
+        },
+        "shop_return_pulse": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 22
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_return_pulse",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_block_high",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 21
+            }
+          ]
+        },
+        "shop_low_palm": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 14
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_low_palm",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "s_crouch_up",
+              "ticks": 2
+            },
+            {
+              "cel": "u_crouch",
+              "ticks": 22
+            }
+          ]
+        },
+        "shop_heel_arc": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 18
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_heel_arc",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_idle",
+              "ticks": 19
+            }
+          ]
+        },
+        "shop_long_check": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 14
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_long_check",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_idle",
+              "ticks": 19
+            }
+          ]
+        },
+        "shop_step_feint": {
+          "startup": [
+            {
+              "cel": "u_walk_forward",
+              "ticks": 1
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_step_feint",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_idle",
+              "ticks": 15
+            }
+          ]
+        },
+        "shop_sway_feint": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 1
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_sway_feint",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_idle",
+              "ticks": 15
+            }
+          ]
+        },
+        "buy_v_s1_return_pulse": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 11
+            },
+            {
+              "cel": "t_shop_return_pulse",
+              "ticks": 11
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_pulse",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "t_shop_return_pulse",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 21
+            }
+          ]
+        },
+        "buy_v_s2_low_palm": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 14
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_low_palm",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_land",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 22
+            }
+          ]
+        },
+        "buy_v_s3_arc_pulse": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 9
+            },
+            {
+              "cel": "u_walk_forward",
+              "ticks": 9
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_pulse",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "t_shop_return_pulse",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 22
+            }
+          ]
+        },
+        "buy_v_s4_anchor": {
+          "startup": [
+            {
+              "cel": "u_crouch",
+              "ticks": 13
+            },
+            {
+              "cel": "n_c_mp",
+              "ticks": 13
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_return_pulse",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 23
+            }
+          ]
+        },
+        "buy_v_t1_heel_arc": {
+          "startup": [
+            {
+              "cel": "n_s_mk",
+              "ticks": 18
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_heel_arc",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_land",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 18
+            }
+          ]
+        },
+        "buy_v_t2_needle_check": {
+          "startup": [
+            {
+              "cel": "u_walk_forward",
+              "ticks": 6
+            },
+            {
+              "cel": "n_s_lk",
+              "ticks": 6
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_s_mk",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "n_s_mk",
+              "ticks": 2
+            },
+            {
+              "cel": "u_walk_back",
+              "ticks": 8
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 8
+            }
+          ]
+        },
+        "buy_v_t3_descending_heel": {
+          "startup": [
+            {
+              "cel": "u_jump_apex",
+              "ticks": 7
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_j_hp",
+              "ticks": 16
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_land",
+              "ticks": 2
+            },
+            {
+              "cel": "s_crouch_up",
+              "ticks": 7
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 7
+            }
+          ]
+        },
+        "buy_v_t4_skycatch": {
+          "startup": [
+            {
+              "cel": "n_j_lp",
+              "ticks": 5
+            }
+          ],
+          "active": [
+            {
+              "cel": "n_throw_forward",
+              "ticks": 3
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_land",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 16
+            }
+          ]
+        },
+        "buy_v_g1_false_pulse": {
+          "startup": [
+            {
+              "cel": "u_idle",
+              "ticks": 6
+            }
+          ],
+          "active": [
+            {
+              "cel": "u_idle",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "t_shop_sway_feint",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 4
+            }
+          ]
+        },
+        "buy_v_g2_recoil_step": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 1
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_sway_feint",
+              "ticks": 6
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 2
+            }
+          ]
+        },
+        "buy_v_g3_shear_palm": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 6
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_long_check",
+              "ticks": 4
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 22
+            }
+          ]
+        },
+        "buy_v_g4_slipgate": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 8
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_shop_step_feint",
+              "ticks": 7
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 18
+            }
+          ]
+        },
+        "buy_v_a3_prism": {
+          "startup": [
+            {
+              "cel": "u_walk_back",
+              "ticks": 9
+            },
+            {
+              "cel": "t_shop_return_pulse",
+              "ticks": 9
+            }
+          ],
+          "active": [
+            {
+              "cel": "t_pulse",
+              "ticks": 1
+            }
+          ],
+          "recovery": [
+            {
+              "cel": "t_shop_return_pulse",
+              "ticks": 2
+            },
+            {
+              "cel": "u_idle",
+              "ticks": 22
+            }
+          ]
+        }
+      }
+    }
+  }
+}

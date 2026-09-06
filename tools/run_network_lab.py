@@ -16,6 +16,7 @@ def main():
     ap.add_argument("--configuration",default="Release",choices=["Debug","Release","ExportDebug","ExportRelease"])
     ap.add_argument("--output",default=str(ROOT/"reports"/"network-lab"))
     ap.add_argument("--matrix",action="store_true")
+    ap.add_argument("--data",default=str(ROOT/"data"))
     ap.add_argument("--max-seconds",type=int,default=900)
     ap.add_argument("--seed",type=int,default=1)
     ap.add_argument("--rtt",type=int,default=0)
@@ -38,7 +39,7 @@ def main():
         while ports[0]==ports[1]:ports[1]=free_port()
         session=f"socket-lab-{os.getpid()}-{n}";jobs=[];logs=[];commands=[];start=time.monotonic()
         for seat in range(2):
-            cmd=[a.dotnet,str(dll),"--seat",str(seat),"--local-port",str(ports[seat]),"--remote-port",str(ports[1-seat]),"--session",session,"--data",str(ROOT/"data"),"--output",str(directory),"--rtt",str(rtt),"--jitter",str(jitter),"--loss",str(loss),"--duplicates",str(duplicate),"--reorder",str(reorder),"--max-seconds",str(a.max_seconds),"--seed",str(a.seed)]
+            cmd=[a.dotnet,str(dll),"--seat",str(seat),"--local-port",str(ports[seat]),"--remote-port",str(ports[1-seat]),"--session",session,"--data",str(pathlib.Path(a.data).resolve()),"--output",str(directory),"--rtt",str(rtt),"--jitter",str(jitter),"--loss",str(loss),"--duplicates",str(duplicate),"--reorder",str(reorder),"--max-seconds",str(a.max_seconds),"--seed",str(a.seed)]
             log=open(directory/f"peer{seat}.stdout.log","w",encoding="utf-8");logs.append(log);commands.append(cmd)
             jobs.append(subprocess.Popen(cmd,cwd=ROOT,stdout=log,stderr=subprocess.STDOUT))
         codes=[]
@@ -52,9 +53,11 @@ def main():
             for log in logs:log.close()
         peers=[json.loads((directory/f"peer{s}.result.json").read_text()) for s in range(2)] if all((directory/f"peer{s}.result.json").exists() for s in range(2)) else []
         matched=len(peers)==2 and peers[0]["finalHash"]==peers[1]["finalHash"] and peers[0]["wallets"]==peers[1]["wallets"] and peers[0]["scores"]==peers[1]["scores"] and peers[0]["roundReceipts"]==peers[1]["roundReceipts"]
-        passed=codes==[0,0] and matched and all(p["completed"] for p in peers)
+        binary_match=all((directory/f"peer{s}.final-state.bin").exists() and (directory/f"peer{s}.slreplay").exists() for s in range(2))
+        if binary_match:binary_match=(directory/"peer0.final-state.bin").read_bytes()==(directory/"peer1.final-state.bin").read_bytes() and (directory/"peer0.slreplay").read_bytes()==(directory/"peer1.slreplay").read_bytes()
+        passed=codes==[0,0] and matched and binary_match and all(p["completed"] for p in peers)
         files={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in directory.iterdir() if p.is_file()}
-        result={"passed":passed,"rtt":rtt,"jitter":jitter,"loss":loss,"duplicates":duplicate,"reorder":reorder,"exitCodes":codes,"matchingFinalHashWalletsScoresReceipts":matched,"elapsedSeconds":time.monotonic()-start,"commands":commands,"artifacts":files,"directory":str(directory)}
+        result={"passed":passed,"rtt":rtt,"jitter":jitter,"loss":loss,"duplicates":duplicate,"reorder":reorder,"exitCodes":codes,"matchingFinalHashWalletsScoresReceipts":matched,"byteIdenticalCanonicalStateAndReplay":binary_match,"elapsedSeconds":time.monotonic()-start,"commands":commands,"artifacts":files,"directory":str(directory)}
         results.append(result);print(json.dumps(result),flush=True)
         (out/"matrix-result.json").write_text(json.dumps({"actualTwoProcesses":True,"configuration":a.configuration,"transport":"UDP IPv4 loopback","physicalLanGate":"pending two-machine test","results":results},indent=2))
         if not passed:return 1

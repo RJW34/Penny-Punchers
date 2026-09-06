@@ -1,4 +1,5 @@
 using System.Net;
+using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
@@ -6,20 +7,21 @@ using StrikeLedger.Core;
 
 namespace StrikeLedger.App;
 
-public enum PeerStatus { Connecting, Preparation, Reveal, Playing, AwaitingSettlement, RoundResult, MatchOver, Paused, Aborted, Disconnected }
-public sealed record PeerHello(int Protocol,string Build,string ContentHash,string Session,int Seat,MatchConfig Config);
+public enum PeerStatus { Connecting, Lobby, Preparation, Reveal, Playing, AwaitingSettlement, RoundResult, MatchOver, Pausing, Paused, Aborted, Disconnected }
+public sealed record PeerHello(int Protocol,string Build,string ContentHash,string Session,int Seat,MatchConfig Config,bool NegotiateLineup=false);
 public sealed record PlanCommit(int Round,int Version,string Hash);
 public sealed record PlanReveal(int Round,int Version,PreparationPlan Plan,string Nonce);
 public sealed record StateHash(long Tick,string Hash,int Round);
 public sealed record RoundControl(int Round,string Hash);
-public sealed record ConfirmedPlayerEconomy(int Credits,int ScoreHalfPoints,int RecoveryTier,SpendReceipt[] Receipts);
+public sealed record ConfirmedPlayerEconomy(int Credits,int ScoreHalfPoints,int RecoveryTier,CombatEvent[] Receipts)
+{public SkillRewardReceipt[] Skills {get;init;}=[];public SuperUseReceipt[] SuperUses {get;init;}=[];public string[] OwnedProductIds {get;init;}=[];}
 public sealed record ConfirmedNetworkRound(int Round,string Hash,ConfirmedPlayerEconomy[] Players,SettlementReceipt Settlement);
-public sealed class PrivateMatchPeer : IDisposable
+public sealed partial class PrivateMatchPeer : IDisposable
 {
     readonly UdpTransport transport;
-    readonly MatchConfig config;
-    readonly Simulation replaySimulation;
-    readonly ReplayRecorder recorder;
+    MatchConfig config;
+    Simulation replaySimulation;
+    ReplayRecorder recorder;
     readonly Dictionary<long,string> remoteHashes=new();
     readonly HashSet<long> sentHashes=new();
     PlanCommit? ownCommit,otherCommit;
@@ -28,24 +30,25 @@ public sealed class PrivateMatchPeer : IDisposable
     bool hello,committed,started,settled,sentSettlement,revealSent;
     long phaseSince=Environment.TickCount64;
     long lastKeepalive;
-    int round=1;
+    int round=1;long roundStartTick;PreparationPlan lastValidDraft=new([]);
     readonly List<ConfirmedNetworkRound> confirmedRounds=new();
     public IReadOnlyList<ConfirmedNetworkRound> ConfirmedRounds=>confirmedRounds.AsReadOnly();
-    public Simulation Simulation {get;}
-    public RollbackSession Rollback {get;}
+    public Simulation Simulation {get;private set;}
+    public RollbackSession Rollback {get;private set;}
     public PeerStatus Status {get;private set;}=PeerStatus.Connecting;
     public string Diagnostic {get;private set;}="Connecting to private peer";
     public string? DesyncDump {get;private set;}
-    public int Round=>round;
+    public int Round=>Simulation.RoundId;
+    public bool LocalPlanSubmitted=>ownCommit is not null;
     public int MalformedPackets=>transport.MalformedPackets;
     public int Retransmissions=>transport.Retransmissions;
     public event Action<string>? Notice;
-    public PrivateMatchPeer(GameContent content,MatchConfig matchConfig,int localSeat,IPEndPoint bind,IPEndPoint remote,FaultProfile? faults=null)
+    public PrivateMatchPeer(GameContent content,MatchConfig matchConfig,int localSeat,IPEndPoint bind,IPEndPoint remote,FaultProfile? faults=null,bool negotiateLineup=false)
     {
         if(matchConfig.Training || matchConfig.Assist)throw new ArgumentException("Training/assist state cannot enter competitive network session");
-        config=matchConfig;Simulation=new(content,config);Rollback=new(Simulation,localSeat);replaySimulation=new(content,config);recorder=new(content,config);
+        negotiate=negotiateLineup;connectionSession=matchConfig.SessionId;config=matchConfig;Simulation=new(content,config);Rollback=new(Simulation,localSeat);replaySimulation=new(content,config);recorder=new(content,config);
         transport=new(bind,remote,config.SessionId,faults);transport.Packet+=Receive;
-        Send(PacketKind.Hello,new PeerHello(1,ReplayFormat.Build,content.ContentHash,config.SessionId,localSeat,config));
+        Send(PacketKind.Hello,new PeerHello(3,ReplayFormat.Build,content.ContentHash,config.SessionId,localSeat,config,negotiate));
     }
     void Send<T>(PacketKind kind,T value,bool reliable=true)=>transport.Send(kind,JsonSerializer.SerializeToUtf8Bytes(value,ReplayFormat.Json),reliable);
     static T Read<T>(byte[] payload)=>JsonSerializer.Deserialize<T>(payload,ReplayFormat.Json)??throw new InvalidDataException("Empty control payload");
@@ -63,11 +66,16 @@ public sealed class PrivateMatchPeer : IDisposable
         var preflight=new Simulation(Simulation.Content,config);preflight.Restore(Simulation.Capture());
         preflight.CommitPreparation(Rollback.LocalSeat==0?plan:new([]),Rollback.LocalSeat==1?plan:new([]));
         string nonce=Convert.ToHexString(RandomNumberGenerator.GetBytes(24)).ToLowerInvariant();
-        ownReveal=new(round,1,new(plan.ItemIds.Order(StringComparer.Ordinal).ToArray(),plan.ReserveFloor),nonce);
-        ownCommit=new(round,1,CommitHash(ownReveal));Send(PacketKind.Commit,ownCommit);Progress();
+        ownReveal=new(round,2,PurchasePlanning.QuotedPlan(Simulation.Content,Simulation.Players[Rollback.LocalSeat].FighterId,Simulation.Players[Rollback.LocalSeat].Credits,plan.ItemIds),nonce);
+        ownCommit=new(round,2,CommitHash(ownReveal));Send(PacketKind.Commit,ownCommit);Progress();
+    }
+    public void SetPreparationDraft(PreparationPlan plan)
+    {
+        if(Status!=PeerStatus.Preparation||ownCommit is not null)return;ValidatePlan(plan);
+        lastValidDraft=PurchasePlanning.QuotedPlan(Simulation.Content,Simulation.Players[Rollback.LocalSeat].FighterId,Simulation.Players[Rollback.LocalSeat].Credits,plan.ItemIds);
     }
     static void ValidatePlan(PreparationPlan plan)
-    {if(plan is null || plan.ItemIds is null || plan.ItemIds.Length>3 || plan.ItemIds.Any(x=>x is null || x.Length is <1 or >64) || plan.ReserveFloor is <0 or >3600)throw new InvalidDataException("Malformed preparation plan");}
+    {if(plan is null || plan.ItemIds is null || plan.ItemIds.Length>6 || plan.ItemIds.Any(x=>x is null || x.Length is <1 or >80) || plan.ReserveFloor!=0||plan.ContentHash is null||plan.ContentHash.Length>64||plan.QuotedCost<0||plan.ItemIds.Distinct(StringComparer.Ordinal).Count()!=plan.ItemIds.Length)throw new InvalidDataException("Malformed preparation plan");}
     static string CommitHash(PlanReveal reveal)=>Convert.ToHexString(SHA256.HashData(JsonSerializer.SerializeToUtf8Bytes(reveal,ReplayFormat.Json))).ToLowerInvariant();
     public void Poll()
     {
@@ -75,12 +83,12 @@ public sealed class PrivateMatchPeer : IDisposable
         try
         {
             if(Environment.TickCount64-lastKeepalive>=1000){transport.Send(PacketKind.Ping,Array.Empty<byte>(),false);lastKeepalive=Environment.TickCount64;}
-            transport.Poll();if(Status is PeerStatus.Aborted or PeerStatus.Disconnected)return;Progress();
+            transport.Poll();ProgressPause();if(Status==PeerStatus.Pausing)Advance(5,Buttons.None);if(Status is PeerStatus.Aborted or PeerStatus.Disconnected)return;Progress();
             if(Environment.TickCount64-transport.LastReceiveMilliseconds>15000)Change(PeerStatus.Disconnected,"Private peer timed out; no predicted payout applied");
             if(Status==PeerStatus.Connecting&&Environment.TickCount64-phaseSince>15000)Abort("Compatible private handshake deadline expired");
-            if(Status==PeerStatus.Preparation && Environment.TickCount64-phaseSince>15000 && ownCommit is null)SubmitPreparation(new([]));
+            if(Status==PeerStatus.Preparation && Environment.TickCount64-phaseSince>15000 && ownCommit is null)SubmitPreparation(lastValidDraft);
             if(Status is PeerStatus.Preparation or PeerStatus.Reveal && Environment.TickCount64-phaseSince>30000)Abort("Preparation commitment/reveal deadline expired");
-            if(Status is PeerStatus.Playing or PeerStatus.AwaitingSettlement)
+            if(Status is PeerStatus.Playing or PeerStatus.Pausing or PeerStatus.Paused or PeerStatus.AwaitingSettlement)
             {
                 SendInputs();RecordConfirmedInputs();
                 foreach(long t in remoteHashes.Keys.ToArray())
@@ -92,12 +100,13 @@ public sealed class PrivateMatchPeer : IDisposable
                 TrySettlement();
             }
         }
-        catch(Exception ex)when(ex is JsonException or InvalidDataException or InvalidOperationException or IOException or ArgumentException){Abort(ex.Message);}
+        catch(Exception ex)when(ex is JsonException or InvalidDataException or InvalidOperationException or IOException or SocketException or ArgumentException){Abort(ex.Message);}
     }
     public bool Advance(byte direction,Buttons held)
     {
-        if(Status!=PeerStatus.Playing || Simulation.Phase==MatchPhase.PendingResult)return false;
-        try{bool advanced=Rollback.Advance(direction,held);SendInputs();TrySettlement();return advanced;}
+        if(Status is not (PeerStatus.Playing or PeerStatus.Pausing) || Simulation.Phase==MatchPhase.PendingResult || pauseTarget>=0&&Simulation.Tick>=pauseTarget)return false;
+        if(Status==PeerStatus.Pausing||resumeCountdown>0){direction=5;held=Buttons.None;}
+        try{bool advanced=Rollback.Advance(direction,held);if(advanced&&resumeCountdown>0)resumeCountdown--;SendInputs();ProgressPause();TrySettlement();return advanced;}
         catch(Exception ex)when(ex is InvalidDataException or InvalidOperationException or ArgumentException){Abort(ex.Message);return false;}
     }
     void SendInputs()
@@ -117,19 +126,20 @@ public sealed class PrivateMatchPeer : IDisposable
             if(packet.Kind==PacketKind.Hello)
             {
                 var h=Read<PeerHello>(packet.Payload);
-                if(h.Protocol!=1 || h.Build!=ReplayFormat.Build || h.ContentHash!=Simulation.Content.ContentHash || h.Session!=config.SessionId || h.Seat!=Rollback.RemoteSeat || h.Config!=config)throw new InvalidDataException("Private peer protocol, build, content, configuration or seat mismatch");
-                if(!hello){hello=true;Change(PeerStatus.Preparation,"Peer verified. Lock a preparation plan.");}return;
+                if(h.Config is null||h.Config.Training||h.Config.Assist||h.Protocol!=3 || h.Build!=ReplayFormat.Build || h.ContentHash!=Simulation.Content.ContentHash || h.Session!=connectionSession || h.Seat!=Rollback.RemoteSeat || h.NegotiateLineup!=negotiate || !negotiate&&h.Config!=config)throw new InvalidDataException("Private peer protocol, build, content, configuration or seat mismatch");
+                if(!hello){hello=true;if(negotiate){Change(PeerStatus.Lobby,"Peer verified. Choose your fighter; host chooses the stage. Buy an optional super in each round shop.");PublishSelection();}else Change(PeerStatus.Preparation,"Peer verified. Lock a preparation plan.");}return;
             }
             if(!hello)throw new InvalidDataException("Control arrived before verified handshake");
             switch(packet.Kind)
             {
                 case PacketKind.Commit:
                     var commit=Read<PlanCommit>(packet.Payload);if(commit.Round<round)return;
-                    if(commit.Round!=round || commit.Version!=1 || commit.Hash is null || commit.Hash.Length!=64 || otherCommit is not null && otherCommit!=commit)throw new InvalidDataException("Invalid or changed preparation commitment");otherCommit=commit;break;
+                    if(commit.Round!=round || commit.Version!=2 || commit.Hash is null || commit.Hash.Length!=64 || otherCommit is not null && otherCommit!=commit)throw new InvalidDataException("Invalid or changed preparation commitment");otherCommit=commit;break;
                 case PacketKind.Reveal:
                     var reveal=Read<PlanReveal>(packet.Payload);if(reveal.Round<round)return;
-                    if(reveal.Round!=round || reveal.Version!=1 || reveal.Nonce is null || reveal.Nonce.Length!=48 || otherCommit is null)throw new InvalidDataException("Reveal without valid commitment");ValidatePlan(reveal.Plan);
+                    if(reveal.Round!=round || reveal.Version!=2 || reveal.Nonce is null || reveal.Nonce.Length!=48 || otherCommit is null)throw new InvalidDataException("Reveal without valid commitment");ValidatePlan(reveal.Plan);
                     if(!CryptographicOperations.FixedTimeEquals(Encoding.ASCII.GetBytes(CommitHash(reveal)),Encoding.ASCII.GetBytes(otherCommit.Hash)))throw new InvalidDataException("Preparation reveal does not match commitment");
+                    if(reveal.Plan.ContentHash!=Simulation.Content.ContentHash||reveal.Plan.QuotedCost is null)throw new InvalidDataException("Unquoted or stale shop cart");
                     otherReveal=reveal;break;
                 case PacketKind.Start:
                     var start=Read<RoundControl>(packet.Payload);if(start.Round<round)return;if(start.Round!=round)throw new InvalidDataException("Future round start");otherStart=start;break;
@@ -147,12 +157,11 @@ public sealed class PrivateMatchPeer : IDisposable
                     var settlement=Read<RoundControl>(packet.Payload);if(settlement.Round<round)return;if(settlement.Round!=round)throw new InvalidDataException("Future settlement");otherSettlement=settlement;TrySettlement();break;
                 case PacketKind.NextRound:
                     var next=Read<RoundControl>(packet.Payload);if(next.Round<round)return;if(next.Round!=round || next.Hash!=Simulation.Hash() || !settled)throw new InvalidDataException("Next round without matching settled state");RestartRound();break;
-                case PacketKind.Pause:
-                    if(Read<RoundControl>(packet.Payload).Round!=round)throw new InvalidDataException("Pause for incorrect round");
-                    if(Status==PeerStatus.Playing)Change(PeerStatus.Paused,"Private match paused by peer");break;
-                case PacketKind.Resume:
-                    if(Read<RoundControl>(packet.Payload).Round!=round)throw new InvalidDataException("Resume for incorrect round");
-                    if(Status==PeerStatus.Paused)Change(PeerStatus.Playing,"Private match resumed");break;
+                case PacketKind.Selection:ReceiveSelection(Read<LobbySelection>(packet.Payload));break;
+                case PacketKind.Ready:ReceiveReady(Read<LobbyReady>(packet.Payload));break;
+                case PacketKind.Pause:ReceivePause(Read<PauseControl>(packet.Payload));break;
+                case PacketKind.Resume:ReceiveResume(Read<RoundControl>(packet.Payload));break;
+                case PacketKind.Rematch:ReceiveRematch(Read<RoundControl>(packet.Payload));break;
                 case PacketKind.Disconnect:Change(PeerStatus.Disconnected,"Peer disconnected; incomplete round has no payout");break;
                 default:throw new InvalidDataException("Unexpected private control kind");
             }
@@ -163,6 +172,7 @@ public sealed class PrivateMatchPeer : IDisposable
     void Progress()
     {
         if(Status is PeerStatus.Aborted or PeerStatus.Disconnected)return;
+        ProgressLobby();
         if(ownCommit is not null && otherCommit is not null && !revealSent){Send(PacketKind.Reveal,ownReveal!);revealSent=true;Change(PeerStatus.Reveal,"Both plans committed. Validating simultaneous reveal.");}
         if(ownReveal is not null && otherReveal is not null && !committed)
         {
@@ -172,7 +182,7 @@ public sealed class PrivateMatchPeer : IDisposable
         if(committed && otherStart is not null && !started)
         {
             if(otherStart.Hash!=Simulation.Hash()){Abort("Preparation state hash mismatch");return;}
-            Rollback.ResetTimeline();started=true;Change(PeerStatus.Playing,"Plans revealed. Deterministic reveal/countdown begins.");
+            Rollback.ResetTimeline();roundStartTick=Simulation.Tick;started=true;Change(PeerStatus.Playing,"Plans revealed. Deterministic reveal/countdown begins.");
         }
     }
     void TrySettlement()
@@ -187,7 +197,7 @@ public sealed class PrivateMatchPeer : IDisposable
         if(replaySimulation.Hash()!=hash){Abort("Confirmed input recording diverged before settlement");return;}
         var receipt=Simulation.SettleRound(Rollback.ConfirmedThroughTick,$"{config.SessionId}:settle:{round}");settled=true;
         recorder.SettleRound(replaySimulation,Rollback.ConfirmedThroughTick,$"{config.SessionId}:settle:{round}");
-        confirmedRounds.Add(new(round,Simulation.Hash(),Simulation.Players.Select(p=>new ConfirmedPlayerEconomy(p.Credits,p.ScoreHalfPoints,p.RecoveryTier,p.SpendReceipts.ToArray())).ToArray(),receipt));
+        confirmedRounds.Add(new(Simulation.RoundId,Simulation.Hash(),Simulation.Players.Select(p=>new ConfirmedPlayerEconomy(p.Credits,p.ScoreHalfPoints,p.RecoveryTier,recorder.Record.Commands.Where(c=>c.Kind=="step").SelectMany(c=>c.Events).Where(e=>e.Seat==p.Seat&&e.Tick>=roundStartTick&&e.Kind is CombatEventKind.SuperUseConsumed or CombatEventKind.SkillAward).ToArray()){Skills=p.SkillReceipts.ToArray(),SuperUses=p.SuperUseReceipts.ToArray(),OwnedProductIds=p.OwnedProductIds.ToArray()}).ToArray(),receipt));
         Change(Simulation.Phase==MatchPhase.MatchOver?PeerStatus.MatchOver:PeerStatus.RoundResult,"Both terminal states match. Round settlement committed once.");
     }
     public void ContinueMatch()
@@ -197,11 +207,9 @@ public sealed class PrivateMatchPeer : IDisposable
     }
     void RestartRound()
     {
-        Simulation.NextRound();recorder.NextRound(replaySimulation);round++;ownCommit=null;otherCommit=null;ownReveal=null;otherReveal=null;otherStart=null;otherSettlement=null;
+        Simulation.NextRound();recorder.NextRound(replaySimulation);lastValidDraft=new([]);round++;ownCommit=null;otherCommit=null;ownReveal=null;otherReveal=null;otherStart=null;otherSettlement=null;
         committed=false;started=false;settled=false;sentSettlement=false;revealSent=false;remoteHashes.Clear();sentHashes.Clear();Rollback.ResetTimeline();Change(PeerStatus.Preparation,"Next preparation; persistent wallets retained");
     }
-    public void Pause(){if(Status!=PeerStatus.Playing)return;Send(PacketKind.Pause,new RoundControl(round,""));Change(PeerStatus.Paused,"Private match paused");}
-    public void Resume(){if(Status!=PeerStatus.Paused)return;Send(PacketKind.Resume,new RoundControl(round,""));Change(PeerStatus.Playing,"Private match resumed");}
     void RecordConfirmedInputs()
     {
         if(!started)return;
@@ -209,6 +217,19 @@ public sealed class PrivateMatchPeer : IDisposable
         {var inputs=Rollback.ConfirmedInputs(replaySimulation.Tick);recorder.Step(replaySimulation,inputs.Seat0,inputs.Seat1);}
     }
     public void SaveReplay(string path){RecordConfirmedInputs();recorder.Save(path);ReplayFormat.ExportEconomy(recorder.Record,Path.ChangeExtension(path,"economy.json"));}
-    public void Disconnect(){Send(PacketKind.Disconnect,new {round});transport.Poll();Change(PeerStatus.Disconnected,"Disconnected");}
-    public void Dispose()=>transport.Dispose();
+    public ReplayRecord CaptureReplay(){RecordConfirmedInputs();return new(recorder.Record.Header,recorder.Record.Commands.ToList());}
+    public void Disconnect(string reason="Left private match")
+    {
+        if(disposed||Status==PeerStatus.Disconnected)return;
+        try{closingSent=true;Send(PacketKind.Disconnect,new {round});transport.Poll();}catch(Exception ex)when(ex is IOException or SocketException or ObjectDisposedException){Notice?.Invoke(ex.Message);}
+        Change(PeerStatus.Disconnected,reason);
+    }
+    bool disposed,closingSent;
+    public void Dispose()
+    {
+        if(disposed)return;Disconnect();bool notify=closingSent;
+        if(notify){long deadline=Environment.TickCount64+250;try{while(transport.PendingReliable>0&&Environment.TickCount64<deadline){transport.Poll();Thread.Sleep(2);}}catch(Exception ex)when(ex is IOException or SocketException or ObjectDisposedException){Notice?.Invoke(ex.Message);}}
+        transport.Dispose();disposed=true;
+    }
+
 }

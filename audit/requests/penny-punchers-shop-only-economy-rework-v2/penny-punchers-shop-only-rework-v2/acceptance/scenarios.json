@@ -1,0 +1,365 @@
+{
+  "status": "PROPOSED_NOT_EXECUTED",
+  "scenarios": [
+    {
+      "id": "SCN-001",
+      "name": "shop_atomic",
+      "work_package": "RW-002",
+      "expected": "Invalid opposing cart cannot partially debit or grant own cart",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-002",
+      "name": "zero_bank_owned_ex",
+      "work_package": "RW-002",
+      "expected": "Spend full600 on pulse_ex license; repeat five legally recovered activations at bank0",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-003",
+      "name": "rich_unowned_ex",
+      "work_package": "RW-002",
+      "expected": "Bank3600 without license; explicit EX rejects with no downgrade",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-004",
+      "name": "owned_not_other_ex",
+      "work_package": "RW-002",
+      "expected": "Own pulse_ex does not authorize rise_ex",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-005",
+      "name": "two_ex_limit",
+      "work_package": "RW-001",
+      "expected": "Third distinct EX fails shop before any mutation",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-006",
+      "name": "mixed_cart_limit",
+      "work_package": "RW-001",
+      "expected": "All-category total<=2400 independent of wallet3600",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-007",
+      "name": "super_once",
+      "work_package": "RW-002",
+      "expected": "Buy selected super, legal startup consumes1, repeated command rejects",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-008",
+      "name": "super_illegal",
+      "work_package": "RW-002",
+      "expected": "Buffer/phase/occupancy failures do not consume permit",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-009",
+      "name": "super_change_next_round",
+      "work_package": "RW-006",
+      "expected": "Choose art2 after art1 last round; reveal and execute art2 only",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-010",
+      "name": "no_super_without_buy",
+      "work_package": "RW-002",
+      "expected": "Match lineup does not grant free super",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-011",
+      "name": "licenses_expire",
+      "work_package": "RW-002",
+      "expected": "Winning does not retain kit; losing does not retain kit; unused permit expires",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-012",
+      "name": "ch_true",
+      "work_package": "RW-003",
+      "expected": "Actual direct damaging opener on offensive startup earns50",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-013",
+      "name": "ch_false",
+      "work_package": "RW-003",
+      "expected": "Recovery/feint/taunt/block/invulnerable/clash and juggle do not earnCH",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-014",
+      "name": "aa_true",
+      "work_package": "RW-003",
+      "expected": "Grounded direct attack intercepts voluntary jump before launch; earns75",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-015",
+      "name": "aa_posthit_false",
+      "work_package": "RW-003",
+      "expected": "Grounded hit launches standing victim; noAA from updated Y",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-016",
+      "name": "aa_juggle_false",
+      "work_package": "RW-003",
+      "expected": "Second hit on launched opponent earns noAA",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-017",
+      "name": "aa_air_to_air_false",
+      "work_package": "RW-003",
+      "expected": "Airborne attacker never getsAA bonus",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-018",
+      "name": "aa_counter_overlap",
+      "work_package": "RW-004",
+      "expected": "CH+AA on one contact pays75 not125",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-019",
+      "name": "perfect_age0",
+      "work_package": "RW-003",
+      "expected": "Fresh unfrozen valid parry arm same eligible tick earns100",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-020",
+      "name": "perfect_age1",
+      "work_package": "RW-003",
+      "expected": "Next eligible tick earns100",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-021",
+      "name": "normal_age2",
+      "work_package": "RW-003",
+      "expected": "Ordinary valid parry age2 still defends; no bonus",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-022",
+      "name": "freeze_edge",
+      "work_package": "RW-003",
+      "expected": "Buffered arm created during freeze cannot earn perfect on thaw",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-023",
+      "name": "red_and_air",
+      "work_package": "RW-003",
+      "expected": "Fresh red/air classification mirrors clocks and does not double bonus",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-024",
+      "name": "perfect_multihit",
+      "work_package": "RW-004",
+      "expected": "Parry all hits of one super; earn100 at most",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-025",
+      "name": "perfect_reflect",
+      "work_package": "RW-003",
+      "expected": "Own returning/reflected projectile cannot earn own perfect bonus",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-026",
+      "name": "pertype_cap",
+      "work_package": "RW-004",
+      "expected": "Third eligible reward of same category contributes0",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-027",
+      "name": "aggregate_partial",
+      "work_package": "RW-004",
+      "expected": "275 pending plus100 yields25 allowed,300 total, honest clipping",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-028",
+      "name": "root_overlap_later",
+      "work_package": "RW-004",
+      "expected": "EarlyCH then laterAA within same root cannot earn again",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-029",
+      "name": "no_fallback",
+      "work_package": "RW-004",
+      "expected": "AA capped withCH also eligible must not earn50 instead",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-030",
+      "name": "training_money",
+      "work_package": "RW-007",
+      "expected": "Practice can demonstrate rewards but cannot persist competition money",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-031",
+      "name": "rollback_bonus",
+      "work_package": "RW-005",
+      "expected": "Predicted perfect disappears after corrected hit; hashes converge",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-032",
+      "name": "rollback_use",
+      "work_package": "RW-005",
+      "expected": "Predicted super startup replaced by hit; use restored with no cash transaction",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-033",
+      "name": "confirmed_settlement",
+      "work_package": "RW-005",
+      "expected": "Terminal receipt cannot grant bank before both confirmed states",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-034",
+      "name": "terminal_trade",
+      "work_package": "RW-003",
+      "expected": "Same-tick lethal qualifying hits both classified before result",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-035",
+      "name": "no_after_terminal",
+      "work_package": "RW-004",
+      "expected": "Postterminal/stale events never generate earnings",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-036",
+      "name": "draw_and_cap",
+      "work_package": "RW-004",
+      "expected": "Draw900 plus cap-limited skill, result-first clipping identical on peers",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-037",
+      "name": "timeout_lastvalid",
+      "work_package": "RW-006",
+      "expected": "Invalid current edit still displays and commits lastvalid cart",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-038",
+      "name": "repeated_ex_corner",
+      "work_package": "RW-008",
+      "expected": "Unmetered licensed reversal/projectile pressure tested against free defense",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-039",
+      "name": "adaptive_rematch",
+      "work_package": "RW-007",
+      "expected": "Human/bot changes next cart for objective prior behavior",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-040",
+      "name": "native_complete_match",
+      "work_package": "RW-009",
+      "expected": "Actual GUI complete multi-round v2 match with new kit and earnings",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-041",
+      "name": "real_rollback_processes",
+      "work_package": "RW-005",
+      "expected": "Separate processes with fault matrix complete match and replays agree",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-042",
+      "name": "controller_b",
+      "work_package": "RW-006",
+      "expected": "Every combat attack includingB stays in fight",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-043",
+      "name": "camera_extremes",
+      "work_package": "RW-006",
+      "expected": "Both silhouettes visible at all legal separation states",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-044",
+      "name": "legacy_replay",
+      "work_package": "RW-005",
+      "expected": "Historical direct-spend replay rejected clearly or interpreted genuinely",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    },
+    {
+      "id": "SCN-045",
+      "name": "save_and_rematch",
+      "work_package": "RW-009",
+      "expected": "Exact receipt exported; save-failure message truthful; rematch resets",
+      "requires": "actual_CSharp_core_or_native_GUI_trace",
+      "native_status": "NOT_RUN"
+    }
+  ]
+}

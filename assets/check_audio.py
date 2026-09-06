@@ -7,7 +7,7 @@ import wave
 
 root = Path(__file__).resolve().parent.parent
 paths = sorted((root / "game/Presentation/Audio").glob("*.wav"))
-assert len(paths) == 16, f"Expected 16 sound assets, found {len(paths)}"
+assert len(paths) == 24, f"Expected 24 sound assets, found {len(paths)}"
 hashes = set()
 for path in paths:
     with wave.open(str(path), "rb") as wav:
@@ -24,4 +24,4 @@ for path in paths:
     assert digest not in hashes, f"Duplicated cue {path}"
     hashes.add(digest)
     print(f"PASS {path.name:19} {duration:5.2f}s RMS {rms:.3f} peak {peak:.3f} sha256 {digest}")
-print("PASS 16 distinct, bounded, non-silent PCM assets. Device audio playback is a separate check.")
+print("PASS 24 distinct, bounded, non-silent PCM assets. Device audio playback is a separate check.")

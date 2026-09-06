@@ -1,0 +1,23 @@
+{
+  "utc": "2026-09-05T23:04:11.470262+00:00",
+  "command": [
+    "D:/cs-fighting-game/split-circuit-scaffold/tools/.cache/dotnet/dotnet.exe",
+    "run",
+    "--project",
+    "assets/presentation_checks/inputchecks/InputChecks.csproj",
+    "-c",
+    "Debug",
+    "-p:BuildProjectReferences=false"
+  ],
+  "exitCode": 0,
+  "passed": true,
+  "scope": "Actual linked production GameSettings.cs normalization and JSON temporary-file round trip. No live user settings writes, physical controllers or native GUI claim. BuildProjectReferences=false preserves existing Core assembly.",
+  "sourceSha256": {
+    "game/GameSettings.cs": "8f94d439a262531a8fe317b11b04e566cf20b347b3451e8b5237379bcffa8d0f",
+    "assets/presentation_checks/inputchecks/Program.cs": "e8034a39f042d15b3b6fdbb02afc7704658e1132cde142441e564375c2ab8c3b",
+    "assets/presentation_checks/inputchecks/InputChecks.csproj": "59e57fad3f0397db079a5476cac2bcfe08fa0b2b52956ace9784e9eaec4c0553",
+    "src/StrikeLedger.Core/bin/Debug/net8.0/StrikeLedger.Core.dll": "ab312ffcc801c3011cf3ae4347706effae31cf0f65123492a68fafe4291e9b2b"
+  },
+  "stdout": "assets/presentation_checks/results/shop-only-v2-input/stdout.log",
+  "stderr": "assets/presentation_checks/results/shop-only-v2-input/stderr.log"
+}

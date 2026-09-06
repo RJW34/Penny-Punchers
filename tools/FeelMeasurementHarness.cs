@@ -5,11 +5,11 @@ using StrikeLedger.Core;
 var content=GameContent.Load(args[0]);var output=Path.GetFullPath(args[1]);Directory.CreateDirectory(output);
 var measurements=new List<object>();
 void Require(bool value,string message){if(!value)throw new InvalidOperationException(message);}
-Simulation Fresh(string fighter="rook",string art="art_1")
+Simulation Fresh(string fighter="rook",string art="")
 {
- var s=new Simulation(content,new MatchConfig{Fighter0=fighter,Fighter1=fighter=="rook"?"vale":"rook",Super0=art,SessionId="feel-measurement"});s.BeginFight();return s;
+ var s=new Simulation(content,new MatchConfig{Fighter0=fighter,Fighter1=fighter=="rook"?"vale":"rook",SessionId="feel-measurement"});s.BeginFight();return s;
 }
-Clock State(Simulation s)=>new(s.Tick,s.TimerTicks,s.FullFreeze,s.Players.Select(p=>new PlayerClock(p.X,p.Y,p.Vx,p.Vy,p.ActionId,p.ActionFrame,p.Hitstop,p.Hitstun,p.Blockstun,p.ParryTicks,p.ParryRetry,p.BackCharge,p.DownCharge,p.JumpStart,p.LandingTicks,p.DashTicks,p.InputHistory.LastOrDefault()?.Tick??-1)).ToArray());
+Clock State(Simulation s)=>new(s.Tick,s.TimerTicks,s.FullFreeze,s.Players.Select(p=>new PlayerClock(p.X,p.Y,p.Vx,p.Vy,p.ActionId,p.ActionFrame,p.Hitstop,p.Hitstun,p.Blockstun,p.ParryTicks,p.ParryRetry,p.BackCharge,p.DownCharge,p.JumpStart,p.LandingTicks,p.DashTicks,p.InputHistory.LastOrDefault()?.Tick??-1,p.EligibleDefenseTick,p.ParryArmEligibleTick,p.ParryBonusFrozen,p.Credits,p.SuperUsesRemaining,p.PendingSkillCredits)).ToArray());
 StepResult Step(Simulation s,List<Frame> frames,byte d0=5,Buttons b0=Buttons.None,byte d1=5,Buttons b1=Buttons.None)
 {
  var before=State(s);var r=s.Step(new(0,s.Tick,d0,b0),new(1,s.Tick,d1,b1));frames.Add(new(before.Tick,d0,b0,d1,b1,before,State(s),r.Events.ToArray(),r.Hash));return r;
@@ -62,7 +62,7 @@ foreach(var buttons in new[]{Buttons.LP,Buttons.MP,Buttons.HP})
  Require(contact is not null,"normal strike did not contact");int[] initialStop=s.Players.Select(p=>p.Hitstop).ToArray();int startIndex=frames.Count;int timer=s.TimerTicks;
  while(s.Players.Any(p=>p.Hitstop>0)&&frames.Count-startIndex<60)Step(s,frames);
  var frozen=frames.Skip(startIndex).ToArray();int[] observed=Enumerable.Range(0,2).Select(seat=>frozen.Count(f=>f.Before.Players[seat].Hitstop>0)).ToArray();
- foreach(var f in frozen)for(int seat=0;seat<2;seat++)if(f.Before.Players[seat].Hitstop>0){var a=f.Before.Players[seat];var b=f.After.Players[seat];Require(a.X==b.X&&a.Y==b.Y&&a.ActionFrame==b.ActionFrame&&a.Hitstun==b.Hitstun&&a.Blockstun==b.Blockstun,"hitstop advanced a frozen player clock");}
+ foreach(var f in frozen)for(int seat=0;seat<2;seat++)if(f.Before.Players[seat].Hitstop>0){var a=f.Before.Players[seat];var b=f.After.Players[seat];Require(a.X==b.X&&a.Y==b.Y&&a.ActionFrame==b.ActionFrame&&a.Hitstun==b.Hitstun&&a.Blockstun==b.Blockstun&&a.EligibleDefenseTick==b.EligibleDefenseTick,"hitstop advanced a frozen player clock");}
  Require(initialStop.SequenceEqual(observed),"hitstop countdown/duration mismatch");int timerAdvanced=timer-s.TimerTicks;Step(s,frames);
  measurements.Add(new{id="normal_contact_hitstop",buttons=buttons.ToString(),move=contact!.MoveId,hitEventTick=contact.Tick,initialHitstopCounters=initialStop,observedFrozenPlayerSteps=observed,simulationMilliseconds=observed.Select(x=>Ms(x)),timerTicksAdvancedDuringHitstop=timerAdvanced,playerMotionActionAndStunClocksHeld=true,inputSampleClockContinues=frozen.All(f=>f.After.Players.All(p=>p.LastInputTick==f.InputTick)),trace=Trace(s,start,frames)});
 }
@@ -72,35 +72,45 @@ foreach(var buttons in new[]{Buttons.LP,Buttons.MP,Buttons.HP})
  var r=Step(s,frames,d1:4);var parry=r.Events.Single(e=>e.Kind==CombatEventKind.Parry);int[] counters=s.Players.Select(p=>p.Hitstop).ToArray();int from=frames.Count;int timer=s.TimerTicks;
  while(s.Players.Any(p=>p.Hitstop>0)&&frames.Count-from<60)Step(s,frames);
  var frozen=frames.Skip(from).ToArray();int[] observed=Enumerable.Range(0,2).Select(seat=>frozen.Count(f=>f.Before.Players[seat].Hitstop>0)).ToArray();Require(counters.SequenceEqual(observed)&&s.Players[1].Health==1000,"parry freeze measurement failed");
- foreach(var f in frozen)for(int seat=0;seat<2;seat++)if(f.Before.Players[seat].Hitstop>0){var a=f.Before.Players[seat];var b=f.After.Players[seat];Require(a.X==b.X&&a.Y==b.Y&&a.ActionFrame==b.ActionFrame&&a.ParryRetry==b.ParryRetry,"parry freeze advanced player clocks");}
+ foreach(var f in frozen)for(int seat=0;seat<2;seat++)if(f.Before.Players[seat].Hitstop>0){var a=f.Before.Players[seat];var b=f.After.Players[seat];Require(a.X==b.X&&a.Y==b.Y&&a.ActionFrame==b.ActionFrame&&a.ParryRetry==b.ParryRetry&&a.EligibleDefenseTick==b.EligibleDefenseTick,"parry freeze advanced player clocks");}
  measurements.Add(new{id="high_parry_freeze",kind=parry.Detail,parryEventTick=parry.Tick,attackerInitialFreeze=counters[0],defenderInitialFreeze=counters[1],observedFrozenPlayerSteps=observed,simulationMilliseconds=observed.Select(x=>Ms(x)),timerTicksAdvancedDuringFreeze=timer-s.TimerTicks,playerMotionActionAndParryRetryClocksHeld=true,trace=Trace(s,start,frames)});
 }
-foreach(string fighter in new[]{"rook","vale"})foreach(string art in new[]{"art_1","art_2","art_3"})
+foreach(int age in new[]{0,1,2})
 {
- var s=Fresh(fighter,art);
+ var s=Fresh();CloseDistance(s);var frames=new List<Frame>();string start=Snapshot(s);int bank=s.Players[1].Credits;Step(s,frames,5,Buttons.LP);var move=content.Fighters["rook"].Move(s.Players[0].ActionId);
+ while(s.Players[0].ActionFrame<move.Startup-age)Step(s,frames);
+ var result=Step(s,frames,d1:4);while(!result.Events.Any(e=>e.Kind==CombatEventKind.Parry)&&frames.Count<40)result=Step(s,frames);
+ var fact=s.LastResolvedContacts.Single(f=>f.Outcome==ContactOutcome.Parry);Require(fact.ParryEligibleAge==age&&!fact.BonusIneligibleFrozenEdge,"Precision parry eligible clock differs");int expected=age<2?content.SkillRewards.PerfectParry:0;
+ Require(s.Players[1].PendingSkillCredits==expected&&s.Players[1].Credits==bank&&s.Players[1].Health==1000,"Precision reward/bank/ordinary-defense distinction failed");
+ measurements.Add(new{id="precision_parry_eligible_age",eligibleAge=fact.ParryEligibleAge,awardedNextShop=expected,frozenEdge=fact.BonusIneligibleFrozenEdge,contact=fact,bankUnchanged=true,ordinaryParrySucceeded=true,trace=Trace(s,start,frames)});
+}
+foreach(string fighter in new[]{"rook","vale"})foreach(var artDefinition in content.Fighters[fighter].SuperArts)
+{
+ string art=artDefinition.Id;var product=content.Items.Values.Single(i=>i.EligibleFighters.Contains(fighter)&&i.Slot=="super"&&i.MoveId==artDefinition.MoveId);var s=Fresh(fighter);
  for(int i=0;i<6500&&s.Phase==MatchPhase.Fight;i++)
  {
   var p=s.Players[0];int gap=Math.Abs(p.X-s.Players[1].X);byte dir=gap>33000?(byte)(p.Facing==1?6:4):(byte)5;
   s.Step(new(0,s.Tick,dir,p.Actionable&&s.Tick%2==0?Buttons.HP:Buttons.None),new(1,s.Tick,5,Buttons.None));
  }
  Require(s.Phase==MatchPhase.PendingResult&&s.PendingResult!.WinnerSeat==0,"competitive funding round did not end in earned payout");
- long fundingTicks=s.Tick;s.SettleRound(s.Tick);var fundingReceipt=s.LastSettlement;s.NextRound();s.BeginFight();Require(s.Players[0].Credits==1800,"actual confirmed win did not fund1800 credits");
+ long fundingTicks=s.Tick;s.SettleRound(s.Tick);var fundingReceipt=s.LastSettlement;s.NextRound();int fundedBank=s.Players[0].Credits;Require(fundedBank>=product.Price,"Actual confirmed win did not fund super permit");var purchase=s.CommitPreparation(new([product.Id]){ContentHash=content.ContentHash,QuotedCost=product.Price},new([]));s.BeginFight();Require(s.Players[0].Credits==fundedBank-product.Price&&s.Players[0].SuperUsesRemaining==1,"Atomic super permit purchase failed");
  var frames=new List<Frame>();string start=Snapshot(s);foreach(byte d in new byte[]{2,3,6,2,3})Step(s,frames,d,d1:6);
  int from=frames.Count;int wallet=s.Players[0].Credits;var r=Step(s,frames,6,Buttons.LP,6);var begun=r.Events.Single(e=>e.Kind==CombatEventKind.ActionStarted&&e.Seat==0);int remaining=s.FullFreeze;
- Require(begun.MoveId==art.Replace("art_","super_")&&remaining>0,"selected super did not enter arena freeze");
+ Require(begun.MoveId==artDefinition.MoveId&&remaining>0,"selected super did not enter arena freeze");
  while(s.FullFreeze>0&&frames.Count-from<90)Step(s,frames,d1:6);
  var frozen=frames.Skip(from).ToArray();Require(frozen.Length==remaining+1,"superfreeze onset-inclusive duration mismatch");
- foreach(var f in frozen){Require(f.Before.TimerTicks==f.After.TimerTicks,"superfreeze advanced round timer");for(int seat=0;seat<2;seat++){var a=f.Before.Players[seat];var b=f.After.Players[seat];Require(a.X==b.X&&a.Y==b.Y&&a.ActionFrame==b.ActionFrame&&a.Hitstop==b.Hitstop,"superfreeze advanced world action/motion/hitstop clocks");Require(b.LastInputTick==f.InputTick,"superfreeze lost sampled inputs");}}
+ foreach(var f in frozen){Require(f.Before.TimerTicks==f.After.TimerTicks,"superfreeze advanced round timer");for(int seat=0;seat<2;seat++){var a=f.Before.Players[seat];var b=f.After.Players[seat];Require(a.X==b.X&&a.Y==b.Y&&a.ActionFrame==b.ActionFrame&&a.Hitstop==b.Hitstop&&a.EligibleDefenseTick==b.EligibleDefenseTick,"superfreeze advanced world action/motion/hitstop clocks");Require(b.LastInputTick==f.InputTick,"superfreeze lost sampled inputs");}}
+ Require(s.Players[0].Credits==wallet&&s.Players[0].SuperUsesRemaining==0&&s.Players[0].SuperUseReceipts.Count==1,"Super startup changed bank or consumed incorrect permit count");
  int chargeBefore=frozen[0].Before.Players[1].BackCharge,chargeAfter=frozen[^1].After.Players[1].BackCharge;Step(s,frames);
  Require(frames[^1].After.TimerTicks==frames[^1].Before.TimerTicks-1&&frames[^1].After.Players[0].ActionFrame==1,"superfreeze did not release world clocks");
- measurements.Add(new{id="selected_super_freeze",fighter,art,move=begun.MoveId,competitiveFundingRoundTicks=fundingTicks,confirmedFundingReceipt=fundingReceipt,startupEventTick=begun.Tick,paidDebit=wallet-s.Players[0].Credits,remainingCounterAfterStartupCall=remaining,observedFreezeCallsIncludingStartup=frozen.Length,simulationMilliseconds=Ms(frozen.Length),timerActionMotionHitstopClocksHeld=true,inputSamplingContinues=true,defenderBackChargeIncreaseDuringFreeze=chargeAfter-chargeBefore,firstThawedActionFrame=s.Players[0].ActionFrame,trace=Trace(s,start,frames)});
+ measurements.Add(new{id="selected_super_freeze",fighter,art,move=begun.MoveId,competitiveFundingRoundTicks=fundingTicks,confirmedFundingReceipt=fundingReceipt,startupEventTick=begun.Tick,shopProduct=product.Id,shopPrice=product.Price,confirmedPurchase=purchase,fundedBank,savedBank=wallet,combatBankDelta=s.Players[0].Credits-wallet,remainingSuperUses=s.Players[0].SuperUsesRemaining,remainingCounterAfterStartupCall=remaining,observedFreezeCallsIncludingStartup=frozen.Length,simulationMilliseconds=Ms(frozen.Length),timerActionMotionHitstopClocksHeld=true,inputSamplingContinues=true,defenderBackChargeIncreaseDuringFreeze=chargeAfter-chargeBefore,firstThawedActionFrame=s.Players[0].ActionFrame,trace=Trace(s,start,frames)});
 }
-var corePath=typeof(Simulation).Assembly.Location;var report=new{passed=true,utc=DateTime.UtcNow,scope="Measured production core state before and after actual fixed60 Step calls; all simulations competitive and funded supers use actual confirmed round payouts. These are discrete simulation timings, not OS input, display latency, or rendered FPS measurements.",tickRate=60,coordinateUnits="Authored integer world units (1000 units per rendered logical unit)",coreAssemblyId=typeof(Simulation).Assembly.ManifestModule.ModuleVersionId.ToString(),coreBinaryPath=corePath,coreBinarySha256=Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(corePath))).ToLowerInvariant(),contentHash=content.ContentHash,measurements};
+var corePath=typeof(Simulation).Assembly.Location;var report=new{passed=true,utc=DateTime.UtcNow,scope="Measured production core state before and after actual fixed60 Step calls; all simulations competitive; super permits are purchased atomically from actual confirmed round payouts before one legal startup. Eligible defense clocks, ownership and fixed-bank state are observed directly. These are discrete simulation timings, not OS input, display latency, or rendered FPS measurements.",tickRate=60,coordinateUnits="Authored integer world units (1000 units per rendered logical unit)",coreAssemblyId=typeof(Simulation).Assembly.ManifestModule.ModuleVersionId.ToString(),coreBinaryPath=corePath,coreBinarySha256=Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(corePath))).ToLowerInvariant(),contentHash=content.ContentHash,measurements};
 File.WriteAllText(Path.Combine(output,"feel-measurements.json"),JsonSerializer.Serialize(report,new JsonSerializerOptions{WriteIndented=true}));
 Console.WriteLine($"PASS {measurements.Count} actual production movement/input/freeze measurements; Core SHA256 {report.coreBinarySha256}");
 foreach(var m in measurements)Console.WriteLine(JsonSerializer.Serialize(m).Split("\"trace\"")[0].TrimEnd(','));
 return 0;
 
-record PlayerClock(int X,int Y,int Vx,int Vy,string Action,int ActionFrame,int Hitstop,int Hitstun,int Blockstun,int ParryTicks,int ParryRetry,int BackCharge,int DownCharge,int JumpStart,int LandingTicks,int DashTicks,long LastInputTick);
+record PlayerClock(int X,int Y,int Vx,int Vy,string Action,int ActionFrame,int Hitstop,int Hitstun,int Blockstun,int ParryTicks,int ParryRetry,int BackCharge,int DownCharge,int JumpStart,int LandingTicks,int DashTicks,long LastInputTick,long EligibleDefenseTick,long ParryArmEligibleTick,bool ParryBonusFrozen,int BankCredits,int SuperUsesRemaining,int PendingSkillCredits);
 record Clock(long Tick,int TimerTicks,int FullFreeze,PlayerClock[] Players);
 record Frame(long InputTick,byte Direction0,Buttons Buttons0,byte Direction1,Buttons Buttons1,Clock Before,Clock After,CombatEvent[] Events,string CanonicalHashAfter);

@@ -1,0 +1,145 @@
+{
+  "format": "penny-punchers-buyables-delivery-sha256-v1",
+  "files": [
+    {
+      "path": "BUYABLES_DESIGN.md",
+      "bytes": 70067,
+      "sha256": "a7b47ac3c89e476d78ac2614c087491acfa75bae42b6152310ddb9fbe7ddcf3d"
+    },
+    {
+      "path": "CATALOG.html",
+      "bytes": 83691,
+      "sha256": "3aee3f74c4d50abdae97fe25f5d618c107148d6efa2942ddfc23987d91519b95"
+    },
+    {
+      "path": "INTEGRATION_HANDOFF.md",
+      "bytes": 4520,
+      "sha256": "fda710c1a356560d2ff3945e4aefe8f17ac98e9b500a5ab1995028110e1f8228"
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 2585,
+      "sha256": "945f3048ff201888baf77983d8b40e952f8a42bac504f91d4cad134255dec00d"
+    },
+    {
+      "path": "data/acceptance_scenarios.json",
+      "bytes": 36764,
+      "sha256": "826aa618c872856da65095c313c70032c97af6458d4284d9033b3e0886551dc0"
+    },
+    {
+      "path": "data/baseline_purchase_reference.json",
+      "bytes": 35324,
+      "sha256": "2782449df21bd67b7d46886c427cf9c48b4475006e73e00931df3251df8c14ca"
+    },
+    {
+      "path": "data/buyables_catalog.json",
+      "bytes": 105303,
+      "sha256": "e6ab5616fbbb582c252befa0119f3fc2a0fc274196ea64e52ecfe7fbe901b9eb"
+    },
+    {
+      "path": "data/example_plans.json",
+      "bytes": 3681,
+      "sha256": "21ebe788945c24717237ffea7e503bf8f8cf85dc736f9dae6b664a288811a040"
+    },
+    {
+      "path": "data/future_research_candidates.json",
+      "bytes": 6371,
+      "sha256": "c6ab0cc43c1622f98a68757756f826ef77d3f2b5a8dcf2d5e695625f10ab1e9d"
+    },
+    {
+      "path": "data/loadout_rules.json",
+      "bytes": 2024,
+      "sha256": "03b556048d4c145b840d9e208636b185fed27117167918b980b86e398bade879"
+    },
+    {
+      "path": "data/migration_map.json",
+      "bytes": 5107,
+      "sha256": "181b2d6fa5b3b4eab08199f237fd1c26d10ee0d4a84b9023836c5d9e5be12dc1"
+    },
+    {
+      "path": "data/research_sources.json",
+      "bytes": 4662,
+      "sha256": "c948ead6620d08b4da8d12363ea98cb51259c3c4bcd714ccefb3ea976a928f80"
+    },
+    {
+      "path": "docs/BALANCE_AND_RELEASE_GATES.md",
+      "bytes": 6228,
+      "sha256": "0e330738b99b0d0b06ec554290bf34bb9a8fa84b23f8fb74dc4bb580d0ea1b3e"
+    },
+    {
+      "path": "docs/COMBAT_AND_RESOURCE_CONTRACTS.md",
+      "bytes": 12351,
+      "sha256": "3a44cb7b6635f07b602db2645c6648a612522417711f1304e180c21446795673"
+    },
+    {
+      "path": "docs/FUTURE_RESEARCH.md",
+      "bytes": 5868,
+      "sha256": "a65ce808fa4c1d2f9811932e6f53c2ae1e003fdc9eee870bf4c5a378c507fb93"
+    },
+    {
+      "path": "docs/SHOP_AND_PRESENTATION.md",
+      "bytes": 4409,
+      "sha256": "c2acf40630514c046395c10f65a2371e23919645a48f92e8376c8c74178fdda8"
+    },
+    {
+      "path": "docs/SOURCES_AND_DECISIONS.md",
+      "bytes": 5182,
+      "sha256": "65cc113a73003861cbb9d32642927e5dba25a3590aea6dc3e8bd9659bb4899e2"
+    },
+    {
+      "path": "reports/PROPOSAL_STATE.json",
+      "bytes": 647,
+      "sha256": "c1a142321d4cff37b31ae68c124adfdf812c080057d9f1ccd1fc886087b636d5"
+    },
+    {
+      "path": "reports/VALIDATION.json",
+      "bytes": 1468,
+      "sha256": "dc69013b2b181ea285a5e7bc39c422923e832e4e1efe541a26c48fe3d4fb4a00"
+    },
+    {
+      "path": "reports/VALIDATION.md",
+      "bytes": 3038,
+      "sha256": "cbca8e3c02e23cc552158b150c2432553b62896a4558278b09e6591ade9a0974"
+    },
+    {
+      "path": "reports/budget_examples.json",
+      "bytes": 9233,
+      "sha256": "8c3198a98600a83ba53acc7a6272e4d4ebf75d43043e0ad4a6b0cc38b97ad83a"
+    },
+    {
+      "path": "reports/html_browser_checks.json",
+      "bytes": 1223,
+      "sha256": "5bd58e09542a1473f66d4c5e3e0cfd255e63f9400cc181ff9b87ae03ae4b990b"
+    },
+    {
+      "path": "reports/structure_checks.json",
+      "bytes": 138,
+      "sha256": "381da814b75e29514bb3995d01fd4bc47f1d0dc2109648db63fedd73d3af982c"
+    },
+    {
+      "path": "reports/test_output.txt",
+      "bytes": 3449,
+      "sha256": "9d66269e3cabb9610f420d591bdb9d57df1b6478026d62d971208ffea7b12991"
+    },
+    {
+      "path": "tests/test_buyables.py",
+      "bytes": 7737,
+      "sha256": "d27e8ca84077ed408719789e145e2a453713016ab079c13c6898c8801437ddf6"
+    },
+    {
+      "path": "tools/budget_model.py",
+      "bytes": 6013,
+      "sha256": "b1acfb02cca8c0b1f6ed112afbe2a76a414a9790ca3d55961f71d05dbf668b5a"
+    },
+    {
+      "path": "tools/validate_catalog.py",
+      "bytes": 4376,
+      "sha256": "915b0d4f5b2b8b941df329bb053e224f2af1fda06ef33e0f4906967c523a67a5"
+    },
+    {
+      "path": "tools/verify_manifest.py",
+      "bytes": 790,
+      "sha256": "399036707c735888d6571501e65a8ccb66737955c40efcfb7514bfefdce61f9f"
+    }
+  ]
+}

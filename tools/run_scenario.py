@@ -34,11 +34,13 @@ CORE = {
     "reserve_two_ex_then_deny", "ex_cancel_super_costs", "atomic_plan_commit",
     "nine_round_draw", "all_rook_moves", "all_vale_moves", "all_lease_items",
 }
+CORE |= {"shop_registry_resource_contract", "shop_all_ex_repeat_without_bank", "shop_all_super_once_rollback", "shop_skill_caps_and_partial_receipts", "shop_actual_repeated_baits_and_partial_cap"}
 APP = {
     "replay_wallet_seek", "bot_economic_match", "rollback_startup_debits",
     "rollback_ko_to_parry", "malformed_packet_replay",
 }
-BALANCE = {"zero_vs_full_wallet", "recovery_farming"}
+APP |= {"shop_only_v2", "shop_timeout"}
+BALANCE = {"zero_vs_full_wallet", "recovery_farming", "shop_only_pilot"}
 NATIVE = {"whole_local_match", "controller_menu_flow", "native_export_smoke"}
 SCENARIOS = CORE | APP | BALANCE | NATIVE | {"training_drills", "loopback_match"}
 
@@ -260,7 +262,10 @@ def main() -> int:
         managed("StrikeLedger.CoreTests", ["--seed", str(args.seed)], output / "core-mechanics", "core")
         managed("StrikeLedger.NetworkLab", ["--scenario", "training_drills", "--seed", str(args.seed)], output / "app-training", "app")
     elif args.scenario in BALANCE:
-        managed("StrikeLedger.BalanceLab", ["--scenario", args.scenario, "--seed", str(args.seed), "--seeds", str(args.seeds)], output, "balance")
+        # Preserve original scenario IDs as explicit v2 laboratory routes.
+        # The actual command records the shop-only runner and its bounded scope.
+        scope = "rentals" if args.scenario == "zero_vs_full_wallet" else "opening" if args.scenario == "recovery_farming" else "all"
+        managed("StrikeLedger.BalanceLab", ["--scenario", "shop_only_pilot", "--scope", scope, "--seed", str(args.seed), "--seeds", str(args.seeds)], output, "balance")
     elif args.scenario == "loopback_match":
         command = [sys.executable, str(ROOT / "tools" / "run_network_lab.py"), "--dotnet", dotnet,
                    "--configuration", args.configuration,

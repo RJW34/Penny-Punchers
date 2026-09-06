@@ -10,7 +10,7 @@ public sealed record EconomyRules(int StartingCredits,int Cap,int WinPayout,int 
         var r=new EconomyRules(j.GetProperty("starting_credits").GetInt32(),j.GetProperty("wallet_cap").GetInt32(),
             j.GetProperty("win_payout").GetInt32(),j.GetProperty("draw_payout").GetInt32(),
             j.GetProperty("loss_payouts").EnumerateArray().Select(x=>x.GetInt32()).ToArray());
-        if(r.Cap<=0 || r.StartingCredits<0 || r.StartingCredits>r.Cap || r.WinPayout<0 || r.DrawPayout<0 || r.LossPayouts.Length!=3 || r.LossPayouts.Any(x=>x<0))
+        if(r.Cap<=0 || r.Cap>1000000 || r.StartingCredits<0 || r.StartingCredits>r.Cap || r.WinPayout<0 || r.DrawPayout<0 || r.LossPayouts.Length!=3 || r.LossPayouts.Any(x=>x<0))
             throw new InvalidDataException("Invalid economic rules");
         return r;
     }
@@ -26,7 +26,7 @@ public readonly record struct Wallet
     }
 }
 public enum Outcome { Win, Loss, Draw }
-public enum ActivationStatus { Paid, Free, Illegal, Insufficient, Reserve, Duplicate }
+public enum ActivationStatus { Paid, Free, Illegal, Insufficient, Reserve, Duplicate, Licensed, SuperUse, Locked, Exhausted }
 public sealed record SpendReceipt(string Key,string MoveId,int Cost);
 public sealed record PayoutReceipt(int Nominal,int Granted,int Clipped,int OldTier,int NewTier);
 public static class EconomySeed

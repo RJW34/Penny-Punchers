@@ -1,0 +1,110 @@
+{
+  "authority": "User requested Shop-Only Economy Rework v2; original acceptance IDs and evidence gates retained.",
+  "changes": [
+    {
+      "id": "SCOPE-001",
+      "before": "Inspect actual workspace/Git, preserve owner work and record the newest strictly1v1/no-earned-meter scope.",
+      "after": "Inspect actual workspace/Git, preserve owner work and record the newest strictly 1v1 shop-only bank scope with nonspendable next-shop skill receipts."
+    },
+    {
+      "id": "CORE-002",
+      "before": "Full canonical snapshot/restore includes input buffers, action/parry state, wallets, floors and spend receipts.",
+      "after": "Full canonical snapshot/restore includes input buffers, action/parry state, frozen bank, round capabilities, super-use receipts, root provenance, eligible-defense clocks and bounded skill ledger."
+    },
+    {
+      "id": "INPUT-004",
+      "before": "Negative-edge free specials, same-tick EX chords, throw/overhead chords and paid-command priority are tested.",
+      "after": "Negative-edge free specials, same-tick EX chords, throw/overhead chords and capability-command priority are tested without illegal fallback."
+    },
+    {
+      "id": "COMBAT-007",
+      "before": "Damage scaling, chip/KO, stun/dizzy and juggle budgets enforce their data without resource income.",
+      "after": "Damage scaling, chip/KO, stun/dizzy and juggle budgets enforce their data. Damage does not automatically grant currency; typed skill contacts follow the bounded v2 contract."
+    },
+    {
+      "id": "PARRY-003",
+      "before": "Multihit parries require distinct arms and contacts; successful parry prevents damage/chip/stun without credit reward.",
+      "after": "Multihit parries require distinct arms and contacts. Parry prevents damage/chip/stun; only eligible fresh manual precision parries grant bounded next-shop receipts once per original attack root."
+    },
+    {
+      "id": "ECO-001",
+      "before": "Exactly one scalar wallet per player; no earned meter, paid-use inventory, team/provenance balances or combat/time income.",
+      "after": "Exactly one shop-only bank per player, frozen throughout Fight; nonspendable pending skill receipts and round capabilities cannot authorize currency spending in combat."
+    },
+    {
+      "id": "ECO-002",
+      "before": "Legal EX/selected-super startup atomically debits once; whiff/block/parry/interruption do not refund.",
+      "after": "An owned EX family is repeatable for the round at zero activation cost; a prepaid super consumes its sole use on legal startup, with no whiff/block/parry/interruption refund."
+    },
+    {
+      "id": "ECO-003",
+      "before": "Illegal/unaffordable/reserve-denied/unselected/negative-edge paid commands never debit or trigger fallback/delayed actions.",
+      "after": "Unowned, exhausted, illegal or merely buffered capability commands never consume a super use, debit bank, or trigger an unintended free fallback."
+    },
+    {
+      "id": "ECO-004",
+      "before": "Optional reserve is only a same-wallet minimum; locked round floor cannot be altered via combat messages.",
+      "after": "Saved bank is protected throughout Fight. Mixed carts have a 2400-credit limit and explicit slot caps; nonzero legacy reserve-floor requests are rejected."
+    },
+    {
+      "id": "ECO-005",
+      "before": "Rollback restores wallet and receipts together; disappearing/repeated/changed paid inputs give canonical balances.",
+      "after": "Rollback restores capabilities, super uses, provenance, skill receipts and pending rewards together; disappearing, repeated or changed inputs give canonical state and frozen bank."
+    },
+    {
+      "id": "ECO-006",
+      "before": "Actual C# payouts/caps/tier progression and savings examples conform to independent fixtures.",
+      "after": "Actual C# v2 payouts (win1200, draw900, loss1200/1200/1500), cap3600, tier progression and outcome-first skill settlement clipping conform to independent fixtures."
+    },
+    {
+      "id": "SHOP-001",
+      "before": "Optional three-slot leases validate fighter/slot/price; editing draft is not an irreversible purchase.",
+      "after": "Optional mixed carts validate fighter, implementation, unique IDs, replacements, price and limits (1signature, 1technique, 1gambit, 2EX, 1super); editing a draft is reversible."
+    },
+    {
+      "id": "CONTENT-003",
+      "before": "The core trial has 12 rentals and six established supers; the expanded trial has 24 rentals and six supers including Overtime and Prism Lattice. All have explicit availability, effects and one-wallet prices.",
+      "after": "Core catalog provides 12 rentals, 8 EX licenses and 6 super permits; the expanded catalog provides 24 rentals, 8 EX licenses and 6 permits, all with legal entrypoints and counterplay."
+    },
+    {
+      "id": "REPLAY-003",
+      "before": "Player-readable round economy summary and machine-readable confirmed spend/result logs agree with actual replay.",
+      "after": "Replays retain confirmed cart, super-use and skill-reward receipts; verification reproduces exact commands, typed events, bank and canonical hashes."
+    },
+    {
+      "id": "NET-003",
+      "before": "In-combat wallet/floor/receipt restoration survives rollback around both EX and super startups.",
+      "after": "Late input correction restores capabilities, super-use state, pending skill rewards and confirmed event presentation without duplicate receipts."
+    },
+    {
+      "id": "NET-004",
+      "before": "Late parry changing paid-super KO prevents speculative payout and invalidates corrected audiovisual terminal effects.",
+      "after": "A predicted prepaid-super use, reward and terminal result can disappear on correction; only the confirmed canonical result and receipts are published."
+    },
+    {
+      "id": "UI-002",
+      "before": "HUD shows a single wallet, costs/floor/leases/affordability and subtle debit rejection, not earned gauge.",
+      "after": "Fight HUD shows static saved bank, owned EX families, super NONE/READY/USED and nonspendable NEXT SHOP rewards; shop explains prices, cart limits and remaining bank."
+    },
+    {
+      "id": "BAL-001",
+      "before": "Counterbalanced budget/matchup/seat/art experiments record raw full-match outcomes and uncertainty, not teammate metrics.",
+      "after": "Matched v2 pilots compare product purchase versus saving, score0-0 and score1-0 openings with equal banks, and shop-only A/B/C/D payouts crossed with rewards on/off, reporting samples and uncertainty."
+    },
+    {
+      "id": "BAL-002",
+      "before": "Zero-credit/full-wallet tests probe EX loops, chip, parry, corner and optional lease dominance.",
+      "after": "Zero-bank/full-bank and low-health corner probes exercise repeatable EX pressure, chip, manual parry, movement and product interactions, reporting tactical failures honestly."
+    },
+    {
+      "id": "BAL-003",
+      "before": "Recovery-farming, cap, final-round all-in and spending-policy tests distinguish intended incentives from exploits.",
+      "after": "Matched spending and reward-seeking policies probe caps, recovery incentives and full-match outcomes; limited bots are distinguished from exhaustive anti-farming or competitive-balance proof."
+    },
+    {
+      "id": "DEVICE-004",
+      "before": "Two physical machines complete a private1v1 LAN match with matching confirmed result and debit logs.",
+      "after": "Two physical machines complete a private 1v1 LAN match with matching confirmed result, cart, super-use and skill-reward logs."
+    }
+  ]
+}

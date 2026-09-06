@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "status": "READY_FOR_VERIFICATION",
-  "build_ref": "source-sha256:5414744b92e51de04d4be67df1929929a1072e7d5b986d773b1459166217784d",
-  "content_sha256": "6fd0fe07da1f14d72754869b12cfe6cf21721d5055572c5b9f5b43dd72604c8b",
-  "created_utc": "2026-09-05T11:10:24.207758+00:00",
+  "build_ref": "source-sha256:fc679e4ba18529de3e829e0f5b47aee05db45ffe746024f64fa7fb919324ed7f",
+  "content_sha256": "0d9eec292cdfb3f23454487bef78e18b442cbf7f41b7d4b81a4832e295b63696",
+  "created_utc": "2026-09-06T00:04:47.006607+00:00",
   "source_inputs": [
     {
       "path": "Directory.Build.props",
@@ -28,6 +28,26 @@
     {
       "path": "game/Assets/AfterHours/Fighters/Rook/normals.png.import",
       "sha256": "484a053eaa39b691a6461f4230b8776333901b685ccb715f1036b9860dc943de"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/prompts/normals-chroma.txt",
+      "sha256": "9b2c05d4fcd5d81e0fe77df952df112aae5c5415361b9ec167bc2b9c2154bc38"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/prompts/supplemental-chroma.txt",
+      "sha256": "7a07f8306bb0edfaf75a4655472be8d56ff8c710a20a18ecbd77f48fdbf4eda3"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/prompts/techniques-chroma.txt",
+      "sha256": "da9709a9c1756ba7f13ae5f1004ddedb3eb7a68ffeb0cea464e586cd625ec060"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/prompts/universal-alpha.txt",
+      "sha256": "49277ac31f79986784122285dd1729c60359fcab2d51f614948d0e29a3e99fb4"
+    },
+    {
+      "path": "game/Assets/AfterHours/Fighters/Rook/prompts/universal-chroma.txt",
+      "sha256": "241074732d952d25d6e2e2d0504e10f51ddaa962033f1b320e53bf65fc0f9359"
     },
     {
       "path": "game/Assets/AfterHours/Fighters/Rook/provenance.json",
@@ -138,6 +158,38 @@
       "sha256": "614ac921d992cda696e6eb8dfa45584bdb81303d17163181e4d034334fa4c0d6"
     },
     {
+      "path": "game/Assets/AfterHours/Stages/marist_gates-card.png",
+      "sha256": "ababc6f9c3c6b9cf8da0f24c7a15acbf9e1b50f8541652e546fa05cad80e1a26"
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/marist_gates-card.png.import",
+      "sha256": "fa9a70d14a141408757dd1140d35b1f26f932e5b506d77d39a0184a80d3de47e"
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/marist_gates-panorama.png",
+      "sha256": "cf2fad1c6be338b5f357971e43cb8c1243e8d2a1dcdb76494ff5b65492852d64"
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/marist_gates-panorama.png.import",
+      "sha256": "d53902d7e9704dfea41f416ef31473aa9ea283ab7f6224970ff568dd5e45f9fe"
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/marist_green-card.png",
+      "sha256": "ed5f7d37189f2151ac82c4e6d13157799c4e2e5a82b6929c7dc6d49e49c7e26b"
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/marist_green-card.png.import",
+      "sha256": "6b5beaa0e336b6c954958508211adb38fffd3a9f02c5c50dceb86b597dbe1f17"
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/marist_green-panorama.png",
+      "sha256": "a7db85804c467f4e3600c5faa268d922b71fd0cf150a8e757ca5c781dfbb6315"
+    },
+    {
+      "path": "game/Assets/AfterHours/Stages/marist_green-panorama.png.import",
+      "sha256": "087895e725509701ae886b4d96914753f1b207a98034587bc8c1fceefd1902c0"
+    },
+    {
       "path": "game/Assets/AfterHours/UI/branding-announcements.png",
       "sha256": "0272b88afe9b1dcd83832bf354027a05d9ddd6f02bb9b62d835290210e69bace"
     },
@@ -199,43 +251,59 @@
     },
     {
       "path": "game/GameSettings.cs",
-      "sha256": "4a9aeadbdff3ee645728cf46fdd849788caeb3a80888e659820bed910f305d26"
+      "sha256": "8f94d439a262531a8fe317b11b04e566cf20b347b3451e8b5237379bcffa8d0f"
+    },
+    {
+      "path": "game/Main.ArchiveLobby.cs",
+      "sha256": "bf1d715fbe4b623706421af8ef3bf5d8eefa4da08bd3e95004420f059abbb5eb"
     },
     {
       "path": "game/Main.ArtReview.cs",
-      "sha256": "e20aa531b4458bb1426b17d775bb7c296bf3393aee8b7ea085f3abb20f9c649c"
+      "sha256": "38f951e599415c7a842d72e6958e807c40b623d55a2b4232151c044da1fd8bf7"
     },
     {
       "path": "game/Main.ArtSkin.cs",
-      "sha256": "430df29ce1cdb0b7d3fb7597412a22e623a64330da95d7e8f3004ef8650edc7b"
+      "sha256": "ac82b851bd1650144735d5a134eb06999c0e61a7c03e7e7ad1bae3ce226faa7b"
+    },
+    {
+      "path": "game/Main.AuditInputEvidence.cs",
+      "sha256": "53897397368b630a39d0f1efa34d06224e967d4ec677df2243ed2af043e5c524"
+    },
+    {
+      "path": "game/Main.BuyablesEvidence.cs",
+      "sha256": "2e97f61b9584f9da627d3122b7feefb4072d1a4a7da23b3e89e6a4cf2b020405"
     },
     {
       "path": "game/Main.CombatShowcase.cs",
-      "sha256": "9c054283295fbdc40f4da7b02cfa5b34858ddab19f6b782eaeb53757ee440342"
+      "sha256": "b4244419d4a8aaa93eb583c7def19712039144e7483c1f02b5628e25e776a455"
     },
     {
       "path": "game/Main.ControlRouting.cs",
-      "sha256": "c2a1654034310b828d972a16be5ba4ba2132914a6e9f36ba9164c3616e8090b0"
+      "sha256": "84bb8791481f5bc4b84a8921cadecabdb87e15b9142b48d778d2b3e2215d34ed"
     },
     {
       "path": "game/Main.EconomyReport.cs",
-      "sha256": "6a201003b8d28f014eb758b366c52e92fbaaba744a9effa06e10a14961532182"
+      "sha256": "da6fccfe6d8d6cc19dcecbd2b1561ac9ade1447eb27a38e256ea7c88242e0ab3"
     },
     {
       "path": "game/Main.LabDiagnostics.cs",
-      "sha256": "f3cdccbacfc8df98799691075c608bc9b9d5c3cd0dfee2eedece143d4b32748d"
+      "sha256": "ad294c806a8bf0f0f4d0deb6cce489cb8928137c361673fe2d55af12a5a1d4cc"
     },
     {
       "path": "game/Main.LabState.cs",
-      "sha256": "b3ddf585aa209cefb0bd8aa8682924e2edde3a17040724c50e0536532248e2ee"
+      "sha256": "f4851d6d425f891d3651977606aca6a7ffc1ef5353c1beebf3a1d1b5d579df7b"
+    },
+    {
+      "path": "game/Main.LineupCatalog.cs",
+      "sha256": "af33f1dab8e14767fc8e2f53b02e83db606baa6c50fd5978a9d81640b055a152"
     },
     {
       "path": "game/Main.Menus.cs",
-      "sha256": "c6fe08de1eb1d7fad67ef62fbe6324b3a7481ab4f700337697ae4c9934e268d2"
+      "sha256": "9e7e0eb3f6fc67c7ad73fce5db3e0bce883dac885b4b6d74c900657b7abcae31"
     },
     {
       "path": "game/Main.Network.cs",
-      "sha256": "b5c6b1fdcd9f3befb73b213ced0bd05a698fdbd5c87b6b41a8a3c55c6e6a8b42"
+      "sha256": "b767b23f8afa47f03f6625283fc67aefd821137114e651d82f060559991cd30c"
     },
     {
       "path": "game/Main.NetworkEvidence.cs",
@@ -247,39 +315,67 @@
     },
     {
       "path": "game/Main.PrepDetails.cs",
-      "sha256": "3511c671412cee787892bc8da2ec424066ed6aeab44b3f4ae75b816c14b01b28"
+      "sha256": "276e412b1b9effd4c30da754959d44fce0d10a0932a940979e1999ffa4ebfa16"
+    },
+    {
+      "path": "game/Main.Purchase.cs",
+      "sha256": "30583b5f2a444f51a16dc6e19febf65f54241654db215adfd599d157f7816e2f"
     },
     {
       "path": "game/Main.Rendering.cs",
-      "sha256": "059984e903188808e89feb575c375172d174076b1bb1c2c4f843945802a7ca23"
+      "sha256": "9dc77a74773c3a0c468439f7989804791c326ff4b3275579c1e3bc80a875ca0f"
     },
     {
       "path": "game/Main.ReplayDetails.cs",
-      "sha256": "ae800caabd3f9cd85a1bb79eb35fcbc20d69b7556ccd6425ff44746ee1f14103"
+      "sha256": "362acec9dab3428ebacbcc357af2170d97addf5bcb17fd9279198e07dc538b6a"
     },
     {
       "path": "game/Main.Replays.cs",
-      "sha256": "ac92eed749c4b30f43b597a0e91658423ae422fc963d0528ee20d13da9131a75"
+      "sha256": "eb0855c36b3b8f121196a2d55cc43c92eb48aba80448f733f56e8fab9c1410bd"
+    },
+    {
+      "path": "game/Main.Rulesets.cs",
+      "sha256": "bf7dc6987387ae72b4943528155ca0c2f687240831d4106d620e0ca303d12be8"
     },
     {
       "path": "game/Main.RuntimeEvidence.cs",
       "sha256": "1a1aa7623d79f4ab1ec49f879fa2fc58075faef280899af96bfbc26e8979395f"
     },
     {
+      "path": "game/Main.ShopOnlyEvidence.cs",
+      "sha256": "f3daef3bc82b5d514b7e274cf7454028b9f8d07de481b3bf8c0fda68d9bbf87e"
+    },
+    {
       "path": "game/Main.Shutdown.cs",
-      "sha256": "722d96caf7539e90950908d8eee9f4662ca0b6d5ebaf7c46276167b881b99d1d"
+      "sha256": "80b63ce76cb15e6633ccb0f86f1776ebd3dc0a85a447056500c9f15288aa30c4"
+    },
+    {
+      "path": "game/Main.StageEvidence.cs",
+      "sha256": "faa207dc3c0c844fc137b37d4eab099d17b0622071fe727888a5fa52b1b4ab88"
+    },
+    {
+      "path": "game/Main.TerminalHistoryEvidence.cs",
+      "sha256": "82da4a27c0ee4c1dc2c193aace91359d1c1f57de05cbeda585589d3b92194e5a"
     },
     {
       "path": "game/Main.Training.cs",
-      "sha256": "e21b29a9efb136ec87b37baea74ebb775ceba0a0ca02311e2aaab99858563c9f"
+      "sha256": "e0fbcc9a37ab9ee33a2d7e7551f76131a17d36b722ed00b3206f839eea14919b"
+    },
+    {
+      "path": "game/Main.TrainingLoadouts.cs",
+      "sha256": "18212fc92958db02261ee68f6e59b15107b0efd3b14e746f77ab6dfce04c9b86"
+    },
+    {
+      "path": "game/Main.TrainingPractice.cs",
+      "sha256": "bb3c6fb4760f75d0b77893fc62f68ebcdcec28e00fe2233f34c6551b60e88353"
     },
     {
       "path": "game/Main.UiSmoke.cs",
-      "sha256": "e140e74873f3824a953669c25eab7f900a345e7b971064ed67bfc004ab254b35"
+      "sha256": "caa8fbae46ddba115c99a0577b284ec74734415541f0ad9d3d03e570db3dbea3"
     },
     {
       "path": "game/Main.cs",
-      "sha256": "ff9e174d5c4548a471feddbfbf1a2092bf841f511b6a1d8b9c03b9fd8d0750d3"
+      "sha256": "d2ef7be709eb5798c4b1ad3368987ce3280110347008c0ba88c77f4ddfff8714"
     },
     {
       "path": "game/Main.tscn",
@@ -287,7 +383,15 @@
     },
     {
       "path": "game/Presentation/ArenaAudio.cs",
-      "sha256": "d34c04b20d1f7538adda61bb6b7794c5ba68035721c6852b1e9b85bb49954f57"
+      "sha256": "ce511342787575031668a63ed0f490fc89d9024269ce9383d9c56d95d53cfbe0"
+    },
+    {
+      "path": "game/Presentation/ArenaCamera.cs",
+      "sha256": "b8877dc767382241e8128c7316d8a5f2503b97b165f8bc89be757fbf6abe4a1d"
+    },
+    {
+      "path": "game/Presentation/ArenaObjects.cs",
+      "sha256": "98127ab25f3e620b5c48a9b0ed865ba746edf4c7e7ae7803707cbf55d56e5391"
     },
     {
       "path": "game/Presentation/ArenaOverlay.cs",
@@ -295,7 +399,7 @@
     },
     {
       "path": "game/Presentation/ArenaView.cs",
-      "sha256": "55c635bc78f2d7681e6706cedc231fb65b0cb9093e50cc8b520858d828affb2d"
+      "sha256": "5c01befac9f112c7243dbb2a7846653f49dfdd0a044a14289866c20ec0eca308"
     },
     {
       "path": "game/Presentation/Audio/block.wav",
@@ -354,12 +458,44 @@
       "sha256": "24a8fe92fa7569a5d7dd9fa22c23bbb8af74e38b580b397b260e13c6f96f45e2"
     },
     {
+      "path": "game/Presentation/Audio/heavy_1.wav",
+      "sha256": "83a9fa309ef8148b93be4efa50dcb6dfb1f79aec6a4b3dc7109a49eaf0269a03"
+    },
+    {
+      "path": "game/Presentation/Audio/heavy_1.wav.import",
+      "sha256": "3a5d9b9ab2e1c8b8cbde7d214bb52367175e9ac9a252eb0c4f5686036636b64e"
+    },
+    {
+      "path": "game/Presentation/Audio/heavy_2.wav",
+      "sha256": "0a90dee823dde5e3c7b7ec0a570994dbaca6b40692c7aa0bccd046c27143e6ff"
+    },
+    {
+      "path": "game/Presentation/Audio/heavy_2.wav.import",
+      "sha256": "858983bb7241d5bdc05123d9026cc19bafa96bc064a4403f4eafda837cf019a3"
+    },
+    {
       "path": "game/Presentation/Audio/hit.wav",
       "sha256": "f10eab9480a7bdb7430c5d1d3bc41a8cba56c080449ee711fcb37c34ebab51fd"
     },
     {
       "path": "game/Presentation/Audio/hit.wav.import",
       "sha256": "da413b4aa4fd42dc69b1fd22e43224c0989cd53c8476b3831dde3e95a3fe14c4"
+    },
+    {
+      "path": "game/Presentation/Audio/hit_1.wav",
+      "sha256": "918f37f26e0bb70682142557662b345b87527ef2f71655a8ef80ec056eb6708b"
+    },
+    {
+      "path": "game/Presentation/Audio/hit_1.wav.import",
+      "sha256": "9bce9c2c9090b17be0aba56a7a358cefc78983e1ad1b7250cd6a77520b124527"
+    },
+    {
+      "path": "game/Presentation/Audio/hit_2.wav",
+      "sha256": "a0af934e612c7b03a97e9ed94d4c03ec0a99d6c2a2ec811f2918286a7b267e46"
+    },
+    {
+      "path": "game/Presentation/Audio/hit_2.wav.import",
+      "sha256": "97ec043a4cfd6552e3da59b5449aba3f590b03801e5483fa8e9062e89192330e"
     },
     {
       "path": "game/Presentation/Audio/ko.wav",
@@ -378,12 +514,36 @@
       "sha256": "c88c55f0e48cb0a96174ba377e5656b404b73e639e4a353151fd2231f3ff7b78"
     },
     {
+      "path": "game/Presentation/Audio/marist_gates_loop.wav",
+      "sha256": "17f29d0a46804936b17cdf5119251bcb9807a3b842a3c33a4fc60f87695f7458"
+    },
+    {
+      "path": "game/Presentation/Audio/marist_gates_loop.wav.import",
+      "sha256": "3165e1f1a40638af56d1b06a99cb4b2922560035ac86b9750dbbaa865b72bd3e"
+    },
+    {
+      "path": "game/Presentation/Audio/marist_green_loop.wav",
+      "sha256": "10a83aa1cc36a4b940eeb285712c77878b6a7938203cd0e4c9e0a0eb95dca027"
+    },
+    {
+      "path": "game/Presentation/Audio/marist_green_loop.wav.import",
+      "sha256": "1bd5f19f8440450431abf789cb74535c146f7cf5ad21694ca5d765210c79245d"
+    },
+    {
       "path": "game/Presentation/Audio/parry.wav",
       "sha256": "8c006c41ba1d60b3435c34f8ae2b52cea46ac91e78c1a9685217b8e72277fc8f"
     },
     {
       "path": "game/Presentation/Audio/parry.wav.import",
       "sha256": "7b854466cbc79d4e456a196f1194f0d72c0a85bd560e3e487f619c5f7d8f579a"
+    },
+    {
+      "path": "game/Presentation/Audio/rook_breath.wav",
+      "sha256": "f8dc5f05fc8e3f4e48b63386d66fbaa24ed1e2616c056798164bf460e5798521"
+    },
+    {
+      "path": "game/Presentation/Audio/rook_breath.wav.import",
+      "sha256": "f7bd81055d4743a93987441cac4603c6a30c3d4bec06342c2da9804bc9065586"
     },
     {
       "path": "game/Presentation/Audio/round.wav",
@@ -426,12 +586,44 @@
       "sha256": "6e57b3ed64e00d7ebd0f9f9ea85252e2f6a132f312c947eb9e6adb0f32f87847"
     },
     {
+      "path": "game/Presentation/Audio/vale_breath.wav",
+      "sha256": "47f9f28ef993dcbe99a4f3b72cfbea9c30819ddd896102ea5931a4e517ad108c"
+    },
+    {
+      "path": "game/Presentation/Audio/vale_breath.wav.import",
+      "sha256": "7846a6cbf27504a38025e351ca88c0b4cdfbb8acaa4f7b41242bb780695530ed"
+    },
+    {
+      "path": "game/Presentation/CelTimeline.cs",
+      "sha256": "b85220fb5e5aa81b9ac0ad1d99fc70aa2b62951d56efe9d9c7731e6428919dee"
+    },
+    {
       "path": "game/Presentation/FighterPalette.gdshader",
       "sha256": "0351148ef87e5ee2e23c79ce67a9ba5c79138ffec27f31f5f4ae1c57547b76ce"
     },
     {
       "path": "game/Presentation/FighterSprites.cs",
-      "sha256": "2f7ff65ac7936920ebfa8b440ef4bd5ceb89bbc132abaab3e6fe27c5791ceb17"
+      "sha256": "00061fca40db7a911c5b9aa0df6a5645981d4885b8ef18715808656e3b07c342"
+    },
+    {
+      "path": "game/Presentation/Fonts/Barlow-Medium.ttf",
+      "sha256": "f8906f762cb73dca441da034bc363b2d8e2e68bc10d5c05e58717646c20cc4b4"
+    },
+    {
+      "path": "game/Presentation/Fonts/Barlow-Medium.ttf.import",
+      "sha256": "dfda4aeaa90002c042acc9b8ee7ad1a0dd771ed555ab4888ec6157c65e9c048d"
+    },
+    {
+      "path": "game/Presentation/Fonts/BarlowCondensed-SemiBold.ttf",
+      "sha256": "7b619d14bc2327509a9ef32b0890f709626f7ecc9ff61191c2a4314c5499d2d9"
+    },
+    {
+      "path": "game/Presentation/Fonts/BarlowCondensed-SemiBold.ttf.import",
+      "sha256": "3ad7f8760dfc760b53eec9094dff5ef277f9dde06edcdee1c94eeb4cb3729c81"
+    },
+    {
+      "path": "game/Presentation/Fonts/OFL.txt",
+      "sha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f"
     },
     {
       "path": "game/Presentation/FoundryBackdrop.cs",
@@ -439,15 +631,31 @@
     },
     {
       "path": "game/Presentation/RenderState.cs",
-      "sha256": "4c40f7b5cd8c43160000f52fcd7d6784ffd4db1108ed1f2f5c83d83d6b9d35ab"
+      "sha256": "4572f8fc397a35fef112a99ce1417aedb14b3a3a5cde7a63d8e4b1fdfa283a58"
     },
     {
       "path": "game/Presentation/RuntimeProfiler.cs",
-      "sha256": "334293cb943a2865566ee9bd8258d7b52fe31c3a9413b59d0d2b6c4c121c0410"
+      "sha256": "3cef3dea735e44041041fe93a1753cbcf27724e650da85691499a01d8178f915"
+    },
+    {
+      "path": "game/Presentation/UiSmokeLaunch.gd",
+      "sha256": "4b63f04a7704f6f662324528845d50147c8837b5692f48bf9e31239e84643986"
     },
     {
       "path": "game/Presentation/UiSmokeLaunch.tscn",
       "sha256": "42f1c9a4bdcaae445f0aacf8d8b678417149839ea810e88341b84b641d8c457f"
+    },
+    {
+      "path": "game/Presentation/UiTypography.cs",
+      "sha256": "8f5202df030e32462e89a8567308623d0a4bf46ff6fe7c0977cdf3db42d1f94e"
+    },
+    {
+      "path": "game/Presentation/animation-timing.json",
+      "sha256": "1198e7dd11ff17f40d163b49fd470943ecf78cb7e8e5b6c869f38dbfd14c42f4"
+    },
+    {
+      "path": "game/Presentation/impact-profiles.json",
+      "sha256": "b55c0fcf04410c812ceb1eb2a47f8bf8a6113c08ccf5bf47502d4b75443dc3fc"
     },
     {
       "path": "game/StrikeLedger.csproj",
@@ -459,39 +667,67 @@
     },
     {
       "path": "game/export_presets.cfg",
-      "sha256": "b0933e9c2677145b1d8adf80484db30a7d2fb7adb3ca73775a3a574de5060809"
+      "sha256": "4265541aa180f07f4d05ea0eacaa0abccd9a827d22c2d48746830d59eee70979"
     },
     {
       "path": "game/project.godot",
-      "sha256": "daf5c03e4c7f0cf15a1f400bff197c9a318c042afb207c3461d709e211197bcd"
+      "sha256": "b4998d6e8711455c0f2fd0b0bdb1ff8aabef2d5d22f988f1e5ad8e2df4d8e205"
     },
     {
       "path": "src/StrikeLedger.App/Bots.cs",
-      "sha256": "a97e8360fa7e5482d994aaa3434d876aad71233c18a7188e9feeecda7211ed96"
+      "sha256": "88a14b386bbaf705b939296b6f842ba5f54b36fbf7cd7f7ee36ce73763c5d2ff"
+    },
+    {
+      "path": "src/StrikeLedger.App/CommandEncoder.cs",
+      "sha256": "3ee023655675df5d0085ffcf557681486ea6421cca7bd07e9f0b9502de635ccc"
+    },
+    {
+      "path": "src/StrikeLedger.App/PrivateMatchPeer.Lobby.cs",
+      "sha256": "5a045e9ac9907048faa943b7cc17b714341e71bf87f4de67f7dfbfcacce60413"
     },
     {
       "path": "src/StrikeLedger.App/PrivateMatchPeer.cs",
-      "sha256": "89cda94af864440cd0b6ba1ac8d66ece8b56d4634736972a6b780fe25eabe4da"
+      "sha256": "a7cb18086f00b0a3b25bffe82de617637e45ea7d21fefb77bca2fe1a8ba63f7c"
+    },
+    {
+      "path": "src/StrikeLedger.App/PurchasePlanning.cs",
+      "sha256": "a9cfe9ad8e82e4d9fcd7d10696d9619e99c729e17b25d65a97287bad17721fcb"
     },
     {
       "path": "src/StrikeLedger.App/Replay.cs",
-      "sha256": "8b1f48eb7146d7605393844b641470e02efd1b47adc465149c613746291472f1"
+      "sha256": "a78044f9625e0965fb33411a0140c2efdee59c9f317eb4fff9ca032b87e8dd57"
+    },
+    {
+      "path": "src/StrikeLedger.App/ReplayStore.cs",
+      "sha256": "fb09ac1ddc073c7ac6178ecd525ecbf37433d4052c2866a18e1e4674c9b9337a"
     },
     {
       "path": "src/StrikeLedger.App/RollbackSession.cs",
-      "sha256": "6ca7c5f4dff101366520e3db457b6a1b2cd7c9a94dbda7375af99df5e37303b0"
+      "sha256": "acec54b1622458d3e3bf90728de22561dd6b6a02d0af34124fb3c2c4a14f7099"
+    },
+    {
+      "path": "src/StrikeLedger.App/RoundEconomyLedger.cs",
+      "sha256": "075c98d0e3c29cc95cdb2757986835e280a2e94649dfe841a7e242840bbfa942"
     },
     {
       "path": "src/StrikeLedger.App/StrikeLedger.App.csproj",
       "sha256": "191059031f8aceb380b34b9b7be6761ac966c962a2ee1e42d81b61b5bb48c9fa"
     },
     {
+      "path": "src/StrikeLedger.App/Training.Configuration.cs",
+      "sha256": "8033921fa84cd4a0c27d3cf849e547236ce817a05d2b4ca76393c939316fb508"
+    },
+    {
+      "path": "src/StrikeLedger.App/Training.Demonstration.cs",
+      "sha256": "d4c5e353200748c64f00466a9ca2c7cf92d0479342d6a47936ee387b8d44606a"
+    },
+    {
       "path": "src/StrikeLedger.App/Training.cs",
-      "sha256": "5c2371f8e35997701f410dadd57cdaa6c2e5a837955627b8b0c86f2089b42b47"
+      "sha256": "b1391bcf512c0ad14d33698402c7f88de39616e1fa24757a695571bccfbb8e9d"
     },
     {
       "path": "src/StrikeLedger.App/UdpTransport.cs",
-      "sha256": "2b1850d13ae3f52daf947ea6ca90f930c270e2d13ea4555e61a0ebafb1ee575f"
+      "sha256": "9e73919fafddb6a853cf8249849755def293eab24fb9fc49d404949bcee54124"
     },
     {
       "path": "src/StrikeLedger.Core/CoreMath.cs",
@@ -499,35 +735,63 @@
     },
     {
       "path": "src/StrikeLedger.Core/EconomySeed.cs",
-      "sha256": "65a4e4b020bb7df2e7a991378639fc6a0e0a9341e3f09ffd66f6102be1d35d72"
+      "sha256": "4cdae5bbab725201e456826cd9ecbdc87bf81ff7cc5327405375036b230e991a"
     },
     {
       "path": "src/StrikeLedger.Core/GameContent.cs",
-      "sha256": "bc0781fc98340605dc3835dcac77e5ef917cdf6080f6efe376e369e59ef793b6"
+      "sha256": "f4ef0b7283d1c2decf3e93966616ab759941120c6f15289f116a8113a66b4a93"
     },
     {
       "path": "src/StrikeLedger.Core/InputFrame.cs",
       "sha256": "b5e453bacc4738fb6f6cae4ecd6e5449ad976986f6792e9dd5ff0580d441f601"
     },
     {
+      "path": "src/StrikeLedger.Core/PreparationRules.cs",
+      "sha256": "6c1636bda67eb6ff8eca1f492c10cba618955a14491729d75ab3cca36bc59f95"
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.BuyableActors.cs",
+      "sha256": "722be64988ac3a5cc86200535dcacffc0c5ba23165621af20b2a06a898093d8a"
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.BuyableObjects.cs",
+      "sha256": "b30461dd62c96821977f6fc4a2c99ad1d0121140ee1e52c294d2abce3c30e8fa"
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.BuyableRoutes.cs",
+      "sha256": "6964e0a5ccac196ed1c9004b33f8f3fab93a007ad7fde60a4930c518e7430e18"
+    },
+    {
       "path": "src/StrikeLedger.Core/Simulation.Combat.cs",
-      "sha256": "9ba5bd4444286f596a0317a401b8eed3f3a34195abe157ec85d89b8672088443"
+      "sha256": "22d44d2016490b3c537a9cf42053a4dd13cf02b69f0d71decfa5344a7c682912"
     },
     {
       "path": "src/StrikeLedger.Core/Simulation.Input.cs",
-      "sha256": "ea6b9d5e9e67b0c13678207d28fa4775d0bd7293bc1c3a35c8e002a499f623e3"
+      "sha256": "958a52061beaef63427f6bf3e58b4ec56f7c183920642c66c443193bfab38920"
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.Provenance.cs",
+      "sha256": "33493a77eeee306017a7e37b6fe71429a6bb6f6674cffdf95352bd0538b149e7"
     },
     {
       "path": "src/StrikeLedger.Core/Simulation.Serialization.cs",
-      "sha256": "b194127157300fcbb77cd5d3bf2d6942cb876b2c833b607b671d2e692da3fb8e"
+      "sha256": "24082f3eb13a1f793521ac0989afb77710b3f5f582cc3f1c02a63e5a9bc5ca79"
+    },
+    {
+      "path": "src/StrikeLedger.Core/Simulation.SkillRewards.cs",
+      "sha256": "be386bf8e5be3f893b29bdad4edf847a0ad36127f25af1e0dabd9dd08283b327"
     },
     {
       "path": "src/StrikeLedger.Core/Simulation.cs",
-      "sha256": "021cd86e0f136350eea5bcdf5c1e32fa7fb22676c7a1de9165009ecfcc9404bd"
+      "sha256": "83a31ccc24c5aacf2be7f092c67b61ba66c0c5e5d9881db1f8f9042b198cc51a"
     },
     {
       "path": "src/StrikeLedger.Core/SimulationState.cs",
-      "sha256": "41e22274f9b106fc55b270fb21dda494d148fd8351a3056a9dba2741c8b588e5"
+      "sha256": "260b4b0bb7b3856cab24b6e38f4568e466513ef79473166b72c8197f2cc3b594"
+    },
+    {
+      "path": "src/StrikeLedger.Core/SkillRewardState.cs",
+      "sha256": "b28869c1c8f118a5ec9815e0caaf6fc44db6aea18f465d0f10be63eaf6d317da"
     },
     {
       "path": "src/StrikeLedger.Core/StrikeLedger.Core.csproj",
@@ -646,18 +910,18 @@
     },
     {
       "path": "dist/StrikeLedger/linux/data_StrikeLedger_linuxbsd_x86_64/StrikeLedger.App.dll",
-      "sha256": "72e7b96bbd878126db96ba0be8e49bae49df1417bf3162f4aec4d1f325e6cebb",
-      "bytes": 116224
+      "sha256": "aaa19df03d1d0551b50f119ccba9ae0d78984fe0d0c7120e6a66f94b3c185683",
+      "bytes": 208896
     },
     {
       "path": "dist/StrikeLedger/linux/data_StrikeLedger_linuxbsd_x86_64/StrikeLedger.Core.dll",
-      "sha256": "204653b031ca2700371d8c1df62c4b7b9eb131825fcaaba1ef5ee01676c2c7df",
-      "bytes": 138752
+      "sha256": "e0c1812e39177786ca355e079009908f79fea330aed1e80f86dae57188253f5b",
+      "bytes": 272896
     },
     {
       "path": "dist/StrikeLedger/linux/data_StrikeLedger_linuxbsd_x86_64/StrikeLedger.dll",
-      "sha256": "3446618cd7a8ff8d850ba0b46b5e48823f041b6eb38085922f84f8042215c96f",
-      "bytes": 289280
+      "sha256": "c9abe2b6dd15a158e1f08ce61434e1cfc29328f3a52f87e7c711519fc3fa4884",
+      "bytes": 478720
     },
     {
       "path": "dist/StrikeLedger/linux/data_StrikeLedger_linuxbsd_x86_64/System.AppContext.dll",
@@ -1466,8 +1730,8 @@
     },
     {
       "path": "dist/StrikeLedger/linux/StrikeLedger.pck",
-      "sha256": "471731809ef120516c33cef6171cf1c8e289e8695277f47b4fa64f7befbc5b6b",
-      "bytes": 28084076
+      "sha256": "c755c26b60a1f92062ac8768f4c3fcb924dd088a445b5a2853009ca450c1c67a",
+      "bytes": 38371700
     },
     {
       "path": "dist/StrikeLedger/linux/StrikeLedger.x86_64",
@@ -1581,18 +1845,18 @@
     },
     {
       "path": "dist/StrikeLedger/windows/data_StrikeLedger_windows_x86_64/StrikeLedger.App.dll",
-      "sha256": "72e7b96bbd878126db96ba0be8e49bae49df1417bf3162f4aec4d1f325e6cebb",
-      "bytes": 116224
+      "sha256": "aaa19df03d1d0551b50f119ccba9ae0d78984fe0d0c7120e6a66f94b3c185683",
+      "bytes": 208896
     },
     {
       "path": "dist/StrikeLedger/windows/data_StrikeLedger_windows_x86_64/StrikeLedger.Core.dll",
-      "sha256": "204653b031ca2700371d8c1df62c4b7b9eb131825fcaaba1ef5ee01676c2c7df",
-      "bytes": 138752
+      "sha256": "e0c1812e39177786ca355e079009908f79fea330aed1e80f86dae57188253f5b",
+      "bytes": 272896
     },
     {
       "path": "dist/StrikeLedger/windows/data_StrikeLedger_windows_x86_64/StrikeLedger.dll",
-      "sha256": "e19abeacdf69aa0dce26161e2f0589e6f7c4c49f550eb559b8e4c66b511107db",
-      "bytes": 289280
+      "sha256": "11ebdde8027579800be5886e6282497cc337753b0496d2beca079cbced37a63f",
+      "bytes": 478720
     },
     {
       "path": "dist/StrikeLedger/windows/data_StrikeLedger_windows_x86_64/System.AppContext.dll",
@@ -2411,8 +2675,8 @@
     },
     {
       "path": "dist/StrikeLedger/windows/StrikeLedger.pck",
-      "sha256": "471731809ef120516c33cef6171cf1c8e289e8695277f47b4fa64f7befbc5b6b",
-      "bytes": 28084076
+      "sha256": "c755c26b60a1f92062ac8768f4c3fcb924dd088a445b5a2853009ca450c1c67a",
+      "bytes": 38371700
     }
   ],
   "note": "Source fingerprint covers production C# and engine project inputs. Assembly/build identities are also recorded in each executable run; different build configurations may have different deterministic MVID identities."

@@ -1,43 +1,57 @@
-# Strike Ledger
+# Penny Punchers
 
-An original six-button 1v1 fighting game set in the Foundry Ring. Rook is a motion-input pressure fighter. Vale uses charge inputs, long kicks and spacing. One credit wallet pays for both round preparation and powerful attacks.
+An original six-button 1v1 fighting game. **Thomas** uses motion inputs and close pressure; **Vincent** uses charge inputs, long kicks and spacing. Buy the round's kit in the shop, then fight with a fixed saved bank.
 
 ## Start playing
 
-On Windows, open `StrikeLedger.exe` in the Windows package. Keep the `.pck` file and the accompanying application data folder beside the executable. On Linux, the executable is `StrikeLedger.x86_64` in the Linux package; keep its accompanying files together as well.
+On Windows, open `StrikeLedger.exe`. On Linux, launch `StrikeLedger.x86_64`. These executable names remain for build compatibility; the game is Penny Punchers. Keep the executable, PCK and accompanying application directory together.
 
-Choose **Versus CPU** for a match or **Training lab** to learn inputs. Select a fighter and one super for the match, then start. Training includes a measurement floor, input display, active collision boxes, frame stepping, dummy recording, checkpoints and focused drills.
+Choose **Versus CPU**, **Local versus**, **Training lab** or **Private match**. Select fighters, a stage and a trial. Foundry Ring, Calibration Grid, **Marist Green — Golden Hour** and **Marist Gates — Blue Hour** share the same combat geometry. Super selection happens in each round's shop, not in the lineup.
 
-The full controls are in `CONTROLS.md` and the in-game **Field manual**. **Settings → Controls & remapping** shows live input and lets you assign devices and change controls without a mouse.
+**Move catalog / try** opens an untimed catalog with rental, EX license, super permit and all-action pages. Read the command, replacement, purpose and tradeoff, or open the full card and practice. Branch entries identify their required starting move. Practice equips an explicit lab kit and does not pause a competitive opponent's shop clock.
 
-## The wallet
+## Build your round
 
-- A match starts with **600 CR**. Movement, normals, throws, defense and ordinary specials remain free.
-- EX attacks cost **300 CR**. The selected super costs **900, 1200 or 1500 CR**. Payment happens when the action starts, even if it misses or is interrupted.
-- Wins award **1200 CR**. Losses award **900 / 1200 / 1500 CR**, depending on recovery tier. Draws award **900 CR**. The wallet caps at **3600 CR**.
-- Preparation leases last one round. Choosing a reserve prevents a paid action from crossing that floor. Combat does not earn credits.
-- Preparation balance projections assume no further combat spending. A new match resets credits.
+A match starts with **600 CR**. The ordinary six-button kit, ordinary specials and defense remain free. During each buy period, spend no more than **2400 CR**, within your available bank:
 
-During local preparation, each assigned input controls its own panel. Up/down selects an option; left/right changes it; confirm chooses it. Move down to **Ready** to lock the plan. Both drafts are visible on the shared screen.
+| Product | Round limit | What the purchase grants |
+|---|---:|---|
+| Signature, technique, gambit rentals | One per slot | Repeatable use or a stated replacement for this round |
+| EX family licenses | Two | Repeatable EX after ordinary recovery; 600 CR, or 900 CR for the vertical reversal |
+| Super permit | Zero or one | One legal startup; 900/1200/1500 CR according to the selected product |
 
-## Local and private play
+Prices come from the live catalog. **All equipment expires after the round.** A super's use is consumed on legal startup even if it whiffs, is blocked, parried or interrupted. An illegal or merely buffered input consumes no use. Licenses do not bypass motions, charge, recovery, cancel windows or object limits. Buying nothing keeps the complete free base kit.
 
-Local versus uses a keyboard and controller, or two controllers. Assign each device to one corner on the lineup or controls screen. The same physical device cannot occupy both corners.
+Your bank stays fixed during combat. There is no per-attack payment, EX ammunition or protected reserve floor. The HUD shows owned EX, **SUPER READY / USED / NONE**, the small saved-bank value and pending **NEXT SHOP** awards.
 
-Private play connects two peers on a trusted LAN or an existing private link. Both players need the same build, content, lineup, port and match phrase. Enter the other computer's private IP. The host uses the base UDP port; the joining peer uses base port + 1. The game does not configure router forwarding or publish a public server.
+Each assigned device navigates its own panel. Up/Down selects a row; Left/Right attempts a rental change or toggles a product; confirm opens a rental choice or invokes the focused action. An invalid edit shows its reason and leaves the last valid cart unchanged. **Ready** locks the plan; timeout locks the last valid cart displayed. Local drafts are visible to both players. Private drafts use commitment/reveal and remain hidden until both lock.
 
-The private connection uses a two-frame input delay and bounded rollback. Paid-action and contact presentation events wait for confirmation. A disconnect does not award a speculative round payout.
+**Save** stores stable product IDs, with the quoted price and content identity. **Load** and **Repeat last** recheck current prices, trial, category limits and bank; neither buys automatically. The prior-round facts popup shows the revealed opponent kit, super use and confirmed public counts. Counts of observed jumps, counter contacts and parries are not predictions of the next plan.
 
-## Saved data
+## Settlement and skill awards
 
-Settings, replays, training traces and diagnostic captures stay in Godot's normal per-user application data folder for **Strike Ledger**. On Windows this is normally `%APPDATA%\Godot\app_userdata\Strike Ledger`. On Linux it is normally `~/.local/share/godot/app_userdata/Strike Ledger`.
+A win grants **1200 CR**. A loss grants **1200 / 1200 / 1500 CR** using the old recovery tier. A draw grants **900 CR**. Eligible direct counter-hits, grounded anti-airs and precision parries earn **50 / 75 / 100 CR** for the next shop, at most twice per category and **300 CR total per round**. Not every ordinary parry earns a reward; normal parry feedback still applies.
 
-Completed matches save a local replay. The replay menu checks build/content identity, state hashes and wallet history during playback. Training traces are separate from competitive replays.
+Pending skill money is not spendable during the fight. Confirmed settlement deposits outcome income first, then skill income, with amounts clipped at the **3600 CR** bank cap. The receipt distinguishes earned, granted and clipped credits. An aborted unsettled round pays nothing. Final-match funds have no further shop; rematches reset to 600 CR.
 
-## Hardware notes
+## Controls and private play
 
-The Windows renderer has been exercised on this PC. Two physical controllers and a second LAN computer still need device-level validation; deterministic tests and a same-machine network test do not establish those hardware results. Review the release's evidence/status notes for the exact checks completed.
+Keyboard defaults: A/D walk, W jump, S crouch; U/I/O punches and J/K/L kicks. LP+LK throws; MP+MK overheads. P and semicolon provide PP and KK chords, without performing motions. **Escape or controller Start pauses. B remains MK during combat and Cancel in menus.**
 
-Controller mappings use a driver identity plus controller slot. Drivers without a persistent slot use equal-model connection order. After swapping identical controllers between connection slots, check the live input page and reassign the corners if necessary.
+Settings includes two-device remapping, analog triggers, deadzone, physical/logical keyboard layout, audio, display, reduced flashes and shake. Physical mode follows key positions; logical mode follows the selected language layout. See `CONTROLS.md` and the live input test.
 
-The game uses the original After Hours bitmap characters, stages, effects and interface artwork, with procedurally synthesized audio. `ASSET_NOTICES.md` identifies the engine and embedded-font notices.
+Local versus uses a keyboard and controller, or two controllers. Shared-screen and private commit/reveal drafts are different information formats; do not treat them as the same shop experiment.
+
+Private play is for trusted LANs or an existing private link. Both peers need matching builds and content. Enter the opponent's private IP, base port and phrase; host uses the base port and join uses base port + 1. The phrase distinguishes the session; it is not strong public authentication. The game does not configure routers or publish a public server.
+
+## Recordings and saved data
+
+Settings, replays, training traces and diagnostics use Godot's **Penny Punchers** user folder: normally `%APPDATA%\Godot\app_userdata\Penny Punchers` on Windows or `~/.local/share/godot/app_userdata/Penny Punchers` on Linux. Existing Strike Ledger preferences are read when no new settings file exists; the original file is preserved.
+
+Replay saves report success or the actual failure. Playback checks compatible commands, state hashes and round receipts. Historical recordings with different rules are rejected rather than reinterpreted. Source replays remain immutable when used for training. Training awards are labelled **PRACTICE ONLY** and do not accumulate competitive earnings.
+
+## Versioned trials and verification
+
+Core has 12 rentals, eight EX products and six super permits across both fighters, with 100 runtime action nodes including branches. Expanded has 24 rentals, eight EX products and six permits, with 115 nodes. Expanded replaces Rush Cascade/Tidal Step with Overtime/Prism Lattice. Both trials use this v2 shop-only economy.
+
+Balance remains provisional. `BALANCE_NOTES.md`, `KNOWN_LIMITATIONS.md` and `VERIFICATION_STATUS.md` distinguish software evidence from physical-device and human acceptance. The packaged candidate identity and status files identify the actual binaries; old results do not certify this build. Original artwork and software notices are in `ASSET_NOTICES.md`.

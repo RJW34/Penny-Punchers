@@ -1,0 +1,39 @@
+{
+  "repository": "RJW34/Penny-Punchers",
+  "pinned_commit": "1623ee62c4f4b6d5574bbb9909eb6fe4e32f5441",
+  "retrieval_date": "2026-09-05",
+  "head_rechecked_via_GitHub": true,
+  "current_local_work_unknown": true,
+  "baseline_source": "Verified source bytes included in prior expanded audit attachment; current head and key runtime paths rechecked through GitHub. Not a newly cloned repository.",
+  "baseline_files": {
+    "rules.json": {
+      "git_blob_sha1": "705563321e2c8a527d46fe84aeb7edf5c7ef22d2",
+      "sha256": "48c6e045aa8595eb0df4235aca3ba973e7c25260a80e4d5120217d37c4a66fa4"
+    },
+    "inputs.json": {
+      "git_blob_sha1": "3603bd82ff34854a6bd1b976b5339832b7526d4f",
+      "sha256": "73c7550b65b36ebe7ddf60315438856172b4768fb4f86d50fbdd609154b2df1b"
+    },
+    "items.json": {
+      "git_blob_sha1": "856fe895365cf09c06d12eb7f27a1e9bef276281",
+      "sha256": "4c6d446a9de41be636598bb4b8bcf38c970caecd82e7ce14d52f4640309d3710"
+    },
+    "economy.json": {
+      "git_blob_sha1": "4f391a33a6be52c4895c9facd2044b51de57ec65",
+      "sha256": "0998e50ba3bda3bcaa8e30d8369c80af2de1c22fc61a2ad05235329c44bc709a"
+    },
+    "combat.json": {
+      "git_blob_sha1": "b6a6877eac0c00644711bf000daa2ecc4dcc6ac6",
+      "sha256": "92871ce7f157bc7d51c005890b6ac0f92c2d466cefa382cebf524eef014690a8"
+    },
+    "fighters/vale.json": {
+      "git_blob_sha1": "b934ae2e6651299a7359a4f23d8b92e8263548a3",
+      "sha256": "22ca28254201cb48a0ecfda1fe69923d851fcec37bac29280b3181c88a6d8592"
+    },
+    "fighters/rook.json": {
+      "git_blob_sha1": "af527083b11dbf01c5b85b0c1b48badeeb944211",
+      "sha256": "0855610e0b033a61171a75d79d9627867f07115e429f2bb8372fc3fe74d70d89"
+    }
+  },
+  "native_execution_here": false
+}

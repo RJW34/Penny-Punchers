@@ -1,0 +1,75 @@
+{
+  "schema_version": 2,
+  "ruleset_id": "pp-shop-only-v2-candidate",
+  "status": "PROPOSED_NOT_GAME_BALANCE_VERIFIED",
+  "players": 2,
+  "arenas": 1,
+  "tick_hz": 60,
+  "starting_credits": 600,
+  "wallet_cap": 3600,
+  "win_payout": 1200,
+  "draw_payout": 900,
+  "loss_payouts": [
+    1200,
+    1200,
+    1500
+  ],
+  "preparation_seconds": 15,
+  "reveal_seconds": 3,
+  "countdown_seconds": 2,
+  "round_seconds": 60,
+  "max_rounds": 9,
+  "target_half_points": 10,
+  "draw_half_points_each": 1,
+  "round_shop_spend_cap": 2400,
+  "slot_limits": {
+    "signature": 1,
+    "technique": 1,
+    "gambit": 1,
+    "ex": 2,
+    "super": 1
+  },
+  "ownership_duration": "one_round_win_or_loss",
+  "ex_repeat_policy": "unlimited_after_legal_recovery_no_credits_no_ammo",
+  "super_policy": "one_prepaid_use_total_per_round",
+  "super_choice": "buy_period_each_round",
+  "combat_debit": 0,
+  "combat_bank_writes": false,
+  "reward_deposit": "confirmed_round_settlement",
+  "passive_income": 0,
+  "ordinary_hit_income": 0,
+  "global_stat_products": false,
+  "team_systems": false,
+  "reward_policy": {
+    "counter_hit": {
+      "amount": 50,
+      "max_awards_per_round": 2
+    },
+    "anti_air": {
+      "amount": 75,
+      "max_awards_per_round": 2
+    },
+    "perfect_parry": {
+      "amount": 100,
+      "max_awards_per_round": 2
+    },
+    "total_cap_per_player_per_round": 300,
+    "perfect_window_eligible_ticks": 2,
+    "offense_overlap": "highest_eligible_only_no_fallback_when_capped",
+    "offense_dedupe": "one_award_per_own_root_attack",
+    "defense_dedupe": "one_award_per_opponent_root_attack",
+    "frozen_edge_bonus": false,
+    "juggle_bonus": false,
+    "training_payout": false
+  },
+  "defaults_are_tunable_not_user_quotes": [
+    "round-only ownership",
+    "two EX licenses",
+    "one super use",
+    "600/900 EX prices",
+    "reward values/caps",
+    "equal tier-zero outcome payout",
+    "2400 shop cap",
+    "two-eligible-tick perfect classification"
+  ]
+}

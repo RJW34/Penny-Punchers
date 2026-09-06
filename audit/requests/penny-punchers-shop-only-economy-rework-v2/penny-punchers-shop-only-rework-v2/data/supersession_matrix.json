@@ -1,0 +1,36 @@
+{
+  "rows": [
+    {
+      "old": "automatic EX availability",
+      "new": "buy specific round-long EX family license"
+    },
+    {
+      "old": "EX/super credits debited at startup",
+      "new": "all prices paid at shop lock; no bank read/write at startup"
+    },
+    {
+      "old": "earned gauge forbidden so no skill income",
+      "new": "skill earns bounded next-shop receipts, never a combat-spendable gauge"
+    },
+    {
+      "old": "no super tickets",
+      "new": "one prepaid super use is an explicit new default"
+    },
+    {
+      "old": "free match-locked super selection",
+      "new": "choose and purchase one art in each preparation"
+    },
+    {
+      "old": "reserve floor blocks combat spending",
+      "new": "remove reserve because all saved money is automatically future-shop-only"
+    },
+    {
+      "old": "per-use EX price300",
+      "new": "repeatable family license600 or900 seed, retest sustained use"
+    },
+    {
+      "old": "round1 payout advantage300",
+      "new": "candidate equal base1200 plus bounded earned skill; retain old payout only as a lab control"
+    }
+  ]
+}

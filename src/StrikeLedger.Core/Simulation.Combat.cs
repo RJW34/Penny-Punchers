@@ -22,9 +22,10 @@ public sealed partial class Simulation
    p.KnockdownTicks--;p.KnockdownAge++;if(p.KnockdownTicks==0){p.ThrowImmunity=Content.Combat.Throw.PostWakeupImmunity;Emit(CombatEventKind.Land,p.Seat,detail:"wakeup");}
   }
   if(p.LandingTicks>0)p.LandingTicks--;
+  if(AdvanceActorMove(p,direction,pressed))return;
   if(p.JumpStart>0)
   {
-   p.JumpStart--;if(p.JumpStart==0){p.Vy=p.JumpVelocity;p.Vx=p.JumpHorizontal;Emit(CombatEventKind.Jump,p.Seat);}
+   p.JumpStart--;if(p.JumpStart==0){p.VoluntaryAir=true;p.Vy=p.JumpVelocity;p.Vx=p.JumpHorizontal;Emit(CombatEventKind.Jump,p.Seat);}
   }
   else if(p.DashTicks>0){p.X+=p.DashVelocity;p.DashTicks--;}
   else if(p.ActionId.Length==0&&p.Hitstun==0&&p.Blockstun==0&&p.KnockdownTicks==0&&p.DizzyTicks==0&&p.LandingTicks==0&&p.Grounded)
@@ -33,14 +34,14 @@ public sealed partial class Simulation
    bool edge=p.History.Count==1||p.History[^2].RelativeDirection!=direction;
    if(direction is 7 or 8 or 9)
    {
-    p.JumpStart=f.Physics.JumpStartTicks;p.JumpHorizontal=direction==8?0:direction==9?f.Physics.JumpHorizontal*p.Facing:-f.Physics.JumpHorizontal*p.Facing;
+    ClearParry(p);p.JumpStart=f.Physics.JumpStartTicks;p.JumpHorizontal=direction==8?0:direction==9?f.Physics.JumpHorizontal*p.Facing:-f.Physics.JumpHorizontal*p.Facing;
     var super=p.History.TakeLast(6).Any(x=>x.RelativeDirection is 1 or 2 or 3);p.JumpVelocity=super?f.Physics.SuperJumpVelocity:f.Physics.JumpVelocity;p.Crouching=false;
    }
    else if(edge&&direction is 4 or 6)
    {
     var last=direction==6?p.LastForwardTap:p.LastBackTap;
     bool released=p.History.Any(h=>h.Tick>last&&h.Tick<Tick&&(h.RelativeDirection==5||h.RelativeDirection==(direction==6?4:6)));
-    if(Tick-last<=Content.Physics.DashInputWindow&&released){p.DashTicks=direction==6?f.Physics.DashForwardTicks:f.Physics.DashBackTicks;p.DashVelocity=(direction==6?f.Physics.DashForwardDistance/p.DashTicks:-f.Physics.DashBackDistance/p.DashTicks)*p.Facing;p.Parry=ParryKind.None;p.ParryTicks=0;p.X+=p.DashVelocity;p.DashTicks--;Emit(CombatEventKind.Dash,p.Seat,detail:direction==6?"forward":"back");}
+    if(Tick-last<=Content.Physics.DashInputWindow&&released){p.DashTicks=direction==6?f.Physics.DashForwardTicks:f.Physics.DashBackTicks;p.DashVelocity=(direction==6?f.Physics.DashForwardDistance/p.DashTicks:-f.Physics.DashBackDistance/p.DashTicks)*p.Facing;ClearParry(p);p.X+=p.DashVelocity;p.DashTicks--;Emit(CombatEventKind.Dash,p.Seat,detail:direction==6?"forward":"back");}
     if(direction==6)p.LastForwardTap=Tick;else p.LastBackTap=Tick;
     if(p.DashTicks==0)p.X+=(direction==6?f.Physics.WalkForward:-f.Physics.WalkBack)*p.Facing;
    }
@@ -49,20 +50,20 @@ public sealed partial class Simulation
   bool authored=false;
   if(p.ActionId.Length>0)
   {
-   var m=f.Move(p.ActionId);p.Crouching=m.Command.StartsWith("C+",StringComparison.Ordinal);
+   var m=f.Move(p.ActionId);AdvanceObjectAction(p,m);p.Crouching=m.Command.StartsWith("C+",StringComparison.Ordinal);
    var motion=m.Movement.FirstOrDefault(x=>p.ActionFrame>=x.Start&&p.ActionFrame<x.End);
    if(motion is not null){p.Vx=motion.Vx*p.ActionFacing;p.Vy=motion.Vy;p.X+=p.Vx;p.Y+=p.Vy;authored=true;}
    if(m.Projectile is {} def&&!p.ProjectileSpawned&&p.ActionFrame==def.SpawnTick)
    {
     p.ProjectileSpawned=true;
-    if(_projectiles.Count(x=>x.Owner==p.Seat)<def.MaxActivePerOwner)
-    {var projectile=new ProjectileState{Id=_nextProjectileId++,Owner=p.Seat,MoveId=m.Id,X=p.X+def.SpawnX*p.ActionFacing,Y=p.Y+def.SpawnY,Vx=def.Vx*p.ActionFacing,LifeTicks=def.LifeTicks,HitsRemaining=def.Hits,Facing=p.ActionFacing,Definition=def};projectile.PreviousX=projectile.X;_projectiles.Add(projectile);Emit(CombatEventKind.ProjectileSpawn,p.Seat,move:m.Id);}
+    if(_projectiles.Count(x=>x.Owner==p.Seat&&OrdinaryShot(x))<def.MaxActivePerOwner)
+    {var projectile=new ProjectileState{Id=_nextProjectileId++,Owner=p.Seat,MoveId=m.Id,X=p.X+def.SpawnX*p.ActionFacing,Y=p.Y+def.SpawnY,Vx=def.Vx*p.ActionFacing,LifeTicks=def.LifeTicks,HitsRemaining=def.Hits,Facing=p.ActionFacing,Definition=def};projectile.PreviousX=projectile.X;InitializeProjectileObject(projectile,p,m);_projectiles.Add(projectile);Emit(CombatEventKind.ProjectileSpawn,p.Seat,move:m.Id,worldX:projectile.X,worldY:projectile.Y,facing:projectile.Facing,projectileId:projectile.Id);}
    }
   }
   if(!authored&&(p.Y>0||p.Vy>0)){p.X+=p.Vx;p.Y+=p.Vy;p.Vy-=f.Physics.Gravity;}
   if(p.Y<=0)
   {
-   if(p.PreviousY>0){p.Y=0;p.Vx=p.Vy=0;p.KnockdownAge=0;if(p.KnockdownTicks==0&&(p.ActionId.Length==0||p.AirAttack)){p.LandingTicks=p.AirAttack?Content.Physics.JumpAttackLandingTicks:Content.Physics.NormalJumpLandingTicks;p.ActionId="";p.ActionFrame=0;p.AirAttack=false;p.JuggleBudget=Content.Combat.Juggle.InitialBudget;}Emit(CombatEventKind.Land,p.Seat);}
+   if(p.PreviousY>0){p.VoluntaryAir=false;p.RootContinuation=false;if(p.Parry==ParryKind.Air||p.DeferredParry==ParryKind.Air)ClearParry(p);p.Y=0;p.Vx=p.Vy=0;p.KnockdownAge=0;if(!HandleActorLanding(p)&&p.KnockdownTicks==0&&(p.ActionId.Length==0||p.AirAttack)){p.LandingTicks=p.AirAttack?Content.Physics.JumpAttackLandingTicks:Content.Physics.NormalJumpLandingTicks;p.ActionId="";p.ActionFrame=0;p.AirAttack=false;p.JuggleBudget=Content.Combat.Juggle.InitialBudget;}Emit(CombatEventKind.Land,p.Seat);}
    p.Y=0;if(p.JumpStart==0&&p.PreviousY>0)p.Vy=0;
   }
   p.X=Math.Clamp(p.X,_stage.Left+16000,_stage.Right-16000);
@@ -72,9 +73,10 @@ public sealed partial class Simulation
   if(p.Hitstop==0)
   {
    if(p.ParryTicks>0&&--p.ParryTicks==0){p.Parry=ParryKind.None;p.ParryRetry=Content.Combat.Parry.MissRetryTicks;}
-   if(p.ActionId.Length>0&&++p.ActionFrame>=Content.Fighters[p.FighterId].Move(p.ActionId).TotalTicks){p.ActionId="";p.ActionFrame=0;p.Contact=false;if(p.Grounded)p.Vx=p.Vy=0;}
-   if(p.Actionable&&p.Grounded){p.ComboCount=0;p.DizzyThisCombo=false;p.JuggleBudget=Content.Combat.Juggle.InitialBudget;}
+   if(p.ActionId.Length>0&&!HoldActorActionFrame(p)&&++p.ActionFrame>=Content.Fighters[p.FighterId].Move(p.ActionId).TotalTicks){CompleteInstallActivation(p);p.ActionId="";p.ActionFrame=0;p.Contact=false;if(p.Grounded)p.Vx=p.Vy=0;}
+   if(p.Actionable&&p.Grounded){p.RootContinuation=false;p.ComboCount=0;p.DizzyThisCombo=false;p.JuggleBudget=Content.Combat.Juggle.InitialBudget;}
   }
+  RefreshActorStatus(p);
  }
  void ResolvePushboxes()
  {
@@ -91,8 +93,13 @@ public sealed partial class Simulation
  public IReadOnlyList<WorldBox> Hurtboxes(int seat)
  {
   var p=_players[seat];var f=Content.Fighters[p.FighterId];var boxes=f.Hurtboxes[!p.Grounded?"air":p.Crouching?"crouching":"standing"].Select(b=>Box(b,p.X,p.Y,p.Facing)).ToList();
-  // Active limbs extend the hurt silhouette, keeping visible committed attacks vulnerable.
-  if(p.ActionId.Length>0)foreach(var h in f.Move(p.ActionId).Hitboxes.Where(h=>p.ActionFrame>=h.Start&&p.ActionFrame<h.End))boxes.Add(new(p.X+h.X*p.ActionFacing,p.Y+h.Y,Math.Max(6000,h.Width/2),Math.Max(6000,h.Height/2)));
+  if(p.ActionId.Length>0)
+  {
+   var m=f.Move(p.ActionId);var phase=m.HurtboxWindows.FirstOrDefault(w=>p.ActionFrame>=w.Start&&p.ActionFrame<w.End);
+   if(phase is not null){if(phase.ReplaceBody)boxes.Clear();boxes.AddRange(phase.Boxes.Select(b=>Box(b,p.X,p.Y,p.ActionFacing)));}
+   // Older external content without authored phases keeps its original active-limb convention.
+   else if(m.HurtboxWindows.Length==0)foreach(var h in m.Hitboxes.Where(h=>p.ActionFrame>=h.Start&&p.ActionFrame<h.End))boxes.Add(new(p.X+h.X*p.ActionFacing,p.Y+h.Y,Math.Max(6000,h.Width/2),Math.Max(6000,h.Height/2)));
+  }
   return boxes;
  }
  public IReadOnlyList<WorldBox> Hitboxes(int seat)
@@ -104,21 +111,21 @@ public sealed partial class Simulation
  {
   foreach(var p in _projectiles)
   {
-   p.PreviousX=p.X;if(p.Hitstop>0){p.Hitstop--;continue;}p.X+=p.Vx;p.LifeTicks--;if(p.Definition.TurnAfterTicks>0&&p.Definition.LifeTicks-p.LifeTicks==p.Definition.TurnAfterTicks){p.Vx=-p.Vx;p.Facing=-p.Facing;}if(p.ContactCooldown>0)p.ContactCooldown--;
+   if(p.IsField)continue;p.PreviousX=p.X;p.PreviousY=p.Y;if(p.Hitstop>0){p.Hitstop--;continue;}p.X+=p.Vx;AdvanceProjectileVertical(p);p.LifeTicks--;if(p.Definition.TurnAfterTicks>0&&p.Definition.LifeTicks-p.LifeTicks==p.Definition.TurnAfterTicks){p.Vx=-p.Vx;p.Facing=-p.Facing;}if(p.ContactCooldown>0)p.ContactCooldown--;
   }
   for(int i=0;i<_projectiles.Count;i++)for(int j=i+1;j<_projectiles.Count;j++)
   {
-   var a=_projectiles[i];var b=_projectiles[j];if(a.Owner==b.Owner||a.HitsRemaining<=0||b.HitsRemaining<=0)continue;
+   var a=_projectiles[i];var b=_projectiles[j];if(a.IsField||b.IsField||a.Owner==b.Owner||a.HitsRemaining<=0||b.HitsRemaining<=0)continue;
    var aa=new WorldBox(a.X,a.Y,a.Definition.Width,a.Definition.Height);var bb=new WorldBox(b.X,b.Y,b.Definition.Width,b.Definition.Height);
-   if(!Swept(aa,a.PreviousX,a.Y).Intersects(Swept(bb,b.PreviousX,b.Y)))continue;
+   if(!Swept(aa,a.PreviousX,a.PreviousY).Intersects(Swept(bb,b.PreviousX,b.PreviousY)))continue;
    if(a.Definition.Rank<=b.Definition.Rank)a.HitsRemaining=0;if(b.Definition.Rank<=a.Definition.Rank)b.HitsRemaining=0;
-   Emit(CombatEventKind.ProjectileClash,a.Owner,b.Owner,a.MoveId);
+   var point=ContactPoint(Swept(aa,a.PreviousX,a.PreviousY),Swept(bb,b.PreviousX,b.PreviousY));Emit(CombatEventKind.ProjectileClash,a.Owner,b.Owner,a.MoveId,worldX:point.X,worldY:point.Y,facing:a.Facing,actionOrdinal:0,projectileId:a.Id);
   }
-  _projectiles.RemoveAll(p=>p.LifeTicks<=0||p.HitsRemaining<=0||p.X<_stage.Left-50000||p.X>_stage.Right+50000);
+  _projectiles.RemoveAll(p=>p.LifeTicks<=0||p.HitsRemaining<=0||p.X<_stage.Left-50000||p.X>_stage.Right+50000||p.Y>500000||p.Y< -50000);
  }
- sealed record ContactCandidate(int Attacker,int Defender,MoveDefinition Move,HitboxDefinition Hit,ProjectileState? Projectile,int Facing,bool Blocked,bool Parried,bool CounterHit);
+ sealed record ContactCandidate(int Attacker,int Defender,MoveDefinition Move,HitboxDefinition Hit,ProjectileState? Projectile,int Facing,bool Blocked,bool Parried,bool CounterHit,int WorldX,int WorldY,int ActionOrdinal){public ResolvedContactFacts? Facts {get;init;}}
  bool Invulnerable(PlayerState defender,string type)=>defender.ActionId.Length>0&&Content.Fighters[defender.FighterId].Move(defender.ActionId).Invulnerability.Any(i=>defender.ActionFrame>=i.Start&&defender.ActionFrame<i.End&&i.To.Contains(type));
- bool CanParry(PlayerState d,HitboxDefinition h)=>h.Parryable&&d.ParryTicks>0&&d.Parry switch{ParryKind.Air=>true,ParryKind.High or ParryKind.RedHigh=>h.Level!="low",ParryKind.Low or ParryKind.RedLow=>h.Level is "low" or "mid",_=>false};
+ bool CanParry(PlayerState d,HitboxDefinition h)=>h.Parryable&&d.ParryTicks>0&&d.ActionId.Length==0&&d.Hitstun==0&&d.KnockdownTicks==0&&d.DizzyTicks==0&&d.ThrowAttacker<0&&d.DashTicks==0&&d.JumpStart==0&&d.LandingTicks==0&&d.Parry switch{ParryKind.Air=>!d.Grounded,ParryKind.High or ParryKind.RedHigh=>d.Grounded&&h.Level!="low",ParryKind.Low or ParryKind.RedLow=>d.Grounded&&h.Level is "low" or "mid",_=>false};
  bool CanBlock(PlayerState d,HitboxDefinition h,byte direction)=>d.Grounded&&d.ActionId.Length==0&&d.Hitstun==0&&d.KnockdownTicks==0&&d.DizzyTicks==0&&d.JumpStart==0&&d.DashTicks==0&&d.ThrowAttacker<0&&(direction==4&&h.Level!="low"||direction==1&&h.Level is "low" or "mid");
  void ResolveContacts(byte[] directions,Buttons[] pressed)
  {
@@ -131,48 +138,63 @@ public sealed partial class Simulation
    {
     if(p.ActionFrame<h.Start||p.ActionFrame>=h.End||(p.HitGroups&(1UL<<h.HitGroup))!=0||!d.Grounded&&d.JuggleBudget<h.JuggleCost)continue;
     var box=Box(h,p.X,p.Y,p.ActionFacing);var sweep=Swept(box,p.PreviousX+h.X*p.ActionFacing,p.PreviousY+h.Y);
-    if(!Hurtboxes(d.Seat).Any(sweep.Intersects))continue;
-    candidates.Add(new(s,d.Seat,move,h,null,p.ActionFacing,CanBlock(d,h,directions[d.Seat]),CanParry(d,h),d.ActionId.Length>0&&d.ActionFrame<Content.Fighters[d.FighterId].Move(d.ActionId).Startup));
+    var hurt=Hurtboxes(d.Seat).FirstOrDefault(sweep.Intersects);if(hurt.Width==0)continue;var contact=ContactPoint(sweep,hurt);
+    candidates.Add(new(s,d.Seat,move,h,null,p.ActionFacing,CanBlock(d,h,directions[d.Seat]),CanParry(d,h),d.ActionId.Length>0&&d.ActionFrame<Content.Fighters[d.FighterId].Move(d.ActionId).Startup,contact.X,contact.Y,p.ActionOrdinal));
    }
   }
   foreach(var p in _projectiles)
   {
-   var d=_players[1-p.Owner];if(p.Hitstop>0||p.ContactCooldown>0||d.KnockdownTicks>0&&d.Grounded||d.ThrowAttacker>=0||Invulnerable(d,"projectile")||!d.Grounded&&d.JuggleBudget<p.Definition.JuggleCost)continue;
-   var def=p.Definition;var box=Swept(new(p.X,p.Y,def.Width,def.Height),p.PreviousX,p.Y);if(!Hurtboxes(d.Seat).Any(box.Intersects))continue;
+   var d=_players[1-p.Owner];if(p.HitsRemaining<=0||!ObjectCanContact(p)||p.Hitstop>0||p.ContactCooldown>0||d.KnockdownTicks>0&&d.Grounded||d.ThrowAttacker>=0||Invulnerable(d,"projectile")||ActorIgnoresProjectile(d,p)||!d.Grounded&&d.JuggleBudget<p.Definition.JuggleCost)continue;
+   var def=p.Definition;var box=Swept(new(p.X,p.Y,def.Width,def.Height),p.PreviousX,p.PreviousY);var hurt=Hurtboxes(d.Seat).FirstOrDefault(box.Intersects);if(hurt.Width==0)continue;var contact=ContactPoint(box,hurt);
    var h=new HitboxDefinition{Damage=def.Damage,Stun=def.Stun,Rank=def.Rank,Hitstun=def.Hitstun,Blockstun=def.Blockstun,Level=def.Level,JuggleCost=def.JuggleCost,Parryable=def.Parryable,PushX=9000};
-   candidates.Add(new(p.Owner,d.Seat,Content.Fighters[_players[p.Owner].FighterId].Move(p.MoveId),h,p,p.Facing,CanBlock(d,h,directions[d.Seat]),CanParry(d,h),false));
+   candidates.Add(new(p.Owner,d.Seat,ProjectileMove(p),h,p,p.Facing,CanBlock(d,h,directions[d.Seat]),CanParry(d,h),false,contact.X,contact.Y,p.ActionOrdinal));
   }
+  candidates=candidates.Select(c=>c with{Facts=PreContactFact(c)}).ToList();
   // Only reciprocal direct strikes participate in rank comparison; distant attacks do not clash.
   var direct=candidates.Where(c=>c.Projectile is null).ToArray();
   candidates.RemoveAll(c=>c.Projectile is null&&direct.Any(other=>other.Attacker==c.Defender&&other.Defender==c.Attacker&&other.Hit.Rank>c.Hit.Rank));
+  ResolveActorCounters(candidates);
+  // Finalize defensive/group decisions before owner-linked object cancellation or any health mutation.
+  var ordered=candidates.OrderByDescending(c=>c.Hit.Rank).ThenBy(c=>c.Projectile?.Id??0).ThenBy(c=>c.Attacker).ThenBy(c=>c.Hit.HitGroup).ToArray();
+  var assignedArms=new bool[2];var assignedGroups=new HashSet<(int,int)>();candidates=[];
+  foreach(var candidate in ordered)
+  {
+   if(candidate.Projectile is null&&!assignedGroups.Add((candidate.Attacker,candidate.Hit.HitGroup)))continue;
+   bool parried=candidate.Parried&&!assignedArms[candidate.Defender];if(parried)assignedArms[candidate.Defender]=true;
+   candidates.Add(candidate with{Parried=parried});
+  }
+  PrepareObjectContactResolution(candidates);
   var armConsumed=new bool[2];var consumedGroups=new HashSet<(int,int)>();
   foreach(var c in candidates.OrderByDescending(c=>c.Hit.Rank).ThenBy(c=>c.Projectile?.Id??0).ThenBy(c=>c.Attacker).ThenBy(c=>c.Hit.HitGroup))
   {
+   if(c.Projectile is {IsField:true} field&&!ObjectContactAuthorized(field))continue;
    if(c.Projectile is null&&!consumedGroups.Add((c.Attacker,c.Hit.HitGroup)))continue;
    var p=_players[c.Attacker];var d=_players[c.Defender];if(c.Projectile is null)p.HitGroups|=1UL<<c.Hit.HitGroup;
    if(c.Projectile is {} projectile){projectile.HitsRemaining--;projectile.ContactCooldown=projectile.Definition.RehitTicks;}
    if(c.Parried&&!armConsumed[c.Defender])
    {
-    var parryKind=d.Parry;armConsumed[c.Defender]=true;d.Parry=ParryKind.None;d.ParryTicks=d.ParryRetry=0;d.Blockstun=0;d.Hitstop=Math.Max(d.Hitstop,Content.Combat.Parry.DefenderFreeze);
-    if(c.Projectile is {} pr)pr.Hitstop=Content.Combat.Parry.AttackerFreeze;else p.Hitstop=Math.Max(p.Hitstop,Content.Combat.Parry.AttackerFreeze);Emit(CombatEventKind.Parry,d.Seat,p.Seat,c.Move.Id,detail:parryKind+":"+c.Hit.Level);continue;
+    AcceptContactFact(c,ContactOutcome.Parry);var parryKind=d.Parry;armConsumed[c.Defender]=true;d.Parry=ParryKind.None;d.ParryTicks=d.ParryRetry=0;d.Blockstun=0;d.Hitstop=Math.Max(d.Hitstop,Content.Combat.Parry.DefenderFreeze);
+    if(c.Projectile is {} pr)pr.Hitstop=Content.Combat.Parry.AttackerFreeze;else p.Hitstop=Math.Max(p.Hitstop,Content.Combat.Parry.AttackerFreeze);EmitContact(c,CombatEventKind.Parry,d.Seat,p.Seat,detail:parryKind+":"+c.Hit.Level);continue;
    }
    if(c.Blocked)
    {
     var chip=c.Move.Kind is "special" or "ex_special" or "super"?ScaledDamage(c.Hit.Damage,d.ComboCount)*(c.Move.Kind=="super"?Content.Combat.Block.SuperChipPercent:Content.Combat.Block.SpecialChipPercent)/100:Content.Combat.Block.NormalChip;
-    d.Health=Math.Max(0,d.Health-chip);d.Blockstun=Math.Max(d.Blockstun,c.Hit.Blockstun);d.Hitstop=Math.Max(d.Hitstop,Content.Combat.Blockstop);if(c.Projectile is null){p.Hitstop=Math.Max(p.Hitstop,Content.Combat.Blockstop);p.Contact=true;}PushBack(p,d,c.Facing,c.Hit.PushX);Emit(CombatEventKind.Block,d.Seat,p.Seat,c.Move.Id,chip);continue;
+    AcceptContactFact(c,ContactOutcome.Block,Math.Min(d.Health,chip));d.Health=Math.Max(0,d.Health-chip);d.Blockstun=Math.Max(d.Blockstun,c.Hit.Blockstun);d.Hitstop=Math.Max(d.Hitstop,Content.Combat.Blockstop);if(c.Projectile is null){p.Hitstop=Math.Max(p.Hitstop,Content.Combat.Blockstop);p.Contact=true;if(p.FirstContactFrame<0)p.FirstContactFrame=p.ActionFrame;}PushBack(p,d,c.Facing,c.Hit.PushX);EmitContact(c,CombatEventKind.Block,d.Seat,p.Seat,chip);continue;
    }
-   int damage=ScaledDamage(c.Hit.Damage,d.ComboCount,c.CounterHit);d.Health=Math.Max(0,d.Health-damage);d.ComboCount++;d.Stun+=c.Hit.Stun;d.StunDelay=Content.Combat.Stun.DecayDelay;d.Hitstun=Math.Max(d.Hitstun,c.Hit.Hitstun);d.Blockstun=0;d.ActionId="";d.ActionFrame=0;d.DashTicks=d.JumpStart=0;d.Parry=ParryKind.None;d.ParryTicks=0;
-   int stop=c.Hit.Rank>=3?Content.Combat.HitstopHeavy:Content.Combat.HitstopNormal;d.Hitstop=Math.Max(d.Hitstop,stop);if(c.Projectile is null){p.Hitstop=Math.Max(p.Hitstop,stop);p.Contact=true;}
+   int damage=ScaledDamage(c.Hit.Damage,d.ComboCount,c.CounterHit);bool absorbed=AbsorbActorHit(c,damage);AcceptContactFact(c,absorbed?ContactOutcome.Armor:ContactOutcome.Hit,Math.Min(d.Health,damage));d.Health=Math.Max(0,d.Health-damage);d.ComboCount++;d.Stun+=c.Hit.Stun;d.StunDelay=Content.Combat.Stun.DecayDelay;if(!absorbed){OnActorInterrupted(d,"hit");OnObjectOwnerInterrupted(d,"hit");d.Hitstun=Math.Max(d.Hitstun,c.Hit.Hitstun);d.Blockstun=0;d.ActionId="";d.ActionFrame=0;d.DashTicks=d.JumpStart=0;ClearParry(d);}
+   int stop=c.Hit.Rank>=3?Content.Combat.HitstopHeavy:Content.Combat.HitstopNormal;d.Hitstop=Math.Max(d.Hitstop,stop);if(c.Projectile is null){p.Hitstop=Math.Max(p.Hitstop,stop);p.Contact=true;p.HitContact=true;if(p.FirstHitFrame<0)p.FirstHitFrame=p.ActionFrame;if(p.FirstContactFrame<0)p.FirstContactFrame=p.ActionFrame;}
    if(!d.Grounded)d.JuggleBudget=Math.Max(0,d.JuggleBudget-c.Hit.JuggleCost);
    PushBack(p,d,c.Facing,c.Hit.PushX);
-   if(c.Hit.LaunchY>0){d.Vy=c.Hit.LaunchY;d.Y=Math.Max(1,d.Y);d.Vx=c.Facing*1300;}
-   if(c.Hit.Knockdown!="none")KnockDown(d,c.Hit.Knockdown);
-   if(d.Stun>=Content.Fighters[d.FighterId].StunLimit&&!d.DizzyThisCombo){d.Stun=0;d.DizzyTicks=Content.Combat.Stun.DizzyTicks;d.DizzyThisCombo=true;Emit(CombatEventKind.Dizzy,d.Seat);}
-   Emit(CombatEventKind.Hit,p.Seat,d.Seat,c.Move.Id,damage,c.CounterHit?"counter":"");
+   if(!absorbed&&c.Hit.LaunchY>0){d.VoluntaryAir=false;d.Vy=c.Hit.LaunchY;d.Y=Math.Max(1,d.Y);d.Vx=c.Facing*1300;}
+   if(!absorbed&&c.Hit.Knockdown!="none")KnockDown(d,c.Hit.Knockdown);
+   if(d.Stun>=Content.Fighters[d.FighterId].StunLimit&&!d.DizzyThisCombo){d.Stun=0;d.DizzyTicks=Content.Combat.Stun.DizzyTicks;d.DizzyThisCombo=true;OnActorInterrupted(d,"dizzy");OnObjectOwnerInterrupted(d,"dizzy");EndInstall(d);Emit(CombatEventKind.Dizzy,d.Seat);}
+   EmitContact(c,CombatEventKind.Hit,p.Seat,d.Seat,damage,absorbed?"armor":c.CounterHit?"counter":"");
   }
   _projectiles.RemoveAll(p=>p.HitsRemaining<=0);
-  ResolveThrows(candidates,pressed);ResolvePushboxes();
+  ResolveThrows(candidates,pressed);ResolvePushboxes();ProcessSkillContacts(_pendingContactFacts);
  }
+ static (int X,int Y) ContactPoint(WorldBox a,WorldBox b)=>((Math.Max(a.Left,b.Left)+Math.Min(a.Right,b.Right))/2,(Math.Max(a.Bottom,b.Bottom)+Math.Min(a.Top,b.Top))/2);
+ void EmitContact(ContactCandidate c,CombatEventKind kind,int seat,int target,int value=0,string detail="")=>Emit(kind,seat,target,c.Move.Id,value,detail,c.WorldX,c.WorldY,c.Facing,c.ActionOrdinal,c.Projectile?.Id??0,c.Hit.HitGroup,c.Projectile?.OriginalFighter??_players[c.Attacker].FighterId);
  void PushBack(PlayerState attacker,PlayerState defender,int facing,int distance)
  {
   int target=defender.X+facing*distance;int clamped=Math.Clamp(target,_stage.Left+16000,_stage.Right-16000);int spill=target-clamped;defender.X=clamped;
@@ -180,10 +202,11 @@ public sealed partial class Simulation
  }
  void KnockDown(PlayerState p,string kind)
  {
-  p.HardKnockdown=kind=="hard";p.KnockdownTicks=p.HardKnockdown?Content.Combat.Knockdown.HardRiseTicks:Content.Combat.Knockdown.NormalRiseTicks;p.KnockdownAge=0;p.Hitstun=0;p.ActionId="";Emit(CombatEventKind.Knockdown,p.Seat,detail:kind);
+  p.VoluntaryAir=false;p.RootContinuation=false;OnActorInterrupted(p,"knockdown");OnObjectOwnerInterrupted(p,"knockdown");EndInstall(p);p.HardKnockdown=kind=="hard";p.KnockdownTicks=p.HardKnockdown?Content.Combat.Knockdown.HardRiseTicks:Content.Combat.Knockdown.NormalRiseTicks;p.KnockdownAge=0;p.Hitstun=0;p.ActionId="";Emit(CombatEventKind.Knockdown,p.Seat,detail:kind);
  }
  void ResolveThrows(List<ContactCandidate> strikes,Buttons[] pressed)
  {
+  ResolveActorAirThrows(strikes,pressed);
   var attempts=new List<(PlayerState Attacker,PlayerState Defender,MoveDefinition Move)>();
   foreach(var p in _players)
   {
@@ -192,26 +215,32 @@ public sealed partial class Simulation
    if(Math.Abs(p.X-d.X)>t.Range+(Content.Fighters[p.FighterId].Pushbox.Width+Content.Fighters[d.FighterId].Pushbox.Width)/2)continue;
    attempts.Add((p,d,m));
   }
-  if(attempts.Count==2&&attempts.All(a=>a.Move.Throw!.Techable)){SeparateTech(_players[0],_players[1]);return;}
+  // Arbitrate the immutable reciprocal attempts before either capture mutates an actor.
+  if(attempts.Count==2)
+  {
+   if(attempts.All(a=>a.Move.Throw!.Techable)){SeparateTech(_players[0],_players[1]);return;}
+   if(attempts.All(a=>!a.Move.Throw!.Techable)){SeparateTech(_players[0],_players[1],"command-clash");return;}
+   attempts.RemoveAll(a=>a.Move.Throw!.Techable); // Command throw wins a simultaneous mixed grab, irrespective of seat.
+  }
   foreach(var (p,d,m) in attempts)
   {
    p.HitGroups=1;if(m.Throw!.Techable&&Has(pressed[d.Seat],Buttons.LP|Buttons.LK)){SeparateTech(p,d);continue;}
-   d.ActionId="";d.ActionFrame=0;d.ThrowAttacker=p.Seat;d.ThrowMove=m.Id;d.ThrowAge=0;d.Parry=ParryKind.None;d.ParryTicks=0;
-   if(!m.Throw.Techable)CompleteThrow(d);else Emit(CombatEventKind.Throw,p.Seat,d.Seat,m.Id,detail:"capture");
+   OnActorInterrupted(d,"capture");OnObjectOwnerInterrupted(d,"capture");EndInstall(d);d.ActionId="";d.ActionFrame=0;d.ThrowAttacker=p.Seat;d.ThrowMove=m.Id;d.ThrowAge=0;ClearParry(d);
+   if(!m.Throw.Techable)CompleteThrow(d);else Emit(CombatEventKind.Throw,p.Seat,d.Seat,m.Id,detail:"capture",worldX:(p.X+d.X)/2,worldY:Pushbox(d).Y);
   }
  }
  void TechThrow(PlayerState defender){if(defender.ThrowAttacker>=0)SeparateTech(_players[defender.ThrowAttacker],defender);}
- void SeparateTech(PlayerState a,PlayerState b)
+ void SeparateTech(PlayerState a,PlayerState b,string detail="tech")
  {
-  a.ThrowAttacker=b.ThrowAttacker=-1;a.ActionId=b.ActionId="";a.Hitstun=b.Hitstun=0;a.LandingTicks=b.LandingTicks=10;a.ThrowImmunity=b.ThrowImmunity=2;int sign=a.X<b.X?1:-1;
-  a.X=Math.Clamp(a.X-sign*18000,_stage.Left+16000,_stage.Right-16000);b.X=Math.Clamp(b.X+sign*18000,_stage.Left+16000,_stage.Right-16000);Emit(CombatEventKind.ThrowTech,a.Seat,b.Seat);
+  int contactX=(a.X+b.X)/2,contactY=(Pushbox(a).Y+Pushbox(b).Y)/2;ClearParry(a);ClearParry(b);a.DashTicks=b.DashTicks=a.JumpStart=b.JumpStart=0;a.ThrowAttacker=b.ThrowAttacker=-1;a.ActionId=b.ActionId="";a.Hitstun=b.Hitstun=0;a.LandingTicks=b.LandingTicks=10;a.ThrowImmunity=b.ThrowImmunity=2;int sign=a.X<b.X?1:-1;
+  a.X=Math.Clamp(a.X-sign*18000,_stage.Left+16000,_stage.Right-16000);b.X=Math.Clamp(b.X+sign*18000,_stage.Left+16000,_stage.Right-16000);Emit(CombatEventKind.ThrowTech,a.Seat,b.Seat,detail:detail,worldX:contactX,worldY:contactY);
  }
  void CompleteThrow(PlayerState d)
  {
-  var p=_players[d.ThrowAttacker];var move=Content.Fighters[p.FighterId].Move(d.ThrowMove);var t=move.Throw!;d.ThrowAttacker=-1;
-  int damage=ScaledDamage(t.Damage,d.ComboCount);d.Health=Math.Max(0,d.Health-damage);d.ComboCount++;d.Stun+=t.Stun;d.StunDelay=Content.Combat.Stun.DecayDelay;
+  var p=_players[d.ThrowAttacker];var move=Content.Fighters[p.FighterId].Move(d.ThrowMove);var t=move.Throw!;
+  int contactX=(p.X+d.X)/2,contactY=Pushbox(d).Y;int damage=ScaledDamage(t.Damage,d.ComboCount);RecordThrowFact(p,d,move,Math.Min(d.Health,damage),contactX,contactY);d.ThrowAttacker=-1;d.Health=Math.Max(0,d.Health-damage);d.ComboCount++;d.Stun+=t.Stun;d.StunDelay=Content.Combat.Stun.DecayDelay;
   if(t.SwapSides){(p.X,d.X)=(d.X,p.X);p.Facing=-p.Facing;d.Facing=-d.Facing;p.FacingEpoch++;d.FacingEpoch++;p.BackCharge=d.BackCharge=0;p.BackReadyUntil=d.BackReadyUntil=-1;}
-  KnockDown(d,t.Knockdown);d.Hitstop=Content.Combat.HitstopNormal;p.Hitstop=Content.Combat.HitstopNormal;Emit(CombatEventKind.Throw,p.Seat,d.Seat,move.Id,damage,"damage");
-  if(d.Stun>=Content.Fighters[d.FighterId].StunLimit&&!d.DizzyThisCombo){d.Stun=0;d.DizzyTicks=Content.Combat.Stun.DizzyTicks;d.DizzyThisCombo=true;Emit(CombatEventKind.Dizzy,d.Seat);}
+  KnockDown(d,t.Knockdown);d.Hitstop=Content.Combat.HitstopNormal;p.Hitstop=Content.Combat.HitstopNormal;Emit(CombatEventKind.Throw,p.Seat,d.Seat,move.Id,damage,"damage",contactX,contactY);
+  if(d.Stun>=Content.Fighters[d.FighterId].StunLimit&&!d.DizzyThisCombo){d.Stun=0;d.DizzyTicks=Content.Combat.Stun.DizzyTicks;d.DizzyThisCombo=true;OnActorInterrupted(d,"dizzy");OnObjectOwnerInterrupted(d,"dizzy");EndInstall(d);Emit(CombatEventKind.Dizzy,d.Seat);}
  }
 }

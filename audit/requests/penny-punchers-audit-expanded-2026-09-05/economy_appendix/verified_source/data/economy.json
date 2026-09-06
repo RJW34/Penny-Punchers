@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "resource_model": "one_persistent_scalar_credit_wallet",
+  "starting_credits": 600,
+  "wallet_cap": 3600,
+  "win_payout": 1200,
+  "draw_payout": 900,
+  "loss_payouts": [
+    900,
+    1200,
+    1500
+  ],
+  "max_recovery_tier": 2,
+  "slot_prices": {
+    "signature": 900,
+    "technique": 600,
+    "gambit": 300
+  },
+  "loadout_cap": 1800,
+  "preparation_seconds": 15,
+  "reveal_seconds": 3,
+  "lease_duration": "one_round",
+  "ex_activation_cost": 300,
+  "super_activation_costs": [
+    900,
+    1200,
+    1500
+  ],
+  "passive_income": 0,
+  "combat_income": 0,
+  "activation_debit": "first_committed_startup_tick",
+  "refund_on_whiff_block_parry_interrupt": false,
+  "default_reserve_floor": 0,
+  "reserve_policy": "optional_minimum_remaining_balance_locked_for_round_not_a_separate_pool",
+  "purchases_debit": "atomic_preparation_commit",
+  "win_tier_change": -1,
+  "loss_tier_change": 1,
+  "draw_tier_change": 0
+}

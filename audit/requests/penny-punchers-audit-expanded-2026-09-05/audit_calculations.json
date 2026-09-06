@@ -1,0 +1,24 @@
+{
+  "kind": "source_formula_check_not_native_gameplay",
+  "commit": "1623ee62c4f4b6d5574bbb9909eb6fe4e32f5441",
+  "camera": {
+    "viewport_width": 1280,
+    "world_view_width": 480000,
+    "midpoint": 384000,
+    "legal_extreme_centers": [
+      16000,
+      752000
+    ],
+    "projected_screen_x": [
+      -341.33333333333337,
+      1621.3333333333335
+    ]
+  },
+  "rook_empty_space_16_ticks": {
+    "forward_walk_displacement": 48000,
+    "back_walk_displacement": 33600,
+    "step_feint_authored_displacement": 13600,
+    "sway_feint_authored_displacement": -12800,
+    "qualification": "Does not price visual deception, collision, charge retention, pressure or opponent responses."
+  }
+}

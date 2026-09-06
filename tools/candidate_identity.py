@@ -10,7 +10,7 @@ def main():
         if p.is_file():sources.append({'path':name,'sha256':sha(p)})
     for base in ['game','src/StrikeLedger.Core','src/StrikeLedger.App']:
         for p in sorted((ROOT/base).rglob('*')):
-            if p.is_file() and not any(x in p.parts for x in ['bin','obj','.godot','GeneratedData']) and p.suffix in ['.cs','.csproj','.tscn','.godot','.cfg','.sln','.wav','.ogg','.png','.svg','.import','.gdshader','.json']:
+            if p.is_file() and not any(x in p.parts for x in ['bin','obj','.godot','GeneratedData']) and p.suffix in ['.cs','.csproj','.tscn','.godot','.cfg','.sln','.wav','.ogg','.png','.svg','.import','.gdshader','.gd','.json','.ttf','.otf','.txt']:
                 sources.append({'path':p.relative_to(ROOT).as_posix(),'sha256':sha(p)})
     sources.sort(key=lambda x:x['path'])
     sourcehash=hashlib.sha256(json.dumps(sources,sort_keys=True,separators=(',',':')).encode()).hexdigest()

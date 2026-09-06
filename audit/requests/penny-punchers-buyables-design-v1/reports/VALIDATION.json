@@ -1,0 +1,31 @@
+{
+  "utc": "2026-09-05T21:16:47.831832+00:00",
+  "status": "DESIGN_COMPANION_VALIDATED_NOT_A_BUILT_GAME",
+  "catalog_entries": 38,
+  "round_rentals": 24,
+  "enhanced_actions": 8,
+  "selected_supers": 6,
+  "core_trial_entries": 24,
+  "advanced_trial_entries": 14,
+  "future_research_ideas_excluded_from_catalog_count": 8,
+  "planned_native_scenarios": 50,
+  "native_scenarios_executed": 0,
+  "structural_validation": "PASS (custom Python validator, not formal JSON Schema validation)",
+  "unit_test_methods_passed": 32,
+  "unit_test_methods_failed": 0,
+  "example_plans_checked": 10,
+  "html_browser_checks_passed": 11,
+  "native_build": "NOT_RUN",
+  "native_combat": "NOT_RUN",
+  "native_network": "NOT_RUN",
+  "human_balance": "NOT_RUN",
+  "repository_modified": false,
+  "prior_audit_modified": false,
+  "qualifications": [
+    "Existing EX families and four conventional supers are baseline references, not 12 newly implemented moves.",
+    "The 24 rental designs and two new super concepts contain original timing/price seeds; usefulness and advantage are not established.",
+    "Move-specific boxes, hitstun, blockstun and measured advantage remain explicit implementation/test work, not invented final frame data.",
+    "HTML tests used set_content because host policy blocked local file URLs; desktop/mobile reference rendering was viewed.",
+    "No money payout policy was changed; the active audit work must be preserved and reconciled on integration."
+  ]
+}

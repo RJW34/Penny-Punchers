@@ -10,8 +10,8 @@ public partial class FighterSprites : Node2D
     private sealed class Atlas
     {
         public readonly Dictionary<string, Cel> Cells = new();
-        public readonly Dictionary<string, string[]> States = new();
-        public readonly Dictionary<string, Dictionary<string, string[]>> Moves = new();
+        public readonly Dictionary<string, CelHold[]> States = new();
+        public readonly Dictionary<string, Dictionary<string, CelHold[]>> Moves = new();
         public bool ChromaKey;
     }
     private static readonly Dictionary<string, Atlas> Atlases = new();
@@ -21,6 +21,7 @@ public partial class FighterSprites : Node2D
     private int _lastTick=-1, _stateAge;
     private string _lastState="";
     public string CurrentCel {get;private set;}="";
+    public Rect2 LocalBounds {get;private set;}=new(-130,-280,260,300);
 
     public override void _Ready()
     {
@@ -41,6 +42,7 @@ public partial class FighterSprites : Node2D
         _palette?.SetShaderParameter("alternate",fighter.Palette%2!=0);
         _palette?.SetShaderParameter("vale",fighter.Id=="vale");
         _palette?.SetShaderParameter("chroma_key",_atlas.ChromaKey);
+        SelectCel();
         QueueRedraw();
     }
     public void ResetTimeline(){_lastTick=-1;_stateAge=0;_lastState="";}
@@ -53,6 +55,11 @@ public partial class FighterSprites : Node2D
     private static Atlas LoadAtlas(string id)
     {
         var atlas=new Atlas();
+        if(id is not ("rook" or "vale"))
+        {
+            GD.PushWarning($"No presentation pack registered for fighter '{id}'. Using clearly labelled Rook development placeholder; this is not authored roster art.");
+            id="rook";
+        }
         string root="res://Assets/AfterHours/Fighters/"+(id=="vale"?"Vale":"Rook")+"/";
         using var doc=JsonDocument.Parse(Godot.FileAccess.GetFileAsString(root+"atlas.json"));
         atlas.ChromaKey=doc.RootElement.TryGetProperty("chroma_key",out _);
@@ -65,27 +72,39 @@ public partial class FighterSprites : Node2D
             var p=c.GetProperty("pivot").EnumerateArray().Select(x=>x.GetSingle()).ToArray();
             atlas.Cells[entry.Name]=new(texture,new(r[0],r[1],r[2],r[3]),new(p[0],p[1]),c.GetProperty("scale").GetSingle(),c.TryGetProperty("facing",out var f)?f.GetInt32():1);
         }
-        foreach(var state in doc.RootElement.GetProperty("states").EnumerateObject())atlas.States[state.Name]=Names(state.Value);
-        foreach(var move in doc.RootElement.GetProperty("moves").EnumerateObject())
+        using var timing=JsonDocument.Parse(Godot.FileAccess.GetFileAsString("res://Presentation/animation-timing.json"));
+        var profile=timing.RootElement.GetProperty("fighters").GetProperty(id);
+        foreach(var state in profile.GetProperty("states").EnumerateObject())atlas.States[state.Name]=Holds(state.Value);
+        foreach(var move in profile.GetProperty("moves").EnumerateObject())
         {
-            var phases=new Dictionary<string,string[]>();
-            foreach(var phase in new[]{"startup","active","recovery"})phases[phase]=Names(move.Value.GetProperty(phase));
+            var phases=new Dictionary<string,CelHold[]>();
+            foreach(var phase in new[]{"startup","active","recovery"})phases[phase]=Holds(move.Value.GetProperty(phase));
             atlas.Moves[move.Name]=phases;
         }
+        foreach(var hold in atlas.States.Values.SelectMany(c=>c).Concat(atlas.Moves.Values.SelectMany(m=>m.Values).SelectMany(c=>c)))
+            if(!atlas.Cells.ContainsKey(hold.Cel)||hold.Ticks<1)throw new InvalidDataException($"Invalid cel hold {id}/{hold.Cel}");
         return atlas;
     }
-    private static string[] Names(JsonElement value)=>value.EnumerateArray().Select(v=>v.GetString()!).ToArray();
-    public override void _Draw()
+    private static CelHold[] Holds(JsonElement value)=>value.EnumerateArray().Select(v=>new CelHold(v.GetProperty("cel").GetString()!,v.GetProperty("ticks").GetInt32())).ToArray();
+    private void SelectCel()
     {
         if(_fighter is not {} f||_atlas is not {} atlas)return;
-        string[] names;int index;
-        bool interrupted=f.State is "knockdown" or "falling" or "wakeup" or "dizzy" or "hit" or "lowhit" or "airhit" or "thrown" or "guard" or "crouchguard" or "win" or "defeat" or "draw" or "intro";
-        if(!interrupted&&f.MoveId.Length>0&&atlas.Moves.TryGetValue(f.MoveId,out var phases))
+        CelHold[] names;int tick;bool loop=false;
+        IEnumerable<CelHold>? boundsClip=null;
+        bool interrupted=f.State is "knockdown" or "falling" or "wakeup" or "dizzy" or "hit" or "lowhit" or "airhit" or "thrown" or "guard" or "crouchguard" or "win" or "defeat" or "draw" or "intro"
+            ||f.MoveId=="buy_r_g3_vault_hop"&&!f.Grounded;
+        // Feints are deliberately indistinguishable during the shared anticipation.
+        // The canonical mimic contract supplies the source; no generated flash,
+        // tell, or separate pose is allowed before the abort begins.
+        bool shared=!interrupted&&f.ActionFrame<f.MimicSharedTicks&&f.MimicSourceMoveId.Length>0;
+        string visibleMove=shared?f.MimicSourceMoveId:f.MoveId;
+        if(!interrupted&&visibleMove.Length>0&&atlas.Moves.TryGetValue(visibleMove,out var phases))
         {
-            string phase=f.ActionFrame<f.Startup?"startup":f.ActionFrame<f.Startup+f.Active?"active":"recovery";
-            int start=phase=="startup"?0:phase=="active"?f.Startup:f.Startup+f.Active;
-            int duration=phase=="startup"?f.Startup:phase=="active"?f.Active:f.Recovery;
-            names=phases[phase];index=Math.Clamp((f.ActionFrame-start)*names.Length/Math.Max(1,duration),0,names.Length-1);
+            int startup=shared?f.MimicSourceStartup:f.Startup,active=shared?f.MimicSourceActive:f.Active;
+            string phase=f.ActionFrame<startup?"startup":f.ActionFrame<startup+active?"active":"recovery";
+            int start=phase=="startup"?0:phase=="active"?startup:startup+active;
+            names=phases[phase];tick=Math.Max(0,f.ActionFrame-start);
+            boundsClip=phases.Values.SelectMany(c=>c);
         }
         else
         {
@@ -94,12 +113,31 @@ public partial class FighterSprites : Node2D
                 string fallback=f.State switch{"walkback"=>"walk","rise" or "fall" or "apex" or "superjump"=>"jump","redparry" or "airparry"=>"parry","redlowparry"=>"crouchparry","takeoff" or "landing"=>"crouch","lowhit" or "airhit" or "thrown"=>"hit","falling" or "wakeup" or "defeat"=>"knockdown",_=>"idle"};
                 names=atlas.States.TryGetValue(fallback,out var found)?found:atlas.States["idle"];
             }
-            bool loop=f.State is "idle" or "walk" or "walkback" or "dizzy";
-            index=loop?(_stateAge/7)%names.Length:Math.Min(names.Length-1,_stateAge/5);
+            loop=f.State is "idle" or "walk" or "walkback" or "dizzy";
+            tick=_stateAge;
         }
-        CurrentCel=names[index];var cel=atlas.Cells[CurrentCel];
+        CurrentCel=CelTimeline.Select(names,tick,loop);
+        bool first=true;Rect2 bounds=default;
+        foreach(var hold in boundsClip??names)
+        {
+            var c=atlas.Cells[hold.Cel];var rect=new Rect2(-c.Pivot*c.Scale,c.Region.Size*c.Scale);
+            if(c.Facing<0)rect=new Rect2(-rect.End.X,rect.Position.Y,rect.Size.X,rect.Size.Y);
+            bounds=first?rect:bounds.Merge(rect);first=false;
+        }
+        LocalBounds=bounds;
+    }
+    public override void _Draw()
+    {
+        if(_atlas is not {} atlas||CurrentCel.Length==0)return;
+        var cel=atlas.Cells[CurrentCel];
         float scale=cel.Scale;
         DrawSetTransform(Vector2.Zero,0,new Vector2(cel.Facing,1));
         DrawTextureRectRegion(cel.Texture,new Rect2(-cel.Pivot*scale,cel.Region.Size*scale),cel.Region);
+        if(_fighter?.Id is {} id&&id is not ("rook" or "vale"))
+        {
+            DrawSetTransform(Vector2.Zero);
+            DrawRect(new Rect2(-112,-306,224,24),new Color(.05f,.05f,.07f,.95f));
+            DrawString(UiTypography.Body,new(-108,-288),"ART PLACEHOLDER / "+id.ToUpperInvariant(),HorizontalAlignment.Left,216,12,Colors.White);
+        }
     }
 }

@@ -1,11 +1,24 @@
-# Measured feel calibration
+# Measured feel calibration — shop-only v2
 
-The final production Core passed 21 measured movement/input/freeze checks. Reproduce with `python tools/measure_core_feel.py`; read reports/evidence/feel-measurements/feel-measurements.json for every before/after state, actual input, event and canonical snapshot.
+The frozen exported Core passed **24 actual movement, input, freeze and precision-parry measurements** on 2026-09-06T00:08:13.6293728Z. Reproduce with `python tools/measure_core_feel.py --evidence-dir reports/evidence/shop-v2-feel-candidate`. The standalone harness references the shipped Core DLL and does not rebuild production. Every before/after state, input, event and canonical snapshot is retained in `reports/evidence/shop-v2-feel-candidate/feel-measurements.json`; `process.log` binds both platform exports and the candidate.
 
-Rook walks forward/backward 3000/2100 authored integer units per tick; Vale 2700/2200. Both stop without extra displacement on neutral input. Rook forward dash measures96000 units over16 ticks; Vale91998 over19. Backdash measures85000 over20. Both jumps launch after4 ticks, remain airborne30 ticks, and require3 landing recovery calls. 1000 authored units equal one logical rendering unit.
+| Measurement | Thomas (rook) | Vincent (vale) |
+|---|---:|---:|
+| Forward/backward walk, integer units per tick | 3000 / 2100 | 2700 / 2200 |
+| Neutral stop, extra displacement | 0 | 0 |
+| Forward dash displacement / movement ticks | 96000 / 16 | 91998 / 19 |
+| Backdash displacement / movement ticks | 85000 / 20 | 85000 / 20 |
+| Jump input-to-launch / airborne / landing recovery ticks | 4 / 30 / 3 | 4 / 30 / 3 |
 
-A completed QCF starts its action on that same sampled simulation tick. Measured light/medium hitstop is8 calls, heavy11. High parry holds the attacker14 and defender8. All six selected supers freeze20 calls including startup; measured startup debits are900/1200/1500 from credits earned through an actual confirmed round payout. These figures measure simulation timing, not hardware input-to-photon latency.
+The simulation runs at 60 ticks per second; 1000 authored integer units equal one logical rendering unit. Vincent’s forward dash preserves the measured integer rounding. A completed QCF starts on the same sampled simulation tick. Light and medium contacts hold both players for 8 advance calls; heavy contacts hold them for 11. A high parry holds the attacker for 14 and the defender for 8. The round timer advances during these player freezes while the held player clocks remain fixed.
 
-The full competitive free-kit native match ran18466 input ticks across8 rounds with no leases, no debit receipts and no wallet decreases. Recorded presentation showcases cover directional and repeated parries, throws/techs, contacts, paid startups, and an explicitly labeled rollback correction fixture. Corrected defects include movement poses, replay-art HUD selection, training dummy/reset labels, menu-footer overlap and audio shutdown cleanup.
+Fresh manual parries at eligible defense ages 0 and 1 each produce 100 pending next-shop credits. Age 2 still successfully parries but earns no precision award. None changes the combat bank. Frozen-edge exclusions and root/cap arbitration have separate actual Core regression evidence; these three timing samples do not replace those tests.
 
-No actual player has accepted the fighting feel. Human feedback remains pending; bot experiments and timing measurements cannot establish expert competitive balance. Consult BALANCE_NOTES.md for matched-run uncertainty and policy differences.
+All six core-catalog supers freeze for 20 calls including startup. Each fixture first wins a competitive funding round, confirms its payout, and atomically purchases the round permit for 900, 1200 or 1500 credits. Legal startup consumes its one use and changes the bank by zero. Timer, action, motion and hitstop clocks stay held through super freeze; input sampling continues, and the observed defender charge increases by 20. Full-catalog replacement arts have separate production action/effect tests; this 24-measurement report covers the default core catalog.
+
+Candidate: `source-sha256:fc679e4ba18529de3e829e0f5b47aee05db45ffe746024f64fa7fb919324ed7f`.
+Canonical packaged content digest: `0d9eec292cdfb3f23454487bef78e18b442cbf7f41b7d4b81a4832e295b63696`.
+Loaded core-catalog content: `0245f6813c2320a9081fd96fefb4fd600632c92ae8f2be8a56c049129f365734`.
+Core SHA-256: `e0c1812e39177786ca355e079009908f79fea330aed1e80f86dae57188253f5b`; MVID: `3ac20fff-bc62-40e0-ab5d-88a864f980f8`.
+
+These are discrete simulation measurements. They do not measure rendered frame pacing, OS/controller input latency, display latency or human feel. Physical-device and owner/friend playtesting remain unperformed. Bot experiments do not establish expert competitive balance. The previous direct-spend report is preserved at `reports/history/FEEL_CALIBRATION_PRE_SHOP_V2.md` and is historical.

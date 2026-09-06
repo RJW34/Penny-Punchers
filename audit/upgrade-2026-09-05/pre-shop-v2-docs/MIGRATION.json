@@ -1,0 +1,31 @@
+{
+  "historical_only": true,
+  "active_contract": "docs/21_SHOP_ONLY_V2.md",
+  "files": [
+    {
+      "path": "START_HERE.md",
+      "original_sha256": "8e7b6209422e3a2eec394c3c0a6a0419ced0e317c8db5997ceecfc39eb8e846f",
+      "v2_sha256": "625222bd206ba72bd454c5b362201e208852b7b8f2da11b1bbcc7a27717e0816"
+    },
+    {
+      "path": "EXECUTOR_PROMPT.md",
+      "original_sha256": "93bc936e3a07aaba100b91c90ce78f047c035e47e2188c05dfafa2e4457ec797",
+      "v2_sha256": "d5373e334ad59a8c593a4faa7da81896f238ff715e0768e96fbab246607ce0d3"
+    },
+    {
+      "path": "docs/00_PRODUCT_CONTRACT.md",
+      "original_sha256": "771730649e56265c947e572558321a17f403ee5c90f46fff8445d25c5cbbfd6f",
+      "v2_sha256": "b3b466aa21e7917429c94e438870ca7c5d192ecd86215ef3232e363781b3f587"
+    },
+    {
+      "path": "docs/05_ECONOMY_AND_PREPARATION.md",
+      "original_sha256": "3ec50adb30f0927be37853f5cb823a594694d2ff7fa84248ed8c014c75769898",
+      "v2_sha256": "92c33751c830759910180b2475e1b540c82d228790ecf534703211ddc20d506d"
+    },
+    {
+      "path": "docs/14_1V1_BALANCE_AND_EXPERIMENTS.md",
+      "original_sha256": "6e1e855d4293fd9010bca62ca11641d9e92af60f24c7b93a1a618fc8028df5ae",
+      "v2_sha256": "b6c144f95695556f5331bccc9bea4a96e878fbf154bbaaad0064a19e5ad0bd7d"
+    }
+  ]
+}

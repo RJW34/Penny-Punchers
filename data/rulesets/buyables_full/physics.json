@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "units_scale": 1000,
+  "divide_rounding": "toward_zero",
+  "y_positive": "up",
+  "collision": "integer_AABB",
+  "floor_y": 0,
+  "stage_width_milli": 768000,
+  "camera_view_width_milli": 480000,
+  "gravity_milli": 900,
+  "normal_jump_velocity_milli": 13500,
+  "super_jump_velocity_milli": 15500,
+  "jump_horizontal_milli": 4000,
+  "normal_jump_landing_ticks": 3,
+  "jump_attack_landing_ticks": 4,
+  "jump_start_ticks": 4,
+  "dash_input_window": 10,
+  "no_air_steering": true,
+  "no_double_jump": true,
+  "no_air_dash": true,
+  "camera_is_not_collision_boundary": true,
+  "authored_movement_mode": "assign_velocity_and_integrate_without_additional_gravity"
+}

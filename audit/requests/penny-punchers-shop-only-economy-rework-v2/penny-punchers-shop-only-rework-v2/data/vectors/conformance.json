@@ -1,0 +1,633 @@
+{
+  "format": "PP_SHOP_V2_ORACLE_VECTORS_1",
+  "native_executed": false,
+  "note": "No collision/input recognition is executed. Normalize expected contract fields in production; Python snapshot hashes are not C# binary hashes.",
+  "cases": [
+    {
+      "id": "zero-bank-licensed-ex",
+      "input": {
+        "banks": [
+          600,
+          600
+        ],
+        "fighters": [
+          "rook",
+          "vale"
+        ],
+        "plans": [
+          [
+            "rook_pulse_ex_license"
+          ],
+          []
+        ],
+        "attempts": [
+          {
+            "seat": 0,
+            "move": "pulse_ex",
+            "id": "0"
+          },
+          {
+            "seat": 0,
+            "move": "pulse_ex",
+            "id": "1"
+          },
+          {
+            "seat": 0,
+            "move": "pulse_ex",
+            "id": "2"
+          },
+          {
+            "seat": 0,
+            "move": "pulse_ex",
+            "id": "3"
+          }
+        ]
+      },
+      "expected": {
+        "activation_results": [
+          "licensed",
+          "licensed",
+          "licensed",
+          "licensed"
+        ],
+        "bank": [
+          0,
+          600
+        ],
+        "super_uses": [
+          0,
+          0
+        ],
+        "owned": [
+          {
+            "pulse_ex": "ex_license"
+          },
+          {}
+        ]
+      }
+    },
+    {
+      "id": "rich-unowned",
+      "input": {
+        "banks": [
+          3600,
+          3600
+        ],
+        "fighters": [
+          "rook",
+          "vale"
+        ],
+        "plans": [
+          [],
+          []
+        ],
+        "attempts": [
+          {
+            "seat": 0,
+            "move": "pulse_ex",
+            "id": "a"
+          },
+          {
+            "seat": 0,
+            "move": "super_1",
+            "id": "b"
+          }
+        ]
+      },
+      "expected": {
+        "activation_results": [
+          "not_owned",
+          "not_owned"
+        ],
+        "bank": [
+          3600,
+          3600
+        ],
+        "super_uses": [
+          0,
+          0
+        ],
+        "owned": [
+          {},
+          {}
+        ]
+      }
+    },
+    {
+      "id": "one-super-use",
+      "input": {
+        "banks": [
+          900,
+          900
+        ],
+        "fighters": [
+          "rook",
+          "vale"
+        ],
+        "plans": [
+          [
+            "rook_super_1_permit"
+          ],
+          []
+        ],
+        "attempts": [
+          {
+            "seat": 0,
+            "move": "super_1",
+            "id": "a"
+          },
+          {
+            "seat": 0,
+            "move": "super_1",
+            "id": "b"
+          }
+        ]
+      },
+      "expected": {
+        "activation_results": [
+          "super_use",
+          "exhausted"
+        ],
+        "bank": [
+          0,
+          900
+        ],
+        "super_uses": [
+          0,
+          0
+        ],
+        "owned": [
+          {
+            "super_1": "super_permit"
+          },
+          {}
+        ]
+      }
+    },
+    {
+      "id": "illegal-super-kept",
+      "input": {
+        "banks": [
+          900,
+          900
+        ],
+        "fighters": [
+          "rook",
+          "vale"
+        ],
+        "plans": [
+          [
+            "rook_super_1_permit"
+          ],
+          []
+        ],
+        "attempts": [
+          {
+            "seat": 0,
+            "move": "super_1",
+            "id": "a",
+            "legal": false
+          }
+        ]
+      },
+      "expected": {
+        "activation_results": [
+          "illegal"
+        ],
+        "bank": [
+          0,
+          900
+        ],
+        "super_uses": [
+          1,
+          0
+        ],
+        "owned": [
+          {
+            "super_1": "super_permit"
+          },
+          {}
+        ]
+      }
+    },
+    {
+      "id": "mixed-ex-plus-super",
+      "input": {
+        "banks": [
+          2400,
+          2400
+        ],
+        "fighters": [
+          "rook",
+          "vale"
+        ],
+        "plans": [
+          [
+            "rook_pulse_ex_license",
+            "rook_rise_ex_license",
+            "rook_super_1_permit"
+          ],
+          []
+        ],
+        "attempts": [
+          {
+            "seat": 0,
+            "move": "pulse_ex",
+            "id": "a"
+          },
+          {
+            "seat": 0,
+            "move": "rise_ex",
+            "id": "b"
+          },
+          {
+            "seat": 0,
+            "move": "super_1",
+            "id": "c"
+          }
+        ]
+      },
+      "expected": {
+        "activation_results": [
+          "licensed",
+          "licensed",
+          "super_use"
+        ],
+        "bank": [
+          0,
+          2400
+        ],
+        "super_uses": [
+          0,
+          0
+        ],
+        "owned": [
+          {
+            "pulse_ex": "ex_license",
+            "rise_ex": "ex_license",
+            "super_1": "super_permit"
+          },
+          {}
+        ]
+      }
+    },
+    {
+      "id": "p2-license-independent",
+      "input": {
+        "banks": [
+          600,
+          600
+        ],
+        "fighters": [
+          "rook",
+          "vale"
+        ],
+        "plans": [
+          [],
+          [
+            "vale_pulse_ex_license"
+          ]
+        ],
+        "attempts": [
+          {
+            "seat": 1,
+            "move": "pulse_ex",
+            "id": "a"
+          },
+          {
+            "seat": 0,
+            "move": "pulse_ex",
+            "id": "b"
+          }
+        ]
+      },
+      "expected": {
+        "activation_results": [
+          "licensed",
+          "not_owned"
+        ],
+        "bank": [
+          600,
+          0
+        ],
+        "super_uses": [
+          0,
+          0
+        ],
+        "owned": [
+          {},
+          {
+            "pulse_ex": "ex_license"
+          }
+        ]
+      }
+    },
+    {
+      "id": "skill-rewards-on-loss",
+      "input": {
+        "banks": [
+          600,
+          600
+        ],
+        "plans": [
+          [
+            "rook_pulse_ex_license"
+          ],
+          []
+        ],
+        "facts": [
+          {
+            "event_id": "counter",
+            "tick": 1,
+            "earner": 0,
+            "root": "root1",
+            "origin_owner": 0,
+            "effective_owner": 0,
+            "outcome": "hit",
+            "attack_kind": "direct",
+            "contact_ordinal": 0,
+            "damage": 35,
+            "threat_damage": 35,
+            "accepted": true,
+            "attacker_grounded": true,
+            "attacker_prejump": false,
+            "defender_airborne": false,
+            "defender_voluntary_air": false,
+            "defender_disabled": false,
+            "defender_in_combo": false,
+            "defender_offensive_startup": true,
+            "parry_age": -1,
+            "fresh_manual_parry": false,
+            "parry_edge_frozen": false,
+            "training": false
+          },
+          {
+            "event_id": "anti",
+            "tick": 2,
+            "earner": 0,
+            "root": "root2",
+            "origin_owner": 0,
+            "effective_owner": 0,
+            "outcome": "hit",
+            "attack_kind": "direct",
+            "contact_ordinal": 0,
+            "damage": 35,
+            "threat_damage": 35,
+            "accepted": true,
+            "attacker_grounded": true,
+            "attacker_prejump": false,
+            "defender_airborne": true,
+            "defender_voluntary_air": true,
+            "defender_disabled": false,
+            "defender_in_combo": false,
+            "defender_offensive_startup": true,
+            "parry_age": -1,
+            "fresh_manual_parry": false,
+            "parry_edge_frozen": false,
+            "training": false
+          },
+          {
+            "event_id": "perfect",
+            "tick": 3,
+            "earner": 0,
+            "root": "enemy1",
+            "origin_owner": 1,
+            "effective_owner": 1,
+            "outcome": "parry",
+            "attack_kind": "direct",
+            "contact_ordinal": 0,
+            "damage": 0,
+            "threat_damage": 35,
+            "accepted": true,
+            "attacker_grounded": true,
+            "attacker_prejump": false,
+            "defender_airborne": false,
+            "defender_voluntary_air": false,
+            "defender_disabled": false,
+            "defender_in_combo": false,
+            "defender_offensive_startup": false,
+            "parry_age": 1,
+            "fresh_manual_parry": true,
+            "parry_edge_frozen": false,
+            "training": false
+          },
+          {
+            "event_id": "normal",
+            "tick": 4,
+            "earner": 0,
+            "root": "enemy2",
+            "origin_owner": 1,
+            "effective_owner": 1,
+            "outcome": "parry",
+            "attack_kind": "direct",
+            "contact_ordinal": 0,
+            "damage": 0,
+            "threat_damage": 35,
+            "accepted": true,
+            "attacker_grounded": true,
+            "attacker_prejump": false,
+            "defender_airborne": false,
+            "defender_voluntary_air": false,
+            "defender_disabled": false,
+            "defender_in_combo": false,
+            "defender_offensive_startup": false,
+            "parry_age": 2,
+            "fresh_manual_parry": true,
+            "parry_edge_frozen": false,
+            "training": false
+          }
+        ],
+        "winner": 1,
+        "terminal_tick": 6
+      },
+      "expected": {
+        "reward_results": [
+          {
+            "id": "reference:1:0:offense:root1",
+            "tick": 1,
+            "category": "counter_hit",
+            "nominal": 50,
+            "amount": 50
+          },
+          {
+            "id": "reference:1:0:offense:root2",
+            "tick": 2,
+            "category": "anti_air",
+            "nominal": 75,
+            "amount": 75
+          },
+          {
+            "id": "reference:1:0:defense:enemy1",
+            "tick": 3,
+            "category": "perfect_parry",
+            "nominal": 100,
+            "amount": 100
+          },
+          {
+            "amount": 0,
+            "reason": "ineligible"
+          }
+        ],
+        "fight_bank": [
+          0,
+          600
+        ],
+        "settlement": {
+          "key": "reference:settle:1",
+          "round": 1,
+          "rows": [
+            {
+              "seat": 0,
+              "before": 0,
+              "base_nominal": 1200,
+              "base_granted": 1200,
+              "skill_earned": 225,
+              "skill_granted": 225,
+              "clipped": 0,
+              "closing": 1425,
+              "old_tier": 0,
+              "new_tier": 1
+            },
+            {
+              "seat": 1,
+              "before": 600,
+              "base_nominal": 1200,
+              "base_granted": 1200,
+              "skill_earned": 0,
+              "skill_granted": 0,
+              "clipped": 0,
+              "closing": 1800,
+              "old_tier": 0,
+              "new_tier": 0
+            }
+          ],
+          "score_half_points": [
+            0,
+            2
+          ],
+          "match_over": false
+        },
+        "closing_bank": [
+          1425,
+          1800
+        ]
+      }
+    },
+    {
+      "id": "capped-aa-no-counter-fallback",
+      "input": {
+        "facts": [
+          {
+            "event_id": "1",
+            "tick": 1,
+            "earner": 0,
+            "root": "aa1",
+            "origin_owner": 0,
+            "effective_owner": 0,
+            "outcome": "hit",
+            "attack_kind": "direct",
+            "contact_ordinal": 0,
+            "damage": 35,
+            "threat_damage": 35,
+            "accepted": true,
+            "attacker_grounded": true,
+            "attacker_prejump": false,
+            "defender_airborne": true,
+            "defender_voluntary_air": true,
+            "defender_disabled": false,
+            "defender_in_combo": false,
+            "defender_offensive_startup": true,
+            "parry_age": -1,
+            "fresh_manual_parry": false,
+            "parry_edge_frozen": false,
+            "training": false
+          },
+          {
+            "event_id": "2",
+            "tick": 2,
+            "earner": 0,
+            "root": "aa2",
+            "origin_owner": 0,
+            "effective_owner": 0,
+            "outcome": "hit",
+            "attack_kind": "direct",
+            "contact_ordinal": 0,
+            "damage": 35,
+            "threat_damage": 35,
+            "accepted": true,
+            "attacker_grounded": true,
+            "attacker_prejump": false,
+            "defender_airborne": true,
+            "defender_voluntary_air": true,
+            "defender_disabled": false,
+            "defender_in_combo": false,
+            "defender_offensive_startup": true,
+            "parry_age": -1,
+            "fresh_manual_parry": false,
+            "parry_edge_frozen": false,
+            "training": false
+          },
+          {
+            "event_id": "3",
+            "tick": 3,
+            "earner": 0,
+            "root": "aa3",
+            "origin_owner": 0,
+            "effective_owner": 0,
+            "outcome": "hit",
+            "attack_kind": "direct",
+            "contact_ordinal": 0,
+            "damage": 35,
+            "threat_damage": 35,
+            "accepted": true,
+            "attacker_grounded": true,
+            "attacker_prejump": false,
+            "defender_airborne": true,
+            "defender_voluntary_air": true,
+            "defender_disabled": false,
+            "defender_in_combo": false,
+            "defender_offensive_startup": true,
+            "parry_age": -1,
+            "fresh_manual_parry": false,
+            "parry_edge_frozen": false,
+            "training": false
+          }
+        ]
+      },
+      "expected": {
+        "amounts": [
+          75,
+          75,
+          0
+        ],
+        "pending": 150,
+        "counts": {
+          "counter_hit": 0,
+          "anti_air": 2,
+          "perfect_parry": 0
+        }
+      }
+    },
+    {
+      "id": "corrected-prediction",
+      "input": {
+        "purchased": "rook_super_1_permit",
+        "then_restore_pre_start": true
+      },
+      "expected": {
+        "bank": [
+          0,
+          900
+        ],
+        "super_uses": [
+          1,
+          0
+        ],
+        "pending": [
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

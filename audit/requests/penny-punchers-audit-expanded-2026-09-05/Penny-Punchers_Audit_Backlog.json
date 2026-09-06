@@ -1,0 +1,1781 @@
+{
+  "metadata": {
+    "repository": "RJW34/Penny-Punchers",
+    "branch": "main",
+    "audited_commit": "1623ee62c4f4b6d5574bbb9909eb6fe4e32f5441",
+    "audit_date": "2026-09-05",
+    "audit_mode": "read-only pinned source, selected content, reports, history and test-harness review",
+    "native_build_or_gameplay_executed_here": false,
+    "latest_runtime_art_media_independently_viewed_here": false,
+    "remote_repository_changed": false,
+    "finding_count": 91,
+    "classification_counts": {
+      "source_defect": 10,
+      "source_gap": 25,
+      "design_risk": 18,
+      "verification_gap": 8,
+      "test_required": 11,
+      "polish_opportunity": 11,
+      "optional_feature": 8
+    },
+    "priority_counts": {
+      "P0": 1,
+      "P1": 43,
+      "P2": 43,
+      "P3": 4
+    },
+    "scope": "Original traditional 1v1 fighter; one persistent credit wallet replaces EX/super meter; no teams.",
+    "limitations": [
+      "The audit is not a fresh native build/test pass.",
+      "Latest After Hours footage and PNGs were not independently viewed here; visual recommendations are renderer/pipeline-based.",
+      "Selected ranges of large content and harness files were inspected; no claim of every byte or every asset being reviewed.",
+      "Repository-reported successful verification is distinguished from independent static findings.",
+      "Supplement executes independent arithmetic/content checks, not the production C# engine or a statistical balance trial."
+    ],
+    "priority_key": {
+      "P0": "First fix: fundamental play blocker",
+      "P1": "Next prototype iteration / explicit high-value validation",
+      "P2": "Planned improvement after core blockers",
+      "P3": "Optional expansion; not a completion requirement"
+    },
+    "classification_key": {
+      "source_defect": "Conflicting or faulty behavior follows from reviewed code; native reproduction still required here.",
+      "source_gap": "A concrete implementation/UX omission or brittleness; not necessarily a violated original contract.",
+      "test_required": "Specific source-derived hypothesis; must not be advertised as a reproduced bug.",
+      "design_risk": "A strategic or experience question requiring an explicit design decision or measurement.",
+      "verification_gap": "Evidence/acceptance still missing or too limited for the proposed claim.",
+      "polish_opportunity": "Presentation improvement, not proof of an observed visual/audio artifact.",
+      "optional_feature": "Potential addition, not a mandatory bug fix."
+    },
+    "supplement": {
+      "date": "2026-09-05",
+      "id_range": "PP-078–PP-091",
+      "source_revision_unchanged": true,
+      "analytical_python_test_methods_passed": 37,
+      "verified_source_files": 14,
+      "native_gameplay_executed_in_supplement": false,
+      "appendix": "Economy_and_Purchase_Balance_Addendum.md",
+      "protocol": "Economy_Playtest_Protocol.md",
+      "original_archive_sha256": "8362a031400e8fcf7c47fe19324aa1a379ad94a17ccde0f5525f1e11040ec27a"
+    }
+  },
+  "findings": [
+    {
+      "id": "PP-001",
+      "category": "Controls",
+      "priority": "P0",
+      "classification": "source_defect",
+      "title": "Default medium kick also routes to pause",
+      "evidence_basis": "DefaultPad assigns B to MK; ConfigureMenuActions assigns B to ui_cancel; Main._UnhandledInput treats ui_cancel as pause on the fight screen. RouteControlInput does not consume ordinary combat button events. This is a direct routing conflict; no native reproduction was performed here.",
+      "recommendation": "Use a separate gameplay pause action, normally Start/Escape. Limit menu cancel to menu contexts and preserve all six attack bindings, including rebound B.",
+      "acceptance_test": "In the exported GUI, press and release every default attack and chord button in a live fight for each seat; none may change screen. B must produce MK, and Start alone must pause. Repeat with B rebound to LP.",
+      "source_paths": [
+        "game/GameSettings.cs",
+        "game/Main.ControlRouting.cs",
+        "game/Main.cs",
+        "game/Main.UiSmoke.cs",
+        "src/StrikeLedger.CoreTests/Program.cs",
+        "AUDIT_GUIDE.md"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-002",
+      "category": "Camera",
+      "priority": "P1",
+      "classification": "source_defect",
+      "title": "Legal fighter separation exceeds visible arena width",
+      "evidence_basis": "Foundry allows walls at 0 and 768000 with fighter centers clamped approximately to 16000..752000. ArenaView displays width 480000 at the midpoint. At opposite bounds, the root positions map to roughly -341 and 1621 in a 1280-wide viewport. No maximum-separation constraint appears in the reviewed pushbox path.",
+      "recommendation": "Choose an explicit combat-space maximum separation independent of the camera, or a bounded camera fit rule. For a fixed-scale traditional fighter, a deterministic separation constraint is preferable to uncontrolled zoom. Record any geometry change and rebalance zoning.",
+      "acceptance_test": "Hold away with both players to the legal extremes and test corner knockback, projectiles and jumps. Both full fighting silhouettes must stay inside declared safe margins in all supported aspect ratios.",
+      "source_paths": [
+        "game/Presentation/ArenaView.cs",
+        "data/stages/foundry.json",
+        "src/StrikeLedger.Core/Simulation.Combat.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-003",
+      "category": "CPU",
+      "priority": "P1",
+      "classification": "source_defect",
+      "title": "Regular CPU purchases techniques its policy does not deliberately execute",
+      "evidence_basis": "ChoosePreparation buys rook_high_hook or vale_heel_arc. The regular Next policy issues standing/crouching normals, throws, jumps and predefined special sequences, but contains no deliberate 6+HP lease branch. Buying is disconnected from the fighting policy.",
+      "recommendation": "Make purchase choice and combat policy share a capability plan. Until a tool is supported, the CPU should not routinely spend on it. Evaluate threat value only against an opponent policy capable of responding to that threat.",
+      "acceptance_test": "For each CPU-selected item, produce seeded legal-input traces demonstrating intentional use in an appropriate situation. Verify that removing an unsupported item does not merely discard credits.",
+      "source_paths": [
+        "src/StrikeLedger.App/Bots.cs",
+        "data/economy.json",
+        "data/items.json",
+        "src/StrikeLedger.Core/Simulation.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-004",
+      "category": "CPU",
+      "priority": "P1",
+      "classification": "source_defect",
+      "title": "CPU super logic ignores actual selected-art affordability and Vale supers",
+      "evidence_basis": "canSuper uses a fixed 1500-credit threshold although selected arts cost 900, 1200 or 1500. The super-input branch exists only in the Rook branch of the ordinary CPU policy.",
+      "recommendation": "Read the selected move cost and command from content and support both fighters. Preserve observation delay and manual legal inputs.",
+      "acceptance_test": "At each selected art price, each fighter must have a seeded scenario that legally starts that art, with exactly one debit and no hidden extra funding.",
+      "source_paths": [
+        "src/StrikeLedger.App/Bots.cs",
+        "data/fighters/rook.json",
+        "data/items.json",
+        "data/fighters/vale.json"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-005",
+      "category": "Balance harness",
+      "priority": "P1",
+      "classification": "source_defect",
+      "title": "Lease policy does not encode current gambit commands",
+      "evidence_basis": "The lab handles a gambit command equal to HP+HK, while the authored feints use 4+HP+HK. Its other special-command branches do not handle that string. Starting a feint in a direct Core conformance fixture does not repair the lab policy.",
+      "recommendation": "Use a shared data-driven command encoder for the laboratory and test every rented move through the same recognizer used by the game.",
+      "acceptance_test": "Every rental selected by the experiment must have a verified, legal-input policy route. Specifically observe shop_step_feint and shop_sway_feint activations with their true commands.",
+      "source_paths": [
+        "release_docs/BALANCE_NOTES.md",
+        "src/StrikeLedger.BalanceLab/Program.cs",
+        "data/fighters/rook.json",
+        "data/items.json",
+        "game/Main.UiSmoke.cs",
+        "src/StrikeLedger.CoreTests/Program.cs",
+        "AUDIT_GUIDE.md"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-006",
+      "category": "Balance harness",
+      "priority": "P1",
+      "classification": "source_gap",
+      "title": "Fixed lexical rental selection does not evaluate all alternatives",
+      "evidence_basis": "Lease-focused preparation sorts by price then ID and takes the first affordable item in each slot. Repeating this policy does not compare both alternatives within each slot.",
+      "recommendation": "Create matched item-choice interventions and a capability-coverage report. Distinguish item availability, input reachability, actual selection, activation, and successful tactical use.",
+      "acceptance_test": "Each of the 12 items must appear in an explicit matched experiment or be marked untested. No broad claim of all-item balance may derive from one greedy selection policy.",
+      "source_paths": [
+        "release_docs/BALANCE_NOTES.md",
+        "src/StrikeLedger.BalanceLab/Program.cs",
+        "data/economy.json",
+        "data/items.json",
+        "src/StrikeLedger.Core/Simulation.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-007",
+      "category": "Training",
+      "priority": "P1",
+      "classification": "source_gap",
+      "title": "Players cannot equip rentals through the reviewed training menus",
+      "evidence_basis": "TrainingReset clears loadouts; the lab menus expose health, stun, credits, position, recordings and speed, but no lease loadout editor or shop-to-lab route. Tests can equip items programmatically; players need an equivalent usable workflow.",
+      "recommendation": "Add a training-only loadout selector and a Try in Lab action in the untimed catalog/pre-match practice flow, preserving the chosen fighter, opponent, art and credit context. It must not pause an opponent’s active competitive shop timer.",
+      "acceptance_test": "Every rental can be equipped, executed, compared with its replacement and removed entirely through normal controls. Returning from preview must not spend competitive credits.",
+      "source_paths": [
+        "src/StrikeLedger.App/Training.cs",
+        "game/Main.Training.cs",
+        "game/Main.LabState.cs",
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-008",
+      "category": "Shop UX",
+      "priority": "P1",
+      "classification": "source_gap",
+      "title": "Purchase cards omit their practical consequences",
+      "evidence_basis": "The local LeasePreview shows command, one-round duration and free activation. Item descriptions/tradeoffs are in data but are not presented as a useful comparison with the base move.",
+      "recommendation": "Use explicit cards: role, input, added/replaced move, what changes, limitation, remaining credits and a practice preview. Separate core information from optional frame data.",
+      "acceptance_test": "A first-time player can explain what they bought, what was replaced, how to execute it, and the opportunity cost without reading source or an external document.",
+      "source_paths": [
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs",
+        "data/economy.json",
+        "data/items.json",
+        "src/StrikeLedger.Core/Simulation.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-009",
+      "category": "Shop UX",
+      "priority": "P1",
+      "classification": "source_gap",
+      "title": "Online shop has less decision information than local shop",
+      "evidence_basis": "NetworkPreparation presents slot/name cycling, reserve and a post-lock balance, but omits the local command previews and item prices on its rows, and does not visibly expose the server-side preparation deadline.",
+      "recommendation": "Reuse the same shop component and card data for local and network modes, keeping only visibility/ownership rules different.",
+      "acceptance_test": "Identical legal plans display the same price, tool description, affordability, remaining time and projected wallet in both modes.",
+      "source_paths": [
+        "game/Main.Network.cs",
+        "src/StrikeLedger.App/PrivateMatchPeer.cs",
+        "src/StrikeLedger.App/RollbackSession.cs",
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-010",
+      "category": "Shop UX",
+      "priority": "P1",
+      "classification": "source_defect",
+      "title": "Unaffordable timeout plans are silently discarded",
+      "evidence_basis": "The local lock path replaces an invalid draft and reserve with an empty plan at timeout. The user can be shown a selection that is not what is committed, without a specific explanation of the fallback.",
+      "recommendation": "Keep drafts valid, or define a prominently communicated last-valid-plan policy. Always show the exact committed plan and explicit adjustments. Do not silently buy a different item.",
+      "acceptance_test": "Select an over-budget combination and let time expire. The user receives a deterministic, understandable result and a matching invoice/replay entry; no unexplained full wipe occurs.",
+      "source_paths": [
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-011",
+      "category": "Shop UX",
+      "priority": "P2",
+      "classification": "source_gap",
+      "title": "Unaffordable choices remain selectable with negative draft balances",
+      "evidence_basis": "The cycling interface allows illegal combinations and relies on ReadyPlan validation or timeout cleanup rather than preventing or explaining conflicts when selected.",
+      "recommendation": "Show disabled/replace-to-afford states, the conflicting purchase and the amount missing. Permit browsing unavailable items without making the committed draft invalid.",
+      "acceptance_test": "All selection paths, including reverse cycling, controller navigation and mouse clicks, maintain a valid plan or visibly separate browsing from committing.",
+      "source_paths": [
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-012",
+      "category": "Shop semantics",
+      "priority": "P1",
+      "classification": "design_risk",
+      "title": "Reserve floor can be mistaken for money available for a super",
+      "evidence_basis": "A reserve is a minimum remaining balance, not earmarked usable cash. At wallet 1200 and floor 900, a 300 EX is possible but a 900 super is blocked. The CPU comment describing a reserve as keeping EX attempts available is misleading.",
+      "recommendation": "Relabel it as protected savings for a future round and hide it under advanced planning initially. Explain blocked actions. Do not add a second wallet or super stock to solve the terminology.",
+      "acceptance_test": "Players correctly predict EX and super availability for several wallet/floor pairs and understand that current-round combat generates no replacement income.",
+      "source_paths": [
+        "data/economy.json",
+        "data/items.json",
+        "src/StrikeLedger.Core/Simulation.cs",
+        "src/StrikeLedger.App/Bots.cs",
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-013",
+      "category": "Shop semantics",
+      "priority": "P1",
+      "classification": "design_risk",
+      "title": "Local visible drafts and online hidden commitments create different games",
+      "evidence_basis": "Local preparation explicitly shows both draft panels; a player can lock before the opponent finishes responding. Online uses commitment hashes and simultaneous reveal. This is a material information-rule difference, not just a layout difference.",
+      "recommendation": "Decide and document the competitive information policy. Treat shared-screen local visibility as an explicit limitation or use a deliberately public shop policy consistently. Do not claim cryptographic privacy on a shared display.",
+      "acceptance_test": "Run a late-counterpick test in both modes. The resulting advantage and lock/unlock behavior must match the declared rules, including timeout cases.",
+      "source_paths": [
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs",
+        "game/Main.Network.cs",
+        "src/StrikeLedger.App/PrivateMatchPeer.cs",
+        "src/StrikeLedger.App/RollbackSession.cs",
+        "game/GameSettings.cs",
+        "game/Main.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-014",
+      "category": "Shop design",
+      "priority": "P1",
+      "classification": "design_risk",
+      "title": "Fixed slot prices are not evidence of tactical value",
+      "evidence_basis": "Prices are 900/600/300 by slot, while rentals have unlimited free activation for one round and compete with EX/super spending. These are different value models, and the recorded development did not establish item-level price balance.",
+      "recommendation": "Evaluate marginal matchup value over the free kit, rather than price by category alone. Include threat, punishability, execution, repeated use, and the cost of giving up paid conversions.",
+      "acceptance_test": "Each rental has an explicit tactical hypothesis and matched comparisons against a base-kit/no-rental alternative. Investigate near-zero use and universal-pick items without treating either statistic as conclusive alone.",
+      "source_paths": [
+        "data/economy.json",
+        "data/items.json",
+        "src/StrikeLedger.Core/Simulation.cs",
+        "release_docs/BALANCE_NOTES.md",
+        "src/StrikeLedger.BalanceLab/Program.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-015",
+      "category": "Shop design",
+      "priority": "P1",
+      "classification": "design_risk",
+      "title": "Rook feints have weak documented mechanical value",
+      "evidence_basis": "Rook step feint moves 13600 units over its movement window and locks a 16-tick action; sway moves 12800 backward. Sixteen ticks of free walking cover 48000 forward or 33600 backward. The rentals have no hitbox, invulnerability or cancel rule. A deceptive pose may still have value, but that needs demonstration.",
+      "recommendation": "Give each feint an explicit bait or spacing purpose, or replace it with a better-defined sidegrade. Do not make it a universal safe cancel or an invulnerable free escape. Test visual deception separately from movement distance.",
+      "acceptance_test": "Human trials must exhibit a repeatable situation in which the feint earns its cost versus a free movement option. Empty-space movement arithmetic is a baseline, not a complete balance verdict.",
+      "source_paths": [
+        "data/fighters/rook.json",
+        "data/items.json"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-016",
+      "category": "Shop design",
+      "priority": "P2",
+      "classification": "design_risk",
+      "title": "Low Drive and Low Turn need a meaningful comparison",
+      "evidence_basis": "These Rook moves share the inspected startup/active/recovery and hitbox payload. They differ in slot, price, command, special/unique classification and whether forward HP is replaced. Those differences can matter, so neither is automatically dominated.",
+      "recommendation": "Explain the actual trade: preserving forward HP and special cancel access versus cheaper command-normal replacement. Differentiate roles further only if playtesting shows redundant decisions.",
+      "acceptance_test": "The card comparison and training examples make their input/cancel/slot differences clear. Both must have a plausible reason to be chosen in different plans.",
+      "source_paths": [
+        "data/fighters/rook.json",
+        "data/items.json",
+        "src/StrikeLedger.Core/Simulation.Input.cs",
+        "src/StrikeLedger.Core/SimulationState.cs",
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-017",
+      "category": "Shop design",
+      "priority": "P2",
+      "classification": "design_risk",
+      "title": "Opening-round options depend heavily on the weakest purchases",
+      "evidence_basis": "With 600 starting credits, the player cannot rent a 900 signature; a 600 technique leaves no cash for EX, while a 300 gambit leaves one EX. If gambits lack value, the opening buy decision narrows substantially.",
+      "recommendation": "Playtest the first round separately from the late economy. Tune starter choices or prices only after demonstrating why buy, light-buy and save each have a sensible use.",
+      "acceptance_test": "Experienced players should not converge immediately on one opening plan for reasons unrelated to opponent, character or intended playstyle.",
+      "source_paths": [
+        "data/economy.json",
+        "data/items.json",
+        "src/StrikeLedger.Core/Simulation.cs",
+        "data/fighters/rook.json"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-018",
+      "category": "Economy balance",
+      "priority": "P1",
+      "classification": "verification_gap",
+      "title": "One-seed bot results do not establish competitive balance",
+      "evidence_basis": "The committed report covers 252 matches, 1620 rounds and one common seed with correlated mirrored cases. It explicitly disclaims human balance. Only a contract-enabling EX cancel change is reported, not a broad price/timing tuning pass.",
+      "recommendation": "Broaden seeds, strategies, matchups and human skill-matched pairs after fixing policy coverage. Keep descriptive statistics separate from causal or competitive claims.",
+      "acceptance_test": "Report paired outcomes, sample dependence, failed runs, confidence limitations and actual item coverage. Include multiple human pairs before accepting shop or combat feel.",
+      "source_paths": [
+        "release_docs/BALANCE_NOTES.md",
+        "src/StrikeLedger.BalanceLab/Program.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-019",
+      "category": "Economy balance",
+      "priority": "P2",
+      "classification": "design_risk",
+      "title": "Recovery, draws and wallet cap need adversarial incentives testing",
+      "evidence_basis": "The current economy has rising loss payouts, a 900 draw payout, a finite nine-round match and a 3600 cap. The existing controlled-losing experiment is helpful but does not rule out stronger policies; aggregate cap clipping alone is not evidence of a bad cap.",
+      "recommendation": "Test score-aware conserving, intentional ties, yielding, high-budget match point and comeback policies. Plot cap clipping by state and starting-budget stratum.",
+      "acceptance_test": "No policy should gain a broadly dominant match-winning advantage merely by refusing to fight. Clearly distinguish deliberate final-round spending from an exploit.",
+      "source_paths": [
+        "release_docs/BALANCE_NOTES.md",
+        "src/StrikeLedger.BalanceLab/Program.cs",
+        "data/economy.json",
+        "data/items.json",
+        "src/StrikeLedger.Core/Simulation.cs",
+        "data/rules.json"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-020",
+      "category": "Pacing",
+      "priority": "P1",
+      "classification": "design_risk",
+      "title": "Match and preparation pacing lack human acceptance",
+      "evidence_basis": "Fight time is 60 seconds, preparation 15, reveal 3 and countdown 2, with up to nine rounds. Recorded native timing runs are not a human decision-time study.",
+      "recommendation": "Measure active play, reading, decisions, waiting and repeats. Provide a learn mode without shop pressure and efficient competitive preparation with early ready and saved plans.",
+      "acceptance_test": "Observe complete friend-versus-friend sets: no unexplained waiting, frequent timeout confusion or desire to skip the defining shop. Select final defaults from those observations.",
+      "source_paths": [
+        "data/rules.json",
+        "data/economy.json",
+        "data/items.json",
+        "src/StrikeLedger.Core/Simulation.cs",
+        "reports/STATE.json",
+        "reports/AFTER_HOURS_INTEGRATION.md"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-021",
+      "category": "Content plumbing",
+      "priority": "P1",
+      "classification": "source_gap",
+      "title": "Shop money displays and some limits bypass canonical content",
+      "evidence_basis": "DraftCost hardcodes 900/600/300; preparation timing, cap/income projections and HUD EX/art costs also contain literals. Current data agrees, but future tuning can make the interface lie while Core charges the real item price.",
+      "recommendation": "Expose typed read-only rules and a single affordability/plan-preview service. Remove duplicated price formulas and content-sensitive labels from UI code.",
+      "acceptance_test": "Change one item price and an activation price in an isolated valid tuning fixture. Every preview, debit, HUD label, bot decision and replay must agree.",
+      "source_paths": [
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs",
+        "game/Main.ArtSkin.cs",
+        "game/Main.Rendering.cs",
+        "game/Main.cs",
+        "src/StrikeLedger.Core/GameContent.cs",
+        "data/economy.json",
+        "data/items.json",
+        "src/StrikeLedger.Core/Simulation.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-022",
+      "category": "Content plumbing",
+      "priority": "P2",
+      "classification": "source_gap",
+      "title": "Item-array order silently defines shop slots",
+      "evidence_basis": "ItemsFor filters by fighter; draft access assumes each slot occupies exactly two consecutive positions. The semantic slot field is not used for grouping the UI.",
+      "recommendation": "Build explicit slot-to-item collections with stable IDs and declared display order. Do not encode a menu selection as an index into a global content array.",
+      "acceptance_test": "Randomly reorder items.json without changing its meaning. The shop must retain the same slot membership, prices and moves.",
+      "source_paths": [
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs",
+        "src/StrikeLedger.Core/GameContent.cs",
+        "game/Main.ArtSkin.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-023",
+      "category": "CPU",
+      "priority": "P2",
+      "classification": "source_gap",
+      "title": "Regular CPU cannot meaningfully adapt to revealed equipment",
+      "evidence_basis": "BotObservation lacks opponent leases, selected-art cost and detailed spending context. The policy reacts primarily to distance/action and uses fixed purchases.",
+      "recommendation": "Add a bounded delayed observation of public loadout and wallet information and a few explicit, testable economic strategies. Do not read opponent input or future state.",
+      "acceptance_test": "Against different revealed tools, a bot can demonstrate relevant counterplay and budget behavior without violating the reaction/input contract.",
+      "source_paths": [
+        "src/StrikeLedger.App/Bots.cs",
+        "game/Main.Network.cs",
+        "src/StrikeLedger.App/PrivateMatchPeer.cs",
+        "src/StrikeLedger.App/RollbackSession.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-024",
+      "category": "Training correctness",
+      "priority": "P1",
+      "classification": "test_required",
+      "title": "Link and hit-confirm drills can use weak success predicates",
+      "evidence_basis": "TrainingSession marks a link from a normal started while actionable within 40 ticks of an earlier hit, then a hit with that move. It does not explicitly require continuous defender hitstun. Similar recent-hit/contact predicates deserve negative examples.",
+      "recommendation": "Track combo/action identity, defender actionable gaps and the precise contact that authorizes a cancel. Separate a link, a reset and a blocked cancel.",
+      "acceptance_test": "A delayed reset after the dummy recovers must fail the link drill; true links must pass. A blocked follow-up after a prior unrelated hit must not pass a hit-confirm test.",
+      "source_paths": [
+        "src/StrikeLedger.App/Training.cs",
+        "game/Main.Training.cs",
+        "game/Main.LabState.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-025",
+      "category": "Training UX",
+      "priority": "P2",
+      "classification": "source_gap",
+      "title": "Advanced drills rely on generic sparring rather than precise practice feeds",
+      "evidence_basis": "Several parry, quick-rise and reversal drills select Conservative as their dummy behavior, rather than a deterministic attack script tailored to the skill.",
+      "recommendation": "Provide recorded demonstrations, clear reset positions and a drill-specific repeatable opponent sequence with optional randomization after mastery.",
+      "acceptance_test": "A learner can repeat the exact target interaction immediately, see why an attempt failed and complete it on either facing without waiting for a lucky bot action.",
+      "source_paths": [
+        "src/StrikeLedger.App/Training.cs",
+        "game/Main.Training.cs",
+        "game/Main.LabState.cs",
+        "src/StrikeLedger.App/Bots.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-026",
+      "category": "Training UX",
+      "priority": "P2",
+      "classification": "source_gap",
+      "title": "Training lineup is constrained to the opposite character",
+      "evidence_basis": "TrainingSession constructs the dummy as the other fighter and leaves its super at the default. StartLab overwrites fighter[1] with that choice. Mirror-match and arbitrary opponent-art lab setups are not exposed in this path.",
+      "recommendation": "Allow independent fighter, art, palette and equipment selection for both training actors. Synchronize the HUD to authoritative selected supers.",
+      "acceptance_test": "Practice Rook/Rook, Vale/Vale and both mixed orientations with every selected super and loadout; labels must match the actual simulation.",
+      "source_paths": [
+        "src/StrikeLedger.App/Training.cs",
+        "game/Main.Training.cs",
+        "game/Main.LabState.cs",
+        "game/Main.ArtSkin.cs",
+        "game/Main.Rendering.cs",
+        "game/Main.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-027",
+      "category": "Replay UX",
+      "priority": "P2",
+      "classification": "source_defect",
+      "title": "Loading a replay from paused playback does not reset shell playback state",
+      "evidence_basis": "ReplayControls sets paused=true. Its archive button can load another recording through ReplayMenu; that callback replaces the replay but does not clear paused or reset replayAccumulator. A fresh replay can inherit the prior paused/partial-step state.",
+      "recommendation": "Use one replay-start lifecycle that initializes pause, accumulators, effects and input overlays explicitly.",
+      "acceptance_test": "Open replay A, pause, choose archive, load B, and verify B starts in its declared playback state with no inherited fractional step or old effect.",
+      "source_paths": [
+        "src/StrikeLedger.App/Replay.cs",
+        "game/Main.Replays.cs",
+        "game/Main.Menus.cs",
+        "game/Main.EconomyReport.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-028",
+      "category": "Replay UX",
+      "priority": "P2",
+      "classification": "source_defect",
+      "title": "Results claim a replay was saved even after a save error",
+      "evidence_basis": "SaveReplay catches errors and returns void; FinishMatch uses an unconditional saved message. The success message can contradict an error toast.",
+      "recommendation": "Return a structured save result and display its actual outcome and path. Keep the match result usable even when storage fails.",
+      "acceptance_test": "Use a read-only or full destination. Results must clearly say saving failed, retain the in-memory recording and offer retry without implying a file exists.",
+      "source_paths": [
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs",
+        "src/StrikeLedger.App/Replay.cs",
+        "game/Main.Replays.cs",
+        "game/Main.EconomyReport.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-029",
+      "category": "Replay UX",
+      "priority": "P2",
+      "classification": "source_gap",
+      "title": "Archive sorts filenames and only exposes eight entries",
+      "evidence_basis": "ReplayMenu takes the first eight paths from lexicographic descending order. Prefixes such as private- and match- influence ordering before the timestamp, and there is no reviewed pagination path.",
+      "recommendation": "Index replay metadata by creation time, matchup, result, version and completion status; add scrolling, filters and explicit import errors.",
+      "acceptance_test": "With more than eight mixed local/private recordings, the actual newest entry appears first and every valid recording remains reachable.",
+      "source_paths": [
+        "src/StrikeLedger.App/Replay.cs",
+        "game/Main.Replays.cs",
+        "game/Main.Menus.cs",
+        "game/Main.EconomyReport.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-030",
+      "category": "Replay reliability",
+      "priority": "P2",
+      "classification": "test_required",
+      "title": "Replay corruption during playback needs a safe error boundary",
+      "evidence_basis": "The import callback catches header/load failures, but state/hash/debit mismatches can arise later in ReplayPlayer.Apply, called from playback ticks and seek callbacks.",
+      "recommendation": "Catch playback verification failures at the shell boundary, pause playback, preserve diagnostics and return to the archive without crashing or falsely labeling the remainder verified.",
+      "acceptance_test": "Tamper a later command in an otherwise loadable recording. Playback must stop at the failing tick and show a useful mismatch report.",
+      "source_paths": [
+        "src/StrikeLedger.App/Replay.cs",
+        "game/Main.Replays.cs",
+        "game/Main.Menus.cs",
+        "game/Main.EconomyReport.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-031",
+      "category": "Replay reliability",
+      "priority": "P2",
+      "classification": "source_gap",
+      "title": "Replay persistence lacks collision-proof names and atomic replacement",
+      "evidence_basis": "SaveReplay uses timestamps only to the second and ReplayFormat.Save writes directly to the destination. Rapid saves or interrupted writes can overwrite or damage an archive entry.",
+      "recommendation": "Use unique immutable recording IDs and temporary-write/atomic-rename persistence. Separate user labels from identity.",
+      "acceptance_test": "Two saves in one second create two independently valid files; an interrupted write never destroys an existing verified replay.",
+      "source_paths": [
+        "src/StrikeLedger.App/Replay.cs",
+        "game/Main.Replays.cs",
+        "game/Main.Menus.cs",
+        "game/Main.EconomyReport.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-032",
+      "category": "Netplay feel",
+      "priority": "P1",
+      "classification": "design_risk",
+      "title": "All presentation events wait for confirmed remote input",
+      "evidence_basis": "RollbackSession drains only confirmed events, including local ActionStarted. This protects irreversible receipts but can delay responsive local attack sounds and effects under network latency.",
+      "recommendation": "Split reversible presentation from confirmed accounting/result events. Predict local reversible cues, key them by stable action IDs and reconcile without duplicates; keep payouts/results authoritative.",
+      "acceptance_test": "Under controlled latency, measure button-to-local-cue delay and reconcile corrections. No doubled sound, false permanent KO or incorrect debit is allowed.",
+      "source_paths": [
+        "game/Main.Rendering.cs",
+        "src/StrikeLedger.App/RollbackSession.cs",
+        "src/StrikeLedger.Core/SimulationState.cs",
+        "game/Main.Network.cs",
+        "src/StrikeLedger.App/PrivateMatchPeer.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-033",
+      "category": "Netplay presentation",
+      "priority": "P1",
+      "classification": "source_gap",
+      "title": "Delayed impacts use current positions rather than contact-time positions",
+      "evidence_basis": "CombatEvent carries actors/move but not contact coordinates. ObserveChanges resolves victim/actor coordinates from the current simulation when the event is drained, which may be later than the contact in netplay.",
+      "recommendation": "Attach canonical event-time contact data or recover it from the event snapshot. Age short effects correctly when confirmed late.",
+      "acceptance_test": "With artificial delay and fast moving actors/projectiles, hit/parry/block sparks appear at the original contact, not at a later fighter location.",
+      "source_paths": [
+        "game/Main.Rendering.cs",
+        "src/StrikeLedger.App/RollbackSession.cs",
+        "src/StrikeLedger.Core/SimulationState.cs",
+        "src/StrikeLedger.Core/Simulation.Combat.cs",
+        "src/StrikeLedger.Core/Simulation.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-034",
+      "category": "Netplay UX",
+      "priority": "P2",
+      "classification": "source_gap",
+      "title": "Both peers must manually duplicate the entire lineup",
+      "evidence_basis": "The UI constructs a full MatchConfig independently on each machine and Hello rejects any mismatch. This is safe validation but a brittle connection workflow.",
+      "recommendation": "Add a small private lobby with seat-owned selections, a visible rules/content fingerprint and one agreed ready transition.",
+      "acceptance_test": "Two users can choose their own fighters/arts without coordinating the other seat by voice; incompatible content still fails explicitly.",
+      "source_paths": [
+        "game/Main.Network.cs",
+        "src/StrikeLedger.App/PrivateMatchPeer.cs",
+        "src/StrikeLedger.App/RollbackSession.cs",
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-035",
+      "category": "Netplay lifecycle",
+      "priority": "P2",
+      "classification": "source_defect",
+      "title": "Some exit paths dispose the peer without sending disconnect",
+      "evidence_basis": "Title/exit/controller-loss paths dispose the peer. PrivateMatchPeer.Dispose closes transport while Disconnect is a separate method. The other endpoint can wait for timeout instead of receiving a prompt clean departure.",
+      "recommendation": "Centralize best-effort graceful leave before disposal, with bounded shutdown and an explicit incomplete-match result. Never award an unconfirmed round.",
+      "acceptance_test": "Quit from fight, menu and controller-loss paths on either peer. The other side promptly explains the departure without hanging or granting predicted income.",
+      "source_paths": [
+        "game/Main.Network.cs",
+        "src/StrikeLedger.App/PrivateMatchPeer.cs",
+        "src/StrikeLedger.App/RollbackSession.cs",
+        "game/GameSettings.cs",
+        "game/Main.ControlRouting.cs",
+        "game/Main.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-036",
+      "category": "Netplay synchronization",
+      "priority": "P1",
+      "classification": "test_required",
+      "title": "Pause/resume needs asymmetric-latency tests",
+      "evidence_basis": "Pause and Resume switch local status immediately and send a round-only control message without an agreed execution tick. This can produce different pause boundaries under delay; the current effect on synchronization needs execution evidence.",
+      "recommendation": "Define an agreed pause tick or verified pause barrier and an unpause countdown appropriate to private matches.",
+      "acceptance_test": "Inject asymmetric delay/reordering while pausing during input prediction, a super and a terminal event. Both simulations converge without stuck queues, accidental movement or duplicate settlement.",
+      "source_paths": [
+        "game/Main.Network.cs",
+        "src/StrikeLedger.App/PrivateMatchPeer.cs",
+        "src/StrikeLedger.App/RollbackSession.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-037",
+      "category": "Netplay UX",
+      "priority": "P2",
+      "classification": "source_gap",
+      "title": "Private rematch returns to connection setup",
+      "evidence_basis": "The result path sends private players back to NetworkMenu instead of negotiating an in-session rematch.",
+      "recommendation": "Add mutual rematch/return-to-lobby controls with a fresh session match ID and zero cross-match economic carryover.",
+      "acceptance_test": "Run repeated private rematches with swapped seats and character/art changes; old inputs, plans and money cannot leak forward.",
+      "source_paths": [
+        "game/Main.Network.cs",
+        "src/StrikeLedger.App/PrivateMatchPeer.cs",
+        "src/StrikeLedger.App/RollbackSession.cs",
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-038",
+      "category": "Performance",
+      "priority": "P2",
+      "classification": "test_required",
+      "title": "Canonical serialization allocates repeatedly in the hot path",
+      "evidence_basis": "Hash, Capture, snapshot Bytes and Restore make repeated arrays/streams or new simulations; rollback stores full snapshots around steps. This is a profiling target, not proof it caused reported stalls.",
+      "recommendation": "Profile allocations and frame-phase costs before optimizing. Cache or pool safe buffers, preserve canonical order, and retain replay/hash equivalence.",
+      "acceptance_test": "Compare allocation rate, GC pauses and worst frames under rollback stress before/after optimization; all deterministic fixtures stay byte-identical where semantics are unchanged.",
+      "source_paths": [
+        "src/StrikeLedger.Core/Simulation.Serialization.cs",
+        "src/StrikeLedger.App/RollbackSession.cs",
+        "release_docs/KNOWN_LIMITATIONS.md",
+        "game/Main.Network.cs",
+        "src/StrikeLedger.App/PrivateMatchPeer.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-039",
+      "category": "Performance",
+      "priority": "P1",
+      "classification": "verification_gap",
+      "title": "The recorded half-second frame outlier is unattributed",
+      "evidence_basis": "The current Windows pacing report records p99 around 17.316 ms but a worst interval around 557.276 ms. It does not establish whether the outlier occurred in combat, a transition, loading or unrelated scheduling.",
+      "recommendation": "Add phase markers, frame histograms, GC/asset/I/O tracing and repeated cold/warm runs. Do not describe the single outlier as a confirmed combat hitch without attribution.",
+      "acceptance_test": "Explain all substantial stalls and establish an explicit interactive-combat frame budget on the actual target machine; keep movie-capture timing separate.",
+      "source_paths": [
+        "src/StrikeLedger.Core/Simulation.Serialization.cs",
+        "src/StrikeLedger.App/RollbackSession.cs",
+        "release_docs/KNOWN_LIMITATIONS.md",
+        "reports/STATE.json",
+        "reports/AFTER_HOURS_INTEGRATION.md"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-040",
+      "category": "Combat edges",
+      "priority": "P1",
+      "classification": "test_required",
+      "title": "Simultaneous command throws lack an explicit second-pass arbitration",
+      "evidence_basis": "Throw attempts are collected before application. Mutual techable throws are special-cased, but queued untechable/mixed attempts are then applied after the first may already clear or knock down the second attacker.",
+      "recommendation": "Specify mutual-command and mixed-throw outcomes, then arbitrate from one immutable contact snapshot with a documented symmetric rule.",
+      "acceptance_test": "Mirrored exact-frame command/command and command/normal throw cases produce the declared outcome without executing a stale invalidated attempt or introducing a seat-order advantage.",
+      "source_paths": [
+        "src/StrikeLedger.Core/Simulation.Combat.cs",
+        "src/StrikeLedger.Core/Simulation.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-041",
+      "category": "Combat edges",
+      "priority": "P1",
+      "classification": "test_required",
+      "title": "Air parry arm can survive a landing transition",
+      "evidence_basis": "CanParry treats ParryKind.Air as valid for any parryable hit without checking Grounded. The reviewed landing path does not explicitly clear or convert an armed air parry.",
+      "recommendation": "Define whether an air parry expires on landing; enforce the chosen high/low and landing-recovery semantics explicitly.",
+      "acceptance_test": "Tap an air parry immediately before landing into low and overhead attacks. The result must follow the declared grounded/air rule, not leftover state.",
+      "source_paths": [
+        "src/StrikeLedger.Core/Simulation.Combat.cs",
+        "src/StrikeLedger.Core/Simulation.cs",
+        "src/StrikeLedger.Core/Simulation.Input.cs",
+        "src/StrikeLedger.Core/SimulationState.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-042",
+      "category": "Combat edges",
+      "priority": "P1",
+      "classification": "test_required",
+      "title": "Taunt bypasses the normal action-start parry cleanup",
+      "evidence_basis": "Taunt is implemented as a recognition-time DashTicks mutation rather than TryStartAction. The normal paid/free action-start path clears parry; this taunt branch does not visibly do so.",
+      "recommendation": "Route taunts through a normal explicit action transition or duplicate all intentional commitment invariants with tests.",
+      "acceptance_test": "Arm forward parry and taunt on the same tick, then strike during the taunt. No unintended free defense survives a supposedly committed taunt.",
+      "source_paths": [
+        "src/StrikeLedger.Core/Simulation.Input.cs",
+        "src/StrikeLedger.Core/SimulationState.cs",
+        "src/StrikeLedger.Core/Simulation.Combat.cs",
+        "src/StrikeLedger.Core/Simulation.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-043",
+      "category": "Combat feel",
+      "priority": "P1",
+      "classification": "source_gap",
+      "title": "Hurt silhouettes are generic outside active hitbox extension",
+      "evidence_basis": "Hurtboxes select standing/crouching/air rectangles and append reduced active-limb rectangles. They are not authored for each startup, active and recovery pose.",
+      "recommendation": "Author combat-relevant per-phase/per-frame hurtboxes and move them with meaningful silhouette changes. Preserve intentional disjoint and punish windows instead of tracing every decorative pixel.",
+      "acceptance_test": "Use paused overlays and human whiff-punish tests for both facings. A visibly extended recovering limb behaves according to an explicit combat rule.",
+      "source_paths": [
+        "src/StrikeLedger.Core/Simulation.Combat.cs",
+        "src/StrikeLedger.Core/Simulation.cs",
+        "game/Presentation/FighterSprites.cs",
+        "game/Presentation/FighterPalette.gdshader",
+        "reports/AFTER_HOURS_INTEGRATION.md"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-044",
+      "category": "Combat feel",
+      "priority": "P2",
+      "classification": "test_required",
+      "title": "Midair facing and blocked posture transitions need feel validation",
+      "evidence_basis": "UpdateFacing follows the broad Actionable flag, which can include a neutral airborne fighter; crouch/guard presentation also follows stored posture. These policies should be intentional rather than incidental consequences of a shared flag.",
+      "recommendation": "Test cross-ups, neutral air turns, landing guard switches and charge retention against the intended original rules. Document chosen deviations from Third Strike rather than claiming exact emulation.",
+      "acceptance_test": "Mirrored cross-up/landing cases produce predictable controls, sprite facing and hurtbox posture without unexplained charge loss or guard appearance.",
+      "source_paths": [
+        "src/StrikeLedger.Core/Simulation.Input.cs",
+        "src/StrikeLedger.Core/SimulationState.cs",
+        "src/StrikeLedger.Core/Simulation.Combat.cs",
+        "src/StrikeLedger.Core/Simulation.cs",
+        "game/Main.ArtSkin.cs",
+        "game/Main.Rendering.cs",
+        "game/Main.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-045",
+      "category": "Controls feel",
+      "priority": "P1",
+      "classification": "verification_gap",
+      "title": "Strict command timing has not been accepted by actual players",
+      "evidence_basis": "The command UI documents same-tick fresh PP/KK edges and the rules use no ordinary link buffer. These are deliberate choices, not automatically defects, but software input checks do not establish comfortable hardware execution.",
+      "recommendation": "Run physical pad/stick/leverless timing tests with input diagnostics. Tune narrowly and record differences; retain manual motions and a clear competitive preset.",
+      "acceptance_test": "Two experienced players can reproduce intended motions, chords, charge releases, reversals and links on both sides with explainable failures.",
+      "source_paths": [
+        "src/StrikeLedger.Core/Simulation.Input.cs",
+        "src/StrikeLedger.Core/SimulationState.cs",
+        "game/GameSettings.cs",
+        "game/Main.ControlRouting.cs",
+        "game/Main.cs",
+        "reports/STATE.json",
+        "reports/AFTER_HOURS_INTEGRATION.md",
+        "data/rules.json"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-046",
+      "category": "Controls breadth",
+      "priority": "P2",
+      "classification": "source_gap",
+      "title": "Analog triggers are not supported as action bindings",
+      "evidence_basis": "Pad mappings and capture accept JoyButton values, while the reviewed raw sampler reads only the left-stick axes for directions. Trigger axes do not have an action-binding path.",
+      "recommendation": "Add typed button/axis bindings with press/release thresholds and hysteresis. Preserve dedicated menu/pause routing.",
+      "acceptance_test": "Map an EX chord or attack to either trigger and test hold, release, chatter, hotplug and simultaneous directions on physical hardware.",
+      "source_paths": [
+        "game/GameSettings.cs",
+        "game/Main.ControlRouting.cs",
+        "game/Main.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-047",
+      "category": "Controls portability",
+      "priority": "P2",
+      "classification": "test_required",
+      "title": "Keyboard sampling combines physical and logical bindings unconditionally",
+      "evidence_basis": "ReadRaw uses IsPhysicalKeyPressed OR IsKeyPressed for each configured key. This may alias different physical keys on non-QWERTY layouts rather than behaving as a fallback only when scan codes are unavailable.",
+      "recommendation": "Separate physical-position bindings from explicit logical-key accessibility fallback and test their interaction.",
+      "acceptance_test": "On alternate layouts and injected-event paths, each bound action has exactly the intended physical/logical source and no unintended duplicate control.",
+      "source_paths": [
+        "game/GameSettings.cs",
+        "game/Main.ControlRouting.cs",
+        "game/Main.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-048",
+      "category": "Art fidelity",
+      "priority": "P1",
+      "classification": "polish_opportunity",
+      "title": "Mapped move phases are not complete bespoke animations",
+      "evidence_basis": "The integration report explicitly says the renderer composes moves from shared anticipation/recovery key poses. Its 415 selection checks establish coverage, not unique in-betweens or animation quality.",
+      "recommendation": "Prioritize unique idle/walk/turn, high-frequency normals, hit/guard/parry, throw and recovery animations. Then refine EX/super sequences. Use original art consistent with the desired arcade feel.",
+      "acceptance_test": "Review complete legal-input matches at normal speed plus frame strips; every key move reads clearly and both fighters have distinct movement personality.",
+      "source_paths": [
+        "game/Presentation/FighterSprites.cs",
+        "game/Presentation/FighterPalette.gdshader",
+        "reports/AFTER_HOURS_INTEGRATION.md",
+        "reports/STATE.json"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-049",
+      "category": "Art timing",
+      "priority": "P2",
+      "classification": "polish_opportunity",
+      "title": "Cel timing is uniformly distributed within broad action phases",
+      "evidence_basis": "FighterSprites selects cels proportionally across startup/active/recovery; loop states use fixed tick intervals. This limits authored anticipation, impact holds and follow-through.",
+      "recommendation": "Add explicit per-cel holds and event markers tied to the immutable combat timeline. Do not stretch active windows to fit a drawing.",
+      "acceptance_test": "Visual first-active, contact, recovery and cancellable frames line up with debug timelines, including hitstop, superfreeze, slow motion and rollback.",
+      "source_paths": [
+        "game/Presentation/FighterSprites.cs",
+        "game/Presentation/FighterPalette.gdshader",
+        "reports/AFTER_HOURS_INTEGRATION.md",
+        "game/Main.Rendering.cs",
+        "src/StrikeLedger.App/RollbackSession.cs",
+        "src/StrikeLedger.Core/SimulationState.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-050",
+      "category": "Art pipeline",
+      "priority": "P2",
+      "classification": "polish_opportunity",
+      "title": "Runtime magenta keying is a provisional asset pipeline",
+      "evidence_basis": "Current fighter sheets are RGB matte images, and the shader removes magenta. The integration report is honest about this; no actual edge artifact was independently viewed in this audit.",
+      "recommendation": "Prepare genuine alpha assets offline with edge/color cleanup and provenance preservation. Validate over light, dark and moving backgrounds.",
+      "acceptance_test": "Inspect every selected cel for opaque matte remnants, colored fringe, missing costume pixels and alpha consistency. Retain hashes and source boards.",
+      "source_paths": [
+        "game/Presentation/FighterSprites.cs",
+        "game/Presentation/FighterPalette.gdshader",
+        "reports/AFTER_HOURS_INTEGRATION.md"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-051",
+      "category": "Art pipeline",
+      "priority": "P2",
+      "classification": "polish_opportunity",
+      "title": "Heuristic palette recoloring is fragile",
+      "evidence_basis": "The palette shader identifies costume pixels with RGB threshold tests rather than authored masks. This can affect unrelated colors as art evolves.",
+      "recommendation": "Use palette indices or explicit material masks and an accessible alternate costume with stable silhouette contrast.",
+      "acceptance_test": "Compare all cel states in both palettes; intended material colors change and skin, shadows, effects and edges remain correct.",
+      "source_paths": [
+        "game/Presentation/FighterSprites.cs",
+        "game/Presentation/FighterPalette.gdshader",
+        "reports/AFTER_HOURS_INTEGRATION.md"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-052",
+      "category": "UI fidelity",
+      "priority": "P2",
+      "classification": "polish_opportunity",
+      "title": "Portraits are stretched into incompatible aspect ratios",
+      "evidence_basis": "TextureRects use Scale, and face crops around 274x335 are displayed in square or near-square rectangles. This mathematically changes aspect ratio even without a screenshot review.",
+      "recommendation": "Use aspect-preserving crop-to-fill or contain layouts with a consistent portrait camera/crop specification.",
+      "acceptance_test": "Portrait proportions remain consistent across select, HUD, results and shop, including mirrored matchups and supported resolutions.",
+      "source_paths": [
+        "game/Main.ArtSkin.cs",
+        "game/Main.Rendering.cs",
+        "game/Main.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-053",
+      "category": "UI fidelity",
+      "priority": "P2",
+      "classification": "source_gap",
+      "title": "Menu layout and focus ownership depend on pixel coordinates",
+      "evidence_basis": "Controls are placed at fixed 1280x720 coordinates; preparation focus infers seat and row from X/Y thresholds. This is brittle under UI growth, font scaling and accessibility changes.",
+      "recommendation": "Use reusable semantic panels, containers, focus neighbors and explicit seat/slot ownership. Provide safe scaling and scrolling.",
+      "acceptance_test": "Large text, long item names, keyboard/pad navigation and all supported resolutions preserve readable, reachable controls without overlap.",
+      "source_paths": [
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs",
+        "game/GameSettings.cs",
+        "game/Main.cs",
+        "game/Main.ArtSkin.cs",
+        "game/Main.Rendering.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-054",
+      "category": "UI fidelity",
+      "priority": "P2",
+      "classification": "polish_opportunity",
+      "title": "Typography and shop labels do not yet match the authored art direction",
+      "evidence_basis": "The interface uses ThemeDB.FallbackFont while decoration is supplied by After Hours image boards. This is a source-based integration observation, not a visual verdict from current footage.",
+      "recommendation": "Adopt a licensed, readable UI type system with heading/body/numeric styles, controller glyphs, alignment and contrast standards. Keep dynamic text as actual text.",
+      "acceptance_test": "Wallets, costs, commands and focus states are readable at the smallest target display and from couch distance; no essential instructions are baked into images.",
+      "source_paths": [
+        "game/Main.ArtSkin.cs",
+        "game/Main.Rendering.cs",
+        "game/Main.cs",
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs",
+        "AUDIT_GUIDE.md",
+        "README.md",
+        "docs/00_PRODUCT_CONTRACT.md",
+        "docs/01_DECISIONS_AND_AUTHORITY.md"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-055",
+      "category": "HUD fidelity",
+      "priority": "P2",
+      "classification": "source_gap",
+      "title": "HUD assumes fixed health and art-price formulas",
+      "evidence_basis": "Health is divided by 1000 instead of MaxHealth; EX and art prices are encoded as literals/formulas. These match current content but obstruct reliable tuning and roster growth.",
+      "recommendation": "Render authoritative normalized health, selected-art data and affordability from the simulation/content model.",
+      "acceptance_test": "A controlled max-health/cost variation displays correctly without changing UI code; replays and training show their actual selected arts.",
+      "source_paths": [
+        "game/Main.ArtSkin.cs",
+        "game/Main.Rendering.cs",
+        "game/Main.cs",
+        "src/StrikeLedger.Core/GameContent.cs",
+        "game/Main.Menus.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-056",
+      "category": "HUD fidelity",
+      "priority": "P2",
+      "classification": "polish_opportunity",
+      "title": "Resource readability can improve without restoring a combat meter",
+      "evidence_basis": "The HUD shows credits, EX readiness, art price, reserve and numeric stun, but the relationship among the wallet and currently affordable combinations remains mentally demanding.",
+      "recommendation": "Show concise examples such as selected super plus one EX, or insufficient by 300. Keep a single wallet; do not turn the display into stored activation stocks. Add readable health damage trails and clear nonspendable stun treatment.",
+      "acceptance_test": "Players can infer available paid actions at a glance, including reserve effects, while never confusing displayed affordability with prepaid uses.",
+      "source_paths": [
+        "game/Main.ArtSkin.cs",
+        "game/Main.Rendering.cs",
+        "game/Main.cs",
+        "data/economy.json",
+        "data/items.json",
+        "src/StrikeLedger.Core/Simulation.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-057",
+      "category": "Stage fidelity",
+      "priority": "P2",
+      "classification": "polish_opportunity",
+      "title": "Stage presentation is largely one scrolling image",
+      "evidence_basis": "ArenaView draws one Foundry bitmap with a small offset, plus separately drawn corners, shadows and effects.",
+      "recommendation": "Add restrained far/mid/foreground depth, ambient movement and coherent fighter grounding. Keep foregrounds and flashes out of the tactical silhouette.",
+      "acceptance_test": "In-motion readability, corner visibility and frame pacing remain at least as good as the baseline in both palettes and reduced-flash mode.",
+      "source_paths": [
+        "game/Presentation/ArenaView.cs",
+        "data/stages/foundry.json",
+        "src/StrikeLedger.Core/Simulation.Combat.cs",
+        "game/Presentation/FighterSprites.cs",
+        "game/Presentation/FighterPalette.gdshader",
+        "reports/AFTER_HOURS_INTEGRATION.md"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-058",
+      "category": "Impact fidelity",
+      "priority": "P2",
+      "classification": "polish_opportunity",
+      "title": "Generic impact selection understates move identity",
+      "evidence_basis": "Effects and strength are largely selected through move-name suffixes and generic size/rank buckets. Projectiles also share a few cel ranges.",
+      "recommendation": "Author per-move impact profile data: contact point, light/heavy/EX distinction, projectile geometry, limited camera response and character-specific sound layer.",
+      "acceptance_test": "Players distinguish hit, block, parry, counterhit, EX and super without reading debug text, and effects never conceal the next actionable interaction.",
+      "source_paths": [
+        "game/Main.Rendering.cs",
+        "src/StrikeLedger.App/RollbackSession.cs",
+        "src/StrikeLedger.Core/SimulationState.cs",
+        "game/Presentation/ArenaView.cs",
+        "data/stages/foundry.json",
+        "src/StrikeLedger.Core/Simulation.Combat.cs",
+        "game/Presentation/ArenaAudio.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-059",
+      "category": "Presentation lifecycle",
+      "priority": "P2",
+      "classification": "test_required",
+      "title": "Cosmetic wall-clock aging needs pause and frame-advance review",
+      "evidence_basis": "ArenaView runs Always and ages impacts/wallet cues using process delta, while fighter clips follow simulation ticks. This can make effects disappear while training or replay is paused.",
+      "recommendation": "Define which ambient effects may continue and which combat effects must follow the simulation/presentation timeline. Reset appropriately on seek and rollback.",
+      "acceptance_test": "Pause on contact, advance one frame at a time and seek backward. Relevant impact cues remain inspectable and do not accumulate stale effects.",
+      "source_paths": [
+        "game/Presentation/ArenaView.cs",
+        "data/stages/foundry.json",
+        "src/StrikeLedger.Core/Simulation.Combat.cs",
+        "game/Presentation/FighterSprites.cs",
+        "game/Presentation/FighterPalette.gdshader",
+        "reports/AFTER_HOURS_INTEGRATION.md",
+        "src/StrikeLedger.App/Replay.cs",
+        "game/Main.Replays.cs",
+        "game/Main.Menus.cs",
+        "game/Main.EconomyReport.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-060",
+      "category": "Audio fidelity",
+      "priority": "P2",
+      "classification": "polish_opportunity",
+      "title": "Audio has a foundation but limited variation and character identity",
+      "evidence_basis": "ArenaAudio loads a small generic cue set and one Foundry loop, dispatches by name category and reuses ten voices. No claim about subjective mix quality is made without listening.",
+      "recommendation": "Add controlled impact variations, character vocal/breath identity, distinctive parry/EX/super accents and restrained phase-aware music layers. Prioritize mix hierarchy over volume.",
+      "acceptance_test": "Blind listening can separate major combat outcomes; repeated common attacks do not sound identical or mask defense cues, and rapid events do not cut off critical audio.",
+      "source_paths": [
+        "game/Presentation/ArenaAudio.cs",
+        "game/Main.Rendering.cs",
+        "src/StrikeLedger.App/RollbackSession.cs",
+        "src/StrikeLedger.Core/SimulationState.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-061",
+      "category": "Match presentation",
+      "priority": "P2",
+      "classification": "source_gap",
+      "title": "Terminal feedback does not consistently distinguish result reasons",
+      "evidence_basis": "The presentation maps RoundTerminal to a KO cue, and the draw path uses generic settlement/announcement handling. KO, timeout and double-KO should be rendered from the actual reason and winner state.",
+      "recommendation": "Add distinct reason-aware end-of-round presentation, a concise transaction summary and clear match-point cues without extending combat freezes.",
+      "acceptance_test": "Normal KO, chip KO, timeout, double-KO, round draw and final match draw each produce accurate text, audio, portraits and accounting.",
+      "source_paths": [
+        "game/Main.ArtSkin.cs",
+        "game/Main.Rendering.cs",
+        "game/Main.cs",
+        "src/StrikeLedger.App/RollbackSession.cs",
+        "src/StrikeLedger.Core/SimulationState.cs",
+        "data/rules.json"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-062",
+      "category": "Documentation",
+      "priority": "P2",
+      "classification": "source_defect",
+      "title": "Linux verification status contradicts the final integration report",
+      "evidence_basis": "KNOWN_LIMITATIONS says new After Hours Linux movies/package checks are still being completed, while the final integration report and STATE say they passed. This is a real stale status inconsistency.",
+      "recommendation": "Update status documents from one authoritative candidate record and preserve the remaining WSLg/llvmpipe/audio/hardware qualifications.",
+      "acceptance_test": "All player/release/audit docs agree on what was run, on which environment and for which candidate, without turning historical tests into new runs.",
+      "source_paths": [
+        "release_docs/KNOWN_LIMITATIONS.md",
+        "reports/AFTER_HOURS_INTEGRATION.md",
+        "AUDIT_GUIDE.md",
+        "reports/STATE.json"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-063",
+      "category": "Verification",
+      "priority": "P1",
+      "classification": "verification_gap",
+      "title": "Actual controllers, two-PC play and human feel remain open",
+      "evidence_basis": "The current ledger lists DEVICE-003, DEVICE-004 and HUMAN-001 as not run. Injected GUI events and same-machine network processes cannot substitute for these checks.",
+      "recommendation": "Complete the real hardware and friend-versus-friend sessions after correcting routing and camera issues. Keep software, device and human verdicts separate.",
+      "acceptance_test": "Record real device models, machine roles, latency conditions, build hashes and unedited observations; do not auto-approve human acceptance.",
+      "source_paths": [
+        "reports/STATE.json",
+        "reports/AFTER_HOURS_INTEGRATION.md",
+        "release_docs/KNOWN_LIMITATIONS.md",
+        "AUDIT_GUIDE.md",
+        "game/Main.UiSmoke.cs",
+        "src/StrikeLedger.CoreTests/Program.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-064",
+      "category": "Verification",
+      "priority": "P1",
+      "classification": "source_gap",
+      "title": "Feature-count gates miss emergent player-facing failures",
+      "evidence_basis": "All-action tests and UI smoke demonstrate valuable slices, but the inspected UI smoke reaches combat then tests Start; it does not demonstrate every combat button leaves the shell in fight. Coverage counts alone cannot establish quality.",
+      "recommendation": "Add boundary-focused end-to-end regressions for combat inputs, maximum separation, actual rental practice, malformed saves and multi-round human-shaped traces.",
+      "acceptance_test": "The new regression set must fail on the identified source defects and pass only after real fixes, without weakening existing accounting or replay gates.",
+      "source_paths": [
+        "game/Main.UiSmoke.cs",
+        "src/StrikeLedger.CoreTests/Program.cs",
+        "AUDIT_GUIDE.md",
+        "game/GameSettings.cs",
+        "game/Main.ControlRouting.cs",
+        "game/Main.cs",
+        "game/Presentation/ArenaView.cs",
+        "data/stages/foundry.json",
+        "src/StrikeLedger.Core/Simulation.Combat.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-065",
+      "category": "Engineering",
+      "priority": "P2",
+      "classification": "source_gap",
+      "title": "No checked-in GitHub Actions workflow at the audited root",
+      "evidence_basis": "The audited root tree has no .github directory. Local build/test tools exist; absence of a checked-in workflow is not a claim that no external automation exists.",
+      "recommendation": "Add headless Core/App/schema/conformance CI plus a controlled native GUI/export job where supported. Cache tools with version verification and avoid fake hardware passes.",
+      "acceptance_test": "A fresh pull request runs the relevant checks and exposes logs; protected branches can require those checks once stable.",
+      "source_paths": [
+        "repository root tree at audited commit",
+        "repository branch and issue metadata at audited commit",
+        "AUDIT_GUIDE.md",
+        "README.md",
+        "docs/00_PRODUCT_CONTRACT.md",
+        "docs/01_DECISIONS_AND_AUTHORITY.md"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-066",
+      "category": "Engineering",
+      "priority": "P2",
+      "classification": "source_gap",
+      "title": "Roster and content shape are hardcoded across layers",
+      "evidence_basis": "The loader requires exactly Rook/Vale, 49 actions each, 12 items and two stages. GUI/art selection contains matching binary assumptions. This is valid bounded scope but expensive to extend.",
+      "recommendation": "Before a third character, introduce registries and content-driven menus/rendering. Keep exactly two match seats while allowing a variable selectable roster.",
+      "acceptance_test": "A test-only third registry entry is selectable and validates without changing two-seat simulation rules; remove the fixture before claiming a shipped character.",
+      "source_paths": [
+        "src/StrikeLedger.Core/GameContent.cs",
+        "game/Main.Menus.cs",
+        "game/Main.ArtSkin.cs",
+        "game/Presentation/FighterSprites.cs",
+        "game/Presentation/FighterPalette.gdshader",
+        "reports/AFTER_HOURS_INTEGRATION.md",
+        "AUDIT_GUIDE.md",
+        "README.md",
+        "docs/00_PRODUCT_CONTRACT.md",
+        "docs/01_DECISIONS_AND_AUTHORITY.md"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-067",
+      "category": "Engineering",
+      "priority": "P2",
+      "classification": "polish_opportunity",
+      "title": "Dense shell functions make behavior changes risky",
+      "evidence_basis": "Many menu, lifecycle and input functions are compressed into long one-line statements and spread across partial Main files, with semantic control ownership inferred from layout.",
+      "recommendation": "Format and separate flow coordination, shop view model, input context and presentation adapters. Refactor under existing golden replay and UI behavior tests, not as a rewrite.",
+      "acceptance_test": "Behavior-preserving refactoring maintains exact Core/App outcomes and leaves the new routing/transaction boundaries independently testable.",
+      "source_paths": [
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs",
+        "game/GameSettings.cs",
+        "game/Main.cs",
+        "game/Main.Network.cs",
+        "src/StrikeLedger.App/PrivateMatchPeer.cs",
+        "src/StrikeLedger.App/RollbackSession.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-068",
+      "category": "Verification",
+      "priority": "P2",
+      "classification": "verification_gap",
+      "title": "Source-only checkout is not the complete historical evidence bundle",
+      "evidence_basis": "AUDIT_GUIDE explains that bulky evidence and exports are distributed separately and historical PACK_MANIFEST is not the current source manifest. A missing historical artifact in a fresh clone is not automatically a fake pass.",
+      "recommendation": "Provide a simple, hash-verified evidence restoration/readme flow and distinguish historical candidate verification from a fresh rebuild.",
+      "acceptance_test": "A reviewer can restore the documented companion evidence and verify hashes, or run new tests with fresh IDs, without renaming old evidence as newly executed.",
+      "source_paths": [
+        "AUDIT_GUIDE.md",
+        "README.md",
+        "docs/00_PRODUCT_CONTRACT.md",
+        "docs/01_DECISIONS_AND_AUTHORITY.md",
+        "reports/STATE.json",
+        "reports/AFTER_HOURS_INTEGRATION.md"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-069",
+      "category": "Release",
+      "priority": "P2",
+      "classification": "design_risk",
+      "title": "Distribution rights and attribution need an explicit shipping checklist",
+      "evidence_basis": "The repository is private and the reviewed root does not contain a general code LICENSE. Original generated assets and tool dependencies still need an intentional distribution policy; this is not a finding of infringement.",
+      "recommendation": "Before public distribution, document code licensing choice, engine/runtime notices, asset provenance and font/audio rights in the actual package.",
+      "acceptance_test": "A fresh export contains the intended notices and an asset-source manifest; no unlicensed reference-game assets are introduced to improve fidelity.",
+      "source_paths": [
+        "repository root tree at audited commit",
+        "repository branch and issue metadata at audited commit",
+        "AUDIT_GUIDE.md",
+        "README.md",
+        "docs/00_PRODUCT_CONTRACT.md",
+        "docs/01_DECISIONS_AND_AUTHORITY.md",
+        "game/Presentation/FighterSprites.cs",
+        "game/Presentation/FighterPalette.gdshader",
+        "reports/AFTER_HOURS_INTEGRATION.md"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-070",
+      "category": "Feature",
+      "priority": "P2",
+      "classification": "optional_feature",
+      "title": "Saved economic plans with transparent affordability",
+      "evidence_basis": "The current shop is a per-round cycling draft rather than a player-authored plan library.",
+      "recommendation": "Add a few editable plans such as base kit/save, light tool plus EX, selected-super budget, and a rental counterplan. Reprice live; never silently downgrade the plan.",
+      "acceptance_test": "A saved plan adapts visibly to a changed wallet/cost version and still uses the same scalar wallet.",
+      "source_paths": [
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs",
+        "game/Main.ControlRouting.cs",
+        "data/economy.json",
+        "data/items.json",
+        "src/StrikeLedger.Core/Simulation.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-071",
+      "category": "Feature",
+      "priority": "P2",
+      "classification": "optional_feature",
+      "title": "A compact in-game round economy ledger",
+      "evidence_basis": "Economy export and replay wallet graphs already exist; the opportunity is to make the useful history available directly during preparation/results.",
+      "recommendation": "Show previous opening cash, rental spend, EX/super spend, payout, cap clipping and closing cash, plus the next-round budget. Tie every number to existing receipts.",
+      "acceptance_test": "The in-game ledger agrees with replay JSON/CSV and authoritative receipts across retries, draws and rollbacks.",
+      "source_paths": [
+        "src/StrikeLedger.App/Replay.cs",
+        "game/Main.Replays.cs",
+        "game/Main.Menus.cs",
+        "game/Main.EconomyReport.cs",
+        "data/economy.json",
+        "data/items.json",
+        "src/StrikeLedger.Core/Simulation.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-072",
+      "category": "Feature",
+      "priority": "P2",
+      "classification": "optional_feature",
+      "title": "Replay takeover for missed punish and spending decisions",
+      "evidence_basis": "Replay and training are implemented but the reviewed interfaces do not expose a takeover branch.",
+      "recommendation": "Branch a replay moment into a clearly marked training session, retaining actual spacing, wallet, leases and selected arts. Keep the original replay immutable.",
+      "acceptance_test": "Players can retry a costly whiff or missed confirm; the branch can never be saved as the original competitive result.",
+      "source_paths": [
+        "src/StrikeLedger.App/Replay.cs",
+        "game/Main.Replays.cs",
+        "game/Main.Menus.cs",
+        "game/Main.EconomyReport.cs",
+        "src/StrikeLedger.App/Training.cs",
+        "game/Main.Training.cs",
+        "game/Main.LabState.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-073",
+      "category": "Feature",
+      "priority": "P2",
+      "classification": "optional_feature",
+      "title": "Budget-aware combo and counterplay trials",
+      "evidence_basis": "The game already has drill and transaction foundations. They can teach the economic tradeoff rather than only execution mechanics.",
+      "recommendation": "Author free, EX and super routes from the same starter, showing cost, damage, knockdown and remaining money. Add a drill for countering each rental.",
+      "acceptance_test": "Trials evaluate actual legal input and actual combo continuity, not canned animation or a recent-hit heuristic.",
+      "source_paths": [
+        "src/StrikeLedger.App/Training.cs",
+        "game/Main.Training.cs",
+        "game/Main.LabState.cs",
+        "data/economy.json",
+        "data/items.json",
+        "src/StrikeLedger.Core/Simulation.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-074",
+      "category": "Feature",
+      "priority": "P3",
+      "classification": "optional_feature",
+      "title": "Multi-slot dummy recordings and randomized defense",
+      "evidence_basis": "The reviewed lab keeps one looping dummy-input sequence.",
+      "recommendation": "Add several named slots, randomized playback with visible weights, guard-after-first-hit, reversal and wake-up action settings.",
+      "acceptance_test": "Dummy state, random seed and playback position survive training checkpoints and exported traces reproducibly.",
+      "source_paths": [
+        "src/StrikeLedger.App/Training.cs",
+        "game/Main.Training.cs",
+        "game/Main.LabState.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-075",
+      "category": "Feature",
+      "priority": "P3",
+      "classification": "optional_feature",
+      "title": "Private-session connection diagnostics and lobby quality",
+      "evidence_basis": "The existing netplay scope is a private link, not public matchmaking. Better feedback can improve it without adding accounts or ranked services.",
+      "recommendation": "Expose measured RTT/jitter/loss, input delay, rollback depth/stalls, content compatibility and a clear ready/rematch lobby.",
+      "acceptance_test": "Diagnostics reflect injected and real conditions, explain a stall honestly and never present the match phrase as strong public authentication.",
+      "source_paths": [
+        "game/Main.Network.cs",
+        "src/StrikeLedger.App/PrivateMatchPeer.cs",
+        "src/StrikeLedger.App/RollbackSession.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-076",
+      "category": "Feature",
+      "priority": "P3",
+      "classification": "optional_feature",
+      "title": "Evidence-linked post-match coaching",
+      "evidence_basis": "Replay events and economy receipts provide factual inputs for a small post-match review; no model needs to invent opponent intent.",
+      "recommendation": "Offer timestamped expensive whiffs, unused supported rentals, avoidable punish windows and missed affordable routes. Label inference separately from recorded events.",
+      "acceptance_test": "Every note jumps to the supporting moment, and an unused tool is not automatically called a mistake when its threat may have influenced play.",
+      "source_paths": [
+        "src/StrikeLedger.App/Replay.cs",
+        "game/Main.Replays.cs",
+        "game/Main.Menus.cs",
+        "game/Main.EconomyReport.cs",
+        "release_docs/BALANCE_NOTES.md",
+        "src/StrikeLedger.BalanceLab/Program.cs"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-077",
+      "category": "Feature",
+      "priority": "P3",
+      "classification": "optional_feature",
+      "title": "Compact arcade/rematch motivation after the duel works",
+      "evidence_basis": "The bounded prototype does not require a campaign, large roster or persistent power progression.",
+      "recommendation": "Add a short arcade ladder, personal bests, cosmetic unlocks or local set tracking only after the primary loop succeeds. Keep competitive power and money reset between matches.",
+      "acceptance_test": "Optional progression never changes 1v1 combat statistics, cross-match credits or access to the complete free character kit.",
+      "source_paths": [
+        "AUDIT_GUIDE.md",
+        "README.md",
+        "docs/00_PRODUCT_CONTRACT.md",
+        "docs/01_DECISIONS_AND_AUTHORITY.md",
+        "data/rules.json"
+      ],
+      "native_reproduced_in_this_audit": false
+    },
+    {
+      "id": "PP-078",
+      "category": "Stat-upgrade policy",
+      "priority": "P1",
+      "classification": "design_risk",
+      "title": "Global character-stat purchases are absent and should not be silently introduced",
+      "evidence_basis": "The complete current 12-item catalog leases actions, not health, global damage, movement speed, defense windows, or income. Different move-specific values are not fighter-wide stat buffs. Adding passive products changes the original no-stat-boost contract.",
+      "recommendation": "Keep global paid stats out of the first balanced prototype. Treat any future stat sidegrade as a separately approved rules experiment with an explicit downside, duration, visibility, stacking policy, and replay identity.",
+      "acceptance_test": "Catalog/runtime validation distinguishes action properties from global modifiers. No hidden upgrade stacks, permanent rental effects, or altered core defense is introduced. Any approved variant has separate balance results.",
+      "source_paths": [
+        "data/items.json",
+        "src/StrikeLedger.Core/GameContent.cs",
+        "src/StrikeLedger.Core/Simulation.cs",
+        "docs/00_PRODUCT_CONTRACT.md"
+      ],
+      "related_original_findings": [
+        "PP-014",
+        "PP-019"
+      ],
+      "native_reproduced_in_this_audit": false,
+      "addition": "Economy and comeback supplement, 2026-09-05"
+    },
+    {
+      "id": "PP-079",
+      "category": "Purchase value",
+      "priority": "P1",
+      "classification": "design_risk",
+      "title": "Vale Long Check needs a demonstrated advantage over free Long Heel",
+      "evidence_basis": "The 600-credit replacement has 14/3/19 timing, 85 damage and 63-unit hitbox width versus the free move's 10/3/17, 100 damage and 70 width. It loses advancing movement and kara eligibility. It gains 30 stun and lower contact geometry, so strict dominance is not proved.",
+      "recommendation": "Give it a reproducible anti-poke, geometry, stun-conversion, or spacing niche; redesign or replace it if that niche fails. Explain its tradeoff and do not sell it as simply longer range.",
+      "acceptance_test": "Matched legal-input trials show where the replacement earns its 600 cost, where the free move is better, and how an opponent responds. Include the lost 6+HP/kara role.",
+      "source_paths": [
+        "data/fighters/vale.json",
+        "data/items.json",
+        "src/StrikeLedger.Core/Simulation.Input.cs"
+      ],
+      "related_original_findings": [
+        "PP-008",
+        "PP-014"
+      ],
+      "native_reproduced_in_this_audit": false,
+      "addition": "Economy and comeback supplement, 2026-09-05"
+    },
+    {
+      "id": "PP-080",
+      "category": "Purchase value",
+      "priority": "P1",
+      "classification": "design_risk",
+      "title": "Returning Pulse is a one-contact returning threat with owner-wide projectile constraints",
+      "evidence_basis": "Returning Pulse has hits=1 and turn_after_ticks=45. Contact is consumed on hit, block, or parry. Its owner's active-projectile check can also prevent ordinary/EX/super projectile starts; it is not a guaranteed two-hit boomerang or unrestricted layering tool.",
+      "recommendation": "Validate whiff-return setup value, charge-independent access, and the opportunity cost of blocking other projectile moves. Describe the exact behavior on the card before repricing it.",
+      "acceptance_test": "Legal traces cover outbound hit/block/parry removal, return after a miss, crossings, and attempted ordinary/EX/selected-super projectiles while it remains active. Claimed tactical benefits are actually reproduced.",
+      "source_paths": [
+        "data/fighters/vale.json",
+        "src/StrikeLedger.Core/Simulation.Input.cs",
+        "src/StrikeLedger.Core/Simulation.Combat.cs"
+      ],
+      "related_original_findings": [
+        "PP-008",
+        "PP-014"
+      ],
+      "native_reproduced_in_this_audit": false,
+      "addition": "Economy and comeback supplement, 2026-09-05"
+    },
+    {
+      "id": "PP-081",
+      "category": "Super economics",
+      "priority": "P1",
+      "classification": "design_risk",
+      "title": "Selected-super prices create major access differences not justified by slot order",
+      "evidence_basis": "At the 3600 wallet cap, 900/1200/1500 prices finance 4/3/2 activations if there is no other spending. Static damage is not monotone with price: Rook's all-hit zero-index scaled payload screen gives 240/266/202. This arithmetic is not engine connection/damage evidence.",
+      "recommendation": "Measure every art's actual confirm, reversal, reach, chip, positioning, and counterplay value at real budgets. Do not require identical damage or assume higher-numbered art means greater value.",
+      "acceptance_test": "All six arts have exact-threshold, paid-confirm, block/parry, reversal, whiff and late-round bank tests. Price changes cite outcomes and preserve one-wallet direct spending.",
+      "source_paths": [
+        "data/fighters/rook.json",
+        "data/fighters/vale.json",
+        "data/economy.json",
+        "data/combat.json"
+      ],
+      "related_original_findings": [
+        "PP-004",
+        "PP-014",
+        "PP-018"
+      ],
+      "native_reproduced_in_this_audit": false,
+      "addition": "Economy and comeback supplement, 2026-09-05"
+    },
+    {
+      "id": "PP-082",
+      "category": "Round-one fairness",
+      "priority": "P1",
+      "classification": "verification_gap",
+      "title": "A 300-credit opening award gap can cross a decisive affordability threshold",
+      "evidence_basis": "Equal first-round expenditure produces wallets 1800/1500, 1500/1200 or 1200/900. The extra 300 can permit a selected super or a super-plus-EX budget that the trailer lacks. No measured conversion effect is available.",
+      "recommendation": "Run score-preserving round-two interventions with current wallets, trailer +300 and leader -300, across all selected arts and relevant rental plans.",
+      "acceptance_test": "Report paired changes in round-two and eventual-match win probability with uncertainty. An accounting pass or a small nominal money difference is not accepted as proof of competitive fairness.",
+      "source_paths": [
+        "data/economy.json",
+        "src/StrikeLedger.Core/EconomySeed.cs",
+        "src/StrikeLedger.Core/Simulation.cs"
+      ],
+      "related_original_findings": [
+        "PP-018",
+        "PP-019"
+      ],
+      "native_reproduced_in_this_audit": false,
+      "addition": "Economy and comeback supplement, 2026-09-05"
+    },
+    {
+      "id": "PP-083",
+      "category": "Comeback timing",
+      "priority": "P1",
+      "classification": "design_risk",
+      "title": "Recovery may restore liquidity only after severe score disadvantage",
+      "evidence_basis": "Consecutive losses use old-tier payouts 900,1200,1500. In the explicit equal-600-spending repeated-win ledger, cash becomes equal only after the trailer is 0-3 down. Later income does not restore lost points; terminal payouts cannot help the completed match.",
+      "recommendation": "Measure time to useful comeback liquidity on continuing-round entries. Test earlier parity without forcing a 50% match chance after a earned score deficit.",
+      "acceptance_test": "Analyze 0-1, 0-2, 0-3 and 0-4 situations separately, excluding match-over payouts from resource availability. Use the score-only benchmark and matchup-specific controls.",
+      "source_paths": [
+        "src/StrikeLedger.Core/EconomySeed.cs",
+        "src/StrikeLedger.Core/Simulation.cs",
+        "data/rules.json"
+      ],
+      "related_original_findings": [
+        "PP-019",
+        "PP-020"
+      ],
+      "native_reproduced_in_this_audit": false,
+      "addition": "Economy and comeback supplement, 2026-09-05"
+    },
+    {
+      "id": "PP-084",
+      "category": "Comeback incentives",
+      "priority": "P1",
+      "classification": "design_risk",
+      "title": "Residual spending differences can snowball independently of the win bonus",
+      "evidence_basis": "Round-two gap equals 300 + loser spend - winner spend. A winner spending 0 and loser spending 600 yields 1800/900; reversed expenditure yields 1200/1500. Efficient offense and expensive failed defense can preserve a much larger bank across rounds.",
+      "recommendation": "Separate award differences from retained-money differences in telemetry. Test efficient winners against costly failed reversals, parried paid attacks, and repeated losing expenditure.",
+      "acceptance_test": "Counterfactuals hold score and spending history fixed where appropriate. Report outcomes, purchased-threat value, and next-round money components instead of attributing all wallet gaps to winning.",
+      "source_paths": [
+        "data/economy.json",
+        "src/StrikeLedger.Core/EconomySeed.cs",
+        "src/StrikeLedger.Core/Simulation.Input.cs"
+      ],
+      "related_original_findings": [
+        "PP-019",
+        "PP-071"
+      ],
+      "native_reproduced_in_this_audit": false,
+      "addition": "Economy and comeback supplement, 2026-09-05"
+    },
+    {
+      "id": "PP-085",
+      "category": "Shop decisions",
+      "priority": "P1",
+      "classification": "source_gap",
+      "title": "Full-rental plans and combat budgets need explicit opportunity-cost comparisons",
+      "evidence_basis": "Three rental slots cost 1800 in total, which can consume the entire round-two winner wallet after a no-spend opening. The full-rental player then has no funds for enhanced combat despite owning all slots. This can be rational or bad; fullness is not a balance target.",
+      "recommendation": "Show actual remaining EX/super affordability and compare against a no-rental plan retaining its cash. Keep buying nothing a first-class choice and do not automatically fill slots.",
+      "acceptance_test": "Each of 27 sufficient-budget loadouts can be valued against retention of its actual fee. UI reveals when the last purchase removes a reversal or selected-super budget; no separate resource pool is introduced.",
+      "source_paths": [
+        "data/items.json",
+        "data/economy.json",
+        "game/Main.Menus.cs",
+        "game/Main.PrepDetails.cs"
+      ],
+      "related_original_findings": [
+        "PP-008",
+        "PP-056",
+        "PP-070"
+      ],
+      "native_reproduced_in_this_audit": false,
+      "addition": "Economy and comeback supplement, 2026-09-05"
+    },
+    {
+      "id": "PP-086",
+      "category": "Purchase value",
+      "priority": "P1",
+      "classification": "design_risk",
+      "title": "Unlimited per-round rental use makes duration and repeat pressure central to value",
+      "evidence_basis": "All current rentals have zero activation cost and no use-count limit after their upfront fee. Their value changes with round length, neutral repetitions, and whether possession deters an opponent. Raw damage divided by price is insufficient.",
+      "recommendation": "Evaluate rental value across short/long rounds and neutral/pressure/defense situations. Keep the same-wallet identity; do not introduce hidden charges or prepaid EX stocks as a balancing shortcut.",
+      "acceptance_test": "Record use counts, legal repeated pressure, threat responses, forfeited combat spending, and match pacing. No item is judged good merely because it was frequently activated.",
+      "source_paths": [
+        "data/items.json",
+        "src/StrikeLedger.Core/Simulation.Input.cs",
+        "src/StrikeLedger.BalanceLab/Program.cs"
+      ],
+      "related_original_findings": [
+        "PP-014",
+        "PP-018",
+        "PP-020"
+      ],
+      "native_reproduced_in_this_audit": false,
+      "addition": "Economy and comeback supplement, 2026-09-05"
+    },
+    {
+      "id": "PP-087",
+      "category": "Combat-economy interaction",
+      "priority": "P1",
+      "classification": "test_required",
+      "title": "Zero-credit legal actions do not prove adequate answers to funded chip and pressure",
+      "evidence_basis": "The free kit remains executable and chip can KO. That does not prove the zero-wallet defender has a meaningful answer in each funded pressure situation, especially corners or selected-super threats.",
+      "recommendation": "Create low-health zero-wallet pressure fixtures for all arts and common EX/rental sequences. Distinguish legitimate losing positions from systemic lack of counterplay.",
+      "acceptance_test": "Test real guard/parry/jump/throw/spacing responses with legal inputs and reaction constraints. Document fail cases and their prior causes. Do not require escape from every earned checkmate.",
+      "source_paths": [
+        "data/combat.json",
+        "src/StrikeLedger.Core/Simulation.Combat.cs",
+        "data/fighters/rook.json",
+        "data/fighters/vale.json"
+      ],
+      "related_original_findings": [
+        "PP-018",
+        "PP-019",
+        "PP-063"
+      ],
+      "native_reproduced_in_this_audit": false,
+      "addition": "Economy and comeback supplement, 2026-09-05"
+    },
+    {
+      "id": "PP-088",
+      "category": "Balance methodology",
+      "priority": "P1",
+      "classification": "verification_gap",
+      "title": "Raw first-round-winner conversion is confounded by score and player strength",
+      "evidence_basis": "A 1-0 leader in an independent 50/50 decisive-round first-to-five converts 163/256 = 63.671875% without any economic advantage. Actual winners may also be stronger players. A 50% conditional target is incorrect.",
+      "recommendation": "Use paired score-preserving economic interventions and block by player pair, matchup, art and seed. Analyze mirrored correlation and confidence intervals.",
+      "acceptance_test": "Reports separate score-only mathematical baselines, observed rates and causal treatment estimates. No balance conclusion uses raw P(match win | round-one win) alone.",
+      "source_paths": [
+        "data/rules.json",
+        "src/StrikeLedger.Core/EconomySeed.cs",
+        "src/StrikeLedger.BalanceLab/Program.cs",
+        "release_docs/BALANCE_NOTES.md"
+      ],
+      "related_original_findings": [
+        "PP-018",
+        "PP-019"
+      ],
+      "native_reproduced_in_this_audit": false,
+      "addition": "Economy and comeback supplement, 2026-09-05"
+    },
+    {
+      "id": "PP-089",
+      "category": "Rules experiments",
+      "priority": "P1",
+      "classification": "verification_gap",
+      "title": "Earlier parity payout variants need isolated versioned experiments",
+      "evidence_basis": "The current loss tiers are 900/1200/1500. Candidate 1200/1200/1500 removes the opening award gap at equal spending, but also changes every tier-zero loss and increases currency supply. Equal all-win/loss income is a separate diagnostic, not a proven solution.",
+      "recommendation": "Keep baseline A, compare candidate B and diagnostic C under unchanged combat data, and record candidate hashes. Test cap clipping, art frequency, deliberate losses/draws and score-aware saving.",
+      "acceptance_test": "Complete paired continuations and full-match trials with explicit uncertainty. Do not silently replace shipped payouts or label the new schedule balanced based on arithmetic alone.",
+      "source_paths": [
+        "data/economy.json",
+        "src/StrikeLedger.Core/EconomySeed.cs",
+        "src/StrikeLedger.BalanceLab/Program.cs"
+      ],
+      "related_original_findings": [
+        "PP-018",
+        "PP-019"
+      ],
+      "native_reproduced_in_this_audit": false,
+      "addition": "Economy and comeback supplement, 2026-09-05"
+    },
+    {
+      "id": "PP-090",
+      "category": "Reserve usability",
+      "priority": "P1",
+      "classification": "design_risk",
+      "title": "A locked reserve can suppress a comeback or final-round cash-out unintentionally",
+      "evidence_basis": "With 1200 credits and a 900 reserve, a 900 super is rejected because only 300 would remain. The saved floor is not money set aside for an available super. It resets per round, but has no future-match value at the decisive end.",
+      "recommendation": "Label the floor as protected savings, keep it advanced/opt-in, and show executable budget. Warn about remaining protected funds in a decisive round without silently overriding a deliberate choice.",
+      "acceptance_test": "Player tests distinguish reserve rejection from insufficient total cash. Exact-threshold tests cover no-rental and rental plans, final-round warnings, replay restoration and explicit unlock policies only if approved.",
+      "source_paths": [
+        "src/StrikeLedger.Core/Simulation.Input.cs",
+        "src/StrikeLedger.Core/Simulation.cs",
+        "game/Main.Menus.cs"
+      ],
+      "related_original_findings": [
+        "PP-012",
+        "PP-056"
+      ],
+      "native_reproduced_in_this_audit": false,
+      "addition": "Economy and comeback supplement, 2026-09-05"
+    },
+    {
+      "id": "PP-091",
+      "category": "Balance instrumentation",
+      "priority": "P1",
+      "classification": "source_gap",
+      "title": "Economic telemetry should expose affordability and payout history rather than wallet totals alone",
+      "evidence_basis": "A single balance hides whether funds came from saving, nominal recovery, clipping, or an opening award. Later mixed streaks in the analytical equal-spending model can produce a 900 gap, so the opening 300 difference is not a global invariant.",
+      "recommendation": "Add per-round nominal/granted/clipped payout, old/new tier, lease debit, combat debit, affordable action combinations, and next-continuing-round balance to the analysis and in-game ledger.",
+      "acceptance_test": "Reconstruct every ending balance from opening cash, debits and actual grant; preserve source/result hashes. Show continuing-state witnesses for mathematical claims and never present state-count enumeration as played matches.",
+      "source_paths": [
+        "src/StrikeLedger.Core/EconomySeed.cs",
+        "src/StrikeLedger.Core/Simulation.cs",
+        "src/StrikeLedger.App/Replay.cs",
+        "game/Main.EconomyReport.cs"
+      ],
+      "related_original_findings": [
+        "PP-019",
+        "PP-071"
+      ],
+      "native_reproduced_in_this_audit": false,
+      "addition": "Economy and comeback supplement, 2026-09-05"
+    }
+  ]
+}

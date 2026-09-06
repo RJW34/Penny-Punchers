@@ -1,0 +1,62 @@
+test_affordability_no_rental_1200_vs_900 (test_economy_analysis.AuditChecks.test_affordability_no_rental_1200_vs_900) ... ok
+test_base_kit_is_free (test_economy_analysis.AuditChecks.test_base_kit_is_free) ... ok
+test_baseline_rules (test_economy_analysis.AuditChecks.test_baseline_rules) ... ok
+test_clipping (test_economy_analysis.AuditChecks.test_clipping) ... ok
+test_consecutive_loss_equal_spending_trace (test_economy_analysis.AuditChecks.test_consecutive_loss_equal_spending_trace) ... ok
+test_draw_does_not_change_tier (test_economy_analysis.AuditChecks.test_draw_does_not_change_tier) ... ok
+test_equal_all_income_equal_spending (test_economy_analysis.AuditChecks.test_equal_all_income_equal_spending) ... ok
+test_equal_spend_global_gap_not_just_300 (test_economy_analysis.AuditChecks.test_equal_spend_global_gap_not_just_300) ... ok
+test_feint_motion_arithmetic (test_economy_analysis.AuditChecks.test_feint_motion_arithmetic) ... ok
+test_first_loss_uses_old_tier (test_economy_analysis.AuditChecks.test_first_loss_uses_old_tier) ... ok
+test_first_round_all_pairs_decomposition (test_economy_analysis.AuditChecks.test_first_round_all_pairs_decomposition) ... ok
+test_first_round_equal_spend_advantage (test_economy_analysis.AuditChecks.test_first_round_equal_spend_advantage) ... ok
+test_first_round_extremes (test_economy_analysis.AuditChecks.test_first_round_extremes) ... ok
+test_first_win_score_only_probability (test_economy_analysis.AuditChecks.test_first_win_score_only_probability) ... ok
+test_hypothetical_stat_breakpoints (test_economy_analysis.AuditChecks.test_hypothetical_stat_breakpoints) ... ok
+test_illegal_spends_rejected (test_economy_analysis.AuditChecks.test_illegal_spends_rejected) ... ok
+test_item_count_and_no_global_defense_modification (test_economy_analysis.AuditChecks.test_item_count_and_no_global_defense_modification) ... ok
+test_item_expiry_and_free_repeat_activation (test_economy_analysis.AuditChecks.test_item_expiry_and_free_repeat_activation) ... ok
+test_ledger_bounds_exhaustive_single_round (test_economy_analysis.AuditChecks.test_ledger_bounds_exhaustive_single_round) ... ok
+test_long_check_tradeoff_not_strict_dominance_proof (test_economy_analysis.AuditChecks.test_long_check_tradeoff_not_strict_dominance_proof) ... ok
+test_loser_can_have_more_money (test_economy_analysis.AuditChecks.test_loser_can_have_more_money) ... ok
+test_match_stops_at_fifth_win (test_economy_analysis.AuditChecks.test_match_stops_at_fifth_win) ... ok
+test_nine_draw_limit (test_economy_analysis.AuditChecks.test_nine_draw_limit) ... ok
+test_nominal_super_payload_is_not_monotone_price (test_economy_analysis.AuditChecks.test_nominal_super_payload_is_not_monotone_price) ... FAIL
+test_number_of_affordable_plans (test_economy_analysis.AuditChecks.test_number_of_affordable_plans) ... ok
+test_one_round_advantage_only (test_economy_analysis.AuditChecks.test_one_round_advantage_only) ... ok
+test_pinned_source_hashes (test_economy_analysis.AuditChecks.test_pinned_source_hashes) ... ok
+test_returning_pulse_one_hit_not_two (test_economy_analysis.AuditChecks.test_returning_pulse_one_hit_not_two) ... ok
+test_reward_neutral_first_loss_variant (test_economy_analysis.AuditChecks.test_reward_neutral_first_loss_variant) ... ok
+test_second_loss_payout (test_economy_analysis.AuditChecks.test_second_loss_payout) ... ok
+test_sensitivity_reduces_to_fair (test_economy_analysis.AuditChecks.test_sensitivity_reduces_to_fair) ... ok
+test_super_cap_counts (test_economy_analysis.AuditChecks.test_super_cap_counts) ... ok
+test_symmetric_score_probability (test_economy_analysis.AuditChecks.test_symmetric_score_probability) ... ok
+test_third_loss_payout (test_economy_analysis.AuditChecks.test_third_loss_payout) ... ok
+test_three_zero_score_only_probability (test_economy_analysis.AuditChecks.test_three_zero_score_only_probability) ... ok
+test_wallet_cap_is_not_the_loadout_cap (test_economy_analysis.AuditChecks.test_wallet_cap_is_not_the_loadout_cap) ... ok
+test_win_decreases_tier_one_step (test_economy_analysis.AuditChecks.test_win_decreases_tier_one_step) ... ok
+
+======================================================================
+FAIL: test_nominal_super_payload_is_not_monotone_price (test_economy_analysis.AuditChecks.test_nominal_super_payload_is_not_monotone_price)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/pp-eco-analysis/test_economy_analysis.py", line 101, in test_nominal_super_payload_is_not_monotone_price
+    self.assertEqual([nominal_damage(m[x],self.combat) for x in ['super_1','super_2','super_3']],[240,266,201])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [240, 266, 202] != [240, 266, 201]
+
+First differing element 2:
+202
+201
+
+- [240, 266, 202]
+?              ^
+
++ [240, 266, 201]
+?              ^
+
+
+----------------------------------------------------------------------
+Ran 37 tests in 0.237s
+
+FAILED (failures=1)

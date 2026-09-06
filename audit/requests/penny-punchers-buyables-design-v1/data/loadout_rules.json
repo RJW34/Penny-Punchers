@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "status": "proposed_catalog_rules_not_a_payout_patch",
+  "baseline_commit": "1623ee62c4f4b6d5574bbb9909eb6fe4e32f5441",
+  "resource": "one_persistent_integer_credit_wallet",
+  "price_quantum": 300,
+  "starting_wallet_reference": 600,
+  "wallet_cap_reference": 3600,
+  "payout_changes_in_this_pack": false,
+  "rental_slots": [
+    "signature",
+    "technique",
+    "gambit"
+  ],
+  "max_rentals": 3,
+  "rental_spend_cap_reference": 1800,
+  "selection_rules": {
+    "one_per_slot": true,
+    "slot_price_is_fixed": false,
+    "choose_none_is_valid": true,
+    "no_cross_character_shopping": true,
+    "drafts_debit": false,
+    "atomic_commit": true,
+    "editable_until_lock": true,
+    "refund_after_lock": false,
+    "expiry": "end_of_round_regardless_of_winner"
+  },
+  "combat_rules": {
+    "enhanced_base_access_for_free": true,
+    "super_selection_fee": 0,
+    "supers_selected_per_match": 1,
+    "paid_startup_once": true,
+    "failed_input_debit": false,
+    "postcommit_refund": false,
+    "unaffordable_fallback": false,
+    "combat_income": 0,
+    "passive_income": 0,
+    "prepaid_tickets": false,
+    "resource_bar_for_install": false,
+    "per_round_cast_limit": null
+  },
+  "retain_free": [
+    "all_base_normals",
+    "ordinary_specials",
+    "ordinary_movement",
+    "ground_throw",
+    "block",
+    "high_low_air_red_parry",
+    "throw_tech",
+    "system_recovery"
+  ],
+  "forbidden": [
+    "team_transfers",
+    "secondary_energy_wallet",
+    "attack_farming",
+    "passive_global_stats",
+    "permanent_stat_stacking",
+    "interest",
+    "income_multipliers",
+    "discount_loops",
+    "rental_use_charges",
+    "universal_safe_cancel",
+    "random_combat_power"
+  ],
+  "release_policy": "The full library is 38 designs. Core trial is 24 entries (12 rentals, 8 EX, 4 conventional arts). Fourteen higher-risk entries are separately specified advanced trials. These sets are testing waves, not permission to remove required existing arts from production or mark them finished."
+}

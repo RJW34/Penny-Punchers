@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "stage_id": "marist_green",
+      "path": "game/Assets/AfterHours/Stages/marist_green-panorama.png",
+      "source": "design/after-hours-32bit/stages/marist-green/panorama.png",
+      "sha256": "a7db85804c467f4e3600c5faa268d922b71fd0cf150a8e757ca5c781dfbb6315",
+      "method": "Unmodified copy of supplied original image_gen source. Runtime nearest-filtered world panorama; no reference photographs shipped."
+    },
+    {
+      "stage_id": "marist_green",
+      "path": "game/Assets/AfterHours/Stages/marist_green-card.png",
+      "source": "design/after-hours-32bit/stages/marist-green/select-card.png",
+      "sha256": "ed5f7d37189f2151ac82c4e6d13157799c4e2e5a82b6929c7dc6d49e49c7e26b",
+      "method": "Unmodified copy of supplied original image_gen source. Runtime nearest-filtered world panorama; no reference photographs shipped."
+    },
+    {
+      "stage_id": "marist_gates",
+      "path": "game/Assets/AfterHours/Stages/marist_gates-panorama.png",
+      "source": "design/after-hours-32bit/stages/marist-gates/panorama.png",
+      "sha256": "cf2fad1c6be338b5f357971e43cb8c1243e8d2a1dcdb76494ff5b65492852d64",
+      "method": "Unmodified copy of supplied original image_gen source. Runtime nearest-filtered world panorama; no reference photographs shipped."
+    },
+    {
+      "stage_id": "marist_gates",
+      "path": "game/Assets/AfterHours/Stages/marist_gates-card.png",
+      "source": "design/after-hours-32bit/stages/marist-gates/select-card.png",
+      "sha256": "ababc6f9c3c6b9cf8da0f24c7a15acbf9e1b50f8541652e546fa05cad80e1a26",
+      "method": "Unmodified copy of supplied original image_gen source. Runtime nearest-filtered world panorama; no reference photographs shipped."
+    }
+  ],
+  "reference_photos_included": false,
+  "normalization": "Runtime sampling; sources remain native resolution. Panorama maps nominal world0..768000 with camera overscan handled by presentation; no separately authored parallax layers."
+}

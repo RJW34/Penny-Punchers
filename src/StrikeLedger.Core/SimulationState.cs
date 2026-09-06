@@ -1,28 +1,41 @@
 namespace StrikeLedger.Core;
 public enum MatchPhase { Preparation, Reveal, Countdown, Fight, PendingResult, RoundResult, MatchOver }
 public enum ParryKind { None, High, Low, Air, RedHigh, RedLow }
-public enum CombatEventKind { ActionStarted, Spend, Rejected, Hit, Block, Parry, Throw, ThrowTech, ProjectileSpawn, ProjectileClash, Knockdown, Dizzy, RoundTerminal, Settlement, Preparation, Jump, Dash, Land }
-public sealed record CombatEvent(long Tick,CombatEventKind Kind,int Seat,int Target=-1,string MoveId="",int Value=0,string Detail="");
+public enum CombatEventKind { ActionStarted, Spend, Rejected, Hit, Block, Parry, Throw, ThrowTech, ProjectileSpawn, ProjectileClash, Knockdown, Dizzy, RoundTerminal, Settlement, Preparation, Jump, Dash, Land, InstallStarted, CounterCaught, SuperUseConsumed, SkillAward, SkillOpportunity }
+/// <summary>World coordinates describe the contact at resolution, before pushback. Input ticks continue through freeze.</summary>
+public sealed record CombatEvent(long Tick,CombatEventKind Kind,int Seat,int Target=-1,string MoveId="",int Value=0,string Detail="",int? WorldX=null,int? WorldY=null,int Facing=0,int ActionOrdinal=0,int ProjectileId=0,int HitGroup=0,string SourceFighterId="");
 public sealed record StepResult(long Tick,IReadOnlyList<CombatEvent> Events,string Hash);
 public sealed record MatchConfig
 {
- public string Fighter0 {get;init;}="rook"; public string Fighter1 {get;init;}="vale"; public string Super0 {get;init;}="art_1"; public string Super1 {get;init;}="art_1";
+ public string Fighter0 {get;init;}="rook"; public string Fighter1 {get;init;}="vale"; public string Super0 {get;init;}=""; public string Super1 {get;init;}="";
  public string SessionId {get;init;}="local"; public string StageId {get;init;}="foundry"; public bool Training {get;init;} public bool Assist {get;init;}
 }
-public sealed record PreparationPlan(string[] ItemIds,int ReserveFloor=0);
-public sealed record PreparationReceipt(string Key,int Round,int Cost0,int Cost1,int Credits0,int Credits1);
+public sealed record PreparationPlan(string[] ItemIds,int ReserveFloor=0,string ContentHash="",int? QuotedCost=null);
+public sealed record PreparationReceipt(string Key,int Round,int Cost0,int Cost1,int Credits0,int Credits1)
+{
+ public int OpeningCredits0 {get;init;}public int OpeningCredits1 {get;init;}
+ public string[] ProductIds0 {get;init;}=[];public string[] ProductIds1 {get;init;}=[];
+ public string SuperArt0 {get;init;}="";public string SuperArt1 {get;init;}="";
+}
 public sealed record TerminalResult(int WinnerSeat,long TerminalTick,string Reason);
-public sealed record SettlementReceipt(string Key,int Round,int WinnerSeat,PayoutReceipt Payout0,PayoutReceipt Payout1,string MatchDecision);
+public sealed record SettlementReceipt(string Key,int Round,int WinnerSeat,PayoutReceipt Payout0,PayoutReceipt Payout1,string MatchDecision)
+{
+ public SkillSettlementReceipt SkillPayout0 {get;init;}=new(0,0,0);public SkillSettlementReceipt SkillPayout1 {get;init;}=new(0,0,0);
+}
+public sealed record SuperUseReceipt(string Key,string MoveId,long Tick,int ActionOrdinal);
 public sealed class SimulationSnapshot
 {
  readonly byte[] _bytes; public byte[] Bytes=>_bytes.ToArray();
  public SimulationSnapshot(byte[] bytes){if(bytes.Length is <16 or >2000000)throw new ArgumentException("Invalid snapshot size");_bytes=bytes.ToArray();}
 }
 public sealed record InputSample(long Tick,byte RawDirection,byte RelativeDirection,Buttons Held,int FacingEpoch);
-public sealed class PlayerState
+public sealed partial class PlayerState
 {
  public int Seat {get;internal set;} public string FighterId {get;internal set;}=""; public string SelectedSuper {get;internal set;}="";
  public int Credits {get;internal set;} public int ReserveFloor {get;internal set;} public int RecoveryTier {get;internal set;} public int ScoreHalfPoints {get;internal set;}
+ public int BankCredits=>Credits;public int OpeningBankCredits {get;internal set;}public int RoundPurchaseCost {get;internal set;}public int SuperUsesRemaining {get;internal set;}
+ public IReadOnlyList<string> OwnedProductIds=>LeaseIds.AsReadOnly();public IReadOnlyList<string> OwnedEx=>OwnedExIds.AsReadOnly();public IReadOnlyList<SuperUseReceipt> SuperUseReceipts=>UseReceipts.AsReadOnly();
+ internal List<string> OwnedExIds=[];internal List<SuperUseReceipt> UseReceipts=[];
  public int Health {get;internal set;} public int MaxHealth {get;internal set;} public int Stun {get;internal set;}
  public int X {get;internal set;} public int Y {get;internal set;} public int Vx {get;internal set;} public int Vy {get;internal set;} public int Facing {get;internal set;}=1;
  public int FacingEpoch {get;internal set;} public string ActionId {get;internal set;}=""; public int ActionFrame {get;internal set;} public int ActionFacing {get;internal set;}=1;
@@ -37,7 +50,7 @@ public sealed class PlayerState
  internal ulong HitGroups; internal string BufferedAction=""; internal long BufferExpires=-1; internal bool BufferedReversal; internal ParryKind DeferredParry; internal int ThrowAttacker=-1; internal string ThrowMove=""; internal int PreviousX,PreviousY;
  public bool Actionable=>Hitstop==0&&Hitstun==0&&Blockstun==0&&KnockdownTicks==0&&DizzyTicks==0&&JumpStart==0&&LandingTicks==0&&DashTicks==0&&ThrowAttacker<0&&ActionId.Length==0;
 }
-public sealed class ProjectileState
+public sealed partial class ProjectileState
 {
  public int Id {get;internal set;} public int Owner {get;internal set;} public string MoveId {get;internal set;}=""; public int X {get;internal set;} public int Y {get;internal set;} public int Vx {get;internal set;}
  public int LifeTicks {get;internal set;} public int HitsRemaining {get;internal set;} public int Hitstop {get;internal set;} public int ContactCooldown {get;internal set;} public int Facing {get;internal set;}

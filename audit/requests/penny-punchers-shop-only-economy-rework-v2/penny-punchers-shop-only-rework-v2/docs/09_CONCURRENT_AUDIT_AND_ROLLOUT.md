@@ -1,0 +1,10 @@
+# Safe integration while the expanded audit proceeds
+Place this pack under an isolated rework folder. Do not copy its `data/` over the live game's data. At WP-000 discover current local and remote state, active branch ownership, dirty files and implemented buyables. Reconcile by symbol/behavior, not by checkout of the pinned historical commit.
+
+Use one integrator for SimulationState, GameContent, serialization, round coordination and network protocol. Allow specialists only for non-overlapping UI, reference tests or documentation tasks. Agree before modifying a file another agent is editing. No silent stashing/discarding, deleting branches or changing remote source of truth. Worktree use must not conceal needed uncommitted fixes.
+
+`data/audit_crosswalk.json` preserves every PP-001..PP-091 identifier. Resource-related entries require explicit resolution under v2; a classification is not a fixed status. In particular keep control/camera, training access, actual purchase usefulness, precise input, replay integrity, presentation and physical/human gates. Supersede only reserve/direct-debit/no-income expectations. Historical analytical results are not rebranded as new-balance proof.
+
+Stage behind a clearly versioned internal candidate until it passes; at handoff the default new-match path must actually use shop-only v2. A flag left off is not completion. Keep old candidate runnable in an archived build/replay handler if helpful; do not present old spending as an optional final rule that negates the user's direction.
+
+Mandatory finish is the live roster and its complete play loop migrated, not all speculative library mechanics invented at once. If new buyables are already installed, include them in ownership/reward/provenance coverage. Surface prices and access restrictions in the same interface, retest changed moves under repeatable licenses, and record any temporary non-shipping experimental exclusions explicitly. Never solve an unfinished feature by counting its documentation as implemented.

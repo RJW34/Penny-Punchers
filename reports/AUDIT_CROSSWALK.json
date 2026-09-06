@@ -1,0 +1,1686 @@
+{
+  "schema_version": 1,
+  "utc": "2026-09-05T23:41:39.675683+00:00",
+  "scope": "Every original PP finding preserved with implementation/partial/external disposition; individual review evidence identities and limits remain authoritative.",
+  "original_findings": 91,
+  "reconciled": 91,
+  "review_sha256": {
+    "reports/SHOP_V2_CORE_FINDINGS.json": "2be76539f9685589a282a729d995693df616505ae97982cb7db6b4afc5ba2750",
+    "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json": "9b839f56c834f21718491571981f68b485e39dbde29d9e810218b69551f0d388",
+    "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json": "991af54749b450635bc9a8b4bbddcd635d26bbaba7f03871e836030c5e3b39a4"
+  },
+  "rows": [
+    {
+      "id": "PP-001",
+      "title": "Default medium kick also routes to pause",
+      "owner_reviews": [],
+      "disposition": "IMPLEMENTED",
+      "detail": "Combat pause uses Start/Escape; default B/MK and rebound action roles are covered by native software input tests.",
+      "source": "game/Main.ControlRouting.cs",
+      "source_sha256": "84bb8791481f5bc4b84a8921cadecabdb87e15b9142b48d778d2b3e2215d34ed"
+    },
+    {
+      "id": "PP-002",
+      "title": "Legal fighter separation exceeds visible arena width",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-002",
+            "title": "Legal fighter separation exceeds visible arena width",
+            "implementation_status": "IMPLEMENTED_AWAITING_FINAL_NATIVE",
+            "implementation_paths": [
+              "game/Presentation/ArenaCamera.cs",
+              "game/Presentation/FighterSprites.cs",
+              "game/Presentation/ArenaView.cs",
+              "game/Main.StageEvidence.cs"
+            ],
+            "implemented": "A deterministic stateless presentation camera fits both complete source-cel envelopes, both facings and vertical positions; every rendered world object shares the same projection. Core movement and arena bounds are unchanged.",
+            "software_evidence": [
+              "assets/presentation_checks/results/camera-full.json",
+              "assets/presentation_checks/results/camera-core.json"
+            ],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "Pure checks cover all source rectangles, separated corners and heights. Development native foundry corners and jumps passed and were visually inspected; its later contact setup failed because the old fixed approach stopped too early. The fixture now approaches actual pushbox distance, capped at 240 legal ticks; rerun is required for all four stages."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-003",
+      "title": "Regular CPU purchases techniques its policy does not deliberately execute",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-003",
+            "current_disposition": "CPU purchase and execution share the capability predicate;21/25 actual zero-bank supported-product witnesses under v2.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-004",
+      "title": "CPU super logic ignores actual selected-art affordability and Vale supers",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-004",
+            "current_disposition": "Affordability is superseded: policy uses purchased current art plus SuperUsesRemaining, with no runtime bank authorization.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-005",
+      "title": "Lease policy does not encode current gambit commands",
+      "owner_reviews": [],
+      "disposition": "IMPLEMENTED",
+      "detail": "The shared CommandEncoder and actual purchased-option CPU witnesses cover gambit entrypoints, including derived branches.",
+      "source": "src/StrikeLedger.App/CommandEncoder.cs",
+      "source_sha256": "3ee023655675df5d0085ffcf557681486ea6421cca7bd07e9f0b9502de635ccc"
+    },
+    {
+      "id": "PP-006",
+      "title": "Fixed lexical rental selection does not evaluate all alternatives",
+      "owner_reviews": [],
+      "disposition": "PARTIAL",
+      "detail": "PurchasePlanning selects executable weighted alternatives from actual content. Bot preferences are limited policies, not a solved valuation of every matchup.",
+      "source": "src/StrikeLedger.App/PurchasePlanning.cs",
+      "source_sha256": "a9cfe9ad8e82e4d9fcd7d10696d9619e99c729e17b25d65a97287bad17721fcb"
+    },
+    {
+      "id": "PP-007",
+      "title": "Players cannot equip rentals through the reviewed training menus",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-007",
+            "current_disposition": "Independent mixed training kits include EX licenses and super permits; configuration/reset does not charge competitive bank.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-008",
+      "title": "Purchase cards omit their practical consequences",
+      "owner_reviews": [],
+      "disposition": "IMPLEMENTED",
+      "detail": "Canonical cards expose input, purpose, tradeoff, replacement, price and expiry; long detail and practice wrapping receive native visual checks.",
+      "source": "game/Main.Purchase.cs",
+      "source_sha256": "30583b5f2a444f51a16dc6e19febf65f54241654db215adfd599d157f7816e2f"
+    },
+    {
+      "id": "PP-009",
+      "title": "Online shop has less decision information than local shop",
+      "owner_reviews": [],
+      "disposition": "IMPLEMENTED",
+      "detail": "Local and online use the same canonical card/preparation details; online retains private commit/reveal.",
+      "source": "game/Main.Purchase.cs",
+      "source_sha256": "30583b5f2a444f51a16dc6e19febf65f54241654db215adfd599d157f7816e2f"
+    },
+    {
+      "id": "PP-010",
+      "title": "Unaffordable timeout plans are silently discarded",
+      "owner_reviews": [],
+      "disposition": "IMPLEMENTED",
+      "detail": "Invalid edits preserve the visible last valid plan; real15-second timeout regression commits that plan.",
+      "source": "src/StrikeLedger.NetworkLab/ShopV2AppTests.cs",
+      "source_sha256": "8b37a0c6b76fef83126f3aaa14946f12cbe8f33052782924b4113b54293b693c"
+    },
+    {
+      "id": "PP-011",
+      "title": "Unaffordable choices remain selectable with negative draft balances",
+      "owner_reviews": [],
+      "disposition": "IMPLEMENTED",
+      "detail": "Invalid/unaffordable choices are rejected before replacing the draft; both-player commit preflight remains atomic.",
+      "source": "src/StrikeLedger.Core/PreparationRules.cs",
+      "source_sha256": "6c1636bda67eb6ff8eca1f492c10cba618955a14491729d75ab3cca36bc59f95"
+    },
+    {
+      "id": "PP-012",
+      "title": "Reserve floor can be mistaken for money available for a super",
+      "owner_reviews": [],
+      "disposition": "SUPERSEDED_IMPLEMENTED",
+      "detail": "V2 removes reserve floors and combat affordability. Explicit owned EX/super state replaces the old floor display.",
+      "source": "docs/21_SHOP_ONLY_V2.md",
+      "source_sha256": "9191882702647e1c3285d720cf1f6253d3925a0489909e2568bafc4e8e2973ef"
+    },
+    {
+      "id": "PP-013",
+      "title": "Local visible drafts and online hidden commitments create different games",
+      "owner_reviews": [],
+      "disposition": "DOCUMENTED_DESIGN_BOUNDARY",
+      "detail": "Shared-screen local drafts remain visible; remote drafts commit privately. Simultaneous final reveal is preserved and no local secrecy is claimed.",
+      "source": "docs/11_UI_CONTROLS_AND_ACCESSIBILITY.md",
+      "source_sha256": "59d25975ff7a97ad04ee97ef55e502b561c8d216ebd0f396362e8435de4af2e6"
+    },
+    {
+      "id": "PP-014",
+      "title": "Fixed slot prices are not evidence of tactical value",
+      "owner_reviews": [],
+      "disposition": "PARTIAL_BALANCE",
+      "detail": "Canonical slot prices are implemented. Matched purchase/save and EX-pair pilots measure bounded value; prices are not asserted competitively optimal.",
+      "source": "src/StrikeLedger.BalanceLab/ShopOnlyPilot.cs",
+      "source_sha256": "a87b48631b4c7a21973848eda2f09b1772e53870a6e357f268397520418d649c"
+    },
+    {
+      "id": "PP-015",
+      "title": "Rook feints have weak documented mechanical value",
+      "owner_reviews": [],
+      "disposition": "IMPLEMENTED_WITH_BALANCE_LIMIT",
+      "detail": "False Start/False Pulse retain authored finite commitment and exact displacement, no damage and no false counter-hit income; strategic bluff value needs human play.",
+      "source": "src/StrikeLedger.CoreTests/ActualSkillContactTests.cs",
+      "source_sha256": "2ac1e8b00ee6574da715759f73867af2a5da7b298b25f8f9d41ebd59ed4080aa"
+    },
+    {
+      "id": "PP-016",
+      "title": "Low Drive and Low Turn need a meaningful comparison",
+      "owner_reviews": [],
+      "disposition": "PARTIAL_BALANCE",
+      "detail": "Canonical action effects and mirrored purchase/save pilots provide concrete comparisons. Optimal Low Drive/Low Turn matchup value remains a tuning question.",
+      "source": "src/StrikeLedger.BalanceLab/ShopOnlyPilot.cs",
+      "source_sha256": "a87b48631b4c7a21973848eda2f09b1772e53870a6e357f268397520418d649c"
+    },
+    {
+      "id": "PP-017",
+      "title": "Opening-round options depend heavily on the weakest purchases",
+      "owner_reviews": [],
+      "disposition": "SUPERSEDED_WITH_BALANCE_LIMIT",
+      "detail": "Opening600 now also buys specific EX licenses. Opening bank/score-controlled policy comparisons are measured; human purchase preference remains open.",
+      "source": "docs/21_SHOP_ONLY_V2.md",
+      "source_sha256": "9191882702647e1c3285d720cf1f6253d3925a0489909e2568bafc4e8e2973ef"
+    },
+    {
+      "id": "PP-018",
+      "title": "One-seed bot results do not establish competitive balance",
+      "owner_reviews": [],
+      "disposition": "PARTIAL_BALANCE",
+      "detail": "New pilots use two seeds, paired controls, seat mirrors and multiple policies. Results disclose uncertainty and do not establish expert balance.",
+      "source": "src/StrikeLedger.BalanceLab/ShopOnlyPilot.cs",
+      "source_sha256": "a87b48631b4c7a21973848eda2f09b1772e53870a6e357f268397520418d649c"
+    },
+    {
+      "id": "PP-019",
+      "title": "Recovery, draws and wallet cap need adversarial incentives testing",
+      "owner_reviews": [],
+      "disposition": "PARTIAL_BALANCE",
+      "detail": "A/B/C/D payout/reward controls, exact caps and real repeated CH/AA/parry bait tests are present. Exhaustive adversarial strategy search remains open.",
+      "source": "src/StrikeLedger.CoreTests/ActualSkillContactTests.cs",
+      "source_sha256": "2ac1e8b00ee6574da715759f73867af2a5da7b298b25f8f9d41ebd59ed4080aa"
+    },
+    {
+      "id": "PP-020",
+      "title": "Match and preparation pacing lack human acceptance",
+      "owner_reviews": [],
+      "disposition": "HUMAN_PENDING",
+      "detail": "No owner/friend acceptance of match/shop pacing is invented.",
+      "source": "release_docs/KNOWN_LIMITATIONS.md",
+      "source_sha256": "12f6b6ff785949d0ddb82d8d28790a15ca29ed8321f3aa8bf28d67526ceeb798"
+    },
+    {
+      "id": "PP-021",
+      "title": "Shop money displays and some limits bypass canonical content",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-021",
+            "title": "Shop money displays and some limits bypass canonical content",
+            "implementationState": "IMPLEMENTED_CORE_AND_SHARED_QUOTE",
+            "detail": "Typed canonical prices, mixed slot limits and pure QuotePreparation drive atomic cost; no runtime bank authorizer. Isolated item1900/cap2400 fixture quotes and debits2200 consistently. UI/App integration is independently owned.",
+            "scenarios": [
+              "audit_canonical_purchase_and_registry",
+              "shop_atomic_cart_and_thresholds"
+            ],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": ""
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-022",
+      "title": "Item-array order silently defines shop slots",
+      "owner_reviews": [],
+      "disposition": "IMPLEMENTED",
+      "detail": "Preparation uses stable product IDs, explicit semantic rows and canonical slot types instead of item-array positions.",
+      "source": "game/Main.Purchase.cs",
+      "source_sha256": "30583b5f2a444f51a16dc6e19febf65f54241654db215adfd599d157f7816e2f"
+    },
+    {
+      "id": "PP-023",
+      "title": "Regular CPU cannot meaningfully adapt to revealed equipment",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-023",
+            "current_disposition": "Public delayed observations include equipped product IDs, remaining super use and pending skills; threat response no longer infers strength from bank.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-024",
+      "title": "Link and hit-confirm drills can use weak success predicates",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-024",
+            "current_disposition": "Genuine link/confirm continuity remains tested; confirm requires actual prepaid SuperUseConsumed, not a debit.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-025",
+      "title": "Advanced drills rely on generic sparring rather than precise practice feeds",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-025",
+            "current_disposition": "Precise repeatable feeds now explicitly equip the intended multihit permit in both catalogs;21 lessons include v2 reward timing.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-026",
+      "title": "Training lineup is constrained to the opposite character",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-026",
+            "current_disposition": "Two independent fighters/banks/mixed kits; each permit determines its seat\u2019s selected super, with no free match art.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-027",
+      "title": "Loading a replay from paused playback does not reset shell playback state",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-027",
+            "current_disposition": "Fresh replay start and every seek clear timeline/state; current App seek tests pass, graphical traversal is separately owned.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-028",
+      "title": "Results claim a replay was saved even after a save error",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-028",
+            "current_disposition": "Structured actual save result retained; atomic locked-file/unique-path regressions pass.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-029",
+      "title": "Archive sorts filenames and only exposes eight entries",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-029",
+            "current_disposition": "Timestamp metadata/pagination retained; completion requires final MatchDecision, not an intermediate settled round.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-030",
+      "title": "Replay corruption during playback needs a safe error boundary",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-030",
+            "current_disposition": "Replay verification catches later event/skill/wallet corruption; source UI error boundary remains, native screen evidence separate.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-031",
+      "title": "Replay persistence lacks collision-proof names and atomic replacement",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-031",
+            "current_disposition": "Atomic sibling rename, immutable unique archive paths, strict bounded load and legacy-byte preservation pass.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-032",
+      "title": "All presentation events wait for confirmed remote input",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-032",
+            "current_disposition": "Reversible local startup/jump/dash cues only; skill awards/super uses/contact/terminal outcomes are confirmed. False cue removal is tested.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        },
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-032",
+            "title": "All presentation events wait for confirmed remote input",
+            "implementation_status": "IMPLEMENTED_AWAITING_FINAL_NATIVE",
+            "implementation_paths": [
+              "game/Main.Rendering.cs",
+              "game/Presentation/ArenaView.cs",
+              "game/Presentation/ArenaAudio.cs",
+              "src/StrikeLedger.App/RollbackSession.cs"
+            ],
+            "implemented": "The adapter consumes only keyed Add/Confirm/Cancel changes. Local reversible action/jump/dash cues appear speculatively once; correction removes their keyed visuals/audio. Confirm does not replay them. Economic and terminal outcomes stay confirmed.",
+            "software_evidence": [
+              "assets/presentation_checks/results/presentation-compile.txt"
+            ],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "Application rollback contract and tests are owned by the session agent; this report does not relabel their evidence as independently executed here. Final two-peer correction/audio capture remains required."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-033",
+      "title": "Delayed impacts use current positions rather than contact-time positions",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-033",
+            "title": "Delayed impacts use current positions rather than contact-time positions",
+            "implementation_status": "IMPLEMENTED_AWAITING_FINAL_NATIVE",
+            "implementation_paths": [
+              "game/Main.Rendering.cs",
+              "game/Presentation/ArenaView.cs",
+              "src/StrikeLedger.Core/SimulationState.cs"
+            ],
+            "implemented": "Impact placement prefers Core event-time WorldX/WorldY, SourceFighterId and source move identity; delayed cues retain their original contact location and age, with fallbacks only when event metadata is absent.",
+            "software_evidence": [
+              "assets/presentation_checks/results/presentation-compile.txt"
+            ],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "Final latency/correction capture must demonstrate contact points after both actors move; Core contact metadata tests are reported separately."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-034",
+      "title": "Both peers must manually duplicate the entire lineup",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-034",
+            "current_disposition": "Seat-owned fighter lobby and host stage; optional super is purchased per round in commit/reveal.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-035",
+      "title": "Some exit paths dispose the peer without sending disconnect",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-035",
+            "current_disposition": "Reliable bounded leave and no unresolved settlement tested.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-036",
+      "title": "Pause/resume needs asymmetric-latency tests",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-036",
+            "current_disposition": "Asymmetric actual-socket pause barrier, heartbeat and neutral resume countdown pass.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-037",
+      "title": "Private rematch returns to connection setup",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-037",
+            "current_disposition": "Mutual same-lineup rematch retains socket and resets bank/capabilities; in-session fighter/seat changes remain partial.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-038",
+      "title": "Canonical serialization allocates repeatedly in the hot path",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-038",
+            "title": "Canonical serialization allocates repeatedly in the hot path",
+            "implementation_status": "OUTSIDE_PRESENTATION_SCOPE",
+            "implementation_paths": [
+              "game/Presentation/RuntimeProfiler.cs"
+            ],
+            "implemented": "Presentation diagnostics separate adapter/draw/overlay costs from gameplay and record GC deltas. Serialization and replay allocation optimization belongs to Core/App owners, not this renderer change.",
+            "software_evidence": [],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "Do not close PP-038 from rendering checks. Use the Core/App allocation benchmark and actual match profiler evidence."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-039",
+      "title": "The recorded half-second frame outlier is unattributed",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-039",
+            "title": "The recorded half-second frame outlier is unattributed",
+            "implementation_status": "INSTRUMENTED_NOT_YET_ATTRIBUTED",
+            "implementation_paths": [
+              "game/Presentation/RuntimeProfiler.cs",
+              "game/Presentation/ArenaView.cs",
+              "game/Main.Rendering.cs"
+            ],
+            "implemented": "Opt-in profiling records callback distributions, frame phases, >=40ms stalls, GC deltas, managed bytes and movie-capture context. Object overlays have a separate measured scope.",
+            "software_evidence": [
+              "assets/presentation_checks/results/presentation-compile.txt"
+            ],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "No current native pacing run is claimed. C# timing excludes GPU work after submission and includes OS scheduling. A low C# time or absent GC alone cannot establish the cause of a stall."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-040",
+      "title": "Simultaneous command throws lack an explicit second-pass arbitration",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-040",
+            "title": "Simultaneous command throws lack an explicit second-pass arbitration",
+            "implementationState": "IMPLEMENTED_VERIFIED",
+            "detail": "Immutable mutual command grabs clash symmetrically; mixed command/normal resolves command priority; normal-normal tech; mirrored actual input and every-tick reconstruction.",
+            "scenarios": [
+              "audit_mutual_throws_snapshot"
+            ],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": ""
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-041",
+      "title": "Air parry arm can survive a landing transition",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-041",
+            "title": "Air parry arm can survive a landing transition",
+            "implementationState": "IMPLEMENTED_VERIFIED",
+            "detail": "Air parry requires airborne state, clears on landing, and cannot leak through landing recovery into grounded low/overhead defense.",
+            "scenarios": [
+              "audit_air_parry_landing"
+            ],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": ""
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-042",
+      "title": "Taunt bypasses the normal action-start parry cleanup",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-042",
+            "title": "Taunt bypasses the normal action-start parry cleanup",
+            "implementationState": "IMPLEMENTED_VERIFIED",
+            "detail": "Taunt requires grounded actionable unfrozen actor, clears parry and buffers, and commits24ticks without retained defense.",
+            "scenarios": [
+              "audit_taunt_commitment"
+            ],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": ""
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-043",
+      "title": "Hurt silhouettes are generic outside active hitbox extension",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-043",
+            "title": "Hurt silhouettes are generic outside active hitbox extension",
+            "implementationState": "IMPLEMENTED_WITH_HUMAN_VALIDATION_OPEN",
+            "detail": "Move-authored half-open hurtbox_windows supply independent body/limb vulnerability during startup/active/recovery and freeze with action clock. New recipes preserve explicit disjoint and recovery roles.",
+            "scenarios": [
+              "audit_authored_recovery_hurtboxes"
+            ],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": "Paused native overlays and human whiff-punish/silhouette calibration are separate; these numeric shapes are authored gameplay seeds, not automatically traced art."
+          }
+        },
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-043",
+            "title": "Hurt silhouettes are generic outside active hitbox extension",
+            "implementation_status": "VISUAL_ADAPTER_ONLY",
+            "implementation_paths": [
+              "game/Main.Rendering.cs",
+              "game/Presentation/ArenaObjects.cs",
+              "game/Presentation/ArenaView.cs"
+            ],
+            "implemented": "Debug rectangles are derived from actual simulation hurt/hit/push/object geometry and use the same camera projection as artwork; field markers distinguish inactive versus contact-active geometry.",
+            "software_evidence": [
+              "assets/presentation_checks/results/presentation-compile.txt"
+            ],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "Authoring action-specific Core hurt silhouettes is outside this presentation task. Debug agreement is not evidence that every pose has ideal hurt geometry."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-044",
+      "title": "Midair facing and blocked posture transitions need feel validation",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-044",
+            "title": "Midair facing and blocked posture transitions need feel validation",
+            "implementationState": "IMPLEMENTED_WITH_FEEL_VALIDATION_OPEN",
+            "detail": "Horizontal facing/charge epoch stays committed airborne; grounded landing updates facing. Current high/low guard input controls posture during blockstop/stun.",
+            "scenarios": [
+              "audit_facing_and_guard_posture",
+              "charge_crossup"
+            ],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": "Subjective original-feel comparison requires adapted human play; no exact Third Strike emulation claim."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-045",
+      "title": "Strict command timing has not been accepted by actual players",
+      "owner_reviews": [],
+      "disposition": "HUMAN_PENDING",
+      "detail": "Execution windows have actual measured/negative tests, but player acceptance of their strictness remains open.",
+      "source": "release_docs/KNOWN_LIMITATIONS.md",
+      "source_sha256": "12f6b6ff785949d0ddb82d8d28790a15ca29ed8321f3aa8bf28d67526ceeb798"
+    },
+    {
+      "id": "PP-046",
+      "title": "Analog triggers are not supported as action bindings",
+      "owner_reviews": [],
+      "disposition": "IMPLEMENTED_HARDWARE_PENDING",
+      "detail": "Analog triggers support threshold action bindings and software regressions; actual pad compatibility remains unverified.",
+      "source": "game/GameSettings.cs",
+      "source_sha256": "8f94d439a262531a8fe317b11b04e566cf20b347b3451e8b5237379bcffa8d0f"
+    },
+    {
+      "id": "PP-047",
+      "title": "Keyboard sampling combines physical and logical bindings unconditionally",
+      "owner_reviews": [],
+      "disposition": "IMPLEMENTED",
+      "detail": "Physical/logical keyboard behavior is explicit and tested without unconditional double sampling.",
+      "source": "game/GameSettings.cs",
+      "source_sha256": "8f94d439a262531a8fe317b11b04e566cf20b347b3451e8b5237379bcffa8d0f"
+    },
+    {
+      "id": "PP-048",
+      "title": "Mapped move phases are not complete bespoke animations",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-048",
+            "title": "Mapped move phases are not complete bespoke animations",
+            "implementation_status": "PARTIAL_EXISTING_POSE_REUSE",
+            "implementation_paths": [
+              "game/Presentation/FighterSprites.cs",
+              "game/Presentation/animation-timing.json",
+              "assets/bind_buyable_presentation.py",
+              "assets/BUYABLE_PRESENTATION_BINDINGS.json"
+            ],
+            "implemented": "Explicit phase/state bindings distinguish walk directions, neutral transitions, Slipstream follow-ups, Rivet branches, kicks and feint aborts using inspected existing cels. Feints render the exact source anticipation for six ticks. Vault follows actual airborne state; held startup stays on Core action frame.",
+            "software_evidence": [
+              "assets/presentation_checks/results/camera-full.json",
+              "assets/presentation_checks/results/camera-core.json"
+            ],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "No new authored in-between animation set or dedicated air-throw/branch/dive sheet is claimed. The register names reused cels for all 31 new runtime action nodes. Complete bespoke animation remains unfinished."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-049",
+      "title": "Cel timing is uniformly distributed within broad action phases",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-049",
+            "title": "Cel timing is uniformly distributed within broad action phases",
+            "implementation_status": "IMPLEMENTED_AWAITING_FINAL_NATIVE",
+            "implementation_paths": [
+              "game/Presentation/CelTimeline.cs",
+              "game/Presentation/animation-timing.json",
+              "game/Presentation/FighterSprites.cs",
+              "game/Main.ArtReview.cs"
+            ],
+            "implemented": "Animation timing is explicit per-cel integer tick holds, including contact follow-through, settle and state loops. Selection uses canonical action frame rather than uniform phase subdivision.",
+            "software_evidence": [
+              "assets/presentation_checks/results/camera-full.json",
+              "assets/presentation_checks/results/camera-core.json"
+            ],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "The pure checks verify duration coverage, positive holds, known cels and exact feint anticipation/abort. Final native per-action playback and human cadence review remain required."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-050",
+      "title": "Runtime magenta keying is a provisional asset pipeline",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-050",
+            "title": "Runtime magenta keying is a provisional asset pipeline",
+            "implementation_status": "UNRESOLVED_ALPHA_AUTHORING",
+            "implementation_paths": [
+              "game/Presentation/FighterSprites.cs",
+              "design/after-hours-32bit/alpha-review-2026-09-05/verification.json"
+            ],
+            "implemented": "One original-board image-generation alpha experiment was inspected and rejected: it was RGB with painted checkerboard, not real alpha. Shipped source boards were not replaced.",
+            "software_evidence": [
+              "design/after-hours-32bit/alpha-review-2026-09-05/verification.json"
+            ],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "The runtime still uses chroma-key RGB boards. Genuine registered RGBA assets and alpha-boundary validation remain outstanding; shader cleanup is not claimed as authored alpha."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-051",
+      "title": "Heuristic palette recoloring is fragile",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-051",
+            "title": "Heuristic palette recoloring is fragile",
+            "implementation_status": "UNRESOLVED_AUTHORED_PALETTE_MASKS",
+            "implementation_paths": [
+              "game/Presentation/FighterSprites.cs"
+            ],
+            "implemented": "Existing alternate-palette heuristics remain unchanged; ownership labels and non-color-only field shapes improve object readability without claiming a material mask.",
+            "software_evidence": [
+              "assets/presentation_checks/results/presentation-compile.txt"
+            ],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "No authored skin/hair/cloth palette masks were produced. Both mirror palettes require final visual review, and long-term mask authoring remains outstanding."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-052",
+      "title": "Portraits are stretched into incompatible aspect ratios",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-052",
+            "title": "Portraits are stretched into incompatible aspect ratios",
+            "implementation_status": "IMPLEMENTED_AWAITING_FINAL_NATIVE",
+            "implementation_paths": [
+              "game/Main.ArtSkin.cs"
+            ],
+            "implemented": "Selection and HUD portraits preserve source aspect through contain/KeepAspectCentered behavior; missing fighter art has a visible development placeholder.",
+            "software_evidence": [],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "Development lineup portraits were visually inspected and proportionate. Final candidate and UI scale variants have not yet been reviewed."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-053",
+      "title": "Menu layout and focus ownership depend on pixel coordinates",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-053",
+            "title": "Menu layout and focus ownership depend on pixel coordinates",
+            "implementation_status": "PARTIAL_SHARED_WITH_SHELL",
+            "implementation_paths": [
+              "game/Main.ArtSkin.cs"
+            ],
+            "implemented": "Preparation skin refresh resolves root-owned semantic purchaseButtons[(Seat,Row)] rather than deriving ownership from pixel positions.",
+            "software_evidence": [],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "Root owns semantic focus routing and controller menu tests. Much layout still uses a 1280x720 canvas; large text and alternate display/UI-scale evidence are not supplied here."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-054",
+      "title": "Typography and shop labels do not yet match the authored art direction",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-054",
+            "title": "Typography and shop labels do not yet match the authored art direction",
+            "implementation_status": "IMPLEMENTED_WITH_READABILITY_LIMITS",
+            "implementation_paths": [
+              "game/Main.ArtSkin.cs",
+              "game/Presentation/UiTypography.cs",
+              "assets/UI_FONT_SOURCES.json",
+              "game/Presentation/Fonts/OFL.txt"
+            ],
+            "implemented": "Licensed Barlow body/condensed headings replace generic typography; the title is live PENNY PUNCHERS text. Shop labels, portraits and live names remain functional text.",
+            "software_evidence": [],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "Development lineup and preparation PNGs read cleanly at 1280x720. Final small-window/couch readability and accessibility review remain pending."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-055",
+      "title": "HUD assumes fixed health and art-price formulas",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-055",
+            "title": "HUD assumes fixed health and art-price formulas",
+            "implementation_status": "IMPLEMENTED_AWAITING_VARIATION_TEST",
+            "implementation_paths": [
+              "game/Main.ArtSkin.cs"
+            ],
+            "implemented": "Health fill and damage trail use each player MaxHealth. Selected-art cost and EX minimum/range use canonical current content; affordability uses actual credits less protected savings.",
+            "software_evidence": [],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "Native temporary MaxHealth/cost variation test remains required. Root catalog/lineup costs are outside this file and must use the same content."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-056",
+      "title": "Resource readability can improve without restoring a combat meter",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-056",
+            "title": "Resource readability can improve without restoring a combat meter",
+            "implementation_status": "IMPLEMENTED_WITH_COMPREHENSION_LIMITS",
+            "implementation_paths": [
+              "game/Main.ArtSkin.cs"
+            ],
+            "implemented": "The HUD shows one credit wallet, protected savings, spendable amount, selected-art shortage/affordability and EX availability. Damage trail and stun are separate; Overtime is an expiring install icon/countdown, not a second earned resource.",
+            "software_evidence": [],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "The old dev screenshot contains a lease/SAVED overlap, fixed in current source by removing legacy DrawLeaseSummary and placing loadout at baseline158. Verify rebuilt screenshots. Human one-wallet comprehension has not been tested."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-057",
+      "title": "Stage presentation is largely one scrolling image",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-057",
+            "title": "Stage presentation is largely one scrolling image",
+            "implementation_status": "PARTIAL_STAGE_UPGRADE",
+            "implementation_paths": [
+              "game/Presentation/ArenaView.cs",
+              "game/Presentation/ArenaAudio.cs",
+              "assets/MARIST_STAGES.json",
+              "data/stages/marist_green.json",
+              "data/stages/marist_gates.json"
+            ],
+            "implemented": "Original Marist Green and Marist Gates panoramas/select cards are imported unchanged with source/runtime hashes and source attribution; third-party reference photos are excluded. Stage-specific procedural ambience, ground presentation and original synthesized loops are added.",
+            "software_evidence": [],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "Each new background remains one authored panorama; no independently authored parallax layers are claimed. Final stage native playthrough, palette/readability and pacing/audio checks remain pending."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-058",
+      "title": "Generic impact selection understates move identity",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-058",
+            "title": "Generic impact selection understates move identity",
+            "implementation_status": "IMPLEMENTED_WITH_SHARED_FX_ART",
+            "implementation_paths": [
+              "game/Presentation/impact-profiles.json",
+              "game/Presentation/ArenaView.cs",
+              "game/Presentation/ArenaObjects.cs",
+              "game/Main.Rendering.cs"
+            ],
+            "implemented": "Explicit per-move profiles control weight, shake, lifetime, FX atlas range and sound. Event metadata positions contact cues; counters, armor, reflection, interception, anchor phases and prism collision pips use distinct contextual cues.",
+            "software_evidence": [
+              "assets/presentation_checks/results/presentation-compile.txt"
+            ],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "Raster FX still reuse the original authored library. Final high-density/reduced-flash readability, freeze timing and human move-recognition checks remain pending."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-059",
+      "title": "Cosmetic wall-clock aging needs pause and frame-advance review",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-059",
+            "title": "Cosmetic wall-clock aging needs pause and frame-advance review",
+            "implementation_status": "IMPLEMENTED_AWAITING_FINAL_NATIVE",
+            "implementation_paths": [
+              "game/Presentation/ArenaView.cs",
+              "game/Presentation/FighterSprites.cs",
+              "game/Main.Rendering.cs",
+              "game/Main.StageEvidence.cs"
+            ],
+            "implemented": "Combat effects, state age, wallet cues and shake advance using simulation ticks with freeze gates. ResetPresentationTimeline clears transient keys/timers on replay/new-simulation/reset. Environmental ambience alone uses wall time.",
+            "software_evidence": [
+              "assets/presentation_checks/results/presentation-compile.txt"
+            ],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "The native legal-contact pause check did not execute after the old approach fixture failed; the corrected bounded approach is saved but not yet rerun. Final pause/frame-step/seek/rollback visual tests remain required."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-060",
+      "title": "Audio has a foundation but limited variation and character identity",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-060",
+            "title": "Audio has a foundation but limited variation and character identity",
+            "implementation_status": "PARTIAL_AUDIO_UPGRADE",
+            "implementation_paths": [
+              "game/Presentation/ArenaAudio.cs",
+              "assets/synthesize_audio.py",
+              "assets/check_audio.py",
+              "assets/ASSET_REGISTER.csv"
+            ],
+            "implemented": "Twenty-four original PCM files include deterministic hit/heavy variants, synthesized fighter breaths and two stage loops. A bounded sixteen-voice priority pool protects defensive/terminal cues; cancellation removes speculative audio and explicit shutdown releases streams.",
+            "software_evidence": [
+              "assets/presentation_checks/results/audio-validation.txt"
+            ],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "PCM non-silence/peak/hash validation passed, not speaker validation. Breaths are synthetic noise, not recorded human performances. Dense native mix, cancellation and blind character/defense recognition tests remain pending."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-061",
+      "title": "Terminal feedback does not consistently distinguish result reasons",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+          "record": {
+            "id": "PP-061",
+            "title": "Terminal feedback does not consistently distinguish result reasons",
+            "implementation_status": "IMPLEMENTED_AWAITING_RESULT_MATRIX",
+            "implementation_paths": [
+              "game/Main.ArtSkin.cs",
+              "game/Main.Rendering.cs"
+            ],
+            "implemented": "Terminal banner derives actual reason and winner: TIME UP, TIME / DRAW, DOUBLE K.O. or K.O. Timeout has a terminal audio cue and economic outcomes remain confirmed.",
+            "software_evidence": [],
+            "final_candidate_native_status": "NOT_RUN",
+            "remaining_limitations": [
+              "Final native KO/timeout/double-KO/draw/early-clinch result matrix is not run here. Root owns terminal match/point rules and result menus."
+            ]
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-062",
+      "title": "Linux verification status contradicts the final integration report",
+      "owner_reviews": [],
+      "disposition": "CURRENT_EVIDENCE_REQUIRED",
+      "detail": "Linux is tested as a native export under this PC's WSL Ubuntu; final candidate launch/comparison evidence is identified separately from historical runs.",
+      "source": "tools/compare_native_replays.py",
+      "source_sha256": "189e0214d9a46a92001046839ba3f71c606c529165a8a0a4d5286a8abe9f687e"
+    },
+    {
+      "id": "PP-063",
+      "title": "Actual controllers, two-PC play and human feel remain open",
+      "owner_reviews": [],
+      "disposition": "EXTERNAL_PENDING",
+      "detail": "Two physical controllers, two physical PCs and owner/friend feel are still separate unperformed gates.",
+      "source": "release_docs/KNOWN_LIMITATIONS.md",
+      "source_sha256": "12f6b6ff785949d0ddb82d8d28790a15ca29ed8321f3aa8bf28d67526ceeb798"
+    },
+    {
+      "id": "PP-064",
+      "title": "Feature-count gates miss emergent player-facing failures",
+      "owner_reviews": [],
+      "disposition": "IMPLEMENTED_WITH_LIMITS",
+      "detail": "Mechanical effect assertions, real contact provenance, rollback corrections, native flows and actual screenshot review complement counts. No count alone establishes polish.",
+      "source": "src/StrikeLedger.CoreTests/ActualSkillContactTests.cs",
+      "source_sha256": "2ac1e8b00ee6574da715759f73867af2a5da7b298b25f8f9d41ebd59ed4080aa"
+    },
+    {
+      "id": "PP-065",
+      "title": "No checked-in GitHub Actions workflow at the audited root",
+      "owner_reviews": [],
+      "disposition": "IMPLEMENTED",
+      "detail": "Checked-in GitHub Actions builds/validates Core and App with pinned tool versions and action references.",
+      "source": ".github/workflows/verify.yml",
+      "source_sha256": "8aac7ee80bcf183912b685d388aec4153fc5aab51622b3ebda2d5465f8b2880c"
+    },
+    {
+      "id": "PP-066",
+      "title": "Roster and content shape are hardcoded across layers",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-066",
+            "title": "Roster and content shape are hardcoded across layers",
+            "implementationState": "IMPLEMENTED_CORE_REGISTRY",
+            "detail": "Semantic registry bounds replace fixed two-fighter/49move/12item restrictions; test-only thirdfighter1250HP and extra stage validate and enter two-seat simulation.",
+            "scenarios": [
+              "audit_canonical_purchase_and_registry"
+            ],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": "Only Thomas and Vincent are production characters; third fixture is not a new shipped character."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-067",
+      "title": "Dense shell functions make behavior changes risky",
+      "owner_reviews": [],
+      "disposition": "PARTIAL_REFACTOR",
+      "detail": "Shop, catalog, training, replay, network, camera and typography have focused partials/classes. Some Main functions remain dense; further layout/component refactoring is open.",
+      "source": "game/Main.Purchase.cs",
+      "source_sha256": "30583b5f2a444f51a16dc6e19febf65f54241654db215adfd599d157f7816e2f"
+    },
+    {
+      "id": "PP-068",
+      "title": "Source-only checkout is not the complete historical evidence bundle",
+      "owner_reviews": [],
+      "disposition": "DOCUMENTED_DELIVERY",
+      "detail": "Source Git contains code/data/design/asset provenance. Large native builds and evidence are separate release archives with manifests, not falsely claimed inside a source-only clone.",
+      "source": "AUDIT_GUIDE.md",
+      "source_sha256": "b749eb09d1bb510ef8951bd8fbae40b6053ce878f53929391c122dc5b887ba81"
+    },
+    {
+      "id": "PP-069",
+      "title": "Distribution rights and attribution need an explicit shipping checklist",
+      "owner_reviews": [],
+      "disposition": "DOCUMENTED_DELIVERY",
+      "detail": "Rights/provenance and bundled font OFL are explicit. No new legal ownership claim is inferred from the supplied artwork.",
+      "source": "RIGHTS.md",
+      "source_sha256": "4e7f8991d8535de7a1afd60fb44d0458dcd688398476b06b9f9eee9772e0535f"
+    },
+    {
+      "id": "PP-070",
+      "title": "Saved economic plans with transparent affordability",
+      "owner_reviews": [],
+      "disposition": "IMPLEMENTED",
+      "detail": "Save/Load/Repeat preserve stable mixed-product IDs and revalidate price/content/bank, with explicit rejected/stale messages and temp-file persistence checks.",
+      "source": "game/GameSettings.cs",
+      "source_sha256": "8f94d439a262531a8fe317b11b04e566cf20b347b3451e8b5237379bcffa8d0f"
+    },
+    {
+      "id": "PP-071",
+      "title": "A compact in-game round economy ledger",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-071",
+            "current_disposition": "Replay4 round ledger separates shop spend, saved bank, outcome nominal/granted, skill nominal/allowed/granted, clipping and closing bank.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-072",
+      "title": "Replay takeover for missed punish and spending decisions",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-072",
+            "current_disposition": "Detached replay practice retains exact branch world and capabilities; competitive source remains unchanged.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-073",
+      "title": "Budget-aware combo and counterplay trials",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-073",
+            "current_disposition": "Legal one-action/free comparison and continuity drills remain; complete authored combo-route family remains partial.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-074",
+      "title": "Multi-slot dummy recordings and randomized defense",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-074",
+            "current_disposition": "Single recording and checkpointed deterministic scripts remain; multiple named/weighted recording slots remain optional unimplemented.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-075",
+      "title": "Private-session connection diagnostics and lobby quality",
+      "owner_reviews": [
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-075",
+            "current_disposition": "Lobby, compatibility and configured-fault evidence present; measured live latency estimator remains partial.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-076",
+      "title": "Evidence-linked post-match coaching",
+      "owner_reviews": [],
+      "disposition": "PARTIAL",
+      "detail": "Post-match economy receipts and prior public facts are evidence-linked. A full prescriptive coaching system remains unimplemented.",
+      "source": "game/Main.EconomyReport.cs",
+      "source_sha256": "da6fccfe6d8d6cc19dcecbd2b1561ac9ade1447eb27a38e256ea7c88242e0ab3"
+    },
+    {
+      "id": "PP-077",
+      "title": "Compact arcade/rematch motivation after the duel works",
+      "owner_reviews": [],
+      "disposition": "OPEN_OPTIONAL",
+      "detail": "Local/private mutual rematch is implemented; a distinct arcade campaign/progression mode remains an optional unimplemented extension.",
+      "source": "game/Main.ArchiveLobby.cs",
+      "source_sha256": "bf1d715fbe4b623706421af8ef3bf5d8eefa4da08bd3e95004420f059abbb5eb"
+    },
+    {
+      "id": "PP-078",
+      "title": "Global character-stat purchases are absent and should not be silently introduced",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-078",
+            "title": "Global character-stat purchases are absent and should not be silently introduced",
+            "implementationState": "IMPLEMENTED_VERIFIED",
+            "detail": "Products grant explicit actions or one finite art use; validator rejects passive system-defense products. No global purchased health/damage/speed/income modifiers.",
+            "scenarios": [
+              "audit_canonical_purchase_and_registry",
+              "shop_registry_resource_contract"
+            ],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": ""
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-079",
+      "title": "Vale Long Check needs a demonstrated advantage over free Long Heel",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-079",
+            "title": "Vale Long Check needs a demonstrated advantage over free Long Heel",
+            "implementationState": "SUPERSEDED_NICHE_SEED_REQUIRES_PLAYTEST",
+            "detail": "Later approved buyables catalog replaces original Long Check with Needle Check: a300-price thin mid, explicit reach and recovering limb, no low profile/knockdown/kara/outgoing cancel.",
+            "scenarios": [
+              "buy_catalog_plain_rental_effects"
+            ],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": "Actual buy/save pilot measures use/contact/outcome; a price-justified human anti-poke niche is not established by activation or static geometry alone."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-080",
+      "title": "Returning Pulse is a one-contact returning threat with owner-wide projectile constraints",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-080",
+            "title": "Returning Pulse is a one-contact returning threat with owner-wide projectile constraints",
+            "implementationState": "IMPLEMENTED_VERIFIED_MECHANICS",
+            "detail": "Returning Pulse reverses only after a miss, one contact consumes it on hit/block/parry, and shared ordinary-shot occupancy rejects licensed EX/selected-super projectile attempts before consuming use.",
+            "scenarios": [
+              "audit_returning_pulse_ownership"
+            ],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": "Human setup value and final price remain provisional."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-081",
+      "title": "Selected-super prices create major access differences not justified by slot order",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-081",
+            "title": "Selected-super prices create major access differences not justified by slot order",
+            "implementationState": "SUPERSEDED_RESOURCE_MODEL_MECHANICS_VERIFIED",
+            "detail": "Shop-only v2 replaces old4/3/2 purchased-startup arithmetic with one prepaid use total. All six core arts have exact shop thresholds, actual hit/block/parry/whiff traces and repeated exhausted intent; advanced Overtime/Prism replace fullcatalog third arts.",
+            "scenarios": [
+              "buy_catalog_conventional_art_cost_defense_repeat",
+              "shop_all_super_once_rollback",
+              "buy_route_overtime_wallet_timer"
+            ],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": "Different arts need adapted human confirm/reversal/positioning value review; equal damage and balanced prices are not asserted."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-082",
+      "title": "A 300-credit opening award gap can cross a decisive affordability threshold",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-082",
+            "title": "A 300-credit opening award gap can cross a decisive affordability threshold",
+            "implementationState": "V2_PILOT_IN_PROGRESS",
+            "detail": "Superseded direct-spend model is archived. New pilot uses only shop-only controls, real normalized commands, full receipts, score-preserving round2 fixtures, mirrored seed blocks, buy-vs-save products and explicit uncertain intervals.",
+            "scenarios": [],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": "Await current shop-v2 product/crossover summaries; human policy quality, all matchups/stages, and general balance remain unproven."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-083",
+      "title": "Recovery may restore liquidity only after severe score disadvantage",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-083",
+            "title": "Recovery may restore liquidity only after severe score disadvantage",
+            "implementationState": "V2_PILOT_IN_PROGRESS",
+            "detail": "Superseded direct-spend model is archived. New pilot uses only shop-only controls, real normalized commands, full receipts, score-preserving round2 fixtures, mirrored seed blocks, buy-vs-save products and explicit uncertain intervals.",
+            "scenarios": [],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": "Await current shop-v2 product/crossover summaries; human policy quality, all matchups/stages, and general balance remain unproven."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-084",
+      "title": "Residual spending differences can snowball independently of the win bonus",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-084",
+            "title": "Residual spending differences can snowball independently of the win bonus",
+            "implementationState": "V2_PILOT_IN_PROGRESS",
+            "detail": "Superseded direct-spend model is archived. New pilot uses only shop-only controls, real normalized commands, full receipts, score-preserving round2 fixtures, mirrored seed blocks, buy-vs-save products and explicit uncertain intervals.",
+            "scenarios": [],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": "Await current shop-v2 product/crossover summaries; human policy quality, all matchups/stages, and general balance remain unproven."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-085",
+      "title": "Full-rental plans and combat budgets need explicit opportunity-cost comparisons",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-085",
+            "title": "Full-rental plans and combat budgets need explicit opportunity-cost comparisons",
+            "implementationState": "V2_PILOT_IN_PROGRESS",
+            "detail": "Superseded direct-spend model is archived. New pilot uses only shop-only controls, real normalized commands, full receipts, score-preserving round2 fixtures, mirrored seed blocks, buy-vs-save products and explicit uncertain intervals.",
+            "scenarios": [],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": "Await current shop-v2 product/crossover summaries; human policy quality, all matchups/stages, and general balance remain unproven."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-086",
+      "title": "Unlimited per-round rental use makes duration and repeat pressure central to value",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-086",
+            "title": "Unlimited per-round rental use makes duration and repeat pressure central to value",
+            "implementationState": "V2_PILOT_IN_PROGRESS",
+            "detail": "Superseded direct-spend model is archived. New pilot uses only shop-only controls, real normalized commands, full receipts, score-preserving round2 fixtures, mirrored seed blocks, buy-vs-save products and explicit uncertain intervals.",
+            "scenarios": [],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": "Await current shop-v2 product/crossover summaries; human policy quality, all matchups/stages, and general balance remain unproven."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-087",
+      "title": "Zero-credit legal actions do not prove adequate answers to funded chip and pressure",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-087",
+            "title": "Zero-credit legal actions do not prove adequate answers to funded chip and pressure",
+            "implementationState": "SCRIPTED_COUNTERPLAY_MEASURED",
+            "detail": "All8 EX \u00d72facings \u00d75 real responses at a100HP zero-bank cornered defender; guard/parry/jump/throw/retreat outcomes and failed responses are retained with full reconstructible traces.",
+            "scenarios": [
+              "shop_ex_zero_bank_corner_counterplay"
+            ],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": "Predictive scripted parry is not a human reaction measurement; a losing prior position need not always escape."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-088",
+      "title": "Raw first-round-winner conversion is confounded by score and player strength",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-088",
+            "title": "Raw first-round-winner conversion is confounded by score and player strength",
+            "implementationState": "V2_PILOT_IN_PROGRESS",
+            "detail": "Superseded direct-spend model is archived. New pilot uses only shop-only controls, real normalized commands, full receipts, score-preserving round2 fixtures, mirrored seed blocks, buy-vs-save products and explicit uncertain intervals.",
+            "scenarios": [],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": "Await current shop-v2 product/crossover summaries; human policy quality, all matchups/stages, and general balance remain unproven."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-089",
+      "title": "Earlier parity payout variants need isolated versioned experiments",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-089",
+            "title": "Earlier parity payout variants need isolated versioned experiments",
+            "implementationState": "V2_PILOT_IN_PROGRESS",
+            "detail": "Superseded direct-spend model is archived. New pilot uses only shop-only controls, real normalized commands, full receipts, score-preserving round2 fixtures, mirrored seed blocks, buy-vs-save products and explicit uncertain intervals.",
+            "scenarios": [],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": "Await current shop-v2 product/crossover summaries; human policy quality, all matchups/stages, and general balance remain unproven."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-090",
+      "title": "A locked reserve can suppress a comeback or final-round cash-out unintentionally",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-090",
+            "title": "A locked reserve can suppress a comeback or final-round cash-out unintentionally",
+            "implementationState": "SUPERSEDED_DISABLED",
+            "detail": "V2 has no active reserve floor. Nonzero compatibility parameter rejects atomically; ownership and finite use alone authorize enhanced actions.",
+            "scenarios": [
+              "reserve_two_ex_then_deny",
+              "shop_atomic_cart_and_thresholds"
+            ],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": ""
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    },
+    {
+      "id": "PP-091",
+      "title": "Economic telemetry should expose affordability and payout history rather than wallet totals alone",
+      "owner_reviews": [
+        {
+          "review": "reports/SHOP_V2_CORE_FINDINGS.json",
+          "record": {
+            "id": "PP-091",
+            "title": "Economic telemetry should expose affordability and payout history rather than wallet totals alone",
+            "implementationState": "V2_PILOT_IN_PROGRESS",
+            "detail": "Superseded direct-spend model is archived. New pilot uses only shop-only controls, real normalized commands, full receipts, score-preserving round2 fixtures, mirrored seed blocks, buy-vs-save products and explicit uncertain intervals.",
+            "scenarios": [],
+            "evidence": [
+              "reports/evidence/shop-v2-full-dev2/core-conformance.json"
+            ],
+            "remaining": "Await current shop-v2 product/crossover summaries; human policy quality, all matchups/stages, and general balance remain unproven."
+          }
+        },
+        {
+          "review": "audit/upgrade-2026-09-05/SHOP_ONLY_APP_FINDINGS.json",
+          "record": {
+            "id": "PP-091",
+            "current_disposition": "Old combat-spend telemetry superseded by entitlement/use/reward/settlement receipts and fixed-bank conservation.",
+            "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+          }
+        }
+      ],
+      "disposition": "IMPLEMENTATION_REVIEW_RECORDED",
+      "detail": "Read the exact owned disposition and limitations below. This is not an automatic release PASS."
+    }
+  ],
+  "note": "Current candidate execution is recorded in SHOP_V2_ACCEPTANCE.json and ACCEPTANCE_RESULTS.json. Historical owner reviews are retained as history; final native reports establish current graphical behavior."
+}

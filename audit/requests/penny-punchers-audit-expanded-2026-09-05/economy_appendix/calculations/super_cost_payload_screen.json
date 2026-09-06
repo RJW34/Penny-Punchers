@@ -1,0 +1,685 @@
+[
+  {
+    "fighter": "rook",
+    "art": {
+      "id": "art_1",
+      "name": "Circuit Break",
+      "move_id": "super_1",
+      "credit_cost": 900,
+      "selected_at": "match_setup",
+      "role": "advancing_confirm"
+    },
+    "move": {
+      "id": "super_1",
+      "name": "Circuit Break",
+      "kind": "super",
+      "command": "double_qcf+P",
+      "startup": 5,
+      "active": 20,
+      "recovery": 35,
+      "credit_cost": 900,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 7,
+          "x": 10000,
+          "y": 48000,
+          "width": 58000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h1",
+          "start": 9,
+          "end": 11,
+          "x": 10000,
+          "y": 48000,
+          "width": 58000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 1,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h2",
+          "start": 13,
+          "end": 15,
+          "x": 10000,
+          "y": 48000,
+          "width": 58000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 2,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h3",
+          "start": 17,
+          "end": 19,
+          "x": 10000,
+          "y": 48000,
+          "width": 58000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 3,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h4",
+          "start": 21,
+          "end": 23,
+          "x": 10000,
+          "y": 48000,
+          "width": 58000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 4,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "throw": null,
+      "projectile": null,
+      "movement": [
+        {
+          "start": 5,
+          "end": 25,
+          "vx": 500,
+          "vy": 0
+        }
+      ],
+      "cancel_rules": [],
+      "invulnerability": [
+        {
+          "start": 0,
+          "end": 6,
+          "to": [
+            "strike",
+            "projectile"
+          ]
+        }
+      ],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "nominal_all_hit_scaled_damage_zero_combo_index_NOT_ENGINE_TEST": 240,
+    "max_activations_at_cap_if_no_other_spend": 4,
+    "remainder_at_cap": 0
+  },
+  {
+    "fighter": "rook",
+    "art": {
+      "id": "art_2",
+      "name": "Forge Impact",
+      "move_id": "super_2",
+      "credit_cost": 1200,
+      "selected_at": "match_setup",
+      "role": "vertical_reversal"
+    },
+    "move": {
+      "id": "super_2",
+      "name": "Forge Impact",
+      "kind": "super",
+      "command": "double_qcf+P",
+      "startup": 6,
+      "active": 8,
+      "recovery": 35,
+      "credit_cost": 1200,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 6,
+          "end": 8,
+          "x": 10000,
+          "y": 25000,
+          "width": 40000,
+          "height": 125000,
+          "level": "mid",
+          "damage": 140,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h1",
+          "start": 10,
+          "end": 12,
+          "x": 10000,
+          "y": 25000,
+          "width": 40000,
+          "height": 125000,
+          "level": "mid",
+          "damage": 140,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 1,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "throw": null,
+      "projectile": null,
+      "movement": [
+        {
+          "start": 6,
+          "end": 12,
+          "vx": 300,
+          "vy": 3500
+        }
+      ],
+      "cancel_rules": [],
+      "invulnerability": [
+        {
+          "start": 0,
+          "end": 7,
+          "to": [
+            "strike",
+            "projectile"
+          ]
+        }
+      ],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "nominal_all_hit_scaled_damage_zero_combo_index_NOT_ENGINE_TEST": 266,
+    "max_activations_at_cap_if_no_other_spend": 3,
+    "remainder_at_cap": 0
+  },
+  {
+    "fighter": "rook",
+    "art": {
+      "id": "art_3",
+      "name": "Rush Cascade",
+      "move_id": "super_3",
+      "credit_cost": 1500,
+      "selected_at": "match_setup",
+      "role": "long_reach_rush"
+    },
+    "move": {
+      "id": "super_3",
+      "name": "Rush Cascade",
+      "kind": "super",
+      "command": "double_qcf+P",
+      "startup": 7,
+      "active": 12,
+      "recovery": 35,
+      "credit_cost": 1500,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 7,
+          "end": 9,
+          "x": 10000,
+          "y": 48000,
+          "width": 75000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 75,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h1",
+          "start": 11,
+          "end": 13,
+          "x": 10000,
+          "y": 48000,
+          "width": 75000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 75,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 1,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h2",
+          "start": 15,
+          "end": 17,
+          "x": 10000,
+          "y": 48000,
+          "width": 75000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 75,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 2,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "throw": null,
+      "projectile": null,
+      "movement": [
+        {
+          "start": 7,
+          "end": 19,
+          "vx": 2200,
+          "vy": 0
+        }
+      ],
+      "cancel_rules": [],
+      "invulnerability": [
+        {
+          "start": 0,
+          "end": 8,
+          "to": [
+            "strike",
+            "projectile"
+          ]
+        }
+      ],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "nominal_all_hit_scaled_damage_zero_combo_index_NOT_ENGINE_TEST": 202,
+    "max_activations_at_cap_if_no_other_spend": 2,
+    "remainder_at_cap": 600
+  },
+  {
+    "fighter": "vale",
+    "art": {
+      "id": "art_1",
+      "name": "Rising Current",
+      "move_id": "super_1",
+      "credit_cost": 900,
+      "selected_at": "match_setup",
+      "role": "vertical_reversal"
+    },
+    "move": {
+      "id": "super_1",
+      "name": "Rising Current",
+      "kind": "super",
+      "command": "double_qcf+P",
+      "startup": 5,
+      "active": 20,
+      "recovery": 35,
+      "credit_cost": 900,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 7,
+          "x": 10000,
+          "y": 25000,
+          "width": 40000,
+          "height": 125000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h1",
+          "start": 9,
+          "end": 11,
+          "x": 10000,
+          "y": 25000,
+          "width": 40000,
+          "height": 125000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 1,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h2",
+          "start": 13,
+          "end": 15,
+          "x": 10000,
+          "y": 25000,
+          "width": 40000,
+          "height": 125000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 2,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h3",
+          "start": 17,
+          "end": 19,
+          "x": 10000,
+          "y": 25000,
+          "width": 40000,
+          "height": 125000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 3,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h4",
+          "start": 21,
+          "end": 23,
+          "x": 10000,
+          "y": 25000,
+          "width": 40000,
+          "height": 125000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 4,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "throw": null,
+      "projectile": null,
+      "movement": [
+        {
+          "start": 5,
+          "end": 11,
+          "vx": 300,
+          "vy": 3500
+        }
+      ],
+      "cancel_rules": [],
+      "invulnerability": [
+        {
+          "start": 0,
+          "end": 6,
+          "to": [
+            "strike",
+            "projectile"
+          ]
+        }
+      ],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "nominal_all_hit_scaled_damage_zero_combo_index_NOT_ENGINE_TEST": 240,
+    "max_activations_at_cap_if_no_other_spend": 4,
+    "remainder_at_cap": 0
+  },
+  {
+    "fighter": "vale",
+    "art": {
+      "id": "art_2",
+      "name": "Crosswind",
+      "move_id": "super_2",
+      "credit_cost": 1200,
+      "selected_at": "match_setup",
+      "role": "projectile"
+    },
+    "move": {
+      "id": "super_2",
+      "name": "Crosswind",
+      "kind": "super",
+      "command": "double_qcf+P",
+      "startup": 6,
+      "active": 8,
+      "recovery": 35,
+      "credit_cost": 1200,
+      "hitboxes": [],
+      "throw": null,
+      "projectile": {
+        "spawn_tick": 6,
+        "spawn_x": 28000,
+        "spawn_y": 35000,
+        "vx": 4800,
+        "life_ticks": 120,
+        "hits": 4,
+        "rehit_ticks": 8,
+        "damage": 78,
+        "stun": 45,
+        "hitstun": 24,
+        "blockstun": 17,
+        "width": 46000,
+        "height": 55000,
+        "level": "mid",
+        "max_active_per_owner": 1,
+        "rank": 5,
+        "juggle_cost": 1,
+        "parryable": true
+      },
+      "movement": [],
+      "cancel_rules": [],
+      "invulnerability": [
+        {
+          "start": 0,
+          "end": 7,
+          "to": [
+            "strike",
+            "projectile"
+          ]
+        }
+      ],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "nominal_all_hit_scaled_damage_zero_combo_index_NOT_ENGINE_TEST": 264,
+    "max_activations_at_cap_if_no_other_spend": 3,
+    "remainder_at_cap": 0
+  },
+  {
+    "fighter": "vale",
+    "art": {
+      "id": "art_3",
+      "name": "Tidal Step",
+      "move_id": "super_3",
+      "credit_cost": 1500,
+      "selected_at": "match_setup",
+      "role": "long_reach_rush"
+    },
+    "move": {
+      "id": "super_3",
+      "name": "Tidal Step",
+      "kind": "super",
+      "command": "double_qcf+P",
+      "startup": 7,
+      "active": 12,
+      "recovery": 35,
+      "credit_cost": 1500,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 7,
+          "end": 9,
+          "x": 10000,
+          "y": 48000,
+          "width": 75000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 75,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h1",
+          "start": 11,
+          "end": 13,
+          "x": 10000,
+          "y": 48000,
+          "width": 75000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 75,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 1,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h2",
+          "start": 15,
+          "end": 17,
+          "x": 10000,
+          "y": 48000,
+          "width": 75000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 75,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 2,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "throw": null,
+      "projectile": null,
+      "movement": [
+        {
+          "start": 7,
+          "end": 19,
+          "vx": 2200,
+          "vy": 0
+        }
+      ],
+      "cancel_rules": [],
+      "invulnerability": [
+        {
+          "start": 0,
+          "end": 8,
+          "to": [
+            "strike",
+            "projectile"
+          ]
+        }
+      ],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "nominal_all_hit_scaled_damage_zero_combo_index_NOT_ENGINE_TEST": 202,
+    "max_activations_at_cap_if_no_other_spend": 2,
+    "remainder_at_cap": 600
+  }
+]

@@ -1,7 +1,7 @@
 ; Strike Ledger: native two-player single-wallet fighter.
 config_version=5
 [application]
-config/name="Strike Ledger"
+config/name="Penny Punchers"
 run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 [display]

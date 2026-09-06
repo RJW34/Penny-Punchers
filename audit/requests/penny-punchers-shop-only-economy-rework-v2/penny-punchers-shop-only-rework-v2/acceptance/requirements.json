@@ -1,0 +1,677 @@
+{
+  "schema_version": 1,
+  "ruleset_id": "pp-shop-only-v2-candidate",
+  "requirements": [
+    {
+      "id": "SO-001",
+      "title": "Current checkout and dirty-file ownership recorded",
+      "work_package": "RW-000",
+      "layer": "software",
+      "acceptance": "Capture current ref/content IDs, active audit fixes and installed buyables; pinned ref is not restored.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-002",
+      "title": "Active authority supersedes direct-spend model",
+      "work_package": "RW-000",
+      "layer": "software",
+      "acceptance": "Update current instructions/ADRs; no conflicting active no-income, automatic EX, debit-on-start or round-locked-art rules.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-003",
+      "title": "All old audit findings reconciled",
+      "work_package": "RW-000",
+      "layer": "software",
+      "acceptance": "Every PP ID retained with actual disposition; no paper-only resolved status.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-004",
+      "title": "Every live product and move mapped",
+      "work_package": "RW-001",
+      "layer": "software",
+      "acceptance": "Inventory exact runtime IDs including local additions; baseline26 and proposed38 remain distinct.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-005",
+      "title": "EX has explicit buy-period price and license",
+      "work_package": "RW-001",
+      "layer": "software",
+      "acceptance": "Eight baseline EX families no longer base-owned; each price in item data, activation cost zero.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-006",
+      "title": "Super permit bought and chosen every round",
+      "work_package": "RW-001",
+      "layer": "software",
+      "acceptance": "Zero/one art and one use per round; no mandatory match-locked free art.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-007",
+      "title": "Mixed cart constraints data-driven",
+      "work_package": "RW-001",
+      "layer": "software",
+      "acceptance": "One each technique slot, max2EX/max1super,2400 budget, bank limit, conflicts and replacements.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-008",
+      "title": "Catalog distinguishes implemented from proposed",
+      "work_package": "RW-001",
+      "layer": "software",
+      "acceptance": "No unbuilt install/barrier sold as working; current implemented features preserved.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-009",
+      "title": "New content/schema identity",
+      "work_package": "RW-001",
+      "layer": "software",
+      "acceptance": "Replay/network and validation versions explicitly incompatible where semantics changed.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-010",
+      "title": "Atomic both-player shop commit",
+      "work_package": "RW-002",
+      "layer": "software",
+      "acceptance": "Invalid second plan leaves BOTH banks and entitlements unchanged.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-011",
+      "title": "Duplicate commits idempotent and conflicts rejected",
+      "work_package": "RW-002",
+      "layer": "software",
+      "acceptance": "Same key/payload charges once; altered payload/key conflicts fail closed.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-012",
+      "title": "No combat bank writes or affordability checks",
+      "work_package": "RW-002",
+      "layer": "software",
+      "acceptance": "Production trace and code review prove fixed bank through fight and licenses work at zero bank.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-013",
+      "title": "Repeatable EX ownership correct",
+      "work_package": "RW-002",
+      "layer": "software",
+      "acceptance": "Own selected family repeats only after legal recovery, not owned families remain locked even at cap.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-014",
+      "title": "Locked intent does not downgrade",
+      "work_package": "RW-002",
+      "layer": "software",
+      "acceptance": "Explicit EX/super syntax recognized before access filter; no fallback normal/special or release-edge attack.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-015",
+      "title": "Super use commits exactly once",
+      "work_package": "RW-002",
+      "layer": "software",
+      "acceptance": "Illegal/buffered input consumes none; legal startup consumes1; whiff/block/parry/interrupt do not restore.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-016",
+      "title": "Ordinary free kit preserved",
+      "work_package": "RW-002",
+      "layer": "software",
+      "acceptance": "All ordinary moves/defense work without purchases, subject to intentional optional replacements.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-017",
+      "title": "Round expiry and rematch reset",
+      "work_package": "RW-002",
+      "layer": "software",
+      "acceptance": "Both sides lose licenses/unused permit at next round; bank persists; rematch resets bank.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-018",
+      "title": "Charge and cancel legality preserved",
+      "work_package": "RW-002",
+      "layer": "software",
+      "acceptance": "Purchase does not invent charge, automatic execution, invulnerability or unbounded EX chains.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-019",
+      "title": "Pre-contact immutable provenance",
+      "work_package": "RW-003",
+      "layer": "software",
+      "acceptance": "Grounded/air/startup/combo/owner/root facts are captured before applied launches/state clearing.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-020",
+      "title": "Counter-hit definition tested",
+      "work_package": "RW-003",
+      "layer": "software",
+      "acceptance": "Only actual eligible damaging direct opener interrupting offensive startup; no passive feint/recovery/juggle awards.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-021",
+      "title": "Anti-air definition tested",
+      "work_package": "RW-003",
+      "layer": "software",
+      "acceptance": "Grounded nonprejump direct opener vs voluntary-air target; no post-launch, air-to-air/projectile/throw bonus.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-022",
+      "title": "Perfect parry timing deterministic",
+      "work_package": "RW-003",
+      "layer": "software",
+      "acceptance": "Eligible ages0/1 grant; age2 still ordinary successful parry if within normal window.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-023",
+      "title": "Frozen-edge parry rule explicit",
+      "work_package": "RW-003",
+      "layer": "software",
+      "acceptance": "Deferred edge from freeze can defend under normal rules but does not gain free perfect bonus on thaw.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-024",
+      "title": "Multihit and reflection provenance",
+      "work_package": "RW-003",
+      "layer": "software",
+      "acceptance": "Root identities survive objects/branches/reflection; own reflected projectile and automatic counters do not earn perfect.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-025",
+      "title": "Simultaneous and lethal contacts fair",
+      "work_package": "RW-003",
+      "layer": "software",
+      "acceptance": "Accepted contact arbitration then rewards, mirrored seat traces and terminal tick award behavior.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-026",
+      "title": "Pending awards cannot be spent",
+      "work_package": "RW-004",
+      "layer": "software",
+      "acceptance": "Bank fixed during combat; earned50/75/100 shown as next-shop only.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-027",
+      "title": "Overlapping awards resolved once",
+      "work_package": "RW-004",
+      "layer": "software",
+      "acceptance": "AA+CH contact pays75; no capped-highest fallback; same root never earns again.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-028",
+      "title": "Per-category and aggregate caps",
+      "work_package": "RW-004",
+      "layer": "software",
+      "acceptance": "Two paid per category,300 total, truthful partial-cap receipts.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-029",
+      "title": "Duplicates and canonical order",
+      "work_package": "RW-004",
+      "layer": "software",
+      "acceptance": "Reward replay/resimulation never doubles income; conflicting IDs fail in production fact ingestion.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-030",
+      "title": "Confirmed payout and clipping",
+      "work_package": "RW-004",
+      "layer": "software",
+      "acceptance": "No predicted deposits; old-tier result grant first, then skill grant, total cap and clipping reported.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-031",
+      "title": "Draw/abort/final results defined",
+      "work_package": "RW-004",
+      "layer": "software",
+      "acceptance": "Draw grants900+eligible skill; abort no unresolved payout; terminal funds not comeback liquidity.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-032",
+      "title": "No passive/farming shortcuts",
+      "work_package": "RW-004",
+      "layer": "software",
+      "acceptance": "No ordinary hit/block/normal-parry/whiff/XP/interest revenue; bounded repeat-feeding tests.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-033",
+      "title": "Complete authoritative snapshot",
+      "work_package": "RW-005",
+      "layer": "software",
+      "acceptance": "Bank/license/uses/reward roots/counts/receipts/parry clocks roundtrip and hash across native code.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-034",
+      "title": "Corrected use and reward roll back",
+      "work_package": "RW-005",
+      "layer": "software",
+      "acceptance": "False super/reward disappears after correction without compensating cash or duplicate sound.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-035",
+      "title": "Commit/reveal includes cart and art",
+      "work_package": "RW-005",
+      "layer": "software",
+      "acceptance": "Price/content/eligibility validated on both peers; no client-declared bonus packet.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-036",
+      "title": "Legacy replays handled honestly",
+      "work_package": "RW-005",
+      "layer": "software",
+      "acceptance": "Explicit version refusal or genuine legacy interpreter; originals never rewritten.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-037",
+      "title": "Actual independent process match",
+      "work_package": "RW-005",
+      "layer": "software",
+      "acceptance": "Two processes complete multi-round match under delay/jitter/loss/duplicate/reorder matrix.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-038",
+      "title": "Bounded memory and malformed payloads",
+      "work_package": "RW-005",
+      "layer": "software",
+      "acceptance": "Long match/hostile cart and input fuzz retains bounded collections and exact deterministic result.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-039",
+      "title": "Registry shop cards and navigation",
+      "work_package": "RW-006",
+      "layer": "software",
+      "acceptance": "EX/super purchase input and prices reflect actual data; all controller paths usable.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-040",
+      "title": "Valid timeout and ready flow",
+      "work_package": "RW-006",
+      "layer": "software",
+      "acceptance": "Visible last-valid cart used on timeout; no silent full wipe or unauthorized other-seat edits.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-041",
+      "title": "Opponent-history-driven preparation",
+      "work_package": "RW-006",
+      "layer": "software",
+      "acceptance": "Prior revealed kit and objective public facts available, no invented behavior inference.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-042",
+      "title": "Honest combat HUD",
+      "work_package": "RW-006",
+      "layer": "software",
+      "acceptance": "Equipped licenses, SUPER READY/USED, future-shop bonus; no per-use currency meter/debit/reserve.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-043",
+      "title": "Result receipt complete",
+      "work_package": "RW-006",
+      "layer": "software",
+      "acceptance": "Opening/cart/saved/result/skill/clipped/closing match exact simulation; no false save success.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-044",
+      "title": "Physical-role input conflicts covered in GUI",
+      "work_package": "RW-006",
+      "layer": "software",
+      "acceptance": "Default B/MK and rebound buttons do not pause combat; Start/Escape do.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-045",
+      "title": "Legal spacing visible",
+      "work_package": "RW-006",
+      "layer": "software",
+      "acceptance": "Preserve/fix camera/separation regression before balancing; actual viewport evidence.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-046",
+      "title": "Practice preview does not stall opponent",
+      "work_package": "RW-006",
+      "layer": "software",
+      "acceptance": "Untimed catalog or training preview separate from competitive clock.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-047",
+      "title": "Bots purchase executable kits",
+      "work_package": "RW-007",
+      "layer": "software",
+      "acceptance": "Legal-input policy demonstrates use of each chosen EX/rental/super; no bank canEx checks.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-048",
+      "title": "Training supports all owned/unowned cases",
+      "work_package": "RW-007",
+      "layer": "software",
+      "acceptance": "Player-operable equipment, finite-use reset, normal/precision parry diagnostics and repeat drills.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-049",
+      "title": "Lab trace exports new semantics",
+      "work_package": "RW-007",
+      "layer": "software",
+      "acceptance": "Purchases, ownership, use, rewards, grants and next bank, with actual source/content identity.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-050",
+      "title": "Library entries not false completions",
+      "work_package": "RW-007",
+      "layer": "software",
+      "acceptance": "Mapped design candidates tested only when implemented; old pending counterplay audits remain.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-051",
+      "title": "Repeatable EX pressure matrix",
+      "work_package": "RW-008",
+      "layer": "software",
+      "acceptance": "One/two licenses, charge/reversal/projectile/corner/zero-bank counterplay measured.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-052",
+      "title": "A/B/C/D economic controls",
+      "work_package": "RW-008",
+      "layer": "software",
+      "acceptance": "Versioned shop-only comparisons separate payout and skill-income effects; multi-policy multi-seed coverage.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-053",
+      "title": "Comeback evidence score-controlled",
+      "work_package": "RW-008",
+      "layer": "software",
+      "acceptance": "Do not infer economic causality from round1 win rate or ignore purchase savings/skill skillgap.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-054",
+      "title": "Reward-farming and opportunism trials",
+      "work_package": "RW-008",
+      "layer": "software",
+      "acceptance": "Repeated jump/parry/CH bait, cap races, unused threat, draw/chip/final-round policies recorded.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-055",
+      "title": "Actual owner/friend verdict",
+      "work_package": "RW-008",
+      "layer": "human",
+      "acceptance": "Human comprehension, execution/feel and willingness to rematch recorded; not assistant approval.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "actual_human_record"
+      ]
+    },
+    {
+      "id": "SO-056",
+      "title": "New-match default is v2",
+      "work_package": "RW-009",
+      "layer": "software",
+      "acceptance": "Feature path enabled; complete title\u2192cart\u2192fight\u2192rewards\u2192new cart\u2192result\u2192rematch actually run.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-057",
+      "title": "Production regression suite clean",
+      "work_package": "RW-009",
+      "layer": "software",
+      "acceptance": "Current C# Core/App native tests, old unaffected audit regressions, fresh evidence identity.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-058",
+      "title": "Fresh Windows/Linux exports",
+      "work_package": "RW-009",
+      "layer": "software",
+      "acceptance": "Export/package/launch on available target; record scoped environment rather than fabricated second computer.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    },
+    {
+      "id": "SO-059",
+      "title": "Actual local input hardware",
+      "work_package": "RW-009",
+      "layer": "device",
+      "acceptance": "Two controllers and keyboard+controller verified with physical devices.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "actual_device_record"
+      ]
+    },
+    {
+      "id": "SO-060",
+      "title": "Actual two-physical-PC match",
+      "work_package": "RW-009",
+      "layer": "device",
+      "acceptance": "Private multi-round match with true separate machines.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "actual_device_record"
+      ]
+    },
+    {
+      "id": "SO-061",
+      "title": "Documentation and evidence release",
+      "work_package": "RW-009",
+      "layer": "software",
+      "acceptance": "Updated controls/rules/limits, artifacts, hashes, candidate manifest, open decisions and honest pending gates.",
+      "status": "NOT_RUN",
+      "minimum_evidence": [
+        "native_trace_or_test_log"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1140 @@
+{
+  "schema_version": 1,
+  "method": "Explicit per-move contact presentation values seeded from canonical rank and damage. Original shared effect cels; no bespoke per-move impact art claimed.",
+  "fighters": {
+    "rook": {
+      "s_lp": {
+        "rank": 1,
+        "size": 102,
+        "shake": 1.49,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "s_mp": {
+        "rank": 2,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "s_hp": {
+        "rank": 3,
+        "size": 122,
+        "shake": 2.75,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "s_lk": {
+        "rank": 1,
+        "size": 102,
+        "shake": 1.49,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "s_mk": {
+        "rank": 2,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "s_hk": {
+        "rank": 3,
+        "size": 122,
+        "shake": 2.75,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "c_lp": {
+        "rank": 1,
+        "size": 102,
+        "shake": 1.49,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "c_mp": {
+        "rank": 2,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "c_hp": {
+        "rank": 3,
+        "size": 122,
+        "shake": 2.75,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "c_lk": {
+        "rank": 1,
+        "size": 102,
+        "shake": 1.49,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "c_mk": {
+        "rank": 2,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "c_hk": {
+        "rank": 3,
+        "size": 122,
+        "shake": 2.75,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "j_lp": {
+        "rank": 1,
+        "size": 102,
+        "shake": 1.49,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "j_mp": {
+        "rank": 2,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "j_hp": {
+        "rank": 3,
+        "size": 122,
+        "shake": 2.75,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "j_lk": {
+        "rank": 1,
+        "size": 102,
+        "shake": 1.49,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "j_mk": {
+        "rank": 2,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "j_hk": {
+        "rank": 3,
+        "size": 122,
+        "shake": 2.75,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "close_mp": {
+        "rank": 2,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "close_hp": {
+        "rank": 3,
+        "size": 121,
+        "shake": 2.64,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "command_fhp": {
+        "rank": 3,
+        "size": 124,
+        "shake": 2.85,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "leap_overhead": {
+        "rank": 2,
+        "size": 114,
+        "shake": 2.22,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "throw_forward": {
+        "rank": 1,
+        "size": 131,
+        "shake": 3.27,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "throw_back": {
+        "rank": 1,
+        "size": 131,
+        "shake": 3.27,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "pulse_l": {
+        "rank": 3,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "pulse_m": {
+        "rank": 3,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "pulse_h": {
+        "rank": 3,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "pulse_ex": {
+        "rank": 3,
+        "size": 109,
+        "shake": 1.91,
+        "sound": "ex",
+        "contact_cel": 24,
+        "frames": 3,
+        "lifetime_ticks": 19
+      },
+      "rise_l": {
+        "rank": 3,
+        "size": 114,
+        "shake": 2.22,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "rise_m": {
+        "rank": 3,
+        "size": 121,
+        "shake": 2.64,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "rise_h": {
+        "rank": 3,
+        "size": 127,
+        "shake": 3.06,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "rise_ex": {
+        "rank": 3,
+        "size": 132,
+        "shake": 3.38,
+        "sound": "ex",
+        "contact_cel": 24,
+        "frames": 3,
+        "lifetime_ticks": 19
+      },
+      "knee_l": {
+        "rank": 3,
+        "size": 114,
+        "shake": 2.22,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "knee_m": {
+        "rank": 3,
+        "size": 121,
+        "shake": 2.64,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "knee_h": {
+        "rank": 3,
+        "size": 127,
+        "shake": 3.06,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "knee_ex": {
+        "rank": 3,
+        "size": 132,
+        "shake": 3.38,
+        "sound": "ex",
+        "contact_cel": 24,
+        "frames": 3,
+        "lifetime_ticks": 19
+      },
+      "sway_l": {
+        "rank": 3,
+        "size": 114,
+        "shake": 2.22,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "sway_m": {
+        "rank": 3,
+        "size": 121,
+        "shake": 2.64,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "sway_h": {
+        "rank": 3,
+        "size": 127,
+        "shake": 3.06,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "sway_ex": {
+        "rank": 3,
+        "size": 132,
+        "shake": 3.38,
+        "sound": "ex",
+        "contact_cel": 24,
+        "frames": 3,
+        "lifetime_ticks": 19
+      },
+      "super_1": {
+        "rank": 3,
+        "size": 110,
+        "shake": 2.01,
+        "sound": "super",
+        "contact_cel": 27,
+        "frames": 3,
+        "lifetime_ticks": 25
+      },
+      "super_2": {
+        "rank": 3,
+        "size": 138,
+        "shake": 3.69,
+        "sound": "super",
+        "contact_cel": 27,
+        "frames": 3,
+        "lifetime_ticks": 25
+      },
+      "super_3": {
+        "rank": 3,
+        "size": 116,
+        "shake": 2.33,
+        "sound": "super",
+        "contact_cel": 27,
+        "frames": 3,
+        "lifetime_ticks": 25
+      },
+      "shop_clinch": {
+        "rank": 1,
+        "size": 136,
+        "shake": 3.58,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "shop_low_drive": {
+        "rank": 3,
+        "size": 119,
+        "shake": 2.54,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "shop_high_hook": {
+        "rank": 3,
+        "size": 119,
+        "shake": 2.54,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "shop_low_turn": {
+        "rank": 3,
+        "size": 119,
+        "shake": 2.54,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "shop_step_feint": {
+        "rank": 1,
+        "size": 90,
+        "shake": 0.75,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "shop_sway_feint": {
+        "rank": 1,
+        "size": 90,
+        "shake": 0.75,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "buy_r_s1_clinch": {
+        "size": 116,
+        "shake": 2.6,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 16
+      },
+      "buy_r_s2_slipstream": {
+        "size": 116,
+        "shake": 2.6,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 16
+      },
+      "buy_r_s2_straight": {
+        "size": 156,
+        "shake": 4.5,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 20
+      },
+      "buy_r_s2_upper": {
+        "size": 156,
+        "shake": 4.5,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 20
+      },
+      "buy_r_s3_chain1": {
+        "size": 156,
+        "shake": 4.5,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 20
+      },
+      "buy_r_s3_chain2": {
+        "size": 156,
+        "shake": 4.5,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 20
+      },
+      "buy_r_s3_chain3": {
+        "size": 156,
+        "shake": 4.5,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 20
+      },
+      "buy_r_s4_counter": {
+        "size": 116,
+        "shake": 2.6,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 16
+      },
+      "buy_r_s4_riposte": {
+        "size": 156,
+        "shake": 4.5,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 20
+      },
+      "buy_r_t1_high_hook": {
+        "size": 156,
+        "shake": 4.5,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 20
+      },
+      "buy_r_t2_low_turn": {
+        "size": 156,
+        "shake": 4.5,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 20
+      },
+      "buy_r_t3_rivet_lift": {
+        "size": 156,
+        "shake": 4.5,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 20
+      },
+      "buy_r_t4_tempered": {
+        "size": 156,
+        "shake": 4.5,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 20
+      },
+      "buy_r_g1_false_start": {
+        "size": 116,
+        "shake": 2.6,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 16
+      },
+      "buy_r_g2_check_step": {
+        "size": 116,
+        "shake": 2.6,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 16
+      },
+      "buy_r_g3_vault_hop": {
+        "size": 116,
+        "shake": 2.6,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 16
+      },
+      "buy_r_g4_wire_cut": {
+        "size": 116,
+        "shake": 2.6,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 16
+      },
+      "buy_r_a3_overtime": {
+        "size": 185,
+        "shake": 6,
+        "sound": "super",
+        "contact_cel": 27,
+        "frames": 3,
+        "lifetime_ticks": 30
+      }
+    },
+    "vale": {
+      "s_lp": {
+        "rank": 1,
+        "size": 102,
+        "shake": 1.49,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "s_mp": {
+        "rank": 2,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "s_hp": {
+        "rank": 3,
+        "size": 122,
+        "shake": 2.75,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "s_lk": {
+        "rank": 1,
+        "size": 102,
+        "shake": 1.49,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "s_mk": {
+        "rank": 2,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "s_hk": {
+        "rank": 3,
+        "size": 122,
+        "shake": 2.75,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "c_lp": {
+        "rank": 1,
+        "size": 102,
+        "shake": 1.49,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "c_mp": {
+        "rank": 2,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "c_hp": {
+        "rank": 3,
+        "size": 122,
+        "shake": 2.75,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "c_lk": {
+        "rank": 1,
+        "size": 102,
+        "shake": 1.49,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "c_mk": {
+        "rank": 2,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "c_hk": {
+        "rank": 3,
+        "size": 122,
+        "shake": 2.75,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "j_lp": {
+        "rank": 1,
+        "size": 102,
+        "shake": 1.49,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "j_mp": {
+        "rank": 2,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "j_hp": {
+        "rank": 3,
+        "size": 122,
+        "shake": 2.75,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "j_lk": {
+        "rank": 1,
+        "size": 102,
+        "shake": 1.49,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "j_mk": {
+        "rank": 2,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "j_hk": {
+        "rank": 3,
+        "size": 122,
+        "shake": 2.75,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "close_mp": {
+        "rank": 2,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "close_hp": {
+        "rank": 3,
+        "size": 121,
+        "shake": 2.64,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "command_fhp": {
+        "rank": 3,
+        "size": 124,
+        "shake": 2.85,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "leap_overhead": {
+        "rank": 2,
+        "size": 114,
+        "shake": 2.22,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "throw_forward": {
+        "rank": 1,
+        "size": 131,
+        "shake": 3.27,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "throw_back": {
+        "rank": 1,
+        "size": 131,
+        "shake": 3.27,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "pulse_l": {
+        "rank": 3,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "pulse_m": {
+        "rank": 3,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "pulse_h": {
+        "rank": 3,
+        "size": 112,
+        "shake": 2.12,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "pulse_ex": {
+        "rank": 3,
+        "size": 109,
+        "shake": 1.91,
+        "sound": "ex",
+        "contact_cel": 24,
+        "frames": 3,
+        "lifetime_ticks": 19
+      },
+      "rise_l": {
+        "rank": 3,
+        "size": 114,
+        "shake": 2.22,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "rise_m": {
+        "rank": 3,
+        "size": 121,
+        "shake": 2.64,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "rise_h": {
+        "rank": 3,
+        "size": 127,
+        "shake": 3.06,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "rise_ex": {
+        "rank": 3,
+        "size": 132,
+        "shake": 3.38,
+        "sound": "ex",
+        "contact_cel": 24,
+        "frames": 3,
+        "lifetime_ticks": 19
+      },
+      "palm_l": {
+        "rank": 3,
+        "size": 114,
+        "shake": 2.22,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "palm_m": {
+        "rank": 3,
+        "size": 121,
+        "shake": 2.64,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "palm_h": {
+        "rank": 3,
+        "size": 127,
+        "shake": 3.06,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "palm_ex": {
+        "rank": 3,
+        "size": 132,
+        "shake": 3.38,
+        "sound": "ex",
+        "contact_cel": 24,
+        "frames": 3,
+        "lifetime_ticks": 19
+      },
+      "heel_l": {
+        "rank": 3,
+        "size": 114,
+        "shake": 2.22,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "heel_m": {
+        "rank": 3,
+        "size": 121,
+        "shake": 2.64,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "heel_h": {
+        "rank": 3,
+        "size": 127,
+        "shake": 3.06,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "heel_ex": {
+        "rank": 3,
+        "size": 132,
+        "shake": 3.38,
+        "sound": "ex",
+        "contact_cel": 24,
+        "frames": 3,
+        "lifetime_ticks": 19
+      },
+      "super_1": {
+        "rank": 3,
+        "size": 110,
+        "shake": 2.01,
+        "sound": "super",
+        "contact_cel": 27,
+        "frames": 3,
+        "lifetime_ticks": 25
+      },
+      "super_2": {
+        "rank": 3,
+        "size": 117,
+        "shake": 2.39,
+        "sound": "super",
+        "contact_cel": 27,
+        "frames": 3,
+        "lifetime_ticks": 25
+      },
+      "super_3": {
+        "rank": 3,
+        "size": 116,
+        "shake": 2.33,
+        "sound": "super",
+        "contact_cel": 27,
+        "frames": 3,
+        "lifetime_ticks": 25
+      },
+      "shop_return_pulse": {
+        "rank": 3,
+        "size": 114,
+        "shake": 2.22,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "shop_low_palm": {
+        "rank": 3,
+        "size": 119,
+        "shake": 2.54,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "shop_heel_arc": {
+        "rank": 3,
+        "size": 119,
+        "shake": 2.54,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "shop_long_check": {
+        "rank": 3,
+        "size": 119,
+        "shake": 2.54,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "shop_step_feint": {
+        "rank": 1,
+        "size": 90,
+        "shake": 0.75,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "shop_sway_feint": {
+        "rank": 1,
+        "size": 90,
+        "shake": 0.75,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 19
+      },
+      "buy_v_s1_return_pulse": {
+        "size": 156,
+        "shake": 4.5,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 20
+      },
+      "buy_v_s2_low_palm": {
+        "size": 156,
+        "shake": 4.5,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 20
+      },
+      "buy_v_s3_arc_pulse": {
+        "size": 156,
+        "shake": 4.5,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 20
+      },
+      "buy_v_s4_anchor": {
+        "size": 116,
+        "shake": 2.6,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 16
+      },
+      "buy_v_t1_heel_arc": {
+        "size": 156,
+        "shake": 4.5,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 20
+      },
+      "buy_v_t2_needle_check": {
+        "size": 156,
+        "shake": 4.5,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 20
+      },
+      "buy_v_t3_descending_heel": {
+        "size": 156,
+        "shake": 4.5,
+        "sound": "heavy",
+        "contact_cel": 6,
+        "frames": 6,
+        "lifetime_ticks": 20
+      },
+      "buy_v_t4_skycatch": {
+        "size": 116,
+        "shake": 2.6,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 16
+      },
+      "buy_v_g1_false_pulse": {
+        "size": 116,
+        "shake": 2.6,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 16
+      },
+      "buy_v_g2_recoil_step": {
+        "size": 116,
+        "shake": 2.6,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 16
+      },
+      "buy_v_g3_shear_palm": {
+        "size": 116,
+        "shake": 2.6,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 16
+      },
+      "buy_v_g4_slipgate": {
+        "size": 116,
+        "shake": 2.6,
+        "sound": "hit",
+        "contact_cel": 0,
+        "frames": 6,
+        "lifetime_ticks": 16
+      },
+      "buy_v_a3_prism": {
+        "size": 185,
+        "shake": 6,
+        "sound": "super",
+        "contact_cel": 27,
+        "frames": 3,
+        "lifetime_ticks": 30
+      }
+    }
+  }
+}

@@ -48,13 +48,14 @@ def inspect(runtime: dict, replay: dict, platform: str) -> dict:
     require(isinstance(runtime.get("content"), str) and HASH.fullmatch(runtime["content"]), f"{platform} content identity missing")
     header, commands = replay.get("Header"), replay.get("Commands")
     require(isinstance(header, dict) and isinstance(commands, list), f"{platform} replay schema missing")
-    require(header.get("Version") == 2, f"{platform} unsupported replay format")
+    require(header.get("Version") == 4, f"{platform} expected shop-only replay format4")
     require(header.get("Build") == runtime.get("build") and header.get("ContentHash") == runtime.get("content"), f"{platform} runtime/replay build or content identity mismatch")
     config = header.get("Config")
     require(isinstance(config, dict) and config.get("Training") is False and config.get("Assist") is False and header.get("Assist") is False, f"{platform} replay must be an unassisted competitive match")
     require(0 < len(commands) <= 120000, f"{platform} replay command count bound")
     require(isinstance(commands[0], dict) and commands[0].get("Kind") == "preparation" and commands[0].get("Tick") == 0, f"{platform} replay does not start at match preparation")
-    inputs, checkpoints, wallets, debits, transactions = [], [], [], [], []
+    inputs, checkpoints, wallets, receipts, transactions = [], [], [], [], []
+    previous_balance = None
     expected_tick = 0
     counts = Counter()
     for index, command in enumerate(commands):
@@ -66,15 +67,20 @@ def inspect(runtime: dict, replay: dict, platform: str) -> dict:
         balance = [command.get("Wallet0"), command.get("Wallet1")]
         require(all(type(v) is int and 0 <= v <= 3600 for v in balance), f"{platform} wallet outside canonical bounds at {index}")
         wallets.append([index, tick, kind, *balance])
-        receipts = command.get("Debits")
-        require(isinstance(receipts, list) and len(receipts) <= 8, f"{platform} invalid debit receipts at {index}")
-        for receipt in receipts:
-            require(isinstance(receipt, dict) and receipt.get("Tick") == tick and receipt.get("Seat") in (0, 1) and type(receipt.get("Amount")) is int and 0 < receipt["Amount"] <= 3600 and isinstance(receipt.get("Move"), str), f"{platform} invalid debit receipt at {index}")
-            debits.append([index, receipt])
+        require("Debits" not in command, f"{platform} legacy combat debit field at {index}")
+        typed = {key: command.get(key) for key in ["Events", "Skills", "Uses0", "Uses1", "Preparation", "Settlement"]}
+        for key, maximum in [("Events",256),("Skills",64),("Uses0",1),("Uses1",1)]:
+            require(isinstance(typed[key], list) and len(typed[key]) <= maximum, f"{platform} invalid {key} at {index}")
+        for receipt in typed["Skills"]:
+            require(isinstance(receipt,dict) and type(receipt.get("Tick")) is int and 0<=receipt["Tick"]<=tick and receipt.get("EarnerSeat") in (0,1) and type(receipt.get("Allowed")) is int and 0<=receipt["Allowed"]<=100, f"{platform} invalid skill receipt at {index}")
+        if kind == "step":
+            require(previous_balance == balance, f"{platform} bank changed during Fight at {index}")
+        previous_balance = balance
+        receipts.append([index, typed])
         checkpoint = command.get("Hash")
         require(isinstance(checkpoint, str) and (checkpoint == "" or HASH.fullmatch(checkpoint)), f"{platform} invalid canonical checkpoint at {index}")
         if checkpoint:
-            checkpoints.append([index, tick, kind, checkpoint, *balance, receipts])
+            checkpoints.append([index, tick, kind, checkpoint, *balance, typed])
         if kind == "step":
             directions = [command.get("Direction0"), command.get("Direction1")]
             buttons = [command.get("Buttons0"), command.get("Buttons1")]
@@ -96,7 +102,7 @@ def inspect(runtime: dict, replay: dict, platform: str) -> dict:
     scores = runtime.get("scores")
     require(isinstance(scores, list) and len(scores) == 2 and all(type(v) is int and 0 <= v <= 18 for v in scores) and sum(scores) == 2 * rounds, f"{platform} scores violate completed-round point conservation")
     require(max(scores) >= 10 or rounds == 9, f"{platform} match stopped before its completion condition")
-    return {"counts": dict(counts), "inputs": inputs, "checkpoints": checkpoints, "wallets": wallets, "debits": debits, "transactions": transactions}
+    return {"counts": dict(counts), "inputs": inputs, "checkpoints": checkpoints, "wallets": wallets, "receipts": receipts, "transactions": transactions}
 
 
 def compare(windows: Path, linux: Path) -> dict:
@@ -112,7 +118,7 @@ def compare(windows: Path, linux: Path) -> dict:
         require(wr.get(field) == lr.get(field), f"Native runtime {field} differs: {wr.get(field)!r} != {lr.get(field)!r}")
     require(wp["Header"] == lp["Header"], "Native replay headers/configurations differ")
     require(wc["counts"] == lc["counts"], "Native replay command counts differ")
-    for field in ["inputs", "wallets", "debits", "checkpoints", "transactions"]:
+    for field in ["inputs", "wallets", "receipts", "checkpoints", "transactions"]:
         require(wc[field] == lc[field], f"Native replay {field} differ")
     require(wp["Commands"] == lp["Commands"], "Native replay full command records differ")
     require(wb == lb, "Native replay byte streams differ despite structural comparison")
@@ -124,7 +130,7 @@ def compare(windows: Path, linux: Path) -> dict:
         "identicalReplayBytes": True, "replaySha256": hashlib.sha256(wb).hexdigest(), "replayBytes": len(wb),
         "commands": len(wp["Commands"]), "commandCounts": wc["counts"],
         "comparisons": {field: {"exactlyEqual": True, "records": len(wc[field]), "canonicalProjectionSha256": digest(wc[field])}
-                        for field in ["inputs", "wallets", "debits", "checkpoints", "transactions"]},
+                        for field in ["inputs", "wallets", "receipts", "checkpoints", "transactions"]},
         "artifacts": artifacts,
         "boundary": "Both native exports completed this match using their respective OS runtimes. These runs are headless and accelerated; no render pacing, graphical target, physical controller, or second physical machine claim is made.",
         "displayModes": {"Windows": wr.get("display"), "Linux": lr.get("display")},

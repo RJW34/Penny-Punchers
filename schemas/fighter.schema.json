@@ -7,10 +7,8 @@
       "const": 1
     },
     "id": {
-      "enum": [
-        "rook",
-        "vale"
-      ]
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]{0,63}$"
     },
     "display_name": {
       "type": "string",
@@ -204,12 +202,10 @@
             "minLength": 1
           },
           "credit_cost": {
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 3600
+            "const": 0
           },
           "selected_at": {
-            "const": "match_setup"
+            "const": "preparation_commit"
           },
           "role": {
             "type": "string",
@@ -236,7 +232,7 @@
     },
     "moves": {
       "type": "array",
-      "minItems": 49,
+      "minItems": 1,
       "items": {
         "type": "object",
         "properties": {
@@ -270,7 +266,7 @@
           },
           "active": {
             "type": "integer",
-            "minimum": 1,
+            "minimum": 0,
             "maximum": 2147483647
           },
           "recovery": {
@@ -279,12 +275,10 @@
             "maximum": 2147483647
           },
           "credit_cost": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 3600
+            "const": 0
           },
           "debit_on_start": {
-            "type": "boolean"
+            "const": false
           },
           "negative_edge": {
             "type": "boolean"
@@ -441,6 +435,82 @@
               "object",
               "null"
             ]
+          },
+          "hurtbox_windows": {
+            "type": "array",
+            "maxItems": 32,
+            "items": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "end": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "replace_body": {
+                  "type": "boolean"
+                },
+                "boxes": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "x": {
+                        "type": "integer",
+                        "minimum": -1000000,
+                        "maximum": 1000000
+                      },
+                      "y": {
+                        "type": "integer",
+                        "minimum": -1000000,
+                        "maximum": 1000000
+                      },
+                      "width": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 1000000
+                      },
+                      "height": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 1000000
+                      }
+                    },
+                    "required": [
+                      "x",
+                      "y",
+                      "width",
+                      "height"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "intent": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "start",
+                "end",
+                "replace_body",
+                "boxes",
+                "intent"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "access_policy": {
+            "enum": [
+              "base",
+              "round_license",
+              "prepaid_super"
+            ]
           }
         },
         "required": [
@@ -461,10 +531,12 @@
           "cancel_rules",
           "invulnerability",
           "movement",
-          "projectile"
+          "projectile",
+          "access_policy"
         ],
         "additionalProperties": true
-      }
+      },
+      "maxItems": 256
     },
     "resource_notes": {
       "type": "string",

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "ruleset_id": "strike-ledger-1v1-single-wallet-v1",
+  "ruleset_id": "pp-shop-only-v2-core",
   "mode": "singles_only",
   "max_players": 2,
   "arenas": 1,
@@ -14,7 +14,7 @@
   "draw_half_points_each": 1,
   "final_equal_result": "draw",
   "character_locked_for_match": true,
-  "super_art_locked_for_match": true,
+  "super_art_locked_for_match": false,
   "default_stage": "foundry",
   "default_link_buffer_ticks": 0,
   "assist_enabled": false,
@@ -28,13 +28,17 @@
     "parry_history",
     "combo_state",
     "loadout",
-    "reserve_floor",
-    "spend_receipts"
+    "selected_super_art",
+    "owned_ex_licenses",
+    "super_uses_remaining",
+    "super_use_receipts",
+    "skill_ledger",
+    "attack_roots",
+    "parry_precision_clock"
   ],
   "carry_between_rounds": [
     "credits",
     "recovery_tier",
-    "selected_super_art",
     "score"
   ],
   "points_explanation": "First to five points, or higher score after nine rounds. Round draws award 0.5 each; exact final tie is a match draw. No nested first-to-two games."

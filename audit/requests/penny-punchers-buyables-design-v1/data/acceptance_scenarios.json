@@ -1,0 +1,809 @@
+{
+  "type": "test_plan_not_execution_results",
+  "scenarios": [
+    {
+      "id": "BUY-R-S1",
+      "catalog_entry": "R-S1",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Prove capture cannot occur during blockstun or post-block throw immunity.",
+        "Test both seat orders against normal/command throw on the same tick.",
+        "Show a player response to tech versus jump/mash; a bot merely failing to jump is not sufficient."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-S2",
+      "catalog_entry": "R-S2",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Verify a high projectile misses by geometry and a low projectile/low strike still hits.",
+        "Enumerate both branch inputs through the real parser, including delayed/no branch.",
+        "Record a useful entry against zoning and a failed entry punished without paid defense."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-S3",
+      "catalog_entry": "R-S3",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Publish frame traces for earliest/latest follow-ups on hit and block.",
+        "No infinite blockstring or phase-reset exploit.",
+        "Stopping at stage one must be a deliberate viable choice in at least one tested context."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-S4",
+      "catalog_entry": "R-S4",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Test every excluded attack class.",
+        "Resolve simultaneous counters symmetrically.",
+        "No credit reward, retained counter token or refund on failure."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-T1",
+      "catalog_entry": "R-T1",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Compare with the free overhead and original forward HP.",
+        "Prove no concealed kara carryover.",
+        "Measure block and hit follow-ups at close/max range."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-T2",
+      "catalog_entry": "R-T2",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Find a niche compared with free sweep; remove/revise if none exists.",
+        "Ensure its price and card do not imply a guaranteed mixup.",
+        "Verify overhead/low replacement is revealed before fighting."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-T3",
+      "catalog_entry": "R-T3",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "At least one real input route connects from launch and one blocked route is punished.",
+        "No relaunch/ground-reset loop.",
+        "Paid EX/super after launch still debits independently."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-T4",
+      "catalog_entry": "R-T4",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "A lethal absorbed hit still ends the round.",
+        "Hold cannot refresh armor or extend its interval.",
+        "Dizzy/throw/multihit priorities tested, with no stored armor after action end."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-G1",
+      "catalog_entry": "R-G1",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Human A/B test whether the intended threat, not random confusion, changes decisions.",
+        "Verify no attack transition before recovery end.",
+        "No money gained from inducing a response."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-G2",
+      "catalog_entry": "R-G2",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Compare action-to-next-normal time and distance with free walking/backdash.",
+        "Confirm corners do not reverse movement or pass through the opponent.",
+        "No input-buffer exploit grants guard/parry during commitment."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-G3",
+      "catalog_entry": "R-G3",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Test every ascent/descent frame against lows and air hits.",
+        "No aerial attacks or corner side bypass.",
+        "Record useful low avoidance and a free punish."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-G4",
+      "catalog_entry": "R-G4",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Test ordinary, EX multi-hit instance, reflected, and super objects under an explicit filter.",
+        "No fighter damage or meter gain.",
+        "Simultaneous shot and melee resolve without universal invulnerability."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-S1",
+      "catalog_entry": "V-S1",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Outbound miss then return hit; no outbound-plus-return double hit.",
+        "Block/parry removes the projectile.",
+        "Projectile-super attempts while occupancy forbids them reject before debit."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-S2",
+      "catalog_entry": "V-S2",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Demonstrate one charge-absent legal conversion.",
+        "Compare with free sweep at identical credits.",
+        "Confirm no low-to-super shortcut is implicitly added."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-S3",
+      "catalog_entry": "V-S3",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Anti-air succeeds at one intended range and fails at explicitly wrong ones.",
+        "No unseen overhead guard property.",
+        "No universal anti-air invulnerability added to the actor."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-S4",
+      "catalog_entry": "V-S4",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Every zero-credit character has a documented legal removal/avoidance response in representative setup states.",
+        "No same-tick high/low or left/right impossibility when combined with owner attacks.",
+        "Snapshots reproduce arming, trigger, destruction and expiry."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-T1",
+      "catalog_entry": "V-T1",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Compare actual ranges and block recovery with original Long Heel.",
+        "No retained movement/kara from the replacement.",
+        "Show a 300-credit opening choice that does not require explaining hidden modifiers."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-T2",
+      "catalog_entry": "V-T2",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Require a paired limb-punish scenario where this beats the free option; otherwise redesign/delete.",
+        "No inflated reach solely in invisible VFX.",
+        "Show a case where free Long Heel is clearly preferable."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-T3",
+      "catalog_entry": "V-T3",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Minimum height boundary and instant-input rejection.",
+        "Measure advantage at high, medium and low contact heights.",
+        "No repeat dive, aerial cancel loop or ambiguous overhead property."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-T4",
+      "catalog_entry": "V-T4",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Ground/prejump/hitstun captures rejected.",
+        "Simultaneous air-throw arbitration is symmetric.",
+        "Miss, landing and rollback do not refresh aerial actions."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-G1",
+      "catalog_entry": "V-G1",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Charge history is neither manufactured nor arbitrarily erased.",
+        "Human test distinguishes plausible bait from an obviously unrelated animation.",
+        "No fake debit or hit event."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-G2",
+      "catalog_entry": "V-G2",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Test cash-equivalent alternatives and normal back-walk charge.",
+        "No corner escape through the opponent.",
+        "No invulnerability or accidental action cancellation."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-G3",
+      "catalog_entry": "V-G3",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "No infinite reflection loop or owner-count corruption.",
+        "Original debit never moves to the defender and never refunds.",
+        "Simultaneous reflection/destruction and rollback remain deterministic."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-G4",
+      "catalog_entry": "V-G4",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "No strike/throw invincibility leaks.",
+        "Zero-distance corner use still has recovery.",
+        "No crossing, escape from stun, or ownership/charge anomaly."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-E1",
+      "catalog_entry": "R-E1",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "299/300/301 exact-cost and reserve boundaries.",
+        "Failed input is not a debit; post-start failure is not a refund.",
+        "Legal-input both-facing contact/whiff/block/parry/replay/rollback traces."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-E2",
+      "catalog_entry": "R-E2",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "299/300/301 exact-cost and reserve boundaries.",
+        "Failed input is not a debit; post-start failure is not a refund.",
+        "Legal-input both-facing contact/whiff/block/parry/replay/rollback traces."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-E3",
+      "catalog_entry": "R-E3",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "299/300/301 exact-cost and reserve boundaries.",
+        "Failed input is not a debit; post-start failure is not a refund.",
+        "Legal-input both-facing contact/whiff/block/parry/replay/rollback traces."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-E4",
+      "catalog_entry": "R-E4",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "299/300/301 exact-cost and reserve boundaries.",
+        "Failed input is not a debit; post-start failure is not a refund.",
+        "Legal-input both-facing contact/whiff/block/parry/replay/rollback traces."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-E1",
+      "catalog_entry": "V-E1",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "299/300/301 exact-cost and reserve boundaries.",
+        "Failed input is not a debit; post-start failure is not a refund.",
+        "Legal-input both-facing contact/whiff/block/parry/replay/rollback traces."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-E2",
+      "catalog_entry": "V-E2",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "299/300/301 exact-cost and reserve boundaries.",
+        "Failed input is not a debit; post-start failure is not a refund.",
+        "Legal-input both-facing contact/whiff/block/parry/replay/rollback traces."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-E3",
+      "catalog_entry": "V-E3",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "299/300/301 exact-cost and reserve boundaries.",
+        "Failed input is not a debit; post-start failure is not a refund.",
+        "Legal-input both-facing contact/whiff/block/parry/replay/rollback traces."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-E4",
+      "catalog_entry": "V-E4",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "299/300/301 exact-cost and reserve boundaries.",
+        "Failed input is not a debit; post-start failure is not a refund.",
+        "Legal-input both-facing contact/whiff/block/parry/replay/rollback traces."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-A1",
+      "catalog_entry": "R-A1",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Exact cost and cost minus one, with full and reduced-flash cues.",
+        "Test raw start, correct confirm, wrong confirm, reversal, whiff, block and parry.",
+        "Test maximum-bank repetitions and zero-credit defense; illegal active-state reactivation has zero debit."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-A2",
+      "catalog_entry": "R-A2",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Exact cost and cost minus one, with full and reduced-flash cues.",
+        "Test raw start, correct confirm, wrong confirm, reversal, whiff, block and parry.",
+        "Test maximum-bank repetitions and zero-credit defense; illegal active-state reactivation has zero debit."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-R-A3",
+      "catalog_entry": "R-A3",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Exact cost and cost minus one, with full and reduced-flash cues.",
+        "Test raw start, correct confirm, wrong confirm, reversal, whiff, block and parry.",
+        "Test maximum-bank repetitions and zero-credit defense; illegal active-state reactivation has zero debit."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-A1",
+      "catalog_entry": "V-A1",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Exact cost and cost minus one, with full and reduced-flash cues.",
+        "Test raw start, correct confirm, wrong confirm, reversal, whiff, block and parry.",
+        "Test maximum-bank repetitions and zero-credit defense; illegal active-state reactivation has zero debit."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-A2",
+      "catalog_entry": "V-A2",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Exact cost and cost minus one, with full and reduced-flash cues.",
+        "Test raw start, correct confirm, wrong confirm, reversal, whiff, block and parry.",
+        "Test maximum-bank repetitions and zero-credit defense; illegal active-state reactivation has zero debit."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-V-A3",
+      "catalog_entry": "V-A3",
+      "status": "NOT_RUN",
+      "steps": [
+        "Select/enable only through the proposed legal preparation or selected-art flow.",
+        "Drive the real input recognizer from both facings.",
+        "Record accepted/denied startup, wallet, action state, contacts, result and expiry.",
+        "Repeat against its explicit free counterplay and with a matched no-purchase control.",
+        "Replay and rollback to before/through startup and the special state."
+      ],
+      "entry_specific_assertions": [
+        "Exact cost and cost minus one, with full and reduced-flash cues.",
+        "Test raw start, correct confirm, wrong confirm, reversal, whiff, block and parry.",
+        "Test maximum-bank repetitions and zero-credit defense; illegal active-state reactivation has zero debit."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-SYS-01",
+      "title": "No rental still a complete fighter",
+      "status": "NOT_RUN",
+      "assertions": [
+        "All base actions and defense remain executable at zero credits.",
+        "No chosen-none slot silently removes an ordinary action."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-SYS-02",
+      "title": "Atomic preparation and expiry",
+      "status": "NOT_RUN",
+      "assertions": [
+        "Invalid plans mutate neither wallet.",
+        "All rentals expire regardless of winner; no outcome-retained equipment."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-SYS-03",
+      "title": "No second resource",
+      "status": "NOT_RUN",
+      "assertions": [
+        "No executable path earns combat money or stores super tickets.",
+        "Install/object flags never persist into another round."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-SYS-04",
+      "title": "Exact paid thresholds",
+      "status": "NOT_RUN",
+      "assertions": [
+        "Test cost-1, cost, cost+1 with reserve floors.",
+        "Illegal startup and active-state reactivation cost zero; committed whiff never refunds."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-SYS-05",
+      "title": "Same-slot incompatibility",
+      "status": "NOT_RUN",
+      "assertions": [
+        "Reject two signatures, two techniques or two gambits.",
+        "Commands remain unambiguous with every legal loadout."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-SYS-06",
+      "title": "Branch and hold timelines",
+      "status": "NOT_RUN",
+      "assertions": [
+        "Earliest/latest/no branch and maximum hold produce explicit recovery.",
+        "No reset of input/armor/cancel windows from repeated button edges."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-SYS-07",
+      "title": "Super choice and graph",
+      "status": "NOT_RUN",
+      "assertions": [
+        "Only selected art executes.",
+        "Overtime graph is HIT-only, acyclic and cannot grant extra rental/throw/EX nodes."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-SYS-08",
+      "title": "Field arbitration",
+      "status": "NOT_RUN",
+      "assertions": [
+        "Same-tick destruction/contact/reflection is seat-symmetric.",
+        "Single guard-facing rule and major-field cap hold for object-plus-owner attacks."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-SYS-09",
+      "title": "Zero-credit funded pressure",
+      "status": "NOT_RUN",
+      "assertions": [
+        "Representative corner/neutral funded states have intended free responses.",
+        "Distinguish prior strategic mistakes from a mechanically impossible guard requirement."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-SYS-10",
+      "title": "Payout isolation",
+      "status": "NOT_RUN",
+      "assertions": [
+        "No payout change while testing item properties.",
+        "Compare the earlier opening-wallet interventions under one fixed content identity."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-SYS-11",
+      "title": "Human comprehension",
+      "status": "NOT_RUN",
+      "assertions": [
+        "Players can state what each purchase does and what spending it prevents.",
+        "A timed preview never pauses an opponent."
+      ],
+      "requires_actual_native_runtime": true
+    },
+    {
+      "id": "BUY-SYS-12",
+      "title": "Actual devices and private peers",
+      "status": "NOT_RUN",
+      "assertions": [
+        "All attack buttons remain in fight, both seat controls independent.",
+        "Two physical computers verify the state and debit lifecycle, not only loopback."
+      ],
+      "requires_actual_native_runtime": true
+    }
+  ]
+}

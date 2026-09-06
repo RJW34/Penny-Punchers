@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "scope": "hand_specified_shop_v2_arithmetic_not_native_gameplay",
+  "payouts": [
+    {"before":{"credits":0,"recovery_tier":0},"outcome":"loss","expected":{"credits":1200,"recovery_tier":1},"clipped":0},
+    {"before":{"credits":1200,"recovery_tier":1},"outcome":"loss","expected":{"credits":2400,"recovery_tier":2},"clipped":0},
+    {"before":{"credits":0,"recovery_tier":2},"outcome":"loss","expected":{"credits":1500,"recovery_tier":2},"clipped":0},
+    {"before":{"credits":0,"recovery_tier":2},"outcome":"win","expected":{"credits":1200,"recovery_tier":1},"clipped":0},
+    {"before":{"credits":600,"recovery_tier":0},"outcome":"win","expected":{"credits":1800,"recovery_tier":0},"clipped":0},
+    {"before":{"credits":3500,"recovery_tier":1},"outcome":"loss","expected":{"credits":3600,"recovery_tier":2},"clipped":1100},
+    {"before":{"credits":200,"recovery_tier":2},"outcome":"draw","expected":{"credits":1100,"recovery_tier":2},"clipped":0}
+  ],
+  "carts": [
+    {"fighter":"rook","bank":0,"products":[],"valid":true,"cost":0,"remaining":0},
+    {"fighter":"rook","bank":600,"products":["rook_license_pulse_ex"],"valid":true,"cost":600,"remaining":0},
+    {"fighter":"rook","bank":599,"products":["rook_license_pulse_ex"],"valid":false},
+    {"fighter":"rook","bank":900,"products":["rook_permit_super_1"],"valid":true,"cost":900,"remaining":0},
+    {"fighter":"rook","bank":2400,"products":["buy_r_s1_clinch","rook_license_pulse_ex","rook_permit_super_1"],"valid":true,"cost":2400,"remaining":0},
+    {"fighter":"rook","bank":3600,"products":["rook_license_pulse_ex","rook_license_knee_ex","rook_license_rise_ex"],"valid":false},
+    {"fighter":"rook","bank":3600,"products":["rook_permit_super_1","rook_permit_super_2"],"valid":false},
+    {"fighter":"vale","bank":3600,"products":["rook_license_pulse_ex"],"valid":false}
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "not_shipping_modes": true,
+  "experiments": [
+    {
+      "id": "ECO-A",
+      "question": "Shop-only conversion, no skill bonuses, retain historical outcomes",
+      "win": 1200,
+      "loss": [
+        900,
+        1200,
+        1500
+      ],
+      "reward_enabled": false
+    },
+    {
+      "id": "ECO-B",
+      "question": "Incremental effect of capped skill bonus with same payout",
+      "win": 1200,
+      "loss": [
+        900,
+        1200,
+        1500
+      ],
+      "reward_enabled": true
+    },
+    {
+      "id": "ECO-C",
+      "question": "Candidate equal initial payout, skill bonus unchanged",
+      "win": 1200,
+      "loss": [
+        1200,
+        1200,
+        1500
+      ],
+      "reward_enabled": true
+    },
+    {
+      "id": "ECO-D",
+      "question": "Isolate candidate bonus effect",
+      "win": 1200,
+      "loss": [
+        1200,
+        1200,
+        1500
+      ],
+      "reward_enabled": false
+    }
+  ],
+  "note": "User requested skill income; disabled versions are lab-only controls, not acceptable final replacements."
+}

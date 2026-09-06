@@ -1,0 +1,877 @@
+{
+  "rook_clinch": {
+    "item": {
+      "id": "rook_clinch",
+      "name": "Clinch entry",
+      "slot": "signature",
+      "price": 900,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_clinch",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Clinch entry: a committed command grab option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "Adds a punishable situational option and consumes the signature slot. No system-wide buffs.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    "move": {
+      "id": "shop_clinch",
+      "name": "Clinch entry",
+      "kind": "special",
+      "command": "qcb+P",
+      "startup": 12,
+      "active": 3,
+      "recovery": 23,
+      "credit_cost": 0,
+      "hitboxes": [],
+      "throw": {
+        "range": 27000,
+        "damage": 135,
+        "stun": 90,
+        "techable": false,
+        "swap_sides": false,
+        "knockdown": "hard"
+      },
+      "projectile": null,
+      "movement": [],
+      "cancel_rules": [],
+      "invulnerability": [],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "base_replacement": null,
+    "opportunity_cost_ex_activations": 3
+  },
+  "rook_low_drive": {
+    "item": {
+      "id": "rook_low_drive",
+      "name": "Low drive",
+      "slot": "signature",
+      "price": 900,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_low_drive",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Low drive: a committed low option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "Adds a punishable situational option and consumes the signature slot. No system-wide buffs.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    "move": {
+      "id": "shop_low_drive",
+      "name": "Low drive",
+      "kind": "special",
+      "command": "qcb+P",
+      "startup": 14,
+      "active": 3,
+      "recovery": 24,
+      "credit_cost": 0,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 14,
+          "end": 17,
+          "x": 12000,
+          "y": 18000,
+          "width": 54000,
+          "height": 23000,
+          "level": "low",
+          "damage": 85,
+          "stun": 110,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "throw": null,
+      "projectile": null,
+      "movement": [],
+      "cancel_rules": [],
+      "invulnerability": [],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "base_replacement": null,
+    "opportunity_cost_ex_activations": 3
+  },
+  "rook_high_hook": {
+    "item": {
+      "id": "rook_high_hook",
+      "name": "High hook",
+      "slot": "technique",
+      "price": 600,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_high_hook",
+      "replaces": "command_fhp",
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "High hook: a committed overhead option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "Replaces forward heavy punch; does not add a second forward-heavy move.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    "move": {
+      "id": "shop_high_hook",
+      "name": "High hook",
+      "kind": "unique",
+      "command": "6+HP",
+      "startup": 18,
+      "active": 3,
+      "recovery": 19,
+      "credit_cost": 0,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 18,
+          "end": 21,
+          "x": 12000,
+          "y": 46000,
+          "width": 54000,
+          "height": 23000,
+          "level": "overhead",
+          "damage": 85,
+          "stun": 110,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "throw": null,
+      "projectile": null,
+      "movement": [],
+      "cancel_rules": [],
+      "invulnerability": [],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "base_replacement": {
+      "id": "command_fhp",
+      "name": "Forward hammer",
+      "kind": "unique",
+      "command": "6+HP",
+      "startup": 10,
+      "active": 3,
+      "recovery": 17,
+      "credit_cost": 0,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 10,
+          "end": 13,
+          "x": 12000,
+          "y": 50000,
+          "width": 61000,
+          "height": 25000,
+          "level": "mid",
+          "damage": 100,
+          "stun": 80,
+          "rank": 3,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "throw": null,
+      "projectile": null,
+      "movement": [
+        {
+          "start": 0,
+          "end": 3,
+          "vx": 1000,
+          "vy": 0
+        }
+      ],
+      "cancel_rules": [],
+      "invulnerability": [],
+      "kara_throw_eligible": true,
+      "kara_throw_ticks": 2
+    },
+    "opportunity_cost_ex_activations": 2
+  },
+  "rook_low_turn": {
+    "item": {
+      "id": "rook_low_turn",
+      "name": "Low turn",
+      "slot": "technique",
+      "price": 600,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_low_turn",
+      "replaces": "command_fhp",
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Low turn: a committed low option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "Replaces forward heavy punch; does not add a second forward-heavy move.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    "move": {
+      "id": "shop_low_turn",
+      "name": "Low turn",
+      "kind": "unique",
+      "command": "6+HP",
+      "startup": 14,
+      "active": 3,
+      "recovery": 24,
+      "credit_cost": 0,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 14,
+          "end": 17,
+          "x": 12000,
+          "y": 18000,
+          "width": 54000,
+          "height": 23000,
+          "level": "low",
+          "damage": 85,
+          "stun": 110,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "throw": null,
+      "projectile": null,
+      "movement": [],
+      "cancel_rules": [],
+      "invulnerability": [],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "base_replacement": {
+      "id": "command_fhp",
+      "name": "Forward hammer",
+      "kind": "unique",
+      "command": "6+HP",
+      "startup": 10,
+      "active": 3,
+      "recovery": 17,
+      "credit_cost": 0,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 10,
+          "end": 13,
+          "x": 12000,
+          "y": 50000,
+          "width": 61000,
+          "height": 25000,
+          "level": "mid",
+          "damage": 100,
+          "stun": 80,
+          "rank": 3,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "throw": null,
+      "projectile": null,
+      "movement": [
+        {
+          "start": 0,
+          "end": 3,
+          "vx": 1000,
+          "vy": 0
+        }
+      ],
+      "cancel_rules": [],
+      "invulnerability": [],
+      "kara_throw_eligible": true,
+      "kara_throw_ticks": 2
+    },
+    "opportunity_cost_ex_activations": 2
+  },
+  "rook_step_feint": {
+    "item": {
+      "id": "rook_step_feint",
+      "name": "Step feint",
+      "slot": "gambit",
+      "price": 300,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_step_feint",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Step feint: a committed forward feint option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "A committed feint, not an invincible dodge; occupies the gambit slot.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    "move": {
+      "id": "shop_step_feint",
+      "name": "Step feint",
+      "kind": "gambit",
+      "command": "4+HP+HK",
+      "startup": 0,
+      "active": 1,
+      "recovery": 15,
+      "credit_cost": 0,
+      "hitboxes": [],
+      "throw": null,
+      "projectile": null,
+      "movement": [
+        {
+          "start": 0,
+          "end": 8,
+          "vx": 1700,
+          "vy": 0
+        }
+      ],
+      "cancel_rules": [],
+      "invulnerability": [],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "base_replacement": null,
+    "opportunity_cost_ex_activations": 1
+  },
+  "rook_sway_feint": {
+    "item": {
+      "id": "rook_sway_feint",
+      "name": "Sway feint",
+      "slot": "gambit",
+      "price": 300,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_sway_feint",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Sway feint: a committed back feint option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "A committed feint, not an invincible dodge; occupies the gambit slot.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    "move": {
+      "id": "shop_sway_feint",
+      "name": "Sway feint",
+      "kind": "gambit",
+      "command": "4+HP+HK",
+      "startup": 0,
+      "active": 1,
+      "recovery": 15,
+      "credit_cost": 0,
+      "hitboxes": [],
+      "throw": null,
+      "projectile": null,
+      "movement": [
+        {
+          "start": 0,
+          "end": 8,
+          "vx": -1600,
+          "vy": 0
+        }
+      ],
+      "cancel_rules": [],
+      "invulnerability": [],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "base_replacement": null,
+    "opportunity_cost_ex_activations": 1
+  },
+  "vale_return_pulse": {
+    "item": {
+      "id": "vale_return_pulse",
+      "name": "Returning pulse",
+      "slot": "signature",
+      "price": 900,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_return_pulse",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Returning pulse: a committed projectile option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "Adds a punishable situational option and consumes the signature slot. No system-wide buffs.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    "move": {
+      "id": "shop_return_pulse",
+      "name": "Returning pulse",
+      "kind": "special",
+      "command": "qcf+P",
+      "startup": 22,
+      "active": 3,
+      "recovery": 23,
+      "credit_cost": 0,
+      "hitboxes": [],
+      "throw": null,
+      "projectile": {
+        "spawn_tick": 22,
+        "spawn_x": 28000,
+        "spawn_y": 42000,
+        "vx": 2200,
+        "life_ticks": 110,
+        "turn_after_ticks": 45,
+        "hits": 1,
+        "rehit_ticks": 8,
+        "damage": 70,
+        "stun": 70,
+        "hitstun": 22,
+        "blockstun": 14,
+        "width": 24000,
+        "height": 24000,
+        "level": "mid",
+        "max_active_per_owner": 1,
+        "rank": 4,
+        "juggle_cost": 1,
+        "parryable": true
+      },
+      "movement": [],
+      "cancel_rules": [],
+      "invulnerability": [],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "base_replacement": null,
+    "opportunity_cost_ex_activations": 3
+  },
+  "vale_low_palm": {
+    "item": {
+      "id": "vale_low_palm",
+      "name": "Low palm",
+      "slot": "signature",
+      "price": 900,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_low_palm",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Low palm: a committed low option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "Adds a punishable situational option and consumes the signature slot. No system-wide buffs.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    "move": {
+      "id": "shop_low_palm",
+      "name": "Low palm",
+      "kind": "special",
+      "command": "qcf+P",
+      "startup": 14,
+      "active": 3,
+      "recovery": 24,
+      "credit_cost": 0,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 14,
+          "end": 17,
+          "x": 12000,
+          "y": 18000,
+          "width": 63000,
+          "height": 23000,
+          "level": "low",
+          "damage": 85,
+          "stun": 110,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "throw": null,
+      "projectile": null,
+      "movement": [],
+      "cancel_rules": [],
+      "invulnerability": [],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "base_replacement": null,
+    "opportunity_cost_ex_activations": 3
+  },
+  "vale_heel_arc": {
+    "item": {
+      "id": "vale_heel_arc",
+      "name": "Heel arc",
+      "slot": "technique",
+      "price": 600,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_heel_arc",
+      "replaces": "command_fhp",
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Heel arc: a committed overhead option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "Replaces forward heavy punch; does not add a second forward-heavy move.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    "move": {
+      "id": "shop_heel_arc",
+      "name": "Heel arc",
+      "kind": "unique",
+      "command": "6+HP",
+      "startup": 18,
+      "active": 3,
+      "recovery": 19,
+      "credit_cost": 0,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 18,
+          "end": 21,
+          "x": 12000,
+          "y": 46000,
+          "width": 63000,
+          "height": 23000,
+          "level": "overhead",
+          "damage": 85,
+          "stun": 110,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "throw": null,
+      "projectile": null,
+      "movement": [],
+      "cancel_rules": [],
+      "invulnerability": [],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "base_replacement": {
+      "id": "command_fhp",
+      "name": "Long heel",
+      "kind": "unique",
+      "command": "6+HP",
+      "startup": 10,
+      "active": 3,
+      "recovery": 17,
+      "credit_cost": 0,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 10,
+          "end": 13,
+          "x": 12000,
+          "y": 50000,
+          "width": 70000,
+          "height": 25000,
+          "level": "mid",
+          "damage": 100,
+          "stun": 80,
+          "rank": 3,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "throw": null,
+      "projectile": null,
+      "movement": [
+        {
+          "start": 0,
+          "end": 3,
+          "vx": 1000,
+          "vy": 0
+        }
+      ],
+      "cancel_rules": [],
+      "invulnerability": [],
+      "kara_throw_eligible": true,
+      "kara_throw_ticks": 2
+    },
+    "opportunity_cost_ex_activations": 2
+  },
+  "vale_long_check": {
+    "item": {
+      "id": "vale_long_check",
+      "name": "Long check",
+      "slot": "technique",
+      "price": 600,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_long_check",
+      "replaces": "command_fhp",
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Long check: a committed mid option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "Replaces forward heavy punch; does not add a second forward-heavy move.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    "move": {
+      "id": "shop_long_check",
+      "name": "Long check",
+      "kind": "unique",
+      "command": "6+HP",
+      "startup": 14,
+      "active": 3,
+      "recovery": 19,
+      "credit_cost": 0,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 14,
+          "end": 17,
+          "x": 12000,
+          "y": 40000,
+          "width": 63000,
+          "height": 23000,
+          "level": "mid",
+          "damage": 85,
+          "stun": 110,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "throw": null,
+      "projectile": null,
+      "movement": [],
+      "cancel_rules": [],
+      "invulnerability": [],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "base_replacement": {
+      "id": "command_fhp",
+      "name": "Long heel",
+      "kind": "unique",
+      "command": "6+HP",
+      "startup": 10,
+      "active": 3,
+      "recovery": 17,
+      "credit_cost": 0,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 10,
+          "end": 13,
+          "x": 12000,
+          "y": 50000,
+          "width": 70000,
+          "height": 25000,
+          "level": "mid",
+          "damage": 100,
+          "stun": 80,
+          "rank": 3,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "throw": null,
+      "projectile": null,
+      "movement": [
+        {
+          "start": 0,
+          "end": 3,
+          "vx": 1000,
+          "vy": 0
+        }
+      ],
+      "cancel_rules": [],
+      "invulnerability": [],
+      "kara_throw_eligible": true,
+      "kara_throw_ticks": 2
+    },
+    "opportunity_cost_ex_activations": 2
+  },
+  "vale_step_feint": {
+    "item": {
+      "id": "vale_step_feint",
+      "name": "Step feint",
+      "slot": "gambit",
+      "price": 300,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_step_feint",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Step feint: a committed forward feint option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "A committed feint, not an invincible dodge; occupies the gambit slot.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    "move": {
+      "id": "shop_step_feint",
+      "name": "Step feint",
+      "kind": "gambit",
+      "command": "4+HP+HK",
+      "startup": 0,
+      "active": 1,
+      "recovery": 15,
+      "credit_cost": 0,
+      "hitboxes": [],
+      "throw": null,
+      "projectile": null,
+      "movement": [
+        {
+          "start": 0,
+          "end": 8,
+          "vx": 1700,
+          "vy": 0
+        }
+      ],
+      "cancel_rules": [],
+      "invulnerability": [],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "base_replacement": null,
+    "opportunity_cost_ex_activations": 1
+  },
+  "vale_sway_feint": {
+    "item": {
+      "id": "vale_sway_feint",
+      "name": "Sway feint",
+      "slot": "gambit",
+      "price": 300,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_sway_feint",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Sway feint: a committed back feint option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "tradeoff": "A committed feint, not an invincible dodge; occupies the gambit slot.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    "move": {
+      "id": "shop_sway_feint",
+      "name": "Sway feint",
+      "kind": "gambit",
+      "command": "4+HP+HK",
+      "startup": 0,
+      "active": 1,
+      "recovery": 15,
+      "credit_cost": 0,
+      "hitboxes": [],
+      "throw": null,
+      "projectile": null,
+      "movement": [
+        {
+          "start": 0,
+          "end": 8,
+          "vx": -1600,
+          "vy": 0
+        }
+      ],
+      "cancel_rules": [],
+      "invulnerability": [],
+      "kara_throw_eligible": null,
+      "kara_throw_ticks": null
+    },
+    "base_replacement": null,
+    "opportunity_cost_ex_activations": 1
+  }
+}

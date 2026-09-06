@@ -1,0 +1,351 @@
+{
+  "scope": "ACTUALLY_EXECUTED_DESIGN_ARITHMETIC_NOT_COMBAT",
+  "presets": [
+    {
+      "fighter": "rook",
+      "opening_wallet": 600,
+      "rentals": [
+        "R-G1"
+      ],
+      "rental_cost": 300,
+      "remaining_wallet": 300,
+      "reserve_floor": 0,
+      "spendable": 300,
+      "selected_super": "R-A1",
+      "super_cost": 900,
+      "can_afford_super": false,
+      "max_ex_instead": 1,
+      "warning": "Affordability only: not prepaid uses, a legal combo or a winning strategy.",
+      "id": "rook_opening_read",
+      "intent": "Feint once or repeatedly after recovery; preserve one EX opportunity. No promise the EX is a combo from the feint.",
+      "illustrative_activations": [
+        "R-E3"
+      ],
+      "after_illustrative_activations": 0
+    },
+    {
+      "fighter": "rook",
+      "opening_wallet": 600,
+      "rentals": [
+        "R-S2"
+      ],
+      "rental_cost": 600,
+      "remaining_wallet": 0,
+      "reserve_floor": 0,
+      "spendable": 0,
+      "selected_super": "R-A1",
+      "super_cost": 900,
+      "can_afford_super": false,
+      "max_ex_instead": 0,
+      "warning": "Affordability only: not prepaid uses, a legal combo or a winning strategy.",
+      "id": "rook_approach_round",
+      "intent": "Commit opening funds to repeatable ducking/branch options; all paid combat must wait until later income.",
+      "illustrative_activations": [],
+      "after_illustrative_activations": 0
+    },
+    {
+      "fighter": "rook",
+      "opening_wallet": 1800,
+      "rentals": [
+        "R-S1",
+        "R-T1"
+      ],
+      "rental_cost": 1200,
+      "remaining_wallet": 600,
+      "reserve_floor": 0,
+      "spendable": 600,
+      "selected_super": "R-A1",
+      "super_cost": 900,
+      "can_afford_super": false,
+      "max_ex_instead": 2,
+      "warning": "Affordability only: not prepaid uses, a legal combo or a winning strategy.",
+      "id": "rook_corner_pressure",
+      "intent": "Clinch/overhead threats plus two EX opportunities; the plan does not also fund the 900-credit super.",
+      "illustrative_activations": [
+        "R-E2",
+        "R-E3"
+      ],
+      "after_illustrative_activations": 0
+    },
+    {
+      "fighter": "rook",
+      "opening_wallet": 1800,
+      "rentals": [
+        "R-T3",
+        "R-G2"
+      ],
+      "rental_cost": 900,
+      "remaining_wallet": 900,
+      "reserve_floor": 0,
+      "spendable": 900,
+      "selected_super": "R-A1",
+      "super_cost": 900,
+      "can_afford_super": true,
+      "max_ex_instead": 3,
+      "warning": "Affordability only: not prepaid uses, a legal combo or a winning strategy.",
+      "id": "rook_confirm_savings",
+      "intent": "Launcher and short step, with enough for one selected super; actual routes must be validated.",
+      "illustrative_activations": [
+        "R-A1"
+      ],
+      "after_illustrative_activations": 0
+    },
+    {
+      "fighter": "rook",
+      "opening_wallet": 2400,
+      "rentals": [
+        "R-G1"
+      ],
+      "rental_cost": 300,
+      "remaining_wallet": 2100,
+      "reserve_floor": 0,
+      "spendable": 2100,
+      "selected_super": "R-A3",
+      "super_cost": 1500,
+      "can_afford_super": true,
+      "max_ex_instead": 7,
+      "warning": "Affordability only: not prepaid uses, a legal combo or a winning strategy.",
+      "id": "rook_overtime_bank",
+      "intent": "Save for a timed hit-routing window and two EX opportunities; high-risk advanced build.",
+      "illustrative_activations": [
+        "R-A3",
+        "R-E2",
+        "R-E3"
+      ],
+      "after_illustrative_activations": 0
+    },
+    {
+      "fighter": "vale",
+      "opening_wallet": 600,
+      "rentals": [
+        "V-G1"
+      ],
+      "rental_cost": 300,
+      "remaining_wallet": 300,
+      "reserve_floor": 0,
+      "spendable": 300,
+      "selected_super": "V-A1",
+      "super_cost": 900,
+      "can_afford_super": false,
+      "max_ex_instead": 1,
+      "warning": "Affordability only: not prepaid uses, a legal combo or a winning strategy.",
+      "id": "vale_opening_read",
+      "intent": "Fake shot preparation with one enhanced charge shot remaining.",
+      "illustrative_activations": [
+        "V-E1"
+      ],
+      "after_illustrative_activations": 0
+    },
+    {
+      "fighter": "vale",
+      "opening_wallet": 1200,
+      "rentals": [
+        "V-S2",
+        "V-G1"
+      ],
+      "rental_cost": 900,
+      "remaining_wallet": 300,
+      "reserve_floor": 0,
+      "spendable": 300,
+      "selected_super": "V-A1",
+      "super_cost": 900,
+      "can_afford_super": false,
+      "max_ex_instead": 1,
+      "warning": "Affordability only: not prepaid uses, a legal combo or a winning strategy.",
+      "id": "vale_without_charge",
+      "intent": "Motion low plus feint leaves one EX opportunity; charge identity is not globally removed.",
+      "illustrative_activations": [
+        "V-E3"
+      ],
+      "after_illustrative_activations": 0
+    },
+    {
+      "fighter": "vale",
+      "opening_wallet": 1800,
+      "rentals": [
+        "V-S1",
+        "V-T2"
+      ],
+      "rental_cost": 1200,
+      "remaining_wallet": 600,
+      "reserve_floor": 0,
+      "spendable": 600,
+      "selected_super": "V-A1",
+      "super_cost": 900,
+      "can_afford_super": false,
+      "max_ex_instead": 2,
+      "warning": "Affordability only: not prepaid uses, a legal combo or a winning strategy.",
+      "id": "vale_return_lane",
+      "intent": "Returning trajectory and anti-poke choice; two EX opportunities, but no extra super credit.",
+      "illustrative_activations": [
+        "V-E1",
+        "V-E2"
+      ],
+      "after_illustrative_activations": 0
+    },
+    {
+      "fighter": "vale",
+      "opening_wallet": 2400,
+      "rentals": [
+        "V-G2"
+      ],
+      "rental_cost": 300,
+      "remaining_wallet": 2100,
+      "reserve_floor": 0,
+      "spendable": 2100,
+      "selected_super": "V-A3",
+      "super_cost": 1500,
+      "can_afford_super": true,
+      "max_ex_instead": 7,
+      "warning": "Affordability only: not prepaid uses, a legal combo or a winning strategy.",
+      "id": "vale_lattice_bank",
+      "intent": "A field, a micro-retreat and two EX opportunities; joint setup is subject to field/shot concurrency validation.",
+      "illustrative_activations": [
+        "V-A3",
+        "V-E1",
+        "V-E2"
+      ],
+      "after_illustrative_activations": 0
+    },
+    {
+      "fighter": "rook",
+      "opening_wallet": 1800,
+      "rentals": [],
+      "rental_cost": 0,
+      "remaining_wallet": 1800,
+      "reserve_floor": 0,
+      "spendable": 1800,
+      "selected_super": "R-A1",
+      "super_cost": 900,
+      "can_afford_super": true,
+      "max_ex_instead": 6,
+      "warning": "Affordability only: not prepaid uses, a legal combo or a winning strategy.",
+      "id": "no_rental_confirm",
+      "intent": "An intentionally legitimate no-rental build. Aggregate affordability is not a single combo.",
+      "illustrative_activations": [
+        "R-A1",
+        "R-E1",
+        "R-E2",
+        "R-E3"
+      ],
+      "after_illustrative_activations": 0
+    }
+  ],
+  "frontier_counts": [
+    {
+      "fighter": "rook",
+      "wallet": 0,
+      "all_library": 1,
+      "core_trial": 1
+    },
+    {
+      "fighter": "rook",
+      "wallet": 300,
+      "all_library": 7,
+      "core_trial": 4
+    },
+    {
+      "fighter": "rook",
+      "wallet": 600,
+      "all_library": 20,
+      "core_trial": 8
+    },
+    {
+      "fighter": "rook",
+      "wallet": 900,
+      "all_library": 47,
+      "core_trial": 14
+    },
+    {
+      "fighter": "rook",
+      "wallet": 1200,
+      "all_library": 83,
+      "core_trial": 20
+    },
+    {
+      "fighter": "rook",
+      "wallet": 1800,
+      "all_library": 125,
+      "core_trial": 27
+    },
+    {
+      "fighter": "rook",
+      "wallet": 2400,
+      "all_library": 125,
+      "core_trial": 27
+    },
+    {
+      "fighter": "rook",
+      "wallet": 3600,
+      "all_library": 125,
+      "core_trial": 27
+    },
+    {
+      "fighter": "vale",
+      "wallet": 0,
+      "all_library": 1,
+      "core_trial": 1
+    },
+    {
+      "fighter": "vale",
+      "wallet": 300,
+      "all_library": 6,
+      "core_trial": 5
+    },
+    {
+      "fighter": "vale",
+      "wallet": 600,
+      "all_library": 17,
+      "core_trial": 10
+    },
+    {
+      "fighter": "vale",
+      "wallet": 900,
+      "all_library": 37,
+      "core_trial": 15
+    },
+    {
+      "fighter": "vale",
+      "wallet": 1200,
+      "all_library": 67,
+      "core_trial": 23
+    },
+    {
+      "fighter": "vale",
+      "wallet": 1800,
+      "all_library": 121,
+      "core_trial": 27
+    },
+    {
+      "fighter": "vale",
+      "wallet": 2400,
+      "all_library": 121,
+      "core_trial": 27
+    },
+    {
+      "fighter": "vale",
+      "wallet": 3600,
+      "all_library": 121,
+      "core_trial": 27
+    }
+  ],
+  "super_capacity_without_rent_or_reserve": {
+    "900": {
+      "activations": 4,
+      "cash_left": 0
+    },
+    "1200": {
+      "activations": 3,
+      "cash_left": 0
+    },
+    "1500": {
+      "activations": 2,
+      "cash_left": 600
+    }
+  },
+  "limitations": [
+    "No engine was run.",
+    "Fields and installations impose normal move-state constraints not modeled here.",
+    "Counts are affordable loadouts, not viable strategies."
+  ]
+}

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace StrikeLedger.App;
 
-public enum PacketKind : byte { Hello=1, Commit=2, Reveal=3, Start=4, Inputs=5, Hash=6, Settlement=7, NextRound=8, Pause=9, Disconnect=10, Ack=11, Resume=12, Ping=13 }
+public enum PacketKind : byte { Hello=1, Commit=2, Reveal=3, Start=4, Inputs=5, Hash=6, Settlement=7, NextRound=8, Pause=9, Disconnect=10, Ack=11, Resume=12, Ping=13, Selection=14, Ready=15, Rematch=16 }
 public sealed record FaultProfile(int RoundTripMilliseconds=0,int JitterMilliseconds=0,int LossPercent=0,int DuplicatePercent=0,int ReorderPercent=0,int Seed=1);
 public sealed record ReceivedPacket(PacketKind Kind,byte[] Payload);
 
@@ -16,6 +16,7 @@ public sealed class UdpTransport : IDisposable
 {
     const int Header=32, MaximumDatagram=4096;
     readonly Socket socket;
+    readonly byte[] receiveBuffer=new byte[65536];
     readonly IPEndPoint remote;
     readonly byte[] session;
     readonly FaultProfile faults;
@@ -55,7 +56,7 @@ public sealed class UdpTransport : IDisposable
     byte[] Encode(PacketKind kind,ReadOnlySpan<byte> payload,bool reliable,uint id)
     {
         byte[] bytes=new byte[Header+payload.Length];
-        BinaryPrimitives.WriteUInt32LittleEndian(bytes,0x314c5355);
+        BinaryPrimitives.WriteUInt32LittleEndian(bytes,0x324c5355);
         session.CopyTo(bytes,4); bytes[20]=(byte)kind; bytes[21]=reliable?(byte)1:(byte)0;
         BinaryPrimitives.WriteUInt32LittleEndian(bytes.AsSpan(24),id);
         BinaryPrimitives.WriteInt32LittleEndian(bytes.AsSpan(28),payload.Length);
@@ -86,13 +87,13 @@ public sealed class UdpTransport : IDisposable
             try{socket.SendTo(scheduled[n].Data,remote);}catch(SocketException ex)when(ex.SocketErrorCode is SocketError.WouldBlock or SocketError.NoBufferSpaceAvailable){continue;}
             scheduled.RemoveAt(n);
         }
-        byte[] buffer=new byte[65536];
+        byte[] buffer=receiveBuffer;
         for(int n=0;n<256;n++)
         {
             EndPoint source=new IPEndPoint(remote.Address,0); int length;
             try{length=socket.ReceiveFrom(buffer,ref source);}catch(SocketException ex)when(ex.SocketErrorCode is SocketError.WouldBlock or SocketError.ConnectionReset){break;}
             if(!source.Equals(remote)){RejectedEndpoints++;continue;}
-            if(length<Header || length>MaximumDatagram || BinaryPrimitives.ReadUInt32LittleEndian(buffer)!=0x314c5355 || !CryptographicOperations.FixedTimeEquals(buffer.AsSpan(4,16),session) || buffer[22]!=0 || buffer[23]!=0 || buffer[21]>1 || BinaryPrimitives.ReadInt32LittleEndian(buffer.AsSpan(28))!=length-Header || !Enum.IsDefined(typeof(PacketKind),buffer[20])){MalformedPackets++;continue;}
+            if(length<Header || length>MaximumDatagram || BinaryPrimitives.ReadUInt32LittleEndian(buffer)!=0x324c5355 || !CryptographicOperations.FixedTimeEquals(buffer.AsSpan(4,16),session) || buffer[22]!=0 || buffer[23]!=0 || buffer[21]>1 || BinaryPrimitives.ReadInt32LittleEndian(buffer.AsSpan(28))!=length-Header || !Enum.IsDefined(typeof(PacketKind),buffer[20])){MalformedPackets++;continue;}
             var kind=(PacketKind)buffer[20];uint id=BinaryPrimitives.ReadUInt32LittleEndian(buffer.AsSpan(24));
             if(kind==PacketKind.Ack){if(length!=Header){MalformedPackets++;continue;}pending.Remove(id);LastReceiveMilliseconds=now;continue;}
             if(id==0 || (kind==PacketKind.Inputs && length>1024)){MalformedPackets++;continue;}

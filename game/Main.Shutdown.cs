@@ -6,7 +6,7 @@ public partial class Main
     public override void _Notification(int what){if(what==NotificationWMCloseRequest)QuitGame();}
     async void QuitGame(int code=0)
     {
-        if(quitting)return;quitting=true;paused=true;peer?.Dispose();peer=null;
+        if(quitting)return;quitting=true;paused=true;LeavePrivateMatch("Game closed");
         StrikeLedger.Presentation.RuntimeProfiler.Save(evidenceDir);
         arena?.ShutdownAudio();
         // Audio playback is asynchronous even with accelerated fixed-fps simulation.

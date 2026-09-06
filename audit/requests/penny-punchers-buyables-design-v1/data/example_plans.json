@@ -1,0 +1,154 @@
+{
+  "status": "arithmetic_examples_not_winning_strategies",
+  "plans": [
+    {
+      "id": "rook_opening_read",
+      "fighter": "rook",
+      "wallet": 600,
+      "rentals": [
+        "R-G1"
+      ],
+      "super": "R-A1",
+      "reserve": 0,
+      "activation_plan": [
+        "R-E3"
+      ],
+      "intent": "Feint once or repeatedly after recovery; preserve one EX opportunity. No promise the EX is a combo from the feint."
+    },
+    {
+      "id": "rook_approach_round",
+      "fighter": "rook",
+      "wallet": 600,
+      "rentals": [
+        "R-S2"
+      ],
+      "super": "R-A1",
+      "reserve": 0,
+      "activation_plan": [],
+      "intent": "Commit opening funds to repeatable ducking/branch options; all paid combat must wait until later income."
+    },
+    {
+      "id": "rook_corner_pressure",
+      "fighter": "rook",
+      "wallet": 1800,
+      "rentals": [
+        "R-S1",
+        "R-T1"
+      ],
+      "super": "R-A1",
+      "reserve": 0,
+      "activation_plan": [
+        "R-E2",
+        "R-E3"
+      ],
+      "intent": "Clinch/overhead threats plus two EX opportunities; the plan does not also fund the 900-credit super."
+    },
+    {
+      "id": "rook_confirm_savings",
+      "fighter": "rook",
+      "wallet": 1800,
+      "rentals": [
+        "R-T3",
+        "R-G2"
+      ],
+      "super": "R-A1",
+      "reserve": 0,
+      "activation_plan": [
+        "R-A1"
+      ],
+      "intent": "Launcher and short step, with enough for one selected super; actual routes must be validated."
+    },
+    {
+      "id": "rook_overtime_bank",
+      "fighter": "rook",
+      "wallet": 2400,
+      "rentals": [
+        "R-G1"
+      ],
+      "super": "R-A3",
+      "reserve": 0,
+      "activation_plan": [
+        "R-A3",
+        "R-E2",
+        "R-E3"
+      ],
+      "intent": "Save for a timed hit-routing window and two EX opportunities; high-risk advanced build."
+    },
+    {
+      "id": "vale_opening_read",
+      "fighter": "vale",
+      "wallet": 600,
+      "rentals": [
+        "V-G1"
+      ],
+      "super": "V-A1",
+      "reserve": 0,
+      "activation_plan": [
+        "V-E1"
+      ],
+      "intent": "Fake shot preparation with one enhanced charge shot remaining."
+    },
+    {
+      "id": "vale_without_charge",
+      "fighter": "vale",
+      "wallet": 1200,
+      "rentals": [
+        "V-S2",
+        "V-G1"
+      ],
+      "super": "V-A1",
+      "reserve": 0,
+      "activation_plan": [
+        "V-E3"
+      ],
+      "intent": "Motion low plus feint leaves one EX opportunity; charge identity is not globally removed."
+    },
+    {
+      "id": "vale_return_lane",
+      "fighter": "vale",
+      "wallet": 1800,
+      "rentals": [
+        "V-S1",
+        "V-T2"
+      ],
+      "super": "V-A1",
+      "reserve": 0,
+      "activation_plan": [
+        "V-E1",
+        "V-E2"
+      ],
+      "intent": "Returning trajectory and anti-poke choice; two EX opportunities, but no extra super credit."
+    },
+    {
+      "id": "vale_lattice_bank",
+      "fighter": "vale",
+      "wallet": 2400,
+      "rentals": [
+        "V-G2"
+      ],
+      "super": "V-A3",
+      "reserve": 0,
+      "activation_plan": [
+        "V-A3",
+        "V-E1",
+        "V-E2"
+      ],
+      "intent": "A field, a micro-retreat and two EX opportunities; joint setup is subject to field/shot concurrency validation."
+    },
+    {
+      "id": "no_rental_confirm",
+      "fighter": "rook",
+      "wallet": 1800,
+      "rentals": [],
+      "super": "R-A1",
+      "reserve": 0,
+      "activation_plan": [
+        "R-A1",
+        "R-E1",
+        "R-E2",
+        "R-E3"
+      ],
+      "intent": "An intentionally legitimate no-rental build. Aggregate affordability is not a single combo."
+    }
+  ]
+}

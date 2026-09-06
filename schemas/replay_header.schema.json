@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Bounded replay identity",
+  "title": "Historical scaffold replay identity (not the runtime format)",
+  "$comment": "Preserved original scaffold schema. Active ReplayFormat.Version4 and bounded runtime JSON validation are defined in src/StrikeLedger.App/Replay.cs; super choice is a round preparation product, not a required match-header selection.",
   "type": "object",
   "properties": {
     "version": {

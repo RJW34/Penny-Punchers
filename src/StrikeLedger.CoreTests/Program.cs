@@ -7,17 +7,22 @@ var actionReplays=new SortedDictionary<string,ActionConformanceReplay>(StringCom
 string? requested=args.Contains("--scenario")?args[Array.IndexOf(args,"--scenario")+1]:null;
 uint testSeed=args.Contains("--seed")?uint.Parse(args[Array.IndexOf(args,"--seed")+1]):1;
 var aliases=new Dictionary<string,string>{{"atomic_plan_commit","preparation_atomic_idempotent"},{"nine_round_draw","nine_round_match_draw"},{"rollback_startup_debits","rollback_spend_receipts"},{"rollback_ko_to_parry","confirmed_settlement_only"}};
+bool buyables=content.Items.Values.Any(i=>i.CatalogId.Length>0);var notApplicable=new List<object>();
+string Item(string legacy)=>AuditRegressionTests.Item(content,legacy);
+var historicCatalogCases=new HashSet<string>{"content_all_98_actions","all_rook_moves","all_vale_moves","all_lease_items","all_98_commands_recognized","audit_rental_niches_and_counters"};
 void Check(bool condition,string reason){if(!condition)throw new Exception(reason);}
 void Equal<T>(T expected,T actual,string reason)where T:notnull=>Check(EqualityComparer<T>.Default.Equals(expected,actual),$"{reason}: expected {expected}, got {actual}");
 void Run(string id,Action test)
 {
  if(requested is not null&&(aliases.GetValueOrDefault(requested)??requested)!=id)return;
+ if(buyables&&historicCatalogCases.Contains(id)){notApplicable.Add(new{id,reason="Historical 98-action/interim-niche catalog is preserved in pre-buyables checkpoint; versioned candidates use distinct conformance cases."});return;}
+ if(id.StartsWith("buy_actor_")&&!content.Items.ContainsKey("buy_r_s4_counter")){notApplicable.Add(new{id,reason="Advanced actor rentals are absent from this selected ruleset."});return;}
  if(requested is not null)id=requested;
  var sw=Stopwatch.StartNew();try{test();Console.WriteLine("PASS "+id);results.Add(new{id,pass=true,milliseconds=sw.Elapsed.TotalMilliseconds});}catch(Exception e){failures++;Console.WriteLine("FAIL "+id+": "+e.Message);results.Add(new{id,pass=false,error=e.ToString()});}
 }
 Simulation New(string fighter="rook",string other="vale",int credits=3600,string super="art_1",bool close=false)
 {
- var s=new Simulation(content,new(){Fighter0=fighter,Fighter1=other,Super0=super,Training=true});s.SetTrainingState(0,credits:credits,x:close?350000:null);s.SetTrainingState(1,x:close?385000:null);s.BeginFight();return s;
+ var s=new Simulation(content,new(){Fighter0=fighter,Fighter1=other,Super0=super,Training=true});s.SetTrainingState(0,credits:credits,x:close?350000:null);s.SetTrainingState(1,x:close?385000:null);s.BeginFight();foreach(int seat in new[]{0,1}){var fid=s.Players[seat].FighterId;var art=content.Fighters[fid].SuperArts.First(a=>a.Id==(seat==0?super:"art_1"));var ids=new[]{"pulse_ex","rise_ex",art.MoveId}.Select(id=>content.Items.Values.Single(i=>i.EligibleFighters.Contains(fid)&&i.MoveId==id).Id).ToArray();if(ids.Sum(id=>content.Items[id].Price)>2400)ids=[content.Items.Values.Single(i=>i.EligibleFighters.Contains(fid)&&i.MoveId==art.MoveId).Id];s.SetTrainingLoadout(seat,new(ids));}return s;
 }
 StepResult Step(Simulation s,byte d0=5,Buttons b0=Buttons.None,byte d1=5,Buttons b1=Buttons.None)=>s.Step(new(0,s.Tick,d0,b0),new(1,s.Tick,d1,b1));
 void Wait(Simulation s,int frames,byte d1=5){for(int i=0;i<frames;i++){if(s.Phase!=MatchPhase.Fight)break;Step(s,d1:d1);}}
@@ -40,7 +45,7 @@ if(args.Contains("--verify-action-replay"))
 {
  string path=Path.GetFullPath(args[Array.IndexOf(args,"--verify-action-replay")+1]);if(new FileInfo(path).Length>64*1024*1024)throw new InvalidDataException("Action replay exceeds64MiB");
  var artifact=JsonSerializer.Deserialize<ActionConformanceFile>(File.ReadAllText(path))??throw new InvalidDataException("Empty action replay");
- Check(artifact.Version==1&&artifact.Format=="strike-ledger-training-action-conformance"&&artifact.TrainingOnly,"unknown or competitive action replay format");Equal(content.ContentHash,artifact.ContentHash,"action trace content identity");Equal(typeof(Simulation).Assembly.ManifestModule.ModuleVersionId.ToString(),artifact.CoreAssemblyId,"action trace core build identity");Check(artifact.Replays.Length is >0 and <=98,"bounded action trace roster");
+ Check(artifact.Version==1&&artifact.Format=="strike-ledger-training-action-conformance"&&artifact.TrainingOnly,"unknown or competitive action replay format");Equal(content.ContentHash,artifact.ContentHash,"action trace content identity");Equal(typeof(Simulation).Assembly.ManifestModule.ModuleVersionId.ToString(),artifact.CoreAssemblyId,"action trace core build identity");Check(artifact.Replays.Length>0&&artifact.Replays.Length<=content.Fighters.Values.Sum(f=>f.Moves.Length),"bounded action trace roster");
  foreach(var trace in artifact.Replays)VerifyActionReplay(trace);Console.WriteLine($"PASS reconstructed {artifact.Replays.Length} training action replays from snapshots and recorded inputs/events");
  if(args.Contains("--evidence-dir")){var dir=args[Array.IndexOf(args,"--evidence-dir")+1];Directory.CreateDirectory(dir);File.WriteAllText(Path.Combine(dir,"action-replay-verification.json"),JsonSerializer.Serialize(new{passed=true,replayedActions=artifact.Replays.Length,coreAssemblyId=artifact.CoreAssemblyId,contentHash=artifact.ContentHash,sourceArtifact=path},new JsonSerializerOptions{WriteIndented=true}));}
  return 0;
@@ -52,7 +57,7 @@ void ExerciseMoves(IEnumerable<FighterDefinition> fighters,bool leasesOnly=false
  {
   var art=f.SuperArts.FirstOrDefault(a=>a.MoveId==move.Id)?.Id??"art_1";var s=new Simulation(content,new(){Fighter0=f.Id,Fighter1=f.Id,Super0=art,Training=true});s.SetTrainingState(0,350000,move.Command.StartsWith("J+")?40000:0,credits:3600);s.SetTrainingState(1,382000);
   s.CommitPreparation(new(move.Availability=="base"?[]:[move.Availability]),new([]));s.BeginFight();
-  string initialSnapshot=Convert.ToBase64String(s.Capture().Bytes);var status=s.TryStartAction(0,move.Id);Check(status is ActivationStatus.Free or ActivationStatus.Paid,f.Id+" "+move.Id+" did not start");string startedHash=s.Hash();
+  string initialSnapshot=Convert.ToBase64String(s.Capture().Bytes);var status=s.TryStartAction(0,move.Id);Check(status is ActivationStatus.Free or ActivationStatus.Licensed or ActivationStatus.SuperUse,f.Id+" "+move.Id+" did not start");string startedHash=s.Hash();
   int oldX=s.Players[0].X;bool effect=false;var frames=new List<ActionConformanceFrame>();
   for(int i=0;i<250&&s.Phase==MatchPhase.Fight;i++){long tick=s.Tick;var r=Step(s);effect|=r.Events.Any(e=>e.Seat==0&&e.Kind is CombatEventKind.Hit or CombatEventKind.Throw or CombatEventKind.ProjectileSpawn);frames.Add(new(tick,5,Buttons.None,5,Buttons.None,r.Events.ToArray(),i%60==0?r.Hash:""));}
   if(move.Kind=="gambit")Check(s.Players[0].X!=oldX,"feint must move "+move.Id);else Check(effect,"no authored combat effect "+f.Id+" "+move.Id);
@@ -99,11 +104,11 @@ Run("charge_crossup",()=>
  var cross=New("vale");for(int i=0;i<45;i++)Step(cross,1);cross.SetTrainingState(0,550000);cross.SetTrainingState(1,350000);Step(cross,8,Buttons.LK);Equal("rise_l",cross.Players[0].ActionId,"vertical charge survives cross-up");
  var horizontal=New("vale");for(int i=0;i<45;i++)Step(horizontal,4);horizontal.SetTrainingState(0,550000);horizontal.SetTrainingState(1,350000);Step(horizontal,4,Buttons.LP);Check(horizontal.Players[0].ActionId!="pulse_l","horizontal charge clears cross-up");
 });
-Run("exact_credit_ex",()=>{var s=New(credits:300);Qcf(s,Buttons.LP|Buttons.MP);Equal("pulse_ex",s.Players[0].ActionId,"EX startup");Equal(0,s.Players[0].Credits,"exact credits");Equal(1,s.Players[0].SpendReceipts.Count,"single receipt");Wait(s,80);Equal(0,s.Players[0].Credits,"no refund on whiff");});
-Run("insufficient_credit_no_fallback",()=>{var s=New(credits:299);Step(s,2);Step(s,3);var r=Step(s,6,Buttons.LP|Buttons.MP);Equal("",s.Players[0].ActionId,"no fallback");Equal(299,s.Players[0].Credits,"no debit");Check(Event(r,CombatEventKind.Rejected),"rejection event");Step(s,6,Buttons.LP);Equal("",s.Players[0].ActionId,"partial release cannot fallback");for(int i=0;i<30;i++){Step(s);Equal("",s.Players[0].ActionId,"release and delayed action forbidden "+i);}});
+Run("exact_credit_ex",()=>{var s=New(credits:300);Qcf(s,Buttons.LP|Buttons.MP);Equal("pulse_ex",s.Players[0].ActionId,"EX startup");Equal(300,s.Players[0].Credits,"licensed combat preserves bank");Equal(0,s.Players[0].SpendReceipts.Count,"no runtime debit receipt");Wait(s,80);Equal(300,s.Players[0].Credits,"whiff preserves bank");});
+Run("insufficient_credit_no_fallback",()=>{var s=New(credits:299);s.SetTrainingLoadout(0,new([]));Step(s,2);Step(s,3);var r=Step(s,6,Buttons.LP|Buttons.MP);Equal("",s.Players[0].ActionId,"no fallback");Equal(299,s.Players[0].Credits,"no debit");Check(Event(r,CombatEventKind.Rejected),"rejection event");Step(s,6,Buttons.LP);Equal("",s.Players[0].ActionId,"partial release cannot fallback");for(int i=0;i<30;i++){Step(s);Equal("",s.Players[0].ActionId,"release and delayed action forbidden "+i);}});
 Run("reserve_two_ex_then_deny",()=>
 {
- var s=new Simulation(content,new(){Training=true});s.SetTrainingState(0,credits:1500);s.CommitPreparation(new([],900),new([]));s.BeginFight();Equal(ActivationStatus.Paid,s.TryStartAction(0,"rise_ex"),"first ex");Wait(s,120);Equal(ActivationStatus.Paid,s.TryStartAction(0,"rise_ex"),"second ex");Wait(s,120);Equal(ActivationStatus.Reserve,s.TryStartAction(0,"rise_ex"),"floor rejects third");Equal(900,s.Players[0].Credits,"protected balance");Equal(2,s.Players[0].SpendReceipts.Count,"two receipts");
+ var s=new Simulation(content,new(){Training=true});s.SetTrainingState(0,credits:1500);var before=s.Hash();bool rejected=false;try{s.CommitPreparation(new([],900),new([]));}catch(ArgumentException){rejected=true;}Check(rejected&&before==s.Hash(),"v2 rejects nonzero reserve atomically");s.BeginFight();s.SetTrainingLoadout(0,new([content.Fighters["rook"].Move("rise_ex").Availability]));for(int i=0;i<3;i++){Equal(ActivationStatus.Licensed,s.TryStartAction(0,"rise_ex"),"repeatable EX license");Wait(s,120);}Equal(1500,s.Players[0].Credits,"no hidden reserve or runtime debit");
 });
 Run("negative_edge_paid_forbidden",()=>
 {
@@ -145,22 +150,22 @@ Run("multihit_super_parry",()=>
   var p=s.Players[0];bool arm=p.ActionId=="super_1"&&p.Hitstop==0&&s.FullFreeze==0&&starts.Contains(p.ActionFrame)&&armedFrames.Add(p.ActionFrame);
   var r=Step(s,d1:arm?(byte)4:(byte)5);parries+=r.Events.Count(e=>e.Kind==CombatEventKind.Parry);
  }
- Equal(5,parries,"all five distinct super groups parried with fresh edges");Equal(1000,s.Players[1].Health,"full parry zero damage");Equal(2700,s.Players[0].Credits,"entire super cost remains paid");Equal(1,s.Players[0].SpendReceipts.Count,"one super receipt");
+ Equal(5,parries,"all five distinct super groups parried with fresh edges");Equal(1000,s.Players[1].Health,"full parry zero damage");Equal(3600,s.Players[0].Credits,"prepaid super does not debit combat bank");Equal(1,s.Players[0].SuperUseReceipts.Count,"one super-use receipt");
  var held=New(close:true);held.TryStartAction(0,"super_1");bool start=false;int heldParries=0;
  for(int i=0;i<200;i++){if(held.Players[0].ActionFrame==5&&held.FullFreeze==0)start=true;heldParries+=Step(held,d1:start?(byte)4:(byte)5).Events.Count(e=>e.Kind==CombatEventKind.Parry);}
  Equal(1,heldParries,"holding forward must not auto-parry a multihit");Check(held.Players[1].Health<1000,"subsequent super hits damage held-forward defender");
 });
 Run("ex_cancel_super_costs",()=>
 {
- var s=New(close:true);Equal(ActivationStatus.Paid,s.TryStartAction(0,"knee_ex"),"EX start");
+ var s=New(close:true);s.SetTrainingLoadout(0,new([content.Fighters["rook"].Move("knee_ex").Availability,content.Fighters["rook"].Move("super_1").Availability]));Equal(ActivationStatus.Licensed,s.TryStartAction(0,"knee_ex"),"EX start");
  for(int i=0;i<80&&!s.Players[0].Contact;i++)Step(s);Check(s.Players[0].Contact,"EX must contact");while(s.Players[0].Hitstop>0)Step(s);
- Equal(ActivationStatus.Paid,s.TryStartAction(0,"super_1"),"legal EX-super cancel at "+s.Players[0].ActionId+" frame "+s.Players[0].ActionFrame+" Y "+s.Players[0].Y);Equal(2400,s.Players[0].Credits,"both startup prices charged");Equal(2,s.Players[0].SpendReceipts.Count,"two canonical receipts");
+ Equal(ActivationStatus.SuperUse,s.TryStartAction(0,"super_1"),"legal EX-super cancel at "+s.Players[0].ActionId+" frame "+s.Players[0].ActionFrame+" Y "+s.Players[0].Y);Equal(3600,s.Players[0].Credits,"cancel preserves bank");Equal(1,s.Players[0].SuperUseReceipts.Count,"one canonical use receipt");
 });
 Run("same_tick_supers_and_freeze",()=>
 {
  var s=New("rook","rook");s.SetTrainingState(1,credits:3600);byte[] motion=[2,3,6,2,3,6];StepResult? r=null;
  for(int i=0;i<motion.Length;i++)r=Step(s,motion[i],i==5?Buttons.LP:Buttons.None,CoreMath.RelativeDirection(motion[i],-1),i==5?Buttons.LP:Buttons.None);
- Equal("super_1",s.Players[0].ActionId,"left super");Equal("super_1",s.Players[1].ActionId,"right simultaneous super");Equal(2700,s.Players[0].Credits,"left debit");Equal(2700,s.Players[1].Credits,"right debit");Equal(19,s.FullFreeze,"one max shared freeze");Check(r!.Events.Count(e=>e.Kind==CombatEventKind.Spend)==2,"both startup receipts same tick");int timer=s.TimerTicks;Wait(s,19);Equal(timer,s.TimerTicks,"full freeze pauses round timer");Equal(0,s.Players[0].ActionFrame,"action frames pause through freeze");
+ Equal("super_1",s.Players[0].ActionId,"left super");Equal("super_1",s.Players[1].ActionId,"right simultaneous super");Equal(3600,s.Players[0].Credits,"left bank frozen");Equal(3600,s.Players[1].Credits,"right bank frozen");Equal(19,s.FullFreeze,"one max shared freeze");Check(r!.Events.Count(e=>e.Kind==CombatEventKind.SuperUseConsumed)==2,"both startup receipts same tick");int timer=s.TimerTicks;Wait(s,19);Equal(timer,s.TimerTicks,"full freeze pauses round timer");Equal(0,s.Players[0].ActionFrame,"action frames pause through freeze");
 });
 Run("quickrise_and_jump_throw_immunity",()=>
 {
@@ -190,9 +195,9 @@ Run("target_combo_reversal_and_dizzy",()=>
 });
 Run("economy_hand_derived_match_sequences",()=>
 {
- var s=New(credits:600);s.TryStartAction(0,"rise_ex");Wait(s,120);s.TryStartAction(0,"rise_ex");Wait(s,120);Equal(0,s.Players[0].Credits,"opening two EX spend 600");
+ var s=New(credits:600);s.TryStartAction(0,"rise_ex");Wait(s,120);s.TryStartAction(0,"rise_ex");Wait(s,120);Equal(600,s.Players[0].Credits,"licensed repeats preserve600");
  void Lose(Simulation sim){sim.SetTrainingState(0,x:350000,health:1);sim.SetTrainingState(1,x:382000);sim.TryStartAction(1,"s_lp");Wait(sim,8);Equal(1,sim.PendingResult!.WinnerSeat,"opponent wins actual LP contact");sim.SettleRound(sim.PendingResult.TerminalTick);}
- Lose(s);Equal(900,s.Players[0].Credits,"first loss pays900");Equal(1,s.Players[0].RecoveryTier,"loss tier1");s.NextRound();s.BeginFight();Lose(s);Equal(2100,s.Players[0].Credits,"saved900 plus pre-result-tier1 payout1200");Equal(2,s.Players[0].RecoveryTier,"second loss tier2");
+ Lose(s);Equal(1800,s.Players[0].Credits,"first loss grants1200 after saved600");Equal(1,s.Players[0].RecoveryTier,"loss tier1");s.NextRound();s.BeginFight();Lose(s);Equal(3000,s.Players[0].Credits,"saved1800 plus pre-result-tier1 payout1200");Equal(2,s.Players[0].RecoveryTier,"second loss tier2");
  var rematch=new Simulation(content);Equal(600,rematch.Players[0].Credits,"new match wallet reset");Equal(0,rematch.CompletedRounds,"new match scores reset");
 });
 Run("blocking_chip_and_no_air_block",()=>
@@ -209,11 +214,11 @@ Run("simultaneous_trade_and_rank",()=>
 });
 Run("paid_startup_interrupted",()=>
 {
- var s=New("rook","rook",close:true);s.TryStartAction(1,"s_hp");Wait(s,7);Equal(ActivationStatus.Paid,s.TryStartAction(0,"pulse_ex"),"legal paid startup");Wait(s,3);Equal("",s.Players[0].ActionId,"paid startup interrupted");Equal(3300,s.Players[0].Credits,"interruption no refund");
+ var s=New("rook","rook",close:true);s.TryStartAction(1,"s_hp");Wait(s,7);Equal(ActivationStatus.Licensed,s.TryStartAction(0,"pulse_ex"),"legal paid startup");Wait(s,3);Equal("",s.Players[0].ActionId,"paid startup interrupted");Equal(3600,s.Players[0].Credits,"interruption preserves licensed bank");
 });
 Run("cancel_contact_not_whiff",()=>
 {
- var s=New(close:true);s.TryStartAction(0,"s_lp");Wait(s,12);Check(s.Players[0].Contact,"LP contact");while(s.Players[0].Hitstop>0)Step(s);Equal(ActivationStatus.Paid,s.TryStartAction(0,"rise_ex"),"contact special cancel");
+ var s=New(close:true);s.TryStartAction(0,"s_lp");Wait(s,12);Check(s.Players[0].Contact,"LP contact");while(s.Players[0].Hitstop>0)Step(s);Equal(ActivationStatus.Licensed,s.TryStartAction(0,"rise_ex"),"contact special cancel");
  var whiff=New();whiff.TryStartAction(0,"s_lp");Wait(whiff,4);Equal(ActivationStatus.Illegal,whiff.TryStartAction(0,"rise_ex"),"whiff cannot cancel");Equal(3600,whiff.Players[0].Credits,"illegal cancel no charge");
 });
 Run("throw_kara_quickrise",()=>
@@ -228,18 +233,18 @@ Run("projectile_cap_and_clash",()=>
 });
 Run("preparation_atomic_idempotent",()=>
 {
- var s=new Simulation(content,new(){Training=true});string before=s.Hash();try{s.CommitPreparation(new(["rook_step_feint"]),new(["vale_return_pulse"]));throw new Exception("invalid commit accepted");}catch(ArgumentException){}Equal(before,s.Hash(),"invalid other plan rolls back both");
- var receipt=s.CommitPreparation(new(["rook_step_feint"]),new([]),"test");Equal(receipt,s.CommitPreparation(new(["rook_step_feint"]),new([]),"test"),"duplicate receipt");Equal(300,s.Players[0].Credits,"one preparation debit");
+ var s=new Simulation(content,new(){Training=true});string before=s.Hash();try{s.CommitPreparation(new([Item("rook_step_feint")]),new([Item("vale_return_pulse")]));throw new Exception("invalid commit accepted");}catch(ArgumentException){}Equal(before,s.Hash(),"invalid other plan rolls back both");
+ var receipt=s.CommitPreparation(new([Item("rook_step_feint")]),new([]),"test");Equal(receipt,s.CommitPreparation(new([Item("rook_step_feint")]),new([]),"test"),"duplicate receipt");Equal(300,s.Players[0].Credits,"one preparation debit");
  try{s.CommitPreparation(new([]),new([]),"test");throw new Exception("changed payload accepted");}catch(InvalidOperationException){}
 });
 Run("leased_replacement_and_selected_super",()=>
 {
- var s=new Simulation(content,new(){Training=true});s.SetTrainingState(0,credits:3600);s.CommitPreparation(new(["rook_high_hook"]),new([]));s.BeginFight();Equal(ActivationStatus.Illegal,s.TryStartAction(0,"command_fhp"),"base replaced");Step(s,6,Buttons.HP);Equal("shop_high_hook",s.Players[0].ActionId,"leased command priority");
- var selected=New();Equal(ActivationStatus.Illegal,selected.TryStartAction(0,"super_2"),"unselected super locked");Equal(ActivationStatus.Paid,selected.TryStartAction(0,"super_1"),"selected super allowed");Equal(2700,selected.Players[0].Credits,"selected super price");
+ var s=new Simulation(content,new(){Training=true});s.SetTrainingState(0,credits:3600);s.CommitPreparation(new([Item("rook_high_hook")]),new([]));s.BeginFight();Equal(ActivationStatus.Illegal,s.TryStartAction(0,"command_fhp"),"base replaced");Step(s,6,Buttons.HP);Equal(content.Items[Item("rook_high_hook")].MoveId,s.Players[0].ActionId,"leased command priority");
+ var selected=New();Equal(ActivationStatus.Locked,selected.TryStartAction(0,"super_2"),"unselected super locked");Equal(ActivationStatus.SuperUse,selected.TryStartAction(0,"super_1"),"selected super allowed");Equal(3600,selected.Players[0].Credits,"selected prepaid super preserves bank");
 });
 Run("rollback_spend_receipts",()=>
 {
- var s=New();Step(s,2);Step(s,3);var snap=s.Capture();Step(s,6,Buttons.LP|Buttons.MP);string withSpend=s.Hash();Equal(3300,s.Players[0].Credits,"initial EX");s.Restore(snap);Step(s,6,Buttons.LP|Buttons.MP);Equal(withSpend,s.Hash(),"same replay restores identical full state");Equal(1,s.Players[0].SpendReceipts.Count,"one replay receipt");s.Restore(snap);Step(s,6);Equal(3600,s.Players[0].Credits,"corrected input erases speculative spend");Equal(0,s.Players[0].SpendReceipts.Count,"corrected receipt removed");
+ var s=New();Step(s,2);Step(s,3);var snap=s.Capture();Step(s,6,Buttons.LP|Buttons.MP);string withSpend=s.Hash();Equal(3600,s.Players[0].Credits,"initial EX bank unchanged");s.Restore(snap);Step(s,6,Buttons.LP|Buttons.MP);Equal(withSpend,s.Hash(),"same replay restores identical full state");Equal(0,s.Players[0].SpendReceipts.Count,"replay never creates runtime debit receipt");s.Restore(snap);Step(s,6);Equal(3600,s.Players[0].Credits,"corrected input erases speculative spend");Equal(0,s.Players[0].SpendReceipts.Count,"corrected receipt removed");
 });
 Run("confirmed_settlement_only",()=>
 {
@@ -295,9 +300,16 @@ Run("performance_and_rollback_budget",()=>
  Check(Percentile(samples,.95)<16.667,"core p95 exceeds fixed-frame budget on actual host");
 });
 
+if(buyables)
+{
+ Run("buy_catalog_base_action_effects",()=>ExerciseMoves(content.Fighters.Values.Select(f=>new FighterDefinition{Id=f.Id,SuperArts=f.SuperArts,Moves=f.Moves.Where(m=>m.Availability=="base"&&m.Install is null&&m.ObjectRules is null).ToArray()})));
+ Run("buy_catalog_plain_rental_effects",()=>ExerciseMoves(content.Fighters.Values.Select(f=>new FighterDefinition{Id=f.Id,SuperArts=f.SuperArts,Moves=f.Moves.Where(m=>m.Availability!="base"&&m.Install is null&&m.DerivedFrom.Length==0&&m.Branches.Length==0&&m.ActorRules is null&&m.ObjectRules is null&&m.Mimic is null&&(m.Projectile?.Vy??0)==0).ToArray()})));
+}
+foreach(var audit in AuditRegressionTests.Cases(content,data).Concat(PaidOptionTests.Cases(content)).Concat(BuyableActorTests.Cases(content)).Concat(BuyableRouteTests.Cases(content)).Concat(ShopSkillRewardTests.Cases(content)).Concat(ShopCapabilityTests.Cases(content)).Concat(ActualSkillContactTests.Cases(content)).Concat(ShopPressureTests.Cases(content)))Run(audit.Id,audit.Test);
+
 if(results.Count==0){Console.Error.WriteLine("Unknown scenario; no test was executed.");return 2;}
-var report=new{schema_version=1,core="production",core_assembly_id=typeof(Simulation).Assembly.ManifestModule.ModuleVersionId.ToString(),seed=testSeed,content_hash=content.ContentHash,passed=results.Count-failures,failed=failures,results,actionCoverage,performance};
-if(args.Contains("--evidence-dir")){var dir=args[Array.IndexOf(args,"--evidence-dir")+1];Directory.CreateDirectory(dir);File.WriteAllText(Path.Combine(dir,"core-conformance.json"),JsonSerializer.Serialize(report,new JsonSerializerOptions{WriteIndented=true}));if(actionReplays.Count>0){var artifact=new ActionConformanceFile(1,"strike-ledger-training-action-conformance",true,typeof(Simulation).Assembly.ManifestModule.ModuleVersionId.ToString(),content.ContentHash,actionReplays.Values.ToArray());File.WriteAllText(Path.Combine(dir,"action-replays.training.json"),JsonSerializer.Serialize(artifact));}}
+var report=new{schema_version=1,core="production",core_assembly_id=typeof(Simulation).Assembly.ManifestModule.ModuleVersionId.ToString(),seed=testSeed,content_hash=content.ContentHash,passed=results.Count-failures,failed=failures,results,notApplicable,actionCoverage,performance,auditObservations=AuditRegressionTests.Observations,actualContactEvidence=ActualSkillContactTests.Evidence,pressureEvidence=ShopPressureTests.Evidence};
+if(args.Contains("--evidence-dir")){var dir=args[Array.IndexOf(args,"--evidence-dir")+1];Directory.CreateDirectory(dir);File.WriteAllText(Path.Combine(dir,"core-conformance.json"),JsonSerializer.Serialize(report,new JsonSerializerOptions{WriteIndented=true}));if(AuditRegressionTests.Traces.Count>0)File.WriteAllText(Path.Combine(dir,"audit-legal-traces.json"),JsonSerializer.Serialize(new{format="penny-punchers-audit-legal-input-traces",trainingOnly=true,contentHash=content.ContentHash,coreAssemblyId=typeof(Simulation).Assembly.ManifestModule.ModuleVersionId.ToString(),traces=AuditRegressionTests.Traces}));if(actionReplays.Count>0){var artifact=new ActionConformanceFile(1,"strike-ledger-training-action-conformance",true,typeof(Simulation).Assembly.ManifestModule.ModuleVersionId.ToString(),content.ContentHash,actionReplays.Values.ToArray());File.WriteAllText(Path.Combine(dir,"action-replays.training.json"),JsonSerializer.Serialize(artifact));}}
 Console.WriteLine($"{results.Count-failures}/{results.Count} production core scenarios passed.");return failures==0?0:1;
 
 static string FindData()

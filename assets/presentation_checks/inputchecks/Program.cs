@@ -35,7 +35,19 @@ Check(InputRouter.FilterSuppressed(Buttons.LK|Buttons.MP,ref quarantine)==Button
 Check(InputRouter.FilterSuppressed(Buttons.None,ref quarantine)==Buttons.None&&quarantine==Buttons.None,"release ends quarantine");
 Check(InputRouter.FilterSuppressed(Buttons.LK,ref quarantine)==Buttons.LK,"new press after release permitted");
 Console.WriteLine($"BASELINE PASS {assertions}: production-source SOCD, binding validation, assignment eligibility and held-confirm quarantine.");
-var persisted=new GameSettings{Master=.63f,Music=.22f,Sfx=.81f,Deadzone=.48f,Width=1920,Fullscreen=true,Vsync=false,ReducedFlashes=true,Shake=false,Keys=keys.Keys.ToArray(),PadMappings=new(){["joy:test:a"]=padA.ToArray(),["joy:test:b"]=padB.ToArray()},SeatProfiles=["joy:test:b","joy:test:a"],PersistenceEnabled=false}.Normalize();
+string[] mixedPlan=["r_signature","r_technique","r_gambit","rook_license_knee_ex","rook_license_pulse_ex","rook_permit_super"];
+string quoteHash=new('a',64);
+var plans=new GameSettings{BudgetPlans=new(){["rook"]=mixedPlan,["legacy"]=["r_signature","r_technique","r_gambit"],["oversized"]=mixedPlan.Append("extra").ToArray(),["duplicate"]=["same","same"],["blank"]=[""], ["null"]=null!},BudgetPlanQuotes=new(){["rook"]=new(2100,quoteHash),["missing"]=new(1,quoteHash),["legacy"]=new(-1,quoteHash),["duplicate"]=new(500,"invalid-hash")}}.Normalize();
+Check(plans.BudgetPlans["rook"].SequenceEqual(mixedPlan),"six mixed stable product IDs survive validation");
+Check(plans.BudgetPlans["legacy"].Length==3,"legacy three-product plans remain available for canonical repricing");
+Check(!plans.BudgetPlans.ContainsKey("oversized")&&!plans.BudgetPlans.ContainsKey("blank")&&!plans.BudgetPlans.ContainsKey("null"),"malformed saved cart rejected as a whole instead of truncated");
+Check(plans.BudgetPlans["duplicate"].Length==2,"duplicate product preserved for canonical rejection rather than silent reinterpretation");
+Check(plans.BudgetPlanQuotes.Count==1&&plans.BudgetPlanQuotes["rook"]==new SavedShopQuote(2100,quoteHash),"only valid price/hash metadata attached to an existing plan is retained");
+mixedPlan[0]="changed-after-normalize";
+Check(plans.BudgetPlans["rook"][0]=="r_signature","saved product arrays copied rather than aliased");
+var legacyPlan=JsonSerializer.Deserialize<GameSettings>("{\"BudgetPlans\":{\"rook\":[\"r_signature\"]},\"BudgetPlanQuotes\":null}")!.Normalize();
+Check(legacyPlan.BudgetPlans["rook"].SequenceEqual(new[]{"r_signature"})&&legacyPlan.BudgetPlanQuotes.Count==0,"legacy file without quote metadata loads without inventing a quote");
+var persisted=new GameSettings{Master=.63f,Music=.22f,Sfx=.81f,Deadzone=.48f,Width=1920,Fullscreen=true,Vsync=false,ReducedFlashes=true,Shake=false,Keys=keys.Keys.ToArray(),PadMappings=new(){["joy:test:a"]=padA.ToArray(),["joy:test:b"]=padB.ToArray()},SeatProfiles=["joy:test:b","joy:test:a"],BudgetPlans=plans.BudgetPlans,BudgetPlanQuotes=plans.BudgetPlanQuotes,PersistenceEnabled=false}.Normalize();
 string scratch=System.IO.Path.Combine(System.IO.Path.GetTempPath(),"strike-ledger-settings-check-"+Guid.NewGuid().ToString("N")+".json");
 try
 {
@@ -46,6 +58,7 @@ try
     Check(restored.Keys.SequenceEqual(persisted.Keys),"remapped keyboard serialization round trip");
     Check(restored.PadMappings["joy:test:a"].SequenceEqual(padA)&&restored.PadMappings["joy:test:b"].SequenceEqual(padB),"two independent pad maps serialization round trip");
     Check(restored.SeatProfiles.SequenceEqual(persisted.SeatProfiles),"assigned device profiles serialization round trip");
+    Check(restored.BudgetPlans["rook"].SequenceEqual(plans.BudgetPlans["rook"])&&restored.BudgetPlanQuotes["rook"]==plans.BudgetPlanQuotes["rook"],"mixed cart and original price/content hash survive a real temporary-disk round trip");
     Check(!serialized.Contains("PersistenceEnabled")&&!serialized.Contains("LastSaveError")&&restored.PersistenceEnabled,"transient isolation/save-error fields are not persisted");
 }
 finally{if(System.IO.File.Exists(scratch))System.IO.File.Delete(scratch);}

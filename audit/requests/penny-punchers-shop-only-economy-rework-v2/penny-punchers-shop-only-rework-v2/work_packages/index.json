@@ -1,0 +1,165 @@
+{
+  "work_packages": [
+    {
+      "id": "RW-000",
+      "title": "Reconcile live checkout and authority",
+      "dependencies": [],
+      "requirements": [
+        "SO-001",
+        "SO-002",
+        "SO-003"
+      ],
+      "path": "work_packages/RW-000.md"
+    },
+    {
+      "id": "RW-001",
+      "title": "Registry, catalog and data versions",
+      "dependencies": [
+        "RW-000"
+      ],
+      "requirements": [
+        "SO-004",
+        "SO-005",
+        "SO-006",
+        "SO-007",
+        "SO-008",
+        "SO-009"
+      ],
+      "path": "work_packages/RW-001.md"
+    },
+    {
+      "id": "RW-002",
+      "title": "Shop ownership and no combat spending",
+      "dependencies": [
+        "RW-001"
+      ],
+      "requirements": [
+        "SO-010",
+        "SO-011",
+        "SO-012",
+        "SO-013",
+        "SO-014",
+        "SO-015",
+        "SO-016",
+        "SO-017",
+        "SO-018"
+      ],
+      "path": "work_packages/RW-002.md"
+    },
+    {
+      "id": "RW-003",
+      "title": "Authoritative skill facts and precision timing",
+      "dependencies": [
+        "RW-002"
+      ],
+      "requirements": [
+        "SO-019",
+        "SO-020",
+        "SO-021",
+        "SO-022",
+        "SO-023",
+        "SO-024",
+        "SO-025"
+      ],
+      "path": "work_packages/RW-003.md"
+    },
+    {
+      "id": "RW-004",
+      "title": "Reward ledger and settlement",
+      "dependencies": [
+        "RW-003"
+      ],
+      "requirements": [
+        "SO-026",
+        "SO-027",
+        "SO-028",
+        "SO-029",
+        "SO-030",
+        "SO-031",
+        "SO-032"
+      ],
+      "path": "work_packages/RW-004.md"
+    },
+    {
+      "id": "RW-005",
+      "title": "Snapshots, replays and private networking",
+      "dependencies": [
+        "RW-004"
+      ],
+      "requirements": [
+        "SO-033",
+        "SO-034",
+        "SO-035",
+        "SO-036",
+        "SO-037",
+        "SO-038"
+      ],
+      "path": "work_packages/RW-005.md"
+    },
+    {
+      "id": "RW-006",
+      "title": "Native shop, fight HUD and result loop",
+      "dependencies": [
+        "RW-002",
+        "RW-004"
+      ],
+      "requirements": [
+        "SO-039",
+        "SO-040",
+        "SO-041",
+        "SO-042",
+        "SO-043",
+        "SO-044",
+        "SO-045",
+        "SO-046"
+      ],
+      "path": "work_packages/RW-006.md"
+    },
+    {
+      "id": "RW-007",
+      "title": "Bots, training and diagnostics",
+      "dependencies": [
+        "RW-005",
+        "RW-006"
+      ],
+      "requirements": [
+        "SO-047",
+        "SO-048",
+        "SO-049",
+        "SO-050"
+      ],
+      "path": "work_packages/RW-007.md"
+    },
+    {
+      "id": "RW-008",
+      "title": "Adversarial balance and feel evidence",
+      "dependencies": [
+        "RW-007"
+      ],
+      "requirements": [
+        "SO-051",
+        "SO-052",
+        "SO-053",
+        "SO-054",
+        "SO-055"
+      ],
+      "path": "work_packages/RW-008.md"
+    },
+    {
+      "id": "RW-009",
+      "title": "Full integration and reproducible release",
+      "dependencies": [
+        "RW-008"
+      ],
+      "requirements": [
+        "SO-056",
+        "SO-057",
+        "SO-058",
+        "SO-059",
+        "SO-060",
+        "SO-061"
+      ],
+      "path": "work_packages/RW-009.md"
+    }
+  ]
+}

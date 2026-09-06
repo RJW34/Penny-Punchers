@@ -1,0 +1,37 @@
+test_advanced_staging_not_silent_live_enable (test_buyables.CatalogTests.test_advanced_staging_not_silent_live_enable) ... ok
+test_all_example_plans_are_arithmetically_legal (test_buyables.CatalogTests.test_all_example_plans_are_arithmetically_legal) ... ok
+test_complete_migration_has_all_old_rentals (test_buyables.CatalogTests.test_complete_migration_has_all_old_rentals) ... ok
+test_complete_structural_validation (test_buyables.CatalogTests.test_complete_structural_validation) ... ok
+test_core_frontier_at_cap_27 (test_buyables.CatalogTests.test_core_frontier_at_cap_27) ... ok
+test_cross_character_activation_rejected (test_buyables.CatalogTests.test_cross_character_activation_rejected) ... ok
+test_cross_character_purchase_rejected (test_buyables.CatalogTests.test_cross_character_purchase_rejected) ... ok
+test_duplicate_rejected (test_buyables.CatalogTests.test_duplicate_rejected) ... ok
+test_ex_is_not_a_rental (test_buyables.CatalogTests.test_ex_is_not_a_rental) ... ok
+test_exact_activation_boundaries (test_buyables.CatalogTests.test_exact_activation_boundaries) ... ok
+test_exact_rental_boundaries (test_buyables.CatalogTests.test_exact_rental_boundaries) ... ok
+test_floor_above_remaining_rejected (test_buyables.CatalogTests.test_floor_above_remaining_rejected) ... ok
+test_full_frontier_respects_rental_cap (test_buyables.CatalogTests.test_full_frontier_respects_rental_cap) ... ok
+test_hop_kinematic_seed (test_buyables.CatalogTests.test_hop_kinematic_seed) ... ok
+test_negative_and_noninteger_money_rejected (test_buyables.CatalogTests.test_negative_and_noninteger_money_rejected) ... ok
+test_new_opening_choices_exist (test_buyables.CatalogTests.test_new_opening_choices_exist) ... ok
+test_no_stats_or_income_or_retained_power (test_buyables.CatalogTests.test_no_stats_or_income_or_retained_power) ... ok
+test_no_untested_native_claims (test_buyables.CatalogTests.test_no_untested_native_claims) ... ok
+test_none_is_valid_at_every_wallet (test_buyables.CatalogTests.test_none_is_valid_at_every_wallet) ... ok
+test_one_wallet_only (test_buyables.CatalogTests.test_one_wallet_only) ... ok
+test_opening_feint_leaves_ex (test_buyables.CatalogTests.test_opening_feint_leaves_ex) ... ok
+test_opening_signature_leaves_free_kit_only (test_buyables.CatalogTests.test_opening_signature_leaves_free_kit_only) ... ok
+test_overtime_graph_documented_hit_only (test_buyables.CatalogTests.test_overtime_graph_documented_hit_only) ... ok
+test_rent_and_activation_not_double_tax (test_buyables.CatalogTests.test_rent_and_activation_not_double_tax) ... ok
+test_reserve_not_a_second_available_pool (test_buyables.CatalogTests.test_reserve_not_a_second_available_pool) ... ok
+test_super_capacity (test_buyables.CatalogTests.test_super_capacity) ... ok
+test_two_in_one_slot_rejected (test_buyables.CatalogTests.test_two_in_one_slot_rejected) ... ok
+test_unknown_id_rejected (test_buyables.CatalogTests.test_unknown_id_rejected) ... ok
+test_unselected_art_activation_rejected (test_buyables.CatalogTests.test_unselected_art_activation_rejected) ... ok
+test_wrong_selected_art_rejected (test_buyables.CatalogTests.test_wrong_selected_art_rejected) ... ok
+test_zero_wallet_free_plan (test_buyables.CatalogTests.test_zero_wallet_free_plan) ... ok
+test_zero_wallet_frontier_one_plan (test_buyables.CatalogTests.test_zero_wallet_frontier_one_plan) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.032s
+
+OK

@@ -1,0 +1,500 @@
+{
+  "schema_version": 2,
+  "status": "MIGRATION_SEEDS_NOT_BALANCED",
+  "entries": [
+    {
+      "id": "rook_clinch",
+      "fighter": "rook",
+      "name": "Clinch entry",
+      "kind": "technique_license",
+      "slot": "signature",
+      "shop_price": 900,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "shop_clinch"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Clinch entry: a committed command grab option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "counterplay_status": "RETAIN_EXISTING_AUDIT_FINDINGS_NOT_BALANCE_APPROVED",
+      "notes": "Price carried for a migration comparison. No positive endorsement of weak current rental."
+    },
+    {
+      "id": "rook_low_drive",
+      "fighter": "rook",
+      "name": "Low drive",
+      "kind": "technique_license",
+      "slot": "signature",
+      "shop_price": 900,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "shop_low_drive"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Low drive: a committed low option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "counterplay_status": "RETAIN_EXISTING_AUDIT_FINDINGS_NOT_BALANCE_APPROVED",
+      "notes": "Price carried for a migration comparison. No positive endorsement of weak current rental."
+    },
+    {
+      "id": "rook_high_hook",
+      "fighter": "rook",
+      "name": "High hook",
+      "kind": "technique_license",
+      "slot": "technique",
+      "shop_price": 600,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "shop_high_hook"
+      ],
+      "replaces_move_id": "command_fhp",
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "High hook: a committed overhead option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "counterplay_status": "RETAIN_EXISTING_AUDIT_FINDINGS_NOT_BALANCE_APPROVED",
+      "notes": "Price carried for a migration comparison. No positive endorsement of weak current rental."
+    },
+    {
+      "id": "rook_low_turn",
+      "fighter": "rook",
+      "name": "Low turn",
+      "kind": "technique_license",
+      "slot": "technique",
+      "shop_price": 600,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "shop_low_turn"
+      ],
+      "replaces_move_id": "command_fhp",
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Low turn: a committed low option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "counterplay_status": "RETAIN_EXISTING_AUDIT_FINDINGS_NOT_BALANCE_APPROVED",
+      "notes": "Price carried for a migration comparison. No positive endorsement of weak current rental."
+    },
+    {
+      "id": "rook_step_feint",
+      "fighter": "rook",
+      "name": "Step feint",
+      "kind": "technique_license",
+      "slot": "gambit",
+      "shop_price": 300,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "shop_step_feint"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Step feint: a committed forward feint option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "counterplay_status": "RETAIN_EXISTING_AUDIT_FINDINGS_NOT_BALANCE_APPROVED",
+      "notes": "Price carried for a migration comparison. No positive endorsement of weak current rental."
+    },
+    {
+      "id": "rook_sway_feint",
+      "fighter": "rook",
+      "name": "Sway feint",
+      "kind": "technique_license",
+      "slot": "gambit",
+      "shop_price": 300,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "shop_sway_feint"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Sway feint: a committed back feint option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "counterplay_status": "RETAIN_EXISTING_AUDIT_FINDINGS_NOT_BALANCE_APPROVED",
+      "notes": "Price carried for a migration comparison. No positive endorsement of weak current rental."
+    },
+    {
+      "id": "vale_return_pulse",
+      "fighter": "vale",
+      "name": "Returning pulse",
+      "kind": "technique_license",
+      "slot": "signature",
+      "shop_price": 900,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "shop_return_pulse"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Returning pulse: a committed projectile option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "counterplay_status": "RETAIN_EXISTING_AUDIT_FINDINGS_NOT_BALANCE_APPROVED",
+      "notes": "Price carried for a migration comparison. No positive endorsement of weak current rental."
+    },
+    {
+      "id": "vale_low_palm",
+      "fighter": "vale",
+      "name": "Low palm",
+      "kind": "technique_license",
+      "slot": "signature",
+      "shop_price": 900,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "shop_low_palm"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Low palm: a committed low option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "counterplay_status": "RETAIN_EXISTING_AUDIT_FINDINGS_NOT_BALANCE_APPROVED",
+      "notes": "Price carried for a migration comparison. No positive endorsement of weak current rental."
+    },
+    {
+      "id": "vale_heel_arc",
+      "fighter": "vale",
+      "name": "Heel arc",
+      "kind": "technique_license",
+      "slot": "technique",
+      "shop_price": 600,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "shop_heel_arc"
+      ],
+      "replaces_move_id": "command_fhp",
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Heel arc: a committed overhead option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "counterplay_status": "RETAIN_EXISTING_AUDIT_FINDINGS_NOT_BALANCE_APPROVED",
+      "notes": "Price carried for a migration comparison. No positive endorsement of weak current rental."
+    },
+    {
+      "id": "vale_long_check",
+      "fighter": "vale",
+      "name": "Long check",
+      "kind": "technique_license",
+      "slot": "technique",
+      "shop_price": 600,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "shop_long_check"
+      ],
+      "replaces_move_id": "command_fhp",
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Long check: a committed mid option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "counterplay_status": "RETAIN_EXISTING_AUDIT_FINDINGS_NOT_BALANCE_APPROVED",
+      "notes": "Price carried for a migration comparison. No positive endorsement of weak current rental."
+    },
+    {
+      "id": "vale_step_feint",
+      "fighter": "vale",
+      "name": "Step feint",
+      "kind": "technique_license",
+      "slot": "gambit",
+      "shop_price": 300,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "shop_step_feint"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Step feint: a committed forward feint option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "counterplay_status": "RETAIN_EXISTING_AUDIT_FINDINGS_NOT_BALANCE_APPROVED",
+      "notes": "Price carried for a migration comparison. No positive endorsement of weak current rental."
+    },
+    {
+      "id": "vale_sway_feint",
+      "fighter": "vale",
+      "name": "Sway feint",
+      "kind": "technique_license",
+      "slot": "gambit",
+      "shop_price": 300,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "shop_sway_feint"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Sway feint: a committed back feint option; no free cancel, armor, invulnerability, health, or currency generation.",
+      "counterplay_status": "RETAIN_EXISTING_AUDIT_FINDINGS_NOT_BALANCE_APPROVED",
+      "notes": "Price carried for a migration comparison. No positive endorsement of weak current rental."
+    },
+    {
+      "id": "rook_pulse_ex_license",
+      "fighter": "rook",
+      "name": "Pulse shot EX",
+      "kind": "ex_license",
+      "slot": "ex",
+      "shop_price": 600,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "pulse_ex"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Round-long enhanced-move access. Not available without purchase; repeat after legal recovery.",
+      "counterplay_status": "RETEST_UNLIMITED_ENHANCED_PRESSURE",
+      "notes": "Historical activation price was 300; never use that runtime debit under v2."
+    },
+    {
+      "id": "rook_rise_ex_license",
+      "fighter": "rook",
+      "name": "Rising elbow EX",
+      "kind": "ex_license",
+      "slot": "ex",
+      "shop_price": 900,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "rise_ex"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Round-long enhanced-move access. Not available without purchase; repeat after legal recovery.",
+      "counterplay_status": "RETEST_UNLIMITED_ENHANCED_PRESSURE",
+      "notes": "Historical activation price was 300; never use that runtime debit under v2."
+    },
+    {
+      "id": "rook_knee_ex_license",
+      "fighter": "rook",
+      "name": "Traveling knee EX",
+      "kind": "ex_license",
+      "slot": "ex",
+      "shop_price": 600,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "knee_ex"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Round-long enhanced-move access. Not available without purchase; repeat after legal recovery.",
+      "counterplay_status": "RETEST_UNLIMITED_ENHANCED_PRESSURE",
+      "notes": "Historical activation price was 300; never use that runtime debit under v2."
+    },
+    {
+      "id": "rook_sway_ex_license",
+      "fighter": "rook",
+      "name": "Retreat palm EX",
+      "kind": "ex_license",
+      "slot": "ex",
+      "shop_price": 600,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "sway_ex"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Round-long enhanced-move access. Not available without purchase; repeat after legal recovery.",
+      "counterplay_status": "RETEST_UNLIMITED_ENHANCED_PRESSURE",
+      "notes": "Historical activation price was 300; never use that runtime debit under v2."
+    },
+    {
+      "id": "rook_super_1_permit",
+      "fighter": "rook",
+      "name": "Circuit Break",
+      "kind": "super_permit",
+      "slot": "super",
+      "shop_price": 900,
+      "activation_price": 0,
+      "uses_per_round": 1,
+      "move_ids": [
+        "super_1"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "One purchased startup of this super; choose anew at each buy phase. No startup credit debit.",
+      "counterplay_status": "RETEST_ONE_USE_SUPER_VALUE",
+      "notes": "Historical activation price was 900; never use that runtime debit under v2."
+    },
+    {
+      "id": "rook_super_2_permit",
+      "fighter": "rook",
+      "name": "Forge Impact",
+      "kind": "super_permit",
+      "slot": "super",
+      "shop_price": 1200,
+      "activation_price": 0,
+      "uses_per_round": 1,
+      "move_ids": [
+        "super_2"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "One purchased startup of this super; choose anew at each buy phase. No startup credit debit.",
+      "counterplay_status": "RETEST_ONE_USE_SUPER_VALUE",
+      "notes": "Historical activation price was 1200; never use that runtime debit under v2."
+    },
+    {
+      "id": "rook_super_3_permit",
+      "fighter": "rook",
+      "name": "Rush Cascade",
+      "kind": "super_permit",
+      "slot": "super",
+      "shop_price": 1500,
+      "activation_price": 0,
+      "uses_per_round": 1,
+      "move_ids": [
+        "super_3"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "One purchased startup of this super; choose anew at each buy phase. No startup credit debit.",
+      "counterplay_status": "RETEST_ONE_USE_SUPER_VALUE",
+      "notes": "Historical activation price was 1500; never use that runtime debit under v2."
+    },
+    {
+      "id": "vale_pulse_ex_license",
+      "fighter": "vale",
+      "name": "Charge pulse EX",
+      "kind": "ex_license",
+      "slot": "ex",
+      "shop_price": 600,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "pulse_ex"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Round-long enhanced-move access. Not available without purchase; repeat after legal recovery.",
+      "counterplay_status": "RETEST_UNLIMITED_ENHANCED_PRESSURE",
+      "notes": "Historical activation price was 300; never use that runtime debit under v2."
+    },
+    {
+      "id": "vale_rise_ex_license",
+      "fighter": "vale",
+      "name": "Rising heel EX",
+      "kind": "ex_license",
+      "slot": "ex",
+      "shop_price": 900,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "rise_ex"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Round-long enhanced-move access. Not available without purchase; repeat after legal recovery.",
+      "counterplay_status": "RETEST_UNLIMITED_ENHANCED_PRESSURE",
+      "notes": "Historical activation price was 300; never use that runtime debit under v2."
+    },
+    {
+      "id": "vale_palm_ex_license",
+      "fighter": "vale",
+      "name": "Turn palm EX",
+      "kind": "ex_license",
+      "slot": "ex",
+      "shop_price": 600,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "palm_ex"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Round-long enhanced-move access. Not available without purchase; repeat after legal recovery.",
+      "counterplay_status": "RETEST_UNLIMITED_ENHANCED_PRESSURE",
+      "notes": "Historical activation price was 300; never use that runtime debit under v2."
+    },
+    {
+      "id": "vale_heel_ex_license",
+      "fighter": "vale",
+      "name": "Retreat heel EX",
+      "kind": "ex_license",
+      "slot": "ex",
+      "shop_price": 600,
+      "activation_price": 0,
+      "uses_per_round": null,
+      "move_ids": [
+        "heel_ex"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "Round-long enhanced-move access. Not available without purchase; repeat after legal recovery.",
+      "counterplay_status": "RETEST_UNLIMITED_ENHANCED_PRESSURE",
+      "notes": "Historical activation price was 300; never use that runtime debit under v2."
+    },
+    {
+      "id": "vale_super_1_permit",
+      "fighter": "vale",
+      "name": "Rising Current",
+      "kind": "super_permit",
+      "slot": "super",
+      "shop_price": 900,
+      "activation_price": 0,
+      "uses_per_round": 1,
+      "move_ids": [
+        "super_1"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "One purchased startup of this super; choose anew at each buy phase. No startup credit debit.",
+      "counterplay_status": "RETEST_ONE_USE_SUPER_VALUE",
+      "notes": "Historical activation price was 900; never use that runtime debit under v2."
+    },
+    {
+      "id": "vale_super_2_permit",
+      "fighter": "vale",
+      "name": "Crosswind",
+      "kind": "super_permit",
+      "slot": "super",
+      "shop_price": 1200,
+      "activation_price": 0,
+      "uses_per_round": 1,
+      "move_ids": [
+        "super_2"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "One purchased startup of this super; choose anew at each buy phase. No startup credit debit.",
+      "counterplay_status": "RETEST_ONE_USE_SUPER_VALUE",
+      "notes": "Historical activation price was 1200; never use that runtime debit under v2."
+    },
+    {
+      "id": "vale_super_3_permit",
+      "fighter": "vale",
+      "name": "Tidal Step",
+      "kind": "super_permit",
+      "slot": "super",
+      "shop_price": 1500,
+      "activation_price": 0,
+      "uses_per_round": 1,
+      "move_ids": [
+        "super_3"
+      ],
+      "replaces_move_id": null,
+      "conflicts_with": [],
+      "scope": "MIGRATE_EXISTING_RUNTIME",
+      "description": "One purchased startup of this super; choose anew at each buy phase. No startup credit debit.",
+      "counterplay_status": "RETEST_ONE_USE_SUPER_VALUE",
+      "notes": "Historical activation price was 1500; never use that runtime debit under v2."
+    }
+  ]
+}

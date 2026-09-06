@@ -18,17 +18,17 @@ def main():
             if file.is_file():
                 target=folder/'docs'/file.relative_to(ROOT/'release_docs');target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(file,target)
         shutil.copyfile(ROOT/'reports/RELEASE_CANDIDATE.json',folder/'RELEASE_CANDIDATE.json')
-        for name in ['ACCEPTANCE_RESULTS.json','FINAL_INDEPENDENT_REVIEW.md','AFTER_HOURS_INTEGRATION.md','AFTER_HOURS_UI_AND_RENDER_REVIEW.md','AFTER_HOURS_GAMEPLAY_BOUNDARY_REVIEW.md']:
+        for name in ['UPGRADE_STATUS.json','UPGRADE_REVIEW.md']:
             source=ROOT/'reports'/name
             if source.is_file():shutil.copyfile(source,folder/'docs'/name)
-        (folder/'README.txt').write_text('STRIKE LEDGER\n\nLaunch '+exe+'. Keep all files in this directory together.\nRead docs/README.md and docs/CONTROLS.md for controls and play modes.\nRead docs/KNOWN_LIMITATIONS.md for the exact verification boundaries.\n',encoding='utf-8')
+        (folder/'README.txt').write_text('PENNY PUNCHERS\n\nLaunch '+exe+'. Keep all files in this directory together.\nRead docs/README.md and docs/CONTROLS.md for controls and play modes.\nRead docs/KNOWN_LIMITATIONS.md for the exact verification boundaries.\n',encoding='utf-8')
         entries=[{'path':p.relative_to(folder).as_posix(),'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(folder.rglob('*')) if p.is_file() and p.name!='SHA256SUMS.txt']
         (folder/'SHA256SUMS.txt').write_text(''.join(e['sha256']+'  '+e['path']+'\n' for e in entries),encoding='utf-8')
-        target=ROOT/'dist'/f'StrikeLedger-{platform}-x86_64.zip'
+        target=ROOT/'dist'/f'Penny-Punchers-{platform}-x86_64.zip'
         with zipfile.ZipFile(target,'w',zipfile.ZIP_DEFLATED,compresslevel=5) as archive:
             for p in sorted(folder.rglob('*')):
                 if p.is_file():
-                    info=zipfile.ZipInfo.from_file(p,Path('StrikeLedger')/p.relative_to(folder))
+                    info=zipfile.ZipInfo.from_file(p,Path('Penny-Punchers')/p.relative_to(folder))
                     info.compress_type=zipfile.ZIP_DEFLATED
                     if platform=='linux':info.create_system=3;info.external_attr=((0o100755 if p.name==exe else 0o100644)<<16)
                     archive.writestr(info,p.read_bytes())

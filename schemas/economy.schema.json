@@ -1,13 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Single-wallet 1v1 economy",
+  "title": "Shop-only bank and round capabilities",
   "type": "object",
   "properties": {
     "version": {
       "const": 1
     },
     "resource_model": {
-      "const": "one_persistent_scalar_credit_wallet"
+      "const": "shop_only_bank_round_capabilities"
     },
     "starting_credits": {
       "type": "integer",
@@ -57,19 +57,29 @@
           "type": "integer",
           "minimum": 1,
           "maximum": 2147483647
+        },
+        "ex": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2400
+        },
+        "super": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2400
         }
       },
       "required": [
         "signature",
         "technique",
-        "gambit"
+        "gambit",
+        "ex",
+        "super"
       ],
       "additionalProperties": false
     },
     "loadout_cap": {
-      "type": "integer",
-      "minimum": 0,
-      "maximum": 2147483647
+      "const": 2400
     },
     "preparation_seconds": {
       "type": "integer",
@@ -85,19 +95,12 @@
       "const": "one_round"
     },
     "ex_activation_cost": {
-      "type": "integer",
-      "minimum": 0,
-      "maximum": 2147483647
+      "const": 0
     },
     "super_activation_costs": {
-      "type": "array",
-      "minItems": 3,
-      "maxItems": 3,
-      "items": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 2147483647
-      }
+      "const": [
+        0
+      ]
     },
     "passive_income": {
       "type": "integer",
@@ -110,18 +113,16 @@
       "maximum": 2147483647
     },
     "activation_debit": {
-      "const": "first_committed_startup_tick"
+      "const": "none"
     },
     "refund_on_whiff_block_parry_interrupt": {
       "const": false
     },
     "default_reserve_floor": {
-      "type": "integer",
-      "minimum": 0,
-      "maximum": 2147483647
+      "const": 0
     },
     "reserve_policy": {
-      "const": "optional_minimum_remaining_balance_locked_for_round_not_a_separate_pool"
+      "const": "disabled_nonzero_rejected"
     },
     "purchases_debit": {
       "const": "atomic_preparation_commit"
@@ -134,6 +135,81 @@
     },
     "draw_tier_change": {
       "const": 0
+    },
+    "combat_bank_writes": {
+      "const": false
+    },
+    "slot_limits": {
+      "type": "object",
+      "properties": {
+        "signature": {
+          "const": 1
+        },
+        "technique": {
+          "const": 1
+        },
+        "gambit": {
+          "const": 1
+        },
+        "ex": {
+          "const": 2
+        },
+        "super": {
+          "const": 1
+        }
+      },
+      "required": [
+        "signature",
+        "technique",
+        "gambit",
+        "ex",
+        "super"
+      ],
+      "additionalProperties": false
+    },
+    "reward_policy": {
+      "type": "object",
+      "properties": {
+        "counter_hit": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000
+        },
+        "anti_air": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000
+        },
+        "perfect_parry": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000
+        },
+        "category_limit": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "total_limit": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3000
+        },
+        "perfect_window_eligible_ticks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        }
+      },
+      "required": [
+        "counter_hit",
+        "anti_air",
+        "perfect_parry",
+        "category_limit",
+        "total_limit",
+        "perfect_window_eligible_ticks"
+      ],
+      "additionalProperties": false
     }
   },
   "required": [
@@ -161,7 +237,10 @@
     "purchases_debit",
     "win_tier_change",
     "loss_tier_change",
-    "draw_tier_change"
+    "draw_tier_change",
+    "slot_limits",
+    "combat_bank_writes",
+    "reward_policy"
   ],
   "additionalProperties": false
 }

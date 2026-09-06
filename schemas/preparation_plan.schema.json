@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Desired plan, never a client supplied balance",
+  "title": "Historical scaffold preparation shape",
+  "$comment": "Preserved original scaffold shape, not the runtime wire model. Active PreparationPlan uses up to6 mixed ItemIds, zero legacy ReserveFloor, ContentHash and optional QuotedCost; see Core/SimulationState.cs, PreparationRules.cs and App/PrivateMatchPeer.cs. No client-supplied credit balance is accepted.",
   "type": "object",
   "properties": {
     "round_id": {

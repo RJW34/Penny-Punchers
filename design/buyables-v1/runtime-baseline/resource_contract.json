@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "player_count": 2,
+  "arena_count": 1,
+  "spendable_resource": "credits",
+  "wallet_fields": [
+    "credits",
+    "recovery_tier"
+  ],
+  "income_events": [
+    "confirmed_round_win",
+    "confirmed_round_loss",
+    "confirmed_round_draw"
+  ],
+  "no_income_events": [
+    "hit",
+    "block",
+    "parry",
+    "whiff",
+    "damage_taken",
+    "elapsed_time",
+    "taunt",
+    "combo",
+    "knockdown"
+  ],
+  "same_account_spent_by": [
+    "preparation_leases",
+    "ex_startup",
+    "selected_super_startup"
+  ],
+  "forbidden_resource_fields": [
+    "super_meter",
+    "ex_meter",
+    "drive_gauge",
+    "super_stock",
+    "ex_stock",
+    "earned_super_meter",
+    "meter_cost",
+    "whiff_meter",
+    "charge_tokens",
+    "finisher_tickets",
+    "shared_wallet",
+    "sponsored",
+    "incoming_sponsorship",
+    "transfer"
+  ],
+  "not_spendable_resources": [
+    "health",
+    "stun",
+    "motion_input_charge_duration",
+    "round_timer"
+  ],
+  "no_purchased_activation_inventory": true,
+  "no_team_systems": true,
+  "no_credit_network_commands": true,
+  "rollback_restores_wallet_and_receipts": true
+}

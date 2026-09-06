@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "package_id": "after_hours_marist_green",
+  "stage_id": "marist_green",
+  "display_name": "Marist Green \u2014 Golden Hour",
+  "scope": "traditional_fighter_variant_only",
+  "status": "source_art_and_future_integration_proposal",
+  "runtime_registered": false,
+  "runtime_integrated": false,
+  "production_normalization_complete": false,
+  "existing_assets_replaced": false,
+  "proposed_stage_definition": "stage.proposed.json",
+  "shared_integration_guide": "../marist-gates/README.md#future-integration",
+  "art": {
+    "style": "AFTER HOURS original late-1990s 32-bit arcade pixel-art direction",
+    "setting": "Marist College central Campus Green facing the Murray Student Center Rotunda at golden hour, interpreted as original illustration",
+    "endorsement_claimed": false,
+    "layers_supplied": "flattened_single_layer_illustrations",
+    "separate_parallax_layers_supplied": false,
+    "animated_layers_supplied": false,
+    "files": [
+      {
+        "path": "background.png",
+        "role": "viewport_look_reference",
+        "target_aspect_ratio": "16:9",
+        "target_normalized_size": [
+          640,
+          360
+        ],
+        "actual_native_dimensions": [
+          1672,
+          941
+        ],
+        "notes": "Separate match composition; not promised to match a crop of panorama.png. Verify native PNG metadata before production fitting.",
+        "actual_format": "RGB",
+        "sha256": "e01cbf1df8ba79d409af8d01d203262546b00ab482e3d252307992a416c066ad"
+      },
+      {
+        "path": "panorama.png",
+        "role": "full_world_camera_coverage_candidate",
+        "target_aspect_ratio": "128:45",
+        "target_normalized_size": [
+          1024,
+          360
+        ],
+        "actual_native_dimensions": [
+          2114,
+          744
+        ],
+        "notes": "Requires pixel-grid normalization, flat lawn alignment and left/center/right camera inspection. Target size is not a claim of native PNG dimensions.",
+        "actual_format": "RGB",
+        "sha256": "a7db85804c467f4e3600c5faa268d922b71fd0cf150a8e757ca5c781dfbb6315"
+      },
+      {
+        "path": "select-card.png",
+        "role": "stage_selection_art_reference",
+        "target_normalized_size": null,
+        "actual_native_dimensions": [
+          1672,
+          941
+        ],
+        "notes": "Fit to the eventual menu slot; rebuild title and focus states as live UI.",
+        "actual_format": "RGB",
+        "sha256": "ed5f7d37189f2151ac82c4e6d13157799c4e2e5a82b6929c7dc6d49e49c7e26b"
+      }
+    ],
+    "core_palette": {
+      "ink": "#111923",
+      "cream": "#F4E5C5",
+      "amber": "#EDAA54",
+      "teal": "#69B8AC"
+    }
+  },
+  "design_coordinates": {
+    "units": "design_pixels_unless_named_world_milli",
+    "viewport": [
+      640,
+      360
+    ],
+    "presentation": [
+      1280,
+      720
+    ],
+    "presentation_integer_scale_target": 2,
+    "floor_y": 302,
+    "presentation_floor_y": 604,
+    "panorama_size_target": [
+      1024,
+      360
+    ],
+    "world_width_milli": 768000,
+    "visible_world_width_milli": 480000,
+    "world_milli_per_design_pixel": 750,
+    "camera_world_x_clamp": [
+      240000,
+      528000
+    ],
+    "camera_panorama_center_x_clamp": [
+      320,
+      704
+    ],
+    "panorama_crop_left_x_clamp": [
+      0,
+      384
+    ],
+    "world_to_screen_x": "320 + (worldX - cameraX) / 750",
+    "world_to_screen_y": "302 - worldY / 750",
+    "world_to_panorama_x": "worldX / 750",
+    "panorama_crop_left_x": "cameraX / 750 - 320",
+    "camera_check_crops": [
+      {
+        "position": "left",
+        "camera_world_x": 240000,
+        "rect_xywh": [
+          0,
+          0,
+          640,
+          360
+        ]
+      },
+      {
+        "position": "center",
+        "camera_world_x": 384000,
+        "rect_xywh": [
+          192,
+          0,
+          640,
+          360
+        ]
+      },
+      {
+        "position": "right",
+        "camera_world_x": 528000,
+        "rect_xywh": [
+          384,
+          0,
+          640,
+          360
+        ]
+      }
+    ],
+    "initial_fighter_screen_x": [
+      192,
+      448
+    ],
+    "upper_hud_y_approx": [
+      0,
+      77
+    ],
+    "normal_footer_y_start_approx": 336,
+    "training_footer_y_start_approx": 305,
+    "floor_treatment": "Level side-on turf along y=302. Slopes, stairs, terrace edges and paths remain background scenery; no additional collision.",
+    "notes": "These are future production targets, not measurements of generated illustrations or the current cosmetic backdrop transform."
+  },
+  "selection_proposal": {
+    "available_in_current_game": false,
+    "intended_modes": [
+      "cpu",
+      "local_versus",
+      "private_match"
+    ],
+    "choice_lifetime": "Confirm before match creation; retain on rematch unless explicitly changed before the next match.",
+    "private_match": "Both peers agree on marist_green before match creation; exact selection ownership remains future implementation work.",
+    "replay": "Resolve the recorded StageId and matching content; do not silently replace it.",
+    "training_grid": "Keep the existing diagnostic grid available.",
+    "unlock_price": null,
+    "activation_price": null,
+    "wallet_effect": "none",
+    "focus_states_pending": [
+      "idle",
+      "keyboard_or_controller_focus",
+      "confirmed",
+      "unavailable_or_missing_content"
+    ]
+  },
+  "source_inspection": {
+    "date": "2026-09-05",
+    "paths_relative_to_traditional_variant": [
+      "data/stages/foundry.json",
+      "src/StrikeLedger.Core/GameContent.cs",
+      "src/StrikeLedger.Core/Simulation.Serialization.cs",
+      "game/Presentation/ArenaView.cs"
+    ],
+    "observed_integration_gaps": [
+      "The content loader still enforces exactly two stages; add this stage only with a deliberate roster/validation update.",
+      "The current renderer selects foundry or grid and uses a 1344-pixel backdrop with cosmetic drift; stable stage-ID routing and panorama fitting remain pending.",
+      "Canonical snapshots serialize and validate StageId and ContentHash; match setup, peers and replays must resolve the same stage identity.",
+      "No runtime registration, stage menu, image import or gameplay verification is included in this art package."
+    ]
+  },
+  "future_acceptance_checks": [
+    "Inspect native PNG metadata; normalize production copies to one pixel grid without overwriting sources.",
+    "Align flat turf and feet to y=302; check all three camera crops and keep architectural proportions intact.",
+    "Check fighters, mirror palettes, low attacks, jumps, impact effects and HUD readability against grass, foliage and Rotunda windows.",
+    "Use nearest filtering, no mipmaps and integer display scaling after pixel cleanup.",
+    "Implement deliberate stage registration, menu focus states and stage-ID rendering; keep the diagnostic grid available.",
+    "Verify rematch persistence, private agreement, replay restore and explicit unavailable-content handling.",
+    "Confirm unchanged geometry, collision, movement, timing and economy."
+  ]
+}

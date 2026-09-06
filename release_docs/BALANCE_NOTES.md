@@ -1,51 +1,50 @@
-# Balance notes — recorded candidate experiments
+The shop-only v2 candidate has completed a bounded, replay-verified pilot. These results describe the tested policies and seeds; they do not establish human competitive balance, final prices or a preferred economy.
 
-The final candidate completed 252 controlled 1v1 matches, 1,620 rounds and 3,387,240 simulation ticks on 5 September 2026. All runs completed; none were excluded. These results provide reproducible evidence about the implemented economy and these particular bot policies. Human competitive balance and feel have not been established.
+A new match starts at 600 CR. The bank cap is 3600 and the shop limit is 2400. Up to three rentals, two repeatable EX licenses and one single-use super permit share that budget. EX licenses cost 600, or 900 for a vertical reversal; arts cost 900/1200/1500. The ordinary kit stays free. Combat never spends the bank: buying an EX grants repeated legal use, while a purchased art supplies one committed startup for that round.
 
-## Experiment design
+Wins pay 1200, draws 900 and losses 1200/1200/1500 at the previous recovery tier. Eligible counter-hit, grounded anti-air and precision-parry receipts earn 50/75/100 for the next shop, at most twice per category and 300 total per round. Confirmed settlement applies the outcome grant first, then skill credits, with separate earned/granted/clipped amounts. Pending rewards cannot fund combat or the current round's purchases.
 
-Seven policies each played the same nine frozen contexts with both opening-budget assignments and both mirrored seats: 7 × 9 × 2 × 2 = 252 matches. Each policy therefore received 36 matched cases. The contexts cover both fighters and mirror matchups, all nine selected-art pairings across contexts, opening credits of 0/300/600/900/1800/3600, neutral and corner positions, health leads, tier-2 recovery, the wallet cap and a decisive final round. This is a bounded stratified design, not every combination of these factors.
+The completed current evidence consists of:
 
-The common combat seed starts at 1. Bots act through the production input recognizer, use a minimum 12-tick observation delay and do not read the opponent's input. The separate laboratory initializes explicit trusted fixtures before play and saves their canonical snapshots. Running policies cannot mutate the competitive simulation's wallet or health. All 126 mirrored pairs agreed on policy-relative outcome and simulation duration, providing evidence of symmetry under the tested inputs.
+- **800 product rounds:** all 38 expanded products and 12 two-EX pairs, each compared with retaining its actual fee. Two policies and seeds 1/2 run both seats at equal opening bank 2400. Every product has actual starts; both licenses start in 94/96 purchased pair rounds. This uses a fixed Thomas opponent and does not exhaust mixed-cart, stage or matchup combinations.
+- **48 fresh full matches:** four isolated payout/reward controls, three policies, two seeds and both seats. The reward-seeking policy reacts to public observations delayed by 12 ticks.
+- **64 full continuations:** explicit round-two score 1-0 fixtures compare earned-gap and equal-bank states, holding assumed prior spending at 0 or 600. Skill-enabled fixtures explicitly assume prior receipts of 300/100; they are not represented as a played first round.
+- **Reconstruction:** all 912 traces reproduce their recorded events and state. No run was excluded. Across 1,578 observed rounds, 3,036,953 fight steps preserve both banks, and all 3,156 settlement balance equations agree. The analysis excludes 112 terminal results from continuing-match liquidity.
 
-## Observed policy outcomes
+The controls are isolated laboratory data copies, not selectable shipping economy modes:
 
-Each row contains 36 matches against the common baseline; no match was a draw. The interval column is a nominal 95% Wilson interval calculated from the raw win count. Mirrored seats and common seeded contexts are correlated, so these intervals are descriptive summaries, not calibrated confidence intervals for independent players or evidence of statistically significant policy differences.
+| Control | Loss payouts | Skill rewards |
+|---|---|---|
+| A | 900/1200/1500 | Disabled |
+| B | 900/1200/1500 | Capped |
+| C — shipping v2 | 1200/1200/1500 | Capped |
+| D | 1200/1200/1500 | Disabled |
 
-| Policy | Wins–losses | Win share | Nominal Wilson interval | Improved / worse / same versus confirm in matched cases |
-|---|---:|---:|---:|---:|
-| Spend on confirm | 22–14 | 61.1% | 44.9–75.2% | 0 / 0 / 36 |
-| Conservative reserve | 14–22 | 38.9% | 24.8–55.1% | 6 / 14 / 16 |
-| Force available EX | 10–26 | 27.8% | 15.8–44.0% | 6 / 18 / 12 |
-| Bank for selected super | 10–26 | 27.8% | 15.8–44.0% | 2 / 14 / 20 |
-| Lease focused | 18–18 | 50.0% | 34.5–65.5% | 6 / 10 / 20 |
-| Zero-spend defense | 10–26 | 27.8% | 15.8–44.0% | 2 / 14 / 20 |
-| Controlled losing | 10–26 | 27.8% | 15.8–44.0% | 4 / 16 / 16 |
+Each control records exact file hashes; C is byte-identical to the shipping expanded data. These labels belong to the v2 experiment and supersede older experiment labels. Product comparisons all ran shipping C. A preserved harness mislabeled the 608 single-product rows as A in one reporting field. Raw samples and replay bytes remain untouched; the analysis publishes an explicit, hashed projection changing only that label. Future source output is corrected. No gameplay rerun is claimed for the projection.
 
-Spending on confirmed contact performed best in this bounded sample. Forcing EX or banking for a super did not reliably improve outcomes, and leasing helped some contexts while worsening others. This does not identify a universally best strategy: the single seed, fixed context selection and specific input policies limit generalization. The paired comparison preserves the same fighter, art, starting state, budget assignment and seat for each policy comparison.
+The observed match effect of moving from B to C was +0.25 for pressure, -0.50 for reward-seeking and 0 for spacing, on a win=1/draw=0.5/loss=0 outcome scale. With only two selected seed blocks, every full-match contrast has a conditional interval spanning -1 to +1. Seats are averaged within seed blocks, not counted as independent players. The differing outcomes are evidence of policy dependence, not statistical support for better balance. Crossover policies consumed zero super uses, so these matches do not measure art-frequency effects; separate product and conformance runs exercise the arts.
 
-## Zero credits, recovery and the cap
+The analytical score-only reference is **163/256 (63.671875%)** for a 1-0 leader in independent, fair, decisive future rounds of first-to-five. It is not a measured bot outcome or a target conversion rate. Score-preserving interventions are reported separately from that reference. Continuing states at 0-1 through 0-4 were observed, but only 1-0 receives paired economic interventions. Wallet recovery cannot restore conceded score.
 
-Across 84 player-rounds starting at zero credits, fighters started 2,268 actions, landed 838 hits, blocked 220 attacks and parried 38. They had zero accepted paid startups and spent zero combat credits. The free kit remained executable and capable of both offense and defense at zero. These counts do not establish equal matchup strength or measure a human player's sense of agency.
+Combat conformance separately covers all 100 core and 115 expanded action nodes, with real effects for branches, counters and objects rather than startup-only claims. The expanded suite passes 75 scenarios; the core suite passes 65 plus a new repeated-bait scenario. Both seats demonstrate capped CH/AA/precision baiting, a partial final award, fixed combat bank and every-tick restore/resimulation. This bounds the implemented reward ledger; it does not exclude an improved adversarial human strategy.
 
-The experiments reached recovery tier 2, recorded 215,400 credits clipped at the 3,600-credit wallet cap and started leased moves 1,678 times. Cap clipping is the sum across all observed payouts, not a typical per-match amount or an income exploit. Opening balances, purchase costs, combat debits, nominal/granted/clipped payouts and closing balances are retained per round.
+The 80 low-health, zero-bank EX corner-response cells retain failures: 64 defenders survive and 14/16 scripted parry attempts succeed. The Rook Pulse EX predictor misses its close spawn at both facings; this is not evidence that the move is impossible to parry. These predictive scripts are not human reaction measurements. Adaptive mixed pressure, all-art corner sequences, silhouette calibration, deterrence, long-term strategy and final price approval remain playtest work. Frequent activation alone is never treated as tactical value.
 
-The controlled-losing policy deliberately yielded its early rounds to exercise recovery incentives. It won 10 of 36 matches and improved on spend-on-confirm in four matched cases, worsened in sixteen and tied the outcome in sixteen. This sample does not show deliberate losing to be generally advantageous, but it also does not exclude a more effective farming strategy. Recovery grants credits while conceding score, and the finite match and wallet cap constrain retained income. Wider seeds, adversarial policies and human play are still needed before treating the recovery schedule as competitively settled.
 
-## Authored change and remaining limits
+A separate strategy supplement completes **32 decisive-round match continuations per catalog (64 total)** from explicit round-nine, score-4-4 fixtures. It compares unused-super threat, draw-seeking, chip-out and final-round cash-out with matched save/free-policy controls, using seeds 1/2 and both seats. Every trace reconstructs. The unused permit remains unused; the cash-out policy consumes exactly one use. In these cells, draw-seeking loses at timeout, unused-permit and cash-out policies do not improve match outcomes, and both paid EX and free-projectile guard controls achieve chip KO (33 versus 105 ticks). The guard target starts at a declared nine HP. This does not establish an adapted human response, optimal play or eight previously played rounds. [Strategy process records](../reports/evidence/shop-v2-strategy-process-results.json) link both current catalog reports and the exact preserved harness.
 
-The only intentional combat-table tuning during implementation was [ADR 0003](../decisions/0003-contacted-ex-super-cancel.md): Rook's `knee_ex` and Vale's `palm_ex` gained a contacted selected-super cancel window at action frames `[8,13)`. Their previous cancel arrays were empty, making the required EX-to-super mechanic impossible. The EX retains its 300-credit startup debit and the selected art pays its separate startup price. Whiffs, parries, insufficient credits, reserve restrictions and invalid actor/art states do not grant that route. Prices, damage, move frame timings, other EX cancel tables and credit generation were not tuned from these experiments.
+Current evidence and reproduction:
 
-This change makes two paid confirm routes available and can increase their value when sufficient credits remain. It is documented as a contract-enabling design decision, not as a statistically proven balance improvement. No additional price or combat-data changes were inferred from the 252-match results.
+- [Pilot analysis](../reports/evidence/shop-v2-pilot-analysis.json), [product summary](../reports/evidence/shop-v2-product-pilot-current/summary.json), [crossover summary](../reports/evidence/shop-v2-crossover-pilot-current/summary.json), and [actual process results](../reports/evidence/shop-v2-pilot-process-results.json).
+- [Effect inventory](../reports/evidence/shop-v2-action-effects.json) and [Core/PP/SO crosswalk](../reports/SHOP_V2_CORE_FINDINGS.json).
+- Core content: `0245f6813c2320a9081fd96fefb4fd600632c92ae8f2be8a56c049129f365734`.
+- Expanded content: `e9c73b68e2cc1a128ea6215eb35fcce75036a66deca708dd59d7699efc8ae1f8`.
+- Executed Core/App build: `pp-shop-only-v2/3aaa9b7c6de09ecb685e805b0edd641b35d36972f2a74f4a45700dcf9d0360f0`.
 
-Telemetry counts paid attempts that reach the core's accepted/rejected transition checks; inputs entered while unactionable are outside that count. Melee whiffs and interruptions are distinguished, while projectile startups and contacts are separate. Positive observed stun changes can undercount a dizzy reset occurring on the same tick. Human reaction, readability, matchup knowledge, physical controller feel and longer-term strategy are outside this experiment.
+```text
+dotnet run --project src/StrikeLedger.BalanceLab/StrikeLedger.BalanceLab.csproj -c ExportRelease -- --scenario shop_only_pilot --scope all --seed 1 --seeds 2 --data data/rulesets/buyables_full --evidence-dir reports/evidence/my-v2-pilot
+```
 
-## Reproduction and evidence
+Use a new output folder. `--scope smoke --seeds 1` is a short harness check, not a balance matrix. The preserved exact executed harness and commands are identified in the process report. `python tools/summarize_shop_v2_pilot.py` reproduces the current paired analysis. Evidence bundles and trace files are not implied to be included in a compact player download. Native recordings, physical devices and owner/friend feedback remain separate evidence.
 
-Build `src/StrikeLedger.BalanceLab/StrikeLedger.BalanceLab.csproj` with configuration `ExportRelease`, then run its `bin/ExportRelease/net8.0/StrikeLedger.BalanceLab.dll` with `--data data --output reports/balance-lab-exportrelease-final --seed 1 --seeds 1` from the source repository root. Run `python src/StrikeLedger.BalanceLab/analyze.py reports/balance-lab-exportrelease-final` to derive the comparison tables and artifact checksums.
-
-The final [summary](../reports/balance-lab-exportrelease-final/summary.json), [analysis](../reports/balance-lab-exportrelease-final/analysis.json), [match records](../reports/balance-lab-exportrelease-final/matches.jsonl), [round records](../reports/balance-lab-exportrelease-final/rounds.jsonl), [starting snapshots](../reports/balance-lab-exportrelease-final/frozen-states/) and [artifact checksums](../reports/balance-lab-exportrelease-final/artifact-sha256.json) belong to the source repository's evidence bundle. They are not implied to be included in a compact player-only download. Historical experiment folders are marked superseded.
-
-- Build: `strike-ledger-native-1/c75fa1b44d9da6f03682753fb9fde812a944c34be05051697a1954b4813babbc`
-- Canonical content SHA-256: `ec249786c06cb4e5cc4a0ea2dd84fe8c818d8360a11977d85f1b9aa66c293e63`
-- The actual Windows/Linux App and Core DLLs match both final laboratory binaries byte for byte; see the [assembly binding](../reports/app-exportrelease-final/shipped-assembly-binding.json).
+[Historical pre-v2 appendix](history/BALANCE_NOTES_PRE_SHOP_V2.md) preserves the prior direct-spend experiment, original numbers and exact old identities. Its activation prices, protected reserves, loss schedule and commands apply only to that historical build. Neither its 252 matches nor the later pre-v2 492-sample checkpoint certify shop-only v2. Older v2 metadata runs also retain their original hashes and are clearly marked historical.

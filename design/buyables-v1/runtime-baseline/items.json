@@ -1,0 +1,245 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "rook_clinch",
+      "name": "Clinch entry",
+      "slot": "signature",
+      "price": 900,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_clinch",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Untechable close command grab; catches passive guard.",
+      "tradeoff": "12-tick startup loses to jumps, strikes and spacing; cannot grab hitstun or blockstun.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "rook_low_drive",
+      "name": "Low drive",
+      "slot": "signature",
+      "price": 900,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_low_drive",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Cancelable special-route low with hard knockdown; keeps forward heavy.",
+      "tradeoff": "Slower committed approach; low guard, parry and recovery punishment answer it.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "rook_high_hook",
+      "name": "High hook",
+      "slot": "technique",
+      "price": 600,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_high_hook",
+      "replaces": "command_fhp",
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Forward-heavy overhead checks crouch guard.",
+      "tradeoff": "Replaces the advancing kara normal; slower startup loses to standing guard and interruption.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "rook_low_turn",
+      "name": "Low turn",
+      "slot": "technique",
+      "price": 600,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_low_turn",
+      "replaces": "command_fhp",
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Forward-heavy low with hard knockdown.",
+      "tradeoff": "Replaces the advancing kara normal; crouch guard and recovery punishment answer it.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "rook_step_feint",
+      "name": "Step feint",
+      "slot": "gambit",
+      "price": 300,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_step_feint",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Brief duck-step baits high pokes; no attack.",
+      "tradeoff": "Six low-body ticks, 16 total; slower travel than walking. Lows, throws and delayed attacks punish it.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "rook_sway_feint",
+      "name": "Sway feint",
+      "slot": "gambit",
+      "price": 300,
+      "eligible_fighters": [
+        "rook"
+      ],
+      "move_id": "shop_sway_feint",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Upper-body sway baits a shallow high poke; no attack.",
+      "tradeoff": "Legs stay exposed; 16 committed ticks and less root travel than walking. Lows, throws and deep reach answer it.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "vale_return_pulse",
+      "name": "Returning pulse",
+      "slot": "signature",
+      "price": 900,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_return_pulse",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "A whiffed pulse reverses after 45 ticks to control a second crossing.",
+      "tradeoff": "One contact removes it. Its shared projectile slot blocks other shots until it ends; parry does not reflect it.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "vale_low_palm",
+      "name": "Low palm",
+      "slot": "signature",
+      "price": 900,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_low_palm",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "A committed low special with hard knockdown; keeps Long Heel.",
+      "tradeoff": "Cancelable from eligible normals; low guard and parry stop it. Its long recovery gives a punish on a miss.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "vale_heel_arc",
+      "name": "Heel arc",
+      "slot": "technique",
+      "price": 600,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_heel_arc",
+      "replaces": "command_fhp",
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Forward-heavy overhead checks crouch guard.",
+      "tradeoff": "Replaces Long Heel and its kara route; standing guard and interruption answer it.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "vale_long_check",
+      "name": "Long check",
+      "slot": "technique",
+      "price": 600,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_long_check",
+      "replaces": "command_fhp",
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Compact high-poke challenge on frames6\u201316; adds stun.",
+      "tradeoff": "Slower, shorter and weaker than Long Heel; loses kara. Lows, throws and standing recovery remain vulnerable.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "vale_step_feint",
+      "name": "Step feint",
+      "slot": "gambit",
+      "price": 300,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_step_feint",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Brief duck-step baits high pokes; no attack.",
+      "tradeoff": "Six low-body ticks, 16 total; slower travel than walking. Lows, throws and delayed attacks punish it.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    },
+    {
+      "id": "vale_sway_feint",
+      "name": "Sway feint",
+      "slot": "gambit",
+      "price": 300,
+      "eligible_fighters": [
+        "vale"
+      ],
+      "move_id": "shop_sway_feint",
+      "replaces": null,
+      "duration": "one_round",
+      "commit_frame": 0,
+      "refund_after_lock": false,
+      "alters_system_defense": false,
+      "description": "Upper-body sway baits a shallow high poke; no attack.",
+      "tradeoff": "Legs stay exposed; 16 committed ticks and less root travel than walking. Lows, throws and deep reach answer it.",
+      "activation_credit_cost": 0,
+      "use_limit": null,
+      "debit": "preparation_commit"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "baseline_commit": "1623ee62c4f4b6d5574bbb9909eb6fe4e32f5441",
+  "not_an_automatic_patch": true,
+  "legacy_rentals": [
+    {
+      "legacy_item_id": "rook_clinch",
+      "old_price": 900,
+      "new_catalog_id": "R-S1",
+      "new_price": 900,
+      "new_rollout": "core_trial",
+      "policy": "Review by stable IDs and behavior; do not rename old replay records or overwrite the latest agent changes.",
+      "mechanical_change_requires_new_content_identity": true
+    },
+    {
+      "legacy_item_id": "rook_low_drive",
+      "old_price": 900,
+      "new_catalog_id": "R-S2",
+      "new_price": 600,
+      "new_rollout": "core_trial",
+      "policy": "Review by stable IDs and behavior; do not rename old replay records or overwrite the latest agent changes.",
+      "mechanical_change_requires_new_content_identity": true
+    },
+    {
+      "legacy_item_id": "rook_high_hook",
+      "old_price": 600,
+      "new_catalog_id": "R-T1",
+      "new_price": 300,
+      "new_rollout": "core_trial",
+      "policy": "Review by stable IDs and behavior; do not rename old replay records or overwrite the latest agent changes.",
+      "mechanical_change_requires_new_content_identity": true
+    },
+    {
+      "legacy_item_id": "rook_low_turn",
+      "old_price": 600,
+      "new_catalog_id": "R-T2",
+      "new_price": 300,
+      "new_rollout": "advanced_trial",
+      "policy": "Review by stable IDs and behavior; do not rename old replay records or overwrite the latest agent changes.",
+      "mechanical_change_requires_new_content_identity": true
+    },
+    {
+      "legacy_item_id": "rook_step_feint",
+      "old_price": 300,
+      "new_catalog_id": "R-G1",
+      "new_price": 300,
+      "new_rollout": "core_trial",
+      "policy": "Review by stable IDs and behavior; do not rename old replay records or overwrite the latest agent changes.",
+      "mechanical_change_requires_new_content_identity": true
+    },
+    {
+      "legacy_item_id": "rook_sway_feint",
+      "old_price": 300,
+      "new_catalog_id": "R-G2",
+      "new_price": 300,
+      "new_rollout": "core_trial",
+      "policy": "Review by stable IDs and behavior; do not rename old replay records or overwrite the latest agent changes.",
+      "mechanical_change_requires_new_content_identity": true
+    },
+    {
+      "legacy_item_id": "vale_return_pulse",
+      "old_price": 900,
+      "new_catalog_id": "V-S1",
+      "new_price": 900,
+      "new_rollout": "core_trial",
+      "policy": "Review by stable IDs and behavior; do not rename old replay records or overwrite the latest agent changes.",
+      "mechanical_change_requires_new_content_identity": true
+    },
+    {
+      "legacy_item_id": "vale_low_palm",
+      "old_price": 900,
+      "new_catalog_id": "V-S2",
+      "new_price": 600,
+      "new_rollout": "core_trial",
+      "policy": "Review by stable IDs and behavior; do not rename old replay records or overwrite the latest agent changes.",
+      "mechanical_change_requires_new_content_identity": true
+    },
+    {
+      "legacy_item_id": "vale_heel_arc",
+      "old_price": 600,
+      "new_catalog_id": "V-T1",
+      "new_price": 300,
+      "new_rollout": "core_trial",
+      "policy": "Review by stable IDs and behavior; do not rename old replay records or overwrite the latest agent changes.",
+      "mechanical_change_requires_new_content_identity": true
+    },
+    {
+      "legacy_item_id": "vale_long_check",
+      "old_price": 600,
+      "new_catalog_id": "V-T2",
+      "new_price": 300,
+      "new_rollout": "core_trial",
+      "policy": "Review by stable IDs and behavior; do not rename old replay records or overwrite the latest agent changes.",
+      "mechanical_change_requires_new_content_identity": true
+    },
+    {
+      "legacy_item_id": "vale_step_feint",
+      "old_price": 300,
+      "new_catalog_id": "V-G1",
+      "new_price": 300,
+      "new_rollout": "core_trial",
+      "policy": "Review by stable IDs and behavior; do not rename old replay records or overwrite the latest agent changes.",
+      "mechanical_change_requires_new_content_identity": true
+    },
+    {
+      "legacy_item_id": "vale_sway_feint",
+      "old_price": 300,
+      "new_catalog_id": "V-G2",
+      "new_price": 300,
+      "new_rollout": "core_trial",
+      "policy": "Review by stable IDs and behavior; do not rename old replay records or overwrite the latest agent changes.",
+      "mechanical_change_requires_new_content_identity": true
+    }
+  ],
+  "super_replacements": [
+    {
+      "fighter": "rook",
+      "old_move": "super_3",
+      "old_name": "Rush Cascade",
+      "candidate": "R-A3",
+      "policy": "Keep the tested current art until the new install passes its gates."
+    },
+    {
+      "fighter": "vale",
+      "old_move": "super_3",
+      "old_name": "Tidal Step",
+      "candidate": "V-A3",
+      "policy": "Keep the tested current art until the new field passes its gates."
+    }
+  ],
+  "new_core_trial_item": "R-T3 is added as a second core-trial technique choice; R-T2 remains an advanced redesign. Roster/moves/item counts must become registry-driven rather than being adjusted to another magic number."
+}

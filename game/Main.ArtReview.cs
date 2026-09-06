@@ -20,8 +20,10 @@ public partial class Main
         Label footer=Text("ROOT 604 PX / NEAREST FILTER / LIVE SIMULATION ADAPTER",36,669,16,Cream);
         try
         {
+            using var timings=JsonDocument.Parse(Godot.FileAccess.GetFileAsString("res://Presentation/animation-timing.json"));
             foreach(string id in new[]{"rook","vale"})
             {
+                var timing=timings.RootElement.GetProperty("fighters").GetProperty(id);
                 string directory=id=="rook"?"Rook":"Vale";
                 using var atlas=JsonDocument.Parse(Godot.FileAccess.GetFileAsString($"res://Assets/AfterHours/Fighters/{directory}/atlas.json"));
                 foreach(var move in content.Fighters[id].Moves)
@@ -34,16 +36,23 @@ public partial class Main
                         int frame=start+duration/2;
                         var f=new FighterRenderState{Id=id,X=300000,Facing=1,MoveId=move.Id,ActionFrame=frame,Startup=move.Startup,Active=move.Active,Recovery=move.Recovery,Grounded=!move.Id.StartsWith("j_"),Y=move.Id.StartsWith("j_")?65000:0};
                         var mirror=new FighterRenderState{Id=id,X=468000,Facing=-1,Palette=1,MoveId=move.Id,ActionFrame=frame,Startup=move.Startup,Active=move.Active,Recovery=move.Recovery,Grounded=f.Grounded,Y=f.Y};
+                        if(move.Mimic is {} mimic)
+                        {
+                            var source=content.Fighters[id].Move(mimic.SourceMoveId);
+                            foreach(var actor in new[]{f,mirror}){actor.MimicSourceMoveId=source.Id;actor.MimicSharedTicks=mimic.SharedTicks;actor.MimicSourceStartup=source.Startup;actor.MimicSourceActive=source.Active;}
+                        }
                         arena.SetState(new ArenaRenderState{Tick=tick+=6,Fighters=[f,mirror],TrainingGrid=false,ShakeScale=0});
-                        title.Text=$"{id.ToUpperInvariant()} / {move.Name.ToUpperInvariant()}";
+                        title.Text=$"{FighterName(id).ToUpperInvariant()} / {move.Name.ToUpperInvariant()}";
                         detail.Text=$"{move.Id} · {phase} · canonical frame {frame} / {move.TotalTicks} · P1 / P2 mirror palettes";
                         await UiFrames(4);
-                        var names=atlas.RootElement.GetProperty("moves").GetProperty(move.Id).GetProperty(phase).EnumerateArray().Select(x=>x.GetString()!).ToArray();
-                        string expected=names[Math.Clamp((frame-start)*names.Length/duration,0,names.Length-1)];
+                        var holds=timing.GetProperty("moves").GetProperty(move.Id).GetProperty(phase).EnumerateArray().ToArray();
+                        int clipTick=frame-start;string expected=holds[^1].GetProperty("cel").GetString()!;
+                        foreach(var hold in holds){if(clipTick<hold.GetProperty("ticks").GetInt32()){expected=hold.GetProperty("cel").GetString()!;break;}clipTick-=hold.GetProperty("ticks").GetInt32();}
                         var observed=arena.RenderedCels;
-                        bool ok=observed.Length==2&&observed.All(x=>x==expected);pass&=ok;
-                        checks.Add(new{fighter=id,move=move.Id,phase,frame,expected,observed,passed=ok});
-                        if(phase=="active"&&(move.Id is "s_lp" or "s_hp" or "c_hk" or "j_hk" or "throw_forward" or "throw_back"||move.Id.StartsWith("super")||move.Id.EndsWith("_ex")))
+                        bool inside=arena.FighterScreenBounds.All(b=>b.Position.X>=39&&b.End.X<=1241&&b.Position.Y>=173&&b.End.Y<=665);
+                        bool ok=observed.Length==2&&observed.All(x=>x==expected)&&inside;pass&=ok;
+                        checks.Add(new{fighter=id,move=move.Id,phase,frame,expected,observed,fullCelBoundsContained=inside,passed=ok});
+                        if(phase=="active"&&(move.Id is "s_lp" or "s_hp" or "c_hk" or "j_hk" or "throw_forward" or "throw_back"||move.Id.StartsWith("super")||move.Id.EndsWith("_ex")||move.Id.StartsWith("buy_"))||move.Id.StartsWith("buy_")&&move.Active==0&&phase=="startup"||move.Mimic!=null&&phase=="recovery")
                         {
                             string name=$"{id}-{move.Id}-{phase}.png";await ArtCapture(name);captures.Add(name);
                         }
@@ -54,10 +63,10 @@ public partial class Main
                     var f=new FighterRenderState{Id=id,State=state.Name,X=300000,Facing=1};
                     var mirror=new FighterRenderState{Id=id,State=state.Name,X=468000,Facing=-1,Palette=1};
                     arena.SetState(new ArenaRenderState{Tick=tick+=6,Fighters=[f,mirror],TrainingGrid=true,ShakeScale=0});
-                    title.Text=$"{id.ToUpperInvariant()} / {state.Name.ToUpperInvariant()}";
+                    title.Text=$"{FighterName(id).ToUpperInvariant()} / {state.Name.ToUpperInvariant()}";
                     detail.Text="Universal pose binding · mirrored root pivots · calibration room";
                     await UiFrames(4);
-                    var valid=state.Value.EnumerateArray().Select(x=>x.GetString()).ToArray();
+                    var valid=timing.GetProperty("states").GetProperty(state.Name).EnumerateArray().Select(x=>x.GetProperty("cel").GetString()).ToArray();
                     var observed=arena.RenderedCels;bool ok=observed.All(valid.Contains);pass&=ok;
                     checks.Add(new{fighter=id,state=state.Name,observed,passed=ok});
                     if(state.Name is "idle" or "walk" or "crouch" or "knockdown" or "parry" or "win")

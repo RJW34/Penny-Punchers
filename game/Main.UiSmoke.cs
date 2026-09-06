@@ -36,7 +36,7 @@ public partial class Main
     {
         if(!_uiSmokeActive)return;
         _uiSmokeElapsed+=delta;
-        if(_uiSmokeElapsed>100)FinishUiSmoke(false,"Timed out at "+_uiSmokeStep);
+        if(_uiSmokeElapsed>240)FinishUiSmoke(false,"Timed out at "+_uiSmokeStep);
     }
 
     private async void RunUiSmoke()
@@ -56,21 +56,34 @@ public partial class Main
             await UiTap(UiPad0,JoyButton.A);UiRequire(screen=="select"&&mode=="local","Controller confirms local lineup");
             await UiActivate("Start match");UiRequire(screen=="prep","Controller starts actual local preparation");
 
-            UiStep("independent preparation");
-            await UiTap(UiPad1,JoyButton.DpadRight);
-            UiRequire(draft[1][0]==0&&draft[0][0]==-1,"P2 edits only P2 signature");
-            await UiTap(UiPad1,JoyButton.DpadLeft);
-            await UiTap(UiPad0,JoyButton.DpadDown);await UiTap(UiPad0,JoyButton.DpadDown);await UiTap(UiPad0,JoyButton.DpadRight);
-            UiRequire(draft[0][2]==0&&draft[1][2]==-1,"P1 edits only P1 gambit");
+            UiStep("independent shop-only mixed carts");
+            int p2Super=purchaseProductIds.Single(k=>k.Key.Seat==1&&k.Value==ShopProducts(1,"super")[0].Id).Key.Row;
+            await UiPrepSelect(1,p2Super);await UiTap(UiPad1,JoyButton.A);
+            UiRequire(DraftItems(1).Length==0&&DraftItems(0).Length==0&&PlanPreview(1).Valid,"Unaffordable super preserves both last-valid carts");
+            var exProduct=ShopProducts(0,"ex").First(p=>p.Price==600);
+            int exRow=purchaseProductIds.Single(k=>k.Key.Seat==0&&k.Value==exProduct.Id).Key.Row;
+            await UiPrepSelect(0,exRow);await UiTap(UiPad0,JoyButton.A);
+            UiRequire(DraftItems(0).SequenceEqual(new[]{exProduct.Id})&&DraftCost(0)==600&&DraftItems(1).Length==0,"P1 buys an actual EX license in its own cart");
+            await UiPrepSelect(0,PrepActionRow(0));await UiTap(UiPad0,JoyButton.A);
+            await UiPrepSelect(0,PrepActionRow(0)+3);await UiTap(UiPad0,JoyButton.A);UiRequire(DraftItems(0).Length==0,"Controller Keep cash clears its own cart");
+            await UiPrepSelect(0,PrepActionRow(0)+1);await UiTap(UiPad0,JoyButton.A);UiRequire(DraftItems(0).Contains(exProduct.Id),"Controller Load revalidates and restores a saved EX plan");
+            await UiPrepSelect(1,2);await UiTap(UiPad1,JoyButton.DpadRight);
+            UiRequire(DraftCost(1)==300&&DraftItems(0).Contains(exProduct.Id),"P2 changes only its own rental slot");
+            await UiPrepSelect(1,0);await UiTap(UiPad1,JoyButton.A);
+            UiRequire(prepPopupSeat==1,"P2 owns its rental popup");int p1Focus=_preparationFocus[0];
+            await UiTap(UiPad0,JoyButton.DpadDown);UiRequire(prepPopupSeat==1&&_preparationFocus[0]==p1Focus,"Other controller cannot steer an owned popup");
+            await UiTap(UiPad1,JoyButton.B);UiRequire(prepPopupSeat==-1&&screen=="prep","Owner cancels popup without leaving the shop");
             await UiCapture("ui-02-independent-preparation");
-            await UiTap(UiPad0,JoyButton.DpadDown);await UiTap(UiPad0,JoyButton.DpadDown);await UiTap(UiPad0,JoyButton.A);
+            await UiPrepSelect(0,PrepActionRow(0)+4);await UiTap(UiPad0,JoyButton.A);
             UiRequire(ready[0]&&!ready[1],"P1 lock does not lock P2");
-            for(int i=0;i<4;i++)await UiTap(UiPad1,JoyButton.DpadDown);
+            await UiPrepSelect(1,PrepActionRow(1)+4);
             await UiTap(UiPad1,JoyButton.A);UiRequire(screen=="fight","P2 lock reveals both plans and starts match lifecycle");
             for(int i=0;i<420&&sim?.Phase!=MatchPhase.Fight;i++)await UiFrames(1);
             UiRequire(sim?.Phase==MatchPhase.Fight,"Reveal and countdown reach real Fight phase");
-            UiRequire(sim!.Players[0].Credits==300&&sim.Players[1].Credits==600,"Only selected gambit is debited");
+            UiRequire(sim!.Players[0].Credits==0&&sim.Players[1].Credits==300&&sim.Players[0].Leases.Contains(exProduct.Id),"Shop charges the EX license and rental once before combat");
             await UiFrames(12);await UiCapture("ui-03-local-fight");
+            await UiCombatInputBoundaries();
+            await UiStageCameraEvidence();
             await UiTap(UiPad0,JoyButton.Start);UiRequire(screen=="pause"&&paused,"Start pauses local match");
             long pausedTick=sim.Tick;await UiFrames(5);UiRequire(sim.Tick==pausedTick,"Paused simulation does not advance");
 
@@ -101,7 +114,8 @@ public partial class Main
 
             UiStep("verified replay controls");
             await UiActivate("Replays");UiRequire(screen=="replays","Replay archive opens");
-            await UiActivate(System.IO.Path.GetFileNameWithoutExtension(_uiReplayFixture));
+            var fixtureButton=ui.GetChildren().OfType<Button>().First(b=>!b.IsQueuedForDeletion()&&b.HasMeta("replay_path")&&string.Equals(System.IO.Path.GetFullPath(b.GetMeta("replay_path").AsString()),System.IO.Path.GetFullPath(_uiReplayFixture),StringComparison.OrdinalIgnoreCase));
+            fixtureButton.GrabFocus();await UiFrames(2);await UiTap(UiPad0,JoyButton.A);
             UiRequire(mode=="replay"&&screen=="fight"&&replay!=null,"Actual recorded fixture opens through archive GUI");
             await UiTap(UiPad0,JoyButton.Start);UiRequire(screen=="replay_controls","Replay controls are controller-accessible");
             double speed=replay!.Speed;await UiActivate("Speed ");UiRequire(replay.Speed!=speed,"Controller changes replay speed");
@@ -140,7 +154,9 @@ public partial class Main
             await UiActivate("Edit with pad",2);await UiActivate("Clear");foreach(char c in "test")await UiActivate(c.ToString());await UiActivate("Done");
             UiRequire(networkCode=="test","Controller commits typed match phrase");_uiPrivateTextEntryTested=true;
             await UiCapture("ui-07-private-setup");
+            await UiShopOnlyPresentationEvidence();
             await UiCompletedMatchRematch();
+            await UiBuyablesCatalogEvidence();
             UiRequire(!settings.PersistenceEnabled,"Software test does not persist user's mappings/preferences");
             UiRequire(Input.GetConnectedJoypads().SequenceEqual(_uiActualHardware),"Software provider did not fabricate physical Godot connections");
             FinishUiSmoke(true,"");

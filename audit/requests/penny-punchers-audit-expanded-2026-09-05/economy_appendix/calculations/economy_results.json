@@ -1,0 +1,2800 @@
+{
+  "repository": "RJW34/Penny-Punchers",
+  "commit": "1623ee62c4f4b6d5574bbb9909eb6fe4e32f5441",
+  "mode": "AUDITOR_PYTHON_ARITHMETIC_AND_STATIC_CONTENT_ONLY",
+  "native_game_executed": false,
+  "human_balance_proven": false,
+  "identity_checks": [
+    {
+      "path": "data/combat.json",
+      "git_blob_sha1": "b6a6877eac0c00644711bf000daa2ecc4dcc6ac6",
+      "verified": true
+    },
+    {
+      "path": "data/economy.json",
+      "git_blob_sha1": "4f391a33a6be52c4895c9facd2044b51de57ec65",
+      "verified": true
+    },
+    {
+      "path": "data/fighters/rook.json",
+      "git_blob_sha1": "af527083b11dbf01c5b85b0c1b48badeeb944211",
+      "verified": true
+    },
+    {
+      "path": "data/fighters/vale.json",
+      "git_blob_sha1": "b934ae2e6651299a7359a4f23d8b92e8263548a3",
+      "verified": true
+    },
+    {
+      "path": "data/inputs.json",
+      "git_blob_sha1": "3603bd82ff34854a6bd1b976b5339832b7526d4f",
+      "verified": true
+    },
+    {
+      "path": "data/items.json",
+      "git_blob_sha1": "856fe895365cf09c06d12eb7f27a1e9bef276281",
+      "verified": true
+    },
+    {
+      "path": "data/network.json",
+      "git_blob_sha1": "8f884293c0f5b3fd989429e1fa7998d8dbb40732",
+      "verified": true
+    },
+    {
+      "path": "data/physics.json",
+      "git_blob_sha1": "03c89012ef7aa9a0d5aee4ac84c298295f75c176",
+      "verified": true
+    },
+    {
+      "path": "data/resource_contract.json",
+      "git_blob_sha1": "850d7d26ebf73bc1a2b480f9088bdb61ef8c9494",
+      "verified": true
+    },
+    {
+      "path": "data/rules.json",
+      "git_blob_sha1": "705563321e2c8a527d46fe84aeb7edf5c7ef22d2",
+      "verified": true
+    },
+    {
+      "path": "data/stages/foundry.json",
+      "git_blob_sha1": "616c64dc99a652ce4fb12a901d7510bb1eae4e81",
+      "verified": true
+    },
+    {
+      "path": "data/stages/grid.json",
+      "git_blob_sha1": "6e6e464fb66f027b3cb3a31d852f5fc898c330fa",
+      "verified": true
+    },
+    {
+      "path": "data/toolchain_policy.json",
+      "git_blob_sha1": "32485ce7e1baa89210aa955762ac5cfa2b3b0172",
+      "verified": true
+    },
+    {
+      "path": "src/StrikeLedger.Core/EconomySeed.cs",
+      "git_blob_sha1": "f1a12bf13109f4882941866d23f6e01ed5780044",
+      "verified": true
+    }
+  ],
+  "rules": {
+    "start": 600,
+    "cap": 3600,
+    "win": 1200,
+    "draw": 900,
+    "losses": [
+      900,
+      1200,
+      1500
+    ]
+  },
+  "first_round_all_aggregate_spend_pairs": [
+    {
+      "winner_round1_spend": 0,
+      "loser_round1_spend": 0,
+      "winner_next_credits": 1800,
+      "loser_next_credits": 1500,
+      "gap": 300,
+      "reward_only_gap": 300,
+      "retained_spending_gap": 0
+    },
+    {
+      "winner_round1_spend": 0,
+      "loser_round1_spend": 300,
+      "winner_next_credits": 1800,
+      "loser_next_credits": 1200,
+      "gap": 600,
+      "reward_only_gap": 300,
+      "retained_spending_gap": 300
+    },
+    {
+      "winner_round1_spend": 0,
+      "loser_round1_spend": 600,
+      "winner_next_credits": 1800,
+      "loser_next_credits": 900,
+      "gap": 900,
+      "reward_only_gap": 300,
+      "retained_spending_gap": 600
+    },
+    {
+      "winner_round1_spend": 300,
+      "loser_round1_spend": 0,
+      "winner_next_credits": 1500,
+      "loser_next_credits": 1500,
+      "gap": 0,
+      "reward_only_gap": 300,
+      "retained_spending_gap": -300
+    },
+    {
+      "winner_round1_spend": 300,
+      "loser_round1_spend": 300,
+      "winner_next_credits": 1500,
+      "loser_next_credits": 1200,
+      "gap": 300,
+      "reward_only_gap": 300,
+      "retained_spending_gap": 0
+    },
+    {
+      "winner_round1_spend": 300,
+      "loser_round1_spend": 600,
+      "winner_next_credits": 1500,
+      "loser_next_credits": 900,
+      "gap": 600,
+      "reward_only_gap": 300,
+      "retained_spending_gap": 300
+    },
+    {
+      "winner_round1_spend": 600,
+      "loser_round1_spend": 0,
+      "winner_next_credits": 1200,
+      "loser_next_credits": 1500,
+      "gap": -300,
+      "reward_only_gap": 300,
+      "retained_spending_gap": -600
+    },
+    {
+      "winner_round1_spend": 600,
+      "loser_round1_spend": 300,
+      "winner_next_credits": 1200,
+      "loser_next_credits": 1200,
+      "gap": 0,
+      "reward_only_gap": 300,
+      "retained_spending_gap": -300
+    },
+    {
+      "winner_round1_spend": 600,
+      "loser_round1_spend": 600,
+      "winner_next_credits": 1200,
+      "loser_next_credits": 900,
+      "gap": 300,
+      "reward_only_gap": 300,
+      "retained_spending_gap": 0
+    }
+  ],
+  "streak_scenarios": {
+    "current": {
+      "save": [
+        {
+          "round": 1,
+          "A_result": "W",
+          "A": {
+            "opening": 600,
+            "spend": 0,
+            "retained": 600,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1800,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 600,
+            "spend": 0,
+            "retained": 600,
+            "nominal": 900,
+            "granted": 900,
+            "clipped": 0,
+            "closing": 1500,
+            "old_tier": 0,
+            "new_tier": 1
+          },
+          "score_half_points": [
+            2,
+            0
+          ],
+          "A_minus_B": 300,
+          "match_over": false
+        },
+        {
+          "round": 2,
+          "A_result": "W",
+          "A": {
+            "opening": 1800,
+            "spend": 0,
+            "retained": 1800,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 3000,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1500,
+            "spend": 0,
+            "retained": 1500,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 2700,
+            "old_tier": 1,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            4,
+            0
+          ],
+          "A_minus_B": 300,
+          "match_over": false
+        },
+        {
+          "round": 3,
+          "A_result": "W",
+          "A": {
+            "opening": 3000,
+            "spend": 0,
+            "retained": 3000,
+            "nominal": 1200,
+            "granted": 600,
+            "clipped": 600,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 2700,
+            "spend": 0,
+            "retained": 2700,
+            "nominal": 1500,
+            "granted": 900,
+            "clipped": 600,
+            "closing": 3600,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            6,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 4,
+          "A_result": "W",
+          "A": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1200,
+            "granted": 0,
+            "clipped": 1200,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1500,
+            "granted": 0,
+            "clipped": 1500,
+            "closing": 3600,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            8,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 5,
+          "A_result": "W",
+          "A": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1200,
+            "granted": 0,
+            "clipped": 1200,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1500,
+            "granted": 0,
+            "clipped": 1500,
+            "closing": 3600,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            10,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": true
+        }
+      ],
+      "equal_600": [
+        {
+          "round": 1,
+          "A_result": "W",
+          "A": {
+            "opening": 600,
+            "spend": 600,
+            "retained": 0,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1200,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 600,
+            "spend": 600,
+            "retained": 0,
+            "nominal": 900,
+            "granted": 900,
+            "clipped": 0,
+            "closing": 900,
+            "old_tier": 0,
+            "new_tier": 1
+          },
+          "score_half_points": [
+            2,
+            0
+          ],
+          "A_minus_B": 300,
+          "match_over": false
+        },
+        {
+          "round": 2,
+          "A_result": "W",
+          "A": {
+            "opening": 1200,
+            "spend": 600,
+            "retained": 600,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1800,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 900,
+            "spend": 600,
+            "retained": 300,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1500,
+            "old_tier": 1,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            4,
+            0
+          ],
+          "A_minus_B": 300,
+          "match_over": false
+        },
+        {
+          "round": 3,
+          "A_result": "W",
+          "A": {
+            "opening": 1800,
+            "spend": 600,
+            "retained": 1200,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 2400,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1500,
+            "spend": 600,
+            "retained": 900,
+            "nominal": 1500,
+            "granted": 1500,
+            "clipped": 0,
+            "closing": 2400,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            6,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 4,
+          "A_result": "W",
+          "A": {
+            "opening": 2400,
+            "spend": 600,
+            "retained": 1800,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 3000,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 2400,
+            "spend": 600,
+            "retained": 1800,
+            "nominal": 1500,
+            "granted": 1500,
+            "clipped": 0,
+            "closing": 3300,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            8,
+            0
+          ],
+          "A_minus_B": -300,
+          "match_over": false
+        },
+        {
+          "round": 5,
+          "A_result": "W",
+          "A": {
+            "opening": 3000,
+            "spend": 600,
+            "retained": 2400,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 3300,
+            "spend": 600,
+            "retained": 2700,
+            "nominal": 1500,
+            "granted": 900,
+            "clipped": 600,
+            "closing": 3600,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            10,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": true
+        }
+      ],
+      "leader_saves_opponent_spends_all": [
+        {
+          "round": 1,
+          "A_result": "W",
+          "A": {
+            "opening": 600,
+            "spend": 0,
+            "retained": 600,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1800,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 600,
+            "spend": 600,
+            "retained": 0,
+            "nominal": 900,
+            "granted": 900,
+            "clipped": 0,
+            "closing": 900,
+            "old_tier": 0,
+            "new_tier": 1
+          },
+          "score_half_points": [
+            2,
+            0
+          ],
+          "A_minus_B": 900,
+          "match_over": false
+        },
+        {
+          "round": 2,
+          "A_result": "W",
+          "A": {
+            "opening": 1800,
+            "spend": 0,
+            "retained": 1800,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 3000,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 900,
+            "spend": 900,
+            "retained": 0,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1200,
+            "old_tier": 1,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            4,
+            0
+          ],
+          "A_minus_B": 1800,
+          "match_over": false
+        },
+        {
+          "round": 3,
+          "A_result": "W",
+          "A": {
+            "opening": 3000,
+            "spend": 0,
+            "retained": 3000,
+            "nominal": 1200,
+            "granted": 600,
+            "clipped": 600,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1200,
+            "spend": 1200,
+            "retained": 0,
+            "nominal": 1500,
+            "granted": 1500,
+            "clipped": 0,
+            "closing": 1500,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            6,
+            0
+          ],
+          "A_minus_B": 2100,
+          "match_over": false
+        },
+        {
+          "round": 4,
+          "A_result": "W",
+          "A": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1200,
+            "granted": 0,
+            "clipped": 1200,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1500,
+            "spend": 1500,
+            "retained": 0,
+            "nominal": 1500,
+            "granted": 1500,
+            "clipped": 0,
+            "closing": 1500,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            8,
+            0
+          ],
+          "A_minus_B": 2100,
+          "match_over": false
+        },
+        {
+          "round": 5,
+          "A_result": "W",
+          "A": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1200,
+            "granted": 0,
+            "clipped": 1200,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1500,
+            "spend": 1500,
+            "retained": 0,
+            "nominal": 1500,
+            "granted": 1500,
+            "clipped": 0,
+            "closing": 1500,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            10,
+            0
+          ],
+          "A_minus_B": 2100,
+          "match_over": true
+        }
+      ]
+    },
+    "equal_first_loss": {
+      "save": [
+        {
+          "round": 1,
+          "A_result": "W",
+          "A": {
+            "opening": 600,
+            "spend": 0,
+            "retained": 600,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1800,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 600,
+            "spend": 0,
+            "retained": 600,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1800,
+            "old_tier": 0,
+            "new_tier": 1
+          },
+          "score_half_points": [
+            2,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 2,
+          "A_result": "W",
+          "A": {
+            "opening": 1800,
+            "spend": 0,
+            "retained": 1800,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 3000,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1800,
+            "spend": 0,
+            "retained": 1800,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 3000,
+            "old_tier": 1,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            4,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 3,
+          "A_result": "W",
+          "A": {
+            "opening": 3000,
+            "spend": 0,
+            "retained": 3000,
+            "nominal": 1200,
+            "granted": 600,
+            "clipped": 600,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 3000,
+            "spend": 0,
+            "retained": 3000,
+            "nominal": 1500,
+            "granted": 600,
+            "clipped": 900,
+            "closing": 3600,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            6,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 4,
+          "A_result": "W",
+          "A": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1200,
+            "granted": 0,
+            "clipped": 1200,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1500,
+            "granted": 0,
+            "clipped": 1500,
+            "closing": 3600,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            8,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 5,
+          "A_result": "W",
+          "A": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1200,
+            "granted": 0,
+            "clipped": 1200,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1500,
+            "granted": 0,
+            "clipped": 1500,
+            "closing": 3600,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            10,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": true
+        }
+      ],
+      "equal_600": [
+        {
+          "round": 1,
+          "A_result": "W",
+          "A": {
+            "opening": 600,
+            "spend": 600,
+            "retained": 0,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1200,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 600,
+            "spend": 600,
+            "retained": 0,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1200,
+            "old_tier": 0,
+            "new_tier": 1
+          },
+          "score_half_points": [
+            2,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 2,
+          "A_result": "W",
+          "A": {
+            "opening": 1200,
+            "spend": 600,
+            "retained": 600,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1800,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1200,
+            "spend": 600,
+            "retained": 600,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1800,
+            "old_tier": 1,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            4,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 3,
+          "A_result": "W",
+          "A": {
+            "opening": 1800,
+            "spend": 600,
+            "retained": 1200,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 2400,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1800,
+            "spend": 600,
+            "retained": 1200,
+            "nominal": 1500,
+            "granted": 1500,
+            "clipped": 0,
+            "closing": 2700,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            6,
+            0
+          ],
+          "A_minus_B": -300,
+          "match_over": false
+        },
+        {
+          "round": 4,
+          "A_result": "W",
+          "A": {
+            "opening": 2400,
+            "spend": 600,
+            "retained": 1800,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 3000,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 2700,
+            "spend": 600,
+            "retained": 2100,
+            "nominal": 1500,
+            "granted": 1500,
+            "clipped": 0,
+            "closing": 3600,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            8,
+            0
+          ],
+          "A_minus_B": -600,
+          "match_over": false
+        },
+        {
+          "round": 5,
+          "A_result": "W",
+          "A": {
+            "opening": 3000,
+            "spend": 600,
+            "retained": 2400,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 3600,
+            "spend": 600,
+            "retained": 3000,
+            "nominal": 1500,
+            "granted": 600,
+            "clipped": 900,
+            "closing": 3600,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            10,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": true
+        }
+      ],
+      "leader_saves_opponent_spends_all": [
+        {
+          "round": 1,
+          "A_result": "W",
+          "A": {
+            "opening": 600,
+            "spend": 0,
+            "retained": 600,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1800,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 600,
+            "spend": 600,
+            "retained": 0,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1200,
+            "old_tier": 0,
+            "new_tier": 1
+          },
+          "score_half_points": [
+            2,
+            0
+          ],
+          "A_minus_B": 600,
+          "match_over": false
+        },
+        {
+          "round": 2,
+          "A_result": "W",
+          "A": {
+            "opening": 1800,
+            "spend": 0,
+            "retained": 1800,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 3000,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1200,
+            "spend": 1200,
+            "retained": 0,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1200,
+            "old_tier": 1,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            4,
+            0
+          ],
+          "A_minus_B": 1800,
+          "match_over": false
+        },
+        {
+          "round": 3,
+          "A_result": "W",
+          "A": {
+            "opening": 3000,
+            "spend": 0,
+            "retained": 3000,
+            "nominal": 1200,
+            "granted": 600,
+            "clipped": 600,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1200,
+            "spend": 1200,
+            "retained": 0,
+            "nominal": 1500,
+            "granted": 1500,
+            "clipped": 0,
+            "closing": 1500,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            6,
+            0
+          ],
+          "A_minus_B": 2100,
+          "match_over": false
+        },
+        {
+          "round": 4,
+          "A_result": "W",
+          "A": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1200,
+            "granted": 0,
+            "clipped": 1200,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1500,
+            "spend": 1500,
+            "retained": 0,
+            "nominal": 1500,
+            "granted": 1500,
+            "clipped": 0,
+            "closing": 1500,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            8,
+            0
+          ],
+          "A_minus_B": 2100,
+          "match_over": false
+        },
+        {
+          "round": 5,
+          "A_result": "W",
+          "A": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1200,
+            "granted": 0,
+            "clipped": 1200,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1500,
+            "spend": 1500,
+            "retained": 0,
+            "nominal": 1500,
+            "granted": 1500,
+            "clipped": 0,
+            "closing": 1500,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            10,
+            0
+          ],
+          "A_minus_B": 2100,
+          "match_over": true
+        }
+      ]
+    },
+    "equal_all_win_loss_income": {
+      "save": [
+        {
+          "round": 1,
+          "A_result": "W",
+          "A": {
+            "opening": 600,
+            "spend": 0,
+            "retained": 600,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1800,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 600,
+            "spend": 0,
+            "retained": 600,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1800,
+            "old_tier": 0,
+            "new_tier": 1
+          },
+          "score_half_points": [
+            2,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 2,
+          "A_result": "W",
+          "A": {
+            "opening": 1800,
+            "spend": 0,
+            "retained": 1800,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 3000,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1800,
+            "spend": 0,
+            "retained": 1800,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 3000,
+            "old_tier": 1,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            4,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 3,
+          "A_result": "W",
+          "A": {
+            "opening": 3000,
+            "spend": 0,
+            "retained": 3000,
+            "nominal": 1200,
+            "granted": 600,
+            "clipped": 600,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 3000,
+            "spend": 0,
+            "retained": 3000,
+            "nominal": 1200,
+            "granted": 600,
+            "clipped": 600,
+            "closing": 3600,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            6,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 4,
+          "A_result": "W",
+          "A": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1200,
+            "granted": 0,
+            "clipped": 1200,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1200,
+            "granted": 0,
+            "clipped": 1200,
+            "closing": 3600,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            8,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 5,
+          "A_result": "W",
+          "A": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1200,
+            "granted": 0,
+            "clipped": 1200,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1200,
+            "granted": 0,
+            "clipped": 1200,
+            "closing": 3600,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            10,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": true
+        }
+      ],
+      "equal_600": [
+        {
+          "round": 1,
+          "A_result": "W",
+          "A": {
+            "opening": 600,
+            "spend": 600,
+            "retained": 0,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1200,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 600,
+            "spend": 600,
+            "retained": 0,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1200,
+            "old_tier": 0,
+            "new_tier": 1
+          },
+          "score_half_points": [
+            2,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 2,
+          "A_result": "W",
+          "A": {
+            "opening": 1200,
+            "spend": 600,
+            "retained": 600,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1800,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1200,
+            "spend": 600,
+            "retained": 600,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1800,
+            "old_tier": 1,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            4,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 3,
+          "A_result": "W",
+          "A": {
+            "opening": 1800,
+            "spend": 600,
+            "retained": 1200,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 2400,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1800,
+            "spend": 600,
+            "retained": 1200,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 2400,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            6,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 4,
+          "A_result": "W",
+          "A": {
+            "opening": 2400,
+            "spend": 600,
+            "retained": 1800,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 3000,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 2400,
+            "spend": 600,
+            "retained": 1800,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 3000,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            8,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": false
+        },
+        {
+          "round": 5,
+          "A_result": "W",
+          "A": {
+            "opening": 3000,
+            "spend": 600,
+            "retained": 2400,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 3000,
+            "spend": 600,
+            "retained": 2400,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 3600,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            10,
+            0
+          ],
+          "A_minus_B": 0,
+          "match_over": true
+        }
+      ],
+      "leader_saves_opponent_spends_all": [
+        {
+          "round": 1,
+          "A_result": "W",
+          "A": {
+            "opening": 600,
+            "spend": 0,
+            "retained": 600,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1800,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 600,
+            "spend": 600,
+            "retained": 0,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1200,
+            "old_tier": 0,
+            "new_tier": 1
+          },
+          "score_half_points": [
+            2,
+            0
+          ],
+          "A_minus_B": 600,
+          "match_over": false
+        },
+        {
+          "round": 2,
+          "A_result": "W",
+          "A": {
+            "opening": 1800,
+            "spend": 0,
+            "retained": 1800,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 3000,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1200,
+            "spend": 1200,
+            "retained": 0,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1200,
+            "old_tier": 1,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            4,
+            0
+          ],
+          "A_minus_B": 1800,
+          "match_over": false
+        },
+        {
+          "round": 3,
+          "A_result": "W",
+          "A": {
+            "opening": 3000,
+            "spend": 0,
+            "retained": 3000,
+            "nominal": 1200,
+            "granted": 600,
+            "clipped": 600,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1200,
+            "spend": 1200,
+            "retained": 0,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1200,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            6,
+            0
+          ],
+          "A_minus_B": 2400,
+          "match_over": false
+        },
+        {
+          "round": 4,
+          "A_result": "W",
+          "A": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1200,
+            "granted": 0,
+            "clipped": 1200,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1200,
+            "spend": 1200,
+            "retained": 0,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1200,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            8,
+            0
+          ],
+          "A_minus_B": 2400,
+          "match_over": false
+        },
+        {
+          "round": 5,
+          "A_result": "W",
+          "A": {
+            "opening": 3600,
+            "spend": 0,
+            "retained": 3600,
+            "nominal": 1200,
+            "granted": 0,
+            "clipped": 1200,
+            "closing": 3600,
+            "old_tier": 0,
+            "new_tier": 0
+          },
+          "B": {
+            "opening": 1200,
+            "spend": 1200,
+            "retained": 0,
+            "nominal": 1200,
+            "granted": 1200,
+            "clipped": 0,
+            "closing": 1200,
+            "old_tier": 2,
+            "new_tier": 2
+          },
+          "score_half_points": [
+            10,
+            0
+          ],
+          "A_minus_B": 2400,
+          "match_over": true
+        }
+      ]
+    }
+  },
+  "score_only_probabilities": {
+    "assumptions": "Independent equally likely decisive rounds; identical strength, no economic effect, no draws. Pure score arithmetic, not measured game outcomes.",
+    "scores": [
+      {
+        "lead": [
+          1,
+          0
+        ],
+        "leader_fraction": "163/256",
+        "leader_probability": 0.63671875,
+        "trailing_probability": 0.36328125
+      },
+      {
+        "lead": [
+          2,
+          0
+        ],
+        "leader_fraction": "99/128",
+        "leader_probability": 0.7734375,
+        "trailing_probability": 0.2265625
+      },
+      {
+        "lead": [
+          3,
+          0
+        ],
+        "leader_fraction": "57/64",
+        "leader_probability": 0.890625,
+        "trailing_probability": 0.109375
+      },
+      {
+        "lead": [
+          4,
+          0
+        ],
+        "leader_fraction": "31/32",
+        "leader_probability": 0.96875,
+        "trailing_probability": 0.03125
+      }
+    ],
+    "toy_sensitivity": [
+      {
+        "ASSUMED_future_round_win_probability": 0.5,
+        "match_win_if_only_round2_uses_p": 0.63671875,
+        "match_win_if_all_later_rounds_use_p": 0.63671875,
+        "not_an_estimate_of_this_game": true
+      },
+      {
+        "ASSUMED_future_round_win_probability": 0.55,
+        "match_win_if_only_round2_uses_p": 0.650390625,
+        "match_win_if_all_later_rounds_use_p": 0.7396192826171875,
+        "not_an_estimate_of_this_game": true
+      },
+      {
+        "ASSUMED_future_round_win_probability": 0.6,
+        "match_win_if_only_round2_uses_p": 0.6640625,
+        "match_win_if_all_later_rounds_use_p": 0.8263296,
+        "not_an_estimate_of_this_game": true
+      }
+    ]
+  },
+  "equal_spend_reachable_ledgers": {
+    "scope": "Exhaustive for equal aggregate spend in 300-credit steps, decisive A opening win, later W/L/D. Not exhaustive of unequal spend or gameplay.",
+    "rows": [
+      {
+        "round": 1,
+        "continuing_unique_states": 3,
+        "terminal_unique_states": 0,
+        "A_minus_B_min": 300,
+        "A_minus_B_max": 300
+      },
+      {
+        "round": 2,
+        "continuing_unique_states": 18,
+        "terminal_unique_states": 0,
+        "A_minus_B_min": 0,
+        "A_minus_B_max": 300
+      },
+      {
+        "round": 3,
+        "continuing_unique_states": 56,
+        "terminal_unique_states": 0,
+        "A_minus_B_min": 0,
+        "A_minus_B_max": 300
+      },
+      {
+        "round": 4,
+        "continuing_unique_states": 151,
+        "terminal_unique_states": 0,
+        "A_minus_B_min": -300,
+        "A_minus_B_max": 300
+      },
+      {
+        "round": 5,
+        "continuing_unique_states": 333,
+        "terminal_unique_states": 16,
+        "A_minus_B_min": -600,
+        "A_minus_B_max": 600
+      },
+      {
+        "round": 6,
+        "continuing_unique_states": 487,
+        "terminal_unique_states": 71,
+        "A_minus_B_min": -900,
+        "A_minus_B_max": 900
+      },
+      {
+        "round": 7,
+        "continuing_unique_states": 529,
+        "terminal_unique_states": 163,
+        "A_minus_B_min": -900,
+        "A_minus_B_max": 900
+      },
+      {
+        "round": 8,
+        "continuing_unique_states": 415,
+        "terminal_unique_states": 313,
+        "A_minus_B_min": -900,
+        "A_minus_B_max": 900
+      },
+      {
+        "round": 9,
+        "continuing_unique_states": 0,
+        "terminal_unique_states": 623,
+        "A_minus_B_min": -900,
+        "A_minus_B_max": 900
+      }
+    ],
+    "maximum_absolute_wallet_gap": 900,
+    "terminal_state_count_across_rounds": 1186,
+    "continuing_state_extreme_witnesses": [
+      {
+        "round": 1,
+        "max_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          }
+        ],
+        "min_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "round": 2,
+        "max_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "D",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              3,
+              1
+            ]
+          }
+        ],
+        "min_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "round": 3,
+        "max_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "W",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              4,
+              2
+            ]
+          }
+        ],
+        "min_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "round": 4,
+        "max_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              4
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1500,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              6
+            ]
+          }
+        ],
+        "min_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              1800,
+              1500
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 0,
+            "closing_credits": [
+              2700,
+              2700
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              3600,
+              3600
+            ],
+            "score_half_points": [
+              4,
+              2
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "L",
+            "equal_spend": 3600,
+            "closing_credits": [
+              900,
+              1200
+            ],
+            "score_half_points": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "round": 5,
+        "max_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              4
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1500,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              6
+            ]
+          },
+          {
+            "round": 5,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1800,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              8
+            ]
+          }
+        ],
+        "min_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              1800,
+              1500
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "D",
+            "equal_spend": 0,
+            "closing_credits": [
+              2700,
+              2400
+            ],
+            "score_half_points": [
+              3,
+              1
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              3600,
+              3600
+            ],
+            "score_half_points": [
+              5,
+              1
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "W",
+            "equal_spend": 3600,
+            "closing_credits": [
+              1200,
+              1500
+            ],
+            "score_half_points": [
+              7,
+              1
+            ]
+          },
+          {
+            "round": 5,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              900,
+              1500
+            ],
+            "score_half_points": [
+              7,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "round": 6,
+        "max_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              4
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1500,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              6
+            ]
+          },
+          {
+            "round": 5,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1800,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              8
+            ]
+          },
+          {
+            "round": 6,
+            "A_result": "W",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1800,
+              900
+            ],
+            "score_half_points": [
+              4,
+              8
+            ]
+          }
+        ],
+        "min_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              1800,
+              1500
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "D",
+            "equal_spend": 0,
+            "closing_credits": [
+              2700,
+              2400
+            ],
+            "score_half_points": [
+              3,
+              1
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              3600,
+              3600
+            ],
+            "score_half_points": [
+              5,
+              1
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "W",
+            "equal_spend": 3600,
+            "closing_credits": [
+              1200,
+              1500
+            ],
+            "score_half_points": [
+              7,
+              1
+            ]
+          },
+          {
+            "round": 5,
+            "A_result": "W",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              1800
+            ],
+            "score_half_points": [
+              9,
+              1
+            ]
+          },
+          {
+            "round": 6,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              900,
+              1800
+            ],
+            "score_half_points": [
+              9,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "round": 7,
+        "max_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              4
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1500,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              6
+            ]
+          },
+          {
+            "round": 5,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1800,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              8
+            ]
+          },
+          {
+            "round": 6,
+            "A_result": "D",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1500,
+              900
+            ],
+            "score_half_points": [
+              3,
+              9
+            ]
+          },
+          {
+            "round": 7,
+            "A_result": "W",
+            "equal_spend": 900,
+            "closing_credits": [
+              1800,
+              900
+            ],
+            "score_half_points": [
+              5,
+              9
+            ]
+          }
+        ],
+        "min_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              1800,
+              1500
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "D",
+            "equal_spend": 0,
+            "closing_credits": [
+              2700,
+              2400
+            ],
+            "score_half_points": [
+              3,
+              1
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              3600,
+              3600
+            ],
+            "score_half_points": [
+              5,
+              1
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "L",
+            "equal_spend": 3600,
+            "closing_credits": [
+              900,
+              1200
+            ],
+            "score_half_points": [
+              5,
+              3
+            ]
+          },
+          {
+            "round": 5,
+            "A_result": "W",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1500
+            ],
+            "score_half_points": [
+              7,
+              3
+            ]
+          },
+          {
+            "round": 6,
+            "A_result": "W",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              1800
+            ],
+            "score_half_points": [
+              9,
+              3
+            ]
+          },
+          {
+            "round": 7,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              900,
+              1800
+            ],
+            "score_half_points": [
+              9,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "round": 8,
+        "max_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 600,
+            "closing_credits": [
+              1200,
+              900
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "L",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              2
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1200,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              4
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1500,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              6
+            ]
+          },
+          {
+            "round": 5,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1800,
+              1200
+            ],
+            "score_half_points": [
+              2,
+              8
+            ]
+          },
+          {
+            "round": 6,
+            "A_result": "W",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1800,
+              900
+            ],
+            "score_half_points": [
+              4,
+              8
+            ]
+          },
+          {
+            "round": 7,
+            "A_result": "W",
+            "equal_spend": 900,
+            "closing_credits": [
+              2100,
+              1200
+            ],
+            "score_half_points": [
+              6,
+              8
+            ]
+          },
+          {
+            "round": 8,
+            "A_result": "D",
+            "equal_spend": 1200,
+            "closing_credits": [
+              1800,
+              900
+            ],
+            "score_half_points": [
+              7,
+              9
+            ]
+          }
+        ],
+        "min_A_gap": [
+          {
+            "round": 1,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              1800,
+              1500
+            ],
+            "score_half_points": [
+              2,
+              0
+            ]
+          },
+          {
+            "round": 2,
+            "A_result": "D",
+            "equal_spend": 0,
+            "closing_credits": [
+              2700,
+              2400
+            ],
+            "score_half_points": [
+              3,
+              1
+            ]
+          },
+          {
+            "round": 3,
+            "A_result": "W",
+            "equal_spend": 0,
+            "closing_credits": [
+              3600,
+              3600
+            ],
+            "score_half_points": [
+              5,
+              1
+            ]
+          },
+          {
+            "round": 4,
+            "A_result": "L",
+            "equal_spend": 3600,
+            "closing_credits": [
+              900,
+              1200
+            ],
+            "score_half_points": [
+              5,
+              3
+            ]
+          },
+          {
+            "round": 5,
+            "A_result": "W",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1500
+            ],
+            "score_half_points": [
+              7,
+              3
+            ]
+          },
+          {
+            "round": 6,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              900,
+              1500
+            ],
+            "score_half_points": [
+              7,
+              5
+            ]
+          },
+          {
+            "round": 7,
+            "A_result": "W",
+            "equal_spend": 900,
+            "closing_credits": [
+              1200,
+              1800
+            ],
+            "score_half_points": [
+              9,
+              5
+            ]
+          },
+          {
+            "round": 8,
+            "A_result": "L",
+            "equal_spend": 1200,
+            "closing_credits": [
+              900,
+              1800
+            ],
+            "score_half_points": [
+              9,
+              7
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "feint_motion_comparison": [
+    {
+      "fighter": "rook",
+      "move": "shop_step_feint",
+      "action_ticks": 16,
+      "authored_displacement_world_units": 13.6,
+      "free_walk_absolute_distance_over_same_ticks": 48.0,
+      "does_not_measure_visual_deception": true
+    },
+    {
+      "fighter": "rook",
+      "move": "shop_sway_feint",
+      "action_ticks": 16,
+      "authored_displacement_world_units": -12.8,
+      "free_walk_absolute_distance_over_same_ticks": 33.6,
+      "does_not_measure_visual_deception": true
+    },
+    {
+      "fighter": "vale",
+      "move": "shop_step_feint",
+      "action_ticks": 16,
+      "authored_displacement_world_units": 13.6,
+      "free_walk_absolute_distance_over_same_ticks": 43.2,
+      "does_not_measure_visual_deception": true
+    },
+    {
+      "fighter": "vale",
+      "move": "shop_sway_feint",
+      "action_ticks": 16,
+      "authored_displacement_world_units": -12.8,
+      "free_walk_absolute_distance_over_same_ticks": 35.2,
+      "does_not_measure_visual_deception": true
+    }
+  ],
+  "global_stat_purchase_records": [],
+  "stat_purchase_scope": "The inspected canonical 12-item catalog leases individual actions; no global character-stat product is implemented by its item model."
+}

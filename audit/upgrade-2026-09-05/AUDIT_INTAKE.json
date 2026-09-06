@@ -1,0 +1,10 @@
+{
+  "audit_zip_sha256": "cb72ac3ff474fd77a2915f58f768220eba99e599263f180da9877c2d9787b02a",
+  "baseline_commit": "1623ee62c4f4b6d5574bbb9909eb6fe4e32f5441",
+  "expanded_findings": 91,
+  "all_archive_members_crc_checked": true,
+  "historical_77_findings_exactly_preserved": true,
+  "addenda_fully_embedded_in_main_audit": true,
+  "review": "Main audit, both protocols, all91 records, historical original, all pinned snapshots and four calculated datasets reviewed by root/App/Core agents; static calculations are not gameplay balance evidence.",
+  "external_checks": "Actual physical controllers, two physical PCs and human playtests remain separate."
+}

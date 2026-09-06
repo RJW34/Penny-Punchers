@@ -1,0 +1,10 @@
+# Product loop: learn → buy → fight → earn → adapt
+During preparation, inspect prior public round facts and spend your bank on the desired kit. All options are visible from round one; price, slots and actual implementation constrain availability, not arbitrary XP unlocks. Lock both plans atomically, reveal exact capabilities, then fight. During combat the bank is bit-for-bit frozen: no credit decrement, deposit, refund, affordability check or emergency purchase. A fighter with zero bank can use every owned repeatable action and its unspent super. A rich fighter without a license cannot use that EX.
+
+Combat creates nonspendable skill receipts. Confirmed settlement updates score, result payout, recovery tier and skill deposit exactly once. Reset health and transient combat state; all licenses and unused super permits expire. Unspent cash alone carries. The next shop offers another complete choice. Choosing the same kit, saving, or switching plans must all be possible. No automatic “upgrade all” purchase.
+
+Supers are the one explicit consumable: a single prepaid startup bought before combat, not earned by filling a gauge. One use is consumed on legal commitment even if whiffed, blocked, parried or interrupted. An invalid/buffered input consumes nothing. The HUD says SUPER READY / USED, never implies unlimited casts. This finite super entitlement is a disclosed default—not a hidden second currency, not a limit on ordinary/EX repetition. It expires if unused. Do not accrue super stocks across rounds.
+
+Base includes all ordinary normals/specials, movement, blocking, directional parry, normal throw/tech, recovery and core execution. These are not for sale. Match-level fighters stay locked; super choice moves into each preparation. No cosmetic progression spends competitive money; no persistent purchased power.
+
+Final match settlement can record the same payouts for a consistent ledger, but explicitly label them postmatch/unused. Exclude them from comeback-liquidity metrics, and reset banks on rematch. Abort/disconnect grants no unresolved-round payout. Practice earnings are simulated and never enter a competitive save.

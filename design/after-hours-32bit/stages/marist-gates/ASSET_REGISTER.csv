@@ -1,0 +1,4 @@
+path,width,height,format,sha256,source,author,status,prompts
+background.png,1672,941,RGB,77e6585e534d150dc04d2abf9de52d799b137f7479039108a224a6f6a51240d9,Original built-in image_gen generation/edit; architectural guidance credited in SOURCES.md,OpenAI ImageGen; art direction by Codex for the project,source_art_for_future_stage_integration,prompts.json
+panorama.png,2114,744,RGB,cf2fad1c6be338b5f357971e43cb8c1243e8d2a1dcdb76494ff5b65492852d64,Original built-in image_gen generation/edit; architectural guidance credited in SOURCES.md,OpenAI ImageGen; art direction by Codex for the project,source_art_for_future_stage_integration,prompts.json
+select-card.png,1672,941,RGB,ababc6f9c3c6b9cf8da0f24c7a15acbf9e1b50f8541652e546fa05cad80e1a26,Original built-in image_gen generation/edit; architectural guidance credited in SOURCES.md,OpenAI ImageGen; art direction by Codex for the project,source_art_for_future_stage_integration,prompts.json

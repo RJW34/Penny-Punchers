@@ -20,10 +20,7 @@ from xml.sax.saxutils import escape
 ROOT = Path(__file__).resolve().parents[1]
 TOOLS = ("CoreTests", "NetworkLab", "BalanceLab")
 PLATFORMS = ("win-x64", "linux-x64")
-EXPECTED = {
-    "Core": "204653b031ca2700371d8c1df62c4b7b9eb131825fcaaba1ef5ee01676c2c7df",
-    "App": "72e7b96bbd878126db96ba0be8e49bae49df1417bf3162f4aec4d1f325e6cebb",
-}
+EXPECTED: dict[str, str] = {}
 
 
 def sha(path: Path) -> str:
@@ -85,24 +82,32 @@ def project(tool: str, directory: Path, assemblies: dict[str, Path]) -> Path:
 
 
 def readme() -> str:
-    return r"""# Strike Ledger verification tools
+    return r"""# Penny Punchers verification tools — shop-only v2
 
 These self-contained Windows x64 and Linux x64 executables use the exact frozen
 Core/App binaries shipped in the native game. No .NET SDK is required to run them.
-Keep each tool directory intact. The canonical data is in `data/` alongside this
+Keep each tool directory intact. Canonical data is in `data/` alongside this
 README. `PACKAGE_MANIFEST.json` records production hashes and every shipped file.
+
+Both playable trials use the v2 shop-only economy. Core has 100 runtime action
+nodes and Expanded has 115, including branches across both fighters; the historical
+98-action scenario is not current-catalog evidence. Use `data/rulesets/buyables_full`
+for Expanded and retain separate evidence directories for the two content hashes.
+The stable internal executable/namespace names remain StrikeLedger.
 
 Run examples from this verification directory. Replace `win-x64` with `linux-x64`
 and omit `.exe` on Linux; run `chmod +x linux-x64/*/StrikeLedger.*` after extracting
 on a filesystem that does not preserve executable permissions.
 
 ```powershell
-.\win-x64\CoreTests\StrikeLedger.CoreTests.exe --scenario ex_cancel_super_costs --seed 1 --data .\data --evidence-dir .\results\core
-.\win-x64\CoreTests\StrikeLedger.CoreTests.exe --scenario content_all_98_actions --seed 1 --data .\data --evidence-dir .\results\actions
-.\win-x64\CoreTests\StrikeLedger.CoreTests.exe --verify-action-replay .\results\actions\action-replays.training.json --data .\data --evidence-dir .\results\verified-actions
+.\win-x64\CoreTests\StrikeLedger.CoreTests.exe --data .\data --evidence-dir .\results\core
+.\win-x64\CoreTests\StrikeLedger.CoreTests.exe --scenario shop_registry_resource_contract --data .\data\rulesets\buyables_full --evidence-dir .\results\expanded-registry
+.\win-x64\CoreTests\StrikeLedger.CoreTests.exe --scenario shop_all_ex_repeat_without_bank --seed 1 --data .\data --evidence-dir .\results\ex
+.\win-x64\CoreTests\StrikeLedger.CoreTests.exe --scenario shop_all_super_once_rollback --seed 1 --data .\data --evidence-dir .\results\super
+.\win-x64\CoreTests\StrikeLedger.CoreTests.exe --scenario shop_skill_caps_and_partial_receipts --data .\data --evidence-dir .\results\skill
 .\win-x64\NetworkLab\StrikeLedger.NetworkLab.exe --self-test --data .\data --evidence-dir .\results\app
-.\win-x64\NetworkLab\StrikeLedger.NetworkLab.exe --scenario training_drills --data .\data --evidence-dir .\results\training
-.\win-x64\BalanceLab\StrikeLedger.BalanceLab.exe --scenario zero_vs_full_wallet --seed 1 --seeds 1 --data .\data --evidence-dir .\results\balance
+.\win-x64\NetworkLab\StrikeLedger.NetworkLab.exe --scenario shop_only_v2 --data .\data --evidence-dir .\results\shop-app
+.\win-x64\BalanceLab\StrikeLedger.BalanceLab.exe --scenario shop_only_pilot --scope smoke --seed 1 --seeds 1 --data .\data --evidence-dir .\results\balance-smoke
 ```
 
 For an actual two-process UDP loopback match, launch these in separate terminals:
@@ -112,28 +117,30 @@ For an actual two-process UDP loopback match, launch these in separate terminals
 .\win-x64\NetworkLab\StrikeLedger.NetworkLab.exe --seat 1 --local-port 27962 --remote-port 27961 --session verification-match --seed 1 --rtt 100 --jitter 20 --loss 1 --duplicates 1 --reorder 2 --max-seconds 900 --data .\data --evidence-dir .\results\peer1
 ```
 
-Each peer must complete with exit code zero; compare its result final hash,
-wallets, scores and round receipts. Each peer also reconstructs its recorded
-confirmed replay to the same final state. This exercises two processes on one
-computer and does not certify two physical machines or controllers.
+Each peer must complete with exit code zero; compare final state hashes, banks,
+scores and confirmed round receipts. Each peer reconstructs its recorded replay
+to the same final state. This is two processes on one computer, not evidence of
+two physical machines or physical controllers.
 
 On Linux, for example:
 
 ```sh
-./linux-x64/CoreTests/StrikeLedger.CoreTests --scenario snapshot_determinism_and_bounds --seed 1 --data ./data --evidence-dir ./results/linux-core
+./linux-x64/CoreTests/StrikeLedger.CoreTests --scenario shop_actual_counter_and_parry_rewards --data ./data --evidence-dir ./results/linux-rewards
 ```
 
-CoreTests without `--scenario` runs the complete production core suite. NetworkLab
-`--self-test` runs all App/network/replay/training fixtures. BalanceLab without a
-scenario runs its controlled policy suite (several minutes). Unknown scenarios
-and failed assertions exit nonzero. Generated action traces are explicitly
-training conformance replays, not competitive match recordings.
+CoreTests without `--scenario` runs the production Core suite appropriate to the
+selected content. NetworkLab `--self-test` runs App/network/replay/training checks.
+BalanceLab `shop_only_pilot --scope smoke` checks a short sample; `--scope all` runs
+the broader current pilot and may take much longer. Neither is a human balance
+verdict. Unknown scenarios and failed assertions exit nonzero. Historical scenario
+names marked not applicable do not count as passing current action coverage.
+Generated action traces are explicitly training conformance, not competitive film.
 
 To reproduce packaging from the source project:
 `python tools/package_verification.py --configuration ExportRelease`
 The script verifies frozen Core/App hashes before and after publishing. It never
-rebuilds production projects or changes their source. Final game visual, physical
-device and human feel acceptance are separate from these executable checks.
+rebuilds production projects or changes their source. Native shop/HUD/camera,
+physical-device and owner/friend acceptance are separate from these checks.
 """
 
 
@@ -148,7 +155,22 @@ def main() -> None:
     dotnet = args.dotnet or os.environ.get("DOTNET_BIN") or local.get("dotnet") or shutil.which("dotnet")
     if not dotnet:
         raise RuntimeError("Pass --dotnet with the supported .NET SDK executable")
-    assemblies = {name: ROOT / "src" / f"StrikeLedger.{name}" / "bin" / args.configuration / "net8.0" / f"StrikeLedger.{name}.dll" for name in EXPECTED}
+    # A new gameplay candidate cannot inherit the art-only baseline's constants.
+    # Bind to the actual exported assemblies listed in the frozen candidate.
+    candidate = json.loads((ROOT / "reports/RELEASE_CANDIDATE.json").read_text(encoding="utf-8"))
+    for entry in candidate["source_inputs"]:
+        if sha(ROOT / entry["path"]) != entry["sha256"]:
+            raise RuntimeError("Candidate source changed: " + entry["path"])
+    assemblies = {}
+    for name in ("Core", "App"):
+        entries = [e for e in candidate["native_binaries"] if e["path"].endswith(f"/StrikeLedger.{name}.dll")]
+        if len(entries) != 2 or len({e["sha256"] for e in entries}) != 1:
+            raise RuntimeError(f"Both platform exports must contain the same frozen {name} assembly")
+        for entry in entries:
+            if sha(ROOT / entry["path"]) != entry["sha256"]:
+                raise RuntimeError("Candidate binary changed: " + entry["path"])
+        assemblies[name] = ROOT / entries[0]["path"]
+        EXPECTED[name] = entries[0]["sha256"]
     for name, path in assemblies.items():
         if not path.is_file() or sha(path) != EXPECTED[name]:
             raise RuntimeError(f"Frozen {name} binary identity differs: {path}")

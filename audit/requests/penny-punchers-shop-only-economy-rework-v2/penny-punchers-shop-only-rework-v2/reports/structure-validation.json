@@ -1,0 +1,15 @@
+{
+  "package_validation": "PASS",
+  "baseline_products": 26,
+  "design_candidates": 38,
+  "requirements": 61,
+  "layers": {
+    "software": 58,
+    "human": 1,
+    "device": 2
+  },
+  "work_packages": 10,
+  "native_scenarios_planned": 45,
+  "schemas_validated": 2,
+  "native_game_executed": false
+}

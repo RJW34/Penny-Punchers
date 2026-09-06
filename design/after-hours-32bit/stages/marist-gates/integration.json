@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "package_id": "after_hours_marist_gates",
+  "stage_id": "marist_gates",
+  "display_name": "Marist Gates \u2014 Blue Hour",
+  "scope": "traditional_fighter_variant_only",
+  "status": "source_art_and_future_integration_proposal",
+  "runtime_registered": false,
+  "runtime_integrated": false,
+  "production_normalization_complete": false,
+  "existing_assets_replaced": false,
+  "proposed_stage_definition": "stage.proposed.json",
+  "art": {
+    "style": "AFTER HOURS original late-1990s 32-bit arcade pixel-art direction",
+    "setting": "Marist College front gates at blue hour, interpreted as original illustration",
+    "endorsement_claimed": false,
+    "layers_supplied": "flattened_single_layer_illustrations",
+    "separate_parallax_layers_supplied": false,
+    "animated_layers_supplied": false,
+    "files": [
+      {
+        "path": "background.png",
+        "role": "viewport_look_reference",
+        "target_aspect_ratio": "16:9",
+        "target_normalized_size": [
+          640,
+          360
+        ],
+        "actual_native_dimensions": [
+          1672,
+          941
+        ],
+        "notes": "Separate presentation composition, not a guaranteed crop of panorama.png. Actual dimensions must be taken from validated image metadata.",
+        "actual_format": "RGB",
+        "sha256": "77e6585e534d150dc04d2abf9de52d799b137f7479039108a224a6f6a51240d9"
+      },
+      {
+        "path": "panorama.png",
+        "role": "full_world_camera_coverage_candidate",
+        "target_aspect_ratio": "128:45",
+        "target_normalized_size": [
+          1024,
+          360
+        ],
+        "actual_native_dimensions": [
+          2114,
+          744
+        ],
+        "notes": "Requires integer-pixel normalization and visual floor/camera checks before production use. Target dimensions are not an assertion of native PNG dimensions.",
+        "actual_format": "RGB",
+        "sha256": "cf2fad1c6be338b5f357971e43cb8c1243e8d2a1dcdb76494ff5b65492852d64"
+      },
+      {
+        "path": "select-card.png",
+        "role": "stage_selection_art_reference",
+        "target_normalized_size": null,
+        "actual_native_dimensions": [
+          1672,
+          941
+        ],
+        "notes": "Compose into the eventual menu slot after layout is chosen. Rebuild title and focus state with live UI.",
+        "actual_format": "RGB",
+        "sha256": "ababc6f9c3c6b9cf8da0f24c7a15acbf9e1b50f8541652e546fa05cad80e1a26"
+      }
+    ],
+    "core_palette": {
+      "ink": "#111923",
+      "cream": "#F4E5C5",
+      "amber": "#EDAA54",
+      "teal": "#69B8AC"
+    }
+  },
+  "design_coordinates": {
+    "units": "design_pixels_unless_named_world_milli",
+    "viewport": [
+      640,
+      360
+    ],
+    "presentation": [
+      1280,
+      720
+    ],
+    "presentation_integer_scale_target": 2,
+    "floor_y": 302,
+    "presentation_floor_y": 604,
+    "panorama_size_target": [
+      1024,
+      360
+    ],
+    "world_width_milli": 768000,
+    "visible_world_width_milli": 480000,
+    "world_milli_per_design_pixel": 750,
+    "camera_world_x_clamp": [
+      240000,
+      528000
+    ],
+    "camera_panorama_center_x_clamp": [
+      320,
+      704
+    ],
+    "panorama_crop_left_x_clamp": [
+      0,
+      384
+    ],
+    "world_to_screen_x": "320 + (worldX - cameraX) / 750",
+    "world_to_screen_y": "302 - worldY / 750",
+    "world_to_panorama_x": "worldX / 750",
+    "panorama_crop_left_x": "cameraX / 750 - 320",
+    "camera_check_crops": [
+      {
+        "position": "left",
+        "camera_world_x": 240000,
+        "rect_xywh": [
+          0,
+          0,
+          640,
+          360
+        ]
+      },
+      {
+        "position": "center",
+        "camera_world_x": 384000,
+        "rect_xywh": [
+          192,
+          0,
+          640,
+          360
+        ]
+      },
+      {
+        "position": "right",
+        "camera_world_x": 528000,
+        "rect_xywh": [
+          384,
+          0,
+          640,
+          360
+        ]
+      }
+    ],
+    "initial_fighter_screen_x": [
+      192,
+      448
+    ],
+    "upper_hud_y_approx": [
+      0,
+      77
+    ],
+    "normal_footer_y_start_approx": 336,
+    "training_footer_y_start_approx": 305,
+    "notes": "Coordinate targets describe a future normalized world-anchored texture. Current renderer uses a different cosmetic backdrop transform. Floor seams and fighter roots need visual validation after normalization."
+  },
+  "selection_proposal": {
+    "available_in_current_game": false,
+    "intended_modes": [
+      "cpu",
+      "local_versus",
+      "private_match"
+    ],
+    "choice_lifetime": "Confirm before match creation; retain on rematch unless explicitly changed before the next match.",
+    "private_match": "Use one stage ID agreed by both peers before match creation; selection ownership and handshake changes remain to be designed.",
+    "replay": "Resolve the recorded MatchConfig.StageId and matching content; do not silently substitute another stage.",
+    "training_grid": "Keep the existing diagnostic grid available; training visual selection is a future UI decision.",
+    "unlock_price": null,
+    "wallet_effect": "none",
+    "focus_states_pending": [
+      "idle",
+      "keyboard_or_controller_focus",
+      "confirmed",
+      "unavailable_or_missing_content"
+    ]
+  },
+  "source_inspection": {
+    "date": "2026-09-05",
+    "paths_relative_to_traditional_variant": [
+      "data/stages/foundry.json",
+      "src/StrikeLedger.Core/GameContent.cs",
+      "src/StrikeLedger.Core/SimulationState.cs",
+      "src/StrikeLedger.Core/Simulation.Serialization.cs",
+      "game/Main.Rendering.cs",
+      "game/Presentation/ArenaView.cs",
+      "design/after-hours-32bit/docs/ART_DIRECTION.md",
+      "design/after-hours-32bit/docs/SWAP_GUIDE.md"
+    ],
+    "observed_integration_gaps": [
+      "GameContent.Load currently enforces stages.Count == 2; adding this proposal to canonical data alone would fail that bound.",
+      "ArenaRenderState and Main.Rendering currently route stage appearance through a TrainingGrid flag; a stable stage-ID presentation binding is needed.",
+      "ArenaView currently loads foundry and grid only, using 1344-pixel scaled backdrop width and small cosmetic camera drift.",
+      "MatchConfig.StageId is serialized and validated in canonical snapshots alongside ContentHash; selection must be consistent across match setup, peers and replays.",
+      "Numeric proposal matches existing competitive geometry, but no runtime loading, selection, visual integration or gameplay verification was performed for this package."
+    ]
+  },
+  "future_acceptance_checks": [
+    "Review native PNG dimensions and source quality, then create normalized production copies without overwriting these illustrations.",
+    "Align foot contact to y=302 and verify left, center and right camera crops with no uncovered area or stretched architectural proportions.",
+    "Use nearest texture filtering, no mipmaps and integer display scaling after pixel-grid cleanup.",
+    "Verify Rook, Vale and mirror-palette readability, jumps, impact effects, HUD and both footer layouts.",
+    "Register stage data through the existing build and update the bounded stage roster and relevant validation deliberately.",
+    "Add selectable menu art and focus states plus stable stage-ID routing into the presentation.",
+    "Verify match creation, rematch persistence, peer agreement, replay restoration and explicit unavailable-content handling.",
+    "Confirm unchanged numeric movement, collision, timing, wallet behavior and flat arena geometry."
+  ]
+}

@@ -1,0 +1,774 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Penny-Punchers — Buyables Design Catalog</title><style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#111821;color:#e8edf0;font:16px/1.55 system-ui,sans-serif}header,main,footer{max-width:1400px;margin:auto;padding:30px}header{padding-top:48px}h1{font-size:clamp(30px,4vw,52px);margin:.2em 0}.kicker{letter-spacing:.18em;color:#efba68;text-transform:uppercase;font-size:13px}.lede{max-width:960px;color:#becbd6}.notice{padding:14px 18px;border-left:4px solid #efba68;background:#202e3b}.filters{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}label{display:flex;gap:8px;align-items:center}select,input{background:#202c38;color:#fff;border:1px solid #526475;padding:10px;font:inherit;border-radius:6px}input{min-width:240px}#cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}article{background:#1c2733;border:1px solid #344554;padding:24px;border-radius:10px}h2{margin:.35em 0;font-size:25px}.eyebrow{font-size:11px;letter-spacing:.1em;color:#bdcbd6;text-transform:uppercase}.price{font-weight:750;color:#efba68}.role{color:#89cdc5}.count{color:#bcc9d3;margin-bottom:22px}summary{cursor:pointer;color:#efba68}code{white-space:normal;color:#e5d5b5}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;background:#131c25;padding:12px;border-radius:5px}footer{font-size:13px;color:#a6b4bf}a{color:#89cdc5}[hidden]{display:none!important}@media print{body{color:#111;background:white}article{color:#111;background:white;border-color:#999;break-inside:avoid}header,.filters,footer{display:none}main{padding:0}.price,.role,summary,.eyebrow{color:#111}#cards{display:block}article{margin-bottom:16px}details{display:block}}
+</style></head><body><header><div class="kicker">Penny-Punchers / Design Companion v1</div><h1>Buy a plan. Keep your fundamentals.</h1><p class="lede">38 character-specific proposals: 24 round techniques, 8 enhanced actions, 6 supers. One wallet funds them all. Browse by fighter, purchase model or testing wave.</p><p class="notice"><strong>Design-only catalog.</strong> Prices and timings are unvalidated seeds. This is not a playable game, a live shop, or a report that these moves are already implemented.</p><div class="filters"><label>Fighter <select id="fighter"><option value="">All</option><option>rook</option><option>vale</option></select></label><label>Kind <select id="kind"><option value="">All</option><option value="round_lease">Round technique</option><option value="enhanced_activation">Enhanced move</option><option value="super_activation">Super</option></select></label><label>Wave <select id="wave"><option value="">All</option><option value="core_trial">Core trial</option><option value="advanced_trial">Advanced trial</option></select></label><label>Search <input id="search" placeholder="Role, move or counterplay"></label></div></header><main><div id="count" class="count"></div><section id="cards"><article data-fighter="rook" data-kind="round_lease" data-wave="core_trial">
+    <div class="eyebrow">R-S1 · ROOK · core trial</div>
+    <h2>Clinch Entry</h2><div class="price">900 CR / round</div><p class="role">Command throw</p>
+    <p><strong>Input:</strong> <code>qcb+P</code></p>
+    <p><strong>Why:</strong> An opponent relies on blocking, grounded parry and ordinary throw-tech timing at close range.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Add one grounded, untechable command throw. It cannot capture airborne/prejump, hitstunned, blockstunned, wakeup-immune or already captured targets. It ends in hard knockdown, not a free restand combo. No armor, travel, outgoing cancel or frame-zero grab. Fresh P is one punch.</p>
+    <p><strong>Free alternative:</strong> Normal throws remain free, faster and techable. The purchase pays for the different defense interaction, not for access to throwing or a damage multiplier.</p><p><strong>Opponent answers:</strong> Jump or preemptively back away before capture. Use a fast attack against the committed approach/startup. Bait the whiff and punish its recovery.</p>
+    <p><strong>Presentation:</strong> Distinct two-hand clinch anticipation and a short readable capture; do not reuse a strike pose. Show COMMAND THROW on the card; no cinematic that hides the next wakeup.</p><p><strong>Required evidence:</strong> Prove capture cannot occur during blockstun or post-block throw immunity. Test both seat orders against normal/command throw on the same tick. Show a player response to tech versus jump/mash; a bot merely failing to jump is not sufficient.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 12,
+  &quot;active_ticks&quot;: 3,
+  &quot;recovery_ticks&quot;: 23,
+  &quot;damage_per_contact&quot;: [
+    135
+  ],
+  &quot;guard_level&quot;: &quot;throw&quot;,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;throw_range_world&quot;: 27,
+  &quot;stun_per_contact&quot;: [
+    90
+  ],
+  &quot;knockdown&quot;: &quot;hard&quot;
+}</pre></details></article><article data-fighter="rook" data-kind="round_lease" data-wave="core_trial">
+    <div class="eyebrow">R-S2 · ROOK · core trial</div>
+    <h2>Slipstream Entry</h2><div class="price">600 CR / round</div><p class="role">Low-profile approach with branches</p>
+    <p><strong>Input:</strong> <code>qcb+P; then P or K</code></p>
+    <p><strong>Why:</strong> A high projectile or extended high poke makes an ordinary grounded approach predictable.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>A 20-tick grounded ducking entry travels 42 world units during ticks [4,12). Use an authored low hurt silhouette in that interval, not blanket invulnerability. Fresh P or K during [8,13) starts respectively a mid straight (5/3/19, 65 damage) or a narrow anti-air upper (7/4/24, 80 damage, soft knockdown). No branch is automatic. Declining the branch completes entry recovery. Neither branch cancels on block or whiff.</p>
+    <p><strong>Free alternative:</strong> A free dash travels farther. A free jump bypasses some ground threats. This tool buys a particular hurtbox/path and the threat of two follow-ups, not a faster universal dash.</p><p><strong>Opponent answers:</strong> Low attacks still hit the ducking body. Wait, throw or punish the end of the entry. Block/parry the chosen follow-up; do not assume the upper hits crouching bodies.</p>
+    <p><strong>Presentation:</strong> Rook folds into a clearly grounded boxing weave. Keep feet and low hurt silhouette coherent. Straight and upper branches need genuinely different anticipation and impact poses.</p><p><strong>Required evidence:</strong> Verify a high projectile misses by geometry and a low projectile/low strike still hits. Enumerate both branch inputs through the real parser, including delayed/no branch. Record a useful entry against zoning and a failed entry punished without paid defense.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 4,
+  &quot;active_ticks&quot;: 8,
+  &quot;recovery_ticks&quot;: 8,
+  &quot;damage_per_contact&quot;: [],
+  &quot;guard_level&quot;: null,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;travel_world&quot;: 42,
+  &quot;branch_input_window&quot;: [
+    8,
+    13
+  ]
+}</pre></details></article><article data-fighter="rook" data-kind="round_lease" data-wave="advanced_trial">
+    <div class="eyebrow">R-S3 · ROOK · advanced trial</div>
+    <h2>Rivet Chain</h2><div class="price">600 CR / round</div><p class="role">Rekka-style commitment sequence</p>
+    <p><strong>Input:</strong> <code>qcb+P; then P; then P</code></p>
+    <p><strong>Why:</strong> The player wants a pressure route with a deliberate stop/continue decision rather than one repeated special.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Three mid strikes have targets 10/3/18, 8/3/20 and 12/3/26 with damage 45/55/75. Each fresh follow-up P is accepted only during the preceding contact window [hit_start, hit_start+8). No follow-up on a parry or whiff. Stage two can be delayed within the window; stage three knocks down. Each continuation abandons previous recovery and commits to its own startup. No loop back, no alternate throw/overhead branch and no outgoing super cancel in this candidate.</p>
+    <p><strong>Free alternative:</strong> Free normal/special cancels already exist. This leases a varied sequence and an explicit commitment game, not a universal cancel permission.</p><p><strong>Opponent answers:</strong> After blocking, challenge a tested delayed gap rather than assuming every sequence is continuous. Parry a predicted follow-up. Block the final strike and take the measured punish.</p>
+    <p><strong>Presentation:</strong> Three related but readable body rhythms; a distinct heavy finish. Never hide a delay by freezing an unrelated idle cel.</p><p><strong>Required evidence:</strong> Publish frame traces for earliest/latest follow-ups on hit and block. No infinite blockstring or phase-reset exploit. Stopping at stage one must be a deliberate viable choice in at least one tested context.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 10,
+  &quot;active_ticks&quot;: 3,
+  &quot;recovery_ticks&quot;: 18,
+  &quot;damage_per_contact&quot;: [
+    45,
+    55,
+    75
+  ],
+  &quot;guard_level&quot;: &quot;mid&quot;,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;max_sequence_stages&quot;: 3
+}</pre></details></article><article data-fighter="rook" data-kind="round_lease" data-wave="advanced_trial">
+    <div class="eyebrow">R-S4 · ROOK · advanced trial</div>
+    <h2>Cross Counter</h2><div class="price">600 CR / round</div><p class="role">Specific attack read</p>
+    <p><strong>Input:</strong> <code>qcb+P</code></p>
+    <p><strong>Why:</strong> An opponent repeatedly commits to grounded mid/high strikes at a predictable timing.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Enter a counter stance: startup 5, counter window [5,11), whiff recovery 25. Only a frontal, direct, grounded mid/high strike can trigger it. Low, airborne, throw, projectile and super attacks bypass it. On trigger negate that single strike and start an independently colliding 6/3/22 mid riposte for 95 damage. The riposte is not a teleporting guaranteed hit; it can miss at range. Only this counter stance changes that interaction.</p>
+    <p><strong>Free alternative:</strong> A directional parry remains free and more broadly applicable. This option trades anticipation, narrower eligibility and major whiff commitment for an authored return attack.</p><p><strong>Opponent answers:</strong> Use a low or throw. Delay the anticipated strike until the stance expires. Bait at a distance where the return attack whiffs.</p>
+    <p><strong>Presentation:</strong> A provocative guarded lean, a sharp trigger flash, then a real punch with its own hurtbox. Never label it automatic parry.</p><p><strong>Required evidence:</strong> Test every excluded attack class. Resolve simultaneous counters symmetrically. No credit reward, retained counter token or refund on failure.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 5,
+  &quot;active_ticks&quot;: 6,
+  &quot;recovery_ticks&quot;: 25,
+  &quot;damage_per_contact&quot;: [
+    95
+  ],
+  &quot;guard_level&quot;: &quot;mid&quot;,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;counter_window&quot;: [
+    5,
+    11
+  ]
+}</pre></details></article><article data-fighter="rook" data-kind="round_lease" data-wave="core_trial">
+    <div class="eyebrow">R-T1 · ROOK · core trial</div>
+    <h2>High Hook</h2><div class="price">300 CR / round</div><p class="role">Reach-oriented overhead replacement</p>
+    <p><strong>Input:</strong> <code>6+HP</code></p>
+    <p><strong>Why:</strong> The defender crouch-blocks at a spacing where the universal overhead lacks useful reach.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Replace command_fhp with a deliberately telegraphed overhead, 18/3/20 and 80 damage. No movement, armor or kara throw. Give it purposeful forward/head-level geometry; block/parry punishability is measured rather than inferred. On hit, only normal recovery/link rules apply.</p>
+    <p><strong>Free alternative:</strong> The universal overhead is still free. Forward HP loses its original moving/kara function; this is a situational replacement, not an extra universal overhead.</p><p><strong>Opponent answers:</strong> Stand-block or high-parry the visible windup. Interrupt before the active frame. Whiff-punish from outside the authored reach.</p>
+    <p><strong>Presentation:</strong> Lift the shoulder/elbow before a downward hook; distinguish it from Low Turn early enough for deliberate defense.</p><p><strong>Required evidence:</strong> Compare with the free overhead and original forward HP. Prove no concealed kara carryover. Measure block and hit follow-ups at close/max range.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 18,
+  &quot;active_ticks&quot;: 3,
+  &quot;recovery_ticks&quot;: 20,
+  &quot;damage_per_contact&quot;: [
+    80
+  ],
+  &quot;guard_level&quot;: &quot;overhead&quot;,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;stun_per_contact&quot;: [
+    100
+  ]
+}</pre></details></article><article data-fighter="rook" data-kind="round_lease" data-wave="advanced_trial">
+    <div class="eyebrow">R-T2 · ROOK · advanced trial</div>
+    <h2>Low Turn</h2><div class="price">300 CR / round</div><p class="role">Low knockdown replacement</p>
+    <p><strong>Input:</strong> <code>6+HP</code></p>
+    <p><strong>Why:</strong> The player prefers a deliberate low check from the command-normal slot rather than an extra special.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Replace command_fhp with a 14/3/23 low, 75 damage and soft knockdown. No travel, armor, kara or outgoing cancel. Do not reintroduce the old Low Drive payload unchanged at a second price.</p>
+    <p><strong>Free alternative:</strong> Free crouching lows and sweep remain. This is a different reach/input/knockdown choice while surrendering advancing forward HP.</p><p><strong>Opponent answers:</strong> Crouch-block or low-parry. Jump or space outside it. Punish the committed recovery after a measured block.</p>
+    <p><strong>Presentation:</strong> Low hip rotation and visible foot-level sweep; never use the overhead silhouette.</p><p><strong>Required evidence:</strong> Find a niche compared with free sweep; remove/revise if none exists. Ensure its price and card do not imply a guaranteed mixup. Verify overhead/low replacement is revealed before fighting.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 14,
+  &quot;active_ticks&quot;: 3,
+  &quot;recovery_ticks&quot;: 23,
+  &quot;damage_per_contact&quot;: [
+    75
+  ],
+  &quot;guard_level&quot;: &quot;low&quot;,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;stun_per_contact&quot;: [
+    95
+  ],
+  &quot;knockdown&quot;: &quot;soft&quot;
+}</pre></details></article><article data-fighter="rook" data-kind="round_lease" data-wave="core_trial">
+    <div class="eyebrow">R-T3 · ROOK · core trial</div>
+    <h2>Rivet Lift</h2><div class="price">600 CR / round</div><p class="role">Earned launcher conversion</p>
+    <p><strong>Input:</strong> <code>6+HP</code></p>
+    <p><strong>Why:</strong> The player wants a stronger conversion from a deliberate heavy read, not higher damage on every attack.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Replace command_fhp with a 12/3/24 mid launcher for 60 damage. A successful hit permits jump cancel only during [contact_frame, contact_frame+4); not on block, parry or whiff. Launch height/juggle cost are authored to permit a limited follow-up and then exhaust normal juggle rules. No reset of damage scaling or juggle budget.</p>
+    <p><strong>Free alternative:</strong> Free anti-airs and confirms remain. This sacrifices the original command normal and spends two EX worth of credits up front for repeatable hit-earned routes.</p><p><strong>Opponent answers:</strong> Block/parry; no jump cancel saves the blocked version. Whiff-punish its startup/recovery. Deny the spacing needed for the launcher.</p>
+    <p><strong>Presentation:</strong> A lifting body blow with a clear airborne trajectory; visually separate launch from standard hit reactions.</p><p><strong>Required evidence:</strong> At least one real input route connects from launch and one blocked route is punished. No relaunch/ground-reset loop. Paid EX/super after launch still debits independently.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 12,
+  &quot;active_ticks&quot;: 3,
+  &quot;recovery_ticks&quot;: 24,
+  &quot;damage_per_contact&quot;: [
+    60
+  ],
+  &quot;guard_level&quot;: &quot;mid&quot;,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;stun_per_contact&quot;: [
+    70
+  ],
+  &quot;jump_cancel_on&quot;: &quot;hit_only&quot;,
+  &quot;jump_cancel_window_after_contact&quot;: [
+    0,
+    4
+  ]
+}</pre></details></article><article data-fighter="rook" data-kind="round_lease" data-wave="advanced_trial">
+    <div class="eyebrow">R-T4 · ROOK · advanced trial</div>
+    <h2>Tempered Blow</h2><div class="price">600 CR / round</div><p class="role">Committed armored read</p>
+    <p><strong>Input:</strong> <code>6+HP; optional hold</code></p>
+    <p><strong>Why:</strong> A single predictable poke needs a read-based answer without granting passive armor.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Replace command_fhp. Minimum startup 18, active 3, recovery 27. Holding delays release up to startup 36 but does not increase damage beyond 100. One direct non-super strike can be absorbed during fixed action ticks [6,14); it still deals full health damage and can KO, but does not cause hitstun unless it causes dizzy. Throws, lows, projectiles, supers and a second strike interrupt. The armor interval never lengthens with hold. Always mid/blockable; no dash cancel.</p>
+    <p><strong>Free alternative:</strong> Blocking/parrying remain free. The buyer gains a risky particular attack, not damage reduction on the fighter or a universal Focus/Drive system.</p><p><strong>Opponent answers:</strong> Throw, low or use a multi-hit attack. Wait out the fixed absorption window. Block/parry the slow release and punish.</p>
+    <p><strong>Presentation:</strong> A visible windup brace with a brief armor cue only in its authored interval. Damage remains visible; do not show recoverable health that the game does not implement.</p><p><strong>Required evidence:</strong> A lethal absorbed hit still ends the round. Hold cannot refresh armor or extend its interval. Dizzy/throw/multihit priorities tested, with no stored armor after action end.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 18,
+  &quot;active_ticks&quot;: 3,
+  &quot;recovery_ticks&quot;: 27,
+  &quot;damage_per_contact&quot;: [
+    100
+  ],
+  &quot;guard_level&quot;: &quot;mid&quot;,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;hold_extra_ticks_max&quot;: 18,
+  &quot;absorb_window&quot;: [
+    6,
+    14
+  ],
+  &quot;absorb_contacts&quot;: 1
+}</pre></details></article><article data-fighter="rook" data-kind="round_lease" data-wave="core_trial">
+    <div class="eyebrow">R-G1 · ROOK · core trial</div>
+    <h2>False Start</h2><div class="price">300 CR / round</div><p class="role">Attack feint</p>
+    <p><strong>Input:</strong> <code>4+HP+HK</code></p>
+    <p><strong>Why:</strong> An opponent parries or swings early in response to Traveling Knee anticipation.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>A standalone 12-tick feint copies the first six visible anticipation ticks and first 3.9 units of the free knee_h windup, then visibly aborts. No hitbox, armor, invulnerability or attack cancel; normal actions resume after tick 12. Cannot be entered out of another move. The round reveal tells the opponent this feint is available, not when it is being used.</p>
+    <p><strong>Free alternative:</strong> Walking is still better for ordinary travel. This purchases deception and reduced commitment compared with completing the real heavy knee.</p><p><strong>Opponent answers:</strong> Wait for the real active threat before committing. Use a low-risk space-controlling check. Throw/attack during the feint if already in range.</p>
+    <p><strong>Presentation:</strong> First six poses must match the real knee anticipation; the abort must then read clearly. It must not spoof a hit spark, super freeze or paid receipt.</p><p><strong>Required evidence:</strong> Human A/B test whether the intended threat, not random confusion, changes decisions. Verify no attack transition before recovery end. No money gained from inducing a response.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 6,
+  &quot;active_ticks&quot;: 0,
+  &quot;recovery_ticks&quot;: 6,
+  &quot;damage_per_contact&quot;: [],
+  &quot;guard_level&quot;: null,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;travel_world&quot;: 3.9,
+  &quot;mimic_move_id&quot;: &quot;knee_h&quot;,
+  &quot;shared_visual_ticks&quot;: 6
+}</pre></details></article><article data-fighter="rook" data-kind="round_lease" data-wave="core_trial">
+    <div class="eyebrow">R-G2 · ROOK · core trial</div>
+    <h2>Check Step</h2><div class="price">300 CR / round</div><p class="role">Short retreat and punish spacing</p>
+    <p><strong>Input:</strong> <code>4+HP+HK</code></p>
+    <p><strong>Why:</strong> A full backdash moves too far or commits too long for a close whiff punish.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>A 10-tick grounded retreat travels 30 units in [0,6), then has 4 recovery ticks. It is fully strike/throw vulnerable and cannot block/parry/cancel during the action. It remains constrained by walls and maximum separation. No low-profile privilege.</p>
+    <p><strong>Free alternative:</strong> Free back walk is less committed; free backdash covers more distance. This purchases a short, fast-recovering fixed displacement with real vulnerability.</p><p><strong>Opponent answers:</strong> Follow with a longer poke. Walk forward and take space instead of chasing an immediate punish. Catch its recovery or corner it.</p>
+    <p><strong>Presentation:</strong> Short measured backward slide with stable feet/root; do not depict teleportation or invulnerability.</p><p><strong>Required evidence:</strong> Compare action-to-next-normal time and distance with free walking/backdash. Confirm corners do not reverse movement or pass through the opponent. No input-buffer exploit grants guard/parry during commitment.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 0,
+  &quot;active_ticks&quot;: 6,
+  &quot;recovery_ticks&quot;: 4,
+  &quot;damage_per_contact&quot;: [],
+  &quot;guard_level&quot;: null,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;travel_world&quot;: -30
+}</pre></details></article><article data-fighter="rook" data-kind="round_lease" data-wave="advanced_trial">
+    <div class="eyebrow">R-G3 · ROOK · advanced trial</div>
+    <h2>Vault Hop</h2><div class="price">300 CR / round</div><p class="role">Predictable low/throw avoidance</p>
+    <p><strong>Input:</strong> <code>4+HP+HK</code></p>
+    <p><strong>Why:</strong> An opponent overuses a grounded low/throw timing and a normal jump arc is too large for the desired reposition.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>A 3-tick prejump followed by a fixed short hop; no attack may start before landing. Set a 40-unit apex, 20-unit forward displacement and 8 landing recovery ticks. It is not invincible: normal air hurtboxes apply. Prejump throw eligibility follows the unchanged system rule. Landing does not erase recovery or enable an instant cross-up.</p>
+    <p><strong>Free alternative:</strong> A normal jump is free and can attack; this is a smaller nonattacking trajectory, not an air dash.</p><p><strong>Opponent answers:</strong> Anti-air or air-to-air. Delay the low until landing. Take space and punish landing instead of throwing immediately.</p>
+    <p><strong>Presentation:</strong> Small grounded-to-air transfer; no wing/effect suggesting flight. Landing anticipation must match the vulnerable recovery.</p><p><strong>Required evidence:</strong> Test every ascent/descent frame against lows and air hits. No aerial attacks or corner side bypass. Record useful low avoidance and a free punish.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 3,
+  &quot;active_ticks&quot;: 0,
+  &quot;recovery_ticks&quot;: 8,
+  &quot;damage_per_contact&quot;: [],
+  &quot;guard_level&quot;: null,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;trajectory&quot;: &quot;fixed_ballistic&quot;,
+  &quot;apex_world&quot;: 40,
+  &quot;travel_world&quot;: 20
+}</pre></details></article><article data-fighter="rook" data-kind="round_lease" data-wave="advanced_trial">
+    <div class="eyebrow">R-G4 · ROOK · advanced trial</div>
+    <h2>Wire Cut</h2><div class="price">300 CR / round</div><p class="role">Destroy an expected projectile</p>
+    <p><strong>Input:</strong> <code>4+HP+HK</code></p>
+    <p><strong>Why:</strong> A player wants to remove a single approaching projectile rather than merely parry it and remain in place.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>A 7/3/22 grounded swat has a frontal anti-projectile box but no fighter hitbox. It destroys one ordinary non-super projectile instance during [7,10). It cannot reflect, cancel its recovery, erase a persistent super field, or produce a refund. All ordinary fighter hurtboxes remain vulnerable.</p>
+    <p><strong>Free alternative:</strong> A free parry is quicker and protects the player at contact. This tool removes the object in a slightly forward region but requires a larger commitment.</p><p><strong>Opponent answers:</strong> Delay the projectile. Approach behind it and strike/throw the recovery. Use a projectile classification explicitly outside its ordinary-shot filter.</p>
+    <p><strong>Presentation:</strong> A slicing glove/forearm with a distinct projectile-dissipation spark, never a fighter hit spark.</p><p><strong>Required evidence:</strong> Test ordinary, EX multi-hit instance, reflected, and super objects under an explicit filter. No fighter damage or meter gain. Simultaneous shot and melee resolve without universal invulnerability.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 7,
+  &quot;active_ticks&quot;: 3,
+  &quot;recovery_ticks&quot;: 22,
+  &quot;damage_per_contact&quot;: [],
+  &quot;guard_level&quot;: null,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;projectile_contacts&quot;: 1
+}</pre></details></article><article data-fighter="vale" data-kind="round_lease" data-wave="core_trial">
+    <div class="eyebrow">V-S1 · VALE · core trial</div>
+    <h2>Returning Pulse</h2><div class="price">900 CR / round</div><p class="role">One-contact returning screen threat</p>
+    <p><strong>Input:</strong> <code>qcf+P</code></p>
+    <p><strong>Why:</strong> The opponent avoids the first projectile path and immediately re-enters the space it crossed.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Retain the one-contact motion-input projectile identity. Startup 22/active 3/recovery 23. Speed 2.2 units/tick, turn at projectile age 45, lifetime 110, one contact for 70 damage. Hit/block/parry consumes the object. It can threaten after a miss but never hits once outbound and again on return. Retain the documented one-projectile-instance owner restriction for ordinary projectile families.</p>
+    <p><strong>Free alternative:</strong> Free charge projectiles remain faster to access when charge is held. This rents different trajectory and charge-independent access, not universally better fireballs.</p><p><strong>Opponent answers:</strong> Parry/block to consume its contact. Avoid both legs of the known path. Punish the startup or exploit the owner projectile occupancy.</p>
+    <p><strong>Presentation:</strong> Visible turn and travel direction, an actual return tail, no misleading two-hit icon. Card warns that an existing shot can prevent another projectile activation.</p><p><strong>Required evidence:</strong> Outbound miss then return hit; no outbound-plus-return double hit. Block/parry removes the projectile. Projectile-super attempts while occupancy forbids them reject before debit.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 22,
+  &quot;active_ticks&quot;: 3,
+  &quot;recovery_ticks&quot;: 23,
+  &quot;damage_per_contact&quot;: [
+    70
+  ],
+  &quot;guard_level&quot;: &quot;mid&quot;,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;projectile_lifetime_ticks&quot;: 110,
+  &quot;turn_tick&quot;: 45,
+  &quot;speed_world_per_tick&quot;: 2.2,
+  &quot;contacts&quot;: 1
+}</pre></details></article><article data-fighter="vale" data-kind="round_lease" data-wave="core_trial">
+    <div class="eyebrow">V-S2 · VALE · core trial</div>
+    <h2>Low Palm</h2><div class="price">600 CR / round</div><p class="role">Low special without charge</p>
+    <p><strong>Input:</strong> <code>qcf+P</code></p>
+    <p><strong>Why:</strong> Vale moved or crossed sides and wants a limited low-special conversion without stored directional charge.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>A 14/3/24 low special for 85 damage and soft knockdown. It adds a motion-input move rather than replacing the free charge arsenal. Allow only explicitly authored normal-to-special incoming cancels. No outgoing super or EX conversion for this candidate. No invulnerability and no automatic approach.</p>
+    <p><strong>Free alternative:</strong> Free sweep/low normals are still the normal low options. This pays for the particular special-class route when charge is absent.</p><p><strong>Opponent answers:</strong> Crouch-block or low-parry. Keep outside the palm range. Punish a bad raw attempt or its block recovery.</p>
+    <p><strong>Presentation:</strong> Compact ground-level palm with a stable narrow collision silhouette; no implied long-range wave.</p><p><strong>Required evidence:</strong> Demonstrate one charge-absent legal conversion. Compare with free sweep at identical credits. Confirm no low-to-super shortcut is implicitly added.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 14,
+  &quot;active_ticks&quot;: 3,
+  &quot;recovery_ticks&quot;: 24,
+  &quot;damage_per_contact&quot;: [
+    85
+  ],
+  &quot;guard_level&quot;: &quot;low&quot;,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;stun_per_contact&quot;: [
+    100
+  ],
+  &quot;knockdown&quot;: &quot;soft&quot;
+}</pre></details></article><article data-fighter="vale" data-kind="round_lease" data-wave="advanced_trial">
+    <div class="eyebrow">V-S3 · VALE · advanced trial</div>
+    <h2>Arc Pulse</h2><div class="price">600 CR / round</div><p class="role">Angle-specific projectile anti-air</p>
+    <p><strong>Input:</strong> <code>qcf+P</code></p>
+    <p><strong>Why:</strong> The opponent jumps the usual horizontal charge shot from a repeatable distance.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>An 18/3/24 projectile launches upward-forward at a fixed angle. It has one contact, 65 damage and 60-tick lifetime. It is not homing, invincible or a ground-covering fireball. Author trajectory and body interaction to miss crouching/standing targets at typical close range. One ordinary projectile instance per owner.</p>
+    <p><strong>Free alternative:</strong> A free normal/charge anti-air is still available. This leases earlier spatial coverage at a distance in exchange for a vulnerable grounded commitment.</p><p><strong>Opponent answers:</strong> Stay grounded and approach. Change jump timing or trajectory. Parry the predictable airborne contact.</p>
+    <p><strong>Presentation:</strong> Distinct diagonal launch; the arc itself, not a full-screen glow, tells the opponent what space is occupied.</p><p><strong>Required evidence:</strong> Anti-air succeeds at one intended range and fails at explicitly wrong ones. No unseen overhead guard property. No universal anti-air invulnerability added to the actor.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 18,
+  &quot;active_ticks&quot;: 3,
+  &quot;recovery_ticks&quot;: 24,
+  &quot;damage_per_contact&quot;: [
+    65
+  ],
+  &quot;guard_level&quot;: &quot;mid&quot;,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;projectile_lifetime_ticks&quot;: 60,
+  &quot;contacts&quot;: 1,
+  &quot;trajectory&quot;: &quot;fixed_upward_forward&quot;
+}</pre></details></article><article data-fighter="vale" data-kind="round_lease" data-wave="advanced_trial">
+    <div class="eyebrow">V-S4 · VALE · advanced trial</div>
+    <h2>Pulse Anchor</h2><div class="price">900 CR / round</div><p class="role">Destructible setup object</p>
+    <p><strong>Input:</strong> <code>qcf+P</code></p>
+    <p><strong>Why:</strong> The player wants to occupy a known location after earning setup time, rather than receive immediate damage.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>A 26/1/25 placement creates one visible floor anchor 45 units forward. It arms 18 ticks after placement, expires at age 150 and triggers once when an enemy enters its 24-unit radius. Trigger has a visible 8-tick windup, then a mid/blockable 60-damage pulse. Any enemy normal/strike contacting the anchor before detonation destroys it. Owner hit/throw/dizzy removes it. Cannot coexist with the same owner&#x27;s major super field or another anchor; reject illegal placement before any action commitment. No passive credit effects.</p>
+    <p><strong>Free alternative:</strong> An ordinary projectile is free and immediate but travels. This rents an interactable location and delayed timing, not guaranteed wakeup damage.</p><p><strong>Opponent answers:</strong> Destroy it with a spaced normal. Wait out the lifetime or stay outside the radius. Block/parry its single pulse or hit the setter.</p>
+    <p><strong>Presentation:</strong> Distinct unarmed/armed/trigger/destroyed states; strong ground marker without covering feet or hitboxes.</p><p><strong>Required evidence:</strong> Every zero-credit character has a documented legal removal/avoidance response in representative setup states. No same-tick high/low or left/right impossibility when combined with owner attacks. Snapshots reproduce arming, trigger, destruction and expiry.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 26,
+  &quot;active_ticks&quot;: 1,
+  &quot;recovery_ticks&quot;: 25,
+  &quot;damage_per_contact&quot;: [
+    60
+  ],
+  &quot;guard_level&quot;: &quot;mid&quot;,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;object_lifetime_ticks&quot;: 150,
+  &quot;arming_ticks&quot;: 18,
+  &quot;trigger_windup_ticks&quot;: 8,
+  &quot;contacts&quot;: 1
+}</pre></details></article><article data-fighter="vale" data-kind="round_lease" data-wave="core_trial">
+    <div class="eyebrow">V-T1 · VALE · core trial</div>
+    <h2>Heel Arc</h2><div class="price">300 CR / round</div><p class="role">Ranged overhead replacement</p>
+    <p><strong>Input:</strong> <code>6+HP</code></p>
+    <p><strong>Why:</strong> A crouching opponent sits at Vale&#x27;s command-normal range.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Replace command_fhp with an 18/3/20 overhead kick, 80 damage and 100 stun. No forward travel, kara or outgoing cancel. Its reach/hurtboxes must be authored to serve a visibly distinct role from the free universal overhead.</p>
+    <p><strong>Free alternative:</strong> The original advancing Long Heel and universal overhead remain alternative base-kit plans. Buying this surrenders the original forward-HP action.</p><p><strong>Opponent answers:</strong> Stand-block or high-parry the windup. Walk out and whiff-punish. Interrupt close startup.</p>
+    <p><strong>Presentation:</strong> A clear high knee lift followed by a heel arc. Keep foot extension vulnerable deliberately.</p><p><strong>Required evidence:</strong> Compare actual ranges and block recovery with original Long Heel. No retained movement/kara from the replacement. Show a 300-credit opening choice that does not require explaining hidden modifiers.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 18,
+  &quot;active_ticks&quot;: 3,
+  &quot;recovery_ticks&quot;: 20,
+  &quot;damage_per_contact&quot;: [
+    80
+  ],
+  &quot;guard_level&quot;: &quot;overhead&quot;,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;stun_per_contact&quot;: [
+    100
+  ]
+}</pre></details></article><article data-fighter="vale" data-kind="round_lease" data-wave="core_trial">
+    <div class="eyebrow">V-T2 · VALE · core trial</div>
+    <h2>Needle Check</h2><div class="price">300 CR / round</div><p class="role">Precise anti-poke replacement</p>
+    <p><strong>Input:</strong> <code>6+HP</code></p>
+    <p><strong>Why:</strong> The opponent repeatedly exposes an extended limb at the edge of Vale&#x27;s normal range.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Replace the questionable Long Check concept with a 12/3/18 mid poke for 55 damage and 70 stun. Author a thin, forward-reaching hit region (target farthest forward extent 72 units) and explicit extended-foot hurtboxes. No approach motion, knockdown, kara or outgoing cancel. It should touch an exposed limb at a narrow range, not outrange everything or gain blanket low invulnerability.</p>
+    <p><strong>Free alternative:</strong> Free Long Heel is faster, more damaging and moves forward. This leases precision at a specific spacing while sacrificing those benefits.</p><p><strong>Opponent answers:</strong> Retract or do not extend a limb into its thin region. Close in against the weaker committed check. Parry/block then punish according to measured spacing.</p>
+    <p><strong>Presentation:</strong> Long narrow toe/heel extension, not an effect bigger than its contact region. Explicitly draw the vulnerable recovering leg.</p><p><strong>Required evidence:</strong> Require a paired limb-punish scenario where this beats the free option; otherwise redesign/delete. No inflated reach solely in invisible VFX. Show a case where free Long Heel is clearly preferable.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 12,
+  &quot;active_ticks&quot;: 3,
+  &quot;recovery_ticks&quot;: 18,
+  &quot;damage_per_contact&quot;: [
+    55
+  ],
+  &quot;guard_level&quot;: &quot;mid&quot;,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;stun_per_contact&quot;: [
+    70
+  ],
+  &quot;target_forward_extent_world&quot;: 72
+}</pre></details></article><article data-fighter="vale" data-kind="round_lease" data-wave="advanced_trial">
+    <div class="eyebrow">V-T3 · VALE · advanced trial</div>
+    <h2>Descending Heel</h2><div class="price">600 CR / round</div><p class="role">Dive-kick trajectory change</p>
+    <p><strong>Input:</strong> <code>air:2+MK</code></p>
+    <p><strong>Why:</strong> The opponent commits to one predictable anti-air timing against the normal forward-jump arc.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Add a downward-forward dive kick from a forward jump at height at least 50 units. It may start only before the player has used another aerial attack in that jump; one attack sequence per jump, no aerial reset. Startup 7, up to 16 active ticks until landing, 16 landing recovery ticks. Target 65 damage. Collision is mid (standing or crouching guard), not an instant overhead. Air trajectory and contact-height-dependent advantage must be measured; no universal plus-on-block claim.</p>
+    <p><strong>Free alternative:</strong> Normal jump attacks remain free. This buys a different committed trajectory, not a double jump, air dash or a guaranteed approach.</p><p><strong>Opponent answers:</strong> Space for a high contact and punish the landing. Anti-air earlier or air-to-air. Parry the altered approach.</p>
+    <p><strong>Presentation:</strong> Readable angle change, distinct heel-down pose and a clearly vulnerable landing. Avoid feet that visually hit far outside the box.</p><p><strong>Required evidence:</strong> Minimum height boundary and instant-input rejection. Measure advantage at high, medium and low contact heights. No repeat dive, aerial cancel loop or ambiguous overhead property.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 7,
+  &quot;active_ticks&quot;: 16,
+  &quot;recovery_ticks&quot;: 16,
+  &quot;damage_per_contact&quot;: [
+    65
+  ],
+  &quot;guard_level&quot;: &quot;mid&quot;,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;min_height_world&quot;: 50,
+  &quot;recovery_is_landing&quot;: true
+}</pre></details></article><article data-fighter="vale" data-kind="round_lease" data-wave="advanced_trial">
+    <div class="eyebrow">V-T4 · VALE · advanced trial</div>
+    <h2>Skycatch</h2><div class="price">600 CR / round</div><p class="role">Air-to-air throw</p>
+    <p><strong>Input:</strong> <code>air:LP+LK</code></p>
+    <p><strong>Why:</strong> The opponent repeatedly meets Vale in the air at close range and relies on parrying strikes.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Add an air-only throw, 5 startup and 3 capture-active ticks, 105 damage, no super cancel. Both actors must be airborne and the target must not be in hitstun, capture or juggle state. Capture is untechable but can be avoided before contact. On miss the actor falls normally and has 18 landing recovery ticks; on success use a fixed throw arc and the same landing recovery, without charge grants.</p>
+    <p><strong>Free alternative:</strong> Air normals are free and safer at distance. This rents a particular un-parryable aerial threat, not the ability to contest air space at all.</p><p><strong>Opponent answers:</strong> Stay outside the short capture region. Hit Vale before the throw becomes active. Stay grounded and punish landing.</p>
+    <p><strong>Presentation:</strong> A clear reach-and-capture pose; both fighter roots follow the throw arc. No teleport snap over a large distance.</p><p><strong>Required evidence:</strong> Ground/prejump/hitstun captures rejected. Simultaneous air-throw arbitration is symmetric. Miss, landing and rollback do not refresh aerial actions.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 5,
+  &quot;active_ticks&quot;: 3,
+  &quot;recovery_ticks&quot;: 18,
+  &quot;damage_per_contact&quot;: [
+    105
+  ],
+  &quot;guard_level&quot;: &quot;throw&quot;,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;recovery_is_landing&quot;: true,
+  &quot;air_capture_range_world&quot;: 24
+}</pre></details></article><article data-fighter="vale" data-kind="round_lease" data-wave="core_trial">
+    <div class="eyebrow">V-G1 · VALE · core trial</div>
+    <h2>False Pulse</h2><div class="price">300 CR / round</div><p class="role">Projectile feint</p>
+    <p><strong>Input:</strong> <code>4+HP+HK</code></p>
+    <p><strong>Why:</strong> An opponent jumps or parries early when they see Vale&#x27;s horizontal-shot preparation.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>A standalone 12-tick feint mimics the first six anticipation cels of pulse_h, then aborts without a projectile. It does not require stored charge, invent charge, launch a projectile, or cancel another action. Directional charge continues only through the same ordinary sampled-direction rules as any other action. No global freeze, armor, guard or parry during commitment.</p>
+    <p><strong>Free alternative:</strong> The real free charge shot remains the threat. This rents a false tell and shorter recovery, not stored fireball ammunition.</p><p><strong>Opponent answers:</strong> Wait for the actual projectile. Take space without committing to a jump. Attack/throw the feint when close.</p>
+    <p><strong>Presentation:</strong> Use the actual first six shot cels, then distinct recovery. Do not play a projectile-spawn cue on the fake.</p><p><strong>Required evidence:</strong> Charge history is neither manufactured nor arbitrarily erased. Human test distinguishes plausible bait from an obviously unrelated animation. No fake debit or hit event.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 6,
+  &quot;active_ticks&quot;: 0,
+  &quot;recovery_ticks&quot;: 6,
+  &quot;damage_per_contact&quot;: [],
+  &quot;guard_level&quot;: null,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;mimic_move_id&quot;: &quot;pulse_h&quot;,
+  &quot;shared_visual_ticks&quot;: 6
+}</pre></details></article><article data-fighter="vale" data-kind="round_lease" data-wave="core_trial">
+    <div class="eyebrow">V-G2 · VALE · core trial</div>
+    <h2>Recoil Step</h2><div class="price">300 CR / round</div><p class="role">Short retreat at zoning range</p>
+    <p><strong>Input:</strong> <code>4+HP+HK</code></p>
+    <p><strong>Why:</strong> A full backdash overshoots the spacing for Vale&#x27;s intended punish.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>A fully vulnerable 10-tick retreat travels 28 units over [0,6) then recovers for 4. No attack/guard/parry/cancel during it. It grants no charge; held-back charge obeys the unchanged normal sampling rules. Stage and player-separation constraints apply.</p>
+    <p><strong>Free alternative:</strong> Free back walk is less committed and the full backdash covers more ground. This offers a deliberately short displacement and early return to neutral.</p><p><strong>Opponent answers:</strong> Pursue with a longer normal. Take space instead of whiffing a short poke. Corner Vale or punish recovery.</p>
+    <p><strong>Presentation:</strong> A short backward weight shift distinct from a full backdash and the attack feint.</p><p><strong>Required evidence:</strong> Test cash-equivalent alternatives and normal back-walk charge. No corner escape through the opponent. No invulnerability or accidental action cancellation.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 0,
+  &quot;active_ticks&quot;: 6,
+  &quot;recovery_ticks&quot;: 4,
+  &quot;damage_per_contact&quot;: [],
+  &quot;guard_level&quot;: null,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;travel_world&quot;: -28
+}</pre></details></article><article data-fighter="vale" data-kind="round_lease" data-wave="advanced_trial">
+    <div class="eyebrow">V-G3 · VALE · advanced trial</div>
+    <h2>Shear Palm</h2><div class="price">300 CR / round</div><p class="role">Active projectile reflection</p>
+    <p><strong>Input:</strong> <code>4+HP+HK</code></p>
+    <p><strong>Why:</strong> An opponent repeatedly fires an ordinary shot on an obvious timing.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>A 6/4/24 nonattacking palm can reflect one ordinary non-super projectile instance during [6,10). The returned instance retains its original remaining lifetime/hit count/credit origin but changes owner and direction. Reflect depth is capped at one; another interceptor dissipates an already-reflected object. No credit transfer, energy stock or fighter invulnerability. Paid EX and super-class projectiles are excluded by default.</p>
+    <p><strong>Free alternative:</strong> Free parry defends without the palm&#x27;s recovery. Reflection returns a spatial threat but creates a larger baitable commitment.</p><p><strong>Opponent answers:</strong> Fake or delay the shot. Hit/throw the palm while approaching. Use an explicitly excluded projectile class or parry the return.</p>
+    <p><strong>Presentation:</strong> A sharp direction-change spark and clear ownership accent, without making the projectile indistinguishable from a super.</p><p><strong>Required evidence:</strong> No infinite reflection loop or owner-count corruption. Original debit never moves to the defender and never refunds. Simultaneous reflection/destruction and rollback remain deterministic.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 6,
+  &quot;active_ticks&quot;: 4,
+  &quot;recovery_ticks&quot;: 24,
+  &quot;damage_per_contact&quot;: [],
+  &quot;guard_level&quot;: null,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;reflect_depth_max&quot;: 1
+}</pre></details></article><article data-fighter="vale" data-kind="round_lease" data-wave="advanced_trial">
+    <div class="eyebrow">V-G4 · VALE · advanced trial</div>
+    <h2>Slipgate</h2><div class="price">600 CR / round</div><p class="role">Telegraphed reposition through a shot</p>
+    <p><strong>Input:</strong> <code>4+HP+HK</code></p>
+    <p><strong>Why:</strong> A predictable projectile occupies a lane, but the player is willing to risk a slow, visible reposition.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>An original grounded displacement, not unrestricted teleport. Startup 8, travel/phase interval [8,15), recovery 20. Move at most 80 units backward, clamped to stage and maximum separation. It cannot pass through the other fighter or switch sides. Only ordinary projectiles miss during the middle interval; direct strikes, throws, startup and recovery remain vulnerable. Never usable from hit/blockstun. No extra charge preservation beyond input rules.</p>
+    <p><strong>Free alternative:</strong> A jump or parry is free and a backdash may be quicker. This buys a particular projectile bypass at a highly visible destination.</p><p><strong>Opponent answers:</strong> Attack startup or the marked destination. Walk forward or throw instead of firing immediately. Exploit its long recovery or corner restriction.</p>
+    <p><strong>Presentation:</strong> Show destination marker on startup and a brief spatial streak; do not make the actor invisible for the whole action.</p><p><strong>Required evidence:</strong> No strike/throw invincibility leaks. Zero-distance corner use still has recovery. No crossing, escape from stun, or ownership/charge anomaly.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 8,
+  &quot;active_ticks&quot;: 7,
+  &quot;recovery_ticks&quot;: 20,
+  &quot;damage_per_contact&quot;: [],
+  &quot;guard_level&quot;: null,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;travel_world&quot;: -80,
+  &quot;ordinary_projectile_miss_window&quot;: [
+    8,
+    15
+  ]
+}</pre></details></article><article data-fighter="rook" data-kind="enhanced_activation" data-wave="core_trial">
+    <div class="eyebrow">R-E1 · ROOK · core trial</div>
+    <h2>Burst Pulse</h2><div class="price">300 CR / startup</div><p class="role">Projectile pressure</p>
+    <p><strong>Input:</strong> <code>qcf+PP</code></p>
+    <p><strong>Why:</strong> A committed enhanced projectile contest or conversion.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Use the original pulse_ex family as the first baseline, then tune one property at a time. Do not add blanket invulnerability or a full-screen guarantee. Debit once on accepted startup; failure, parry, block, whiff and interruption after startup never refund.</p>
+    <p><strong>Free alternative:</strong> The free shot remains the normal zoning tool.</p><p><strong>Opponent answers:</strong> Block/parry the contacts; jump or punish the startup. A zero-wallet opponent retains all ordinary guard/parry/movement responses.</p>
+    <p><strong>Presentation:</strong> Use distinct EX anticipation/impact and one concise 300-credit debit cue. Normal and EX need different readable contact rhythm, not just a color tint.</p><p><strong>Required evidence:</strong> 299/300/301 exact-cost and reserve boundaries. Failed input is not a debit; post-start failure is not a refund. Legal-input both-facing contact/whiff/block/parry/replay/rollback traces.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;status&quot;: &quot;audited_baseline_reference_not_newly_balanced&quot;,
+  &quot;baseline_move_id&quot;: &quot;pulse_ex&quot;,
+  &quot;baseline_move_sha256&quot;: &quot;b22b54707171943cd5d6b083e19e392f9b6ae966b0fdbc917f7485c1b10c280c&quot;,
+  &quot;startup_ticks&quot;: 8,
+  &quot;active_ticks&quot;: 1,
+  &quot;recovery_ticks&quot;: 24,
+  &quot;damage_per_contact&quot;: [],
+  &quot;projectile_damage&quot;: 55,
+  &quot;invulnerability&quot;: []
+}</pre></details></article><article data-fighter="rook" data-kind="enhanced_activation" data-wave="core_trial">
+    <div class="eyebrow">R-E2 · ROOK · core trial</div>
+    <h2>Emergency Riser</h2><div class="price">300 CR / startup</div><p class="role">Reversal / anti-air</p>
+    <p><strong>Input:</strong> <code>dp+PP</code></p>
+    <p><strong>Why:</strong> A precisely timed, expensive escape or vertical punish.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Use the original rise_ex family as the first baseline, then tune one property at a time. Invulnerability is move-local and must have an explicit end; no post-block safety cancel. Debit once on accepted startup; failure, parry, block, whiff and interruption after startup never refund.</p>
+    <p><strong>Free alternative:</strong> The free anti-air still handles ordinary jumps.</p><p><strong>Opponent answers:</strong> Bait and block/parry; punish its measured recovery. A zero-wallet opponent retains all ordinary guard/parry/movement responses.</p>
+    <p><strong>Presentation:</strong> Use distinct EX anticipation/impact and one concise 300-credit debit cue. Normal and EX need different readable contact rhythm, not just a color tint.</p><p><strong>Required evidence:</strong> 299/300/301 exact-cost and reserve boundaries. Failed input is not a debit; post-start failure is not a refund. Legal-input both-facing contact/whiff/block/parry/replay/rollback traces.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;status&quot;: &quot;audited_baseline_reference_not_newly_balanced&quot;,
+  &quot;baseline_move_id&quot;: &quot;rise_ex&quot;,
+  &quot;baseline_move_sha256&quot;: &quot;1622636a8f6d5169d040a98b1c262dc410ff9265e8448b0eb8e4dbf67eaf00d1&quot;,
+  &quot;startup_ticks&quot;: 3,
+  &quot;active_ticks&quot;: 5,
+  &quot;recovery_ticks&quot;: 24,
+  &quot;damage_per_contact&quot;: [
+    125
+  ],
+  &quot;projectile_damage&quot;: null,
+  &quot;invulnerability&quot;: [
+    {
+      &quot;start&quot;: 0,
+      &quot;end&quot;: 5,
+      &quot;to&quot;: [
+        &quot;strike&quot;,
+        &quot;projectile&quot;
+      ]
+    }
+  ]
+}</pre></details></article><article data-fighter="rook" data-kind="enhanced_activation" data-wave="core_trial">
+    <div class="eyebrow">R-E3 · ROOK · core trial</div>
+    <h2>Driving Knee</h2><div class="price">300 CR / startup</div><p class="role">Grounded conversion</p>
+    <p><strong>Input:</strong> <code>qcf+KK</code></p>
+    <p><strong>Why:</strong> Spend after a real opening to improve travel/knockdown or a tested EX-to-super route.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Use the original knee_ex family as the first baseline, then tune one property at a time. Retain the recorded contact cancel provision only until a reviewed hit-only/block distinction is implemented; do not advertise a guaranteed combo. Debit once on accepted startup; failure, parry, block, whiff and interruption after startup never refund.</p>
+    <p><strong>Free alternative:</strong> Free knee variants retain their ordinary approach role.</p><p><strong>Opponent answers:</strong> Block/parry it; deny the confirm or punish a raw approach. A zero-wallet opponent retains all ordinary guard/parry/movement responses.</p>
+    <p><strong>Presentation:</strong> Use distinct EX anticipation/impact and one concise 300-credit debit cue. Normal and EX need different readable contact rhythm, not just a color tint.</p><p><strong>Required evidence:</strong> 299/300/301 exact-cost and reserve boundaries. Failed input is not a debit; post-start failure is not a refund. Legal-input both-facing contact/whiff/block/parry/replay/rollback traces.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;status&quot;: &quot;audited_baseline_reference_not_newly_balanced&quot;,
+  &quot;baseline_move_id&quot;: &quot;knee_ex&quot;,
+  &quot;baseline_move_sha256&quot;: &quot;c5293005dfc296dd7a25fc79ac560684cff03a8dbc035a00726c135fab9de344&quot;,
+  &quot;startup_ticks&quot;: 8,
+  &quot;active_ticks&quot;: 5,
+  &quot;recovery_ticks&quot;: 24,
+  &quot;damage_per_contact&quot;: [
+    125
+  ],
+  &quot;projectile_damage&quot;: null,
+  &quot;invulnerability&quot;: []
+}</pre></details></article><article data-fighter="rook" data-kind="enhanced_activation" data-wave="core_trial">
+    <div class="eyebrow">R-E4 · ROOK · core trial</div>
+    <h2>Recoil Palm</h2><div class="price">300 CR / startup</div><p class="role">Spacing punish</p>
+    <p><strong>Input:</strong> <code>qcb+KK</code></p>
+    <p><strong>Why:</strong> A paid retreating strike when the opponent extends into your space.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Use the original sway_ex family as the first baseline, then tune one property at a time. No automatic dodge of every attack, projectile or throw. Debit once on accepted startup; failure, parry, block, whiff and interruption after startup never refund.</p>
+    <p><strong>Free alternative:</strong> Free retreat palm and walking remain alternatives.</p><p><strong>Opponent answers:</strong> Do not chase with a short poke; take space or whiff-punish. A zero-wallet opponent retains all ordinary guard/parry/movement responses.</p>
+    <p><strong>Presentation:</strong> Use distinct EX anticipation/impact and one concise 300-credit debit cue. Normal and EX need different readable contact rhythm, not just a color tint.</p><p><strong>Required evidence:</strong> 299/300/301 exact-cost and reserve boundaries. Failed input is not a debit; post-start failure is not a refund. Legal-input both-facing contact/whiff/block/parry/replay/rollback traces.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;status&quot;: &quot;audited_baseline_reference_not_newly_balanced&quot;,
+  &quot;baseline_move_id&quot;: &quot;sway_ex&quot;,
+  &quot;baseline_move_sha256&quot;: &quot;a5c78714e1e0a1d5efed985d0b6fd68494f776f30c612c93f7f57ae494540282&quot;,
+  &quot;startup_ticks&quot;: 8,
+  &quot;active_ticks&quot;: 5,
+  &quot;recovery_ticks&quot;: 24,
+  &quot;damage_per_contact&quot;: [
+    125
+  ],
+  &quot;projectile_damage&quot;: null,
+  &quot;invulnerability&quot;: []
+}</pre></details></article><article data-fighter="vale" data-kind="enhanced_activation" data-wave="core_trial">
+    <div class="eyebrow">V-E1 · VALE · core trial</div>
+    <h2>Twin Pulse</h2><div class="price">300 CR / startup</div><p class="role">Charge projectile conversion</p>
+    <p><strong>Input:</strong> <code>charge_back+PP</code></p>
+    <p><strong>Why:</strong> A charge-required enhanced shot, not a fee to use ordinary fireballs.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Use the original pulse_ex family as the first baseline, then tune one property at a time. Paying does not waive directional charge or owner projectile occupancy. Debit once on accepted startup; failure, parry, block, whiff and interruption after startup never refund.</p>
+    <p><strong>Free alternative:</strong> Free charge shot remains central.</p><p><strong>Opponent answers:</strong> Jump/parry/block at the tested timing; punish setup. A zero-wallet opponent retains all ordinary guard/parry/movement responses.</p>
+    <p><strong>Presentation:</strong> Use distinct EX anticipation/impact and one concise 300-credit debit cue. Normal and EX need different readable contact rhythm, not just a color tint.</p><p><strong>Required evidence:</strong> 299/300/301 exact-cost and reserve boundaries. Failed input is not a debit; post-start failure is not a refund. Legal-input both-facing contact/whiff/block/parry/replay/rollback traces.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;status&quot;: &quot;audited_baseline_reference_not_newly_balanced&quot;,
+  &quot;baseline_move_id&quot;: &quot;pulse_ex&quot;,
+  &quot;baseline_move_sha256&quot;: &quot;b89e2c32839f021a8a9514aaf8010528713bf85236a46bb0476673415e4f7476&quot;,
+  &quot;startup_ticks&quot;: 8,
+  &quot;active_ticks&quot;: 1,
+  &quot;recovery_ticks&quot;: 24,
+  &quot;damage_per_contact&quot;: [],
+  &quot;projectile_damage&quot;: 55,
+  &quot;invulnerability&quot;: []
+}</pre></details></article><article data-fighter="vale" data-kind="enhanced_activation" data-wave="core_trial">
+    <div class="eyebrow">V-E2 · VALE · core trial</div>
+    <h2>Emergency Arc</h2><div class="price">300 CR / startup</div><p class="role">Charge reversal / anti-air</p>
+    <p><strong>Input:</strong> <code>charge_down+KK</code></p>
+    <p><strong>Why:</strong> A paid vertical response after actual stored down charge.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Use the original rise_ex family as the first baseline, then tune one property at a time. No purchase of instant charge or unlimited invulnerability. Debit once on accepted startup; failure, parry, block, whiff and interruption after startup never refund.</p>
+    <p><strong>Free alternative:</strong> Free charge anti-air and air normals remain.</p><p><strong>Opponent answers:</strong> Bait the reversal and punish; exploit absence of charge. A zero-wallet opponent retains all ordinary guard/parry/movement responses.</p>
+    <p><strong>Presentation:</strong> Use distinct EX anticipation/impact and one concise 300-credit debit cue. Normal and EX need different readable contact rhythm, not just a color tint.</p><p><strong>Required evidence:</strong> 299/300/301 exact-cost and reserve boundaries. Failed input is not a debit; post-start failure is not a refund. Legal-input both-facing contact/whiff/block/parry/replay/rollback traces.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;status&quot;: &quot;audited_baseline_reference_not_newly_balanced&quot;,
+  &quot;baseline_move_id&quot;: &quot;rise_ex&quot;,
+  &quot;baseline_move_sha256&quot;: &quot;0c15aa7e2b42b9f9baf6c3d3c06442c18f3acb3d5c259196ef430379e83f6273&quot;,
+  &quot;startup_ticks&quot;: 3,
+  &quot;active_ticks&quot;: 5,
+  &quot;recovery_ticks&quot;: 24,
+  &quot;damage_per_contact&quot;: [
+    125
+  ],
+  &quot;projectile_damage&quot;: null,
+  &quot;invulnerability&quot;: [
+    {
+      &quot;start&quot;: 0,
+      &quot;end&quot;: 5,
+      &quot;to&quot;: [
+        &quot;strike&quot;,
+        &quot;projectile&quot;
+      ]
+    }
+  ]
+}</pre></details></article><article data-fighter="vale" data-kind="enhanced_activation" data-wave="core_trial">
+    <div class="eyebrow">V-E3 · VALE · core trial</div>
+    <h2>Piercing Palm</h2><div class="price">300 CR / startup</div><p class="role">Confirmed ground conversion</p>
+    <p><strong>Input:</strong> <code>qcb+PP</code></p>
+    <p><strong>Why:</strong> Spend on a real palm opening, with a specifically tested selected-super continuation.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Use the original palm_ex family as the first baseline, then tune one property at a time. Each EX and subsequent super has its own debit, never a bundled free super. Debit once on accepted startup; failure, parry, block, whiff and interruption after startup never refund.</p>
+    <p><strong>Free alternative:</strong> Free palm routes remain usable at zero.</p><p><strong>Opponent answers:</strong> Block/parry or deny contact; punish careless raw use. A zero-wallet opponent retains all ordinary guard/parry/movement responses.</p>
+    <p><strong>Presentation:</strong> Use distinct EX anticipation/impact and one concise 300-credit debit cue. Normal and EX need different readable contact rhythm, not just a color tint.</p><p><strong>Required evidence:</strong> 299/300/301 exact-cost and reserve boundaries. Failed input is not a debit; post-start failure is not a refund. Legal-input both-facing contact/whiff/block/parry/replay/rollback traces.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;status&quot;: &quot;audited_baseline_reference_not_newly_balanced&quot;,
+  &quot;baseline_move_id&quot;: &quot;palm_ex&quot;,
+  &quot;baseline_move_sha256&quot;: &quot;7f65639fda32a9e843da1ccc295039a617dbedc45f927dd559c7b70d7a188d47&quot;,
+  &quot;startup_ticks&quot;: 8,
+  &quot;active_ticks&quot;: 5,
+  &quot;recovery_ticks&quot;: 24,
+  &quot;damage_per_contact&quot;: [
+    125
+  ],
+  &quot;projectile_damage&quot;: null,
+  &quot;invulnerability&quot;: []
+}</pre></details></article><article data-fighter="vale" data-kind="enhanced_activation" data-wave="core_trial">
+    <div class="eyebrow">V-E4 · VALE · core trial</div>
+    <h2>Burst Heel</h2><div class="price">300 CR / startup</div><p class="role">Alternate trajectory / knockdown</p>
+    <p><strong>Input:</strong> <code>qcf+KK</code></p>
+    <p><strong>Why:</strong> A distinct enhanced heel conversion that is not merely another reversal.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Use the original heel_ex family as the first baseline, then tune one property at a time. Classify collision height and vulnerability from data, not VFX or the EX name. Debit once on accepted startup; failure, parry, block, whiff and interruption after startup never refund.</p>
+    <p><strong>Free alternative:</strong> Free heel variants remain.</p><p><strong>Opponent answers:</strong> Space, block/parry or anti-air according to the authored path. A zero-wallet opponent retains all ordinary guard/parry/movement responses.</p>
+    <p><strong>Presentation:</strong> Use distinct EX anticipation/impact and one concise 300-credit debit cue. Normal and EX need different readable contact rhythm, not just a color tint.</p><p><strong>Required evidence:</strong> 299/300/301 exact-cost and reserve boundaries. Failed input is not a debit; post-start failure is not a refund. Legal-input both-facing contact/whiff/block/parry/replay/rollback traces.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;status&quot;: &quot;audited_baseline_reference_not_newly_balanced&quot;,
+  &quot;baseline_move_id&quot;: &quot;heel_ex&quot;,
+  &quot;baseline_move_sha256&quot;: &quot;a0772655f7ed0f63cac75bc6cbc684aa5957366d18879521285b96f3052a2708&quot;,
+  &quot;startup_ticks&quot;: 8,
+  &quot;active_ticks&quot;: 5,
+  &quot;recovery_ticks&quot;: 24,
+  &quot;damage_per_contact&quot;: [
+    125
+  ],
+  &quot;projectile_damage&quot;: null,
+  &quot;invulnerability&quot;: []
+}</pre></details></article><article data-fighter="rook" data-kind="super_activation" data-wave="core_trial">
+    <div class="eyebrow">R-A1 · ROOK · core trial</div>
+    <h2>Circuit Break</h2><div class="price">900 CR / startup</div><p class="role">Reliable close confirm</p>
+    <p><strong>Input:</strong> <code>double_qcf+P</code></p>
+    <p><strong>Why:</strong> A distinct high-commitment use of the same saved credits.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Preserve the close-range strike super as the economical cash-out art. Its role is reliable conversion from specifically measured contacts, not universal reversal safety.</p>
+    <p><strong>Free alternative:</strong> All ordinary fighting stays intact. Selecting this art excludes the other arts for the match; the fee buys an activation, not automatic damage.</p><p><strong>Opponent answers:</strong> Whiff or block/parry the committed sequence; keep outside its intended start range. A whiff, parry, blocked or interrupted committed super never refunds its purchase.</p>
+    <p><strong>Presentation:</strong> A distinct art identity, concise paid-startup receipt, readable threat and recovery. Install uses an expiring status icon, not an earnable/refillable meter; field uses visible geometry and lifetime cues.</p><p><strong>Required evidence:</strong> Exact cost and cost minus one, with full and reduced-flash cues. Test raw start, correct confirm, wrong confirm, reversal, whiff, block and parry. Test maximum-bank repetitions and zero-credit defense; illegal active-state reactivation has zero debit.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;status&quot;: &quot;audited_baseline_reference_not_newly_balanced&quot;,
+  &quot;baseline_move_id&quot;: &quot;super_1&quot;,
+  &quot;startup_ticks&quot;: 5,
+  &quot;active_ticks&quot;: 20,
+  &quot;recovery_ticks&quot;: 35
+}</pre></details></article><article data-fighter="rook" data-kind="super_activation" data-wave="core_trial">
+    <div class="eyebrow">R-A2 · ROOK · core trial</div>
+    <h2>Forge Impact</h2><div class="price">1200 CR / startup</div><p class="role">Vertical reversal / punish</p>
+    <p><strong>Input:</strong> <code>double_qcf+P</code></p>
+    <p><strong>Why:</strong> A distinct high-commitment use of the same saved credits.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Preserve the more specialized vertical super. Test strike/projectile/throw vulnerability windows separately. Its justification is vertical coverage and timing, not a requirement to do more damage than every cheaper art.</p>
+    <p><strong>Free alternative:</strong> All ordinary fighting stays intact. Selecting this art excludes the other arts for the match; the fee buys an activation, not automatic damage.</p><p><strong>Opponent answers:</strong> Bait the paid reversal, block/parry, then punish recovery. A whiff, parry, blocked or interrupted committed super never refunds its purchase.</p>
+    <p><strong>Presentation:</strong> A distinct art identity, concise paid-startup receipt, readable threat and recovery. Install uses an expiring status icon, not an earnable/refillable meter; field uses visible geometry and lifetime cues.</p><p><strong>Required evidence:</strong> Exact cost and cost minus one, with full and reduced-flash cues. Test raw start, correct confirm, wrong confirm, reversal, whiff, block and parry. Test maximum-bank repetitions and zero-credit defense; illegal active-state reactivation has zero debit.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;status&quot;: &quot;audited_baseline_reference_not_newly_balanced&quot;,
+  &quot;baseline_move_id&quot;: &quot;super_2&quot;,
+  &quot;startup_ticks&quot;: 6,
+  &quot;active_ticks&quot;: 8,
+  &quot;recovery_ticks&quot;: 35
+}</pre></details></article><article data-fighter="rook" data-kind="super_activation" data-wave="advanced_trial">
+    <div class="eyebrow">R-A3 · ROOK · advanced trial</div>
+    <h2>Overtime</h2><div class="price">1500 CR / startup</div><p class="role">Temporary hit-confirm routing</p>
+    <p><strong>Input:</strong> <code>double_qcf+P</code></p>
+    <p><strong>Why:</strong> A distinct high-commitment use of the same saved credits.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Proposed replacement for Rush Cascade, not an automatic migration. Commit 1500 at startup; after 12 vulnerable activation ticks, enable a 240-unfrozen-tick state. Only listed HIT-only normal-to-normal edges become legal; no speed/damage/defense buff. Block/parry/whiff never grants the extra edges. Throws, EX and supers are excluded from the extra chain graph; ordinary explicitly allowed EX still costs 300. State ends on knockdown, capture, dizzy, round end or expiry. No refresh while active, no refund and no duration earned from hits.</p>
+    <p><strong>Free alternative:</strong> All ordinary fighting stays intact. Selecting this art excludes the other arts for the match; the fee buys an activation, not automatic damage.</p><p><strong>Opponent answers:</strong> Block/parry the routes to deny the hit-only extensions, disengage during the fixed lifetime, or punish activation. A knockdown/capture ends the state. A whiff, parry, blocked or interrupted committed super never refunds its purchase.</p>
+    <p><strong>Presentation:</strong> A distinct art identity, concise paid-startup receipt, readable threat and recovery. Install uses an expiring status icon, not an earnable/refillable meter; field uses visible geometry and lifetime cues.</p><p><strong>Required evidence:</strong> Exact cost and cost minus one, with full and reduced-flash cues. Test raw start, correct confirm, wrong confirm, reversal, whiff, block and parry. Test maximum-bank repetitions and zero-credit defense; illegal active-state reactivation has zero debit.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 12,
+  &quot;active_ticks&quot;: 0,
+  &quot;recovery_ticks&quot;: 0,
+  &quot;damage_per_contact&quot;: [],
+  &quot;guard_level&quot;: null,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;state_duration_ticks&quot;: 240
+}</pre></details></article><article data-fighter="vale" data-kind="super_activation" data-wave="core_trial">
+    <div class="eyebrow">V-A1 · VALE · core trial</div>
+    <h2>Skybreak</h2><div class="price">900 CR / startup</div><p class="role">Vertical interception</p>
+    <p><strong>Input:</strong> <code>double_qcf+P</code></p>
+    <p><strong>Why:</strong> A distinct high-commitment use of the same saved credits.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Preserve the existing first vertical art as a defined anti-air/punish option. Affordability alone does not guarantee every hit connects; compare to the free charge anti-air and EX before tuning price.</p>
+    <p><strong>Free alternative:</strong> All ordinary fighting stays intact. Selecting this art excludes the other arts for the match; the fee buys an activation, not automatic damage.</p><p><strong>Opponent answers:</strong> Stay grounded, bait the ascent, or parry/block its contacts. A whiff, parry, blocked or interrupted committed super never refunds its purchase.</p>
+    <p><strong>Presentation:</strong> A distinct art identity, concise paid-startup receipt, readable threat and recovery. Install uses an expiring status icon, not an earnable/refillable meter; field uses visible geometry and lifetime cues.</p><p><strong>Required evidence:</strong> Exact cost and cost minus one, with full and reduced-flash cues. Test raw start, correct confirm, wrong confirm, reversal, whiff, block and parry. Test maximum-bank repetitions and zero-credit defense; illegal active-state reactivation has zero debit.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;status&quot;: &quot;audited_baseline_reference_not_newly_balanced&quot;,
+  &quot;baseline_move_id&quot;: &quot;super_1&quot;,
+  &quot;startup_ticks&quot;: 5,
+  &quot;active_ticks&quot;: 20,
+  &quot;recovery_ticks&quot;: 35
+}</pre></details></article><article data-fighter="vale" data-kind="super_activation" data-wave="core_trial">
+    <div class="eyebrow">V-A2 · VALE · core trial</div>
+    <h2>Crosswind</h2><div class="price">1200 CR / startup</div><p class="role">Projectile confirm / lane cash-out</p>
+    <p><strong>Input:</strong> <code>double_qcf+P</code></p>
+    <p><strong>Why:</strong> A distinct high-commitment use of the same saved credits.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Preserve the projectile super as a committed cash-out for a verified lane or confirm. Existing projectile occupancy must reject startup before debit, not spend then fail to spawn.</p>
+    <p><strong>Free alternative:</strong> All ordinary fighting stays intact. Selecting this art excludes the other arts for the match; the fee buys an activation, not automatic damage.</p><p><strong>Opponent answers:</strong> Jump or parry/block the path according to actual startup; punish bad placement or owner recovery. A whiff, parry, blocked or interrupted committed super never refunds its purchase.</p>
+    <p><strong>Presentation:</strong> A distinct art identity, concise paid-startup receipt, readable threat and recovery. Install uses an expiring status icon, not an earnable/refillable meter; field uses visible geometry and lifetime cues.</p><p><strong>Required evidence:</strong> Exact cost and cost minus one, with full and reduced-flash cues. Test raw start, correct confirm, wrong confirm, reversal, whiff, block and parry. Test maximum-bank repetitions and zero-credit defense; illegal active-state reactivation has zero debit.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;status&quot;: &quot;audited_baseline_reference_not_newly_balanced&quot;,
+  &quot;baseline_move_id&quot;: &quot;super_2&quot;,
+  &quot;startup_ticks&quot;: 6,
+  &quot;active_ticks&quot;: 8,
+  &quot;recovery_ticks&quot;: 35
+}</pre></details></article><article data-fighter="vale" data-kind="super_activation" data-wave="advanced_trial">
+    <div class="eyebrow">V-A3 · VALE · advanced trial</div>
+    <h2>Prism Lattice</h2><div class="price">1500 CR / startup</div><p class="role">Paid spatial setup</p>
+    <p><strong>Input:</strong> <code>double_qcf+P</code></p>
+    <p><strong>Why:</strong> A distinct high-commitment use of the same saved credits.</p>
+    <details><summary>Behavior, tradeoffs and tests</summary><p>Proposed replacement for Tidal Step. After 18 vulnerable startup ticks place one stationary, mid/blockable barrier, 45 or 90 units in front based on the initiating P strength. It has a 180-unfrozen-tick life and two contacts at most, 45 raw damage per fighter contact, minimum 18 ticks between contacts. An eligible normal projectile reflection consumes a contact, retains lifetime and has reflection depth one. Enemy direct strikes can destroy it; owner knockdown/capture/dizzy removes it. No physical wall, refresh, stacking with another major field, random effect or money generation. See field arbitration contract before implementation.</p>
+    <p><strong>Free alternative:</strong> All ordinary fighting stays intact. Selecting this art excludes the other arts for the match; the fee buys an activation, not automatic damage.</p><p><strong>Opponent answers:</strong> Interrupt setup, destroy the field with a spaced normal, stay outside it, or block/parry its mid contacts. Zero credits must not require buying a counter-item. A whiff, parry, blocked or interrupted committed super never refunds its purchase.</p>
+    <p><strong>Presentation:</strong> A distinct art identity, concise paid-startup receipt, readable threat and recovery. Install uses an expiring status icon, not an earnable/refillable meter; field uses visible geometry and lifetime cues.</p><p><strong>Required evidence:</strong> Exact cost and cost minus one, with full and reduced-flash cues. Test raw start, correct confirm, wrong confirm, reversal, whiff, block and parry. Test maximum-bank repetitions and zero-credit defense; illegal active-state reactivation has zero debit.</p>
+    <p><strong>Tuning seed:</strong></p><pre>{
+  &quot;startup_ticks&quot;: 18,
+  &quot;active_ticks&quot;: 1,
+  &quot;recovery_ticks&quot;: 24,
+  &quot;damage_per_contact&quot;: [
+    45,
+    45
+  ],
+  &quot;guard_level&quot;: &quot;mid&quot;,
+  &quot;clock&quot;: &quot;60Hz; action phases exclude hitstop/global freeze; see combat contracts&quot;,
+  &quot;status&quot;: &quot;unvalidated_original_target&quot;,
+  &quot;field_lifetime_ticks&quot;: 180,
+  &quot;field_contacts&quot;: 2,
+  &quot;rehit_ticks&quot;: 18,
+  &quot;placement_world&quot;: [
+    45,
+    90
+  ]
+}</pre></details></article></section></main><footer>Open BUYABLES_DESIGN.md for the complete section and INTEGRATION_HANDOFF.md before changing code. No libraries, accounts or network connection needed for this reference browser.</footer><script>
+const ids=['fighter','kind','wave','search']; const cards=[...document.querySelectorAll('article')];
+function update(){const f=document.getElementById('fighter').value,k=document.getElementById('kind').value,w=document.getElementById('wave').value,q=document.getElementById('search').value.trim().toLowerCase();let n=0;for(const c of cards){const show=(!f||c.dataset.fighter===f)&&(!k||c.dataset.kind===k)&&(!w||c.dataset.wave===w)&&(!q||c.textContent.toLowerCase().includes(q));c.hidden=!show;if(show)n++;}document.getElementById('count').textContent=n+' / '+cards.length+' design entries shown';}ids.forEach(id=>document.getElementById(id).addEventListener('input',update));update();
+</script></body></html>

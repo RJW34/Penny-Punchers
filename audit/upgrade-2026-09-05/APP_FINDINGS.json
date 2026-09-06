@@ -1,0 +1,332 @@
+{
+  "schema": "audit-finding-implementation-review-v1",
+  "utc": "2026-09-05T22:18:15.306417+00:00",
+  "scope": "App/replay/training/CPU/private-network and buyable objects; partial findings are explicit. No hardware/human or final release-candidate acceptance claim.",
+  "test_configuration": "Release",
+  "source_files_sha256": {
+    "src/StrikeLedger.App/Bots.cs": "ebd9bce7cb8393009c1fded430398c786f4a40221aec41a9971269aa165cd643",
+    "src/StrikeLedger.App/CommandEncoder.cs": "3ee023655675df5d0085ffcf557681486ea6421cca7bd07e9f0b9502de635ccc",
+    "src/StrikeLedger.App/PrivateMatchPeer.cs": "83e59bf80e838c3a992ff1662186889356a44d0d7cee3c98a8d8d07bd18f792e",
+    "src/StrikeLedger.App/PrivateMatchPeer.Lobby.cs": "63e29576967391c168e4db54a1c6ef08d3ac730a17ea9d49880397c2ebc06690",
+    "src/StrikeLedger.App/PurchasePlanning.cs": "e4ec5febfca58f4e3fecf04fba238381c7e25575abd0724ce7124b5f02baf5e5",
+    "src/StrikeLedger.App/Replay.cs": "a9f9a227e8ae17c3c1cddfc10c30c5c9d1867f9aba3b22ab5f2eddbc7d674478",
+    "src/StrikeLedger.App/ReplayStore.cs": "4170affec5c36f08d4a526f94f206f0a772a869a792b01363db6c95b935416b8",
+    "src/StrikeLedger.App/RollbackSession.cs": "acec54b1622458d3e3bf90728de22561dd6b6a02d0af34124fb3c2c4a14f7099",
+    "src/StrikeLedger.App/RoundEconomyLedger.cs": "0b18f8e84396a2c4ce5aa2efa20ed846a77555c01918407160d5077a3790713c",
+    "src/StrikeLedger.App/Training.Configuration.cs": "61794ee6324afec104d2e44ce501adf58b6b7c640ef5c1e2a0d69d25b548c35b",
+    "src/StrikeLedger.App/Training.cs": "effea6a06e8dc943c0983fd05673c2279f6b15ec971216b7d43346414c89258b",
+    "src/StrikeLedger.App/Training.Demonstration.cs": "e8563205b2f91da3166272e886b6c6f28c3413aa343d9669518dd42c622061a6",
+    "src/StrikeLedger.App/UdpTransport.cs": "b5a4cbe73bd17f320ebf8c4b4f0f2fabc23113105f091c5563e0b04d0997e778",
+    "src/StrikeLedger.Core/Simulation.BuyableObjects.cs": "376e37c1c7477efc1cdabe1d48c68eb64ec7db19f922f70783b1a46b0b37e107",
+    "game/Main.Training.cs": "f5ddc93cf83d24573b48c0df498e94fbccc9b6a48fd599fcf7642034dcdda59f",
+    "game/Main.TrainingLoadouts.cs": "ecb6c92102f5b974537d7edcbff34a815ba1225d2897ea53eca3c6e88ead4e78",
+    "game/Main.TrainingPractice.cs": "9769543b53644734f49744875942f13e86bf0aaffb437d7bd40509b2c9ddff87",
+    "game/Main.Network.cs": "6f1db270921cb0ec7b06328ad8bbe1d58f9fe090bba5d89c303a4de97c5cd5f2",
+    "game/Main.ArchiveLobby.cs": "bf1d715fbe4b623706421af8ef3bf5d8eefa4da08bd3e95004420f059abbb5eb",
+    "game/Main.Replays.cs": "047b53b910c8c1ff815b9f20f415f42a9e2c773afe41286c102f5cfc7af37270",
+    "game/Main.ReplayDetails.cs": "ae800caabd3f9cd85a1bb79eb35fcbc20d69b7556ccd6425ff44746ee1f14103",
+    "game/Main.LabState.cs": "5fa6ad61d383aaa5b21bf45207031c153f773cc33d42c887d32ce3f2b416faed",
+    "game/Main.LabDiagnostics.cs": "8756563efa7394c6e0f0cac0df1ea88743d6dba80a6237eb49f369ca34b1ab48",
+    "game/Main.EconomyReport.cs": "049f365aa2b1b217c4c60231345b3f446f288c5991bce9a6cab92c1d21c6eb82"
+  },
+  "artifact_sha256": {
+    "reports/evidence/upgrade-app-final-core/cpu-capability-traces.json": "3f57b6074a2e6c1ac03af96b82154f94efbf59d4aa579478b988937ae352ad67",
+    "reports/evidence/upgrade-app-final-core/drills/hitconfirm_super-fixtures.json": "48b471f00b3b489150b0a6211bf625f646ea575af88b65d8eef39acb6edd41f8",
+    "reports/evidence/upgrade-app-final-core/drills/results.json": "14c75aa564f2b4f64de84f934cbef6827e81fcae591df6be31fe217fe1821cae",
+    "reports/evidence/upgrade-app-final-core/economy.json": "caac074f0452fb315fadc13e5d6359f179bb01c9991da87c7977da1db5a60d95",
+    "reports/evidence/upgrade-app-final-core/measured-link-routes.json": "bf406f5fe43422c77a9b9c310333b3f71a80e63d5f5cc5797349f7efb69bd78b",
+    "reports/evidence/upgrade-app-final-core/self-tests.json": "21b388f632256f2a56f1d0929e8e45a040221b821efb7a12279f899b715a9466",
+    "reports/evidence/upgrade-app-final-core/training-demonstrations.json": "2671b0815ac4cf8450676169489ef1cca6e57c72ba30769e5b9e049d06e524d4",
+    "reports/evidence/upgrade-app-final-core/upgrade-regressions.json": "d453c3e5c38623a41967128643988cac681d17f91a612f0da59c6df6cba2af33",
+    "reports/evidence/upgrade-app-final-full/cpu-capability-traces.json": "41e2c273e011804b4bc9ccecfa07e0da4c430a5763237ed51813754727dd4df8",
+    "reports/evidence/upgrade-app-final-full/self-tests.json": "a2b8ce83d18df0e3c289b9761dfc811d61b8295784f15595ea6a6cea60cbc3c3",
+    "reports/evidence/upgrade-app-final-full/training-demonstrations.json": "02427a782b63505722e9b44bee98b937f6abd4c6036dfc542bd7c81ac2cacc4e",
+    "reports/evidence/buyable-objects-final/buyable-object-tests.json": "557ff2e5e14f64891ce3cd0a685d8076233c188dadd98ff37861d6ae8cdc4163",
+    "reports/evidence/upgrade-network-expanded-core/matrix-result.json": "210021425b2b4220035d4a87a5995cd395e78a6d71557e36af9ff078aa7abd49",
+    "reports/evidence/upgrade-network-accepted-core/matrix-result.json": "54091f194e8682ae3768b2205f378bd6f0080912945d163cdf4481687e4a077e",
+    "reports/evidence/upgrade-pre-v2-regressions/self-tests.json": "481743e88f78c1c9bf5601651dc026522038949399c00b5693cba1e9a86ebbaf"
+  },
+  "findings": [
+    {
+      "id": "PP-003",
+      "title": "Regular CPU purchases techniques its policy does not deliberately execute",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "One SupportsRental capability predicate filters both the CPU purchase pool and execution choices. All supported rentals receive deliberate ordinary-command policy inputs; unsupported air/field/branch-entry-only tools are excluded from purchases.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/cpu-capability-traces.json",
+        "reports/evidence/upgrade-app-final-full/cpu-capability-traces.json"
+      ],
+      "limitations": "13 core / 17 expanded seeded art-or-rental witnesses. These prove intentional execution, not strong strategy or balanced prices.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-004",
+      "title": "CPU super logic ignores actual selected-art affordability and Vale supers",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "Both fighters select the current art definition and its actual cost. Shared encoder emits real motion/chord/charge samples; selected-art traces start with precisely that price and verify exactly one startup debit.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/cpu-capability-traces.json",
+        "reports/evidence/upgrade-app-final-full/cpu-capability-traces.json"
+      ],
+      "limitations": "No hidden competitive funding; each art witness is a separate training setup. Values are fixture evidence, not observed human play.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-007",
+      "title": "Players cannot equip rentals through the reviewed training menus",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "Two-seat training configuration/loadout menu, catalog TryMoveInLab, actual rental removal/reset, independent credits, legal demonstrations and single-action free-kit comparison. Active private sessions reject entering the lab.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/self-tests.json",
+        "reports/evidence/upgrade-app-final-full/self-tests.json",
+        "reports/evidence/upgrade-app-final-core/training-demonstrations.json",
+        "reports/evidence/upgrade-app-final-full/training-demonstrations.json"
+      ],
+      "limitations": "Normal-control visual walkthrough belongs to root native evidence. Comparison is move teaching, not an equal-opening-wallet rental experiment. Specific-item counter presets are simple class-based scripts plus exact tradeoff guidance.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-023",
+      "title": "Regular CPU cannot meaningfully adapt to revealed equipment",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "Immutable public loadout, selected-art, wallet and fighter observations are delayed by12 ticks. CPU adjusts throw avoidance for revealed command throws and defensive probability for actual opponent-art affordability.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/cpu-capability-traces.json",
+        "reports/evidence/upgrade-app-final-full/cpu-capability-traces.json",
+        "reports/evidence/upgrade-app-final-core/upgrade-regressions.json"
+      ],
+      "limitations": "Bounded explicit strategies only; not a general learner. Opponent input and future simulation states are never exposed to policy.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-024",
+      "title": "Link and hit-confirm drills can use weak success predicates",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "Link progress requires continuous defender stun and a connected second normal after own recovery. Hit confirm requires the actual prior hit contact/action and accepted selected-super spend; gaps and blocks invalidate continuity.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/measured-link-routes.json",
+        "reports/evidence/upgrade-app-final-core/upgrade-regressions.json",
+        "reports/evidence/upgrade-app-final-core/drills/hitconfirm_super-fixtures.json"
+      ],
+      "limitations": "The measured close-MP to MK route replaces the old LP-to-LP false-positive fixture. Full human execution is separate.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-025",
+      "title": "Advanced drills rely on generic sparring rather than precise practice feeds",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "Advanced parry/red/multihit/quickrise feeds use deterministic legal commands with reachable reset spacing; feeds actually hit the neutral fixture. Checkpoints capture queued commands, dummy RNG, progress, recording and demonstration state.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/training-demonstrations.json",
+        "reports/evidence/upgrade-app-final-core/drills/results.json"
+      ],
+      "limitations": "A learner still performs the defense. Air feed uses a vertical jump; no automatic successful parry is manufactured. Optimized per-item punish scripts are not claimed.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-026",
+      "title": "Training lineup is constrained to the opposite character",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "TrainingConfiguration independently specifies fighters, selected arts, wallets, equipment and stage for both seats. Reset preserves it; menus render authoritative IDs. Mirror lineup and all current action entrypoints are exercised.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/self-tests.json",
+        "reports/evidence/upgrade-app-final-full/self-tests.json",
+        "reports/evidence/upgrade-app-final-core/training-demonstrations.json"
+      ],
+      "limitations": "Palette selection remains presentation-owned; software evidence does not establish every controller menu path.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-027",
+      "title": "Loading a replay from paused playback does not reset shell playback state",
+      "status": "IMPLEMENTED_SOURCE_REVIEW",
+      "implementation": "StartReplay centralizes fresh playback state, accumulator, pause, input history, effects and timeline initialization. Every seek clears presentation state.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/self-tests.json",
+        "reports/evidence/upgrade-app-final-full/self-tests.json"
+      ],
+      "limitations": "Native replay-A pause/archive/replay-B walkthrough has not been recorded by this subtask.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-028",
+      "title": "Results claim a replay was saved even after a save error",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "SaveReplay returns ReplaySaveResult, parent result/Pause UI displays its actual Message. Failure retains the in-memory recorder. An economy-sidecar failure cannot falsely invalidate the saved replay.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/upgrade-regressions.json"
+      ],
+      "limitations": "Locked destination exercises the real filesystem error path. Full-disk native UI fixture is not claimed.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-029",
+      "title": "Archive sorts filenames and only exposes eight entries",
+      "status": "IMPLEMENTED_SOURCE_REVIEW",
+      "implementation": "Archive metadata has UTC creation, unique ID, matchup and final-match completion. List sorts timestamp then stable path; shell pages all entries eight per page and labels incompatible/corrupt imports.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/upgrade-regressions.json"
+      ],
+      "limitations": "No search/filter UI; pagination and native mixed-archive visual walkthrough are source-reviewed only.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-030",
+      "title": "Replay corruption during playback needs a safe error boundary",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "ReplayOperation wraps playback and seeking, preserves mismatch details, pauses and presents a safe error screen with archive/restart. Later command wallet tampering is rejected by replay verification.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/upgrade-regressions.json"
+      ],
+      "limitations": "The production App throws at the exact bad command; graphical error-screen capture is separate.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-031",
+      "title": "Replay persistence lacks collision-proof names and atomic replacement",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "GUID/subsecond immutable filenames; sibling CreateNew temporary file, Flush(true), atomic same-filesystem rename and cleanup. Bounded64MiB streaming load prevents growth between initial stat and deserialization.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/upgrade-regressions.json"
+      ],
+      "limitations": "Locked-file replacement and unique saves were executed. Sudden hardware power loss and all filesystems are not claimed.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-032",
+      "title": "All presentation events wait for confirmed remote input",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "Stable action/event IDs emit reversible local Add, then Confirm or Cancel after rollback. Spend, contact outcomes and terminal/settlement remain confirmed. Source fighter metadata is included in event identity for reflected projectiles.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/upgrade-regressions.json"
+      ],
+      "limitations": "Rollback correction test verifies speculative startup cancellation and excludes unconfirmed economic/terminal outcomes. Physical button-to-speaker latency measurement is pending.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-034",
+      "title": "Both peers must manually duplicate the entire lineup",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "Optional private lobby agrees seat-owned fighter/art revisions plus host stage and a shared ready hash. Build/content/protocol validation precedes lobby. Shell uses this negotiated path; laboratory legacy complete-config path remains available.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/upgrade-regressions.json"
+      ],
+      "limitations": "Executed on actual loopback sockets with differing initial lineup configs and asymmetric delay/loss/reordering. Two physical machines remain external.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-035",
+      "title": "Some exit paths dispose the peer without sending disconnect",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "Central LeavePrivateMatch plus Dispose best-effort reliable departure/ACK grace bounded250ms; socket failures become diagnostics and unconfirmed rounds never settle.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/upgrade-regressions.json"
+      ],
+      "limitations": "Actual socket peer Dispose makes the other report Disconnected promptly. Physical pad removal and OS-forced process kill are separate checks.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-036",
+      "title": "Pause/resume needs asymmetric-latency tests",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "Host chooses a future pause tick beyond input delay/prediction, both advance neutral to matching confirmed hash, then pause. Resume requires the shared state and inserts120 neutral ticks; paused heartbeat prevents timeout.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/self-tests.json",
+        "reports/evidence/upgrade-app-final-full/self-tests.json",
+        "reports/evidence/upgrade-app-final-core/upgrade-regressions.json"
+      ],
+      "limitations": "Asymmetric100/150ms, jitter20ms, loss3%, duplication/reordering and long healthy pause executed. Full combination of every terminal event with every timing offset is not claimed.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-037",
+      "title": "Private rematch returns to connection setup",
+      "status": "PARTIAL",
+      "implementation": "Mutual in-session rematch retains the socket connection, requires matching completed state, changes match generation/session identity and resets wallets/plans/scores/input timelines. One-sided request cannot reset.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/upgrade-regressions.json"
+      ],
+      "limitations": "Repeated same-lineup match is supported. Seat swaps and fighter/art changes still leave/reconnect through the lobby; no in-session postmatch re-selection protocol implemented.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-071",
+      "title": "A compact in-game round economy ledger",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "Replay format3 records canonical preparation and settlement receipts. RoundEconomyLedger reconstructs opening cash/rental/combat spend, nominal/granted/clipped payout, recovery tiers, closing cash and detailed debits with conservation assertions.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/economy.json",
+        "reports/evidence/upgrade-app-final-core/upgrade-regressions.json"
+      ],
+      "limitations": "Root owns in-game mini-ledger placement; export and actual full socket match ledger checked here. Historical format/build recordings remain incompatible and untouched.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-075",
+      "title": "Private-session connection diagnostics and lobby quality",
+      "status": "PARTIAL",
+      "implementation": "Lobby ready/rematch/content compatibility and rollback/prediction diagnostics are available; fault lab records configured delay/loss/reorder and actual final states.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/upgrade-regressions.json"
+      ],
+      "limitations": "No live measured RTT/jitter/loss estimator or public authentication claim. Injected fault percentages are laboratory configuration, not measurements of a live path.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-091",
+      "title": "Economic telemetry should expose affordability and payout history rather than wallet totals alone",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "Per-round actual receipt ledger exposes nominal/granted/clipped payout, prior/new recovery tier, all debits and opening/closing cash; parent purchase panel computes action capacity via canonical quote.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/economy.json",
+        "reports/evidence/upgrade-app-final-core/upgrade-regressions.json"
+      ],
+      "limitations": "Analytical continuing-state witnesses and price experiments are combat/BalanceLab ownership; no state-count enumeration is labeled a played match.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-072",
+      "title": "Replay takeover for missed punish and spending decisions",
+      "status": "IMPLEMENTED_TESTED",
+      "implementation": "Replay controls open a detached TrainingSession.FromReplay. Core creates a training-bound snapshot retaining actual positions, wallet, leases, selected arts and current action; recording source stays unchanged.",
+      "evidence": [
+        "reports/evidence/upgrade-app-final-core/training-demonstrations.json"
+      ],
+      "limitations": "Core forbids restoring the training-bound snapshot into the competitive simulation; recorder rejects Training config. Demo test proves source hash/config remain immutable. Native takeover control-path capture is separate.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-073",
+      "title": "Budget-aware combo and counterplay trials",
+      "status": "PARTIAL",
+      "implementation": "Legal catalog demonstrations and one-action free-kit comparisons use actual commands and debit receipts; existing confirm/link drills enforce real continuity.",
+      "evidence": [],
+      "limitations": "No complete authored free/EX/super route family from every same starter, nor optimized counter drill per rental. Current item-counter presets use class-based scripts and exact tradeoff guidance.",
+      "native_or_human_claim": false
+    },
+    {
+      "id": "PP-074",
+      "title": "Multi-slot dummy recordings and randomized defense",
+      "status": "NOT_IMPLEMENTED_OPTIONAL",
+      "implementation": "Existing single dummy recording plus deterministic scripted modes retain checkpoints/RNG/playback/evaluator state.",
+      "evidence": [],
+      "limitations": "Multiple named recording slots, weighted playback, guard-after-first-hit and configurable wakeup/reversal menus remain optional follow-up work.",
+      "native_or_human_claim": false
+    }
+  ],
+  "buyable_objects": {
+    "implementation": "Canonical unified projectile/field state; free normal-shot interactions, finite depth1 reflection, actual vertical Arc, Anchor arm/trigger/contact, Prism occupancy/collision/lifetime and owner interruption.",
+    "evidence": "reports/evidence/buyable-objects-final/buyable-object-tests.json",
+    "interpretation": "Reflection into an owner already holding an ordinary projectile dissipates the incoming shot, with no refund or transferred cost.",
+    "future_extension": "Current fighter restrictions prevent an armor-owner from owning a major field. A future combined fighter would require field interruption to inspect pre-arbitrated armor/KD results."
+  },
+  "current_udp_matrix": {
+    "path": "reports/evidence/upgrade-network-accepted-core/matrix-result.json",
+    "passed_profiles": 4,
+    "scope": "Actual two-process complete matches;0/50/100/150ms RTT, up to20ms jitter,3%loss,3%dup,10%reorder. Each pair verified final hash, wallets, scores, receipts and competitive replay.",
+    "binding": "Release development identity b1e682...; final ExportRelease rebinding awaits final actor-status cleanup and build."
+  },
+  "expanded_udp_smoke": "reports/evidence/upgrade-network-expanded-core/matrix-result.json",
+  "final_candidate_binding": "Superseded by user-requested shop-only-v2 migration. Preserve all pre-v2 evidence; no old direct-spend run is new-economy acceptance.",
+  "pre_v2_checkpoint_regression": "reports/evidence/upgrade-pre-v2-regressions/self-tests.json"
+}

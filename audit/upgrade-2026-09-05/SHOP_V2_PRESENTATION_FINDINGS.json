@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "utc": "2026-09-05T23:08:20.663627+00:00",
+  "scope": "Shop-Only Rework v2 presentation source handoff and actually observed development evidence; not a final exported-candidate acceptance ledger.",
+  "candidateBinding": {
+    "status": "DEVELOPMENT_SOURCE_ONLY",
+    "gitHead": "1623ee62c4f4b6d5574bbb9909eb6fe4e32f5441",
+    "sourceSha256": {
+      "game/Main.Purchase.cs": "8acb1f7dc9903c17e9a8c152b5ad72b231b0a7b5b8f8c735c58902670b143dc2",
+      "game/Main.LineupCatalog.cs": "af33f1dab8e14767fc8e2f53b02e83db606baa6c50fd5978a9d81640b055a152",
+      "game/Main.Rulesets.cs": "bf7dc6987387ae72b4943528155ca0c2f687240831d4106d620e0ca303d12be8",
+      "game/Main.ControlRouting.cs": "84bb8791481f5bc4b84a8921cadecabdb87e15b9142b48d778d2b3e2215d34ed",
+      "game/Main.PrepDetails.cs": "16e4671535e9237764c7db264bf8f696ba021f57afc8e4e22d1a129c1ea7f594",
+      "game/Main.Rendering.cs": "9dc77a74773c3a0c468439f7989804791c326ff4b3275579c1e3bc80a875ca0f",
+      "game/Main.ArtSkin.cs": "16141841624faa7a3768b9bd1aa6c206c19c30cef6504bb59d00e5dcee3666fc",
+      "game/GameSettings.cs": "8f94d439a262531a8fe317b11b04e566cf20b347b3451e8b5237379bcffa8d0f",
+      "game/Main.CombatShowcase.cs": "b4244419d4a8aaa93eb583c7def19712039144e7483c1f02b5628e25e776a455",
+      "game/Main.StageEvidence.cs": "faa207dc3c0c844fc137b37d4eab099d17b0622071fe727888a5fa52b1b4ab88",
+      "game/Main.Menus.cs": "9e7e0eb3f6fc67c7ad73fce5db3e0bce883dac885b4b6d74c900657b7abcae31",
+      "assets/presentation_checks/inputchecks/Program.cs": "e8034a39f042d15b3b6fdbb02afc7704658e1132cde142441e564375c2ab8c3b",
+      "game/Presentation/ArenaAudio.cs": "ce511342787575031668a63ed0f490fc89d9024269ce9383d9c56d95d53cfbe0",
+      "game/Presentation/ArenaCamera.cs": "b8877dc767382241e8128c7316d8a5f2503b97b165f8bc89be757fbf6abe4a1d",
+      "game/Presentation/ArenaObjects.cs": "98127ab25f3e620b5c48a9b0ed865ba746edf4c7e7ae7803707cbf55d56e5391",
+      "game/Presentation/ArenaOverlay.cs": "7b4fd9e3805cf41344ab3e76589827fc652616b41bf76a98d5bde7baeaf338b5",
+      "game/Presentation/ArenaView.cs": "5c01befac9f112c7243dbb2a7846653f49dfdd0a044a14289866c20ec0eca308",
+      "game/Presentation/CelTimeline.cs": "b85220fb5e5aa81b9ac0ad1d99fc70aa2b62951d56efe9d9c7731e6428919dee",
+      "game/Presentation/FighterSprites.cs": "00061fca40db7a911c5b9aa0df6a5645981d4885b8ef18715808656e3b07c342",
+      "game/Presentation/FoundryBackdrop.cs": "688af4197fdd23f4c4879336c48979ef54a0c1cb41f3ee4101dbd8b0bf459597",
+      "game/Presentation/RenderState.cs": "4572f8fc397a35fef112a99ce1417aedb14b3a3a5cde7a63d8e4b1fdfa283a58",
+      "game/Presentation/RuntimeProfiler.cs": "3cef3dea735e44041041fe93a1753cbcf27724e650da85691499a01d8178f915",
+      "game/Presentation/UiTypography.cs": "8f5202df030e32462e89a8567308623d0a4bf46ff6fe7c0977cdf3db42d1f94e",
+      "data/items.json": "78ee0a5599f536d5ce198a26b213da85fd2f931323e57dbac46785f5d1626dcd",
+      "data/rulesets/buyables_full/items.json": "c7884ef00974dda9e24118578f8e88a8e5b6dc94d1f62847c0be386e3548727b",
+      "data/economy.json": "88b2bec08ad8949a3713f3f1552b03821596624104209f75acd9ce313d9aa572"
+    },
+    "finalExportSha256": null,
+    "rebindRequired": true,
+    "nativeDev2Difference": "Dev2 includes header timer placement, exact rejection messages, and Marist cover fix. It predates the confirmed-only/original-round history adapter fix and its unused projectile IsSuper kind mapping. Other owners may also change source before export. A later compact card-detail formatting change removes repeated policy text so canonical purpose/tradeoff fits the existing four-line shop area."
+  },
+  "actualCommands": [
+    {
+      "command": "D:/cs-fighting-game/split-circuit-scaffold/tools/.cache/dotnet/dotnet.exe build game/StrikeLedger.csproj -c Debug --nologo",
+      "exitCode": 0,
+      "warnings": 0,
+      "errors": 0,
+      "elapsedSeconds": 3.73,
+      "scope": "Observed tool execution after timer and Marist cover fix; before later history adapter changes."
+    },
+    {
+      "evidence": "assets/presentation_checks/results/shop-only-v2-input/result.json",
+      "exitCode": 0,
+      "assertions": 52,
+      "scope": "Production-linked settings/input source; real isolated temporary JSON file; no physical hardware claim."
+    }
+  ],
+  "developmentNative": {
+    "folder": "reports/evidence/native-shop-v2-ui-dev2",
+    "controllerMenuPassed": true,
+    "checksPassed": 193,
+    "checksTotal": 193,
+    "physicalControllersTested": false,
+    "physicalInventory": [],
+    "stageResults": [
+      {
+        "stage": "foundry",
+        "legalInputSteps": 353,
+        "approachTicks": 124,
+        "maxJumpY": 108000,
+        "contained": true,
+        "contact": true,
+        "zoom": 0.6410256,
+        "worldX": 408600,
+        "passed": true
+      },
+      {
+        "stage": "grid",
+        "legalInputSteps": 353,
+        "approachTicks": 124,
+        "maxJumpY": 108000,
+        "contained": true,
+        "contact": true,
+        "zoom": 0.6410256,
+        "worldX": 408600,
+        "passed": true
+      },
+      {
+        "stage": "marist_green",
+        "legalInputSteps": 353,
+        "approachTicks": 124,
+        "maxJumpY": 108000,
+        "contained": true,
+        "contact": true,
+        "zoom": 0.6410256,
+        "worldX": 408600,
+        "passed": true
+      },
+      {
+        "stage": "marist_gates",
+        "legalInputSteps": 353,
+        "approachTicks": 124,
+        "maxJumpY": 108000,
+        "contained": true,
+        "contact": true,
+        "zoom": 0.6410256,
+        "worldX": 408600,
+        "passed": true
+      }
+    ],
+    "independentVisualInspectionCount": 12,
+    "inspectedImages": [
+      {
+        "path": "reports/evidence/native-shop-v2-ui-dev2/ui-02-independent-preparation.png",
+        "sha256": "ec11c129f1adbefdc4131e0d31a3eba2bbd2ca1640c1b77551c01a312d87286a"
+      },
+      {
+        "path": "reports/evidence/native-shop-v2-ui-dev2/stage-marist_green-opposite-corners.png",
+        "sha256": "730229eee9ab5469694b35d7ea67584d5d4dcc3ed931c646531ecbd2ae863fa8"
+      },
+      {
+        "path": "reports/evidence/native-shop-v2-ui-dev2/stage-marist_gates-opposite-corners.png",
+        "sha256": "0a3de678e8b83c13283561eda4bb7f49321c20efb4cf4aa65d5ebe0da05254eb"
+      },
+      {
+        "path": "reports/evidence/native-shop-v2-ui-dev2/buyables-04-ex-catalog.png",
+        "sha256": "a364c4f4171d8edae99a4521c6418a27f1dbbc7c0054838290442e49106a8102"
+      },
+      {
+        "path": "reports/evidence/native-shop-v2-ui-dev2/buyables-02-expanded-lineup.png",
+        "sha256": "dc5bb9b5b349f33c93b595b0f86b6ebb3aa4a162002fb9576c337777aeb69f21"
+      },
+      {
+        "path": "reports/evidence/native-shop-v2-ui-dev2/buyables-03-rental-page-two.png",
+        "sha256": "cf336c7d697a8e844694ae7b241779a264209151c9b0ac39b81936523c3de8f6"
+      },
+      {
+        "path": "reports/evidence/native-shop-v2-ui-dev2/buyables-05-super-catalog.png",
+        "sha256": "3be02e49b948b19d9ed602243cf425c72a6e5c4f29fc02e8dbc3c5225c5260b7"
+      },
+      {
+        "path": "reports/evidence/native-shop-v2-ui-dev2/buyables-06-practice-menu.png",
+        "sha256": "709edcb73c617ee2dced2dc84cdb694bc291d023d22fbcd3fbe02b4e4728c8cc"
+      },
+      {
+        "path": "reports/evidence/native-shop-v2-ui-dev2/stage-marist_green-corner-jumps.png",
+        "sha256": "fa50ba2fd17eb112051ebe2681c0b1254217f23160964136c5a6dac9005bca60"
+      },
+      {
+        "path": "reports/evidence/native-shop-v2-ui-dev2/stage-marist_gates-paused-contact.png",
+        "sha256": "14a2ec1eee7753aa1c29ff974c76133320a90db2939a9dbcf5457d42330f2893"
+      },
+      {
+        "path": "reports/evidence/native-shop-v2-ui-dev2/ui-03-local-fight.png",
+        "sha256": "8f782986376a21ab927492c254f21adce19dd8894c3d3676c74c7357fc718bc7"
+      },
+      {
+        "path": "reports/evidence/native-shop-v2-ui-dev2/ui-08-verified-match-result.png",
+        "sha256": "3fb3f0495e02a30b083af1c940561f2c3a073a7d253fa2704c34b032b27b22ff"
+      }
+    ],
+    "jsonSha256": {
+      "reports/evidence/native-shop-v2-ui-dev2/controller-menu-flow.json": "cb10d19b9ec17172d3b5f24eede761f4e6f89c0c77604bd6bb9fb113243e8465",
+      "reports/evidence/native-shop-v2-ui-dev2/stage-camera-evidence.json": "ee5868f060dcfa8e76a1c1ada46a5ed9711762bee6f5a11474d71d06299a6d5c"
+    },
+    "findings": [
+      "Countdown moved from overlapping P1 facts button to header; dev2 shows it clear of headings and cards.",
+      "Both Marist panoramas cover the visible aperture with source aspect preserved. Dev1 edge-row streaking is absent in dev2. All full silhouettes remain visible at opposing bounds and sampled jumping/contact frames.",
+      "Shop costs, 2-EX cap, optional one-use super choices, last-valid cart and per-seat actions are legible at1280x720.",
+      "EX and super catalog states show registry price, exact command and frame counts with explicit round-license/one-use wording. Expanded trial retains Overtime as a live permit.",
+      "Practice description ran beyond screen right in dev2. Session owner fixed it with explicit bounded lines after this capture; native recheck required.",
+      "Test-only software-device banner partly covers Vincent heading in fight captures. It is absent from ordinary play; this is not a claim of tested physical controllers."
+    ]
+  },
+  "findings": [
+    {
+      "requirements": [
+        "SO-005",
+        "SO-006",
+        "SO-007",
+        "SO-039"
+      ],
+      "title": "Registry-driven mixed cart and per-round products",
+      "status": "IMPLEMENTED_DEVELOPMENT_EVIDENCE",
+      "implementationPaths": [
+        "game/Main.Purchase.cs",
+        "game/Main.LineupCatalog.cs",
+        "game/Main.Rulesets.cs"
+      ],
+      "implemented": "Three rental slots, all four EX families and three current super permits use stable product IDs and canonical registry prices. Lineup chooses no free art. All product rows and Save/Load/Repeat/Keep/Ready/Facts are semantically owned controls.",
+      "evidence": [
+        "reports/evidence/native-shop-v2-ui-dev2/ui-02-independent-preparation.png",
+        "reports/evidence/native-shop-v2-ui-dev2/buyables-04-ex-catalog.png",
+        "reports/evidence/native-shop-v2-ui-dev2/buyables-05-super-catalog.png",
+        "reports/evidence/native-shop-v2-ui-dev2/controller-menu-flow.json"
+      ],
+      "finalExportNativeStatus": "NOT_RUN",
+      "remainingLimitations": []
+    },
+    {
+      "requirements": [
+        "SO-010",
+        "SO-040"
+      ],
+      "title": "Last-valid atomic ready/timeout integration",
+      "status": "IMPLEMENTED_DEVELOPMENT_EVIDENCE",
+      "implementationPaths": [
+        "game/Main.Purchase.cs",
+        "game/Main.ControlRouting.cs"
+      ],
+      "implemented": "Canonical PurchasePlanning validates before replacing a cart; invalid edits retain prior IDs. Quoted content hash/price are used at commit; two plans commit together. Popup ownership is isolated per input seat. Timeout has a visible last-valid explanation.",
+      "evidence": [
+        "reports/evidence/native-shop-v2-ui-dev2/controller-menu-flow.json"
+      ],
+      "finalExportNativeStatus": "NOT_RUN",
+      "remainingLimitations": [
+        "Core/App own actual atomicity, remote commit/reveal and settlement; this UI report does not replace their tests.",
+        "Session owner added timeout-plan remembering for remote repeat after dev2; final native/network evidence pending."
+      ]
+    },
+    {
+      "requirements": [
+        "SO-039",
+        "SO-040"
+      ],
+      "title": "Saved and repeated plans revalidate without stale slot indexes",
+      "status": "IMPLEMENTED_DEVELOPMENT_EVIDENCE",
+      "implementationPaths": [
+        "game/GameSettings.cs",
+        "game/Main.Purchase.cs"
+      ],
+      "implemented": "Stores up to six mixed stable IDs and optional old total/content hash. Loading re-quotes current content/bank/caps and explains changed totals. Invalid/oversized data is rejected whole; duplicates remain visible to canonical validation. Repeat reprices the prior round and never auto-buys. Legacy ID-only settings remain supported.",
+      "evidence": [
+        "assets/presentation_checks/results/shop-only-v2-input/result.json",
+        "reports/evidence/native-shop-v2-ui-dev2/controller-menu-flow.json"
+      ],
+      "finalExportNativeStatus": "NOT_RUN",
+      "remainingLimitations": []
+    },
+    {
+      "requirements": [
+        "SO-041"
+      ],
+      "title": "Confirmed factual previous-round observations",
+      "status": "IMPLEMENTED_AWAITING_NATIVE_REGRESSION",
+      "implementationPaths": [
+        "game/Main.PrepDetails.cs",
+        "game/Main.Rendering.cs"
+      ],
+      "implemented": "Previous-round strip/popup exposes revealed opponent kit, super use, actual jump/counter/parry counts and allowed skill awards. Counts make no prediction claim. Local events are actual results; network facts accept only confirmed Add/Confirm and retain original round from stable key. Deduped keys prevent double confirmation counts.",
+      "evidence": [],
+      "finalExportNativeStatus": "NOT_RUN",
+      "remainingLimitations": [
+        "New correction specifically excludes cancelled speculative jumps; native rollback/history regression remains to be executed.",
+        "Observed jumps are labelled jumps, not inferred jump-ins. Full revealed-kit details are in the owner-controlled Facts popup."
+      ]
+    },
+    {
+      "requirements": [
+        "SO-014",
+        "SO-026",
+        "SO-042"
+      ],
+      "title": "Capability HUD and truthful next-shop feedback",
+      "status": "IMPLEMENTED_DEVELOPMENT_EVIDENCE",
+      "implementationPaths": [
+        "game/Main.ArtSkin.cs",
+        "game/Main.Rendering.cs"
+      ],
+      "implemented": "HUD displays exact OwnedEx, SUPER READY/USED/NONE, small static saved bank, actual pending next-shop amount, health/time/score/stun. Rejections distinguish unowned EX, unpurchased super, exhausted super and illegal actor state. SkillAward uses actual allowed Value and NEXT SHOP; practice opportunity is explicit. No startup money/debit/reserve gate or gauge is drawn.",
+      "evidence": [
+        "reports/evidence/native-shop-v2-ui-dev2/ui-03-local-fight.png"
+      ],
+      "finalExportNativeStatus": "NOT_RUN",
+      "remainingLimitations": [
+        "Final candidate still needs owned-super READY-to-USED and partial reward native captures; ordinary zero-use/owned-EX state was inspected."
+      ]
+    },
+    {
+      "requirements": [
+        "SO-043"
+      ],
+      "title": "Settlement receipt cooperation",
+      "status": "DELEGATED_IMPLEMENTATION",
+      "implementationPaths": [
+        "game/Main.PrepDetails.cs",
+        "game/Main.Rendering.cs"
+      ],
+      "implemented": "Supplies factual presentation and retained confirmed public history; authoritative complete economy report belongs to Main.EconomyReport and App.RoundEconomyLedger maintained by session owner.",
+      "evidence": [
+        "reports/evidence/native-shop-v2-ui-dev2/ui-08-verified-match-result.png"
+      ],
+      "finalExportNativeStatus": "NOT_RUN",
+      "remainingLimitations": [
+        "The inspected final-result screenshot establishes readable result/rematch UI only, not complete receipt accounting."
+      ]
+    },
+    {
+      "requirements": [
+        "SO-044"
+      ],
+      "title": "Input-role conflicts and independent local panels",
+      "status": "IMPLEMENTED_DEVELOPMENT_EVIDENCE",
+      "implementationPaths": [
+        "game/Main.ControlRouting.cs",
+        "game/GameSettings.cs"
+      ],
+      "implemented": "Maintains explicit menu ownership, remapping and confirm-release quarantine. Shop rows are semantic rather than guessed geometry. Existing physical/logical-compatible input paths and Start/Escape pause rules are preserved.",
+      "evidence": [
+        "reports/evidence/native-shop-v2-ui-dev2/controller-menu-flow.json",
+        "assets/presentation_checks/results/shop-only-v2-input/result.json"
+      ],
+      "finalExportNativeStatus": "NOT_RUN",
+      "remainingLimitations": [
+        "Software-injected controller events do not certify actual pad hardware, unplug/replug behavior, simultaneous two-player hardware or human usability."
+      ]
+    },
+    {
+      "requirements": [
+        "SO-045"
+      ],
+      "title": "Legal separation and stage coverage",
+      "status": "IMPLEMENTED_DEVELOPMENT_EVIDENCE",
+      "implementationPaths": [
+        "game/Presentation/ArenaCamera.cs",
+        "game/Presentation/ArenaView.cs",
+        "game/Main.StageEvidence.cs"
+      ],
+      "implemented": "Both complete cel envelopes fit bounded presentation camera without changing Core movement. All stage/object/debug transforms share it. Marist background uses aspect-preserving .75 minimum cover independently of fighter zoom, avoiding exposed stretched sky rows.",
+      "evidence": [
+        "reports/evidence/native-shop-v2-ui-dev2/stage-camera-evidence.json",
+        "reports/evidence/native-shop-v2-ui-dev2/stage-marist_green-opposite-corners.png",
+        "reports/evidence/native-shop-v2-ui-dev2/stage-marist_gates-opposite-corners.png",
+        "reports/evidence/native-shop-v2-ui-dev2/stage-marist_green-corner-jumps.png",
+        "reports/evidence/native-shop-v2-ui-dev2/stage-marist_gates-paused-contact.png"
+      ],
+      "finalExportNativeStatus": "NOT_RUN",
+      "remainingLimitations": []
+    },
+    {
+      "requirements": [
+        "SO-008",
+        "SO-046",
+        "SO-048",
+        "SO-050"
+      ],
+      "title": "Untimed catalog and honest practice entry",
+      "status": "IMPLEMENTED_DEVELOPMENT_EVIDENCE",
+      "implementationPaths": [
+        "game/Main.LineupCatalog.cs",
+        "game/Main.Rulesets.cs",
+        "game/Main.CombatShowcase.cs"
+      ],
+      "implemented": "Catalog exposes all current runtime nodes, including branches with their owning entry move, and live rental/EX/super products. Full card shows input, replacement, purpose/tradeoff and current device bindings. Practice is an explicit lab kit; no competitive shop timer is paused and no hypothetical move is marked implemented.",
+      "evidence": [
+        "reports/evidence/native-shop-v2-ui-dev2/controller-menu-flow.json",
+        "reports/evidence/native-shop-v2-ui-dev2/buyables-03-rental-page-two.png",
+        "reports/evidence/native-shop-v2-ui-dev2/buyables-05-super-catalog.png"
+      ],
+      "finalExportNativeStatus": "NOT_RUN",
+      "remainingLimitations": [
+        "Session owns actual training controls and trace output. Dev2 explanation wrapping issue was fixed after capture and must be rechecked.",
+        "Frame counts are authored startup/active/recovery, not a measured advantage or balance verdict."
+      ]
+    }
+  ],
+  "preservedAuditScope": {
+    "historicalReport": "audit/upgrade-2026-09-05/PRESENTATION_FINDINGS.json",
+    "note": "The historical report retains pre-v2 identity and evidence. This handoff does not relabel it as v2 native proof. Current v2 supersedes its combat-cost/reserve expectations, while camera, event positions, timing, sprite/cel/palette limitations and stage/audio work remain applicable.",
+    "ids": [
+      "PP-002",
+      "PP-032",
+      "PP-033",
+      "PP-038",
+      "PP-039",
+      "PP-043",
+      "PP-048",
+      "PP-049",
+      "PP-050",
+      "PP-051",
+      "PP-052",
+      "PP-054",
+      "PP-055",
+      "PP-056",
+      "PP-057",
+      "PP-058",
+      "PP-059",
+      "PP-060",
+      "PP-061"
+    ],
+    "remainingArtLimits": [
+      "Existing fighter sheets remain RGB with runtime chroma key; genuine authored RGBA cleanup has not been achieved or claimed.",
+      "Explicit existing cel holds and reuse do not invent missing in-betweens or a newly authored unique animation for every buyable branch.",
+      "Mirror palette masks are still heuristic; selected prior native art reviews do not establish every pose-edge at this new candidate.",
+      "Actual normal-frame pacing must be measured again on the final v2 export; prior 60FPS measurements are historical."
+    ]
+  },
+  "pendingFinalEvidence": [
+    "Fresh current-source build after adapter/history and practice wrap changes.",
+    "Final exported-candidate native shop/HUD/reward/super/result/replay/network captures and hashes.",
+    "Native corrected-prediction history test; no cancelled jump or duplicated confirmed fact.",
+    "Physical controller, second physical PC and owner/friend feel tests require actual participation and remain pending.",
+    "Recheck a focused long-text rental card in the native shop; compact source formatting was changed after dev2."
+  ]
+}

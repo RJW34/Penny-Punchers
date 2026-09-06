@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "id": "marist_gates",
+  "name": "Marist Gates — Blue Hour",
+  "geometry": "one_flat_floor_with_solid_side_walls",
+  "left": 0,
+  "right": 768000,
+  "floor": 0,
+  "spawn_x": [288000, 480000],
+  "camera_width": 480000,
+  "camera_tracking": "midpoint_clamped_to_stage",
+  "camera_affects_collision": false,
+  "hazards": [],
+  "platforms": [],
+  "visual_theme": "original AFTER HOURS pixel-art interpretation of Marist College front gates at blue hour",
+  "same_competitive_geometry": true
+}

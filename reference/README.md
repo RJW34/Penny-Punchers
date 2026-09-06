@@ -1,6 +1,5 @@
-# What this reference does and does not prove
-`model.py` is a small independent Python arithmetic oracle: scalar wallets, payout tiers/caps, draft/atomic preparation, paid-startup spend receipts and snapshot-style restoration, singles scoring, signed damage/advantage math, direction mirroring and parry-coverage truth table. Unit tests include hand-specified vectors and randomized invariants.
+# Reference model history
 
-It does NOT recognize complete gameplay inputs, simulate movement/collision/freeze, verify human execution, run Godot, handle actual sockets, authenticate players, record played matches, or prove balance. Production C# tests must compare these fixtures AND implement all actual game interactions. `command_cases.json` specifies production parser cases; merely reading that file is not a passing parser.
+The Python files in this directory and `fixtures/economy_vectors.json` preserve the original direct-spend arithmetic model. Run those historical checks against the archived pre-v2 content, not the active shop-only game.
 
-Run from root: `python -m unittest discover -s reference/tests -v`. Passing this suite never satisfies a game release on its own.
+The current independent shop-only reference model and its 95 package tests are preserved in `audit/requests/penny-punchers-shop-only-economy-rework-v2/penny-punchers-shop-only-rework-v2`. The production C# arithmetic and mixed-cart contract harness uses the hand-specified `fixtures/shop_v2_economy_vectors.json`. It verifies payout and catalog arithmetic only; actual combat, rollback, native UI, and network evidence are separate suites.

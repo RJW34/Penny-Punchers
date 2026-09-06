@@ -1,0 +1,160 @@
+{
+  "all_prices_unvalidated": true,
+  "combat_spend": 0,
+  "examples": [
+    {
+      "fighter": "rook",
+      "opening": 600,
+      "products": [
+        "rook_pulse_ex_license"
+      ],
+      "shop_cost": 600,
+      "saved_bank": 0,
+      "repeatable": [
+        "pulse_ex"
+      ],
+      "super": [],
+      "super_uses": 0
+    },
+    {
+      "fighter": "rook",
+      "opening": 600,
+      "products": [
+        "rook_step_feint"
+      ],
+      "shop_cost": 300,
+      "saved_bank": 300,
+      "repeatable": [
+        "shop_step_feint"
+      ],
+      "super": [],
+      "super_uses": 0
+    },
+    {
+      "fighter": "rook",
+      "opening": 1200,
+      "products": [
+        "rook_pulse_ex_license",
+        "rook_knee_ex_license"
+      ],
+      "shop_cost": 1200,
+      "saved_bank": 0,
+      "repeatable": [
+        "knee_ex",
+        "pulse_ex"
+      ],
+      "super": [],
+      "super_uses": 0
+    },
+    {
+      "fighter": "rook",
+      "opening": 1800,
+      "products": [
+        "rook_clinch",
+        "rook_pulse_ex_license"
+      ],
+      "shop_cost": 1500,
+      "saved_bank": 300,
+      "repeatable": [
+        "shop_clinch",
+        "pulse_ex"
+      ],
+      "super": [],
+      "super_uses": 0
+    },
+    {
+      "fighter": "rook",
+      "opening": 2400,
+      "products": [
+        "rook_rise_ex_license",
+        "rook_pulse_ex_license",
+        "rook_super_1_permit"
+      ],
+      "shop_cost": 2400,
+      "saved_bank": 0,
+      "repeatable": [
+        "pulse_ex",
+        "rise_ex"
+      ],
+      "super": [
+        "super_1"
+      ],
+      "super_uses": 1
+    },
+    {
+      "fighter": "vale",
+      "opening": 600,
+      "products": [
+        "vale_pulse_ex_license"
+      ],
+      "shop_cost": 600,
+      "saved_bank": 0,
+      "repeatable": [
+        "pulse_ex"
+      ],
+      "super": [],
+      "super_uses": 0
+    },
+    {
+      "fighter": "vale",
+      "opening": 1800,
+      "products": [
+        "vale_return_pulse",
+        "vale_pulse_ex_license"
+      ],
+      "shop_cost": 1500,
+      "saved_bank": 300,
+      "repeatable": [
+        "pulse_ex",
+        "shop_return_pulse"
+      ],
+      "super": [],
+      "super_uses": 0
+    },
+    {
+      "fighter": "vale",
+      "opening": 2400,
+      "products": [
+        "vale_rise_ex_license",
+        "vale_pulse_ex_license",
+        "vale_super_1_permit"
+      ],
+      "shop_cost": 2400,
+      "saved_bank": 0,
+      "repeatable": [
+        "pulse_ex",
+        "rise_ex"
+      ],
+      "super": [
+        "super_1"
+      ],
+      "super_uses": 1
+    },
+    {
+      "fighter": "rook",
+      "opening": 1425,
+      "products": [
+        "rook_rise_ex_license",
+        "rook_step_feint"
+      ],
+      "shop_cost": 1200,
+      "saved_bank": 225,
+      "repeatable": [
+        "rise_ex",
+        "shop_step_feint"
+      ],
+      "super": [],
+      "super_uses": 0
+    },
+    {
+      "fighter": "rook",
+      "opening": 600,
+      "products": [],
+      "shop_cost": 0,
+      "saved_bank": 600,
+      "repeatable": [],
+      "super": [],
+      "super_uses": 0
+    }
+  ]
+}

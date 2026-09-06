@@ -12,7 +12,7 @@ def main():
     stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     results=[]
     for platform,exe in [('windows','StrikeLedger.exe'),('linux','StrikeLedger.x86_64')]:
-        archive=ROOT/'dist'/f'StrikeLedger-{platform}-x86_64.zip'
+        archive=ROOT/'dist'/f'Penny-Punchers-{platform}-x86_64.zip'
         target=ROOT/'.tools/package-smoke'/stamp/platform
         target.mkdir(parents=True,exist_ok=False)
         with zipfile.ZipFile(archive) as z:
@@ -20,11 +20,11 @@ def main():
             names=z.namelist()
             assert len(names)==len(set(names)),'Duplicate ZIP paths'
             for n in names:
-                assert not Path(n).is_absolute() and '..' not in Path(n).parts and n.startswith('StrikeLedger/'),'Unsafe ZIP path'
-            mode=z.getinfo('StrikeLedger/'+exe).external_attr>>16
+                assert not Path(n).is_absolute() and '..' not in Path(n).parts and n.startswith('Penny-Punchers/'),'Unsafe ZIP path'
+            mode=z.getinfo('Penny-Punchers/'+exe).external_attr>>16
             if platform=='linux':assert mode&0o111,'Linux executable permission missing'
             z.extractall(target)
-        folder=target/'StrikeLedger'
+        folder=target/'Penny-Punchers'
         inventory=(folder/'SHA256SUMS.txt').read_text().splitlines()
         for line in inventory:
             digest,name=line.split('  ',1)

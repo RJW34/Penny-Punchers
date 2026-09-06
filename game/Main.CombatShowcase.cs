@@ -16,22 +16,22 @@ public partial class Main
     private readonly List<CombatEvent> _showcaseEvents=[];
     private readonly List<object> _showcaseTrace=[], _showcaseChecks=[], _showcaseSetups=[];
     private static readonly string[] ShowcaseNames=[
-        "01 / FOOTWORK", "02 / FREE PROJECTILE", "03 / EXACT-WALLET EX", "04 / HIGH PARRY",
+        "01 / FOOTWORK", "02 / FREE PROJECTILE", "03 / OWNED EX · ZERO BANK", "04 / HIGH PARRY",
         "05 / LOW PARRY", "06 / PROJECTILE PARRY", "07 / THROW", "08 / THROW TECH",
-        "09 / FIVE-HIT SUPER PARRY", "10 / VALE CHARGE", "11 / ROLLBACK TRAINING"
+        "09 / FIVE-HIT SUPER PARRY", "10 / VINCENT CHARGE", "11 / ROLLBACK TRAINING"
     ];
     private static readonly string[] ShowcaseDetails=[
         "Walk · double-tap dash · forward jump · landing. No leases or credits.",
-        "Rook: down, down-forward, forward + LP. A free special at zero credits.",
-        "Rook: quarter-circle + LP+MP. Exactly 300 CR debited at startup, once.",
-        "Vale taps toward on the incoming jab. Fresh directional edge; zero damage.",
-        "Vale taps down on the incoming crouching kick. Low parry; zero damage.",
-        "Vale taps toward as the EX pulse reaches her. Projectile freezes; owner stays free.",
+        "Thomas: down, down-forward, forward + LP. A free special at zero credits.",
+        "Explicit lab EX license: quarter-circle + LP+MP. Zero saved bank; no combat debit.",
+        "Vincent taps toward on the incoming jab. Fresh directional edge; zero damage.",
+        "Vincent taps down on the incoming crouching kick. Low parry; zero damage.",
+        "Vincent taps toward as the EX pulse arrives. Projectile freezes; owner stays free.",
         "LP+LK captures at close range. Damage follows the throw-tech window.",
         "Defender presses LP+LK inside the tech window. Both fighters separate unharmed.",
-        "Double quarter-circle + LP spends 900 CR. Five separately timed parry edges.",
-        "Vale holds back for 45 frames, then forward + LP. Free charge projectile.",
-        "UNCONFIRMED preview: paid super K.O. No presentation events or settlement released."
+        "Explicit one-use lab super permit. Double quarter-circle + LP. Five separately timed parry edges.",
+        "Vincent holds back for 45 frames, then forward + LP. Free charge projectile.",
+        "UNCONFIRMED preview: one-use super K.O. No presentation events or settlement released."
     ];
 
     void BeginCombatShowcase()
@@ -43,11 +43,11 @@ public partial class Main
         mode="training";paused=true;frameStep=false;lab=null;peer=null;recorder=null;replay=null;
         trainingMode="SCRIPTED LEGAL INPUT / FRAME ADVANCE";Clear("fight");
         var layer=new CanvasLayer{Layer=80};AddChild(layer);
-        var box=new ColorRect{Position=new Vector2(0,609),Size=new Vector2(1280,78),Color=new Color(.025f,.055f,.07f,1),MouseFilter=Control.MouseFilterEnum.Ignore};layer.AddChild(box);
-        _showcaseTitle=new Label{Position=new Vector2(24,616),MouseFilter=Control.MouseFilterEnum.Ignore};
-        _showcaseTitle.AddThemeFontSizeOverride("font_size",20);_showcaseTitle.AddThemeColorOverride("font_color",Gold);layer.AddChild(_showcaseTitle);
-        _showcaseDetail=new Label{Position=new Vector2(24,651),Size=new Vector2(1232,34),AutowrapMode=TextServer.AutowrapMode.WordSmart,MouseFilter=Control.MouseFilterEnum.Ignore};
-        _showcaseDetail.AddThemeFontSizeOverride("font_size",15);_showcaseDetail.AddThemeColorOverride("font_color",Cream);layer.AddChild(_showcaseDetail);
+        var box=new ColorRect{Position=new Vector2(0,672),Size=new Vector2(1280,48),Color=new Color(.025f,.055f,.07f,1),MouseFilter=Control.MouseFilterEnum.Ignore};layer.AddChild(box);
+        _showcaseTitle=new Label{Position=new Vector2(24,675),MouseFilter=Control.MouseFilterEnum.Ignore};
+        _showcaseTitle.AddThemeFontSizeOverride("font_size",16);_showcaseTitle.AddThemeFontOverride("font",StrikeLedger.Presentation.UiTypography.Body);_showcaseTitle.AddThemeColorOverride("font_color",Gold);layer.AddChild(_showcaseTitle);
+        _showcaseDetail=new Label{Position=new Vector2(24,698),Size=new Vector2(1232,22),MouseFilter=Control.MouseFilterEnum.Ignore};
+        _showcaseDetail.AddThemeFontSizeOverride("font_size",13);_showcaseDetail.AddThemeFontOverride("font",StrikeLedger.Presentation.UiTypography.Body);_showcaseDetail.AddThemeColorOverride("font_color",Cream);layer.AddChild(_showcaseDetail);
         BeginShowcaseSegment();
     }
 
@@ -56,14 +56,17 @@ public partial class Main
         _showcaseCase++;_showcaseFrame=0;_showcaseHold=0;_showcaseCorrection=false;_showcaseTechSent=false;_showcaseProjectileOwnerFree=false;
         _showcaseEvents.Clear();_showcaseParryFrames.Clear();
         if(_showcaseCase>=ShowcaseNames.Length){FinishCombatShowcase();return;}
-        int credits=_showcaseCase is 2 or 5?300:_showcaseCase==8?3600:_showcaseCase==10?900:0;
+        int credits=0;
         int x0=_showcaseCase==0?240000:_showcaseCase==1?280000:_showcaseCase==2?270000:350000;
         int x1=_showcaseCase==0?560000:_showcaseCase==1?470000:_showcaseCase==2?600000:_showcaseCase==5?450000:_showcaseCase==9?550000:385000;
         sim=new Simulation(content,new MatchConfig{Fighter0=_showcaseCase==9?"vale":"rook",Fighter1=_showcaseCase==9?"rook":"vale",Training=true,StageId="grid",SessionId="rendered-training-"+_showcaseCase});
         fighter=[sim.Config.Fighter0,sim.Config.Fighter1];art=[0,0];
-        sim.TrainingReset(credits);sim.SetTrainingState(0,x:x0);sim.SetTrainingState(1,x:x1,health:_showcaseCase==10?1:1000);
+        sim.TrainingReset(credits);
+        string? licensedMove=_showcaseCase is 2 or 5?"pulse_ex":_showcaseCase is 8 or 10?"super_1":null;
+        if(licensedMove!=null){var product=content.Items.Values.Single(i=>i.EligibleFighters.Contains(sim.Players[0].FighterId)&&i.MoveId==licensedMove);sim.SetTrainingLoadout(0,new([product.Id]));}
+        sim.SetTrainingState(0,x:x0);sim.SetTrainingState(1,x:x1,health:_showcaseCase==10?1:1000);
         _showcaseBaseline=sim.Capture();debugBoxes=_showcaseCase is 3 or 4 or 5;
-        inputHistory[0].Clear();inputHistory[1].Clear();arena.ResetEffects();
+        inputHistory[0].Clear();inputHistory[1].Clear();ResetPresentationTimeline();
         _showcaseTitle!.Text=ShowcaseNames[_showcaseCase]+"   /   SCRIPTED TRAINING · ACTUAL CORE INPUTS";
         _showcaseDetail!.Text=ShowcaseDetails[_showcaseCase];
         _showcaseSetups.Add(new{segment=ShowcaseNames[_showcaseCase],trainingOnly=true,fighters=fighter,credits,x0,x1,health1=sim.Players[1].Health,startHash=sim.Hash()});
@@ -79,14 +82,14 @@ public partial class Main
         {
             if(_showcaseHold++==0)
             {
-                ShowcaseCheck(sim.Players[1].Health==0&&sim.LastSettlement==null,"Speculative paid K.O. exists, with no settlement");
+                ShowcaseCheck(sim.Players[1].Health==0&&sim.LastSettlement==null,"Speculative one-use super K.O. exists, with no settlement");
                 ShowcaseCapture("11-speculative-ko");
             }
             if(_showcaseHold<65)return;
             sim.Restore(_showcaseBaseline!);_showcaseCorrection=true;_showcaseFrame=29;_showcaseParryFrames.Clear();
-            _showcaseTrace.Add(new{segment=11,operation="restore-before-paid-startup-and-resimulate",hash=sim.Hash(),presentSpeculativeEvents=false});
-            _showcaseEvents.Clear();arena.ResetEffects();UpdateArena();
-            _showcaseDetail!.Text="CORRECTED branch: late parry inputs erase the K.O. One 900 CR debit; no payout, no score.";
+            _showcaseTrace.Add(new{segment=11,operation="restore-before-super-use-and-resimulate",hash=sim.Hash(),presentSpeculativeEvents=false});
+            _showcaseEvents.Clear();ResetPresentationTimeline();UpdateArena();
+            _showcaseDetail!.Text="CORRECTED branch: late parry inputs erase the K.O. One consumed permit; bank unchanged, no payout or score.";
         }
         byte d0=5,d1=5;Buttons b0=Buttons.None,b1=Buttons.None;
         int f=_showcaseFrame++;
@@ -156,17 +159,17 @@ public partial class Main
         {
             case 0:ShowcaseCheck(Has(CombatEventKind.Dash)&&Has(CombatEventKind.Jump)&&Has(CombatEventKind.Land),"Legal movement produces dash, jump and landing events");break;
             case 1:ShowcaseCheck(Has(CombatEventKind.ProjectileSpawn,"pulse_l")&&Has(CombatEventKind.Hit)&&sim.Players[0].Credits==0,"Free projectile launches and hits at zero credits");break;
-            case 2:ShowcaseCheck(Has(CombatEventKind.ProjectileSpawn,"pulse_ex")&&sim.Players[0].Credits==0&&sim.Players[0].SpendReceipts.Count==1,"EX starts at exactly 300 CR and has one receipt");break;
+            case 2:ShowcaseCheck(Has(CombatEventKind.ProjectileSpawn,"pulse_ex")&&sim.Players[0].Credits==0&&sim.Players[0].OwnedEx.Contains("pulse_ex")&&sim.Players[0].SpendReceipts.Count==0,"Licensed EX starts at zero bank with no combat debit");break;
             case 3:ShowcaseCheck(_showcaseEvents.Any(e=>e.Kind==CombatEventKind.Parry&&e.Detail.StartsWith("High:"))&&sim.Players[1].Health==1000,"Fresh toward edge high-parries with zero damage");break;
             case 4:ShowcaseCheck(_showcaseEvents.Any(e=>e.Kind==CombatEventKind.Parry&&e.Detail.StartsWith("Low:"))&&sim.Players[1].Health==1000,"Fresh down edge low-parries with zero damage");break;
             case 5:ShowcaseCheck(Has(CombatEventKind.Parry)&&_showcaseProjectileOwnerFree,"Projectile parry freezes its source projectile without freezing the owner");break;
             case 6:ShowcaseCheck(_showcaseEvents.Any(e=>e.Kind==CombatEventKind.Throw&&e.Detail=="damage")&&sim.Players[1].Health<1000,"Untouched throw reaches delayed damage");break;
             case 7:ShowcaseCheck(Has(CombatEventKind.ThrowTech)&&sim.Players.All(p=>p.Health==1000),"Legal defender LP+LK tech prevents throw damage");break;
-            case 8:ShowcaseCheck(_showcaseEvents.Count(e=>e.Kind==CombatEventKind.Parry)==5&&sim.Players[1].Health==1000&&sim.Players[0].Credits==2700&&sim.Players[0].SpendReceipts.Count==1,"Five fresh parry inputs defend all super hits; exactly one 900 CR debit");break;
-            case 9:ShowcaseCheck(Has(CombatEventKind.ProjectileSpawn,"pulse_l")&&!Has(CombatEventKind.Spend),"45-frame charge produces Vale's free projectile");break;
+            case 8:ShowcaseCheck(_showcaseEvents.Count(e=>e.Kind==CombatEventKind.Parry)==5&&sim.Players[1].Health==1000&&sim.Players[0].Credits==0&&sim.Players[0].SuperUseReceipts.Count==1&&sim.Players[0].SuperUsesRemaining==0,"Five fresh parry inputs defend all super hits; one permit consumed, bank unchanged");break;
+            case 9:ShowcaseCheck(Has(CombatEventKind.ProjectileSpawn,"pulse_l")&&!Has(CombatEventKind.Spend),"45-frame charge produces Vincent's free projectile");break;
             case 10:
                 ShowcaseCheck(_showcaseCorrection&&_showcaseEvents.Count(e=>e.Kind==CombatEventKind.Parry)==5&&sim.Players[1].Health==1&&sim.Phase==MatchPhase.Fight,"Restored branch with late parries removes the speculative K.O.");
-                ShowcaseCheck(sim.Players[0].Credits==0&&sim.Players[0].SpendReceipts.Count==1&&sim.Players.All(p=>p.ScoreHalfPoints==0)&&sim.LastSettlement==null,"Correction preserves one debit, zero points and no settlement");break;
+                ShowcaseCheck(sim.Players[0].Credits==0&&sim.Players[0].SuperUseReceipts.Count==1&&sim.Players[0].SuperUsesRemaining==0&&sim.Players.All(p=>p.ScoreHalfPoints==0)&&sim.LastSettlement==null,"Correction preserves one consumed permit, unchanged bank, zero points and no settlement");break;
         }
     }
 

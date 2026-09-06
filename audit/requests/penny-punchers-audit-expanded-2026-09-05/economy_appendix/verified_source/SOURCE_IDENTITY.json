@@ -1,0 +1,105 @@
+{
+  "repository": "RJW34/Penny-Punchers",
+  "commit": "1623ee62c4f4b6d5574bbb9909eb6fe4e32f5441",
+  "verification": "Every data file matches the Git blob SHA returned for the pinned repository tree. Network download into container unavailable; attachment bytes reused only after complete hash verification.",
+  "files": [
+    {
+      "path": "data/combat.json",
+      "git_blob_sha1": "b6a6877eac0c00644711bf000daa2ecc4dcc6ac6",
+      "sha256": "92871ce7f157bc7d51c005890b6ac0f92c2d466cefa382cebf524eef014690a8",
+      "size": 2041,
+      "retrieval": "matched existing attachment bytes"
+    },
+    {
+      "path": "data/economy.json",
+      "git_blob_sha1": "4f391a33a6be52c4895c9facd2044b51de57ec65",
+      "sha256": "0998e50ba3bda3bcaa8e30d8369c80af2de1c22fc61a2ad05235329c44bc709a",
+      "size": 935,
+      "retrieval": "matched existing attachment bytes"
+    },
+    {
+      "path": "data/fighters/rook.json",
+      "git_blob_sha1": "af527083b11dbf01c5b85b0c1b48badeeb944211",
+      "sha256": "0855610e0b033a61171a75d79d9627867f07115e429f2bb8372fc3fe74d70d89",
+      "size": 58715,
+      "retrieval": "reconstructed from attached seed plus inspected contacted EX->super cancel; exact current Git blob hash verified"
+    },
+    {
+      "path": "data/fighters/vale.json",
+      "git_blob_sha1": "b934ae2e6651299a7359a4f23d8b92e8263548a3",
+      "sha256": "22ca28254201cb48a0ecfda1fe69923d851fcec37bac29280b3181c88a6d8592",
+      "size": 58397,
+      "retrieval": "reconstructed from attached seed plus inspected contacted EX->super cancel; exact current Git blob hash verified"
+    },
+    {
+      "path": "data/inputs.json",
+      "git_blob_sha1": "3603bd82ff34854a6bd1b976b5339832b7526d4f",
+      "sha256": "73c7550b65b36ebe7ddf60315438856172b4768fb4f86d50fbdd609154b2df1b",
+      "size": 1631,
+      "retrieval": "matched existing attachment bytes"
+    },
+    {
+      "path": "data/items.json",
+      "git_blob_sha1": "856fe895365cf09c06d12eb7f27a1e9bef276281",
+      "sha256": "4c6d446a9de41be636598bb4b8bcf38c970caecd82e7ce14d52f4640309d3710",
+      "size": 8342,
+      "retrieval": "matched existing attachment bytes"
+    },
+    {
+      "path": "data/network.json",
+      "git_blob_sha1": "8f884293c0f5b3fd989429e1fa7998d8dbb40732",
+      "sha256": "00adf5c855bd6b94b8c53944ffb2416934dae238c69922e067a44e34e65b391a",
+      "size": 774,
+      "retrieval": "matched existing attachment bytes"
+    },
+    {
+      "path": "data/physics.json",
+      "git_blob_sha1": "03c89012ef7aa9a0d5aee4ac84c298295f75c176",
+      "sha256": "926fd03672fc6ccdf374b87a05c39937792ffddf6f6f9c75897bfbebbcc6176b",
+      "size": 677,
+      "retrieval": "matched existing attachment bytes"
+    },
+    {
+      "path": "data/resource_contract.json",
+      "git_blob_sha1": "850d7d26ebf73bc1a2b480f9088bdb61ef8c9494",
+      "sha256": "719139cd312423802a42a9d3def87fb6d815418f4063357c68b49216e4b01b3e",
+      "size": 1123,
+      "retrieval": "matched existing attachment bytes"
+    },
+    {
+      "path": "data/rules.json",
+      "git_blob_sha1": "705563321e2c8a527d46fe84aeb7edf5c7ef22d2",
+      "sha256": "48c6e045aa8595eb0df4235aca3ba973e7c25260a80e4d5120217d37c4a66fa4",
+      "size": 1058,
+      "retrieval": "matched existing attachment bytes"
+    },
+    {
+      "path": "data/stages/foundry.json",
+      "git_blob_sha1": "616c64dc99a652ce4fb12a901d7510bb1eae4e81",
+      "sha256": "64fff31556e0a317ab292fb793824868281464b29e338a9c8c5a3d99c3e25264",
+      "size": 446,
+      "retrieval": "matched existing attachment bytes"
+    },
+    {
+      "path": "data/stages/grid.json",
+      "git_blob_sha1": "6e6e464fb66f027b3cb3a31d852f5fc898c330fa",
+      "sha256": "92b1e64d6303144222ac5eeae92983c847e191703e070d523dfa529581775b5b",
+      "size": 443,
+      "retrieval": "matched existing attachment bytes"
+    },
+    {
+      "path": "data/toolchain_policy.json",
+      "git_blob_sha1": "32485ce7e1baa89210aa955762ac5cfa2b3b0172",
+      "sha256": "6e348b09daaff567c027c89bb41a6d42fdcf9718171f9765fe6d1b050afe8ec4",
+      "size": 681,
+      "retrieval": "matched existing attachment bytes"
+    },
+    {
+      "path": "src/StrikeLedger.Core/EconomySeed.cs",
+      "git_blob_sha1": "f1a12bf13109f4882941866d23f6e01ed5780044",
+      "sha256": "65a4e4b020bb7df2e7a991378639fc6a0e0a9341e3f09ffd66f6102be1d35d72",
+      "size": 4804,
+      "retrieval": "Matched current GitHub file blob to existing attachment; not compiled here"
+    }
+  ]
+}

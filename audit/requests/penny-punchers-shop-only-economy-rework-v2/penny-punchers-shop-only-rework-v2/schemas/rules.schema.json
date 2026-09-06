@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "ruleset_id",
+    "status",
+    "players",
+    "arenas",
+    "tick_hz",
+    "starting_credits",
+    "wallet_cap",
+    "win_payout",
+    "draw_payout",
+    "loss_payouts",
+    "preparation_seconds",
+    "reveal_seconds",
+    "countdown_seconds",
+    "round_seconds",
+    "max_rounds",
+    "target_half_points",
+    "draw_half_points_each",
+    "round_shop_spend_cap",
+    "slot_limits",
+    "ownership_duration",
+    "ex_repeat_policy",
+    "super_policy",
+    "super_choice",
+    "combat_debit",
+    "combat_bank_writes",
+    "reward_deposit",
+    "passive_income",
+    "ordinary_hit_income",
+    "global_stat_products",
+    "team_systems",
+    "reward_policy",
+    "defaults_are_tunable_not_user_quotes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "ruleset_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "players": {
+      "const": 2
+    },
+    "arenas": {
+      "const": 1
+    },
+    "tick_hz": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "starting_credits": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "wallet_cap": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "win_payout": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "draw_payout": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "loss_payouts": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "preparation_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "reveal_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "countdown_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "round_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_rounds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "target_half_points": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "draw_half_points_each": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "round_shop_spend_cap": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "slot_limits": {
+      "type": "object",
+      "required": [
+        "signature",
+        "technique",
+        "gambit",
+        "ex",
+        "super"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "signature": {
+          "const": 1
+        },
+        "technique": {
+          "const": 1
+        },
+        "gambit": {
+          "const": 1
+        },
+        "ex": {
+          "const": 2
+        },
+        "super": {
+          "const": 1
+        }
+      }
+    },
+    "ownership_duration": {
+      "const": "one_round_win_or_loss"
+    },
+    "ex_repeat_policy": {
+      "type": "string"
+    },
+    "super_policy": {
+      "type": "string"
+    },
+    "super_choice": {
+      "type": "string"
+    },
+    "combat_debit": {
+      "const": 0
+    },
+    "combat_bank_writes": {
+      "const": false
+    },
+    "reward_deposit": {
+      "const": "confirmed_round_settlement"
+    },
+    "passive_income": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "ordinary_hit_income": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "global_stat_products": {
+      "const": false
+    },
+    "team_systems": {
+      "const": false
+    },
+    "reward_policy": {
+      "type": "object"
+    },
+    "defaults_are_tunable_not_user_quotes": {
+      "type": "array"
+    }
+  }
+}

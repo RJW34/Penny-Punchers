@@ -1,0 +1,10 @@
+# Repetition review before shipping licenses
+Removing per-use price removes a limiter. Existing EX and super balance results do not transfer. The deliberate split is unlimited licensed EX after normal recovery versus one prepaid super use per round. Show this distinction explicitly.
+
+For each EX: measured earliest restart after hit/block/parry/whiff, charge retained/reset, recovery punish, projectile occupancy, contact cancel rules, invulnerability end, health cost if any, and free defender escape/contest. Test repeated low-risk chip and sustained corner loops for a whole round. A blockstring can be strong after an earned opening without being globally broken; report startup/spacing and costs. Do not declare an infinite from an unexplained frame table.
+
+Two EX families can be mixed with rental tricks and a super. Test one-license, two-license and high-bank carts; owned EX→super cancels require the prepaid use. Reject EX self/EX-to-EX cancel cycles unless authored and finitely bounded by commitment, not a disguised recharge resource. Existing charge moves still require charge for EVERY activation. No EX purchase makes motions automatic, enlarges parry windows or grants universal armor.
+
+For each super: permits bought at preparation, selected anew each round, consume once at legal startup. Failed occupancy/input/phase check consumes nothing. Whiff/interrupt/parry/block do consume. All existing supers remain comparable at900/1200/1500 initially but every price is unvalidated for one-use availability. Do not automatically choose all cheap art1 or switch user selection secretly. No stacking duplicate permits, “unlimited super license”, refreshing install by starting it again, or retaining unused permit to next round in the default ruleset.
+
+Advanced Overtime/Prism, if present: Overtime grants only its documented temporary hit routes, not free unowned EX. Prism and generated entities inherit root IDs; entire multihit root is at most one precision-parry reward. Neither refunds a permit or creates money directly. Keep their original mechanical counterplay; do not substitute stat buffs.

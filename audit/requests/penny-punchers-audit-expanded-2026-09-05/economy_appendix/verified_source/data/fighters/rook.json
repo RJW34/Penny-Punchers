@@ -1,0 +1,2636 @@
+{
+  "version": 1,
+  "id": "rook",
+  "display_name": "Rook",
+  "archetype": "motion-input close-range pressure",
+  "health": 1000,
+  "stun_limit": 1000,
+  "physics": {
+    "walk_forward": 3000,
+    "walk_back": 2100,
+    "dash_forward_ticks": 16,
+    "dash_forward_distance": 96000,
+    "dash_back_ticks": 20,
+    "dash_back_distance": 85000,
+    "jump_start_ticks": 4,
+    "jump_velocity": 13500,
+    "super_jump_velocity": 15500,
+    "jump_horizontal": 4000,
+    "gravity": 900,
+    "proximity_threshold": 54000,
+    "kara_throw_move_id": "command_fhp"
+  },
+  "pushbox": {
+    "x": -16000,
+    "y": 0,
+    "width": 32000,
+    "height": 90000
+  },
+  "hurtboxes": {
+    "standing": [
+      {
+        "x": -15000,
+        "y": 0,
+        "width": 30000,
+        "height": 95000
+      }
+    ],
+    "crouching": [
+      {
+        "x": -17000,
+        "y": 0,
+        "width": 34000,
+        "height": 55000
+      }
+    ],
+    "air": [
+      {
+        "x": -14000,
+        "y": 0,
+        "width": 28000,
+        "height": 85000
+      }
+    ]
+  },
+  "super_arts": [
+    {
+      "id": "art_1",
+      "name": "Circuit Break",
+      "move_id": "super_1",
+      "credit_cost": 900,
+      "selected_at": "match_setup",
+      "role": "advancing_confirm"
+    },
+    {
+      "id": "art_2",
+      "name": "Forge Impact",
+      "move_id": "super_2",
+      "credit_cost": 1200,
+      "selected_at": "match_setup",
+      "role": "vertical_reversal"
+    },
+    {
+      "id": "art_3",
+      "name": "Rush Cascade",
+      "move_id": "super_3",
+      "credit_cost": 1500,
+      "selected_at": "match_setup",
+      "role": "long_reach_rush"
+    }
+  ],
+  "default_super": "art_1",
+  "target_combos": [
+    {
+      "from": "s_lp",
+      "to": "s_mp",
+      "requires_contact": true,
+      "start": 3,
+      "end": 8
+    }
+  ],
+  "moves": [
+    {
+      "id": "s_lp",
+      "name": "S LP",
+      "kind": "normal",
+      "command": "S+LP",
+      "startup": 3,
+      "active": 2,
+      "recovery": 7,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 3,
+          "end": 5,
+          "x": 8000,
+          "y": 54000,
+          "width": 29000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 35,
+          "stun": 45,
+          "rank": 1,
+          "hitstun": 14,
+          "blockstun": 9,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 3,
+          "end": 8,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "s_lp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "s_mp",
+      "name": "S MP",
+      "kind": "normal",
+      "command": "S+MP",
+      "startup": 5,
+      "active": 3,
+      "recovery": 12,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 8,
+          "x": 8000,
+          "y": 54000,
+          "width": 43000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 65,
+          "stun": 85,
+          "rank": 2,
+          "hitstun": 21,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 5,
+          "end": 11,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "s_mp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "s_hp",
+      "name": "S HP",
+      "kind": "normal",
+      "command": "S+HP",
+      "startup": 8,
+      "active": 4,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 12,
+          "x": 8000,
+          "y": 54000,
+          "width": 60000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 95,
+          "stun": 125,
+          "rank": 3,
+          "hitstun": 26,
+          "blockstun": 16,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "s_hp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "s_lk",
+      "name": "S LK",
+      "kind": "normal",
+      "command": "S+LK",
+      "startup": 3,
+      "active": 2,
+      "recovery": 7,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 3,
+          "end": 5,
+          "x": 8000,
+          "y": 54000,
+          "width": 36000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 35,
+          "stun": 45,
+          "rank": 1,
+          "hitstun": 14,
+          "blockstun": 9,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 3,
+          "end": 8,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "s_lk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "s_mk",
+      "name": "S MK",
+      "kind": "normal",
+      "command": "S+MK",
+      "startup": 5,
+      "active": 3,
+      "recovery": 12,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 8,
+          "x": 8000,
+          "y": 54000,
+          "width": 50000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 65,
+          "stun": 85,
+          "rank": 2,
+          "hitstun": 21,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 5,
+          "end": 11,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "s_mk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "s_hk",
+      "name": "S HK",
+      "kind": "normal",
+      "command": "S+HK",
+      "startup": 8,
+      "active": 4,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 12,
+          "x": 8000,
+          "y": 54000,
+          "width": 67000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 95,
+          "stun": 125,
+          "rank": 3,
+          "hitstun": 26,
+          "blockstun": 16,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "s_hk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "c_lp",
+      "name": "C LP",
+      "kind": "normal",
+      "command": "C+LP",
+      "startup": 3,
+      "active": 2,
+      "recovery": 7,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 3,
+          "end": 5,
+          "x": 8000,
+          "y": 20000,
+          "width": 29000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 35,
+          "stun": 45,
+          "rank": 1,
+          "hitstun": 14,
+          "blockstun": 9,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 3,
+          "end": 8,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "c_lp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "c_mp",
+      "name": "C MP",
+      "kind": "normal",
+      "command": "C+MP",
+      "startup": 5,
+      "active": 3,
+      "recovery": 12,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 8,
+          "x": 8000,
+          "y": 20000,
+          "width": 43000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 65,
+          "stun": 85,
+          "rank": 2,
+          "hitstun": 21,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 5,
+          "end": 11,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "c_mp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "c_hp",
+      "name": "C HP",
+      "kind": "normal",
+      "command": "C+HP",
+      "startup": 8,
+      "active": 4,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 12,
+          "x": 8000,
+          "y": 20000,
+          "width": 60000,
+          "height": 17000,
+          "level": "mid",
+          "damage": 95,
+          "stun": 125,
+          "rank": 3,
+          "hitstun": 26,
+          "blockstun": 16,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "c_hp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "c_lk",
+      "name": "C LK",
+      "kind": "normal",
+      "command": "C+LK",
+      "startup": 3,
+      "active": 2,
+      "recovery": 7,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 3,
+          "end": 5,
+          "x": 8000,
+          "y": 20000,
+          "width": 36000,
+          "height": 17000,
+          "level": "low",
+          "damage": 35,
+          "stun": 45,
+          "rank": 1,
+          "hitstun": 14,
+          "blockstun": 9,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 3,
+          "end": 8,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "c_lk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "c_mk",
+      "name": "C MK",
+      "kind": "normal",
+      "command": "C+MK",
+      "startup": 5,
+      "active": 3,
+      "recovery": 12,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 8,
+          "x": 8000,
+          "y": 20000,
+          "width": 50000,
+          "height": 17000,
+          "level": "low",
+          "damage": 65,
+          "stun": 85,
+          "rank": 2,
+          "hitstun": 21,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 5,
+          "end": 11,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "c_mk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "c_hk",
+      "name": "C HK",
+      "kind": "normal",
+      "command": "C+HK",
+      "startup": 8,
+      "active": 4,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 12,
+          "x": 8000,
+          "y": 20000,
+          "width": 67000,
+          "height": 17000,
+          "level": "low",
+          "damage": 95,
+          "stun": 125,
+          "rank": 3,
+          "hitstun": 26,
+          "blockstun": 16,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "c_hk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "j_lp",
+      "name": "J LP",
+      "kind": "normal",
+      "command": "J+LP",
+      "startup": 3,
+      "active": 2,
+      "recovery": 7,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 3,
+          "end": 5,
+          "x": 8000,
+          "y": 54000,
+          "width": 29000,
+          "height": 17000,
+          "level": "air",
+          "damage": 35,
+          "stun": 45,
+          "rank": 1,
+          "hitstun": 14,
+          "blockstun": 9,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "j_lp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "landing_recovery": 4,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "j_mp",
+      "name": "J MP",
+      "kind": "normal",
+      "command": "J+MP",
+      "startup": 5,
+      "active": 3,
+      "recovery": 12,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 8,
+          "x": 8000,
+          "y": 54000,
+          "width": 43000,
+          "height": 17000,
+          "level": "air",
+          "damage": 65,
+          "stun": 85,
+          "rank": 2,
+          "hitstun": 21,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "j_mp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "landing_recovery": 4,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "j_hp",
+      "name": "J HP",
+      "kind": "normal",
+      "command": "J+HP",
+      "startup": 8,
+      "active": 4,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 12,
+          "x": 8000,
+          "y": 54000,
+          "width": 60000,
+          "height": 17000,
+          "level": "air",
+          "damage": 95,
+          "stun": 125,
+          "rank": 3,
+          "hitstun": 26,
+          "blockstun": 16,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "j_hp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "landing_recovery": 4,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "j_lk",
+      "name": "J LK",
+      "kind": "normal",
+      "command": "J+LK",
+      "startup": 3,
+      "active": 2,
+      "recovery": 7,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 3,
+          "end": 5,
+          "x": 8000,
+          "y": 54000,
+          "width": 36000,
+          "height": 17000,
+          "level": "air",
+          "damage": 35,
+          "stun": 45,
+          "rank": 1,
+          "hitstun": 14,
+          "blockstun": 9,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "j_lk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "landing_recovery": 4,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "j_mk",
+      "name": "J MK",
+      "kind": "normal",
+      "command": "J+MK",
+      "startup": 5,
+      "active": 3,
+      "recovery": 12,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 8,
+          "x": 8000,
+          "y": 54000,
+          "width": 50000,
+          "height": 17000,
+          "level": "air",
+          "damage": 65,
+          "stun": 85,
+          "rank": 2,
+          "hitstun": 21,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "j_mk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "landing_recovery": 4,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "j_hk",
+      "name": "J HK",
+      "kind": "normal",
+      "command": "J+HK",
+      "startup": 8,
+      "active": 4,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 12,
+          "x": 8000,
+          "y": 54000,
+          "width": 67000,
+          "height": 17000,
+          "level": "air",
+          "damage": 95,
+          "stun": 125,
+          "rank": 3,
+          "hitstun": 26,
+          "blockstun": 16,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "j_hk",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "landing_recovery": 4,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "close_mp",
+      "name": "Close MP",
+      "kind": "normal",
+      "command": "CLOSE+MP",
+      "startup": 4,
+      "active": 3,
+      "recovery": 10,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 4,
+          "end": 7,
+          "x": 5000,
+          "y": 45000,
+          "width": 30000,
+          "height": 32000,
+          "level": "mid",
+          "damage": 65,
+          "stun": 80,
+          "rank": 2,
+          "hitstun": 23,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 4,
+          "end": 10,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "close_mp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "close_hp",
+      "name": "Close HP",
+      "kind": "normal",
+      "command": "CLOSE+HP",
+      "startup": 6,
+      "active": 3,
+      "recovery": 10,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 6,
+          "end": 9,
+          "x": 5000,
+          "y": 45000,
+          "width": 30000,
+          "height": 32000,
+          "level": "mid",
+          "damage": 90,
+          "stun": 80,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 6,
+          "end": 12,
+          "requires_contact": true,
+          "targets": [
+            "special",
+            "selected_super",
+            "ex_special"
+          ]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "close_hp",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "command_fhp",
+      "name": "Forward hammer",
+      "kind": "unique",
+      "command": "6+HP",
+      "startup": 10,
+      "active": 3,
+      "recovery": 17,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 10,
+          "end": 13,
+          "x": 12000,
+          "y": 50000,
+          "width": 61000,
+          "height": 25000,
+          "level": "mid",
+          "damage": 100,
+          "stun": 80,
+          "rank": 3,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "command_fhp",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 0,
+          "end": 3,
+          "vx": 1000,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "kara_throw_ticks": 2,
+      "credit_cost": 0,
+      "debit_on_start": false,
+      "kara_throw_eligible": true
+    },
+    {
+      "id": "leap_overhead",
+      "name": "Leap strike",
+      "kind": "unique",
+      "command": "MP+MK",
+      "startup": 17,
+      "active": 3,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 17,
+          "end": 20,
+          "x": 8000,
+          "y": 48000,
+          "width": 44000,
+          "height": 30000,
+          "level": "overhead",
+          "damage": 70,
+          "stun": 90,
+          "rank": 2,
+          "hitstun": 20,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "leap_overhead",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 4,
+          "end": 10,
+          "vx": 500,
+          "vy": 1100
+        },
+        {
+          "start": 10,
+          "end": 16,
+          "vx": 500,
+          "vy": -1100
+        }
+      ],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "throw_forward",
+      "name": "Forward throw",
+      "kind": "throw",
+      "command": "LP+LK",
+      "startup": 3,
+      "active": 2,
+      "recovery": 24,
+      "hitboxes": [],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "throw_forward",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "throw": {
+        "range": 24000,
+        "damage": 120,
+        "stun": 80,
+        "techable": true,
+        "swap_sides": false,
+        "knockdown": "hard"
+      },
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "throw_back",
+      "name": "Back throw",
+      "kind": "throw",
+      "command": "4+LP+LK",
+      "startup": 3,
+      "active": 2,
+      "recovery": 24,
+      "hitboxes": [],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "throw_back",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "throw": {
+        "range": 24000,
+        "damage": 120,
+        "stun": 80,
+        "techable": true,
+        "swap_sides": true,
+        "knockdown": "hard"
+      },
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "pulse_l",
+      "name": "Pulse shot L",
+      "kind": "special",
+      "command": "qcf+LP",
+      "startup": 10,
+      "active": 1,
+      "recovery": 19,
+      "hitboxes": [],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "pulse_l",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": {
+        "spawn_tick": 10,
+        "spawn_x": 28000,
+        "spawn_y": 40000,
+        "vx": 3000,
+        "life_ticks": 150,
+        "hits": 1,
+        "rehit_ticks": 8,
+        "damage": 65,
+        "stun": 65,
+        "hitstun": 20,
+        "blockstun": 14,
+        "width": 22000,
+        "height": 22000,
+        "level": "mid",
+        "max_active_per_owner": 1,
+        "rank": 4,
+        "juggle_cost": 1,
+        "parryable": true
+      },
+      "special_family": "pulse",
+      "strength": "l",
+      "role": "projectile",
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "pulse_m",
+      "name": "Pulse shot M",
+      "kind": "special",
+      "command": "qcf+MP",
+      "startup": 13,
+      "active": 1,
+      "recovery": 23,
+      "hitboxes": [],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "pulse_m",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": {
+        "spawn_tick": 13,
+        "spawn_x": 28000,
+        "spawn_y": 40000,
+        "vx": 4000,
+        "life_ticks": 150,
+        "hits": 1,
+        "rehit_ticks": 8,
+        "damage": 65,
+        "stun": 65,
+        "hitstun": 20,
+        "blockstun": 14,
+        "width": 22000,
+        "height": 22000,
+        "level": "mid",
+        "max_active_per_owner": 1,
+        "rank": 4,
+        "juggle_cost": 1,
+        "parryable": true
+      },
+      "special_family": "pulse",
+      "strength": "m",
+      "role": "projectile",
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "pulse_h",
+      "name": "Pulse shot H",
+      "kind": "special",
+      "command": "qcf+HP",
+      "startup": 16,
+      "active": 1,
+      "recovery": 28,
+      "hitboxes": [],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "pulse_h",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": {
+        "spawn_tick": 16,
+        "spawn_x": 28000,
+        "spawn_y": 40000,
+        "vx": 5000,
+        "life_ticks": 150,
+        "hits": 1,
+        "rehit_ticks": 8,
+        "damage": 65,
+        "stun": 65,
+        "hitstun": 20,
+        "blockstun": 14,
+        "width": 22000,
+        "height": 22000,
+        "level": "mid",
+        "max_active_per_owner": 1,
+        "rank": 4,
+        "juggle_cost": 1,
+        "parryable": true
+      },
+      "special_family": "pulse",
+      "strength": "h",
+      "role": "projectile",
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "pulse_ex",
+      "name": "Pulse shot EX",
+      "kind": "ex_special",
+      "command": "qcf+PP",
+      "startup": 8,
+      "active": 1,
+      "recovery": 24,
+      "hitboxes": [],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "pulse_ex",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": {
+        "spawn_tick": 8,
+        "spawn_x": 28000,
+        "spawn_y": 40000,
+        "vx": 5000,
+        "life_ticks": 150,
+        "hits": 2,
+        "rehit_ticks": 8,
+        "damage": 55,
+        "stun": 65,
+        "hitstun": 20,
+        "blockstun": 14,
+        "width": 22000,
+        "height": 22000,
+        "level": "mid",
+        "max_active_per_owner": 1,
+        "rank": 4,
+        "juggle_cost": 1,
+        "parryable": true
+      },
+      "special_family": "pulse",
+      "strength": "ex",
+      "role": "projectile",
+      "credit_cost": 300,
+      "debit_on_start": true
+    },
+    {
+      "id": "rise_l",
+      "name": "Rising elbow L",
+      "kind": "special",
+      "command": "dp+LP",
+      "startup": 4,
+      "active": 5,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 4,
+          "end": 9,
+          "x": 10000,
+          "y": 60000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 70,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "soft",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 4,
+          "end": 9,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "rise_l",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 4,
+          "end": 12,
+          "vx": 600,
+          "vy": 2000
+        }
+      ],
+      "projectile": null,
+      "special_family": "rise",
+      "strength": "l",
+      "role": "anti_air",
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "rise_m",
+      "name": "Rising elbow M",
+      "kind": "special",
+      "command": "dp+MP",
+      "startup": 6,
+      "active": 5,
+      "recovery": 23,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 6,
+          "end": 11,
+          "x": 10000,
+          "y": 60000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 90,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "soft",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 6,
+          "end": 11,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "rise_m",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 6,
+          "end": 14,
+          "vx": 600,
+          "vy": 2000
+        }
+      ],
+      "projectile": null,
+      "special_family": "rise",
+      "strength": "m",
+      "role": "anti_air",
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "rise_h",
+      "name": "Rising elbow H",
+      "kind": "special",
+      "command": "dp+HP",
+      "startup": 8,
+      "active": 5,
+      "recovery": 28,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 13,
+          "x": 10000,
+          "y": 60000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 110,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "soft",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 8,
+          "end": 13,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "rise_h",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 8,
+          "end": 16,
+          "vx": 600,
+          "vy": 2000
+        }
+      ],
+      "projectile": null,
+      "special_family": "rise",
+      "strength": "h",
+      "role": "anti_air",
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "rise_ex",
+      "name": "Rising elbow EX",
+      "kind": "ex_special",
+      "command": "dp+PP",
+      "startup": 3,
+      "active": 5,
+      "recovery": 24,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 3,
+          "end": 8,
+          "x": 10000,
+          "y": 60000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 125,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "soft",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "rise_ex",
+      "invulnerability": [
+        {
+          "start": 0,
+          "end": 5,
+          "to": [
+            "strike",
+            "projectile"
+          ]
+        }
+      ],
+      "movement": [
+        {
+          "start": 3,
+          "end": 11,
+          "vx": 600,
+          "vy": 2000
+        }
+      ],
+      "projectile": null,
+      "special_family": "rise",
+      "strength": "ex",
+      "role": "anti_air",
+      "credit_cost": 300,
+      "debit_on_start": true
+    },
+    {
+      "id": "knee_l",
+      "name": "Traveling knee L",
+      "kind": "special",
+      "command": "qcf+LK",
+      "startup": 10,
+      "active": 5,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 10,
+          "end": 15,
+          "x": 10000,
+          "y": 35000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 70,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 10,
+          "end": 15,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "knee_l",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 3,
+          "end": 15,
+          "vx": 1300,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "special_family": "knee",
+      "strength": "l",
+      "role": "advance",
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "knee_m",
+      "name": "Traveling knee M",
+      "kind": "special",
+      "command": "qcf+MK",
+      "startup": 13,
+      "active": 5,
+      "recovery": 23,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 13,
+          "end": 18,
+          "x": 10000,
+          "y": 35000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 90,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 13,
+          "end": 18,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "knee_m",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 3,
+          "end": 18,
+          "vx": 1300,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "special_family": "knee",
+      "strength": "m",
+      "role": "advance",
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "knee_h",
+      "name": "Traveling knee H",
+      "kind": "special",
+      "command": "qcf+HK",
+      "startup": 16,
+      "active": 5,
+      "recovery": 28,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 16,
+          "end": 21,
+          "x": 10000,
+          "y": 35000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 110,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 16,
+          "end": 21,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "knee_h",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 3,
+          "end": 21,
+          "vx": 1300,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "special_family": "knee",
+      "strength": "h",
+      "role": "advance",
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "knee_ex",
+      "name": "Traveling knee EX",
+      "kind": "ex_special",
+      "command": "qcf+KK",
+      "startup": 8,
+      "active": 5,
+      "recovery": 24,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 13,
+          "x": 10000,
+          "y": 35000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 125,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "soft",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 8,
+          "end": 13,
+          "requires_contact": true,
+          "targets": ["selected_super"]
+        }
+      ],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "knee_ex",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 3,
+          "end": 13,
+          "vx": 1300,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "special_family": "knee",
+      "strength": "ex",
+      "role": "advance",
+      "credit_cost": 300,
+      "debit_on_start": true
+    },
+    {
+      "id": "sway_l",
+      "name": "Retreat palm L",
+      "kind": "special",
+      "command": "qcb+LK",
+      "startup": 10,
+      "active": 5,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 10,
+          "end": 15,
+          "x": 10000,
+          "y": 35000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 70,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 10,
+          "end": 15,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "sway_l",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 0,
+          "end": 7,
+          "vx": -1400,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "special_family": "sway",
+      "strength": "l",
+      "role": "retreat",
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "sway_m",
+      "name": "Retreat palm M",
+      "kind": "special",
+      "command": "qcb+MK",
+      "startup": 13,
+      "active": 5,
+      "recovery": 23,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 13,
+          "end": 18,
+          "x": 10000,
+          "y": 35000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 90,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 13,
+          "end": 18,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "sway_m",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 0,
+          "end": 7,
+          "vx": -1400,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "special_family": "sway",
+      "strength": "m",
+      "role": "retreat",
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "sway_h",
+      "name": "Retreat palm H",
+      "kind": "special",
+      "command": "qcb+HK",
+      "startup": 16,
+      "active": 5,
+      "recovery": 28,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 16,
+          "end": 21,
+          "x": 10000,
+          "y": 35000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 110,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [
+        {
+          "start": 16,
+          "end": 21,
+          "requires_contact": true,
+          "targets": [
+            "selected_super"
+          ]
+        }
+      ],
+      "negative_edge": true,
+      "availability": "base",
+      "pose": "sway_h",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 0,
+          "end": 7,
+          "vx": -1400,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "special_family": "sway",
+      "strength": "h",
+      "role": "retreat",
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "sway_ex",
+      "name": "Retreat palm EX",
+      "kind": "ex_special",
+      "command": "qcb+KK",
+      "startup": 8,
+      "active": 5,
+      "recovery": 24,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 8,
+          "end": 13,
+          "x": 10000,
+          "y": 35000,
+          "width": 40000,
+          "height": 40000,
+          "level": "mid",
+          "damage": 125,
+          "stun": 120,
+          "rank": 4,
+          "hitstun": 24,
+          "blockstun": 14,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "soft",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "sway_ex",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 0,
+          "end": 7,
+          "vx": -1400,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "special_family": "sway",
+      "strength": "ex",
+      "role": "retreat",
+      "credit_cost": 300,
+      "debit_on_start": true
+    },
+    {
+      "id": "super_1",
+      "name": "Circuit Break",
+      "kind": "super",
+      "command": "double_qcf+P",
+      "startup": 5,
+      "active": 20,
+      "recovery": 35,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 5,
+          "end": 7,
+          "x": 10000,
+          "y": 48000,
+          "width": 58000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h1",
+          "start": 9,
+          "end": 11,
+          "x": 10000,
+          "y": 48000,
+          "width": 58000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 1,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h2",
+          "start": 13,
+          "end": 15,
+          "x": 10000,
+          "y": 48000,
+          "width": 58000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 2,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h3",
+          "start": 17,
+          "end": 19,
+          "x": 10000,
+          "y": 48000,
+          "width": 58000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 3,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h4",
+          "start": 21,
+          "end": 23,
+          "x": 10000,
+          "y": 48000,
+          "width": 58000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 60,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 4,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "super_1",
+      "invulnerability": [
+        {
+          "start": 0,
+          "end": 6,
+          "to": [
+            "strike",
+            "projectile"
+          ]
+        }
+      ],
+      "movement": [
+        {
+          "start": 5,
+          "end": 25,
+          "vx": 500,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "super_freeze": 20,
+      "credit_cost": 900,
+      "debit_on_start": true,
+      "design_role": "advancing_confirm"
+    },
+    {
+      "id": "super_2",
+      "name": "Forge Impact",
+      "kind": "super",
+      "command": "double_qcf+P",
+      "startup": 6,
+      "active": 8,
+      "recovery": 35,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 6,
+          "end": 8,
+          "x": 10000,
+          "y": 25000,
+          "width": 40000,
+          "height": 125000,
+          "level": "mid",
+          "damage": 140,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h1",
+          "start": 10,
+          "end": 12,
+          "x": 10000,
+          "y": 25000,
+          "width": 40000,
+          "height": 125000,
+          "level": "mid",
+          "damage": 140,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 1,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "super_2",
+      "invulnerability": [
+        {
+          "start": 0,
+          "end": 7,
+          "to": [
+            "strike",
+            "projectile"
+          ]
+        }
+      ],
+      "movement": [
+        {
+          "start": 6,
+          "end": 12,
+          "vx": 300,
+          "vy": 3500
+        }
+      ],
+      "projectile": null,
+      "super_freeze": 20,
+      "credit_cost": 1200,
+      "debit_on_start": true,
+      "design_role": "vertical_reversal"
+    },
+    {
+      "id": "super_3",
+      "name": "Rush Cascade",
+      "kind": "super",
+      "command": "double_qcf+P",
+      "startup": 7,
+      "active": 12,
+      "recovery": 35,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 7,
+          "end": 9,
+          "x": 10000,
+          "y": 48000,
+          "width": 75000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 75,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h1",
+          "start": 11,
+          "end": 13,
+          "x": 10000,
+          "y": 48000,
+          "width": 75000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 75,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 1,
+          "juggle_cost": 1,
+          "parryable": true
+        },
+        {
+          "id": "h2",
+          "start": 15,
+          "end": 17,
+          "x": 10000,
+          "y": 48000,
+          "width": 75000,
+          "height": 65000,
+          "level": "mid",
+          "damage": 75,
+          "stun": 60,
+          "rank": 5,
+          "hitstun": 23,
+          "blockstun": 17,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 2,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "base",
+      "pose": "super_3",
+      "invulnerability": [
+        {
+          "start": 0,
+          "end": 8,
+          "to": [
+            "strike",
+            "projectile"
+          ]
+        }
+      ],
+      "movement": [
+        {
+          "start": 7,
+          "end": 19,
+          "vx": 2200,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "super_freeze": 20,
+      "credit_cost": 1500,
+      "debit_on_start": true,
+      "design_role": "long_reach_rush"
+    },
+    {
+      "id": "shop_clinch",
+      "name": "Clinch entry",
+      "kind": "special",
+      "command": "qcb+P",
+      "startup": 12,
+      "active": 3,
+      "recovery": 23,
+      "hitboxes": [],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "rook_clinch",
+      "pose": "shop_clinch",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "throw": {
+        "range": 27000,
+        "damage": 135,
+        "stun": 90,
+        "techable": false,
+        "swap_sides": false,
+        "knockdown": "hard"
+      },
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "shop_low_drive",
+      "name": "Low drive",
+      "kind": "special",
+      "command": "qcb+P",
+      "startup": 14,
+      "active": 3,
+      "recovery": 24,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 14,
+          "end": 17,
+          "x": 12000,
+          "y": 18000,
+          "width": 54000,
+          "height": 23000,
+          "level": "low",
+          "damage": 85,
+          "stun": 110,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "rook_low_drive",
+      "pose": "shop_low_drive",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "shop_high_hook",
+      "name": "High hook",
+      "kind": "unique",
+      "command": "6+HP",
+      "startup": 18,
+      "active": 3,
+      "recovery": 19,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 18,
+          "end": 21,
+          "x": 12000,
+          "y": 46000,
+          "width": 54000,
+          "height": 23000,
+          "level": "overhead",
+          "damage": 85,
+          "stun": 110,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 0,
+          "knockdown": "none",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "rook_high_hook",
+      "pose": "shop_high_hook",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "shop_low_turn",
+      "name": "Low turn",
+      "kind": "unique",
+      "command": "6+HP",
+      "startup": 14,
+      "active": 3,
+      "recovery": 24,
+      "hitboxes": [
+        {
+          "id": "h0",
+          "start": 14,
+          "end": 17,
+          "x": 12000,
+          "y": 18000,
+          "width": 54000,
+          "height": 23000,
+          "level": "low",
+          "damage": 85,
+          "stun": 110,
+          "rank": 3,
+          "hitstun": 23,
+          "blockstun": 13,
+          "push_x": 12000,
+          "launch_y": 9000,
+          "knockdown": "hard",
+          "hit_group": 0,
+          "juggle_cost": 1,
+          "parryable": true
+        }
+      ],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "rook_low_turn",
+      "pose": "shop_low_turn",
+      "invulnerability": [],
+      "movement": [],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "shop_step_feint",
+      "name": "Step feint",
+      "kind": "gambit",
+      "command": "4+HP+HK",
+      "startup": 0,
+      "active": 1,
+      "recovery": 15,
+      "hitboxes": [],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "rook_step_feint",
+      "pose": "shop_step_feint",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 0,
+          "end": 8,
+          "vx": 1700,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    },
+    {
+      "id": "shop_sway_feint",
+      "name": "Sway feint",
+      "kind": "gambit",
+      "command": "4+HP+HK",
+      "startup": 0,
+      "active": 1,
+      "recovery": 15,
+      "hitboxes": [],
+      "events": [],
+      "cancel_rules": [],
+      "negative_edge": false,
+      "availability": "rook_sway_feint",
+      "pose": "shop_sway_feint",
+      "invulnerability": [],
+      "movement": [
+        {
+          "start": 0,
+          "end": 8,
+          "vx": -1600,
+          "vy": 0
+        }
+      ],
+      "projectile": null,
+      "credit_cost": 0,
+      "debit_on_start": false
+    }
+  ],
+  "resource_notes": "Only this player's persistent credits fund EX/super startups and preparation leases. No earned gauge, prepaid uses, or team account."
+}

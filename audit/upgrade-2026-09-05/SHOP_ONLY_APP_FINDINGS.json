@@ -1,0 +1,471 @@
+{
+  "schema": "shop-only-v2-app-implementation-review-1",
+  "utc": "2026-09-05T23:39:23.819097+00:00",
+  "scope": "Production App, replay/rollback/private UDP, CPU ownership policy, training and existing field/interception regression. Native GUI, final exports, balance, physical input and owner/friend acceptance remain separately owned evidence.",
+  "status": "OWNED_SOFTWARE_CHECKS_PASS",
+  "configuration": "ExportRelease",
+  "build": "pp-shop-only-v2/3aaa9b7c6de09ecb685e805b0edd641b35d36972f2a74f4a45700dcf9d0360f0",
+  "content": {
+    "core": "0245f6813c2320a9081fd96fefb4fd600632c92ae8f2be8a56c049129f365734",
+    "full": "e9c73b68e2cc1a128ea6215eb35fcce75036a66deca708dd59d7699efc8ae1f8"
+  },
+  "assemblies": [
+    {
+      "path": "src/StrikeLedger.Core/bin/ExportRelease/net8.0/StrikeLedger.Core.dll",
+      "mvid": "3ac20fff-bc62-40e0-ab5d-88a864f980f8",
+      "sha256": "e0c1812e39177786ca355e079009908f79fea330aed1e80f86dae57188253f5b"
+    },
+    {
+      "path": "src/StrikeLedger.App/bin/ExportRelease/net8.0/StrikeLedger.App.dll",
+      "mvid": "9881ee74-0e0f-43c2-a793-21a566d26e5a",
+      "sha256": "aaa19df03d1d0551b50f119ccba9ae0d78984fe0d0c7120e6a66f94b3c185683"
+    },
+    {
+      "path": "src/StrikeLedger.NetworkLab/bin/ExportRelease/net8.0/StrikeLedger.NetworkLab.dll",
+      "mvid": "5e540daf-da0c-4b7b-9b3a-d56755b333d3",
+      "sha256": "1e613872a713a4dd8a0f65f623850c76cf6dc5e93bfe6eb84494cc7b4ecab210"
+    }
+  ],
+  "harness_provenance": "All current candidate reports use NetworkLab 1e613872 (MVID 5e540daf-da0c-4b7b-9b3a-d56755b333d3), including the full 15-group App suite and added actual reflection boundary. Only test harness additions occurred after the earlier 530d6940/6f825a6a reports; frozen Core/App identities remain exact. Earlier content reports are retained under their original paths and the prior review is archived below, never relabeled.",
+  "software_checks": {
+    "app_suites": [
+      {
+        "catalog": "core",
+        "groups": 15,
+        "all_pass": true,
+        "drills": 21,
+        "demonstration_entrypoints_facings": 196,
+        "intentional_cpu_option_witnesses": 21
+      },
+      {
+        "catalog": "full",
+        "groups": 15,
+        "all_pass": true,
+        "drills": 21,
+        "demonstration_entrypoints_facings": 220,
+        "intentional_cpu_option_witnesses": 25
+      }
+    ],
+    "network_profiles": [
+      {
+        "rtt": 0,
+        "jitter": 0,
+        "loss": 0,
+        "duplicates": 0,
+        "reorder": 0,
+        "passed": true,
+        "exitCodes": [
+          0,
+          0
+        ],
+        "byteIdenticalCanonicalStateAndReplay": true,
+        "matchingFinalHashWalletsScoresReceipts": true,
+        "elapsedSeconds": 31.577999999994063
+      },
+      {
+        "rtt": 50,
+        "jitter": 0,
+        "loss": 0,
+        "duplicates": 0,
+        "reorder": 0,
+        "passed": true,
+        "exitCodes": [
+          0,
+          0
+        ],
+        "byteIdenticalCanonicalStateAndReplay": true,
+        "matchingFinalHashWalletsScoresReceipts": true,
+        "elapsedSeconds": 74.01600000000326
+      },
+      {
+        "rtt": 100,
+        "jitter": 20,
+        "loss": 1,
+        "duplicates": 2,
+        "reorder": 5,
+        "passed": true,
+        "exitCodes": [
+          0,
+          0
+        ],
+        "byteIdenticalCanonicalStateAndReplay": true,
+        "matchingFinalHashWalletsScoresReceipts": true,
+        "elapsedSeconds": 96.40600000000268
+      },
+      {
+        "rtt": 150,
+        "jitter": 20,
+        "loss": 3,
+        "duplicates": 3,
+        "reorder": 10,
+        "passed": true,
+        "exitCodes": [
+          0,
+          0
+        ],
+        "byteIdenticalCanonicalStateAndReplay": true,
+        "matchingFinalHashWalletsScoresReceipts": true,
+        "elapsedSeconds": 106.0619999999908
+      }
+    ],
+    "expanded_actual_udp": true,
+    "existing_object_groups": 11,
+    "actual_shop_timeout": {
+      "passed": true,
+      "build": "pp-shop-only-v2/3aaa9b7c6de09ecb685e805b0edd641b35d36972f2a74f4a45700dcf9d0360f0",
+      "contentHash": "0245f6813c2320a9081fd96fefb4fd600632c92ae8f2be8a56c049129f365734",
+      "elapsedMilliseconds": 15110,
+      "realUdp": true,
+      "noManualSubmit": true,
+      "lastValidLicense": "rook_license_pulse_ex",
+      "rejectedDuplicate": true,
+      "hash": "82acf9101179a82ebcb02a9b68ccf0cfaa667e2b34d7a948f39fb512cf1acfb0",
+      "banks": [
+        0,
+        600
+      ],
+      "products": [
+        [
+          "rook_license_pulse_ex"
+        ],
+        []
+      ]
+    },
+    "actual_reflected_origin_precision_boundary": {
+      "passed": true,
+      "artifact": "reports/evidence/shop-v2-objects-candidate2/reflected-origin-precision.json",
+      "scope": "Actual reflected original root retained; own-origin manual precision parry gives no opportunity; enemy-origin positive control gives practice opportunity. Training never deposits competitive skill income."
+    }
+  },
+  "v2_acceptance_contributions": [
+    {
+      "ids": [
+        "SO-009",
+        "SO-036",
+        "SO-038"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-app-candidate-core/shop-v2-app.json",
+        "reports/evidence/shop-v2-app-candidate2-full/shop-v2-app.json"
+      ],
+      "claim": "Replay4 and wire2/hello3 reject legacy semantics; original legacy bytes remain unchanged; stale cart/reserve/price, forged bonus control, malformed input and corrupted receipts fail closed."
+    },
+    {
+      "ids": [
+        "SO-012",
+        "SO-026",
+        "SO-030",
+        "SO-031",
+        "SO-043"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-app-candidate-core/v2-round-ledger.json",
+        "reports/evidence/shop-v2-app-candidate2-full/v2-round-ledger.json"
+      ],
+      "claim": "Recorder and playback assert bank fixed every combat tick; actual final matches contain earned skill receipts, conserved separate outcome/skill deposits and bank clipping; final rounds identify postmatch unused funds. Abort/pause/rematch exercised in audit groups."
+    },
+    {
+      "ids": [
+        "SO-033",
+        "SO-034"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-app-candidate-core/false-prepaid-startup.json",
+        "reports/evidence/shop-v2-app-candidate-core/false-counter-reward.json",
+        "reports/evidence/shop-v2-app-candidate2-full/false-counter-reward.json"
+      ],
+      "claim": "Late actual input retracts a predicted super startup and separately a predicted50CH receipt, restores exact authoritative canonical state, and emits no false confirmed use/reward cue. CH fixture begins a legal authored forward-HP through the test action API after real approach inputs; late real kara input invalidates it. This is disclosed setup, not a fabricated played match."
+    },
+    {
+      "ids": [
+        "SO-035",
+        "SO-037"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-network-candidate/matrix-result.json",
+        "reports/evidence/shop-v2-network-candidate-full/matrix-result.json"
+      ],
+      "claim": "Quoted simultaneous carts plus independent actual two-process full matches; all profiles match final canonical bytes, replay bytes, banks, scores, ownership/use and skill receipts. No client-declared bonus protocol exists."
+    },
+    {
+      "ids": [
+        "SO-040"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-app-candidate-core/shop-timeout.json"
+      ],
+      "claim": "Real UDP peers wait the actual15-second deadline without manual submit. A duplicate cart is rejected while a preceding valid EX license cart survives and charges exactly once; other seat remains unchanged. Graphical timeout appearance is separate."
+    },
+    {
+      "ids": [
+        "SO-047",
+        "SO-048",
+        "SO-049"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-app-candidate-core/cpu-capability-traces.json",
+        "reports/evidence/shop-v2-app-candidate2-full/cpu-capability-traces.json",
+        "reports/evidence/shop-v2-app-candidate-core/drills/results.json",
+        "reports/evidence/shop-v2-app-candidate2-full/drills/results.json",
+        "reports/evidence/shop-v2-app-candidate-core/training-demonstrations.json",
+        "reports/evidence/shop-v2-app-candidate2-full/training-demonstrations.json"
+      ],
+      "claim": "Delayed actual-input CPU witnesses cover every supported purchase option, with zero hidden bank funding. Independent explicit training capabilities and all21 evaluator timeout/success traces pass; practice export includes actual contact facts, eligible clock/frozen edge, inputs, hashes, banks and uses. Competitive grant traces are in the separate round-ledger exports."
+    },
+    {
+      "ids": [
+        "SO-024",
+        "SO-050",
+        "SO-057"
+      ],
+      "evidence": [
+        "reports/evidence/shop-v2-objects-candidate2/buyable-object-tests.json",
+        "reports/evidence/shop-v2-objects-candidate2/buyable-object-traces.jsonl",
+        "reports/evidence/shop-v2-app-candidate-core/upgrade-regressions.json",
+        "reports/evidence/shop-v2-app-candidate2-full/upgrade-regressions.json",
+        "reports/evidence/shop-v2-objects-candidate2/reflected-origin-precision.json"
+      ],
+      "claim": "Existing Prism/Anchor/interception/reflection/Arc mechanics retain ownership and source-root snapshots under v2; object lifecycle tests use owned zero-bank permits, blocked second use, tier exclusion and no refund. Existing replay/training/network audit regressions continue to pass. Actual manual precision parries of reflected own-origin shots earn no opportunity; an enemy-origin positive control earns a practice opportunity with the same eligible-age rule."
+    }
+  ],
+  "repaired_during_v2_validation": [
+    {
+      "defect": "Expanded catalog alphabetic super-product selection equipped Prism for the scripted multihit-parry lesson.",
+      "repair": "Explicitly equip the authored super_1 dummy fixture for red/multihit/empty-kit defense lessons.",
+      "failed_development_artifact": "reports/evidence/shop-v2-app-full-dev/error-tests.txt",
+      "verified": [
+        "reports/evidence/shop-v2-app-candidate2-full/training-demonstrations.json",
+        "reports/evidence/shop-v2-app-candidate2-full/drills/results.json"
+      ]
+    },
+    {
+      "defect": "Training comparison explanation overflowed its rendered panel.",
+      "repair": "Three explicit short lines in Main.TrainingPractice.cs.",
+      "verification_scope": "Parent presentation agent owns final native screen review."
+    }
+  ],
+  "historical_boundary": "audit/upgrade-2026-09-05/APP_FINDINGS.json and upgrade-* evidence describe pre-v2 direct-spend implementation. They remain preserved and are not v2 balance or current economy proof.",
+  "limitations": [
+    "CPU supported purchase subset21/25 is intentional; unimplemented policy strategies for passive/counter/branch-only rentals are excluded from purchases. Witnesses establish execution, not strong human strategy or price balance.",
+    "Same-lineup mutual rematch is implemented; changing fighter or swapping seats still reconnects through the lobby. No live measured RTT/jitter/loss estimator is claimed.",
+    "Practice comparisons are single-action teaching tools, not equal-opening-wallet causal experiments. No full authored starter-to-all-route library or multi-slot weighted dummy recordings is claimed.",
+    "Physical controllers, two physical computers, human feel and owner/friend approval remain unperformed by this subtask. Fault percentages are configured loopback simulation, not live path measurements.",
+    "Final exported shell/native GUI/packaging and balance evidence must be bound separately; this report does not infer their completion from App checks."
+  ],
+  "source_files_sha256": {
+    "game/Main.ArchiveLobby.cs": "bf1d715fbe4b623706421af8ef3bf5d8eefa4da08bd3e95004420f059abbb5eb",
+    "game/Main.EconomyReport.cs": "da6fccfe6d8d6cc19dcecbd2b1561ac9ade1447eb27a38e256ea7c88242e0ab3",
+    "game/Main.LabDiagnostics.cs": "ad294c806a8bf0f0f4d0deb6cce489cb8928137c361673fe2d55af12a5a1d4cc",
+    "game/Main.LabState.cs": "f4851d6d425f891d3651977606aca6a7ffc1ef5353c1beebf3a1d1b5d579df7b",
+    "game/Main.Network.cs": "d70edfbc21041eb2569f50e8348a27113ff58a62c18ff0c528977b6aba84c161",
+    "game/Main.NetworkEvidence.cs": "e49af6e4cc130baf16e666aa97da64bebdf0bea3475c1789d1238eba3b50fe70",
+    "game/Main.ReplayDetails.cs": "362acec9dab3428ebacbcc357af2170d97addf5bcb17fd9279198e07dc538b6a",
+    "game/Main.Replays.cs": "eb0855c36b3b8f121196a2d55cc43c92eb48aba80448f733f56e8fab9c1410bd",
+    "game/Main.Training.cs": "e0fbcc9a37ab9ee33a2d7e7551f76131a17d36b722ed00b3206f839eea14919b",
+    "game/Main.TrainingLoadouts.cs": "18212fc92958db02261ee68f6e59b15107b0efd3b14e746f77ab6dfce04c9b86",
+    "game/Main.TrainingPractice.cs": "bb3c6fb4760f75d0b77893fc62f68ebcdcec28e00fe2233f34c6551b60e88353",
+    "src/StrikeLedger.App/Bots.cs": "88a14b386bbaf705b939296b6f842ba5f54b36fbf7cd7f7ee36ce73763c5d2ff",
+    "src/StrikeLedger.App/CommandEncoder.cs": "3ee023655675df5d0085ffcf557681486ea6421cca7bd07e9f0b9502de635ccc",
+    "src/StrikeLedger.App/PrivateMatchPeer.Lobby.cs": "5a045e9ac9907048faa943b7cc17b714341e71bf87f4de67f7dfbfcacce60413",
+    "src/StrikeLedger.App/PrivateMatchPeer.cs": "a7cb18086f00b0a3b25bffe82de617637e45ea7d21fefb77bca2fe1a8ba63f7c",
+    "src/StrikeLedger.App/PurchasePlanning.cs": "a9cfe9ad8e82e4d9fcd7d10696d9619e99c729e17b25d65a97287bad17721fcb",
+    "src/StrikeLedger.App/Replay.cs": "a78044f9625e0965fb33411a0140c2efdee59c9f317eb4fff9ca032b87e8dd57",
+    "src/StrikeLedger.App/ReplayStore.cs": "fb09ac1ddc073c7ac6178ecd525ecbf37433d4052c2866a18e1e4674c9b9337a",
+    "src/StrikeLedger.App/RollbackSession.cs": "acec54b1622458d3e3bf90728de22561dd6b6a02d0af34124fb3c2c4a14f7099",
+    "src/StrikeLedger.App/RoundEconomyLedger.cs": "075c98d0e3c29cc95cdb2757986835e280a2e94649dfe841a7e242840bbfa942",
+    "src/StrikeLedger.App/Training.Configuration.cs": "8033921fa84cd4a0c27d3cf849e547236ce817a05d2b4ca76393c939316fb508",
+    "src/StrikeLedger.App/Training.Demonstration.cs": "d4c5e353200748c64f00466a9ca2c7cf92d0479342d6a47936ee387b8d44606a",
+    "src/StrikeLedger.App/Training.cs": "b1391bcf512c0ad14d33698402c7f88de39616e1fa24757a695571bccfbb8e9d",
+    "src/StrikeLedger.App/UdpTransport.cs": "9e73919fafddb6a853cf8249849755def293eab24fb9fc49d404949bcee54124",
+    "src/StrikeLedger.Core/Simulation.BuyableObjects.cs": "b30461dd62c96821977f6fc4a2c99ad1d0121140ee1e52c294d2abce3c30e8fa",
+    "src/StrikeLedger.NetworkLab/BuyableObjectTests.cs": "bb8ddedffca0ddc293e63c1e6b827fbc1bc4ede6d94241cf7ce9eac6109c5e19",
+    "src/StrikeLedger.NetworkLab/CpuCapabilityTests.cs": "f44578520eb2ac1b81d4c2d857b08a1036299e4f854bcc2e3bc17674126d292f",
+    "src/StrikeLedger.NetworkLab/DemonstrationTests.cs": "bffc8824d713dac8785d7e9f2dc17e93400d7d2f625ac9b758ac46e78da4612f",
+    "src/StrikeLedger.NetworkLab/Program.cs": "45617b1567a18cb4c7569625653432728b3e6efb84ffb0c1cf79c76342374ed8",
+    "src/StrikeLedger.NetworkLab/ShopV2AppTests.cs": "8b37a0c6b76fef83126f3aaa14946f12cbe8f33052782924b4113b54293b693c",
+    "src/StrikeLedger.NetworkLab/TrainingDrillTests.cs": "1c0cfd27e26d9230f0aa2b5709cd5d33abb3b8bb1d41270190bba7b2c18cab3c",
+    "src/StrikeLedger.NetworkLab/UpgradeTests.cs": "7c9896de808c8205ffe890eadb9c7f3a53a214fbff27f3919e71115dfbaca9a6",
+    "tools/run_network_lab.py": "337ad3beb7ea1ce167d765052aa05a7ba2ea1afa8ece953d23bb0bb9bbdbfd4e",
+    "tools/FeelMeasurementHarness.cs": "5b5f45088b189318b1e555657f72758b543443d5fd8b2f62a619124eb966486b",
+    "tools/measure_core_feel.py": "60a82ba536c26bc0d77ec031ce982501e8170044af9cec68498c6d65318109e8"
+  },
+  "artifact_sha256": {
+    "reports/evidence/shop-v2-app-candidate-core/cpu-capability-traces.json": "8639c9b113f3bd1d52f7d7929741e04647a3916545abf7fed0a7f8dbca4090c1",
+    "reports/evidence/shop-v2-app-candidate-core/drills/results.json": "e32dd20a461f8723d15e7456ba0eda3737fa74aa94ccdd7e46c93a4c9ee0b81e",
+    "reports/evidence/shop-v2-app-candidate-core/false-counter-reward.json": "4c77b650f3511612fadf921eccf329449312fecefbea3f8f816c94c1ce516b1b",
+    "reports/evidence/shop-v2-app-candidate-core/false-prepaid-startup.json": "ddb15db7f012f2eae2c80bde52afe17c45e53e6943e60ea50ca5ed3c17912009",
+    "reports/evidence/shop-v2-app-candidate-core/self-tests.json": "15d636d61b2589d4100571473c0286aa53f4cfd082a2b1baa24f738d656745a6",
+    "reports/evidence/shop-v2-app-candidate-core/shop-timeout.json": "cba1e0d6b91d5a2f158fdc7c874438914b79e85114c818a57f0652c57b51d531",
+    "reports/evidence/shop-v2-app-candidate-core/shop-v2-app.json": "6ce30b336e8948dcb6a3f818b2f185bebe9d23962233620df020f2f8d6284f6e",
+    "reports/evidence/shop-v2-app-candidate-core/training-demonstrations.json": "382d5c1b01d32912ad413b06658f6e4620e12e9bc2014cbe9ae88f58432ec1a5",
+    "reports/evidence/shop-v2-app-candidate-core/upgrade-regressions.json": "54baa1332231f1141da6225cfd59e6cb8a158020bbba54b4c354cf5414d1e62c",
+    "reports/evidence/shop-v2-app-candidate-core/v2-round-ledger.json": "e48c7ea303b624e37f5e10ad527bc444e8e9f84b3e3b3e8f211ca9142a18284a",
+    "reports/evidence/shop-v2-app-candidate2-full/cpu-capability-traces.json": "c6a4d0e3f7f914f9b5b5a40763b1a0862834ba5a11f9e5fb354f1786eae5b1d0",
+    "reports/evidence/shop-v2-app-candidate2-full/drills/results.json": "a86daba908c6218f7b225d4a4724526177e5547ca074016fd1883c081ef980e6",
+    "reports/evidence/shop-v2-app-candidate2-full/false-counter-reward.json": "086aea4ee021744876b3521a17ad4a7341bd28833d3e827ad308b65bee271d79",
+    "reports/evidence/shop-v2-app-candidate2-full/false-prepaid-startup.json": "12b488af8d3e2eed96a2eef6fcb631ea1aa4be53111a2dcd8b41e750db072757",
+    "reports/evidence/shop-v2-app-candidate2-full/self-tests.json": "d99237bcabd801f7921b4eba34698c86377851b6a132b0f960849178b48ebb84",
+    "reports/evidence/shop-v2-app-candidate2-full/shop-timeout.json": "5a44c3081d5411e08b596a85cb4c51374b19d76cd0185ef0b26e1523963cdd7f",
+    "reports/evidence/shop-v2-app-candidate2-full/shop-v2-app.json": "e9cd36783530428e275b0482fc6a24d449b532381c7f2057eb56766696264961",
+    "reports/evidence/shop-v2-app-candidate2-full/training-demonstrations.json": "63c4b51769b5b27602a87dbbdf7feea161f2f0da9d0beebd421b6cd6905f0592",
+    "reports/evidence/shop-v2-app-candidate2-full/upgrade-regressions.json": "34f2123e34820cf39694d0f5826ae403c7996eb2812dc1b06a82137bd4d546d3",
+    "reports/evidence/shop-v2-app-candidate2-full/v2-round-ledger.json": "a5089eb27be4059cd7a7236f7add5470133189f32d112a2d598feedade687828",
+    "reports/evidence/shop-v2-candidate-assembly-identities.json": "1e104b5b0c7ac75115e689be9ce5aca7ef1a8495fcd24e13e3910f5db20aeeb4",
+    "reports/evidence/shop-v2-network-candidate-full/matrix-result.json": "db9da7c564053db6855f82c6a505843523e9cd81a55e654769860c594adb6306",
+    "reports/evidence/shop-v2-network-candidate-full/rtt0-jitter0-loss0/peer0.result.json": "2e8bcc0c382c26d31cf1b9ee30f66beeff2f6cac5d2b9ddec80b573b5623fe1c",
+    "reports/evidence/shop-v2-network-candidate-full/rtt0-jitter0-loss0/peer1.result.json": "6e389cb283aef6c5b259140dac3a8fad19711b6e4048e112c2de00974b9eeb3b",
+    "reports/evidence/shop-v2-network-candidate/matrix-result.json": "8b62eec0536029a361b244d8e42f63443b48c6b6639273f0a850ec53f44acd2d",
+    "reports/evidence/shop-v2-network-candidate/rtt0-jitter0-loss0/peer0.result.json": "a8139d3308af4c2dcd03de9c02c6756547cc89c9e4401073ab759fba1e8ae422",
+    "reports/evidence/shop-v2-network-candidate/rtt0-jitter0-loss0/peer1.result.json": "911f508b8edf4eba22a37e06e9df37fb823c2ad4e9cdcc1a7cf2cf4ab3620b2b",
+    "reports/evidence/shop-v2-network-candidate/rtt100-jitter20-loss1/peer0.result.json": "05fe150030ed6453b416f8c9524f28636e38efb010d5573b8f95e079ca497cfd",
+    "reports/evidence/shop-v2-network-candidate/rtt100-jitter20-loss1/peer1.result.json": "2839fb07daaf58e050b197a69b9e3696d8c601f0d45d2be4819e76159c001963",
+    "reports/evidence/shop-v2-network-candidate/rtt150-jitter20-loss3/peer0.result.json": "f50906fd15975ae79f809c2b28a922092902d195bddc7dfd64e1ac3bdeb0f33c",
+    "reports/evidence/shop-v2-network-candidate/rtt150-jitter20-loss3/peer1.result.json": "89319f7d6e6dac573b8c9d8bd9d92ee27a4689439e2bd578e153e771bd3f425b",
+    "reports/evidence/shop-v2-network-candidate/rtt50-jitter0-loss0/peer0.result.json": "c1dd7f25dc52a24a3a4a57a087568569716f08b21636db0eec612b11d0f9dde9",
+    "reports/evidence/shop-v2-network-candidate/rtt50-jitter0-loss0/peer1.result.json": "b8f43cb82c194e9ebaddd6845696cca96324ae27cc1ac4432e37da399cde0111",
+    "reports/evidence/shop-v2-objects-candidate2/buyable-object-tests.json": "42e769ca37bce7a23fc8400ec45f4d8ba97add6a6dbdc367e092675cc1f61844",
+    "reports/evidence/shop-v2-objects-candidate2/buyable-object-traces.jsonl": "9875e6e7b6802e10a927270c3037c6c2c201cd3de20330f64579547e4e3b587a",
+    "reports/evidence/shop-v2-objects-candidate2/reflected-origin-precision.json": "5af0b69122784434fa64d67c3147402ee4c2ef78ade075c5006f48ca7d05662d"
+  },
+  "pp_finding_updates": [
+    {
+      "id": "PP-003",
+      "current_disposition": "CPU purchase and execution share the capability predicate;21/25 actual zero-bank supported-product witnesses under v2.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-004",
+      "current_disposition": "Affordability is superseded: policy uses purchased current art plus SuperUsesRemaining, with no runtime bank authorization.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-007",
+      "current_disposition": "Independent mixed training kits include EX licenses and super permits; configuration/reset does not charge competitive bank.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-023",
+      "current_disposition": "Public delayed observations include equipped product IDs, remaining super use and pending skills; threat response no longer infers strength from bank.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-024",
+      "current_disposition": "Genuine link/confirm continuity remains tested; confirm requires actual prepaid SuperUseConsumed, not a debit.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-025",
+      "current_disposition": "Precise repeatable feeds now explicitly equip the intended multihit permit in both catalogs;21 lessons include v2 reward timing.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-026",
+      "current_disposition": "Two independent fighters/banks/mixed kits; each permit determines its seat’s selected super, with no free match art.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-027",
+      "current_disposition": "Fresh replay start and every seek clear timeline/state; current App seek tests pass, graphical traversal is separately owned.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-028",
+      "current_disposition": "Structured actual save result retained; atomic locked-file/unique-path regressions pass.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-029",
+      "current_disposition": "Timestamp metadata/pagination retained; completion requires final MatchDecision, not an intermediate settled round.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-030",
+      "current_disposition": "Replay verification catches later event/skill/wallet corruption; source UI error boundary remains, native screen evidence separate.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-031",
+      "current_disposition": "Atomic sibling rename, immutable unique archive paths, strict bounded load and legacy-byte preservation pass.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-032",
+      "current_disposition": "Reversible local startup/jump/dash cues only; skill awards/super uses/contact/terminal outcomes are confirmed. False cue removal is tested.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-034",
+      "current_disposition": "Seat-owned fighter lobby and host stage; optional super is purchased per round in commit/reveal.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-035",
+      "current_disposition": "Reliable bounded leave and no unresolved settlement tested.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-036",
+      "current_disposition": "Asymmetric actual-socket pause barrier, heartbeat and neutral resume countdown pass.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-037",
+      "current_disposition": "Mutual same-lineup rematch retains socket and resets bank/capabilities; in-session fighter/seat changes remain partial.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-071",
+      "current_disposition": "Replay4 round ledger separates shop spend, saved bank, outcome nominal/granted, skill nominal/allowed/granted, clipping and closing bank.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-072",
+      "current_disposition": "Detached replay practice retains exact branch world and capabilities; competitive source remains unchanged.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-073",
+      "current_disposition": "Legal one-action/free comparison and continuity drills remain; complete authored combo-route family remains partial.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-074",
+      "current_disposition": "Single recording and checkpointed deterministic scripts remain; multiple named/weighted recording slots remain optional unimplemented.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-075",
+      "current_disposition": "Lobby, compatibility and configured-fault evidence present; measured live latency estimator remains partial.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    },
+    {
+      "id": "PP-091",
+      "current_disposition": "Old combat-spend telemetry superseded by entitlement/use/reward/settlement receipts and fixed-bank conservation.",
+      "evidence_scope": "Current App software reports above; native UI and human claims remain separate."
+    }
+  ],
+  "document_updates": {
+    "docs/02_ARCHITECTURE.md": "2468990216171adec7fabf325037864569f528a182b8e79b2a4043699ce236d0",
+    "docs/04_COMBAT_COLLISION_AND_DAMAGE.md": "10bdc227a1c03460138b757a003c061cd7a022f7b3bdc81c0d5e748427005470",
+    "docs/07_DIRECT_SPEND_EDGE_CASES.md": "8d8b960b80d9c12d911d0a12e8cfc021e2a70a3b3e7cfaa40d2fcd574a982ba0",
+    "docs/09_TRAINING_BOTS_AND_REPLAYS.md": "c83ab08be3218674ec2faaac12cbfa6840474235d65d7394e2992e5a0c393041",
+    "docs/10_PRIVATE_NETWORK_AND_ROLLBACK.md": "8d64c08775b3c5549f131bd3182c828e1bce378e97f0c369a341fa8db273e43d",
+    "docs/12_THIRD_STRIKE_FEEL_CALIBRATION.md": "c7782fb606c68332816e64e3ccfb99921e9801d27dc4c8dfaa60e48ec7dcb1aa",
+    "docs/13_TEST_STRATEGY_AND_PROOF.md": "4655c5e20735ad3f66a2788f0b50fc9b1fa107d11dd14b2dcec10a9cede5592f",
+    "docs/18_MIGRATION_FROM_PRIOR_PACK.md": "2910772abbd700940300ed8b6099a79a25991e80f9159da9256b2c06a2955ee2"
+  },
+  "historical_reports": [
+    {
+      "path": "reports/evidence/shop-v2-before-final-metadata/SHOP_ONLY_APP_FINDINGS.json",
+      "sha256": "22267e376c00d1b419580e6f2c00959f584c8d7d03f02c7d3258959aa5bc1713"
+    },
+    {
+      "path": "reports/evidence/shop-v2-before-final-metadata/SHOP_ONLY_APP_REVIEW.md",
+      "sha256": "c33e75cc944d9f9f7440d5ec844136d76ace4acf46f712b567e4a9dddf523451"
+    }
+  ],
+  "exported_feel_measurements": {
+    "status": "AWAITING_REFRESHED_CANDIDATE",
+    "note": "The migrated frozen-export measurement tool previously passed 24 checks on the preceding content metadata. A fresh run will bind the final exports; previous measurements are historical."
+  }
+}

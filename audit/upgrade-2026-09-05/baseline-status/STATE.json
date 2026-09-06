@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "project": "Strike Ledger",
+  "scope": "1v1_traditional_fighter_single_credit_wallet",
+  "status": "PLAYABLE_CANDIDATE_WITH_PENDING_VERIFICATION",
+  "current_package": null,
+  "completed_packages": [
+    "WP-000",
+    "WP-001",
+    "WP-002",
+    "WP-003",
+    "WP-004",
+    "WP-005",
+    "WP-006",
+    "WP-007",
+    "WP-008",
+    "WP-009",
+    "WP-010",
+    "WP-011",
+    "WP-012"
+  ],
+  "blocked_requirements": [
+    "DEVICE-003",
+    "DEVICE-004",
+    "HUMAN-001"
+  ],
+  "game_build_ref": "source-sha256:5414744b92e51de04d4be67df1929929a1072e7d5b986d773b1459166217784d",
+  "game_content_sha256": "6fd0fe07da1f14d72754869b12cfe6cf21721d5055572c5b9f5b43dd72604c8b",
+  "next_action": "Complete DEVICE-003 with actual local controllers, DEVICE-004 with two physical PCs, and HUMAN-001 with actual owner/player feedback; then rerun the all-tier gate.",
+  "updated_utc": "2026-09-05T11:39:58.076960+00:00",
+  "verification": {
+    "software": {
+      "status": "PASS",
+      "passed": 76,
+      "total": 76
+    },
+    "target_device": {
+      "status": "PARTIAL_EXTERNAL_CHECKS_NOT_RUN",
+      "passed": 3,
+      "total": 5
+    },
+    "human": {
+      "status": "NOT_RUN",
+      "passed": 0,
+      "total": 1
+    }
+  },
+  "preserved_baseline_verification": {
+    "build_ref": "source-sha256:312471d950685ecc88b89d64a88af35b2b57cabfc1ab9c2b44273191559995fa",
+    "path": "reports/evidence/after-hours-baseline",
+    "software": {
+      "passed": 76,
+      "total": 76
+    },
+    "target_device": {
+      "passed": 3,
+      "total": 5
+    },
+    "human": {
+      "passed": 0,
+      "total": 1
+    },
+    "scope": "Historical pre-AFTER-HOURS gate. Unchanged gameplay evidence may be inherited only through verified Core/App/data identity; old presentation movies do not certify current graphics."
+  },
+  "graphics_integration": {
+    "status": "COMPLETE",
+    "ui_checks": 75,
+    "art_binding_checks": 415,
+    "art_pngs": 38,
+    "boundary_checks": 23,
+    "visually_reviewed_pngs": 49,
+    "normal_pacing_match": {
+      "passed": true,
+      "rounds": 6,
+      "ticks": 12789,
+      "process_elapsed_seconds": 232.75,
+      "runtime_elapsed_seconds": 230.3209928,
+      "frame_ms": {
+        "p50": 16.66569999999774,
+        "p95": 16.80210000000079,
+        "p99": 17.31550000000061,
+        "worst": 557.2761000000028
+      },
+      "evidence": "reports/evidence/native-after-hours-pacing/runtime-result.json"
+    },
+    "core_app_bytes_unchanged": true,
+    "compatibility_checks": 51,
+    "showcase_checks": 13,
+    "showcase_pngs": 14,
+    "native_windows_linux_movies": "PASS",
+    "fresh_package_extraction_and_native_launch": "PASS",
+    "windows_linux_full_replay_sha256": "371c2be65f805c377938b6eb74b551ceb2e3cc97a632b41f8d52fe47e9baac46"
+  },
+  "gate_evidence": {
+    "path": "reports/evidence/after-hours-rebind/run-20260905T113513-945140Z/result.json",
+    "scope": "Actual unmodified release gate executed against the final evidence proposal for this candidate; evidence completeness and integrity, not subjective feel.",
+    "software_status": "PASS",
+    "all_tier_status": "FAIL",
+    "all_tier_verified": 79,
+    "all_tier_total": 82,
+    "external_not_run": [
+      "DEVICE-003",
+      "DEVICE-004",
+      "HUMAN-001"
+    ]
+  }
+}

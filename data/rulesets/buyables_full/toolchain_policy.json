@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "checked_on": "2026-09-05",
+  "engine": "Godot .NET",
+  "conservative_engine_pin": "4.6.3",
+  "engine_pin_is_latest_claim": false,
+  "core_target_framework": "net8.0",
+  "language": "C#",
+  "tools_python_min": "3.11",
+  "desktop_targets": [
+    "windows-x86_64",
+    "linux-x86_64"
+  ],
+  "mandatory_recheck": "WP-000 and release: official Godot/.NET support, matching editor/sdk/export templates, security and restore/build/export validation. Upgrade coherently when required; do not freeze an unsupported runtime.",
+  "render_backend": "gl_compatibility",
+  "godot_variable": "GODOT_BIN",
+  "web_export_required": false,
+  "admin_install_authorized": false
+}

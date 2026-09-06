@@ -1,0 +1,6750 @@
+{
+  "rook": {
+    "600": {
+      "900": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1200": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1500": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ]
+    },
+    "900": {
+      "900": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1200": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1500": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ]
+    },
+    "1200": {
+      "900": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1200": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1500": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ]
+    },
+    "1500": {
+      "900": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1200": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1500": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ]
+    },
+    "1800": {
+      "900": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_clinch"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1200": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1500": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ]
+    },
+    "3600": {
+      "900": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 3600,
+          "max_ex_if_no_other_spend": 12,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 9
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 3300,
+          "max_ex_if_no_other_spend": 11,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 8
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 3300,
+          "max_ex_if_no_other_spend": 11,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 8
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 3000,
+          "max_ex_if_no_other_spend": 10,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 7
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 3000,
+          "max_ex_if_no_other_spend": 10,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 7
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "rook_clinch"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "rook_low_drive"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        }
+      ],
+      "1200": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 3600,
+          "max_ex_if_no_other_spend": 12,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 8
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 3300,
+          "max_ex_if_no_other_spend": 11,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 7
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 3300,
+          "max_ex_if_no_other_spend": 11,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 7
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 3000,
+          "max_ex_if_no_other_spend": 10,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 3000,
+          "max_ex_if_no_other_spend": 10,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "rook_clinch"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "rook_low_drive"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        }
+      ],
+      "1500": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 3600,
+          "max_ex_if_no_other_spend": 12,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 7
+        },
+        {
+          "items": [
+            "rook_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 3300,
+          "max_ex_if_no_other_spend": 11,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "rook_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 3300,
+          "max_ex_if_no_other_spend": 11,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "rook_high_hook"
+          ],
+          "rental_cost": 600,
+          "remaining": 3000,
+          "max_ex_if_no_other_spend": 10,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "rook_low_turn"
+          ],
+          "rental_cost": 600,
+          "remaining": 3000,
+          "max_ex_if_no_other_spend": 10,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "rook_clinch"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "rook_clinch",
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "rook_low_drive"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_high_hook",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn",
+            "rook_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "rook_low_drive",
+            "rook_low_turn",
+            "rook_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        }
+      ]
+    }
+  },
+  "vale": {
+    "600": {
+      "900": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1200": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1500": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ]
+    },
+    "900": {
+      "900": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1200": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1500": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm"
+          ],
+          "rental_cost": 900,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ]
+    },
+    "1200": {
+      "900": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1200": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1500": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm"
+          ],
+          "rental_cost": 900,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ]
+    },
+    "1500": {
+      "900": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1200": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1500": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm"
+          ],
+          "rental_cost": 900,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ]
+    },
+    "1800": {
+      "900": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_return_pulse"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1200": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ],
+      "1500": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 1500,
+          "max_ex_if_no_other_spend": 5,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 0
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 1200,
+          "max_ex_if_no_other_spend": 4,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm"
+          ],
+          "rental_cost": 900,
+          "remaining": 900,
+          "max_ex_if_no_other_spend": 3,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 600,
+          "max_ex_if_no_other_spend": 2,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 300,
+          "max_ex_if_no_other_spend": 1,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 0,
+          "max_ex_if_no_other_spend": 0,
+          "can_selected_super": false,
+          "max_ex_after_one_super": null
+        }
+      ]
+    },
+    "3600": {
+      "900": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 3600,
+          "max_ex_if_no_other_spend": 12,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 9
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 3300,
+          "max_ex_if_no_other_spend": 11,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 8
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 3300,
+          "max_ex_if_no_other_spend": 11,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 8
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 3000,
+          "max_ex_if_no_other_spend": 10,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 7
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 3000,
+          "max_ex_if_no_other_spend": 10,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 7
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "vale_return_pulse"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "vale_low_palm"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        }
+      ],
+      "1200": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 3600,
+          "max_ex_if_no_other_spend": 12,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 8
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 3300,
+          "max_ex_if_no_other_spend": 11,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 7
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 3300,
+          "max_ex_if_no_other_spend": 11,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 7
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 3000,
+          "max_ex_if_no_other_spend": 10,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 3000,
+          "max_ex_if_no_other_spend": 10,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "vale_return_pulse"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "vale_low_palm"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        }
+      ],
+      "1500": [
+        {
+          "items": [],
+          "rental_cost": 0,
+          "remaining": 3600,
+          "max_ex_if_no_other_spend": 12,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 7
+        },
+        {
+          "items": [
+            "vale_step_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 3300,
+          "max_ex_if_no_other_spend": 11,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "vale_sway_feint"
+          ],
+          "rental_cost": 300,
+          "remaining": 3300,
+          "max_ex_if_no_other_spend": 11,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 6
+        },
+        {
+          "items": [
+            "vale_heel_arc"
+          ],
+          "rental_cost": 600,
+          "remaining": 3000,
+          "max_ex_if_no_other_spend": 10,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "vale_long_check"
+          ],
+          "rental_cost": 600,
+          "remaining": 3000,
+          "max_ex_if_no_other_spend": 10,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 5
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "vale_return_pulse"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "vale_return_pulse",
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "vale_low_palm"
+          ],
+          "rental_cost": 900,
+          "remaining": 2700,
+          "max_ex_if_no_other_spend": 9,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 4
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1200,
+          "remaining": 2400,
+          "max_ex_if_no_other_spend": 8,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 3
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_heel_arc",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check"
+          ],
+          "rental_cost": 1500,
+          "remaining": 2100,
+          "max_ex_if_no_other_spend": 7,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 2
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check",
+            "vale_step_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        },
+        {
+          "items": [
+            "vale_low_palm",
+            "vale_long_check",
+            "vale_sway_feint"
+          ],
+          "rental_cost": 1800,
+          "remaining": 1800,
+          "max_ex_if_no_other_spend": 6,
+          "can_selected_super": true,
+          "max_ex_after_one_super": 1
+        }
+      ]
+    }
+  }
+}

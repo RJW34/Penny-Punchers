@@ -1,0 +1,3 @@
+BASELINE PASS 38: production-source SOCD, binding validation, assignment eligibility and held-confirm quarantine.
+PASS 52 input/settings assertions against the production GameSettings.cs source. Physical controller hardware was not exercised by this test.
+Scope: round trip uses the production JSON properties/normalizer and an isolated temporary file; it does not overwrite the live user settings or claim a physical unplug test.

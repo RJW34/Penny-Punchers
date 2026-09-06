@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "status": "REQUIRED_NOT_IMPLEMENTED",
+  "status": "EXECUTABLE_ROUTES_EVIDENCE_SEPARATE",
   "scenarios": [
     {
       "id": "input_motion_both_sides",
@@ -202,6 +202,62 @@
       "id": "native_export_smoke",
       "owner": "WP-013",
       "runner_contract": "Real game/test executable --scenario native_export_smoke --seed 1 --evidence-dir reports/evidence/native_export_smoke",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "shop_registry_resource_contract",
+      "owner": "WP-005",
+      "runner_contract": "python tools/run_scenario.py --scenario shop_registry_resource_contract --seed 1",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "shop_all_ex_repeat_without_bank",
+      "owner": "WP-005",
+      "runner_contract": "python tools/run_scenario.py --scenario shop_all_ex_repeat_without_bank --seed 1",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "shop_all_super_once_rollback",
+      "owner": "WP-005",
+      "runner_contract": "python tools/run_scenario.py --scenario shop_all_super_once_rollback --seed 1",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "shop_skill_caps_and_partial_receipts",
+      "owner": "WP-005",
+      "runner_contract": "python tools/run_scenario.py --scenario shop_skill_caps_and_partial_receipts --seed 1",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "shop_actual_repeated_baits_and_partial_cap",
+      "owner": "WP-011",
+      "runner_contract": "python tools/run_scenario.py --scenario shop_actual_repeated_baits_and_partial_cap --seed 1",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "shop_only_v2",
+      "owner": "WP-009",
+      "runner_contract": "python tools/run_scenario.py --scenario shop_only_v2 --seed 1",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "shop_timeout",
+      "owner": "WP-006",
+      "runner_contract": "python tools/run_scenario.py --scenario shop_timeout --seed 1",
+      "expected_exit_on_success": 0,
+      "unimplemented_exit_must_be_nonzero": true
+    },
+    {
+      "id": "shop_only_pilot",
+      "owner": "WP-011",
+      "runner_contract": "python tools/run_scenario.py --scenario shop_only_pilot --seed 1",
       "expected_exit_on_success": 0,
       "unimplemented_exit_must_be_nonzero": true
     }

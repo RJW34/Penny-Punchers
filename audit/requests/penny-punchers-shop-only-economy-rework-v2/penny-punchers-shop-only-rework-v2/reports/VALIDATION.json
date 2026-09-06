@@ -1,0 +1,28 @@
+{
+  "status": "SCAFFOLD_VALIDATED_NOT_GAME_VERIFIED",
+  "date": "2026-09-05",
+  "reference_and_tool_test_methods": 95,
+  "randomized_reference_contact_attempts": 12000,
+  "structure": {
+    "package_validation": "PASS",
+    "baseline_products": 26,
+    "design_candidates": 38,
+    "requirements": 61,
+    "layers": {
+      "software": 58,
+      "human": 1,
+      "device": 2
+    },
+    "work_packages": 10,
+    "native_scenarios_planned": 45,
+    "schemas_validated": 2,
+    "native_game_executed": false
+  },
+  "initial_evidence_gate": "EXPECTED_FAIL",
+  "dotnet_available": false,
+  "godot_available": false,
+  "CSharp_seed_compiled": false,
+  "native_game_or_contacts_executed": false,
+  "real_balance_experiment_executed": false,
+  "human_acceptance": false
+}

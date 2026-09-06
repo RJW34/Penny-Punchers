@@ -9,7 +9,7 @@ string Get(string key,string fallback)=>argsMap.GetValueOrDefault(key,fallback);
 string output=Path.GetFullPath(Get("--evidence-dir",Get("--output","reports/balance-lab")));Directory.CreateDirectory(output);Directory.CreateDirectory(Path.Combine(output,"frozen-states"));
 var content=GameContent.Load(Get("--data","data"));int seeds=int.Parse(Get("--seeds","1"));if(seeds is <1 or >20)throw new ArgumentException("Seed count must be 1..20");
 int seedStart=int.Parse(Get("--seed","1"));if(seedStart is <1 or >100000)throw new ArgumentException("Seed must be 1..100000");
-string scenario=Get("--scenario","all");if(scenario is not ("all" or "zero_vs_full_wallet" or "recovery_farming"))throw new ArgumentException("Unknown balance scenario");
+string scenario=Get("--scenario","all");if(content.IsShopOnly&&scenario=="shop_strategy_cells")return ShopStrategyCells.Run(content,output,seedStart,seeds);if(content.IsShopOnly&&scenario is not("all" or "shop_only_pilot" or "buyables_pilot"))throw new ArgumentException("Use --scenario shop_only_pilot or shop_strategy_cells with the v2 rules; historical direct-spend scenarios are archived.");if(content.IsShopOnly)return ShopOnlyPilot.Run(content,Path.GetFullPath(Get("--data","data")),output,seedStart,seeds,Get("--scope",scenario=="zero_vs_full_wallet"?"rentals":scenario=="recovery_farming"?"opening":"all"));if(scenario=="buyables_pilot")return BuyablesPilot.Run(content,Path.GetFullPath(Get("--data","data")),output,seedStart,seeds,Get("--scope","all"));if(scenario is not ("all" or "zero_vs_full_wallet" or "recovery_farming"))throw new ArgumentException("Unknown balance scenario");
 string[] policies=["spend-on-confirm","conservative-reserve","force-ex","bank-super","lease-focused","zero-spend-defense","controlled-losing"];
 int[] budgets=[0,300,600,900,1800,3600];
 var records=new List<MatchRecord>();var watch=Stopwatch.StartNew();using var roundsFile=new StreamWriter(Path.Combine(output,"rounds.jsonl")){AutoFlush=true};using var matchesFile=new StreamWriter(Path.Combine(output,"matches.jsonl")){AutoFlush=true};
@@ -108,7 +108,7 @@ public sealed class RoundTelemetry(string match,int round,int[] opening,int[] ti
 }
 public sealed class PolicyController
 {
-    readonly BotController baseline;readonly Queue<(byte Direction,Buttons Buttons)> commands=new();readonly int seat;readonly string policy;long lastConfirm=-1000,lastForced=-1000;
+    readonly BotController baseline;readonly Queue<CommandInput> commands=new();readonly int seat;readonly string policy;long lastConfirm=-1000,lastForced=-1000;
     public PolicyController(int seat,string policy,uint seed){this.seat=seat;this.policy=policy;baseline=new(seat,BotMode.Adaptive,seed);}
     public void Observe(CombatEvent e){if(e.Kind==CombatEventKind.Hit&&e.Seat==seat)lastConfirm=e.Tick;}
     public PreparationPlan Prepare(Simulation s)
@@ -119,21 +119,18 @@ public sealed class PolicyController
         if(policy!="lease-focused")return new([],reserve);
         var picked=new List<string>();int remaining=p.Credits,total=0;var slots=new HashSet<string>();
         foreach(var item in s.Content.Items.Values.Where(i=>i.EligibleFighters.Contains(p.FighterId)).OrderBy(i=>i.Price).ThenBy(i=>i.Id,StringComparer.Ordinal))
-        {if(slots.Contains(item.Slot)||item.Price>remaining||total+item.Price>1800)continue;picked.Add(item.Id);slots.Add(item.Slot);remaining-=item.Price;total+=item.Price;}
+        {if(slots.Contains(item.Slot)||item.Price>remaining||total+item.Price>s.Content.Preparation.LoadoutCap)continue;picked.Add(item.Id);slots.Add(item.Slot);remaining-=item.Price;total+=item.Price;}
         return new(picked.ToArray(),0);
     }
     public InputFrame Next(Simulation s)
     {
         var p=s.Players[seat];long tick=s.Tick;if(policy=="controlled-losing"&&s.RoundId<=2)return new(seat,tick,5,Buttons.None);
-        if(commands.Count>0){var c=commands.Dequeue();return new(seat,tick,CoreMath.RelativeDirection(c.Direction,p.Facing),c.Buttons);}
+        if(commands.Count>0){var c=commands.Dequeue();return new(seat,tick,c.Direction,c.Held);}
         if(policy=="lease-focused"&&s.Phase==MatchPhase.Fight&&p.Actionable&&p.Leases.Count>0&&tick-lastForced>=120)
         {
             var item=s.Content.Items[p.Leases[(int)(tick/120%p.Leases.Count)]];var move=s.Content.Fighters[p.FighterId].Move(item.MoveId);lastForced=tick;
-            if(move.Command=="6+HP")return new(seat,tick,CoreMath.RelativeDirection(6,p.Facing),Buttons.HP);
-            if(move.Command=="HP+HK")return new(seat,tick,5,Buttons.HP|Buttons.HK);
-            if(move.Command.StartsWith("qcb")){commands.Enqueue((2,Buttons.None));commands.Enqueue((1,Buttons.None));commands.Enqueue((4,move.Command.EndsWith("K")?Buttons.LK:Buttons.LP));}
-            else if(move.Command.StartsWith("qcf")){commands.Enqueue((2,Buttons.None));commands.Enqueue((3,Buttons.None));commands.Enqueue((6,move.Command.EndsWith("K")?Buttons.LK:Buttons.LP));}
-            if(commands.Count>0){var c=commands.Dequeue();return new(seat,tick,CoreMath.RelativeDirection(c.Direction,p.Facing),c.Buttons);}
+            foreach(var command in CommandEncoder.Encode(s.Content,move,p.Facing))commands.Enqueue(command);
+            if(commands.Count>0){var c=commands.Dequeue();return new(seat,tick,c.Direction,c.Held);}
         }
         int superCost=s.Content.Fighters[p.FighterId].SuperArts.Single(a=>a.Id==p.SelectedSuper).CreditCost;
         bool confirm=tick-lastConfirm>=12&&tick-lastConfirm<40;
@@ -141,10 +138,10 @@ public sealed class PolicyController
         if(force)
         {
             lastForced=tick;
-            if(policy=="bank-super"&&p.Credits>=superCost){foreach(byte d in new byte[]{2,3,6,2,3})commands.Enqueue((d,Buttons.None));commands.Enqueue((6,Buttons.HP));}
-            else if(p.FighterId=="vale"){for(int n=0;n<46;n++)commands.Enqueue((1,Buttons.None));commands.Enqueue((6,Buttons.LP|Buttons.MP));}
-            else{commands.Enqueue((2,Buttons.None));commands.Enqueue((3,Buttons.None));commands.Enqueue((6,Buttons.LP|Buttons.MP));}
-            var c=commands.Dequeue();return new(seat,tick,CoreMath.RelativeDirection(c.Direction,p.Facing),c.Buttons);
+            var fighter=s.Content.Fighters[p.FighterId];
+            var move=policy=="bank-super"&&p.Credits-p.ReserveFloor>=superCost?fighter.Move(fighter.SuperArts.Single(a=>a.Id==p.SelectedSuper).MoveId):fighter.Moves.First(m=>m.Kind=="ex_special"&&m.Projectile is not null);
+            foreach(var command in CommandEncoder.Encode(s.Content,move,p.Facing))commands.Enqueue(command);
+            var c=commands.Dequeue();return new(seat,tick,c.Direction,c.Held);
         }
         var input=baseline.Next(s);
         if(policy=="bank-super"||policy=="spend-on-confirm"&&!confirm)

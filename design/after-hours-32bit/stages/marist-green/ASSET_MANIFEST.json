@@ -1,0 +1,61 @@
+{
+  "stage_id": "marist_green",
+  "display_name": "Marist Green \u2014 Golden Hour",
+  "scope": "traditional_fighter_only_additive_stage_pack",
+  "selected_pngs": 3,
+  "generation_method": "built-in image_gen",
+  "assets": [
+    {
+      "path": "background.png",
+      "width": 1672,
+      "height": 941,
+      "format": "RGB",
+      "alpha_channel": false,
+      "bit_depth_per_channel": 8,
+      "png_crc_and_payload_valid": true,
+      "sha256": "e01cbf1df8ba79d409af8d01d203262546b00ab482e3d252307992a416c066ad",
+      "bytes": 2790742,
+      "source": "Original built-in image_gen generation/edit; architectural guidance credited in SOURCES.md",
+      "author": "OpenAI ImageGen; art direction by Codex for the project",
+      "status": "source_art_for_future_stage_integration",
+      "prompts": "prompts.json",
+      "runtime_integrated": false
+    },
+    {
+      "path": "panorama.png",
+      "width": 2114,
+      "height": 744,
+      "format": "RGB",
+      "alpha_channel": false,
+      "bit_depth_per_channel": 8,
+      "png_crc_and_payload_valid": true,
+      "sha256": "a7db85804c467f4e3600c5faa268d922b71fd0cf150a8e757ca5c781dfbb6315",
+      "bytes": 2868579,
+      "source": "Original built-in image_gen generation/edit; architectural guidance credited in SOURCES.md",
+      "author": "OpenAI ImageGen; art direction by Codex for the project",
+      "status": "source_art_for_future_stage_integration",
+      "prompts": "prompts.json",
+      "runtime_integrated": false
+    },
+    {
+      "path": "select-card.png",
+      "width": 1672,
+      "height": 941,
+      "format": "RGB",
+      "alpha_channel": false,
+      "bit_depth_per_channel": 8,
+      "png_crc_and_payload_valid": true,
+      "sha256": "ed5f7d37189f2151ac82c4e6d13157799c4e2e5a82b6929c7dc6d49e49c7e26b",
+      "bytes": 2727108,
+      "source": "Original built-in image_gen generation/edit; architectural guidance credited in SOURCES.md",
+      "author": "OpenAI ImageGen; art direction by Codex for the project",
+      "status": "source_art_for_future_stage_integration",
+      "prompts": "prompts.json",
+      "runtime_integrated": false
+    }
+  ],
+  "sources": "SOURCES.md",
+  "runtime_integrated": false,
+  "normalization_pending": true,
+  "separate_parallax_layers": false
+}

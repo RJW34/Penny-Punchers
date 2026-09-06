@@ -22,11 +22,13 @@ def validate(root:Path=ROOT,strict:bool=False)->dict:
     ensure(rules['target_half_points']==10 and rules['max_rounds']==9,'Unexpected match seed rules')
     ensure(network['max_peers']==network['max_seats']==2,'No four-seat/network team topology')
     ensure(network['economy_in_rollback_snapshot'] and not network['predicted_payouts'],'Rollback money/confirmed payout requirement')
-    ensure(e['resource_model']=='one_persistent_scalar_credit_wallet','Single wallet required')
-    ensure(e['combat_income']==e['passive_income']==0,'Combat/time resource income forbidden')
+    ensure(e['resource_model']=='shop_only_bank_round_capabilities','Shop-only bank model required')
+    ensure(e['combat_income']==e['passive_income']==0 and e['combat_bank_writes'] is False,'No direct combat/passive bank deposits')
     ensure(e['starting_credits']==600 and e['wallet_cap']==3600,'Seed credit bounds changed without updates')
-    ensure(e['loss_payouts']==[900,1200,1500] and e['max_recovery_tier']==2,'Recovery seed mismatch')
-    ensure(sum(e['slot_prices'].values())==e['loadout_cap'],'Loadout cap/price mismatch')
+    ensure(e['loss_payouts']==[1200,1200,1500] and e['max_recovery_tier']==2,'Shop-only candidate recovery seed mismatch')
+    ensure(e['loadout_cap']==2400 and e['slot_limits']==dict(signature=1,technique=1,gambit=1,ex=2,super=1),'Mixed cart limits')
+    ensure(e['reward_policy']==dict(counter_hit=50,anti_air=75,perfect_parry=100,category_limit=2,total_limit=300,perfect_window_eligible_ticks=2),'Shipping skill reward policy mismatch')
+    ensure(0<e['loadout_cap']<=e['wallet_cap'],'Invalid loadout cap')
     forbidden=set(parsed['data/resource_contract.json']['forbidden_resource_fields'])|{'crew','relay','team_id','duel_id','cash','sponsorship','teammates','stocks','blast_zones','ledge_catch'}
     def scan(o,path):
         if isinstance(o,dict):
@@ -37,45 +39,57 @@ def validate(root:Path=ROOT,strict:bool=False)->dict:
             for i,v in enumerate(o):scan(v,path+f'/{i}')
     for name,o in parsed.items():
         if name.startswith('data/') and name!='data/resource_contract.json':scan(o,name)
-    items=parsed['data/items.json']['items'];ids=[x['id'] for x in items]
-    ensure(len(items)==12 and len(set(ids))==12,'Expected12 unique leases')
-    itemmap={x['id']:x for x in items};total=base=0;allmoves={}
-    for fid in ('rook','vale'):
-        f=parsed[f'data/fighters/{fid}.json'];moves=f['moves'];mids=[m['id'] for m in moves]
-        ensure(f['id']==fid and len(moves)==49 and len(set(mids))==49,f'{fid} expected49 unique actions')
-        mm={m['id']:m for m in moves};allmoves[fid]=mm;total+=len(moves)
-        ensure(mm['command_fhp'].get('kara_throw_ticks')==parsed['data/inputs.json']['kara_throw_ticks'],'Kara window data mismatch')
-        bc=sum(m['availability']=='base' for m in moves);ensure(bc==43,f'{fid} expected43 base-availability actions');base+=bc
-        ensure(len(f['super_arts'])==3 and f['default_super'] in {a['id'] for a in f['super_arts']},'Bad art selection')
-        for a in f['super_arts']:
-            ensure(a['move_id'] in mm and a['credit_cost']==mm[a['move_id']]['credit_cost'],'Art price mismatch')
-            ensure(a['credit_cost'] in e['super_activation_costs'],'Unknown super cost')
-        for m in moves:
-            start,active,rec=m['startup'],m['active'],m['recovery'];length=start+active+rec
-            ensure(type(start) is int and start>=0 and type(active) is int and active>0 and type(rec) is int and rec>=0,'Bad timeline')
-            cost=m['credit_cost'];ensure(type(cost) is int and 0<=cost<=e['wallet_cap'],'Bad action cost')
-            ensure(m['debit_on_start']==(cost>0),'Debit flag mismatch')
-            if m['kind']=='ex_special':ensure(cost==e['ex_activation_cost'] and not m['negative_edge'],'EX price/negative-edge mismatch')
-            elif m['kind']!='super':ensure(cost==0,'Unspecified per-use charges on base/leased technique')
-            if cost:ensure(not m['negative_edge'],'No paid negative edge')
-            ensure(m['availability']=='base' or m['availability'] in itemmap,'Unknown lease availability')
-            for b in m['hitboxes']:
-                ensure(start<=b['start']<b['end']<=start+active,'Hitbox outside active interval')
-                ensure(b['width']>0 and b['height']>0,'Nonpositive box')
-            for group in ('movement','invulnerability','cancel_rules'):
-                for x in m[group]:ensure(0<=x['start']<x['end']<=length,f'Bad {group} interval in {fid}:{m["id"]}')
-            if m.get('projectile'):
-                p=m['projectile'];ensure(0<=p['spawn_tick']<length and p['life_ticks']>0 and p['hits']>0,'Bad projectile lifetime')
-            ensure(bool(m['hitboxes'] or m.get('projectile') or m.get('throw') or m['movement']),f'No defined effect for {fid}:{m["id"]}')
-        for tc in f['target_combos']:ensure(tc['from'] in mm and tc['to'] in mm,'Bad target combo move reference')
-    for x in items:
-        ensure(x['slot'] in e['slot_prices'] and x['price']==e['slot_prices'][x['slot']],'Lease price/slot mismatch')
-        ensure(x['duration']=='one_round' and x['use_limit'] is None and x['activation_credit_cost']==0,'No relay/activation-ticket lease')
-        ensure(x['debit']=='preparation_commit' and not x['alters_system_defense'],'Unexpected lease effect/debit')
-        ensure(len(x['eligible_fighters'])==1,'Character-specific lease required')
-        fid=x['eligible_fighters'][0];ensure(fid in allmoves and x['move_id'] in allmoves[fid],'Item move missing')
-        ensure(allmoves[fid][x['move_id']]['availability']==x['id'],'Item availability mismatch')
-        if x['replaces'] is not None:ensure(x['replaces'] in allmoves[fid],'Bad replacement reference')
+    def registry(prefix):
+        e=parsed[prefix+'economy.json']
+        items=parsed[prefix+'items.json']['items'];ids=[x['id'] for x in items]
+        ensure(len(items)<=256 and len(set(ids))==len(items),'Unique bounded lease registry required')
+        itemmap={x['id']:x for x in items};total=base=0;allmoves={}
+        fighter_paths=sorted(name for name in parsed if name.startswith(prefix+'fighters/') and name.endswith('.json'))
+        ensure(2<=len(fighter_paths)<=32,'Expected bounded fighter registry')
+        for fighter_path in fighter_paths:
+            f=parsed[fighter_path];fid=f['id'];moves=f['moves'];mids=[m['id'] for m in moves]
+            ensure(1<=len(moves)<=256 and len(set(mids))==len(moves),f'{fid} needs unique bounded actions')
+            mm={m['id']:m for m in moves};allmoves[fid]=mm;total+=len(moves)
+            ensure(mm['command_fhp'].get('kara_throw_ticks')==parsed[prefix+'inputs.json']['kara_throw_ticks'],'Kara window data mismatch')
+            bc=sum(m['availability']=='base' for m in moves);ensure(bc>0,f'{fid} needs a free base kit');base+=bc
+            ensure(len(f['super_arts'])==3 and f['default_super'] in {a['id'] for a in f['super_arts']},'Bad art selection')
+            for a in f['super_arts']:
+                ensure(a['move_id'] in mm and a['credit_cost']==mm[a['move_id']]['credit_cost'],'Art price mismatch')
+                ensure(a['credit_cost'] in e['super_activation_costs'],'Unknown super cost')
+            for m in moves:
+                start,active,rec=m['startup'],m['active'],m['recovery'];length=start+active+rec
+                ensure(type(start) is int and start>=0 and type(active) is int and active>=0 and length>0 and type(rec) is int and rec>=0,'Bad timeline')
+                cost=m['credit_cost'];ensure(type(cost) is int and cost==0 and m['debit_on_start'] is False,'Shop-only moves cannot debit the bank')
+                ensure(m.get('access_policy') in ('base','round_license','prepaid_super'),'Missing explicit capability policy')
+                if m['kind']=='ex_special':ensure(cost==e['ex_activation_cost'] and not m['negative_edge'],'EX price/negative-edge mismatch')
+                elif m['kind']!='super':ensure(cost==0,'Unspecified per-use charges on base/leased technique')
+                if m['kind'] in ('ex_special','super'):ensure(not m['negative_edge'] and m['availability']!='base','Enhanced commands require products and no negative edge')
+                ensure(m['availability']=='base' or m['availability'] in itemmap,'Unknown lease availability')
+                for b in m['hitboxes']:
+                    ensure(start<=b['start']<b['end']<=start+active,'Hitbox outside active interval')
+                    ensure(b['width']>0 and b['height']>0,'Nonpositive box')
+                for group in ('movement','invulnerability','cancel_rules'):
+                    for x in m[group]:ensure(0<=x['start']<x['end']<=length,f'Bad {group} interval in {fid}:{m["id"]}')
+                if m.get('projectile'):
+                    p=m['projectile'];ensure(0<=p['spawn_tick']<length and p['life_ticks']>0 and p['hits']>0,'Bad projectile lifetime')
+                ensure(bool(m['hitboxes'] or m.get('projectile') or m.get('throw') or m['movement'] or m.get('actor_rules') or m.get('object_rules') or m.get('install') or m.get('branches') or m.get('mimic')),f'No defined effect for {fid}:{m["id"]}')
+            for tc in f['target_combos']:ensure(tc['from'] in mm and tc['to'] in mm,'Bad target combo move reference')
+        for x in items:
+            ensure(x['slot'] in e['slot_prices'] and type(x['price']) is int and 0<x['price']<=e['loadout_cap'] and x['price']%300==0,'Lease price/slot mismatch')
+            ensure(x['duration']=='one_round' and x['use_limit']==(1 if x['slot']=='super' else None) and x['activation_credit_cost']==0,'Repeatable license or one-use super contract')
+            ensure(x['access_policy']==('prepaid_super' if x['slot']=='super' else 'round_license') and x['implementation_status']=='implemented','Product access/implementation mismatch')
+            ensure(len(set(x['conflicts_with']))==len(x['conflicts_with']) and all(c in itemmap and c!=x['id'] for c in x['conflicts_with']),'Invalid product conflicts')
+            ensure(x['debit']=='preparation_commit' and not x['alters_system_defense'],'Unexpected lease effect/debit')
+            ensure(len(x['eligible_fighters'])==1,'Character-specific lease required')
+            fid=x['eligible_fighters'][0];ensure(fid in allmoves and x['move_id'] in allmoves[fid],'Item move missing')
+            ensure(allmoves[fid][x['move_id']]['availability']==x['id'],'Item availability mismatch')
+            if x['replaces'] is not None:ensure(x['replaces'] in allmoves[fid],'Bad replacement reference')
+        return items,total,base,fighter_paths
+    items,total,base,fighter_paths=registry('data/')
+    ruleset_fighter_paths=[]
+    for name in sorted(parsed):
+        if name.startswith('data/rulesets/') and name.endswith('/items.json'):
+            _,_,_,paths=registry(name[:-len('items.json')]);ruleset_fighter_paths.extend(paths)
     req=parsed['acceptance/requirements.json']['requirements'];pkgs=parsed['orchestration/dag.json']['packages']
     ensure(len({r['id'] for r in req})==len(req),'Duplicate requirement ids');pm={p['id']:p for p in pkgs}
     ensure(len(pm)==len(pkgs),'Duplicate package ids');visiting=set();visited=set()
@@ -98,13 +112,16 @@ def validate(root:Path=ROOT,strict:bool=False)->dict:
         from jsonschema import Draft202012Validator,FormatChecker
         for name,data in parsed.items():
             if name.startswith('schemas/'):Draft202012Validator.check_schema(data)
-        pairs=[('data/economy.json','economy'),('data/items.json','items'),('data/fighters/rook.json','fighter'),('data/fighters/vale.json','fighter'),('acceptance/requirements.json','requirements'),('orchestration/dag.json','dag'),('reports/ACCEPTANCE_RESULTS.json','evidence')]
+        pairs=[('data/economy.json','economy'),('data/items.json','items'),('acceptance/requirements.json','requirements'),('orchestration/dag.json','dag'),('reports/ACCEPTANCE_RESULTS.json','evidence')]
+        pairs.extend((path,'fighter') for path in fighter_paths+ruleset_fighter_paths)
+        pairs.extend((name,'items') for name in parsed if name.startswith('data/rulesets/') and name.endswith('/items.json'))
+        pairs.extend((name,'economy') for name in parsed if name.startswith('data/rulesets/') and name.endswith('/economy.json'))
         for path,sch in pairs:
             errs=list(Draft202012Validator(parsed[f'schemas/{sch}.schema.json'],format_checker=FormatChecker()).iter_errors(parsed[path]))
             ensure(not errs,path+': '+'; '.join(x.message for x in errs[:5]))
         wallet=Draft202012Validator(parsed['schemas/wallet.schema.json'])
         for v in parsed['fixtures/economy_vectors.json']['payouts']:wallet.validate(v['before']);wallet.validate(v['expected'])
-    return {'scope':'SCAFFOLD_ONLY','status':'PASS','json_files':len(parsed),'python_files':sum(p.suffix=='.py' for p in files),'csproj_xml_files':sum(p.suffix=='.csproj' for p in files),'requirements':len(req),'work_packages':len(pkgs),'fighters':2,'base_moves':base,'all_moves':total,'items':len(items),'schema_mode':'draft2020-12_and_semantics' if strict else 'semantics','game_implementation':'NOT_VERIFIED'}
+    return {'scope':'SOURCE_CONTRACTS_ONLY','status':'PASS','json_files':len(parsed),'python_files':sum(p.suffix=='.py' for p in files),'csproj_xml_files':sum(p.suffix=='.csproj' for p in files),'requirements':len(req),'work_packages':len(pkgs),'fighters':len(fighter_paths),'base_moves':base,'all_moves':total,'items':len(items),'schema_mode':'draft2020-12_and_semantics' if strict else 'semantics','game_implementation':'NOT_VERIFIED'}
 
 def main()->int:
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--strict-schema',action='store_true');ap.add_argument('--root',type=Path,default=ROOT);a=ap.parse_args()
